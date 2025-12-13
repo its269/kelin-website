@@ -329,3 +329,36 @@
         display: flex;
     }
 }
+
+/* Active link styles */
+.nav-desktop a.active,
+.dropdown-toggle.active,
+.nav-mobile a.active {
+    color: #007bff !important;
+    font-weight: bold;
+    position: relative;
+}
+
+.nav-desktop a.active::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #007bff;
+    border-radius: 1px;
+}
+
+.mobile-dropdown-toggle.active {
+    color: #007bff !important;
+    font-weight: bold;
+}
+
+/* Active hover states */
+.nav-desktop a.active:hover,
+.dropdown-toggle.active:hover,
+.nav-mobile a.active:hover {
+    color: #0056b3 !important;
+    scale: 1.05;
+}

@@ -1,13 +1,23 @@
 "use client";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useState } from "react";
 import "./header.css"; // import external CSS file
 
 export default function Header() {
+    const pathname = usePathname();
     const [open, setOpen] = useState(false);
     const [searchQuery, setSearchQuery] = useState("");
     const [productsOpen, setProductsOpen] = useState(false);
     const [machineOpen, setMachineOpen] = useState(false);
+
+    // Helper function to check if link is active
+    const isActive = (path) => {
+        if (path === "/" || path === "/explore") {
+            return pathname === "/" || pathname === "/explore";
+        }
+        return pathname.startsWith(path);
+    };
 
     const handleSearch = (e) => {
         e.preventDefault();
@@ -28,7 +38,7 @@ export default function Header() {
 
                 {/* Desktop Menu */}
                 <nav className="nav-desktop">
-                    <Link href="/explore">Explore</Link>
+                    <Link href="/explore" className={isActive("/explore") ? "active" : ""}>Explore</Link>
 
                     {/* Products Dropdown */}
                     <div
@@ -36,7 +46,7 @@ export default function Header() {
                         onMouseEnter={() => setProductsOpen(true)}
                         onMouseLeave={() => setProductsOpen(false)}
                     >
-                        <Link href="/products" className="dropdown-toggle">
+                        <Link href="/products" className={`dropdown-toggle ${isActive("/products") ? "active" : ""}`}>
                             Products
                             <svg width="12" height="12" viewBox="0 0 24 24" fill="none">
                                 <path d="M6 9L12 15L18 9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
@@ -76,8 +86,8 @@ export default function Header() {
                         )}
                     </div>
 
-                    <Link href="/services">About Us</Link>
-                    <Link href="/contact">News and Events</Link>
+                    <Link href="/services" className={isActive("/services") ? "active" : ""}>About Us</Link>
+                    <Link href="/contact" className={isActive("/contact") ? "active" : ""}>News and Events</Link>
 
                     {/* Desktop Search Bar - Inline */}
                     <form className="search-form-inline" onSubmit={handleSearch}>
@@ -149,12 +159,12 @@ export default function Header() {
                         </div>
                     </form>
 
-                    <Link href="/" onClick={() => setOpen(false)}>Explore</Link>
+                    <Link href="/explore" className={isActive("/explore") ? "active" : ""} onClick={() => setOpen(false)}>Explore</Link>
 
                     {/* Mobile Products Dropdown */}
                     <div className="mobile-dropdown">
                         <button
-                            className="mobile-dropdown-toggle"
+                            className={`mobile-dropdown-toggle ${isActive("/products") ? "active" : ""}`}
                             onClick={() => setProductsOpen(!productsOpen)}
                         >
                             Products
@@ -195,8 +205,8 @@ export default function Header() {
                         )}
                     </div>
 
-                    <Link href="/services" onClick={() => setOpen(false)}>About Us</Link>
-                    <Link href="/contact" onClick={() => setOpen(false)}>News and Events</Link>
+                    <Link href="/services" className={isActive("/services") ? "active" : ""} onClick={() => setOpen(false)}>About Us</Link>
+                    <Link href="/contact" className={isActive("/contact") ? "active" : ""} onClick={() => setOpen(false)}>News and Events</Link>
                 </nav>
             )}
         </header>
