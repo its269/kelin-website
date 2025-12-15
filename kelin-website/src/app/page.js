@@ -1,4 +1,5 @@
 import Header from "./components/Header";
+import BranchSection from "./components/BranchSection";
 import "./home.css";
 
 export default function Home() {
@@ -34,6 +35,8 @@ export default function Home() {
             </div>
           </div>
         </section>
+
+        <BranchSection />
       </main>
     </div>
   );

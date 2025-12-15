@@ -1,0 +1,71 @@
+<svg width="600" height="400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="buildingGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#87CEEB;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#E6F3FF;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="glassGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#4A90C2;stop-opacity:0.8" />
+      <stop offset="50%" style="stop-color:#5BA0D2;stop-opacity:0.6" />
+      <stop offset="100%" style="stop-color:#6BB0E2;stop-opacity:0.8" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Sky background -->
+  <rect width="600" height="400" fill="url(#buildingGrad)"/>
+  
+  <!-- Ground -->
+  <rect x="0" y="350" width="600" height="50" fill="#D3D3D3"/>
+  
+  <!-- Main building -->
+  <rect x="100" y="80" width="180" height="270" fill="#F5F5F5" stroke="#CCC" stroke-width="2"/>
+  
+  <!-- Glass windows pattern -->
+  <!-- Row 1 -->
+  <rect x="120" y="100" width="35" height="40" fill="url(#glassGrad)" stroke="#333" stroke-width="1"/>
+  <rect x="165" y="100" width="35" height="40" fill="url(#glassGrad)" stroke="#333" stroke-width="1"/>
+  <rect x="210" y="100" width="35" height="40" fill="url(#glassGrad)" stroke="#333" stroke-width="1"/>
+  
+  <!-- Row 2 -->
+  <rect x="120" y="150" width="35" height="40" fill="url(#glassGrad)" stroke="#333" stroke-width="1"/>
+  <rect x="165" y="150" width="35" height="40" fill="url(#glassGrad)" stroke="#333" stroke-width="1"/>
+  <rect x="210" y="150" width="35" height="40" fill="url(#glassGrad)" stroke="#333" stroke-width="1"/>
+  
+  <!-- Row 3 -->
+  <rect x="120" y="200" width="35" height="40" fill="url(#glassGrad)" stroke="#333" stroke-width="1"/>
+  <rect x="165" y="200" width="35" height="40" fill="url(#glassGrad)" stroke="#333" stroke-width="1"/>
+  <rect x="210" y="200" width="35" height="40" fill="url(#glassGrad)" stroke="#333" stroke-width="1"/>
+  
+  <!-- Row 4 -->
+  <rect x="120" y="250" width="35" height="40" fill="url(#glassGrad)" stroke="#333" stroke-width="1"/>
+  <rect x="165" y="250" width="35" height="40" fill="url(#glassGrad)" stroke="#333" stroke-width="1"/>
+  <rect x="210" y="250" width="35" height="40" fill="url(#glassGrad)" stroke="#333" stroke-width="1"/>
+  
+  <!-- Side building -->
+  <rect x="300" y="120" width="150" height="230" fill="#E5E5E5" stroke="#CCC" stroke-width="2"/>
+  
+  <!-- Side building windows -->
+  <rect x="320" y="140" width="25" height="30" fill="url(#glassGrad)" stroke="#333" stroke-width="1"/>
+  <rect x="355" y="140" width="25" height="30" fill="url(#glassGrad)" stroke="#333" stroke-width="1"/>
+  <rect x="390" y="140" width="25" height="30" fill="url(#glassGrad)" stroke="#333" stroke-width="1"/>
+  
+  <rect x="320" y="180" width="25" height="30" fill="url(#glassGrad)" stroke="#333" stroke-width="1"/>
+  <rect x="355" y="180" width="25" height="30" fill="url(#glassGrad)" stroke="#333" stroke-width="1"/>
+  <rect x="390" y="180" width="25" height="30" fill="url(#glassGrad)" stroke="#333" stroke-width="1"/>
+  
+  <rect x="320" y="220" width="25" height="30" fill="url(#glassGrad)" stroke="#333" stroke-width="1"/>
+  <rect x="355" y="220" width="25" height="30" fill="url(#glassGrad)" stroke="#333" stroke-width="1"/>
+  <rect x="390" y="220" width="25" height="30" fill="url(#glassGrad)" stroke="#333" stroke-width="1"/>
+  
+  <!-- Entrance -->
+  <rect x="165" y="300" width="50" height="50" fill="#8B4513" stroke="#654321" stroke-width="2"/>
+  <rect x="175" y="310" width="30" height="30" fill="#654321"/>
+  
+  <!-- Company sign -->
+  <rect x="130" y="60" width="120" height="25" fill="#333"/>
+  <text x="190" y="76" text-anchor="middle" fill="white" font-family="Arial" font-size="12" font-weight="bold">KELIN GRAPHICS</text>
+  
+  <!-- Some landscaping -->
+  <circle cx="80" cy="330" r="20" fill="#228B22"/>
+  <circle cx="480" cy="340" r="15" fill="#228B22"/>
+</svg>
