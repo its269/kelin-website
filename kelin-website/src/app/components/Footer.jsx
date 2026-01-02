@@ -56,7 +56,7 @@ export default function Footer() {
                 {/* Footer Bottom */}
                 <div className="footer-bottom">
                     <p className="footer-copyright">
-                        © 2025 Kelin Graphics System. All rights reserved.
+                        © 2025 Kelin Graphics System. All rights reserved KGS.
                     </p>
                     <div className="footer-social">
                         <a href="#" className="social-link" aria-label="Facebook">
