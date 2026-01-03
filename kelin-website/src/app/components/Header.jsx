@@ -130,7 +130,7 @@ export default function Header() {
                 {/* Logo */}
                 <Link href="/" className="logo">
                     <img src="/KELIN-LOGO-01.png" alt="Kelin Graphics System Logo" width={50} />
-                    Kelin Graphics System
+                    KELIN GRAPHICS SYSTEM
                 </Link>
 
                 {/* Desktop Menu */}
