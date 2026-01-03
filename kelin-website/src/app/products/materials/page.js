@@ -20,10 +20,6 @@ export default function Materials() {
             <li>Rigid Substrates</li>
           </ul>
         </div>
-
-        <div className="demo-notice">
-          <p>This is a demonstration page for printing materials. Contact us for samples and detailed specifications.</p>
-        </div>
       </main>
     </div>
   );
