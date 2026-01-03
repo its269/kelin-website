@@ -34,10 +34,6 @@ export default function NewsAndEvents() {
             <p>Join our experts for a comprehensive training session on our latest printing technologies.</p>
           </div>
         </div>
-
-        <div className="demo-notice">
-          <p>This is a demonstration page for news and events. Subscribe to our newsletter for the latest updates.</p>
-        </div>
       </main>
     </div>
   );

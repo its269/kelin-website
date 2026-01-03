@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import "./header.css"; // import external CSS file
 
 export default function Header() {
@@ -10,6 +10,30 @@ export default function Header() {
     const [searchQuery, setSearchQuery] = useState("");
     const [productsOpen, setProductsOpen] = useState(false);
     const [machineOpen, setMachineOpen] = useState(false);
+    const [searchResults, setSearchResults] = useState([]);
+    const [showSearchResults, setShowSearchResults] = useState(false);
+    const [searchExpanded, setSearchExpanded] = useState(false);
+    const searchRef = useRef(null);
+    const searchMobileRef = useRef(null);
+
+    // Search data - you can expand this or fetch from API
+    const searchData = [
+        { title: "Explore", path: "/explore", type: "page" },
+        { title: "Products", path: "/products", type: "page" },
+        { title: "Inks", path: "/products/inks", type: "product" },
+        { title: "Materials", path: "/products/materials", type: "product" },
+        { title: "Accessories", path: "/products/accessories", type: "product" },
+        { title: "Promotional Display", path: "/products/promotional-display", type: "product" },
+        { title: "Machine", path: "/products/machine", type: "product" },
+        { title: "Printers", path: "/products/machine/printers", type: "product" },
+        { title: "Cutters", path: "/products/machine/cutters", type: "product" },
+        { title: "Laminators", path: "/products/machine/laminators", type: "product" },
+        { title: "Heat Press", path: "/products/machine/heat-press", type: "product" },
+        { title: "About Us", path: "/services", type: "page" },
+        { title: "News and Events", path: "/contact", type: "page" },
+        { title: "Services", path: "/services", type: "page" },
+        { title: "Contact", path: "/contact", type: "page" }
+    ];
 
     // Helper function to check if link is active
     const isActive = (path) => {
@@ -19,13 +43,86 @@ export default function Header() {
         return pathname.startsWith(path);
     };
 
+    // Search function
+    const performSearch = (query) => {
+        if (!query.trim()) {
+            setSearchResults([]);
+            setShowSearchResults(false);
+            return;
+        }
+
+        const filtered = searchData.filter(item =>
+            item.title.toLowerCase().includes(query.toLowerCase()) ||
+            item.path.toLowerCase().includes(query.toLowerCase())
+        );
+
+        setSearchResults(filtered.slice(0, 8)); // Limit to 8 results
+        setShowSearchResults(true);
+    };
+
+    // Handle search input change
+    const handleSearchChange = (e) => {
+        const query = e.target.value;
+        setSearchQuery(query);
+        performSearch(query);
+    };
+
+    // Handle search form submission
     const handleSearch = (e) => {
         e.preventDefault();
         if (searchQuery.trim()) {
-            alert(`Searching for: ${searchQuery}`);
-            // Here you can implement actual search functionality
+            // If there are results, navigate to the first one
+            if (searchResults.length > 0) {
+                window.location.href = searchResults[0].path;
+            }
+            setShowSearchResults(false);
         }
     };
+
+    // Handle result selection
+    const handleResultSelect = (path) => {
+        setSearchQuery("");
+        setSearchResults([]);
+        setShowSearchResults(false);
+        setSearchExpanded(false);
+        window.location.href = path;
+    };
+
+    // Handle search toggle
+    const toggleSearch = () => {
+        setSearchExpanded(!searchExpanded);
+        if (!searchExpanded) {
+            // Focus input when expanding
+            setTimeout(() => {
+                const input = searchRef.current?.querySelector('.search-input');
+                if (input) input.focus();
+            }, 100);
+        } else {
+            // Clear search when collapsing
+            setSearchQuery("");
+            setSearchResults([]);
+            setShowSearchResults(false);
+        }
+    };
+
+    // Handle click outside to close search results
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+            if (searchRef.current && !searchRef.current.contains(event.target) &&
+                searchMobileRef.current && !searchMobileRef.current.contains(event.target)) {
+                setShowSearchResults(false);
+                // Also collapse search if clicked outside and no query
+                if (searchExpanded && !searchQuery.trim()) {
+                    setSearchExpanded(false);
+                }
+            }
+        };
+
+        document.addEventListener('mousedown', handleClickOutside);
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
+        };
+    }, [searchExpanded, searchQuery]);
 
     return (
         <header className="header">
@@ -90,19 +187,18 @@ export default function Header() {
                     <Link href="/contact" className={isActive("/contact") ? "active" : ""}>News and Events</Link>
 
                     {/* Desktop Search Bar - Inline */}
-                    <form className="search-form-inline" onSubmit={handleSearch}>
-                        <div className="search-container-inline">
-                            <input
-                                type="text"
-                                className="search-input"
-                                placeholder="Search..."
-                                value={searchQuery}
-                                onChange={(e) => setSearchQuery(e.target.value)}
-                            />
-                            <button type="submit" className="search-btn">
+                    <div className="search-wrapper" ref={searchRef}>
+                        {!searchExpanded ? (
+                            // Collapsed state - just icon
+                            <button
+                                type="button"
+                                className="search-icon-btn"
+                                onClick={toggleSearch}
+                                aria-label="Open search"
+                            >
                                 <svg
-                                    width="16"
-                                    height="16"
+                                    width="18"
+                                    height="18"
                                     viewBox="0 0 24 24"
                                     fill="none"
                                     xmlns="http://www.w3.org/2000/svg"
@@ -116,8 +212,82 @@ export default function Header() {
                                     />
                                 </svg>
                             </button>
-                        </div>
-                    </form>
+                        ) : (
+                            // Expanded state - full search bar
+                            <form className="search-form-inline" onSubmit={handleSearch}>
+                                <div className="search-container-inline expanded">
+                                    <input
+                                        type="text"
+                                        className="search-input"
+                                        placeholder="Search..."
+                                        value={searchQuery}
+                                        onChange={handleSearchChange}
+                                        onFocus={() => searchQuery.trim() && setShowSearchResults(true)}
+                                    />
+                                    <button type="submit" className="search-btn">
+                                        <svg
+                                            width="16"
+                                            height="16"
+                                            viewBox="0 0 24 24"
+                                            fill="none"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                        >
+                                            <path
+                                                d="M21 21L15.0001 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z"
+                                                stroke="currentColor"
+                                                strokeWidth="2"
+                                                strokeLinecap="round"
+                                                strokeLinejoin="round"
+                                            />
+                                        </svg>
+                                    </button>
+                                    <button
+                                        type="button"
+                                        className="search-close-btn"
+                                        onClick={toggleSearch}
+                                        aria-label="Close search"
+                                    >
+                                        <svg
+                                            width="16"
+                                            height="16"
+                                            viewBox="0 0 24 24"
+                                            fill="none"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                        >
+                                            <path
+                                                d="M18 6L6 18M6 6L18 18"
+                                                stroke="currentColor"
+                                                strokeWidth="2"
+                                                strokeLinecap="round"
+                                                strokeLinejoin="round"
+                                            />
+                                        </svg>
+                                    </button>
+                                </div>
+                            </form>
+                        )}
+
+                        {/* Search Results Dropdown - Desktop */}
+                        {searchExpanded && showSearchResults && searchResults.length > 0 && (
+                            <div className="search-dropdown">
+                                {searchResults.map((result, index) => (
+                                    <div
+                                        key={index}
+                                        className="search-result-item"
+                                        onClick={() => handleResultSelect(result.path)}
+                                    >
+                                        <div className="search-result-title">{result.title}</div>
+                                        <div className="search-result-type">{result.type}</div>
+                                    </div>
+                                ))}
+                                {searchQuery.trim() && searchResults.length === 0 && (
+                                    <div className="search-no-results">
+                                        No results found for "{searchQuery}"
+                                    </div>
+                                )}
+                            </div>
+                        )}
+                    </div>
                 </nav>
 
                 {/* Mobile Menu Button */}
@@ -130,34 +300,61 @@ export default function Header() {
             {open && (
                 <nav className="nav-mobile">
                     {/* Mobile Search Bar - Inline */}
-                    <form className="search-form-mobile" onSubmit={handleSearch}>
-                        <div className="search-container-mobile">
-                            <input
-                                type="text"
-                                className="search-input"
-                                placeholder="Search..."
-                                value={searchQuery}
-                                onChange={(e) => setSearchQuery(e.target.value)}
-                            />
-                            <button type="submit" className="search-btn">
-                                <svg
-                                    width="16"
-                                    height="16"
-                                    viewBox="0 0 24 24"
-                                    fill="none"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                >
-                                    <path
-                                        d="M21 21L15.0001 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z"
-                                        stroke="currentColor"
-                                        strokeWidth="2"
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                    />
-                                </svg>
-                            </button>
-                        </div>
-                    </form>
+                    <div className="search-wrapper-mobile" ref={searchMobileRef}>
+                        <form className="search-form-mobile" onSubmit={handleSearch}>
+                            <div className="search-container-mobile">
+                                <input
+                                    type="text"
+                                    className="search-input"
+                                    placeholder="Search..."
+                                    value={searchQuery}
+                                    onChange={handleSearchChange}
+                                    onFocus={() => searchQuery.trim() && setShowSearchResults(true)}
+                                />
+                                <button type="submit" className="search-btn">
+                                    <svg
+                                        width="16"
+                                        height="16"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                        <path
+                                            d="M21 21L15.0001 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z"
+                                            stroke="currentColor"
+                                            strokeWidth="2"
+                                            strokeLinecap="round"
+                                            strokeLinejoin="round"
+                                        />
+                                    </svg>
+                                </button>
+                            </div>
+                        </form>
+
+                        {/* Search Results Dropdown - Mobile */}
+                        {showSearchResults && searchResults.length > 0 && (
+                            <div className="search-dropdown-mobile">
+                                {searchResults.map((result, index) => (
+                                    <div
+                                        key={index}
+                                        className="search-result-item"
+                                        onClick={() => {
+                                            handleResultSelect(result.path);
+                                            setOpen(false);
+                                        }}
+                                    >
+                                        <div className="search-result-title">{result.title}</div>
+                                        <div className="search-result-type">{result.type}</div>
+                                    </div>
+                                ))}
+                                {searchQuery.trim() && searchResults.length === 0 && (
+                                    <div className="search-no-results">
+                                        No results found for "{searchQuery}"
+                                    </div>
+                                )}
+                            </div>
+                        )}
+                    </div>
 
                     <Link href="/explore" className={isActive("/explore") ? "active" : ""} onClick={() => setOpen(false)}>Explore</Link>
 

@@ -18,10 +18,6 @@ export default function Explore() {
             <li>Vehicle Wrapping</li>
           </ul>
         </div>
-
-        <div className="demo-notice">
-          <p>This is a demonstration page. Content will be updated with actual explore information.</p>
-        </div>
       </main>
     </div>
   );

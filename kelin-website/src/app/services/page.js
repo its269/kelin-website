@@ -29,10 +29,6 @@ export default function AboutUs() {
             <li>Nationwide service network</li>
           </ul>
         </div>
-
-        <div className="demo-notice">
-          <p>This is a demonstration page. Contact us to learn more about our company and services.</p>
-        </div>
       </main>
     </div>
   );

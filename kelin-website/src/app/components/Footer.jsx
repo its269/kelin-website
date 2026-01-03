@@ -43,12 +43,14 @@ export default function Footer() {
                     {/* Contact Info */}
                     <div className="footer-section">
                         <h4 className="footer-title">Contact</h4>
-                        <div className="footer-contact">
-                            <p><strong>Address:</strong> 3M COMPOUND FIRST STREET WAREHOUSE 11 SANTA ROSA II MARILAO BULACAN</p>
-                            <p><strong>Mobile:</strong> 0917 678 0608 | 0908 196 0836</p>
-                            <p><strong>Telephone:</strong> (02) 8711-1888</p>
-                            <p><strong>Hours:</strong> Mon-Sat: 9:00 am-6:00 pm</p>
-                            <p><strong>Email:</strong> info@kelinph.com</p>
+                        <div className="footer-contact-container">
+                            <div className="footer-contact">
+                                <p><strong>Address:</strong><br></br> 3M COMPOUND FIRST STREET WAREHOUSE 11 SANTA ROSA II MARILAO BULACAN</p>
+                                <p><strong>Mobile:</strong><br></br> 0917 678 0608 | 0908 196 0836</p>
+                                <p><strong>Telephone:</strong><br></br> (02) 8711-1888</p>
+                                <p><strong>Hours:</strong><br></br> Mon-Sat: 9:00 am-6:00 pm</p>
+                                <p><strong>Email:</strong><br></br> info@kelinph.com</p>
+                            </div>
                         </div>
                     </div>
                 </div>
