@@ -8,6 +8,14 @@ const __dirname = dirname(__filename);
 const nextConfig = {
   /* config options here */
   reactCompiler: true,
+
+  // 🔧 SSG CONFIGURATION: Ensure static generation is optimized
+  output: 'export', // Generate static files for all pages
+  trailingSlash: true, // Add trailing slashes for better static hosting
+  images: {
+    unoptimized: true, // Required for static export
+  },
+
   experimental: {
     turbo: {
       root: __dirname,

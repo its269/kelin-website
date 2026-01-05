@@ -2,17 +2,30 @@ import Header from "./components/Header";
 import BranchSection from "./components/BranchSection";
 import "./home.css";
 
+// 🔧 SSG CODE PATTERN: Default export function component
+// This is the basic pattern for SSG in Next.js App Router
 export default function Home() {
+  // 🔧 SSG CODE PATTERN: No async function, no data fetching
+  // - No "async" keyword = no server-side data fetching
+  // - No fetch() calls = no dynamic data at build time
+  // - This tells Next.js to pre-render this as static HTML
   return (
     <div className="main">
+      {/* 🔧 SSG CODE PATTERN: Static component imports */}
+      {/* These components have no props = no dynamic data = SSG friendly */}
       <Header />
       <main className="home-container">
         <section className="hero-section">
+          {/* 🔧 SSG CODE PATTERN: Hardcoded static content */}
+          {/* These strings are known at build time = perfect for SSG */}
           <h1 className="hero-title">Welcome to Kelin Graphics System</h1>
           <p className="hero-description">
             Your trusted partner for professional printing solutions, equipment, and materials.
             Discover our comprehensive range of products and services.
           </p>
+
+          {/* 🔧 SSG CODE PATTERN: Static navigation links */}
+          {/* href values are hardcoded = pre-rendered in static HTML */}
           <div className="hero-buttons">
             <a href="/explore" className="btn-primary">Explore Solutions</a>
             <a href="/products" className="btn-secondary">Browse Products</a>
@@ -20,6 +33,8 @@ export default function Home() {
         </section>
 
         <section className="features-section">
+          {/* 🔧 SSG CODE PATTERN: Static array rendering */}
+          {/* This grid is hardcoded, not from API = SSG compatible */}
           <div className="features-grid">
             <div className="feature-card">
               <h3>Quality Products</h3>
@@ -36,8 +51,13 @@ export default function Home() {
           </div>
         </section>
 
+        {/* 🔧 SSG CODE PATTERN: Component with no props */}
+        {/* No props passed = no dynamic data = SSG will pre-render this */}
         <BranchSection />
       </main>
     </div>
   );
 }
+
+// 🔧 SSG RESULT: This entire component becomes a static .html file at build time
+// Next.js detects: no async, no fetch(), no dynamic data = perfect for SSG

@@ -70,123 +70,93 @@ export default function BranchSection() {
 
     const currentBranch = branches[selectedBranch];
 
-    const nextBranch = () => {
-        setSelectedBranch((prev) => (prev + 1) % branches.length);
-    };
-
-    const prevBranch = () => {
-        setSelectedBranch((prev) => (prev - 1 + branches.length) % branches.length);
-    };
-
-    const getVisibleBranches = () => {
-        const visible = [];
-        for (let i = 0; i < Math.min(3, branches.length); i++) {
-            const index = (selectedBranch + i) % branches.length;
-            visible.push({ ...branches[index], index });
-        }
-        return visible;
-    };
-
     return (
         <section className="branch-section">
-            <h2 className="branches-label">BRANCHES</h2>
+            <div className="branch-header">
+                <h2 className="section-title">Our Locations</h2>
+                <p className="section-subtitle">Visit us at any of our branches nationwide</p>
+            </div>
+
             <div className="branch-container">
-                <div className="branch-map-container">
-                    <div className="google-map">
+                <div className="branch-selector">
+                    <div className="branch-tabs">
+                        {branches.map((branch, index) => (
+                            <button
+                                key={branch.id}
+                                className={`branch-tab ${index === selectedBranch ? 'active' : ''}`}
+                                onClick={() => setSelectedBranch(index)}
+                            >
+                                <span className="branch-city">{branch.name.replace(' Branch', '')}</span>
+                            </button>
+                        ))}
+                    </div>
+                </div>
+
+                <div className="branch-content">
+                    <div className="map-container">
                         <iframe
                             src={currentBranch.mapUrl}
-                            width="100%"
-                            height="300"
-                            style={{ border: 0 }}
+                            className="branch-map"
                             allowFullScreen=""
                             loading="lazy"
                             referrerPolicy="no-referrer-when-downgrade"
                             title={`${currentBranch.name} Location`}
-                        ></iframe>
+                        />
                     </div>
 
-                    <div className="branch-navigation">
-                        <button className="nav-arrow nav-arrow-left" onClick={prevBranch}>
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                <polyline points="15,18 9,12 15,6"></polyline>
-                            </svg>
-                        </button>
+                    <div className="branch-details">
+                        <h3 className="branch-name">{currentBranch.name}</h3>
 
-                        <div className="branch-buttons">
-                            {getVisibleBranches().map((branch, idx) => (
-                                <button
-                                    key={branch.id}
-                                    className={`branch-btn ${branch.index === selectedBranch ? 'active' : ''}`}
-                                    onClick={() => setSelectedBranch(branch.index)}
-                                >
-                                    {branch.name}
-                                </button>
-                            ))}
-                        </div>
+                        <div className="contact-grid">
+                            <div className="contact-card">
+                                <div className="contact-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                                        <circle cx="12" cy="10" r="3" />
+                                    </svg>
+                                </div>
+                                <div className="contact-info">
+                                    <span className="contact-label">Address</span>
+                                    <span className="contact-value">{currentBranch.address}</span>
+                                </div>
+                            </div>
 
-                        <button className="nav-arrow nav-arrow-right" onClick={nextBranch}>
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                <polyline points="9,18 15,12 9,6"></polyline>
-                            </svg>
-                        </button>
-                    </div>
-                </div>
+                            <div className="contact-card">
+                                <div className="contact-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                                    </svg>
+                                </div>
+                                <div className="contact-info">
+                                    <span className="contact-label">Phone</span>
+                                    <span className="contact-value">{currentBranch.phone}</span>
+                                </div>
+                            </div>
 
-                <div className="branch-info">
-                    <div className="branch-header">
-                        <h2>Find Us</h2>
-                        <p className="branch-subtitle">{currentBranch.name}</p>
-                    </div>
+                            <div className="contact-card">
+                                <div className="contact-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                        <rect x="5" y="2" width="14" height="20" rx="2" ry="2" />
+                                        <line x1="12" y1="18" x2="12.01" y2="18" />
+                                    </svg>
+                                </div>
+                                <div className="contact-info">
+                                    <span className="contact-label">Mobile</span>
+                                    <span className="contact-value">{currentBranch.mobile}</span>
+                                </div>
+                            </div>
 
-                    <div className="contact-details">
-                        <div className="contact-item">
-                            <div className="contact-icon">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-                                </svg>
-                            </div>
-                            <div className="contact-content">
-                                <p className="contact-label">Tel. No.:</p>
-                                <p className="contact-value">{currentBranch.phone}</p>
-                            </div>
-                        </div>
-
-                        <div className="contact-item">
-                            <div className="contact-icon">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                    <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
-                                    <line x1="12" y1="18" x2="12.01" y2="18"></line>
-                                </svg>
-                            </div>
-                            <div className="contact-content">
-                                <p className="contact-label">Mobile No.:</p>
-                                <p className="contact-value">{currentBranch.mobile}</p>
-                            </div>
-                        </div>
-
-                        <div className="contact-item">
-                            <div className="contact-icon">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                                    <circle cx="12" cy="10" r="3"></circle>
-                                </svg>
-                            </div>
-                            <div className="contact-content">
-                                <p className="contact-label">Address:</p>
-                                <p className="contact-value">{currentBranch.address}</p>
-                            </div>
-                        </div>
-
-                        <div className="contact-item">
-                            <div className="contact-icon">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                    <circle cx="12" cy="12" r="10"></circle>
-                                    <polyline points="12,6 12,12 16,14"></polyline>
-                                </svg>
-                            </div>
-                            <div className="contact-content">
-                                <p className="contact-label">Hours:</p>
-                                <p className="contact-value">{currentBranch.hours}</p>
+                            <div className="contact-card">
+                                <div className="contact-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                        <circle cx="12" cy="12" r="10" />
+                                        <polyline points="12,6 12,12 16,14" />
+                                    </svg>
+                                </div>
+                                <div className="contact-info">
+                                    <span className="contact-label">Hours</span>
+                                    <span className="contact-value">{currentBranch.hours}</span>
+                                </div>
                             </div>
                         </div>
                     </div>

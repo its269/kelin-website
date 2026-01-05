@@ -13,8 +13,14 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Kelin Graphics System",
-  description: "Professional printing solutions and graphic systems",
+  title: 'Kelin Graphics System - Professional Printing Solutions',
+  description: 'Your trusted partner for professional printing solutions, equipment, and materials. Discover our comprehensive range of products and services.',
+  keywords: 'printing, graphics, equipment, materials, professional printing solutions',
+  openGraph: {
+    title: 'Kelin Graphics System - Professional Printing Solutions',
+    description: 'Professional printing solutions and graphic systems',
+    type: 'website',
+  },
 };
 
 export default function RootLayout({ children }) {
