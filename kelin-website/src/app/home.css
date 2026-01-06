@@ -10,6 +10,9 @@
     padding: 80px 20px 60px;
     background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
     text-align: center;
+    /* background-image: url("https://kelin-website.vercel.app/se.webp");
+    background-size: cover;
+    background-repeat: no-repeat; */
 }
 
 .hero-title {
