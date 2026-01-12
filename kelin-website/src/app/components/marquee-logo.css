@@ -1,0 +1,136 @@
+/* Marquee Logo Styles */
+.fade-marquee-left {
+    width: 800px;
+    height: 100%;
+    background: #646464;
+    background: linear-gradient(90deg, rgba(100, 100, 100, 1) 0%, rgba(100, 100, 100, 1) 65%, rgba(255, 255, 255, 0) 100%);
+    position: absolute;
+    left: 0%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+/* .btn {
+    text-align: left;
+}
+
+.btn a {
+    font-size: 1.2rem;
+} */
+
+.fade-marquee-right {
+    width: 800px;
+    height: 100%;
+    background: #ffffff;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(100, 100, 100, 1) 34%, rgba(100, 100, 100, 1) 100%);
+    position: absolute;
+    left: 100%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+.marquee-wrapper {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    /* background-color: rgba(255, 255, 255, 0.1); */
+    padding: 20px 0;
+    /* backdrop-filter: blur(10px); */
+}
+
+.marquee-content {
+    margin: 35px;
+    display: flex;
+    width: calc(200% + 40px);
+    /* Double width for seamless loop */
+    animation: marquee 30s linear infinite;
+    /* 20s original animation */
+}
+
+.marquee-logos {
+    display: flex;
+    flex-shrink: 0;
+    width: 50%;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.marquee-item {
+    flex-shrink: 0;
+    margin: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.marquee-logo-img {
+    height: 60px;
+    width: auto;
+    max-width: 150px;
+    object-fit: contain;
+    filter: brightness(0) invert(1);
+    /* Makes logo white */
+    opacity: 0.8;
+    transition: all 0.3s ease;
+}
+
+.marquee-logo-img:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+/* Infinite scroll animation */
+@keyframes marquee {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* Pause animation on hover */
+.marquee-wrapper:hover .marquee-content {
+    animation-play-state: paused;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .fade-marquee-left {
+        /* left: -25%; */
+        width: 300px;
+    }
+
+    .fade-marquee-right {
+        /* left: 125%; */
+        width: 300px;
+    }
+
+    .marquee-logo-img {
+        height: 40px;
+        max-width: 100px;
+    }
+
+    .marquee-item {
+        margin: 0 15px;
+    }
+
+    .marquee-content {
+        animation-duration: 15s;
+        /* Faster on mobile */
+    }
+}
+
+@media (max-width: 480px) {
+    .marquee-logo-img {
+        height: 30px;
+        max-width: 80px;
+    }
+
+    .marquee-item {
+        margin: 0 10px;
+    }
+}

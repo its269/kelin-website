@@ -22,11 +22,13 @@
     -webkit-box-shadow: 7px 9px 4px 0px rgba(0, 0, 0, 0.09);
     -moz-box-shadow: 7px 9px 4px 0px rgba(0, 0, 0, 0.09);
     background-color: #646464;
+    overflow: hidden;
 }
 
 .marquee-logo {
     width: 100%;
-    height: 200px;
+    /* height: auto; */
+    /* min-height: 140px; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -36,9 +38,9 @@
 /* Hero Section */
 .hero-section {
     background-color: rgb(211, 211, 211);
-    background-image: url("https://images.pexels.com/photos/302769/pexels-photo-302769.jpeg");
+    background-image: url("/one.jpg");
     background-size: cover;
-    /* background-position: center; */
+    background-position: center;
     background-repeat: no-repeat;
     border-radius: 0 0 80px 80px;
     padding: 100px 0px 100px 0px;
@@ -64,6 +66,59 @@
     margin-bottom: 1rem;
     letter-spacing: -0.5px;
     text-align: left;
+}
+
+.btn {
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border-radius: 15px;
+    padding: 20px 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    min-width: 180px;
+    max-width: 220px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+
+    .number {
+        color: #ffffff;
+    }
+}
+
+.number {
+    font-size: 2rem;
+    font-weight: 900;
+    color: #333;
+    text-align: center;
+    margin-bottom: 10px;
+    transition: all 0.3s ease;
+    /* background: linear-gradient(135deg, #007bff, #0056b3);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
+}
+
+.btn a {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #333;
+    text-decoration: none;
+    text-align: center;
+    line-height: 1.4;
+    transition: color 0.3s ease;
+}
+
+.btn:hover a {
+    color: #ffffff;
 }
 
 .tagline {
@@ -93,7 +148,8 @@
 }
 
 .hero-description {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
+    /* original 1.2rem */
     color: #666;
     width: 50%;
     /* background-color: blue; */
@@ -104,12 +160,16 @@
 
 .hero-buttons {
     display: flex;
-    gap: 1rem;
+    gap: 2rem;
     justify-content: center;
     flex-wrap: wrap;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
-.btn-primary {
+/* .btn-primary {
     background-color: #333;
     color: white;
     padding: 12px 28px;
@@ -121,9 +181,9 @@
 
 .btn-primary:hover {
     background-color: #555;
-}
+} */
 
-.btn-secondary {
+/* .btn-secondary {
     background-color: transparent;
     color: #333;
     padding: 12px 28px;
@@ -137,7 +197,7 @@
 .btn-secondary:hover {
     background-color: #333;
     color: white;
-}
+} */
 
 /* Features Section */
 .features-section {
@@ -206,12 +266,30 @@
     .hero-buttons {
         flex-direction: column;
         align-items: center;
+        gap: 1.5rem;
+        padding: 15px;
     }
 
-    .btn-primary,
+    .btn {
+        min-width: 160px;
+        max-width: 280px;
+        width: 100%;
+        padding: 18px 12px;
+    }
+
+    .number {
+        font-size: 1.8rem;
+        margin-bottom: 8px;
+    }
+
+    .btn a {
+        font-size: 0.95rem;
+    }
+
+    /* .btn-primary,
     .btn-secondary {
         width: 200px;
-    }
+    } */
 
     .features-grid {
         grid-template-columns: 1fr;
@@ -220,5 +298,105 @@
 
     .feature-card {
         padding: 1.5rem;
+    }
+}
+
+/* Tablet styles (768px - 1024px) */
+@media (max-width: 1024px) and (min-width: 769px) {
+    .hero-buttons {
+        gap: 1.5rem;
+        padding: 20px 15px;
+    }
+
+    .btn {
+        min-width: 160px;
+        max-width: 200px;
+        padding: 18px 12px;
+    }
+
+    .number {
+        font-size: 1.8rem;
+    }
+
+    .btn a {
+        font-size: 0.95rem;
+    }
+}
+
+/* Small tablet / Large mobile (481px - 768px) */
+@media (max-width: 768px) and (min-width: 481px) {
+    .hero-buttons {
+        flex-direction: row !important;
+        justify-content: center;
+        gap: 1rem !important;
+        padding: 15px 10px !important;
+        flex-wrap: wrap;
+    }
+
+    .btn {
+        min-width: 140px !important;
+        max-width: 160px !important;
+        padding: 15px 10px !important;
+        flex: 0 1 calc(50% - 0.5rem);
+        margin-bottom: 1rem;
+        width: auto !important;
+    }
+
+    .number {
+        font-size: 1.6rem !important;
+        margin-bottom: 6px !important;
+    }
+
+    .btn a {
+        font-size: 0.9rem !important;
+        line-height: 1.3;
+    }
+}
+
+/* Extra small mobile (max-width: 360px) */
+@media (max-width: 360px) {
+    .hero-buttons {
+        gap: 0.8rem !important;
+        padding: 10px 5px !important;
+    }
+
+    .btn {
+        min-width: 260px !important;
+        max-width: 280px !important;
+        padding: 14px 12px !important;
+    }
+
+    .number {
+        font-size: 1.4rem !important;
+        margin-bottom: 6px !important;
+    }
+
+    .btn a {
+        font-size: 0.85rem !important;
+        line-height: 1.2;
+    }
+}
+
+/* Large desktop styles (min-width: 1200px) */
+@media (min-width: 1200px) {
+    .hero-buttons {
+        gap: 2.5rem;
+        padding: 30px 20px;
+    }
+
+    .btn {
+        min-width: 200px;
+        max-width: 240px;
+        padding: 24px 18px;
+    }
+
+    .number {
+        font-size: 2.2rem;
+        margin-bottom: 12px;
+    }
+
+    .btn a {
+        font-size: 1.1rem;
+        line-height: 1.4;
     }
 }

@@ -1,5 +1,6 @@
 import Header from "./components/Header";
 import BranchSection from "./components/BranchSection";
+import MarqueeLogo from "./components/MarqueeLogo";
 import "./home.css";
 
 // 🔧 SSG CODE PATTERN: Default export function component
@@ -33,13 +34,31 @@ export default function Home() {
             {/* 🔧 SSG CODE PATTERN: Static navigation links */}
             {/* href values are hardcoded = pre-rendered in static HTML */}
             <div className="hero-buttons">
-              <a href="/explore" className="btn-primary">Explore Solutions</a>
-              <a href="/products" className="btn-secondary">Browse Products</a>
+              <div className="btn">
+                <p className="number">#1</p>
+                <a href="/explore" className="btn-primary">Cutting Machine</a>
+              </div>
+              <div className="btn">
+                <p className="number">#2</p>
+                <a href="/services" className="btn-secondary">Eco-Solvent<br></br>Printer Machine</a>
+              </div>
+              <div className="btn">
+                <p className="number">#3</p>
+                <a href="/support" className="btn-tertiary">Solvent<br></br>Printer Machine</a>
+              </div>
+              <div className="btn">
+                <p className="number">#4</p>
+                <a href="/resources" className="btn-quaternary">Sublimation<br></br>Printer Machine</a>
+              </div>
+              <div className="btn">
+                <p className="number">#5</p>
+                <a href="/blog" className="btn-quinary">DTF<br></br>Printer Machine</a>
+              </div>
             </div>
           </section>
 
           <div className="marquee-logo">
-            {/* please put the marquee logo content here */}
+            <MarqueeLogo />
           </div>
         </div>
 
