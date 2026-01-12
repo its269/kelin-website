@@ -15,22 +15,33 @@ export default function Home() {
       {/* These components have no props = no dynamic data = SSG friendly */}
       <Header />
       <main className="home-container">
-        <section className="hero-section">
-          {/* 🔧 SSG CODE PATTERN: Hardcoded static content */}
-          {/* These strings are known at build time = perfect for SSG */}
-          <h1 className="hero-title">Welcome to Kelin Graphics System</h1>
-          <p className="hero-description">
-            Your trusted partner for professional printing solutions, equipment, and materials.
-            Discover our comprehensive range of products and services.
-          </p>
+        <div className="marquee-container">
+          <section className="hero-section">
+            {/* 🔧 SSG CODE PATTERN: Hardcoded static content */}
+            {/* These strings are known at build time = perfect for SSG */}
+            <div className="home-tagline-text">
+              <div className="tagline">
+                <p className="kgs">KGS</p>
+                <h1 className="hero-title">YOUR TRUSTED<br></br>LONG-TERM PRINTING SOLUTIONS PROVIDER</h1>
+              </div>
+              <p className="hero-description">
+                <b>Powering high-quality output at any scale.</b><br></br>From your vision to powerful,
+                large-scale prints.
+              </p>
+            </div>
 
-          {/* 🔧 SSG CODE PATTERN: Static navigation links */}
-          {/* href values are hardcoded = pre-rendered in static HTML */}
-          <div className="hero-buttons">
-            <a href="/explore" className="btn-primary">Explore Solutions</a>
-            <a href="/products" className="btn-secondary">Browse Products</a>
+            {/* 🔧 SSG CODE PATTERN: Static navigation links */}
+            {/* href values are hardcoded = pre-rendered in static HTML */}
+            <div className="hero-buttons">
+              <a href="/explore" className="btn-primary">Explore Solutions</a>
+              <a href="/products" className="btn-secondary">Browse Products</a>
+            </div>
+          </section>
+
+          <div className="marquee-logo">
+            {/* please put the marquee logo content here */}
           </div>
-        </section>
+        </div>
 
         <section className="features-section">
           {/* 🔧 SSG CODE PATTERN: Static array rendering */}

@@ -37,8 +37,8 @@ export default function Header() {
 
     // Helper function to check if link is active
     const isActive = (path) => {
-        if (path === "/" || path === "/explore") {
-            return pathname === "/" || pathname === "/explore";
+        if (path === "/" || path === "/") {
+            return pathname === "/" || pathname === "/";
         }
         return pathname.startsWith(path);
     };
@@ -135,56 +135,7 @@ export default function Header() {
 
                 {/* Desktop Menu */}
                 <nav className="nav-desktop">
-                    <Link href="/explore" className={isActive("/explore") ? "active" : ""}>Explore</Link>
 
-                    {/* Products Dropdown */}
-                    <div
-                        className="dropdown"
-                        onMouseEnter={() => setProductsOpen(true)}
-                        onMouseLeave={() => setProductsOpen(false)}
-                    >
-                        <Link href="/products" className={`dropdown-toggle ${isActive("/products") ? "active" : ""}`}>
-                            Products
-                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none">
-                                <path d="M6 9L12 15L18 9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                            </svg>
-                        </Link>
-
-                        {productsOpen && (
-                            <div className="dropdown-menu">
-                                <Link href="/products/inks">Inks</Link>
-                                <Link href="/products/materials">Materials</Link>
-                                <Link href="/products/accessories">Accessories</Link>
-                                <Link href="/products/promotional-display">Promotional Display</Link>
-
-                                {/* Machine Nested Dropdown */}
-                                <div
-                                    className="dropdown-nested"
-                                    onMouseEnter={() => setMachineOpen(true)}
-                                    onMouseLeave={() => setMachineOpen(false)}
-                                >
-                                    <Link href="/products/machine" className="dropdown-toggle-nested">
-                                        Machine
-                                        <svg width="10" height="10" viewBox="0 0 24 24" fill="none">
-                                            <path d="M9 6L15 12L9 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                                        </svg>
-                                    </Link>
-
-                                    {machineOpen && (
-                                        <div className="dropdown-menu-nested">
-                                            <Link href="/products/machine/printers">Printers</Link>
-                                            <Link href="/products/machine/cutters">Cutters</Link>
-                                            <Link href="/products/machine/laminators">Laminators</Link>
-                                            <Link href="/products/machine/heat-press">Heat Press</Link>
-                                        </div>
-                                    )}
-                                </div>
-                            </div>
-                        )}
-                    </div>
-
-                    <Link href="/services" className={isActive("/services") ? "active" : ""}>About Us</Link>
-                    <Link href="/contact" className={isActive("/contact") ? "active" : ""}>News and Events</Link>
 
                     {/* Desktop Search Bar - Inline */}
                     <div className="search-wrapper" ref={searchRef}>
@@ -294,6 +245,59 @@ export default function Header() {
                 <button className="menu-btn" onClick={() => setOpen(!open)}>
                     ☰
                 </button>
+            </div>
+            <div className="nav-menu">
+                <Link href="/" className={`dropdown-toggle ${isActive("/") ? "active" : ""}`}>Home</Link>
+                <Link href="/explore" className={`dropdown-toggle ${isActive("/explore") ? "active" : ""}`}>Explore</Link>
+
+                {/* Products Dropdown */}
+                <div
+                    className="dropdown"
+                    onMouseEnter={() => setProductsOpen(true)}
+                    onMouseLeave={() => setProductsOpen(false)}
+                >
+                    <Link href="/products" className={`dropdown-toggle ${isActive("/products") ? "active" : ""}`}>
+                        Products
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none">
+                            <path d="M6 9L12 15L18 9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                        </svg>
+                    </Link>
+
+                    {productsOpen && (
+                        <div className="dropdown-menu">
+                            <Link href="/products/inks">Inks</Link>
+                            <Link href="/products/materials">Materials</Link>
+                            <Link href="/products/accessories">Accessories</Link>
+                            <Link href="/products/promotional-display">Promotional Display</Link>
+
+                            {/* Machine Nested Dropdown */}
+                            <div
+                                className="dropdown-nested"
+                                onMouseEnter={() => setMachineOpen(true)}
+                                onMouseLeave={() => setMachineOpen(false)}
+                            >
+                                <Link href="/products/machine" className="dropdown-toggle-nested">
+                                    Machine
+                                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none">
+                                        <path d="M9 6L15 12L9 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                                    </svg>
+                                </Link>
+
+                                {machineOpen && (
+                                    <div className="dropdown-menu-nested">
+                                        <Link href="/products/machine/printers">Printers</Link>
+                                        <Link href="/products/machine/cutters">Cutters</Link>
+                                        <Link href="/products/machine/laminators">Laminators</Link>
+                                        <Link href="/products/machine/heat-press">Heat Press</Link>
+                                    </div>
+                                )}
+                            </div>
+                        </div>
+                    )}
+                </div>
+
+                <Link href="/services" className={`dropdown-toggle ${isActive("/services") ? "active" : ""}`}>About Us</Link>
+                <Link href="/contact" className={`dropdown-toggle ${isActive("/contact") ? "active" : ""}`}>News and Events</Link>
             </div>
 
             {/* Mobile Menu */}
