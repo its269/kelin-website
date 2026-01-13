@@ -8,6 +8,7 @@ export default function Header() {
     const pathname = usePathname();
     const [open, setOpen] = useState(false);
     const [searchQuery, setSearchQuery] = useState("");
+    const [isScrolled, setIsScrolled] = useState(false);
     const [productsOpen, setProductsOpen] = useState(false);
     const [machineOpen, setMachineOpen] = useState(false);
     const [searchResults, setSearchResults] = useState([]);
@@ -123,6 +124,19 @@ export default function Header() {
             document.removeEventListener('mousedown', handleClickOutside);
         };
     }, [searchExpanded, searchQuery]);
+
+    // Handle scroll detection for nav-menu positioning
+    useEffect(() => {
+        const handleScroll = () => {
+            const scrollPosition = window.scrollY;
+            setIsScrolled(scrollPosition > 150);
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
 
     return (
         <header className="header">
@@ -246,7 +260,7 @@ export default function Header() {
                     ☰
                 </button>
             </div>
-            <div className="nav-menu">
+            <div className={`nav-menu ${isScrolled ? 'scrolled' : ''}`}>
                 <Link href="/" className={`dropdown-toggle ${isActive("/") ? "active" : ""}`}>Home</Link>
                 <Link href="/explore" className={`dropdown-toggle ${isActive("/explore") ? "active" : ""}`}>Explore</Link>
 
