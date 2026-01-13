@@ -3,12 +3,12 @@ import "./marquee-logo.css";
 export default function MarqueeLogo() {
     // Array of logo images - you can add more logos here
     const logos = [
-        { src: "/KELIN-LOGO-01.png", alt: "Kelin Logo" },
-        { src: "/KELIN-LOGO-01.png", alt: "Kelin Logo" },
-        { src: "/KELIN-LOGO-01.png", alt: "Kelin Logo" },
-        { src: "/KELIN-LOGO-01.png", alt: "Kelin Logo" },
-        { src: "/KELIN-LOGO-01.png", alt: "Kelin Logo" },
-        { src: "/KELIN-LOGO-01.png", alt: "Kelin Logo" },
+        { src: "/LOGOSSS.png", alt: "Kelin Logo" },
+        { src: "/LOGOSSS.png", alt: "Kelin Logo" },
+        { src: "/LOGOSSS.png", alt: "Kelin Logo" },
+        { src: "/LOGOSSS.png", alt: "Kelin Logo" },
+        { src: "/LOGOSSS.png", alt: "Kelin Logo" },
+        { src: "/LOGOSSS.png", alt: "Kelin Logo" },
     ];
 
     return (

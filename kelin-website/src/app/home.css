@@ -21,7 +21,7 @@
     box-shadow: 7px 9px 4px 0px rgba(0, 0, 0, 0.09);
     -webkit-box-shadow: 7px 9px 4px 0px rgba(0, 0, 0, 0.09);
     -moz-box-shadow: 7px 9px 4px 0px rgba(0, 0, 0, 0.09);
-    background: rgb(116, 116, 116);
+    background: rgb(211, 211, 211);
     overflow: hidden;
 }
 
@@ -38,7 +38,7 @@
 /* Hero Section */
 .hero-section {
     background-color: rgb(211, 211, 211);
-    background-image: url("/one.jpg");
+    background-image: url("/luxor2.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -62,7 +62,7 @@
 .kgs {
     font-size: 1.3rem;
     font-weight: 700;
-    color: #333;
+    color: #ffffff;
     margin-bottom: 1rem;
     letter-spacing: -0.5px;
     text-align: left;
@@ -89,14 +89,14 @@
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 
     .number {
-        color: #ffffff;
+        color: #0084ff;
     }
 }
 
 .number {
     font-size: 2rem;
     font-weight: 900;
-    color: #333;
+    color: #ffffff;
     text-align: center;
     margin-bottom: 10px;
     transition: all 0.3s ease;
@@ -110,7 +110,7 @@
 .btn a {
     font-size: 1rem;
     font-weight: 600;
-    color: #333;
+    color: #ffffff;
     text-decoration: none;
     text-align: center;
     line-height: 1.4;
@@ -118,7 +118,7 @@
 }
 
 .btn:hover a {
-    color: #ffffff;
+    color: #0084ff;
 }
 
 .tagline {
@@ -139,7 +139,7 @@
     /* width: 50%; */
     font-size: 3rem;
     font-weight: 700;
-    color: #333;
+    color: #fff;
     margin-bottom: 1.5rem;
     line-height: 1.2;
     letter-spacing: -0.5px;
@@ -150,7 +150,7 @@
 .hero-description {
     font-size: 1.5rem;
     /* original 1.2rem */
-    color: #666;
+    color: #fff;
     width: 50%;
     /* background-color: blue; */
     /* max-width: 600px; */
@@ -251,6 +251,7 @@
 
     .hero-section {
         padding: 60px 0px 100px 0px;
+        background-image: url("/mobile-luxor.png");
     }
 
     .hero-title {
