@@ -129,7 +129,7 @@ export default function Header() {
             <div className="header-container">
                 {/* Logo */}
                 <Link href="/" className="logo">
-                    <img src="/KELIN-LOGO-01.png" alt="Kelin Graphics System Logo" width={50} />
+                    <img src="/KELIN-LOGO-01.png" alt="Kelin Graphics System Logo" width={65} />
                     KELIN GRAPHICS SYSTEM
                 </Link>
 
