@@ -155,7 +155,7 @@
 }
 
 .dropdown-toggle:hover {
-    color: #006aff;
+    color: #ff7300;
     transform: translateY(-1px);
 }
 
@@ -725,7 +725,7 @@
 .nav-desktop a.active,
 .dropdown-toggle.active,
 .nav-mobile a.active {
-    color: #4492ff !important;
+    color: #ffae44 !important;
     font-weight: 600;
     position: relative;
 }
