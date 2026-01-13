@@ -1,6 +1,7 @@
 import Header from "./components/Header";
 import BranchSection from "./components/BranchSection";
 import MarqueeLogo from "./components/MarqueeLogo";
+import HorizontalScrollSection from "./components/HorizontalScrollSection";
 import "./home.css";
 
 // 🔧 SSG CODE PATTERN: Default export function component
@@ -60,6 +61,9 @@ export default function Home() {
           <div className="marquee-logo">
             <MarqueeLogo />
           </div>
+        </div>
+        <div className="horizontally-scroll">
+          <HorizontalScrollSection />
         </div>
 
         <section className="features-section">

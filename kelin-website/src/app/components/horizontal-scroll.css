@@ -1,0 +1,237 @@
+/* Horizontal Scroll Section Styles - GSAP ScrollTrigger Optimized */
+.horizontal-scroll-container {
+    position: relative;
+    height: 100vh;
+    /* GSAP ScrollTrigger will handle the height calculation */
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    overflow: hidden;
+}
+
+.scroll-indicator {
+    position: fixed;
+    top: 50%;
+    left: 50px;
+    transform: translateY(-50%);
+    z-index: 10;
+    text-align: center;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+
+.scroll-text {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #6c757d;
+    margin-bottom: 8px;
+    writing-mode: vertical-lr;
+    text-orientation: mixed;
+}
+
+.scroll-arrow {
+    font-size: 1.5rem;
+    color: #6c757d;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateY(0);
+    }
+
+    40% {
+        transform: translateY(-10px);
+    }
+
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+.horizontal-scroll-content {
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    padding: 0 100px;
+    gap: 100px;
+    /* GSAP will handle transforms */
+    will-change: transform;
+}
+
+.scroll-section {
+    flex: 0 0 80vw;
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.3;
+    transform: scale(0.9);
+    /* GSAP will handle all transitions */
+    will-change: transform, opacity;
+}
+
+.scroll-section:first-child {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.section-content {
+    text-align: center;
+    max-width: 600px;
+    position: relative;
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 24px;
+    padding: 60px 40px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+
+.section-icon {
+    font-size: 4rem;
+    margin-bottom: 24px;
+    display: block;
+}
+
+.section-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: #212529;
+    margin-bottom: 12px;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+}
+
+.section-subtitle {
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: #6c757d;
+    margin-bottom: 24px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.section-description {
+    font-size: 1.1rem;
+    color: #495057;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.section-number {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #adb5bd;
+    opacity: 0.5;
+}
+
+.progress-bar {
+    position: fixed;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 300px;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 2px;
+    overflow: hidden;
+    z-index: 10;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #007bff, #0056b3);
+    border-radius: 2px;
+    width: 0%;
+    transition: width 0.1s ease;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .horizontal-scroll-content {
+        padding: 0 50px;
+        gap: 50px;
+    }
+
+    .scroll-section {
+        flex: 0 0 90vw;
+    }
+
+    .section-content {
+        padding: 40px 30px;
+    }
+
+    .section-title {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .horizontal-scroll-container {
+        height: 100vh;
+    }
+
+    .horizontal-scroll-content {
+        padding: 0 20px;
+        gap: 30px;
+    }
+
+    .scroll-section {
+        flex: 0 0 95vw;
+        height: 60vh;
+    }
+
+    .section-content {
+        padding: 30px 20px;
+        border-radius: 16px;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .section-subtitle {
+        font-size: 1rem;
+    }
+
+    .section-description {
+        font-size: 1rem;
+    }
+
+    .section-icon {
+        font-size: 3rem;
+        margin-bottom: 16px;
+    }
+
+    .scroll-indicator {
+        left: 20px;
+    }
+
+    .progress-bar {
+        width: 200px;
+    }
+}
+
+@media (max-width: 480px) {
+    .scroll-section {
+        flex: 0 0 100vw;
+    }
+
+    .section-content {
+        padding: 24px 16px;
+    }
+
+    .section-title {
+        font-size: 1.75rem;
+    }
+}
