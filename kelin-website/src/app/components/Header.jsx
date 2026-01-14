@@ -31,9 +31,11 @@ export default function Header() {
         { title: "Laminators", path: "/products/machine/laminators", type: "product" },
         { title: "Heat Press", path: "/products/machine/heat-press", type: "product" },
         { title: "About Us", path: "/services", type: "page" },
-        { title: "News and Events", path: "/contact", type: "page" },
+        { title: "News and Events", path: "/events", type: "page" },
         { title: "Services", path: "/services", type: "page" },
-        { title: "Contact", path: "/contact", type: "page" }
+        { title: "Contact", path: "/contact", type: "page" },
+        { title: "Connect with Us", path: "/contact", type: "page" },
+        { title: "events", path: "/events", type: "page" }
     ];
 
     // Helper function to check if link is active
@@ -292,7 +294,7 @@ export default function Header() {
                             >
                                 <Link href="/products/machine" className="dropdown-toggle-nested">
                                     Machine
-                                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none">
+                                    <svg className="arrow-right" width="10" height="10" viewBox="0 0 24 24" fill="none">
                                         <path d="M9 6L15 12L9 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                                     </svg>
                                 </Link>
@@ -311,7 +313,9 @@ export default function Header() {
                 </div>
 
                 <Link href="/services" className={`dropdown-toggle ${isActive("/services") ? "active" : ""}`}>About Us</Link>
-                <Link href="/contact" className={`dropdown-toggle ${isActive("/contact") ? "active" : ""}`}>News and Events</Link>
+                <Link href="/events" className={`dropdown-toggle ${isActive("/events") ? "active" : ""}`}>News and Events</Link>
+                <div className="vertical-line"></div>
+                <Link href="/contact" id="connectwithus" className={`dropdown-toggle ${isActive("/contact") ? "" : ""}`}>Connect with Us</Link>
             </div>
 
             {/* Mobile Menu */}

@@ -29,7 +29,7 @@
     align-items: center;
     justify-content: center;
     gap: 24px;
-    padding: 20px;
+    padding: 10px 30px 10px 30px;
     position: absolute;
     width: 100%;
     transition: all 0.3s ease;
@@ -46,6 +46,25 @@
     backdrop-filter: blur(13.1px);
     -webkit-backdrop-filter: blur(13.1px);
     border: 1px solid rgba(0, 0, 0, 0.32);
+}
+
+.vertical-line {
+    border-radius: 50px;
+    position: relative;
+    background-color: #fff;
+    width: 1px;
+    height: 24px;
+}
+
+.arrow-right {
+    margin-left: 8px;
+}
+
+#connectwithus {
+    padding: 4px 30px 4px 30px;
+    background: linear-gradient(135deg, #351818, #643e06);
+    /* color: white; */
+    border-radius: 30px;
 }
 
 /* Scrolled state - fixed at top */

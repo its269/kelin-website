@@ -1,12 +1,67 @@
+"use client";
 import Header from "./components/Header";
 import BranchSection from "./components/BranchSection";
 import MarqueeLogo from "./components/MarqueeLogo";
 import HorizontalScrollSection from "./components/HorizontalScrollSection";
+import HorizontalCarousel from "./components/HorizontalCarousel";
 import "./home.css";
 
 // 🔧 SSG CODE PATTERN: Default export function component
 // This is the basic pattern for SSG in Next.js App Router
 export default function Home() {
+  // Event handler function defined outside JSX
+  const handleViewMore = (item) => {
+    console.log('View more clicked for:', item);
+    // Example: redirect to product page
+    // window.location.href = `/products/${item.id}`;
+  };
+
+  // Product data defined outside JSX
+  const productItems = [
+    {
+      id: 1,
+      image: "/api/placeholder/300/300",
+      title: "Eco-Solvent Printers",
+      alt: "Professional Eco-Solvent Printers"
+    },
+    {
+      id: 2,
+      image: "/api/placeholder/300/300",
+      title: "Premium Inks",
+      alt: "High-Quality Printing Inks"
+    },
+    {
+      id: 3,
+      image: "/api/placeholder/300/300",
+      title: "Vinyl Materials",
+      alt: "Professional Vinyl Materials"
+    },
+    {
+      id: 4,
+      image: "/api/placeholder/300/300",
+      title: "Cutting Plotters",
+      alt: "Precision Cutting Plotters"
+    },
+    {
+      id: 5,
+      image: "/api/placeholder/300/300",
+      title: "Laminators",
+      alt: "Professional Laminators"
+    },
+    {
+      id: 6,
+      image: "/api/placeholder/300/300",
+      title: "Heat Press",
+      alt: "Heat Press Machines"
+    },
+    {
+      id: 7,
+      image: "/api/placeholder/300/300",
+      title: "DTF Printers",
+      alt: "Direct-to-Film Printers"
+    }
+  ];
+
   // 🔧 SSG CODE PATTERN: No async function, no data fetching
   // - No "async" keyword = no server-side data fetching
   // - No fetch() calls = no dynamic data at build time
@@ -62,6 +117,14 @@ export default function Home() {
             <MarqueeLogo />
           </div>
         </div>
+
+        <div className="horizontal-hold-drag-scrolling">
+          <HorizontalCarousel
+            title="Featured Products"
+            items={productItems}
+            onViewMore={handleViewMore} />
+        </div>
+
         <div className="horizontally-scroll">
           <HorizontalScrollSection />
         </div>
