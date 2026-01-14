@@ -89,7 +89,7 @@
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 
     .number {
-        color: #ff5100;
+        color: #ffae44;
     }
 }
 
@@ -118,7 +118,7 @@
 }
 
 .btn:hover a {
-    color: #ff5100;
+    color: #ffae44;
 }
 
 .tagline {
