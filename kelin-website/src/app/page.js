@@ -3,65 +3,11 @@ import Header from "./components/Header";
 import BranchSection from "./components/BranchSection";
 import MarqueeLogo from "./components/MarqueeLogo";
 import HorizontalScrollSection from "./components/HorizontalScrollSection";
-import HorizontalCarousel from "./components/HorizontalCarousel";
 import "./home.css";
 
 // 🔧 SSG CODE PATTERN: Default export function component
 // This is the basic pattern for SSG in Next.js App Router
 export default function Home() {
-  // Event handler function defined outside JSX
-  const handleViewMore = (item) => {
-    console.log('View more clicked for:', item);
-    // Example: redirect to product page
-    // window.location.href = `/products/${item.id}`;
-  };
-
-  // Product data defined outside JSX
-  const productItems = [
-    {
-      id: 1,
-      image: "https://images.unsplash.com/photo-1612198188060-c7c2a3b66eae?w=300&h=300&fit=crop&crop=center",
-      title: "Eco-Solvent Printers",
-      alt: "Professional Eco-Solvent Printers"
-    },
-    {
-      id: 2,
-      image: "https://images.unsplash.com/photo-1586953208448-b95a79798f07?w=300&h=300&fit=crop&crop=center",
-      title: "Premium Inks",
-      alt: "High-Quality Printing Inks"
-    },
-    {
-      id: 3,
-      image: "https://images.unsplash.com/photo-1581833971358-2c8b550f87b3?w=300&h=300&fit=crop&crop=center",
-      title: "Vinyl Materials",
-      alt: "Professional Vinyl Materials"
-    },
-    {
-      id: 4,
-      image: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=300&h=300&fit=crop&crop=center",
-      title: "Cutting Plotters",
-      alt: "Precision Cutting Plotters"
-    },
-    {
-      id: 5,
-      image: "https://images.unsplash.com/photo-1581092334651-ddf26d9a09d0?w=300&h=300&fit=crop&crop=center",
-      title: "Laminators",
-      alt: "Professional Laminators"
-    },
-    {
-      id: 6,
-      image: "background.jpg",
-      title: "Heat Press",
-      alt: "Heat Press Machines"
-    },
-    {
-      id: 7,
-      image: "https://images.unsplash.com/photo-1612198188060-c7c2a3b66eae?w=300&h=300&fit=crop&crop=center",
-      title: "DTF Printers",
-      alt: "Direct-to-Film Printers"
-    }
-  ];
-
   // 🔧 SSG CODE PATTERN: No async function, no data fetching
   // - No "async" keyword = no server-side data fetching
   // - No fetch() calls = no dynamic data at build time
@@ -117,21 +63,12 @@ export default function Home() {
             <MarqueeLogo />
           </div>
         </div>
-
-        <div className="horizontal-hold-drag-scrolling">
-          <HorizontalCarousel
-            title="Featured Products"
-            items={productItems}
-            onViewMore={handleViewMore} />
-        </div>
-
-        <div className="horizontally-scroll">
-          <HorizontalScrollSection />
-        </div>
-
         <section className="features-section">
           {/* 🔧 SSG CODE PATTERN: Static array rendering */}
           {/* This grid is hardcoded, not from API = SSG compatible */}
+          <div className="horizontal-click-scroll">
+            {/* put <HorizontalCarousel - Horizontal Click and Drag Scrolling /> */}
+          </div>
           <div className="features-grid">
             <div className="feature-card">
               <h3>Quality Products</h3>
@@ -147,7 +84,9 @@ export default function Home() {
             </div>
           </div>
         </section>
-
+        <div className="horizontally-scroll">
+          <HorizontalScrollSection />
+        </div>
         {/* 🔧 SSG CODE PATTERN: Component with no props */}
         {/* No props passed = no dynamic data = SSG will pre-render this */}
         <BranchSection />
