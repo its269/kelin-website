@@ -19,6 +19,8 @@ const HorizontalCarousel = ({
     const dragDistance = useRef(0);
     const touchStartTime = useRef(0);
     const [isTap, setIsTap] = useState(false);
+    const lastDragX = useRef(0);
+    const dragSensitivity = useRef(0.8); // Control drag sensitivity
 
     // Default items if none provided
     const defaultItems = [
@@ -58,8 +60,10 @@ const HorizontalCarousel = ({
 
     // Mouse drag handlers optimized for smooth performance
     const handleMouseDown = (e) => {
+        e.preventDefault();
         setIsDragging(true);
         setStartX(e.pageX);
+        lastDragX.current = e.pageX;
         setScrollLeft(carouselRef.current.scrollLeft);
         dragDistance.current = 0;
 
@@ -72,22 +76,30 @@ const HorizontalCarousel = ({
         if (animationFrameRef.current) {
             cancelAnimationFrame(animationFrameRef.current);
         }
+
+        // Add cursor style
+        document.body.style.cursor = 'grabbing';
+        document.body.style.userSelect = 'none';
     };
 
     const handleMouseUp = () => {
         if (isDragging) {
             setIsDragging(false);
 
+            // Reset cursor and user selection
+            document.body.style.cursor = '';
+            document.body.style.userSelect = '';
+
             // Cancel any pending animation
             if (animationFrameRef.current) {
                 cancelAnimationFrame(animationFrameRef.current);
             }
 
-            // More conservative desktop snapping
-            if (dragDistance.current > 60) {
+            // Conservative desktop snapping only for significant drags
+            if (dragDistance.current > 80) {
                 snapTimeoutRef.current = setTimeout(() => {
                     snapToNearest();
-                }, 200);
+                }, 150);
             } else {
                 updateActiveIndexOnly();
             }
@@ -98,13 +110,16 @@ const HorizontalCarousel = ({
         if (!isDragging || !carouselRef.current) return;
         e.preventDefault();
 
-        const x = e.pageX;
-        const currentDrag = x - startX;
-        dragDistance.current = Math.abs(currentDrag);
+        const currentX = e.pageX;
+        const deltaX = (currentX - lastDragX.current) * dragSensitivity.current;
+        lastDragX.current = currentX;
 
-        // Direct scroll for desktop too
-        const newScrollLeft = scrollLeft - currentDrag;
-        carouselRef.current.scrollLeft = newScrollLeft;
+        // Track total drag distance
+        dragDistance.current += Math.abs(deltaX);
+
+        // Apply controlled scroll movement
+        const currentScroll = carouselRef.current.scrollLeft;
+        carouselRef.current.scrollLeft = currentScroll - deltaX;
     };
 
     // Touch handlers optimized for mobile performance
@@ -112,9 +127,11 @@ const HorizontalCarousel = ({
         touchStartTime.current = Date.now();
         setIsDragging(true);
         setIsTap(true);
-        setStartX(e.touches[0].pageX);
+        const touchX = e.touches[0].pageX;
+        setStartX(touchX);
+        lastDragX.current = touchX;
         setScrollLeft(carouselRef.current.scrollLeft);
-        dragDistance.current = 0; // Reset drag distance
+        dragDistance.current = 0;
 
         // Clear any pending snap
         if (snapTimeoutRef.current) {
@@ -130,20 +147,21 @@ const HorizontalCarousel = ({
     const handleTouchMove = (e) => {
         if (!isDragging || !carouselRef.current) return;
 
-        const x = e.touches[0].pageX;
-        const currentDrag = x - startX;
-        dragDistance.current = Math.abs(currentDrag);
+        const currentX = e.touches[0].pageX;
+        const deltaX = (currentX - lastDragX.current) * dragSensitivity.current;
+        lastDragX.current = currentX;
 
-        // If moved more than 10px, it's no longer a tap
-        if (dragDistance.current > 10) {
+        // Track total drag distance for tap detection
+        dragDistance.current += Math.abs(deltaX);
+
+        // If moved more than 15px total, it's no longer a tap
+        if (dragDistance.current > 15) {
             setIsTap(false);
         }
 
-        // Direct 1:1 scroll mapping for precise control
-        const newScrollLeft = scrollLeft - currentDrag;
-
-        // Apply scroll directly without animation frame for immediate response
-        carouselRef.current.scrollLeft = newScrollLeft;
+        // Apply controlled scroll movement
+        const currentScroll = carouselRef.current.scrollLeft;
+        carouselRef.current.scrollLeft = currentScroll - deltaX;
 
         // Prevent default to avoid page scrolling
         e.preventDefault();
@@ -152,7 +170,7 @@ const HorizontalCarousel = ({
     const handleTouchEnd = (e) => {
         if (isDragging) {
             const touchDuration = Date.now() - touchStartTime.current;
-            const wasTap = isTap && touchDuration < 300 && dragDistance.current < 10;
+            const wasTap = isTap && touchDuration < 300 && dragDistance.current < 15;
 
             setIsDragging(false);
             setIsTap(false);
@@ -162,9 +180,8 @@ const HorizontalCarousel = ({
                 cancelAnimationFrame(animationFrameRef.current);
             }
 
-            // If it was a tap, don't prevent the click event
+            // If it was a tap, allow the click event
             if (wasTap) {
-                // Let the click event handle centering
                 return;
             }
 
