@@ -20,43 +20,43 @@ export default function Home() {
   const productItems = [
     {
       id: 1,
-      image: "/api/placeholder/300/300",
+      image: "https://images.unsplash.com/photo-1612198188060-c7c2a3b66eae?w=300&h=300&fit=crop&crop=center",
       title: "Eco-Solvent Printers",
       alt: "Professional Eco-Solvent Printers"
     },
     {
       id: 2,
-      image: "/api/placeholder/300/300",
+      image: "https://images.unsplash.com/photo-1586953208448-b95a79798f07?w=300&h=300&fit=crop&crop=center",
       title: "Premium Inks",
       alt: "High-Quality Printing Inks"
     },
     {
       id: 3,
-      image: "/api/placeholder/300/300",
+      image: "https://images.unsplash.com/photo-1581833971358-2c8b550f87b3?w=300&h=300&fit=crop&crop=center",
       title: "Vinyl Materials",
       alt: "Professional Vinyl Materials"
     },
     {
       id: 4,
-      image: "/api/placeholder/300/300",
+      image: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=300&h=300&fit=crop&crop=center",
       title: "Cutting Plotters",
       alt: "Precision Cutting Plotters"
     },
     {
       id: 5,
-      image: "/api/placeholder/300/300",
+      image: "https://images.unsplash.com/photo-1581092334651-ddf26d9a09d0?w=300&h=300&fit=crop&crop=center",
       title: "Laminators",
       alt: "Professional Laminators"
     },
     {
       id: 6,
-      image: "/api/placeholder/300/300",
+      image: "background.jpg",
       title: "Heat Press",
       alt: "Heat Press Machines"
     },
     {
       id: 7,
-      image: "/api/placeholder/300/300",
+      image: "https://images.unsplash.com/photo-1612198188060-c7c2a3b66eae?w=300&h=300&fit=crop&crop=center",
       title: "DTF Printers",
       alt: "Direct-to-Film Printers"
     }
