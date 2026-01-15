@@ -17,6 +17,8 @@ const HorizontalCarousel = ({
     const animationFrameRef = useRef(null);
     const lastScrollTime = useRef(0);
     const dragDistance = useRef(0);
+    const touchStartTime = useRef(0);
+    const [isTap, setIsTap] = useState(false);
 
     // Default items if none provided
     const defaultItems = [
@@ -107,7 +109,9 @@ const HorizontalCarousel = ({
 
     // Touch handlers optimized for mobile performance
     const handleTouchStart = (e) => {
+        touchStartTime.current = Date.now();
         setIsDragging(true);
+        setIsTap(true);
         setStartX(e.touches[0].pageX);
         setScrollLeft(carouselRef.current.scrollLeft);
         dragDistance.current = 0; // Reset drag distance
@@ -130,6 +134,11 @@ const HorizontalCarousel = ({
         const currentDrag = x - startX;
         dragDistance.current = Math.abs(currentDrag);
 
+        // If moved more than 10px, it's no longer a tap
+        if (dragDistance.current > 10) {
+            setIsTap(false);
+        }
+
         // Direct 1:1 scroll mapping for precise control
         const newScrollLeft = scrollLeft - currentDrag;
 
@@ -142,27 +151,28 @@ const HorizontalCarousel = ({
 
     const handleTouchEnd = (e) => {
         if (isDragging) {
+            const touchDuration = Date.now() - touchStartTime.current;
+            const wasTap = isTap && touchDuration < 300 && dragDistance.current < 10;
+
             setIsDragging(false);
+            setIsTap(false);
 
             // Cancel any pending animation
             if (animationFrameRef.current) {
                 cancelAnimationFrame(animationFrameRef.current);
             }
 
-            // Much more conservative snapping - only for large drags
-            if (dragDistance.current > 80) {
-                snapTimeoutRef.current = setTimeout(() => {
-                    snapToNearest();
-                }, 300); // Longer delay
-            } else {
-                // For small drags, just update the active index without snapping
-                updateActiveIndexOnly();
+            // If it was a tap, don't prevent the click event
+            if (wasTap) {
+                // Let the click event handle centering
+                return;
             }
+
+            // No snapping for mobile - just update active index
+            updateActiveIndexOnly();
         }
         e.preventDefault();
-    };
-
-    // Update active index without snapping (for small drags)
+    };    // Update active index without snapping (for small drags)
     const updateActiveIndexOnly = () => {
         if (!carouselRef.current) return;
 
@@ -216,9 +226,16 @@ const HorizontalCarousel = ({
         requestAnimationFrame(animateScroll);
     };
 
-    // Optimized gentle snap for mobile and desktop
+    // Optimized gentle snap for desktop only
     const snapToNearest = () => {
         if (!carouselRef.current || isSnapping) return;
+
+        // Skip snapping for mobile devices
+        const isMobile = window.innerWidth <= 768;
+        if (isMobile) {
+            updateActiveIndexOnly();
+            return;
+        }
 
         const carousel = carouselRef.current;
         const items = carousel.querySelectorAll(`.${styles.item}`);
@@ -239,9 +256,8 @@ const HorizontalCarousel = ({
             }
         });
 
-        // Very conservative snapping - only for significant misalignment
-        const isMobile = window.innerWidth <= 768;
-        const snapThreshold = isMobile ? 100 : 80;
+        // Conservative snapping for desktop only
+        const snapThreshold = 80;
 
         if (minDistance > snapThreshold) {
             setIsSnapping(true);
@@ -306,27 +322,22 @@ const HorizontalCarousel = ({
         }
     };
 
-    // Click to center an item with smooth custom animation (works on mobile and desktop)
+    // Click to center an item smoothly
     const handleItemClick = (e, index) => {
         e.preventDefault();
         e.stopPropagation();
 
-        // Don't center if currently dragging or already snapping
-        if (isDragging || isSnapping) return;
+        // Don't center if currently dragging and it's not a tap
+        if (isDragging && !isTap) return;
 
-        // Don't center if it's already the active item
-        if (index === activeIndex) return;
-
-        setIsSnapping(true);
         const item = carouselRef.current.children[index];
-        const itemCenter = item.offsetLeft + item.offsetWidth / 2;
-        const targetScrollLeft = itemCenter - carouselRef.current.clientWidth / 2;
+        item.scrollIntoView({
+            behavior: 'smooth',
+            inline: 'center',
+            block: 'nearest'
+        });
 
-        // Use smooth custom scroll with optimized duration for mobile
-        const isMobile = window.innerWidth <= 768;
-        const duration = isMobile ? 500 : 700;
-
-        smoothScrollTo(targetScrollLeft, duration);
+        // Update active index immediately for visual feedback
         setActiveIndex(index);
     };
 
@@ -384,9 +395,8 @@ const HorizontalCarousel = ({
                         return (
                             <div
                                 key={item.id || index}
-                                className={`${styles.item} ${isCenter ? styles.activeItem : ''}`}
+                                className={styles.item}
                                 onClick={(e) => handleItemClick(e, index)}
-                                style={{ cursor: isCenter ? 'default' : 'pointer' }}
                             >
                                 <div className={styles.imageWrapper}>
                                     <img
