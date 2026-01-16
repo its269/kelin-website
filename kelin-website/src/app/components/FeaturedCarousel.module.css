@@ -73,7 +73,8 @@
     text-align: center;
     scroll-snap-align: center;
     transform: scale(0.8);
-    transition: transform 0.10s ease;
+    transition: transform 1s ease;
+    /* transition: transform 0.35s ease; */
 }
 
 /* Only the active (center) item is bigger */
