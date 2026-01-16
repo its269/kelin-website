@@ -73,12 +73,13 @@
     text-align: center;
     scroll-snap-align: center;
     transform: scale(0.8);
-    transition: transform 0.35s ease;
+    transition: transform 0.15s ease;
 }
 
 /* Only the active (center) item is bigger */
 .item.active {
     transform: scale(1.15);
+    /* transform: scale(1.15); */
 }
 
 .imageWrapper {
@@ -87,7 +88,9 @@
     margin: 0 auto 12px;
     border-radius: 50%;
     overflow: hidden;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.18);
+    box-shadow: 7px 9px 4px 0px rgba(0, 0, 0, 0.09);
+    -webkit-box-shadow: 7px 9px 4px 0px rgba(0, 0, 0, 0.09);
+    -moz-box-shadow: 7px 9px 4px 0px rgba(0, 0, 0, 0.09);
 }
 
 .imageWrapper img {
