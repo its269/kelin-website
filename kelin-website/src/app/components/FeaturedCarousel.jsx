@@ -3,7 +3,7 @@
 import { useRef, useEffect, useState } from 'react';
 import styles from './FeaturedCarousel.module.css';
 
-const FeaturedCarousel = ({ items = [], title = "Featured Subjects" }) => {
+const FeaturedCarousel = ({ items = [], title = "Featured Subjects", label }) => {
     const carouselRef = useRef(null);
     const [isDragging, setIsDragging] = useState(false);
     const [dragStart, setDragStart] = useState({ x: 0, scrollLeft: 0 });
@@ -130,8 +130,12 @@ const FeaturedCarousel = ({ items = [], title = "Featured Subjects" }) => {
 
     return (
         <div className={styles.carouselContainer}>
-            <h2 className={styles.title}>{title}</h2>
-
+            <div className={styles.carouselTextContainer}>
+                <div className={styles.carouselChildTextContainer}>
+                    {label && <div className={styles.label}>{label}</div>}
+                    <h2 className={styles.title}>{title}</h2>
+                </div>
+            </div>
             <div className={styles.carouselWrapper}>
 
                 <div

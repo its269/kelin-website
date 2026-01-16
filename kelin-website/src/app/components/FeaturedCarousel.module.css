@@ -1,14 +1,104 @@
 .carouselContainer {
     font-family: Arial, sans-serif;
-    padding: 40px 0;
+    padding: 40px 20px;
     position: relative;
 }
 
+.carouselTextContainer {
+    text-align: left;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 40px;
+}
+
+.carouselChildTextContainer {
+    width: 90%;
+    max-width: 1200px;
+}
+
+.label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #666;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
 .title {
-    text-align: center;
-    margin-bottom: 30px;
-    font-size: 24px;
-    font-weight: bold;
+    margin-bottom: 0;
+    font-size: 2.8rem;
+    font-weight: 900;
+    line-height: 1.2;
+    color: #333;
+}
+
+/* Show break line on desktop */
+.desktop-break {
+    display: inline;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .title {
+        font-size: 2.4rem;
+    }
+
+    .carouselChildTextContainer {
+        width: 95%;
+    }
+}
+
+@media (max-width: 768px) {
+    .carouselContainer {
+        padding: 30px 15px;
+    }
+
+    .carouselTextContainer {
+        text-align: center;
+    }
+
+    .title {
+        font-size: 2rem;
+    }
+
+    .label {
+        font-size: 0.8rem;
+    }
+
+    .carouselTextContainer {
+        padding-bottom: 30px;
+    }
+
+    /* Hide break line on mobile */
+    .desktop-break {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .carouselContainer {
+        padding: 20px 10px;
+    }
+
+    .carouselTextContainer {
+        text-align: center;
+    }
+
+    .title {
+        font-size: 1.6rem;
+    }
+
+    .label {
+        font-size: 0.75rem;
+        letter-spacing: 1px;
+    }
+
+    .carouselChildTextContainer {
+        width: 100%;
+    }
 }
 
 .carouselWrapper {
@@ -33,6 +123,28 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%);
+}
+
+/* Responsive carousel */
+@media (max-width: 1024px) {
+    .carousel {
+        gap: 30px;
+        padding: 20px calc(50% - 100px);
+    }
+}
+
+@media (max-width: 768px) {
+    .carousel {
+        gap: 25px;
+        padding: 20px calc(50% - 90px);
+    }
+}
+
+@media (max-width: 480px) {
+    .carousel {
+        gap: 20px;
+        padding: 20px calc(50% - 80px);
+    }
 }
 
 .carouselLeftFade {
@@ -127,7 +239,7 @@
 .btn {
     padding: 7px 16px;
     border: none;
-    background: #ff9100;
+    background: #007bff;
     color: #fff;
     border-radius: 20px;
     cursor: pointer;
@@ -135,6 +247,70 @@
     transition: background-color 0.2s ease;
 }
 
+/* Responsive carousel items */
+@media (max-width: 768px) {
+    .item {
+        width: 180px;
+    }
+
+    .imageWrapper {
+        width: 130px;
+        height: 130px;
+    }
+
+    .itemTitle {
+        font-size: 14px;
+    }
+
+    .btn {
+        padding: 6px 14px;
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .item {
+        width: 150px;
+    }
+
+    .imageWrapper {
+        width: 110px;
+        height: 110px;
+    }
+
+    .itemTitle {
+        font-size: 13px;
+    }
+
+    .btn {
+        padding: 5px 12px;
+        font-size: 11px;
+    }
+}
+
 .btn:hover {
-    background: #b35f00;
+    background: #0056b3;
+}
+
+/* Responsive button and title */
+@media (max-width: 768px) {
+    .itemTitle {
+        font-size: 14px;
+    }
+
+    .btn {
+        padding: 6px 14px;
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .itemTitle {
+        font-size: 13px;
+    }
+
+    .btn {
+        padding: 5px 12px;
+        font-size: 11px;
+    }
 }

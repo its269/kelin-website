@@ -107,7 +107,13 @@ export default function Home() {
           {/* Featured Carousel */}
           <FeaturedCarousel
             items={carouselItems}
-            title="Featured Products"
+            label="SOLUTIONS"
+            title={
+              <>
+                Turn ordinary surfaces into <br className="desktop-break" />
+                something extraordinary.
+              </>
+            }
           />
         </div>
         <section className="features-section">
