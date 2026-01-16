@@ -1,0 +1,136 @@
+.carouselContainer {
+    font-family: Arial, sans-serif;
+    padding: 40px 0;
+    position: relative;
+}
+
+.title {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.carouselWrapper {
+    width: 100%;
+    overflow: hidden;
+    /* background-color: #0056b3; */
+}
+
+.carousel {
+    display: flex;
+    gap: 40px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    padding: 20px calc(50% - 110px);
+    cursor: grab;
+    user-select: none;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    /* background-color: bisque; */
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+.carouselLeftFade {
+    pointer-events: none;
+    position: absolute;
+    background: #ffffff;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 1) 8%, rgba(199, 87, 87, 0) 36%, rgba(237, 221, 83, 0) 100%);
+    height: 90%;
+    width: 300px;
+    left: 0%;
+    top: 50%;
+    transform: translate(-0%, -50%);
+}
+
+.carouselRightFade {
+    pointer-events: none;
+    position: absolute;
+    background: #ffffff;
+    background: linear-gradient(270deg, rgba(255, 255, 255, 1) 8%, rgba(199, 87, 87, 0) 36%, rgba(237, 221, 83, 0) 100%);
+    height: 90%;
+    width: 300px;
+    right: 0%;
+    top: 50%;
+    transform: translate(-0%, -50%);
+}
+
+.carousel::-webkit-scrollbar {
+    display: none;
+}
+
+.carousel.grabbing {
+    cursor: grabbing;
+}
+
+.item {
+    flex: 0 0 auto;
+    width: 220px;
+    text-align: center;
+    scroll-snap-align: center;
+    transform: scale(0.8);
+    transition: transform 0.35s ease;
+}
+
+/* Only the active (center) item is bigger */
+.item.active {
+    transform: scale(1.15);
+}
+
+.imageWrapper {
+    width: 160px;
+    height: 160px;
+    margin: 0 auto 12px;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.18);
+}
+
+.imageWrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+}
+
+/* Hide title & button by default for ALL items */
+.itemTitle,
+.btn {
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(10px);
+    transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+/* Show title & button ONLY for the active (center) item */
+.item.active .itemTitle,
+.item.active .btn {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+}
+
+.itemTitle {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.btn {
+    padding: 7px 16px;
+    border: none;
+    background: #ff9100;
+    color: #fff;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 13px;
+    transition: background-color 0.2s ease;
+}
+
+.btn:hover {
+    background: #b35f00;
+}

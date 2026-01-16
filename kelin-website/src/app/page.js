@@ -3,11 +3,51 @@ import Header from "./components/Header";
 import BranchSection from "./components/BranchSection";
 import MarqueeLogo from "./components/MarqueeLogo";
 import HorizontalScrollSection from "./components/HorizontalScrollSection";
+import FeaturedCarousel from "./components/FeaturedCarousel";
 import "./home.css";
 
 // 🔧 SSG CODE PATTERN: Default export function component
 // This is the basic pattern for SSG in Next.js App Router
 export default function Home() {
+  // Sample data for the carousel
+  const carouselItems = [
+    {
+      id: 1,
+      image: "https://picsum.photos/id/1011/300/300",
+      title: "Cutting Machines",
+      buttonText: "View More",
+      onButtonClick: (item) => console.log(`Button clicked for ${item.title}`)
+    },
+    {
+      id: 2,
+      image: "https://picsum.photos/id/1025/300/300",
+      title: "Eco-Solvent Printers",
+      buttonText: "Learn More",
+      onButtonClick: (item) => console.log(`Button clicked for ${item.title}`)
+    },
+    {
+      id: 3,
+      image: "https://picsum.photos/id/1035/300/300",
+      title: "Solvent Printers",
+      buttonText: "View More",
+      onButtonClick: (item) => console.log(`Button clicked for ${item.title}`)
+    },
+    {
+      id: 4,
+      image: "https://picsum.photos/id/1041/300/300",
+      title: "Sublimation Printers",
+      buttonText: "Explore",
+      onButtonClick: (item) => console.log(`Button clicked for ${item.title}`)
+    },
+    {
+      id: 5,
+      image: "https://picsum.photos/id/1062/300/300",
+      title: "DTF Printers",
+      buttonText: "View More",
+      onButtonClick: (item) => console.log(`Button clicked for ${item.title}`)
+    }
+  ];
+
   // 🔧 SSG CODE PATTERN: No async function, no data fetching
   // - No "async" keyword = no server-side data fetching
   // - No fetch() calls = no dynamic data at build time
@@ -63,12 +103,16 @@ export default function Home() {
             <MarqueeLogo />
           </div>
         </div>
+        <div className="horizontal-click-scroll">
+          {/* Featured Carousel */}
+          <FeaturedCarousel
+            items={carouselItems}
+            title="Featured Products"
+          />
+        </div>
         <section className="features-section">
           {/* 🔧 SSG CODE PATTERN: Static array rendering */}
           {/* This grid is hardcoded, not from API = SSG compatible */}
-          <div className="horizontal-click-scroll">
-            {/* put <HorizontalCarousel - Horizontal Click and Drag Scrolling /> */}
-          </div>
           <div className="features-grid">
             <div className="feature-card">
               <h3>Quality Products</h3>
