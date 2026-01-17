@@ -130,21 +130,21 @@
 /* Responsive carousel */
 @media (max-width: 1024px) {
     .carousel {
-        gap: 20px;
+        gap: 30px;
         padding: 20px calc(50% - 100px);
     }
 }
 
 @media (max-width: 768px) {
     .carousel {
-        gap: 10px;
+        gap: 25px;
         padding: 20px calc(50% - 90px);
     }
 }
 
 @media (max-width: 480px) {
     .carousel {
-        gap: 5 px;
+        gap: 20px;
         padding: 20px calc(50% - 80px);
     }
 }
@@ -193,7 +193,7 @@
 
 /* Only the active (center) item is bigger */
 .item.active {
-    /* transform: scale(1.15); */
+    transform: scale(1.15);
     /* transform: scale(1.15); */
 }
 
@@ -221,7 +221,7 @@
     opacity: 0;
     pointer-events: none;
     transform: translateY(10px);
-    transition: opacity 2.3s ease, transform 2.3s ease;
+    transition: opacity 0.25s ease, transform 0.25s ease;
 }
 
 /* Show title & button ONLY for the active (center) item */
@@ -304,6 +304,15 @@
     .btn {
         padding: 6px 14px;
         font-size: 12px;
+    }
+
+    .item {
+        transition: transform 0.35s ease;
+    }
+
+    .item.active {
+        transform: scale(0.90);
+        /* transform: scale(1.15); */
     }
 }
 
