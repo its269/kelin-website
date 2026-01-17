@@ -144,7 +144,7 @@
 
 @media (max-width: 480px) {
     .carousel {
-        gap: 5px;
+        gap: 5 px;
         padding: 20px calc(50% - 80px);
     }
 }
@@ -193,7 +193,7 @@
 
 /* Only the active (center) item is bigger */
 .item.active {
-    transform: scale(1.15);
+    /* transform: scale(1.15); */
     /* transform: scale(1.15); */
 }
 
