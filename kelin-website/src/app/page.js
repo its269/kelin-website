@@ -4,6 +4,9 @@ import BranchSection from "./components/BranchSection";
 import MarqueeLogo from "./components/MarqueeLogo";
 import HorizontalScrollSection from "./components/HorizontalScrollSection";
 import FeaturedCarousel from "./components/FeaturedCarousel";
+import TextSection from "./components/TextSection";
+import NewsEventsSection from "./components/NewsEventsSection";
+import Image from "next/image";
 import "./home.css";
 
 // 🔧 SSG CODE PATTERN: Default export function component
@@ -119,24 +122,69 @@ export default function Home() {
         <section className="features-section">
           {/* 🔧 SSG CODE PATTERN: Static array rendering */}
           {/* This grid is hardcoded, not from API = SSG compatible */}
+          <TextSection
+            label="LAMINATOR"
+            title={
+              <>
+                The perfect lamination, your way.<br className="desktop-break" />
+
+              </>
+            }
+            description="Whether you need fast warm lamination, gentle cold lamination, or precise flatbed finishing, we've got the perfect solution for you."
+            layout="reverse"
+          />
           <div className="features-grid">
             <div className="feature-card">
-              <h3>Quality Products</h3>
-              <p>Premium printing materials and equipment from trusted manufacturers.</p>
+              <div className="laminator-image">
+                <Image
+                  src="/se.webp"
+                  alt="Auto Warm Laminator"
+                  width={200}
+                  height={150}
+                  className="product-card-image"
+                  priority
+                />
+              </div>
+              <h3>Auto Warm Laminator</h3>
+              <p>Fast and efficient warm lamination for high-volume professional applications with precise temperature control.</p>
             </div>
             <div className="feature-card">
-              <h3>Expert Support</h3>
-              <p>Professional technical support and training for all your printing needs.</p>
+              <div className="laminator-image">
+                <Image
+                  src="/se.webp"
+                  alt="Cold Laminator"
+                  width={200}
+                  height={150}
+                  className="product-card-image"
+                  priority
+                />
+              </div>
+              <h3>Cold Laminator</h3>
+              <p>Gentle cold lamination process perfect for heat-sensitive materials and delicate documents.</p>
             </div>
             <div className="feature-card">
-              <h3>Custom Solutions</h3>
-              <p>Tailored printing solutions to meet your specific business requirements.</p>
+              <div className="laminator-image">
+                <Image
+                  src="/se.webp"
+                  alt="Flatbed Laminator"
+                  width={200}
+                  height={150}
+                  className="product-card-image"
+                  priority
+                />
+              </div>
+              <h3>Flatbed Laminator</h3>
+              <p>Precision flatbed lamination for oversized documents and specialty materials with superior finishing quality.</p>
             </div>
           </div>
         </section>
         <div className="horizontally-scroll">
           <HorizontalScrollSection />
         </div>
+
+        {/* News & Events Section */}
+        <NewsEventsSection />
+
         {/* 🔧 SSG CODE PATTERN: Component with no props */}
         {/* No props passed = no dynamic data = SSG will pre-render this */}
         <BranchSection />
