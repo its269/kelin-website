@@ -271,7 +271,7 @@
     }
 
     .item.active {
-        transform: scale(0.83);
+        transform: scale(0.80);
         /* transform: scale(1.15); */
     }
 }
