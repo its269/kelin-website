@@ -221,7 +221,7 @@
     opacity: 0;
     pointer-events: none;
     transform: translateY(10px);
-    transition: opacity 2s ease, transform 2s ease;
+    transition: opacity 0.35s ease, transform 0.35s ease;
 }
 
 /* Show title & button ONLY for the active (center) item */
@@ -253,7 +253,7 @@
 @media (max-width: 768px) {
     .item {
         width: 180px;
-        transition: transform 2.3s ease;
+        transition: transform 0.35s ease;
     }
 
     .imageWrapper {
@@ -271,7 +271,7 @@
     }
 
     .item.active {
-        transform: scale(0.80);
+        transform: scale(0.83);
         /* transform: scale(1.15); */
     }
 }
