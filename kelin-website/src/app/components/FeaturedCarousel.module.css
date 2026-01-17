@@ -251,6 +251,7 @@
 @media (max-width: 768px) {
     .item {
         width: 180px;
+        transition: transform 2.3s ease;
     }
 
     .imageWrapper {
