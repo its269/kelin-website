@@ -241,7 +241,7 @@
 .btn {
     padding: 7px 16px;
     border: none;
-    background: #007bff;
+    background: #ff7300;
     color: #fff;
     border-radius: 20px;
     cursor: pointer;
@@ -297,7 +297,7 @@
 }
 
 .btn:hover {
-    background: #0056b3;
+    background: #b36500;
 }
 
 /* Responsive button and title */
