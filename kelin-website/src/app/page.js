@@ -17,36 +17,78 @@ export default function Home() {
     {
       id: 1,
       image: "https://picsum.photos/id/1011/300/300",
-      title: "Cutting Machines",
+      title: "Textile and Apparel",
       buttonText: "View More",
       onButtonClick: (item) => console.log(`Button clicked for ${item.title}`)
     },
     {
       id: 2,
       image: "https://picsum.photos/id/1025/300/300",
-      title: "Eco-Solvent Printers",
+      title: "Direct to Film (DTF)",
       buttonText: "Learn More",
       onButtonClick: (item) => console.log(`Button clicked for ${item.title}`)
     },
     {
       id: 3,
       image: "https://picsum.photos/id/1035/300/300",
-      title: "Solvent Printers",
+      title: "Threadwork",
       buttonText: "View More",
       onButtonClick: (item) => console.log(`Button clicked for ${item.title}`)
     },
     {
       id: 4,
       image: "https://picsum.photos/id/1041/300/300",
-      title: "Sublimation Printers",
+      title: "Digital Printing Equipment",
       buttonText: "Explore",
       onButtonClick: (item) => console.log(`Button clicked for ${item.title}`)
     },
     {
       id: 5,
       image: "https://picsum.photos/id/1062/300/300",
-      title: "DTF Printers",
+      title: "Signages",
       buttonText: "View More",
+      onButtonClick: (item) => console.log(`Button clicked for ${item.title}`)
+    },
+    {
+      id: 6,
+      image: "https://picsum.photos/id/1015/300/300",
+      title: "Industrial Cutter",
+      buttonText: "Learn More",
+      onButtonClick: (item) => console.log(`Button clicked for ${item.title}`)
+    },
+    {
+      id: 7,
+      image: "https://picsum.photos/id/1018/300/300",
+      title: "Cutting Solution",
+      buttonText: "View More",
+      onButtonClick: (item) => console.log(`Button clicked for ${item.title}`)
+    },
+    {
+      id: 8,
+      image: "https://picsum.photos/id/1019/300/300",
+      title: "Laser Machine Solution",
+      buttonText: "Explore",
+      onButtonClick: (item) => console.log(`Button clicked for ${item.title}`)
+    },
+    {
+      id: 9,
+      image: "https://picsum.photos/id/1020/300/300",
+      title: "Personalized Machine Solution",
+      buttonText: "Learn More",
+      onButtonClick: (item) => console.log(`Button clicked for ${item.title}`)
+    },
+    {
+      id: 10,
+      image: "https://picsum.photos/id/1021/300/300",
+      title: "Exhibition Displays",
+      buttonText: "View More",
+      onButtonClick: (item) => console.log(`Button clicked for ${item.title}`)
+    },
+    {
+      id: 11,
+      image: "https://picsum.photos/id/1022/300/300",
+      title: "Substrates and Materials",
+      buttonText: "Explore",
       onButtonClick: (item) => console.log(`Button clicked for ${item.title}`)
     }
   ];

@@ -41,34 +41,32 @@
 }
 
 .marquee-content {
-    margin: 10px;
     display: flex;
-    width: calc(200% + 40px);
-    /* Double width for seamless loop */
-    animation: marquee 30s linear infinite;
-    /* 20s original animation */
+    width: fit-content;
+    /* Auto width to accommodate all logos with equal spacing */
+    animation: marquee 120s linear infinite;
+    /* Longer animation for 59 logos */
 }
 
 .marquee-logos {
     display: flex;
     flex-shrink: 0;
-    width: 50%;
-    justify-content: space-around;
     align-items: center;
+    gap: 80px;
+    padding-right: 80px;
 }
 
 .marquee-item {
     flex-shrink: 0;
-    margin: 0 20px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .marquee-logo-img {
-    height: 60px;
+    height: 120px;
     width: auto;
-    max-width: 150px;
+    max-width: 250px;
     object-fit: contain;
     /* filter: brightness(0) invert(1); */
     /* Makes logo white */
@@ -88,7 +86,7 @@
     }
 
     100% {
-        transform: translateX(-50%);
+        transform: translateX(calc(-50% - 40px));
     }
 }
 
@@ -109,28 +107,35 @@
         width: 300px;
     }
 
-    .marquee-logo-img {
-        height: 40px;
-        max-width: 100px;
+    .marquee-logos {
+        gap: 50px;
+        padding-right: 50px;
     }
 
-    .marquee-item {
-        margin: 0 15px;
+    .marquee-logo-img {
+        height: 90px;
+        max-width: 220px;
     }
 
     .marquee-content {
-        animation-duration: 15s;
-        /* Faster on mobile */
+        animation-duration: 80s;
+        /* Adjusted speed for mobile with 59 logos */
     }
 }
 
 @media (max-width: 480px) {
-    .marquee-logo-img {
-        height: 30px;
-        max-width: 80px;
+    .marquee-logos {
+        gap: 35px;
+        padding-right: 35px;
     }
 
-    .marquee-item {
-        margin: 0 10px;
+    .marquee-logo-img {
+        height: 80px;
+        max-width: 160px;
+    }
+
+    .marquee-content {
+        animation-duration: 60s;
+        /* Even faster for small mobile with 59 logos */
     }
 }
