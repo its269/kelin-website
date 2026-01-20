@@ -127,7 +127,7 @@ export default function Home() {
               </div>
               <div className="btn">
                 <p className="number">#2</p>
-                <a href="/services" className="btn-secondary">Eco-Solvent<br></br>Printer Machine</a>
+                <a href="/about" className="btn-secondary">Eco-Solvent<br></br>Printer Machine</a>
               </div>
               <div className="btn">
                 <p className="number">#3</p>

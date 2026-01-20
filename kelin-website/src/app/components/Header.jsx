@@ -30,9 +30,9 @@ export default function Header() {
         { title: "Cutters", path: "/products/machine/cutters", type: "product" },
         { title: "Laminators", path: "/products/machine/laminators", type: "product" },
         { title: "Heat Press", path: "/products/machine/heat-press", type: "product" },
-        { title: "About Us", path: "/services", type: "page" },
+        { title: "About Us", path: "/about", type: "page" },
         { title: "News and Events", path: "/events", type: "page" },
-        { title: "Services", path: "/services", type: "page" },
+        { title: "Services", path: "/about", type: "page" },
         { title: "Contact", path: "/contact", type: "page" },
         { title: "Connect with Us", path: "/contact", type: "page" },
         { title: "events", path: "/events", type: "page" }
@@ -312,7 +312,7 @@ export default function Header() {
                     )}
                 </div>
 
-                <Link href="/services" className={`dropdown-toggle ${isActive("/services") ? "active" : ""}`}>About Us</Link>
+                <Link href="/about" className={`dropdown-toggle ${isActive("/about") ? "active" : ""}`}>About Us</Link>
                 <Link href="/events" className={`dropdown-toggle ${isActive("/events") ? "active" : ""}`}>News and Events</Link>
                 <div className="vertical-line"></div>
                 <Link href="/contact" id="connectwithus" className={`dropdown-toggle ${isActive("/contact") ? "" : ""}`}>Connect with Us</Link>
@@ -424,7 +424,7 @@ export default function Header() {
                         )}
                     </div>
 
-                    <Link href="/services" className={isActive("/services") ? "active" : ""} onClick={() => setOpen(false)}>About Us</Link>
+                    <Link href="/about" className={isActive("/about") ? "active" : ""} onClick={() => setOpen(false)}>About Us</Link>
                     <Link href="/contact" className={isActive("/contact") ? "active" : ""} onClick={() => setOpen(false)}>News and Events</Link>
                 </nav>
             )}
