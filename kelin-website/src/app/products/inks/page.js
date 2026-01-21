@@ -44,7 +44,7 @@ export const metadata = {
   },
 };
 
-// Static ink products data for SSG
+// -- Static ink products data for SSG 
 const getInkProductsData = () => {
   return [
     {
