@@ -17,9 +17,7 @@ const nextConfig = {
   },
 
   experimental: {
-    turbo: {
-      root: __dirname,
-    },
+    // Removed turbo configuration as it's not valid in Next.js 16
   },
 };
 
