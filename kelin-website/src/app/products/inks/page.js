@@ -26,7 +26,7 @@ const getInkProductsData = () => {
             name: "Eco M15 1L Cyan",
             size: "1L",
             color: "Cyan",
-            image: "/luxor.png",
+            image: "/KELIN-LOGO-01.png",
             description: "High-quality eco-solvent ink with excellent color reproduction and minimal odor.",
             specifications: {
               "Volume": "1 Liter",
@@ -41,7 +41,7 @@ const getInkProductsData = () => {
             name: "Eco M15 1L Magenta",
             size: "1L",
             color: "Magenta",
-            image: "/luxor2.png",
+            image: "/KELIN-LOGO-01.png",
             description: "Vibrant magenta eco-solvent ink for professional printing applications.",
             specifications: {
               "Volume": "1 Liter",
@@ -56,7 +56,7 @@ const getInkProductsData = () => {
             name: "Eco M15 1L Yellow",
             size: "1L",
             color: "Yellow",
-            image: "/se.webp",
+            image: "/KELIN-LOGO-01.png",
             description: "Bright yellow eco-solvent ink with excellent lightfastness.",
             specifications: {
               "Volume": "1 Liter",
@@ -71,7 +71,7 @@ const getInkProductsData = () => {
             name: "Eco M15 1L Black",
             size: "1L",
             color: "Black",
-            image: "/one.jpg",
+            image: "/KELIN-LOGO-01.png",
             description: "Deep black eco-solvent ink for sharp text and solid areas.",
             specifications: {
               "Volume": "1 Liter",
@@ -86,7 +86,7 @@ const getInkProductsData = () => {
             name: "M21 Cyan (i3200)",
             size: "1L",
             color: "Cyan",
-            image: "/luxor.png",
+            image: "/KELIN-LOGO-01.png",
             description: "Specialized cyan ink optimized for i3200 printheads.",
             specifications: {
               "Volume": "1 Liter",
@@ -101,7 +101,7 @@ const getInkProductsData = () => {
             name: "M21 Magenta (i3200)",
             size: "1L",
             color: "Magenta",
-            image: "/luxor2.png",
+            image: "/KELIN-LOGO-01.png",
             description: "Specialized magenta ink optimized for i3200 printheads.",
             specifications: {
               "Volume": "1 Liter",
@@ -116,7 +116,7 @@ const getInkProductsData = () => {
             name: "M21 Yellow (i3200)",
             size: "1L",
             color: "Yellow",
-            image: "/se.webp",
+            image: "/KELIN-LOGO-01.png",
             description: "Specialized yellow ink optimized for i3200 printheads.",
             specifications: {
               "Volume": "1 Liter",
@@ -131,7 +131,7 @@ const getInkProductsData = () => {
             name: "M21 Black (i3200)",
             size: "1L",
             color: "Black",
-            image: "/one.jpg",
+            image: "/KELIN-LOGO-01.png",
             description: "Specialized black ink optimized for i3200 printheads.",
             specifications: {
               "Volume": "1 Liter",
@@ -146,7 +146,7 @@ const getInkProductsData = () => {
             name: "Phoenix E2 1L. Cyan",
             size: "1L",
             color: "Cyan",
-            image: "/luxor.png",
+            image: "/KELIN-LOGO-01.png",
             description: "Premium Phoenix E2 cyan ink for superior print quality.",
             specifications: {
               "Volume": "1 Liter",
@@ -161,7 +161,7 @@ const getInkProductsData = () => {
             name: "Phoenix E2 1L. Magenta",
             size: "1L",
             color: "Magenta",
-            image: "/luxor2.png",
+            image: "/KELIN-LOGO-01.png",
             description: "Premium Phoenix E2 magenta ink for superior print quality.",
             specifications: {
               "Volume": "1 Liter",
@@ -176,7 +176,7 @@ const getInkProductsData = () => {
             name: "Phoenix E2 1L. Yellow",
             size: "1L",
             color: "Yellow",
-            image: "/se.webp",
+            image: "/KELIN-LOGO-01.png",
             description: "Premium Phoenix E2 yellow ink for superior print quality.",
             specifications: {
               "Volume": "1 Liter",
@@ -191,7 +191,7 @@ const getInkProductsData = () => {
             name: "Phoenix E2 1L. Black",
             size: "1L",
             color: "Black",
-            image: "/one.jpg",
+            image: "/KELIN-LOGO-01.png",
             description: "Premium Phoenix E2 black ink for superior print quality.",
             specifications: {
               "Volume": "1 Liter",
@@ -221,7 +221,7 @@ const getInkProductsData = () => {
             name: "Eagle V2 1L. Cyan",
             size: "1L",
             color: "Cyan",
-            image: "/luxor.png",
+            image: "/KELIN-LOGO-01.png",
             description: "Professional solvent-based cyan ink with excellent weather resistance for outdoor applications.",
             specifications: {
               "Volume": "1 Liter",
@@ -236,7 +236,7 @@ const getInkProductsData = () => {
             name: "Eagle V2 1L. Magenta",
             size: "1L",
             color: "Magenta",
-            image: "/luxor2.png",
+            image: "/KELIN-LOGO-01.png",
             description: "Professional solvent-based magenta ink with excellent weather resistance for outdoor applications.",
             specifications: {
               "Volume": "1 Liter",
@@ -251,7 +251,7 @@ const getInkProductsData = () => {
             name: "Eagle V2 1L. Yellow",
             size: "1L",
             color: "Yellow",
-            image: "/se.webp",
+            image: "/KELIN-LOGO-01.png",
             description: "Professional solvent-based yellow ink with excellent weather resistance for outdoor applications.",
             specifications: {
               "Volume": "1 Liter",
@@ -266,7 +266,7 @@ const getInkProductsData = () => {
             name: "Eagle V2 1L. Black",
             size: "1L",
             color: "Black",
-            image: "/one.jpg",
+            image: "/KELIN-LOGO-01.png",
             description: "Professional solvent-based black ink with excellent weather resistance for outdoor applications.",
             specifications: {
               "Volume": "1 Liter",
@@ -281,7 +281,7 @@ const getInkProductsData = () => {
             name: "Eagle V2 5L. Cyan",
             size: "5L",
             color: "Cyan",
-            image: "/luxor.png",
+            image: "/KELIN-LOGO-01.png",
             description: "Large volume professional solvent-based cyan ink for high-volume printing.",
             specifications: {
               "Volume": "5 Liters",
@@ -296,7 +296,7 @@ const getInkProductsData = () => {
             name: "Eagle V2 5L. Magenta",
             size: "5L",
             color: "Magenta",
-            image: "/luxor2.png",
+            image: "/KELIN-LOGO-01.png",
             description: "Large volume professional solvent-based magenta ink for high-volume printing.",
             specifications: {
               "Volume": "5 Liters",
@@ -311,7 +311,7 @@ const getInkProductsData = () => {
             name: "Eagle V2 5L. Yellow",
             size: "5L",
             color: "Yellow",
-            image: "/se.webp",
+            image: "/KELIN-LOGO-01.png",
             description: "Large volume professional solvent-based yellow ink for high-volume printing.",
             specifications: {
               "Volume": "5 Liters",
@@ -326,7 +326,7 @@ const getInkProductsData = () => {
             name: "Eagle V2 5L. Black",
             size: "5L",
             color: "Black",
-            image: "/one.jpg",
+            image: "/KELIN-LOGO-01.png",
             description: "Large volume professional solvent-based black ink for high-volume printing.",
             specifications: {
               "Volume": "5 Liters",
@@ -341,7 +341,7 @@ const getInkProductsData = () => {
             name: "T14 Cyan",
             size: "1L",
             color: "Cyan",
-            image: "/luxor.png",
+            image: "/KELIN-LOGO-01.png",
             description: "T14 series cyan solvent ink for professional printing applications.",
             specifications: {
               "Volume": "1 Liter",
@@ -356,7 +356,7 @@ const getInkProductsData = () => {
             name: "T14 Magenta",
             size: "1L",
             color: "Magenta",
-            image: "/luxor2.png",
+            image: "/KELIN-LOGO-01.png",
             description: "T14 series magenta solvent ink for professional printing applications.",
             specifications: {
               "Volume": "1 Liter",
@@ -371,7 +371,7 @@ const getInkProductsData = () => {
             name: "T14 Yellow",
             size: "1L",
             color: "Yellow",
-            image: "/se.webp",
+            image: "/KELIN-LOGO-01.png",
             description: "T14 series yellow solvent ink for professional printing applications.",
             specifications: {
               "Volume": "1 Liter",
@@ -386,7 +386,7 @@ const getInkProductsData = () => {
             name: "T14 Black",
             size: "1L",
             color: "Black",
-            image: "/one.jpg",
+            image: "/KELIN-LOGO-01.png",
             description: "T14 series black solvent ink for professional printing applications.",
             specifications: {
               "Volume": "1 Liter",
@@ -401,7 +401,7 @@ const getInkProductsData = () => {
             name: "T14 Eco Plus 2L Cyan",
             size: "2L",
             color: "Cyan",
-            image: "/luxor.png",
+            image: "/KELIN-LOGO-01.png",
             description: "Enhanced T14 Eco Plus cyan ink with improved environmental properties.",
             specifications: {
               "Volume": "2 Liters",
@@ -416,7 +416,7 @@ const getInkProductsData = () => {
             name: "T14 Eco Plus 2L Magenta",
             size: "2L",
             color: "Magenta",
-            image: "/luxor2.png",
+            image: "/KELIN-LOGO-01.png",
             description: "Enhanced T14 Eco Plus magenta ink with improved environmental properties.",
             specifications: {
               "Volume": "2 Liters",
@@ -431,7 +431,7 @@ const getInkProductsData = () => {
             name: "T14 Eco Plus 2L Yellow",
             size: "2L",
             color: "Yellow",
-            image: "/se.webp",
+            image: "/KELIN-LOGO-01.png",
             description: "Enhanced T14 Eco Plus yellow ink with improved environmental properties.",
             specifications: {
               "Volume": "2 Liters",
@@ -446,7 +446,7 @@ const getInkProductsData = () => {
             name: "T14 Eco Plus 2L Black",
             size: "2L",
             color: "Black",
-            image: "/one.jpg",
+            image: "/KELIN-LOGO-01.png",
             description: "Enhanced T14 Eco Plus black ink with improved environmental properties.",
             specifications: {
               "Volume": "2 Liters",
@@ -669,21 +669,21 @@ const generateStructuredData = (inkData) => {
   };
 };
 
-// Helper function for color codes
+// Helper function for color codes (grayscale palette)
 const getColorCode = (colorName) => {
   const colorMap = {
-    'Cyan': '#00bcd4',
-    'Magenta': '#e91e63',
-    'Yellow': '#ffeb3b',
-    'Black': '#424242',
-    'White': '#ffffff',
-    'Clear': '#e0e0e0',
-    'Light Cyan': '#4dd0e1',
-    'Light Magenta': '#f06292',
-    'Fluorescent Yellow': '#ffff00',
-    'Fluorescent Pink': '#ff1493',
-    'Fluorescent Orange': '#ff6600',
-    'Fluorescent Red': '#ff0000'
+    'Cyan': '#9ca3af',
+    'Magenta': '#6b7280',
+    'Yellow': '#d1d5db',
+    'Black': '#374151',
+    'White': '#f9fafb',
+    'Clear': '#e5e7eb',
+    'Light Cyan': '#d1d5db',
+    'Light Magenta': '#9ca3af',
+    'Fluorescent Yellow': '#f3f4f6',
+    'Fluorescent Pink': '#9ca3af',
+    'Fluorescent Orange': '#9ca3af',
+    'Fluorescent Red': '#6b7280'
   };
   return colorMap[colorName] || '#9e9e9e';
 };

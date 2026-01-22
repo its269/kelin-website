@@ -62,7 +62,7 @@
 
 #connectwithus {
     padding: 4px 30px 4px 30px;
-    background: linear-gradient(135deg, #351818, #643e06);
+    background: linear-gradient(135deg, #4b5563, #6b7280);
     /* color: white; */
     border-radius: 30px;
 }
@@ -131,7 +131,7 @@
     left: 0;
     width: 0;
     height: 2px;
-    background: linear-gradient(90deg, #ff6b6b, #ffa726);
+    background: linear-gradient(90deg, #6b7280, #9ca3af);
     transition: width 0.3s ease;
 }
 
@@ -169,12 +169,12 @@
     left: 0;
     width: 0;
     height: 2px;
-    background: linear-gradient(90deg, #ff6b6b, #ffa726);
+    background: linear-gradient(90deg, #6b7280, #9ca3af);
     transition: width 0.3s ease;
 }
 
 .dropdown-toggle:hover {
-    color: #ff7300;
+    color: #6b7280;
     transform: translateY(-1px);
 }
 

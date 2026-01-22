@@ -78,14 +78,14 @@
 }
 
 .product-link {
-  color: #0070f3;
+  color: #6b7280;
   text-decoration: none;
   font-weight: 500;
   transition: color 0.3s ease;
 }
 
 .product-link:hover {
-  color: #0056b3;
+  color: #4b5563;
 }
 
 /* Machine Page Specific Styles */
@@ -254,7 +254,7 @@
 
 .machine-link:hover {
   background: #f0f0f0;
-  color: #0070f3;
+  color: #6b7280;
 }
 
 .machine-link svg {

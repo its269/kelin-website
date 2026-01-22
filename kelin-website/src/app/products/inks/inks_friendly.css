@@ -33,7 +33,7 @@
 
 .ink-hero-subtitle {
     font-size: 1.1rem;
-    color: #ff6b35;
+    color: #6b7280;
     font-weight: 600;
     margin-bottom: 20px;
     text-transform: uppercase;
@@ -62,7 +62,7 @@
     display: block;
     font-size: 2rem;
     font-weight: 700;
-    color: #ff6b35;
+    color: #6b7280;
 }
 
 .stat-label {
@@ -104,16 +104,16 @@
 }
 
 .filter-card:hover {
-    border-color: #ff6b35;
+    border-color: #6b7280;
     transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(255, 107, 53, 0.2);
+    box-shadow: 0 10px 30px rgba(107, 114, 128, 0.2);
 }
 
 .filter-icon {
     width: 60px;
     height: 60px;
     margin: 0 auto 15px;
-    background: linear-gradient(135deg, #ff6b35, #ff8c42);
+    background: linear-gradient(135deg, #6b7280, #9ca3af);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -141,7 +141,7 @@
 
 .filter-arrow {
     font-size: 1.2rem;
-    color: #ff6b35;
+    color: #6b7280;
     font-weight: bold;
 }
 
@@ -214,7 +214,7 @@
 
 .features li:before {
     content: "•";
-    color: #ff6b35;
+    color: #6b7280;
     font-weight: bold;
     position: absolute;
     left: 0;
@@ -261,14 +261,14 @@
 
 .product-card:hover {
     background: white;
-    border-color: #ff6b35;
+    border-color: #6b7280;
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(255, 107, 53, 0.15);
 }
 
 .product-image {
     width: 100%;
-    height: 120px;
+    height: 220px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -279,8 +279,8 @@
 }
 
 .product-img {
-    width: 80px;
-    height: 80px;
+    width: 180px;
+    height: 180px;
     object-fit: contain;
     transition: transform 0.3s ease;
 }
@@ -363,7 +363,7 @@
 
 .inquire-btn {
     width: 100%;
-    background: #ff6b35;
+    background: #6b7280;
     color: white;
     border: none;
     padding: 10px 16px;
@@ -375,7 +375,7 @@
 }
 
 .inquire-btn:hover {
-    background: #e53e3e;
+    background: #e58f3e;
     transform: translateY(-1px);
 }
 
@@ -429,7 +429,7 @@
 }
 
 .support-btn.primary {
-    background: #ff6b35;
+    background: #6b7280;
     color: white;
 }
 
@@ -439,12 +439,12 @@
 
 .support-btn.secondary {
     background: transparent;
-    color: #ff6b35;
-    border: 2px solid #ff6b35;
+    color: #6b7280;
+    border: 2px solid #6b7280;
 }
 
 .support-btn.secondary:hover {
-    background: #ff6b35;
+    background: #6b7280;
     color: white;
 }
 
@@ -604,7 +604,7 @@
 }
 
 .modal-category {
-    background: #ff6b35;
+    background: #6b7280;
     color: white;
     padding: 4px 12px;
     border-radius: 15px;
@@ -698,23 +698,23 @@
 }
 
 .modal-actions .btn-primary {
-    background: #ff6b35;
+    background: #6b7280;
     color: white;
 }
 
 .modal-actions .btn-primary:hover {
-    background: #e53e3e;
+    background: #4b5563;
     transform: translateY(-1px);
 }
 
 .modal-actions .btn-secondary {
     background: transparent;
-    color: #ff6b35;
-    border: 2px solid #ff6b35;
+    color: #6b7280;
+    border: 2px solid #6b7280;
 }
 
 .modal-actions .btn-secondary:hover {
-    background: #ff6b35;
+    background: #6b7280;
     color: white;
 }
 
@@ -828,8 +828,8 @@
 .form-group input:focus,
 .form-group textarea:focus {
     outline: none;
-    border-color: #ff6b35;
-    box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.1);
+    border-color: #6b7280;
+    box-shadow: 0 0 0 3px rgba(107, 114, 128, 0.1);
 }
 
 .form-group textarea {
@@ -858,23 +858,23 @@
 }
 
 .form-actions .btn-primary {
-    background: #ff6b35;
+    background: #6b7280;
     color: white;
 }
 
 .form-actions .btn-primary:hover {
-    background: #e53e3e;
+    background: #4b5563;
     transform: translateY(-1px);
 }
 
 .form-actions .btn-secondary {
     background: transparent;
-    color: #ff6b35;
-    border: 2px solid #ff6b35;
+    color: #6b7280;
+    border: 2px solid #6b7280;
 }
 
 .form-actions .btn-secondary:hover {
-    background: #ff6b35;
+    background: #6b7280;
     color: white;
 }
 

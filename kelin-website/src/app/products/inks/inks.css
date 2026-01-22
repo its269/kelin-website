@@ -16,9 +16,9 @@
     background: linear-gradient(135deg, #fff5f0 0%, #ffffff 100%);
     border-radius: 16px;
     color: #333;
-    border: 1px solid #fed7cc;
+    border: 1px solid #e5e7eb;
     position: relative;
-    box-shadow: 0 10px 30px rgba(255, 115, 0, 0.1);
+    box-shadow: 0 10px 30px rgba(107, 114, 128, 0.1);
 }
 
 .ink-hero-title {
@@ -27,7 +27,7 @@
     margin-bottom: 24px;
     color: #2d3748;
     letter-spacing: -0.02em;
-    background: linear-gradient(135deg, #ff7300 0%, #ff9500 100%);
+    background: linear-gradient(135deg, #6b7280 0%, #9ca3af 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -49,8 +49,8 @@
     background: linear-gradient(135deg, #fffaf0 0%, #fff7ed 100%);
     border-radius: 12px;
     color: #333;
-    border-left: 5px solid #ff7300;
-    box-shadow: 0 5px 20px rgba(255, 115, 0, 0.08);
+    border-left: 5px solid #6b7280;
+    box-shadow: 0 5px 20px rgba(107, 114, 128, 0.08);
 }
 
 .ink-intro h2 {
@@ -110,11 +110,11 @@
 }
 
 .category-pill:hover {
-    background: #ff7300;
+    background: #6b7280;
     color: white;
-    border-color: #ff7300;
+    border-color: #6b7280;
     transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(255, 115, 0, 0.3);
+    box-shadow: 0 5px 15px rgba(107, 114, 128, 0.3);
 }
 
 .product-count {
@@ -163,7 +163,7 @@
 .category-image {
     position: relative;
     height: 300px;
-    background: linear-gradient(135deg, #ff7300 0%, #ff9500 100%);
+    background: linear-gradient(135deg, #6b7280 0%, #9ca3af 100%);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -225,7 +225,7 @@
     content: "✓";
     position: absolute;
     left: 0;
-    color: #ff7300;
+    color: #6b7280;
     font-weight: bold;
     font-size: 16px;
 }
@@ -237,7 +237,7 @@
 }
 
 .app-tag {
-    background: linear-gradient(135deg, #ff7300 0%, #ff9500 100%);
+    background: linear-gradient(135deg, #6b7280 0%, #9ca3af 100%);
     color: white;
     padding: 6px 14px;
     border-radius: 20px;
@@ -280,7 +280,7 @@
 .product-item:hover {
     transform: translateY(-2px);
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-    border-color: #ff7300;
+    border-color: #6b7280;
 }
 
 .product-info {
@@ -394,7 +394,7 @@
 }
 
 .product-inquiry-btn {
-    background: #ff7300;
+    background: #6b7280;
     color: white;
     border: none;
     padding: 8px 16px;
@@ -406,7 +406,7 @@
 }
 
 .product-inquiry-btn:hover {
-    background: #e5670e;
+    background: #4b5563;
     transform: scale(1.05);
 }
 
@@ -433,7 +433,7 @@
     left: 0;
     width: 4px;
     height: 40px;
-    background: #ff7300;
+    background: #6b7280;
 }
 
 .ink-product-title {
@@ -482,7 +482,7 @@
     line-height: 1.5;
     background: #fffaf0;
     border-radius: 6px;
-    border-left: 3px solid #ff7300;
+    border-left: 3px solid #6b7280;
     transition: all 0.2s ease;
 }
 
@@ -512,7 +512,7 @@
 }
 
 .app-tag {
-    background: #ff7300;
+    background: #6b7280;
     color: white;
     padding: 8px 16px;
     border-radius: 20px;
@@ -523,7 +523,7 @@
 }
 
 .app-tag:hover {
-    background: #ea580c;
+    background: #4b5563;
     transform: translateY(-1px);
 }
 
@@ -547,15 +547,15 @@
     display: flex;
     flex-direction: column;
     padding: 16px;
-    background: #fffaf0;
-    border: 1px solid #fed7cc;
+    background: #f9fafb;
+    border: 1px solid #e5e7eb;
     border-radius: 6px;
     transition: all 0.2s ease;
 }
 
 .spec-item:hover {
-    background: #fff7ed;
-    border-color: #fdba74;
+    background: #f3f4f6;
+    border-color: #d1d5db;
 }
 
 .spec-label {
@@ -578,7 +578,7 @@
     margin-bottom: 80px;
     padding-top: 60px;
     padding: 50px 40px;
-    background: #fffaf0;
+    background: #f9fafb;
     border-radius: 8px;
 }
 
@@ -601,15 +601,15 @@
     background: white;
     padding: 30px;
     border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(255, 115, 0, 0.08);
+    box-shadow: 0 2px 8px rgba(107, 114, 128, 0.08);
     text-align: center;
     transition: all 0.2s ease;
-    border: 1px solid #fed7cc;
+    border: 1px solid #e5e7eb;
 }
 
 .info-card:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(255, 115, 0, 0.12);
+    box-shadow: 0 8px 25px rgba(107, 114, 128, 0.12);
 }
 
 .info-card h3 {
@@ -676,12 +676,12 @@
 }
 
 .cta-primary {
-    background: #ff7300;
+    background: #6b7280;
     color: white;
 }
 
 .cta-primary:hover {
-    background: #ea580c;
+    background: #4b5563;
     transform: translateY(-1px);
 }
 

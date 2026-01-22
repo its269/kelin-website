@@ -89,7 +89,7 @@
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 
     .number {
-        color: #ffae44;
+        color: #9ca3af;
     }
 }
 
@@ -118,7 +118,7 @@
 }
 
 .btn:hover a {
-    color: #ffae44;
+    color: #9ca3af;
 }
 
 .tagline {
@@ -218,7 +218,7 @@
 
 .feature-card {
     padding: 2.5rem 2rem;
-    text-align: center;
+    text-align: left;
     border-radius: 16px;
     background: linear-gradient(145deg, #ffffff 0%, #f8f9fa 100%);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
@@ -235,7 +235,7 @@
     left: 0;
     right: 0;
     height: 4px;
-    background: linear-gradient(90deg, #ff8800, #b35700);
+    background: linear-gradient(90deg, #6b7280, #4b5563);
     transform: scaleX(0);
     transition: transform 0.3s ease;
 }
@@ -251,31 +251,20 @@
     justify-content: center;
     align-items: center;
     padding: 1rem;
-    background: rgba(0, 123, 255, 0.02);
+    background: transparent;
     border-radius: 12px;
     position: relative;
+    height: 280px;
+    width: 100%;
 }
 
 .product-card-image {
-    width: 100%;
-    height: auto;
-    max-width: 220px;
+    width: 260px;
+    height: 200px;
+    object-fit: contain;
     border-radius: 12px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: none;
     filter: brightness(1.02) contrast(1.05);
-}
-
-.feature-card:hover .product-card-image {
-    transform: scale(1.08) translateY(-2px);
-    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.18);
-    filter: brightness(1.05) contrast(1.1);
-}
-
-.feature-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
-    background: linear-gradient(145deg, #ffffff 0%, #f0f4f8 100%);
 }
 
 .feature-card h3 {

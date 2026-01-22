@@ -44,7 +44,7 @@
 
 .product-detail-list li:before {
   content: '•';
-  color: #0070f3;
+  color: #6b7280;
   position: absolute;
   left: 0;
 }
