@@ -847,28 +847,28 @@ export default function Inks() {
 
                   <div className="products-list">
                     <h4>Available Products ({category.products.length})</h4>
-                    <div className="products-grid">
+                    <div className="ink-products-grid">
                       {category.products.map((product, idx) => (
-                        <div key={idx} className="product-card">
-                          <div className="product-image">
+                        <div key={idx} className="ink-product-card">
+                          <div className="ink-product-image">
                             <Image
                               src={product.image || '/KELIN-LOGO-01.png'}
                               alt={product.name}
-                              width={120}
-                              height={120}
-                              className="product-img"
+                              width={80}
+                              height={80}
+                              className="ink-product-img"
                             />
                           </div>
-                          <div className="product-header">
+                          <div className="ink-product-header">
                             <h5>{product.name}</h5>
-                            <div className="product-badges">
+                            <div className="ink-product-badges">
                               <span className={`size-badge ${product.size === '5L' ? 'large' : product.size === '2L' ? 'medium' : 'small'}`}>
                                 {product.size}
                               </span>
                               <span className="color-indicator" style={{ backgroundColor: getColorCode(product.color) }}></span>
                             </div>
                           </div>
-                          <div className="product-details">
+                          <div className="ink-product-details">
                             <span className="color-name">{product.color}</span>
                             {product.type && <span className="product-type">{product.type}</span>}
                           </div>

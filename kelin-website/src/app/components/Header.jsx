@@ -26,10 +26,16 @@ export default function Header() {
         { title: "Accessories", path: "/products/accessories", type: "product" },
         { title: "Promotional Display", path: "/products/promotional-display", type: "product" },
         { title: "Machine", path: "/products/machine", type: "product" },
-        { title: "Printers", path: "/products/machine/printers", type: "product" },
-        { title: "Cutters", path: "/products/machine/cutters", type: "product" },
-        { title: "Laminators", path: "/products/machine/laminators", type: "product" },
-        { title: "Heat Press", path: "/products/machine/heat-press", type: "product" },
+        { title: "Eco - Solvent Printers", path: "/products/machine/eco-solvent-printers", type: "product" },
+        { title: "Solvent Printers", path: "/products/machine/solvent-printers", type: "product" },
+        { title: "Cutting Machine", path: "/products/machine/cutting-machine", type: "product" },
+        { title: "Sublimation and DTF", path: "/products/machine/sublimation-dtf", type: "product" },
+        { title: "UV Printers", path: "/products/machine/uv-printers", type: "product" },
+        { title: "Heatpress", path: "/products/machine/heatpress", type: "product" },
+        { title: "Laminator", path: "/products/machine/laminator", type: "product" },
+        { title: "Laser Machine", path: "/products/machine/laser-machine", type: "product" },
+        { title: "Embroidery and Knitting", path: "/products/machine/embroidery-knitting", type: "product" },
+        { title: "3D Printer", path: "/products/machine/3d-printer", type: "product" },
         { title: "About Us", path: "/about", type: "page" },
         { title: "News and Events", path: "/events", type: "page" },
         { title: "Services", path: "/about", type: "page" },
@@ -301,10 +307,16 @@ export default function Header() {
 
                                 {machineOpen && (
                                     <div className="dropdown-menu-nested">
-                                        <Link href="/products/machine/printers">Printers</Link>
-                                        <Link href="/products/machine/cutters">Cutters</Link>
-                                        <Link href="/products/machine/laminators">Laminators</Link>
-                                        <Link href="/products/machine/heat-press">Heat Press</Link>
+                                        <Link href="/products/machine/eco-solvent-printers">Eco - Solvent Printers</Link>
+                                        <Link href="/products/machine/solvent-printers">Solvent Printers</Link>
+                                        <Link href="/products/machine/cutting-machine">Cutting Machine</Link>
+                                        <Link href="/products/machine/sublimation-dtf">Sublimation and DTF</Link>
+                                        <Link href="/products/machine/uv-printers">UV Printers</Link>
+                                        <Link href="/products/machine/heatpress">Heatpress</Link>
+                                        <Link href="/products/machine/laminator">Laminator</Link>
+                                        <Link href="/products/machine/laser-machine">Laser Machine</Link>
+                                        <Link href="/products/machine/embroidery-knitting">Embroidery and Knitting</Link>
+                                        <Link href="/products/machine/3d-printer">3D Printer</Link>
                                     </div>
                                 )}
                             </div>
@@ -378,6 +390,7 @@ export default function Header() {
                         )}
                     </div>
 
+                    <Link href="/" className={isActive("/") ? "active" : ""} onClick={() => setOpen(false)}>Home</Link>
                     <Link href="/explore" className={isActive("/explore") ? "active" : ""} onClick={() => setOpen(false)}>Explore</Link>
 
                     {/* Mobile Products Dropdown */}
@@ -413,10 +426,16 @@ export default function Header() {
 
                                     {machineOpen && (
                                         <div className="mobile-dropdown-menu-nested">
-                                            <Link href="/products/machine/printers" onClick={() => setOpen(false)}>Printers</Link>
-                                            <Link href="/products/machine/cutters" onClick={() => setOpen(false)}>Cutters</Link>
-                                            <Link href="/products/machine/laminators" onClick={() => setOpen(false)}>Laminators</Link>
-                                            <Link href="/products/machine/heat-press" onClick={() => setOpen(false)}>Heat Press</Link>
+                                            <Link href="/products/machine/eco-solvent-printers" onClick={() => setOpen(false)}>Eco - Solvent Printers</Link>
+                                            <Link href="/products/machine/solvent-printers" onClick={() => setOpen(false)}>Solvent Printers</Link>
+                                            <Link href="/products/machine/cutting-machine" onClick={() => setOpen(false)}>Cutting Machine</Link>
+                                            <Link href="/products/machine/sublimation-dtf" onClick={() => setOpen(false)}>Sublimation and DTF</Link>
+                                            <Link href="/products/machine/uv-printers" onClick={() => setOpen(false)}>UV Printers</Link>
+                                            <Link href="/products/machine/heatpress" onClick={() => setOpen(false)}>Heatpress</Link>
+                                            <Link href="/products/machine/laminator" onClick={() => setOpen(false)}>Laminator</Link>
+                                            <Link href="/products/machine/laser-machine" onClick={() => setOpen(false)}>Laser Machine</Link>
+                                            <Link href="/products/machine/embroidery-knitting" onClick={() => setOpen(false)}>Embroidery and Knitting</Link>
+                                            <Link href="/products/machine/3d-printer" onClick={() => setOpen(false)}>3D Printer</Link>
                                         </div>
                                     )}
                                 </div>

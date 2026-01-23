@@ -131,7 +131,7 @@ export default function Home() {
             <div className="home-tagline-text">
               <div className="tagline">
                 <p className="kgs">KGS</p>
-                <h1 className="hero-title">YOUR TRUSTED<br></br>LONG-TERM PRINTING SOLUTIONS PROVIDER</h1>
+                <h1 className="hero1-title">YOUR TRUSTED<br></br>LONG-TERM PRINTING SOLUTIONS PROVIDER</h1>
               </div>
               <p className="hero-description">
                 <b>Powering high-quality output at any scale.</b><br></br>From your vision to powerful,
