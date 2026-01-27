@@ -146,6 +146,25 @@ export default function Header() {
         };
     }, []);
 
+    // Handle dropdown clicks outside for iOS touch devices
+    useEffect(() => {
+        const handleDropdownClickOutside = (event) => {
+            // Close dropdowns if clicking outside
+            if (!event.target.closest('.dropdown') && !event.target.closest('.dropdown-nested')) {
+                setProductsOpen(false);
+                setMachineOpen(false);
+            }
+        };
+
+        document.addEventListener('touchstart', handleDropdownClickOutside);
+        document.addEventListener('mousedown', handleDropdownClickOutside);
+
+        return () => {
+            document.removeEventListener('touchstart', handleDropdownClickOutside);
+            document.removeEventListener('mousedown', handleDropdownClickOutside);
+        };
+    }, []);
+
     return (
         <header className="header">
             <div className="header-container">
@@ -274,16 +293,20 @@ export default function Header() {
 
                 {/* Products Dropdown */}
                 <div
-                    className="dropdown"
+                    className={`dropdown ${productsOpen ? 'active' : ''}`}
                     onMouseEnter={() => setProductsOpen(true)}
                     onMouseLeave={() => setProductsOpen(false)}
                 >
-                    <Link href="/products" className={`dropdown-toggle ${isActive("/products") ? "active" : ""}`}>
+                    <span
+                        className={`dropdown-toggle ${isActive("/products") ? "active" : ""}`}
+                        onClick={() => setProductsOpen(!productsOpen)}
+                        style={{ cursor: 'pointer' }}
+                    >
                         Products
                         <svg width="12" height="12" viewBox="0 0 24 24" fill="none">
                             <path d="M6 9L12 15L18 9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                         </svg>
-                    </Link>
+                    </span>
 
                     {productsOpen && (
                         <div className="dropdown-menu">
@@ -294,16 +317,20 @@ export default function Header() {
 
                             {/* Machine Nested Dropdown */}
                             <div
-                                className="dropdown-nested"
+                                className={`dropdown-nested ${machineOpen ? 'active' : ''}`}
                                 onMouseEnter={() => setMachineOpen(true)}
                                 onMouseLeave={() => setMachineOpen(false)}
                             >
-                                <Link href="/products/machine" className="dropdown-toggle-nested">
+                                <span
+                                    className="dropdown-toggle-nested"
+                                    onClick={() => setMachineOpen(!machineOpen)}
+                                    style={{ cursor: 'pointer' }}
+                                >
                                     Machine
                                     <svg className="arrow-right" width="10" height="10" viewBox="0 0 24 24" fill="none">
                                         <path d="M9 6L15 12L9 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                                     </svg>
-                                </Link>
+                                </span>
 
                                 {machineOpen && (
                                     <div className="dropdown-menu-nested">

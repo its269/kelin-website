@@ -99,20 +99,6 @@ export default function Explore() {
               Discover our comprehensive range of professional printing products,
               from high-quality inks and materials to advanced machinery and accessories.
             </p>
-            <div className="hero-stats">
-              <div className="stat">
-                <span className="stat-number">5</span>
-                <span className="stat-label">Product Categories</span>
-              </div>
-              <div className="stat">
-                <span className="stat-number">50+</span>
-                <span className="stat-label">Products</span>
-              </div>
-              <div className="stat">
-                <span className="stat-number">15+</span>
-                <span className="stat-label">Years Experience</span>
-              </div>
-            </div>
           </div>
           <div className="hero-visual">
             <div className="floating-cards">

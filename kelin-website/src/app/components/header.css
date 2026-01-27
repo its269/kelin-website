@@ -483,6 +483,12 @@
     cursor: pointer;
     transition: all 0.3s ease;
     font-weight: 600;
+    /* iOS Safari fixes */
+    appearance: none;
+    -webkit-appearance: none;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+    outline: none;
 }
 
 .menu-btn:hover {
@@ -503,6 +509,16 @@
     gap: 2px;
     border-top: 1px solid rgba(0, 0, 0, 0.06);
     animation: mobileMenuSlide 0.3s ease;
+    /* iOS Safari fixes */
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
+    max-height: calc(100vh - 60px);
+    overflow-y: auto;
+    position: fixed;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
 }
 
 @keyframes mobileMenuSlide {
@@ -726,7 +742,29 @@
     .mobile-dropdown-toggle,
     .nav-mobile a {
         font-size: 15px;
-        padding: 10px 12px;
+        padding: 14px 12px;
+        /* Increased padding for better touch targets */
+        min-height: 44px;
+        /* iOS recommended touch target size */
+    }
+}
+
+/* iOS Safari specific fixes */
+@supports (-webkit-touch-callout: none) {
+    .header {
+        position: fixed;
+        /* Better performance on iOS */
+    }
+
+    .nav-mobile {
+        -webkit-transform: translate3d(0, 0, 0);
+        /* Hardware acceleration */
+        transform: translate3d(0, 0, 0);
+    }
+
+    /* Fix iOS zoom on input focus */
+    .search-input {
+        font-size: 16px;
     }
 
     .mobile-dropdown-menu a {
@@ -926,5 +964,53 @@
 
     .search-result-type {
         font-size: 10px;
+    }
+}
+
+/* iOS Safari specific fixes */
+@supports (-webkit-touch-callout: none) {
+    .header {
+        position: fixed;
+        /* Better performance on iOS */
+    }
+
+    .nav-mobile {
+        -webkit-transform: translate3d(0, 0, 0);
+        /* Hardware acceleration */
+        transform: translate3d(0, 0, 0);
+    }
+
+    /* Fix iOS zoom on input focus */
+    .search-input {
+        font-size: 16px;
+    }
+}
+
+/* Touch device dropdown behavior */
+@media (hover: none) and (pointer: coarse) {
+    .dropdown:hover .dropdown-menu {
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-10px);
+    }
+
+    .dropdown.active .dropdown-menu {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    .dropdown-toggle {
+        -webkit-tap-highlight-color: transparent;
+        touch-action: manipulation;
+    }
+
+    /* Increase touch targets for mobile */
+    .nav-mobile a,
+    .mobile-dropdown-toggle {
+        min-height: 44px;
+        /* iOS recommended touch target size */
+        display: flex;
+        align-items: center;
     }
 }

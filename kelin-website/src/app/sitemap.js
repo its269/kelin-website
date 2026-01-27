@@ -76,30 +76,92 @@ export default function sitemap() {
             priority: 0.8,
         },
 
-        // Machine subcategories
+        // Machine category pages
+        {
+            url: `${baseUrl}/products/machine/eco-solvent-printers`,
+            lastModified: new Date(),
+            changeFrequency: 'monthly',
+            priority: 0.8,
+        },
+        {
+            url: `${baseUrl}/products/machine/solvent-printers`,
+            lastModified: new Date(),
+            changeFrequency: 'monthly',
+            priority: 0.8,
+        },
+        {
+            url: `${baseUrl}/products/machine/cutting-machine`,
+            lastModified: new Date(),
+            changeFrequency: 'monthly',
+            priority: 0.8,
+        },
+        {
+            url: `${baseUrl}/products/machine/sublimation-dtf`,
+            lastModified: new Date(),
+            changeFrequency: 'monthly',
+            priority: 0.8,
+        },
+        {
+            url: `${baseUrl}/products/machine/uv-printers`,
+            lastModified: new Date(),
+            changeFrequency: 'monthly',
+            priority: 0.8,
+        },
+        {
+            url: `${baseUrl}/products/machine/heatpress`,
+            lastModified: new Date(),
+            changeFrequency: 'monthly',
+            priority: 0.8,
+        },
+        {
+            url: `${baseUrl}/products/machine/laminator`,
+            lastModified: new Date(),
+            changeFrequency: 'monthly',
+            priority: 0.8,
+        },
+        {
+            url: `${baseUrl}/products/machine/laser-machine`,
+            lastModified: new Date(),
+            changeFrequency: 'monthly',
+            priority: 0.8,
+        },
+        {
+            url: `${baseUrl}/products/machine/embroidery-knitting`,
+            lastModified: new Date(),
+            changeFrequency: 'monthly',
+            priority: 0.8,
+        },
+        {
+            url: `${baseUrl}/products/machine/3d-printer`,
+            lastModified: new Date(),
+            changeFrequency: 'monthly',
+            priority: 0.8,
+        },
+
+        // Legacy machine subcategories
         {
             url: `${baseUrl}/products/machine/printers`,
             lastModified: new Date(),
             changeFrequency: 'monthly',
-            priority: 0.8,
+            priority: 0.7,
         },
         {
             url: `${baseUrl}/products/machine/cutters`,
             lastModified: new Date(),
             changeFrequency: 'monthly',
-            priority: 0.8,
+            priority: 0.7,
         },
         {
             url: `${baseUrl}/products/machine/laminators`,
             lastModified: new Date(),
             changeFrequency: 'monthly',
-            priority: 0.8,
+            priority: 0.7,
         },
         {
             url: `${baseUrl}/products/machine/heat-press`,
             lastModified: new Date(),
             changeFrequency: 'monthly',
-            priority: 0.8,
+            priority: 0.7,
         },
     ]
 }
