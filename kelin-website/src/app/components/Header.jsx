@@ -150,7 +150,10 @@ export default function Header() {
     useEffect(() => {
         const handleDropdownClickOutside = (event) => {
             // Close dropdowns if clicking outside
-            if (!event.target.closest('.dropdown') && !event.target.closest('.dropdown-nested')) {
+            if (!event.target.closest('.dropdown') &&
+                !event.target.closest('.dropdown-nested') &&
+                !event.target.closest('.mobile-dropdown') &&
+                !event.target.closest('.mobile-dropdown-nested')) {
                 setProductsOpen(false);
                 setMachineOpen(false);
             }
@@ -425,6 +428,9 @@ export default function Header() {
                         <button
                             className={`mobile-dropdown-toggle ${isActive("/products") ? "active" : ""}`}
                             onClick={() => setProductsOpen(!productsOpen)}
+                            aria-expanded={productsOpen}
+                            aria-controls="mobile-products-submenu"
+                            aria-label="Toggle products menu"
                         >
                             Products
                             <svg width="12" height="12" viewBox="0 0 24 24" fill="none">
@@ -433,17 +439,24 @@ export default function Header() {
                         </button>
 
                         {productsOpen && (
-                            <div className="mobile-dropdown-menu">
-                                <Link href="/products/inks" onClick={() => setOpen(false)}>Inks</Link>
-                                <Link href="/products/materials" onClick={() => setOpen(false)}>Materials</Link>
-                                <Link href="/products/accessories" onClick={() => setOpen(false)}>Accessories</Link>
-                                <Link href="/products/promotional-display" onClick={() => setOpen(false)}>Promotional Display</Link>
+                            <div
+                                id="mobile-products-submenu"
+                                className="mobile-dropdown-menu"
+                                role="menu"
+                            >
+                                <Link href="/products/inks" onClick={() => setOpen(false)} role="menuitem">Inks</Link>
+                                <Link href="/products/materials" onClick={() => setOpen(false)} role="menuitem">Materials</Link>
+                                <Link href="/products/accessories" onClick={() => setOpen(false)} role="menuitem">Accessories</Link>
+                                <Link href="/products/promotional-display" onClick={() => setOpen(false)} role="menuitem">Promotional Display</Link>
 
                                 {/* Mobile Machine Nested Dropdown */}
                                 <div className="mobile-dropdown-nested">
                                     <button
                                         className="mobile-dropdown-toggle-nested"
                                         onClick={() => setMachineOpen(!machineOpen)}
+                                        aria-expanded={machineOpen}
+                                        aria-controls="mobile-machine-submenu"
+                                        aria-label="Toggle machine categories"
                                     >
                                         Machine
                                         <svg width="10" height="10" viewBox="0 0 24 24" fill="none">
@@ -452,17 +465,21 @@ export default function Header() {
                                     </button>
 
                                     {machineOpen && (
-                                        <div className="mobile-dropdown-menu-nested">
-                                            <Link href="/products/machine/eco-solvent-printers" onClick={() => setOpen(false)}>Eco - Solvent Printers</Link>
-                                            <Link href="/products/machine/solvent-printers" onClick={() => setOpen(false)}>Solvent Printers</Link>
-                                            <Link href="/products/machine/cutting-machine" onClick={() => setOpen(false)}>Cutting Machine</Link>
-                                            <Link href="/products/machine/sublimation-dtf" onClick={() => setOpen(false)}>Sublimation and DTF</Link>
-                                            <Link href="/products/machine/uv-printers" onClick={() => setOpen(false)}>UV Printers</Link>
-                                            <Link href="/products/machine/heatpress" onClick={() => setOpen(false)}>Heatpress</Link>
-                                            <Link href="/products/machine/laminator" onClick={() => setOpen(false)}>Laminator</Link>
-                                            <Link href="/products/machine/laser-machine" onClick={() => setOpen(false)}>Laser Machine</Link>
-                                            <Link href="/products/machine/embroidery-knitting" onClick={() => setOpen(false)}>Embroidery and Knitting</Link>
-                                            <Link href="/products/machine/3d-printer" onClick={() => setOpen(false)}>3D Printer</Link>
+                                        <div
+                                            id="mobile-machine-submenu"
+                                            className="mobile-dropdown-menu-nested"
+                                            role="menu"
+                                        >
+                                            <Link href="/products/machine/eco-solvent-printers" onClick={() => setOpen(false)} role="menuitem">Eco - Solvent Printers</Link>
+                                            <Link href="/products/machine/solvent-printers" onClick={() => setOpen(false)} role="menuitem">Solvent Printers</Link>
+                                            <Link href="/products/machine/cutting-machine" onClick={() => setOpen(false)} role="menuitem">Cutting Machine</Link>
+                                            <Link href="/products/machine/sublimation-dtf" onClick={() => setOpen(false)} role="menuitem">Sublimation and DTF</Link>
+                                            <Link href="/products/machine/uv-printers" onClick={() => setOpen(false)} role="menuitem">UV Printers</Link>
+                                            <Link href="/products/machine/heatpress" onClick={() => setOpen(false)} role="menuitem">Heatpress</Link>
+                                            <Link href="/products/machine/laminator" onClick={() => setOpen(false)} role="menuitem">Laminator</Link>
+                                            <Link href="/products/machine/laser-machine" onClick={() => setOpen(false)} role="menuitem">Laser Machine</Link>
+                                            <Link href="/products/machine/embroidery-knitting" onClick={() => setOpen(false)} role="menuitem">Embroidery and Knitting</Link>
+                                            <Link href="/products/machine/3d-printer" onClick={() => setOpen(false)} role="menuitem">3D Printer</Link>
                                         </div>
                                     )}
                                 </div>
@@ -477,3 +494,4 @@ export default function Header() {
         </header>
     );
 }
+// ne

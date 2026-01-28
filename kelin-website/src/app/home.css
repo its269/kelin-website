@@ -21,12 +21,13 @@
     box-shadow: 7px 9px 4px 0px rgba(0, 0, 0, 0.09);
     -webkit-box-shadow: 7px 9px 4px 0px rgba(0, 0, 0, 0.09);
     -moz-box-shadow: 7px 9px 4px 0px rgba(0, 0, 0, 0.09);
-    background: rgb(240, 240, 240);
+    background: rgb(216, 216, 216);
     overflow: hidden;
 }
 
 .marquee-logo {
     width: 100%;
+    padding: 10px;
     /* height: auto; */
     /* min-height: 140px; */
     display: flex;
@@ -38,7 +39,7 @@
 /* Hero Section */
 .hero-section {
     background-color: rgb(211, 211, 211);
-    background-image: url("/luxor2.png");
+    background-image: url("/background.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -62,14 +63,14 @@
 .kgs {
     font-size: 1.3rem;
     font-weight: 700;
-    color: #ffffff;
+    color: #3b3b3b;
     margin-bottom: 1rem;
     letter-spacing: -0.5px;
     text-align: left;
 }
 
 .btn {
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(51, 51, 51, 0.219);
     backdrop-filter: blur(10px);
     display: flex;
     flex-direction: column;
@@ -110,7 +111,7 @@
 .btn a {
     font-size: 1rem;
     font-weight: 600;
-    color: #ffffff;
+    color: #3b3b3b;
     text-decoration: none;
     text-align: center;
     line-height: 1.4;
@@ -118,7 +119,7 @@
 }
 
 .btn:hover a {
-    color: #9ca3af;
+    color: #646464;
 }
 
 .tagline {
@@ -139,7 +140,7 @@
     /* width: 50%; */
     font-size: 3rem;
     font-weight: 700;
-    color: #fff;
+    color: #3b3b3b;
     margin-bottom: 1.5rem;
     line-height: 1.2;
     letter-spacing: -0.5px;
@@ -147,15 +148,20 @@
     /* background-color: green; */
 }
 
-.hero-description {
+.hero-image {
     font-size: 1.5rem;
     /* original 1.2rem */
-    color: #fff;
+    color: #2c2c2c;
     width: 50%;
     /* background-color: blue; */
     /* max-width: 600px; */
     /* margin: 0 auto 2.5rem; */
     line-height: 1.6;
+}
+
+.hero-image img {
+    margin: 50px 0px 50px 0px;
+    width: 420px;
 }
 
 .hero-buttons {
@@ -288,6 +294,7 @@
 @media (max-width: 768px) {
     .tagline {
         width: 100%;
+        margin-left: 20px;
     }
 
     .hero-section,
@@ -297,7 +304,7 @@
 
     .hero-section {
         padding: 60px 0px 100px 0px;
-        background-image: url("/mobile-luxor.png");
+        background-image: url("/background.png");
     }
 
     .hero-title {
@@ -310,8 +317,8 @@
         gap: 20px;
     }
 
-    .hero-description {
-        font-size: 1.1rem;
+    .hero-image {
+        /* font-size: 1.1rem; */
         width: 100%;
     }
 

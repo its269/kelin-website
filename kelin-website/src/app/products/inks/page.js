@@ -1064,10 +1064,10 @@ export default function Inks() {
                 </div>
 
                 <div className="form-actions">
-                  <button type="button" className="btn-secondary" onClick={closeInquiryForm}>
+                  <button type="button" className="btn-secondary-inks" onClick={closeInquiryForm}>
                     Cancel
                   </button>
-                  <button type="submit" className="btn-primary">
+                  <button type="submit" className="btn-primary-inks">
                     Send Inquiry
                   </button>
                 </div>

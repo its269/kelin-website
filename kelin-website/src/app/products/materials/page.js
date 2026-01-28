@@ -188,8 +188,8 @@ export default function Materials() {
           <h2>Need Material Recommendations?</h2>
           <p>Our material specialists can help you choose the perfect substrate for your specific application and budget requirements.</p>
           <div className="contact-buttons">
-            <a href="/contact" className="btn-primary">Contact Our Experts</a>
-            <a href="/services" className="btn-secondary">Technical Support</a>
+            <a href="/contact" className="btn-primary-materials">Contact Our Experts</a>
+            <a href="/services" className="btn-secondary-materials">Technical Support</a>
           </div>
         </div>
       </main>

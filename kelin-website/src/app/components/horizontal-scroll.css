@@ -4,8 +4,12 @@
     height: 100vh;
     /* background: linear-gradient(135deg, #fafafa 0%, #f5f5f5 100%); */
     overflow: hidden;
-    background: #240000;
-    background: linear-gradient(0deg, rgba(36, 0, 0, 1) 0%, rgba(121, 61, 9, 1) 32%, rgba(0, 212, 255, 0) 100%);
+    /* background: #240000;
+    background: linear-gradient(0deg, rgba(36, 0, 0, 1) 0%, rgba(121, 61, 9, 1) 32%, rgba(0, 212, 255, 0) 100%); */
+    background-image: url("/background.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .scroll-indicator {

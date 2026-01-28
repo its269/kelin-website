@@ -155,29 +155,30 @@ export default function Home() {
                 <p className="kgs">KGS</p>
                 <h1 className="hero1-title">YOUR TRUSTED<br></br>LONG-TERM PRINTING SOLUTIONS PROVIDER</h1>
               </div>
-              <p className="hero-description">
-                <b>Powering high-quality output at any scale.</b><br></br>From your vision to powerful,
-                large-scale prints.
-              </p>
+              <div className="hero-image">
+                <img src="/DTF UV Printer SF604-i3200 2ft. - High Res (1).png" alt="Kelin Graphics System Logo" className="kelin-logo-hero" />
+                {/* <b>Powering high-quality output at any scale.</b><br></br>From your vision to powerful,
+                large-scale prints. */}
+              </div>
             </div>
 
             {/* 🔧 SSG CODE PATTERN: Static navigation links */}
             {/* href values are hardcoded = pre-rendered in static HTML */}
             <div className="hero-buttons">
               <div className="btn">
-                <a href="/explore" className="btn-primary">Cutting Machine</a>
+                <a href="/explore" className="btn-primary-cat">Cutting Machine</a>
               </div>
               <div className="btn">
-                <a href="/about" className="btn-secondary">Eco-Solvent<br></br>Printer Machine</a>
+                <a href="/about" className="btn-secondary-cat">Eco-Solvent<br></br>Printer Machine</a>
               </div>
               <div className="btn">
-                <a href="/support" className="btn-tertiary">Solvent<br></br>Printer Machine</a>
+                <a href="/support" className="btn-tertiary-cat">Solvent<br></br>Printer Machine</a>
               </div>
               <div className="btn">
-                <a href="/resources" className="btn-quaternary">Sublimation<br></br>Printer Machine</a>
+                <a href="/resources" className="btn-quaternary-cat">Sublimation<br></br>Printer Machine</a>
               </div>
               <div className="btn">
-                <a href="/blog" className="btn-quinary">DTF<br></br>Printer Machine</a>
+                <a href="/blog" className="btn-quinary-cat">DTF<br></br>Printer Machine</a>
               </div>
             </div>
           </section>
