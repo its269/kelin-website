@@ -1,12 +1,12 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import styles from "./Slideshow.module.css";
+import "./Slideshow.css";
 
 const images = [
-    "luxor.png",
-    "https://picsum.photos/800/450?random=2",
-    "https://picsum.photos/800/450?random=3",
+    "/DTF UV Printer SF303-i3200 2ft (1).png",
+    "/DTF UV Printer SF604-i3200 2ft. - High Res (1).png",
+    "/LUXOR UV-A3 RTR.png",
 ];
 
 export default function Slideshow() {
@@ -15,21 +15,20 @@ export default function Slideshow() {
     useEffect(() => {
         const interval = setInterval(() => {
             setCurrent((prev) => (prev + 1) % images.length);
-        }, 3000);
+        }, 3000); // 3 seconds
 
         return () => clearInterval(interval);
     }, []);
 
     return (
-        <div className={styles.slideshowContainer}>
-            {images.map((src, index) => (
-                <img
+        <div className="slideshow">
+            {images.map((img, index) => (
+                <div
                     key={index}
-                    src={src}
-                    className={`${styles.slide} ${index === current ? styles.active : ""
-                        }`}
-                    alt="slideshow"
-                />
+                    className={`slide ${index === current ? "active" : ""}`}
+                >
+                    <img src={img} alt={`Slide ${index + 1}`} />
+                </div>
             ))}
         </div>
     );

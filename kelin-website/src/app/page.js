@@ -7,6 +7,7 @@ import HorizontalScrollSection from "./components/HorizontalScrollSection";
 import FeaturedCarousel from "./components/FeaturedCarousel";
 import TextSection from "./components/TextSection";
 import NewsEventsSection from "./components/NewsEventsSection";
+import Slideshow from "./components/Slideshow";
 import Image from "next/image";
 import "./home.css";
 
@@ -156,9 +157,10 @@ export default function Home() {
                 <h1 className="hero1-title">YOUR TRUSTED<br></br>LONG-TERM PRINTING SOLUTIONS PROVIDER</h1>
               </div>
               <div className="hero-image">
-                <img src="/DTF UV Printer SF604-i3200 2ft. - High Res (1).png" alt="Kelin Graphics System Logo" className="kelin-logo-hero" />
+                {/* <img src="/DTF UV Printer SF604-i3200 2ft. - High Res (1).png" alt="Kelin Graphics System Logo" className="kelin-logo-hero" /> */}
                 {/* <b>Powering high-quality output at any scale.</b><br></br>From your vision to powerful,
                 large-scale prints. */}
+                <Slideshow />
               </div>
             </div>
 
