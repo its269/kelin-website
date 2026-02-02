@@ -10,7 +10,7 @@ export default function NewsEventsSection() {
             title: "New DTF Printer Launch Event",
             date: "January 15, 2026",
             category: "Product Launch",
-            image: "/luxor.png",
+            image: "/events1.png",
             description: "Join us for the exclusive launch of our latest DTF printer technology featuring enhanced precision and efficiency."
         },
         {
@@ -18,7 +18,7 @@ export default function NewsEventsSection() {
             title: "Printing Industry Expo 2026",
             date: "February 20, 2026",
             category: "Trade Show",
-            image: "/luxor2.png",
+            image: "/events1.png",
             description: "Visit our booth at the largest printing industry exhibition in the Philippines. Discover innovative solutions and networking opportunities."
         },
         {
@@ -26,7 +26,7 @@ export default function NewsEventsSection() {
             title: "Advanced Lamination Workshop",
             date: "March 10, 2026",
             category: "Training",
-            image: "/mobile-luxor.png",
+            image: "/events1.png",
             description: "Learn advanced lamination techniques from industry experts. Hands-on training with our latest equipment and materials."
         }
     ];

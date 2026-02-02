@@ -19,14 +19,14 @@ export default function AboutUs() {
             <main className="about-main">
                 {/* Hero Section */}
                 <section className="about-hero">
-                    <div className="hero-content">
-                        <div className="hero-text">
-                            <h1 className="hero-title">About Kelin Graphics System</h1>
-                            <p className="hero-subtitle">
+                    <div className="hero-page-content">
+                        <div className="hero-page-text">
+                            <h1 className="hero-page-title">About Kelin Graphics System</h1>
+                            <p className="hero-page-subtitle">
                                 Brightening the world of advertising since 2009, we are your trusted partner
                                 for competitive, reliable, and cost-efficient printing solutions.
                             </p>
-                            <div className="hero-stats">
+                            <div className="hero-page-stats">
                                 <div className="stat">
                                     <span className="stat-number">15+</span>
                                     <span className="stat-label">Years of Excellence</span>
@@ -41,7 +41,7 @@ export default function AboutUs() {
                                 </div>
                             </div>
                         </div>
-                        <div className="hero-visual">
+                        <div className="hero-page-visual">
                             <div className="floating-element element-1">
                                 <img src="/innovation-icon.png" alt="Innovation" />
                             </div>

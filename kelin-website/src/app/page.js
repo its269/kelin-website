@@ -39,98 +39,91 @@ export default function Home() {
   const carouselItems = [
     {
       id: 1,
-      image: "https://picsum.photos/id/1011/300/300",
+      image: "/Solutions Category/Industrial Sublimation.png",
       title: "Industrial Sublimation",
       buttonText: "View More",
       onButtonClick: (item) => console.log(`Button clicked for ${item.title}`)
     },
     {
       id: 2,
-      image: "https://picsum.photos/id/1025/300/300",
+      image: "/Solutions Category/Textile and Apparel.png",
       title: "Textile and Apparel",
       buttonText: "Learn More",
       onButtonClick: (item) => console.log(`Button clicked for ${item.title}`)
     },
     {
       id: 3,
-      image: "https://picsum.photos/id/1035/300/300",
+      image: "/Solutions Category/Direct to Film (DTF).png",
       title: "Direct to Film (DTF)",
       buttonText: "View More",
       onButtonClick: (item) => console.log(`Button clicked for ${item.title}`)
     },
     {
       id: 4,
-      image: "https://picsum.photos/id/1041/300/300",
+      image: "/Solutions Category/UV DTF.png",
       title: "UV DTF",
       buttonText: "Explore",
       onButtonClick: (item) => console.log(`Button clicked for ${item.title}`)
     },
     {
       id: 5,
-      image: "https://picsum.photos/id/1062/300/300",
+      image: "/Solutions Category/Threadwork.png",
       title: "Threadwork",
       buttonText: "View More",
       onButtonClick: (item) => console.log(`Button clicked for ${item.title}`)
     },
     {
       id: 6,
-      image: "https://picsum.photos/id/1015/300/300",
+      image: "/Solutions Category/Digital Printing Equipment.png",
       title: "Digital Printing Equipment",
       buttonText: "Learn More",
       onButtonClick: (item) => console.log(`Button clicked for ${item.title}`)
     },
     {
       id: 7,
-      image: "https://picsum.photos/id/1018/300/300",
+      image: "/Solutions Category/Signage.png",
       title: "Signages",
       buttonText: "View More",
       onButtonClick: (item) => console.log(`Button clicked for ${item.title}`)
     },
     {
       id: 8,
-      image: "https://picsum.photos/id/1019/300/300",
+      image: "/Solutions Category/Industrial Cutter.png",
       title: "Industrial Cutter",
       buttonText: "Explore",
       onButtonClick: (item) => console.log(`Button clicked for ${item.title}`)
     },
     {
       id: 9,
-      image: "https://picsum.photos/id/1020/300/300",
+      image: "/Solutions Category/Cutting Solutions.png",
       title: "Cutting Solution",
       buttonText: "Learn More",
       onButtonClick: (item) => console.log(`Button clicked for ${item.title}`)
     },
     {
       id: 10,
-      image: "https://picsum.photos/id/1021/300/300",
+      image: "/Solutions Category/Laser Machine Solution.png",
       title: "Laser Machine Solution",
       buttonText: "View More",
       onButtonClick: (item) => console.log(`Button clicked for ${item.title}`)
     },
     {
       id: 11,
-      image: "https://picsum.photos/id/1022/300/300",
+      image: "/Solutions Category/Personalized Machine Solution.png",
       title: "Personalized Machine Solution",
       buttonText: "Explore",
       onButtonClick: (item) => console.log(`Button clicked for ${item.title}`)
     },
     {
       id: 12,
-      image: "https://picsum.photos/id/1023/300/300",
-      title: "Industrial Sublimation",
-      buttonText: "Learn More",
-      onButtonClick: (item) => console.log(`Button clicked for ${item.title}`)
-    },
-    {
-      id: 13,
-      image: "https://picsum.photos/id/1024/300/300",
+      image: "/Solutions Category/Exhibition Displays.png",
       title: "Exhibition Displays",
       buttonText: "View More",
       onButtonClick: (item) => console.log(`Button clicked for ${item.title}`)
     },
     {
-      id: 14,
-      image: "https://picsum.photos/id/1026/300/300",
+      id: 13,
+      image: "/Solutions Category/Substrates and Materials.png",
       title: "Substrates and Materials",
       buttonText: "Explore",
       onButtonClick: (item) => console.log(`Button clicked for ${item.title}`)
@@ -193,7 +186,7 @@ export default function Home() {
           {/* Featured Carousel */}
           <FeaturedCarousel
             items={carouselItems}
-            label="LUXOR PRINTERS"
+            label="SOLUTIONS"
             title={
               <>
                 Turn ordinary surfaces into <br className="desktop-break" />

@@ -1,4 +1,5 @@
 import Header from '../../components/Header';
+import Image from 'next/image';
 import './materials.css';
 
 export const metadata = {
@@ -116,6 +117,9 @@ export default function Materials() {
     }
   ];
 
+  // Placeholder image for all products
+  const placeholderImg = '/display.png';
+
   return (
     <div>
       <Header />
@@ -134,6 +138,13 @@ export default function Materials() {
             <div className="products-grid">
               {category.products.map((product, productIndex) => (
                 <div key={productIndex} className="product-card">
+                  <Image
+                    src={placeholderImg}
+                    alt={product.name}
+                    width={180}
+                    height={120}
+                    className="product-image"
+                  />
                   <div className="product-info">
                     <h3 className="product-name">{product.name}</h3>
                     <p className="product-description">{product.description}</p>

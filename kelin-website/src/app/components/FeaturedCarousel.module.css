@@ -188,6 +188,7 @@
     scroll-snap-align: center;
     transform: scale(0.8);
     transition: transform 1s ease;
+    margin-top: 100px;
     /* transition: transform 0.35s ease; */
 }
 
@@ -254,6 +255,7 @@
     .item {
         width: 180px;
         transition: transform 0.35s ease;
+        /* margin-top: 100px; */
     }
 
     .imageWrapper {

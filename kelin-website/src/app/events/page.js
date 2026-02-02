@@ -218,44 +218,44 @@ Join us at this flagship event to discover cutting-edge solutions and connect wi
       <main className="events-main">
         {/* Hero Section */}
         <section className="events-hero">
-          <div className="hero-content">
-            <h1 className="hero-title">News & Events</h1>
-            <p className="hero-subtitle">
+          <div className="events-hero-content">
+            <h1 className="events-hero-title">News & Events</h1>
+            <p className="events-hero-subtitle">
               Stay connected with the latest innovations, industry updates, and exciting developments from Kelin Graphics System.
             </p>
           </div>
-          <div className="hero-visual">
-            <div className="floating-cards">
-              <div className="floating-card card-1">
-                <img src="/KELIN-LOGO-01.png" alt="News Updates" />
+          <div className="events-hero-visual">
+            <div className="events-floating-cards">
+              <div className="events-floating-card-icon events-card-1">
+                <img src="/messages.png" alt="News Updates" />
               </div>
-              <div className="floating-card card-2">
-                <img src="/KELIN-LOGO-01.png" alt="Industry Events" />
+              <div className="events-floating-card-icon events-card-2">
+                <img src="/calendar.png" alt="Industry Events" />
               </div>
-              <div className="floating-card card-3">
-                <img src="/KELIN-LOGO-01.png" alt="Community" />
+              <div className="events-floating-card-icon events-card-3">
+                <img src="/office-building.png" alt="Community" />
               </div>
             </div>
           </div>
         </section>
 
         {/* News Section */}
-        <section className="news-section">
-          <div className="section-header">
+        <section className="events-news-section">
+          <div className="events-section-header">
             <h2>Latest News</h2>
             <p>Stay updated with our latest announcements and product releases</p>
           </div>
-          <div className="news-grid">
+          <div className="events-news-grid">
             {newsData.map((news) => (
-              <div key={news.id} className="news-card" onClick={() => openLightbox(news)}>
-                <div className="news-header">
-                  <span className="news-category">{news.category}</span>
-                  <span className="news-date">{news.date}</span>
+              <div key={news.id} className="events-news-card" onClick={() => openLightbox(news)}>
+                <div className="events-news-header">
+                  <span className="events-news-category">{news.category}</span>
+                  <span className="events-news-date">{news.date}</span>
                 </div>
                 <h3>{news.title}</h3>
                 <p>{news.shortDescription}</p>
-                <div className="card-overlay">
-                  <span className="click-to-view">Click to view details</span>
+                <div className="events-card-overlay">
+                  <span className="events-click-to-view">Click to view details</span>
                 </div>
               </div>
             ))}
@@ -264,26 +264,26 @@ Join us at this flagship event to discover cutting-edge solutions and connect wi
 
         {/* Events Section */}
         <section className="events-section">
-          <div className="section-header">
+          <div className="events-section-header">
             <h2>Upcoming Events</h2>
             <p>Visit us at these exciting exhibitions and trade shows</p>
           </div>
-          <div className="events-grid">
+          <div className="events-events-grid">
             {eventsData.map((event) => (
-              <div key={event.id} className="event-card" onClick={() => openLightbox(event)}>
-                <div className="event-header">
-                  <span className="event-type">{event.category}</span>
-                  <span className="event-date">{event.date}</span>
+              <div key={event.id} className="events-event-card" onClick={() => openLightbox(event)}>
+                <div className="events-event-header">
+                  <span className="events-event-type">{event.category}</span>
+                  <span className="events-event-date">{event.date}</span>
                 </div>
                 <h3>{event.title}</h3>
                 <p>{event.shortDescription}</p>
                 {event.location && (
-                  <div className="event-location">
+                  <div className="events-event-location">
                     <strong>Location:</strong> {event.location}
                   </div>
                 )}
-                <div className="card-overlay">
-                  <span className="click-to-view">Click to view details</span>
+                <div className="events-card-overlay">
+                  <span className="events-click-to-view">Click to view details</span>
                 </div>
               </div>
             ))}

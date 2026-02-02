@@ -22,7 +22,7 @@ export default function Explore() {
       icon: '/inks.png',
       productCount: '12+',
       href: '/products/inks',
-      image: '/se.webp',
+      image: '/cat_inks.png',
       products: [
         { name: 'Eco-Solvent Inks', desc: 'Environmental-friendly outdoor graphics' },
         { name: 'Latex Inks', desc: 'Water-based indoor/outdoor solutions' },
@@ -36,7 +36,7 @@ export default function Explore() {
       icon: '/materials.png',
       productCount: '8+',
       href: '/products/materials',
-      image: '/se.webp',
+      image: '/cat_materials.png',
       products: [
         { name: 'Vinyl Films', desc: 'Adhesive and non-adhesive options' },
         { name: 'Canvas & Textiles', desc: 'Fabric materials for soft signage' },
@@ -50,7 +50,7 @@ export default function Explore() {
       icon: '/machines.png',
       productCount: '10+',
       href: '/products/machine',
-      image: '/se.webp',
+      image: '/cat_machine.png',
       products: [
         { name: 'Digital Printers', desc: 'Wide format printing solutions' },
         { name: 'Cutting Plotters', desc: 'Precision cutting equipment' },
@@ -64,7 +64,7 @@ export default function Explore() {
       icon: '/accessories.png',
       productCount: '15+',
       href: '/products/accessories',
-      image: '/se.webp',
+      image: '/cat_accessories.png',
       products: [
         { name: 'Maintenance Kits', desc: 'Keep equipment running smoothly' },
         { name: 'RIP Software', desc: 'Color management solutions' },
@@ -78,7 +78,7 @@ export default function Explore() {
       icon: '/display.png',
       productCount: '6+',
       href: '/products/promotional-display',
-      image: '/se.webp',
+      image: '/cat_promotional-display.png',
       products: [
         { name: 'Banner Stands', desc: 'Portable retractable systems' },
         { name: 'Pop-up Displays', desc: 'Trade show exhibitions' },
@@ -103,13 +103,13 @@ export default function Explore() {
           <div className="hero-visual">
             <div className="floating-cards">
               <div className="floating-card card-1">
-                <img src="/se.webp" alt="Printing Solutions" />
+                <img src="/3D Printer (1).png" alt="Printing Solutions" />
               </div>
               <div className="floating-card card-2">
-                <img src="/se.webp" alt="Materials" />
+                <img src="/CMA AL160 Multi-function Channel Letter Bending  Machine (1).png" alt="Materials" />
               </div>
               <div className="floating-card card-3">
-                <img src="/se.webp" alt="Equipment" />
+                <img src="/Machine V2 (1).png" alt="Equipment" />
               </div>
             </div>
           </div>

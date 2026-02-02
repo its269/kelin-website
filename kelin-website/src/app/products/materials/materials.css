@@ -242,6 +242,17 @@
     border-color: rgba(255, 255, 255, 0.5);
 }
 
+.product-image {
+    width: 100%;
+    max-width: 180px;
+    height: auto;
+    display: block;
+    margin: 0 auto 1rem auto;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+    object-fit: cover;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .product-detail-container {

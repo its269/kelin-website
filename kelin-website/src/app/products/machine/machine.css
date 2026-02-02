@@ -47,7 +47,7 @@
     max-width: 100%;
     height: auto;
     border-radius: 16px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    /* box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1); */
 }
 
 /* Section Headers */

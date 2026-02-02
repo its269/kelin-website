@@ -63,7 +63,8 @@
 .event-image-container {
     position: relative;
     overflow: hidden;
-    height: 200px;
+    height: 300px;
+    /* original height 200px */
 }
 
 .event-image {
