@@ -85,9 +85,7 @@ export default function Footer() {
 
                         {/* Instagram */}
                         <a href="#" className="social-link" aria-label="Instagram">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 8.35a3.65 3.65 0 1 0 0 7.3 3.65 3.65 0 0 0 0-7.3z" />
-                            </svg>
+                            <img src="/instagram(2).png" alt="Instagram" width="20" height="20" />
                         </a>
 
                         {/* YouTube */}
@@ -105,7 +103,7 @@ export default function Footer() {
                             target="_blank"
                             rel="noopener noreferrer"
                         >
-                            <img src="/icons8-shopee-50.png" alt="Shopee" width="20" height="20" />
+                            <img src="/shopee.png" alt="Shopee" width="20" height="20" />
                         </a>
 
                         {/* Lazada (Updated to match your attachment) */}
