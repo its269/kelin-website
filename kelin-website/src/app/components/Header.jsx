@@ -174,7 +174,7 @@ export default function Header() {
                 {/* Logo */}
                 <Link href="/" className="logo">
                     <img src="/KELIN-LOGO-01.png" alt="Kelin Graphics System Logo" width={65} />
-                    KELIN GRAPHICS SYSTEM
+                    <h1 className="company-name">KELIN GRAPHICS SYSTEM</h1>
                 </Link>
 
                 {/* Desktop Menu */}
@@ -313,11 +313,6 @@ export default function Header() {
 
                     {productsOpen && (
                         <div className="dropdown-menu">
-                            <Link href="/products/inks">Inks</Link>
-                            <Link href="/products/materials">Materials</Link>
-                            <Link href="/products/accessories">Accessories</Link>
-                            <Link href="/products/promotional-display">Promotional Display</Link>
-
                             {/* Machine Nested Dropdown */}
                             <div
                                 className={`dropdown-nested ${machineOpen ? 'active' : ''}`}
@@ -350,6 +345,10 @@ export default function Header() {
                                     </div>
                                 )}
                             </div>
+                            <Link href="/products/inks">Inks</Link>
+                            <Link href="/products/materials">Materials</Link>
+                            <Link href="/products/accessories">Accessories</Link>
+                            <Link href="/products/promotional-display">Promotional Display</Link>
                         </div>
                     )}
                 </div>
@@ -488,7 +487,8 @@ export default function Header() {
                     </div>
 
                     <Link href="/about" className={isActive("/about") ? "active" : ""} onClick={() => setOpen(false)}>About Us</Link>
-                    <Link href="/contact" className={isActive("/contact") ? "active" : ""} onClick={() => setOpen(false)}>News and Events</Link>
+                    <Link href="/events" className={isActive("/events") ? "active" : ""} onClick={() => setOpen(false)}>News and Events</Link>
+                    <Link href="/contact" className={isActive("/contact") ? "active" : ""} onClick={() => setOpen(false)}>Connect with Us</Link>
                 </nav>
             )}
         </header>

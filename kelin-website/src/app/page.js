@@ -10,6 +10,8 @@ import NewsEventsSection from "./components/NewsEventsSection";
 import Slideshow from "./components/Slideshow";
 import Image from "next/image";
 import "./home.css";
+import "./bison-font.css";
+import "./montserrat-font.css";
 
 // 🔧 SSG CODE PATTERN: Default export function component
 // This is the basic pattern for SSG in Next.js App Router
@@ -146,7 +148,7 @@ export default function Home() {
             {/* These strings are known at build time = perfect for SSG */}
             <div className="home-tagline-text">
               <div className="tagline">
-                <p className="kgs">KGS</p>
+                {/* <p className="kgs">KGS</p> */}
                 <h1 className="hero1-title">YOUR TRUSTED<br></br>LONG-TERM PRINTING SOLUTIONS PROVIDER</h1>
               </div>
               <div className="hero-image">
@@ -195,14 +197,14 @@ export default function Home() {
             }
           />
         </div>
-        <section className="features-section">
+        <section className="features-section-landing">
           {/* 🔧 SSG CODE PATTERN: Static array rendering */}
           {/* This grid is hardcoded, not from API = SSG compatible */}
           <TextSection
             label="LUXOR"
             title={
               <>
-                The perfect printing solution, your way.<br className="desktop-break" />
+                The perfect printing solution, tailored by you.<br className="desktop-break" />
 
               </>
             }
@@ -257,13 +259,12 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <div className="horizontally-scroll">
-          <HorizontalScrollSection />
-        </div>
 
         {/* News & Events Section */}
         <NewsEventsSection />
-
+        <div className="horizontally-scroll">
+          <HorizontalScrollSection />
+        </div>
         {/* 🔧 SSG CODE PATTERN: Component with no props */}
         {/* No props passed = no dynamic data = SSG will pre-render this */}
         <BranchSection />

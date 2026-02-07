@@ -191,7 +191,7 @@
 }
 
 .mission-commitment {
-    font-style: italic;
+    /* font-style: italic; */
     padding-top: 16px;
     border-top: 1px solid rgba(148, 163, 184, 0.1);
     margin-top: 16px !important;

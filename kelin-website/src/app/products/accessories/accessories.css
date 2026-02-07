@@ -1,0 +1,331 @@
+/* Accessories Page Specific Styles */
+.accessories-container {
+    padding: 100px 20px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-top: 50px;
+}
+
+.accessories-title {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 1rem;
+    font-family: 'Bison-Bold', Arial, sans-serif !important;
+}
+
+.accessories-description {
+    font-size: 1.1rem;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+.accessories-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.accessory-category {
+    margin-bottom: 4rem;
+}
+
+.accessory-category-title {
+    font-size: 2rem;
+    color: #1e293b;
+    margin-bottom: 2rem;
+    text-align: center;
+    position: relative;
+    padding-bottom: 0.5rem;
+    font-family: 'Bison-Bold', Arial, sans-serif !important;
+}
+
+.accessory-category-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+    border-radius: 2px;
+}
+
+.accessories-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.accessory-card {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    height: fit-content;
+}
+
+.accessory-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+.accessory-info {
+    width: 100%;
+}
+
+.accessory-name {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 0.5rem;
+    font-family: 'Bison-Bold', Arial, sans-serif !important;
+}
+
+.accessory-description {
+    font-size: 1rem;
+    color: #64748b;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.accessory-features {
+    margin-bottom: 1.5rem;
+}
+
+.accessory-features h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #374151;
+    margin-bottom: 0.5rem;
+    font-family: 'Bison-Bold', Arial, sans-serif !important;
+}
+
+.accessory-features ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.accessory-features li {
+    padding: 0.25rem 0;
+    color: #64748b;
+    font-size: 0.9rem;
+    position: relative;
+    padding-left: 1rem;
+}
+
+.accessory-features li::before {
+    content: '✓';
+    color: #10b981;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
+.accessory-applications {
+    margin-top: 1rem;
+}
+
+.accessory-applications h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #374151;
+    margin-bottom: 0.75rem;
+    font-family: 'Bison-Bold', Arial, sans-serif !important;
+}
+
+.accessory-application-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.accessory-application-tag {
+    background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.accessories-info {
+    margin-top: 4rem;
+    padding: 2rem;
+    background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+    border-radius: 16px;
+    text-align: center;
+}
+
+.accessories-info h2 {
+    font-size: 2rem;
+    color: #1e293b;
+    margin-bottom: 2rem;
+    font-family: 'Bison-Bold', Arial, sans-serif !important;
+}
+
+.accessories-info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.accessories-info-item {
+    text-align: center;
+}
+
+.accessories-info-item h3 {
+    font-size: 1.2rem;
+    color: #374151;
+    margin-bottom: 1rem;
+    font-family: 'Bison-Bold', Arial, sans-serif !important;
+}
+
+.accessories-info-item p {
+    color: #64748b;
+    line-height: 1.6;
+}
+
+.accessories-contact-section {
+    margin-top: 4rem;
+    text-align: center;
+    padding: 3rem 2rem;
+    background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+    color: white;
+    border-radius: 16px;
+}
+
+.accessories-contact-section h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    font-family: 'Bison-Bold', Arial, sans-serif !important;
+}
+
+.accessories-contact-section p {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+.accessories-contact-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn-primary-accessories,
+.btn-secondary-accessories {
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.btn-primary-accessories {
+    background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+    color: white;
+}
+
+.btn-primary-accessories:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(249, 115, 22, 0.3);
+}
+
+.btn-secondary-accessories {
+    background: transparent;
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.btn-secondary-accessories:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+.accessory-image {
+    width: 100%;
+    max-width: 180px;
+    height: auto;
+    display: block;
+    margin: 0 auto 1rem auto;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+    object-fit: cover;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .accessories-container {
+        padding: 80px 15px 20px;
+    }
+
+    .accessories-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .accessories-info-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .accessories-contact-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .btn-primary-accessories,
+    .btn-secondary-accessories {
+        width: 200px;
+    }
+
+    .accessory-category-title {
+        font-size: 1.5rem;
+    }
+
+    .accessories-title {
+        font-size: 2rem;
+    }
+
+    .accessory-card {
+        padding: 1.25rem;
+    }
+
+    .accessory-name {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .accessories-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .accessory-card {
+        padding: 1rem;
+    }
+
+    .accessories-info {
+        padding: 1.5rem;
+    }
+
+    .accessories-contact-section {
+        padding: 2rem 1.5rem;
+    }
+
+    .accessory-category-title {
+        font-size: 1.3rem;
+    }
+
+    .accessories-title {
+        font-size: 1.8rem;
+    }
+}

@@ -94,10 +94,9 @@ export default function Explore() {
         {/* Hero Section */}
         <section className="explore-hero">
           <div className="hero-content">
-            <h1 className="hero-title">Explore Our Complete Solutions</h1>
+            <h1 className="explore-hero-title">Built for Every Stage of Printing</h1>
             <p className="hero-subtitle">
-              Discover our comprehensive range of professional printing products,
-              from high-quality inks and materials to advanced machinery and accessories.
+              Discover an integrated range of professional printing products, featuring premium-grade inks, reliable materials, innovative machinery, and productivity-driven accessories.
             </p>
           </div>
           <div className="hero-visual">
@@ -119,7 +118,7 @@ export default function Explore() {
         <section className="quick-navigation">
           <div className="section-header">
             <h2>Quick Category Access</h2>
-            <p>Jump directly to any product category</p>
+            <p>Navigate directly to any product category with ease.</p>
           </div>
           <div className="quick-nav-grid">
             {productCategories.map((category) => (

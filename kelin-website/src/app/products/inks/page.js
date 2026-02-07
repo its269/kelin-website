@@ -30,11 +30,7 @@ const getInkProductsData = () => {
             description: "High-quality eco-solvent ink with excellent color reproduction and minimal odor.",
             specifications: {
               "Volume": "1 Liter",
-              "Type": "Eco-Solvent",
-              "Viscosity": "10-14 cP",
-              "Color Gamut": "Wide gamut coverage",
-              "Shelf Life": "18 months",
-              "Storage": "Room temperature"
+              "Type": "Eco-Solvent"
             }
           },
           {
@@ -45,11 +41,7 @@ const getInkProductsData = () => {
             description: "Vibrant magenta eco-solvent ink for professional printing applications.",
             specifications: {
               "Volume": "1 Liter",
-              "Type": "Eco-Solvent",
-              "Viscosity": "10-14 cP",
-              "Color Gamut": "Wide gamut coverage",
-              "Shelf Life": "18 months",
-              "Storage": "Room temperature"
+              "Type": "Eco-Solvent"
             }
           },
           {
@@ -60,11 +52,7 @@ const getInkProductsData = () => {
             description: "Bright yellow eco-solvent ink with excellent lightfastness.",
             specifications: {
               "Volume": "1 Liter",
-              "Type": "Eco-Solvent",
-              "Viscosity": "10-14 cP",
-              "Color Gamut": "Wide gamut coverage",
-              "Shelf Life": "18 months",
-              "Storage": "Room temperature"
+              "Type": "Eco-Solvent"
             }
           },
           {
@@ -75,11 +63,7 @@ const getInkProductsData = () => {
             description: "Deep black eco-solvent ink for sharp text and solid areas.",
             specifications: {
               "Volume": "1 Liter",
-              "Type": "Eco-Solvent",
-              "Viscosity": "10-14 cP",
-              "Color Gamut": "Wide gamut coverage",
-              "Shelf Life": "18 months",
-              "Storage": "Room temperature"
+              "Type": "Eco-Solvent"
             }
           },
           {
@@ -90,11 +74,7 @@ const getInkProductsData = () => {
             description: "Specialized cyan ink optimized for i3200 printheads.",
             specifications: {
               "Volume": "1 Liter",
-              "Type": "Eco-Solvent",
-              "Printhead": "i3200 Compatible",
-              "Viscosity": "8-12 cP",
-              "Shelf Life": "24 months",
-              "Storage": "Cool, dry place"
+              "Type": "Eco-Solvent"
             }
           },
           {
@@ -120,11 +100,7 @@ const getInkProductsData = () => {
             description: "Specialized yellow ink optimized for i3200 printheads.",
             specifications: {
               "Volume": "1 Liter",
-              "Type": "Eco-Solvent",
-              "Printhead": "i3200 Compatible",
-              "Viscosity": "8-12 cP",
-              "Shelf Life": "24 months",
-              "Storage": "Cool, dry place"
+              "Type": "Eco-Solvent"
             }
           },
           {
@@ -135,11 +111,7 @@ const getInkProductsData = () => {
             description: "Specialized black ink optimized for i3200 printheads.",
             specifications: {
               "Volume": "1 Liter",
-              "Type": "Eco-Solvent",
-              "Printhead": "i3200 Compatible",
-              "Viscosity": "8-12 cP",
-              "Shelf Life": "24 months",
-              "Storage": "Cool, dry place"
+              "Type": "Eco-Solvent"
             }
           },
           {
@@ -150,11 +122,7 @@ const getInkProductsData = () => {
             description: "Premium Phoenix E2 cyan ink for superior print quality.",
             specifications: {
               "Volume": "1 Liter",
-              "Type": "Eco-Solvent",
-              "Series": "Phoenix E2",
-              "Viscosity": "12-16 cP",
-              "Color Density": "High",
-              "Shelf Life": "20 months"
+              "Type": "Eco-Solvent"
             }
           },
           {
@@ -165,11 +133,7 @@ const getInkProductsData = () => {
             description: "Premium Phoenix E2 magenta ink for superior print quality.",
             specifications: {
               "Volume": "1 Liter",
-              "Type": "Eco-Solvent",
-              "Series": "Phoenix E2",
-              "Viscosity": "12-16 cP",
-              "Color Density": "High",
-              "Shelf Life": "20 months"
+              "Type": "Eco-Solvent"
             }
           },
           {
@@ -180,11 +144,7 @@ const getInkProductsData = () => {
             description: "Premium Phoenix E2 yellow ink for superior print quality.",
             specifications: {
               "Volume": "1 Liter",
-              "Type": "Eco-Solvent",
-              "Series": "Phoenix E2",
-              "Viscosity": "12-16 cP",
-              "Color Density": "High",
-              "Shelf Life": "20 months"
+              "Type": "Eco-Solvent"
             }
           },
           {
@@ -760,50 +720,50 @@ export default function Inks() {
 
       <div>
         <Header />
-        <main className="ink-blog-container">
+        <main className="inks-blog-container">
           {/* Hero Section */}
-          <header className="ink-hero">
-            <div className="hero-content">
-              <h1 className="ink-hero-title">Printing Inks</h1>
-              <p className="ink-hero-subtitle">Professional Quality • Fast Delivery • Expert Support</p>
-              <p className="ink-hero-description">
+          <header className="inks-hero">
+            <div className="inks-hero-content">
+              <h1 className="inks-hero-title">Printing Inks</h1>
+              <p className="inks-hero-subtitle">Professional Quality • Fast Delivery • Expert Support</p>
+              <p className="inks-hero-description">
                 Browse our complete selection of professional printing inks for all your projects.
                 From eco-friendly options to high-performance solutions.
               </p>
-              <div className="hero-stats">
-                <div className="stat">
-                  <span className="stat-number">70+</span>
-                  <span className="stat-label">Products</span>
+              <div className="inks-hero-stats">
+                <div className="inks-stat">
+                  <span className="inks-stat-number">70+</span>
+                  <span className="inks-stat-label">Products</span>
                 </div>
-                <div className="stat">
-                  <span className="stat-number">5</span>
-                  <span className="stat-label">Categories</span>
+                <div className="inks-stat">
+                  <span className="inks-stat-number">5</span>
+                  <span className="inks-stat-label">Categories</span>
                 </div>
-                <div className="stat">
-                  <span className="stat-number">24/7</span>
-                  <span className="stat-label">Support</span>
+                <div className="inks-stat">
+                  <span className="inks-stat-number">24/7</span>
+                  <span className="inks-stat-label">Support</span>
                 </div>
               </div>
             </div>
           </header>
 
           {/* Quick Filter Section */}
-          <section className="quick-filters">
+          <section className="inks-quick-filters">
             <h3>Find Your Ink Type</h3>
-            <div className="filter-grid">
+            <div className="inks-filter-grid">
               {inkData.categories.map((category) => (
                 <a
                   key={category.id}
                   href={`#category-${category.id}`}
-                  className="filter-card"
+                  className="inks-filter-card"
                 >
-                  <div className="filter-icon">
+                  <div className="inks-filter-icon">
                     <Image
                       src={category.image || '/KELIN-LOGO-01.png'}
                       alt={category.name}
                       width={60}
                       height={60}
-                      className="filter-img"
+                      className="inks-filter-img"
                     />
                   </div>
                   <h4>{category.name}</h4>
@@ -817,16 +777,16 @@ export default function Inks() {
           {/* Products Section */}
           <section className="ink-products">
             {inkData.categories.map((category, index) => (
-              <div key={category.id} id={`category-${category.id}`} className="category-section">
-                <div className="category-header">
-                  <h2 className="category-title">{category.name}</h2>
-                  <p className="category-description">{category.description}</p>
+              <div key={category.id} id={`category-${category.id}`} className="inks-category-section">
+                <div className="inks-category-header">
+                  <h2 className="inks-category-title">{category.name}</h2>
+                  <p className="inks-category-description">{category.description}</p>
                 </div>
 
-                <div className="category-content">
-                  <div className="category-details">
-                    <div className="features-applications">
-                      <div className="features">
+                <div className="inks-category-content">
+                  <div className="inks-category-details">
+                    <div className="inks-features-applications">
+                      <div className="inks-features">
                         <h4>✓ Key Features</h4>
                         <ul>
                           {category.features.map((feature, idx) => (
@@ -834,46 +794,46 @@ export default function Inks() {
                           ))}
                         </ul>
                       </div>
-                      <div className="applications">
+                      <div className="inks-applications">
                         <h4>📋 Best For</h4>
-                        <div className="app-list">
+                        <div className="inks-app-list">
                           {category.applications.map((app, idx) => (
-                            <span key={idx} className="app-item">{app}</span>
+                            <span key={idx} className="inks-app-item">{app}</span>
                           ))}
                         </div>
                       </div>
                     </div>
                   </div>
 
-                  <div className="products-list">
+                  <div className="inks-products-list">
                     <h4>Available Products ({category.products.length})</h4>
-                    <div className="ink-products-grid">
+                    <div className="inks-products-grid">
                       {category.products.map((product, idx) => (
-                        <div key={idx} className="ink-product-card">
-                          <div className="ink-product-image">
+                        <div key={idx} className="inks-product-card">
+                          <div className="inks-product-image">
                             <Image
                               src={product.image || '/KELIN-LOGO-01.png'}
                               alt={product.name}
                               width={80}
                               height={80}
-                              className="ink-product-img"
+                              className="inks-product-img"
                             />
                           </div>
-                          <div className="ink-product-header">
+                          <div className="inks-product-header">
                             <h5>{product.name}</h5>
-                            <div className="ink-product-badges">
-                              <span className={`size-badge ${product.size === '5L' ? 'large' : product.size === '2L' ? 'medium' : 'small'}`}>
+                            <div className="inks-product-badges">
+                              <span className={`inks-size-badge ${product.size === '5L' ? 'large' : product.size === '2L' ? 'medium' : 'small'}`}>
                                 {product.size}
                               </span>
-                              <span className="color-indicator" style={{ backgroundColor: getColorCode(product.color) }}></span>
+                              <span className="inks-color-indicator" style={{ backgroundColor: getColorCode(product.color) }}></span>
                             </div>
                           </div>
-                          <div className="ink-product-details">
-                            <span className="color-name">{product.color}</span>
-                            {product.type && <span className="product-type">{product.type}</span>}
+                          <div className="inks-product-details">
+                            <span className="inks-color-name">{product.color}</span>
+                            {product.type && <span className="inks-product-type">{product.type}</span>}
                           </div>
                           <button
-                            className="inquire-btn"
+                            className="inks-inquire-btn"
                             onClick={() => openLightbox(product, category.name)}
                           >
                             View Details
@@ -888,22 +848,41 @@ export default function Inks() {
           </section>
 
           {/* Support Section */}
-          <section className="support-section">
-            <div className="support-grid">
-              <div className="support-card">
-                <h3>🎯 Need Help Choosing?</h3>
+          <section className="inks-support-section">
+            <div className="inks-support-grid">
+              <div className="inks-support-card">
+                <div className="inks-support-icon">
+                  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <circle cx="12" cy="12" r="10" />
+                    <circle cx="12" cy="12" r="6" />
+                    <circle cx="12" cy="12" r="2" />
+                  </svg>
+                </div>
+                <h3>Need Help Choosing?</h3>
                 <p>Our experts will help you select the right ink for your specific needs.</p>
-                <button className="support-btn primary">Get Recommendations</button>
+                <button className="inks-support-btn primary">Get Recommendations</button>
               </div>
-              <div className="support-card">
-                <h3>📞 Technical Support</h3>
+              <div className="inks-support-card">
+                <div className="inks-support-icon">
+                  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                  </svg>
+                </div>
+                <h3>Technical Support</h3>
                 <p>Get professional assistance with installation and troubleshooting.</p>
-                <button className="support-btn secondary">Contact Support</button>
+                <button className="inks-support-btn secondary">Contact Support</button>
               </div>
-              <div className="support-card">
-                <h3>📦 Bulk Orders</h3>
+              <div className="inks-support-card">
+                <div className="inks-support-icon">
+                  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
+                    <polyline points="3.27,6.96 12,12.01 20.73,6.96" />
+                    <line x1="12" y1="22.08" x2="12" y2="12" />
+                  </svg>
+                </div>
+                <h3>Bulk Orders</h3>
                 <p>Special pricing available for large quantity orders.</p>
-                <button className="support-btn tertiary">Request Quote</button>
+                <button className="inks-support-btn tertiary">Request Quote</button>
               </div>
             </div>
           </section>
@@ -911,61 +890,61 @@ export default function Inks() {
 
         {/* Product Lightbox Modal */}
         {isLightboxOpen && selectedProduct && (
-          <div className="lightbox-overlay" onClick={closeLightbox}>
-            <div className="lightbox-modal" onClick={(e) => e.stopPropagation()}>
-              <button className="lightbox-close" onClick={closeLightbox}>
+          <div className="inks-lightbox-overlay" onClick={closeLightbox}>
+            <div className="inks-lightbox-modal" onClick={(e) => e.stopPropagation()}>
+              <button className="inks-lightbox-close" onClick={closeLightbox}>
                 ×
               </button>
 
-              <div className="lightbox-content">
-                <div className="lightbox-image">
+              <div className="inks-lightbox-content">
+                <div className="inks-lightbox-image">
                   <Image
                     src={selectedProduct.image || '/KELIN-LOGO-01.png'}
                     alt={selectedProduct.name}
                     width={300}
                     height={300}
-                    className="modal-product-img"
+                    className="inks-modal-product-img"
                   />
                 </div>
 
-                <div className="lightbox-info">
-                  <div className="modal-header">
+                <div className="inks-lightbox-info">
+                  <div className="inks-modal-header">
                     <h2>{selectedProduct.name}</h2>
-                    <span className="modal-category">{selectedProduct.categoryName}</span>
+                    <span className="inks-modal-category">{selectedProduct.categoryName}</span>
                   </div>
 
-                  <div className="modal-badges">
-                    <span className={`size-badge ${selectedProduct.size === '5L' ? 'large' : selectedProduct.size === '2L' ? 'medium' : 'small'}`}>
+                  <div className="inks-modal-badges">
+                    <span className={`inks-size-badge ${selectedProduct.size === '5L' ? 'large' : selectedProduct.size === '2L' ? 'medium' : 'small'}`}>
                       {selectedProduct.size}
                     </span>
-                    <span className="color-badge" style={{ backgroundColor: getColorCode(selectedProduct.color) }}>
+                    <span className="inks-color-badge" style={{ backgroundColor: getColorCode(selectedProduct.color) }}>
                       {selectedProduct.color}
                     </span>
                     {selectedProduct.type && (
-                      <span className="type-badge">{selectedProduct.type}</span>
+                      <span className="inks-type-badge">{selectedProduct.type}</span>
                     )}
                   </div>
 
-                  <div className="modal-description">
+                  <div className="inks-modal-description">
                     <h3>Description</h3>
                     <p>{selectedProduct.description}</p>
                   </div>
 
-                  <div className="modal-specifications">
+                  <div className="inks-modal-specifications">
                     <h3>Specifications</h3>
-                    <div className="specs-grid">
+                    <div className="inks-specs-grid">
                       {Object.entries(selectedProduct.specifications || {}).map(([key, value]) => (
-                        <div key={key} className="spec-row">
-                          <span className="spec-label">{key}:</span>
-                          <span className="spec-value">{value}</span>
+                        <div key={key} className="inks-spec-row">
+                          <span className="inks-spec-label">{key}:</span>
+                          <span className="inks-spec-value">{value}</span>
                         </div>
                       ))}
                     </div>
                   </div>
 
-                  <div className="modal-actions">
+                  <div className="inks-modal-actions">
                     <button
-                      className="btn-primary"
+                      className="inks-btn-primary"
                       onClick={() => {
                         closeLightbox();
                         openInquiryForm(selectedProduct);
@@ -982,15 +961,15 @@ export default function Inks() {
 
         {/* Inquiry Form Modal */}
         {isInquiryFormOpen && (
-          <div className="lightbox-overlay" onClick={closeInquiryForm}>
-            <div className="inquiry-form-modal" onClick={(e) => e.stopPropagation()}>
-              <div className="inquiry-form-header">
+          <div className="inks-lightbox-overlay" onClick={closeInquiryForm}>
+            <div className="inks-inquiry-form-modal" onClick={(e) => e.stopPropagation()}>
+              <div className="inks-inquiry-form-header">
                 <h2>Product Inquiry</h2>
-                <button className="close-btn" onClick={closeInquiryForm}>&times;</button>
+                <button className="inks-close-btn" onClick={closeInquiryForm}>&times;</button>
               </div>
 
-              <form className="inquiry-form" onSubmit={handleInquirySubmit}>
-                <div className="form-group">
+              <form className="inks-inquiry-form" onSubmit={handleInquirySubmit}>
+                <div className="inks-form-group">
                   <label htmlFor="name">Full Name *</label>
                   <input
                     type="text"
@@ -1002,7 +981,7 @@ export default function Inks() {
                   />
                 </div>
 
-                <div className="form-group">
+                <div className="inks-form-group">
                   <label htmlFor="email">Email *</label>
                   <input
                     type="email"
@@ -1010,12 +989,15 @@ export default function Inks() {
                     name="email"
                     value={inquiryFormData.email}
                     onChange={handleInquiryInputChange}
+                    pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
+                    title="Please enter a valid email address (e.g., name@domain.com)"
+                    placeholder="name@company.com"
                     required
                   />
                 </div>
 
-                <div className="form-row">
-                  <div className="form-group">
+                <div className="inks-form-row">
+                  <div className="inks-form-group">
                     <label htmlFor="company">Company</label>
                     <input
                       type="text"
@@ -1026,19 +1008,44 @@ export default function Inks() {
                     />
                   </div>
 
-                  <div className="form-group">
-                    <label htmlFor="phone">Phone</label>
-                    <input
-                      type="tel"
-                      id="phone"
-                      name="phone"
-                      value={inquiryFormData.phone}
-                      onChange={handleInquiryInputChange}
-                    />
+                  <div className="inks-form-group">
+                    <label htmlFor="phone">Phone Number</label>
+                    <div className="inks-phone-input">
+                      <select name="countryCode" className="inks-country-select">
+                        <option value="+63">🇵🇭 +63</option>
+                        <option value="+1">🇺🇸 +1</option>
+                        <option value="+86">🇨🇳 +86</option>
+                        <option value="+81">🇯🇵 +81</option>
+                        <option value="+82">🇰🇷 +82</option>
+                        <option value="+65">🇸🇬 +65</option>
+                        <option value="+60">🇲🇾 +60</option>
+                        <option value="+66">🇹🇭 +66</option>
+                        <option value="+84">🇻🇳 +84</option>
+                        <option value="+62">🇮🇩 +62</option>
+                        <option value="+91">🇮🇳 +91</option>
+                        <option value="+44">🇬🇧 +44</option>
+                        <option value="+49">🇩🇪 +49</option>
+                        <option value="+33">🇫🇷 +33</option>
+                        <option value="+39">🇮🇹 +39</option>
+                        <option value="+34">🇪🇸 +34</option>
+                        <option value="+61">🇦🇺 +61</option>
+                        <option value="+64">🇳🇿 +64</option>
+                      </select>
+                      <input
+                        type="tel"
+                        id="phone"
+                        name="phone"
+                        value={inquiryFormData.phone}
+                        onChange={handleInquiryInputChange}
+                        placeholder="123 456 7890"
+                        pattern="[0-9\s\-\(\)]{7,15}"
+                        title="Please enter a valid phone number"
+                      />
+                    </div>
                   </div>
                 </div>
 
-                <div className="form-group">
+                <div className="inks-form-group">
                   <label htmlFor="subject">Subject *</label>
                   <input
                     type="text"
@@ -1050,7 +1057,7 @@ export default function Inks() {
                   />
                 </div>
 
-                <div className="form-group">
+                <div className="inks-form-group">
                   <label htmlFor="message">Message *</label>
                   <textarea
                     id="message"
@@ -1063,11 +1070,11 @@ export default function Inks() {
                   ></textarea>
                 </div>
 
-                <div className="form-actions">
-                  <button type="button" className="btn-secondary-inks" onClick={closeInquiryForm}>
+                <div className="inks-form-actions">
+                  <button type="button" className="inks-btn-secondary" onClick={closeInquiryForm}>
                     Cancel
                   </button>
-                  <button type="submit" className="btn-primary-inks">
+                  <button type="submit" className="inks-btn-primary">
                     Send Inquiry
                   </button>
                 </div>

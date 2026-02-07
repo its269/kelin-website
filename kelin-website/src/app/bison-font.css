@@ -1,0 +1,15 @@
+@font-face {
+    font-family: 'Bison-Bold';
+    src: url('/fonts/Bison-Bold(PersonalUse).ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+.kgs,
+.hero1-title {
+    font-family: 'Bison-Bold', Arial, sans-serif !important;
+}
+
+.carouselChildTextContainer h2 {
+    font-family: 'Bison-Bold', Arial, sans-serif !important;
+}

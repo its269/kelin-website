@@ -223,16 +223,30 @@ Join us at this flagship event to discover cutting-edge solutions and connect wi
             <p className="events-hero-subtitle">
               Stay connected with the latest innovations, industry updates, and exciting developments from Kelin Graphics System.
             </p>
+            <div className="events-hero-stats">
+              <div className="events-stat">
+                <span className="events-stat-number">8+</span>
+                <span className="events-stat-label">Upcoming Events</span>
+              </div>
+              <div className="events-stat">
+                <span className="events-stat-number">3</span>
+                <span className="events-stat-label">Major Regions</span>
+              </div>
+              <div className="events-stat">
+                <span className="events-stat-number">2026</span>
+                <span className="events-stat-label">Exhibition Year</span>
+              </div>
+            </div>
           </div>
           <div className="events-hero-visual">
             <div className="events-floating-cards">
-              <div className="events-floating-card-icon events-card-1">
+              <div className="events-floating-element events-element-1">
                 <img src="/messages.png" alt="News Updates" />
               </div>
-              <div className="events-floating-card-icon events-card-2">
+              <div className="events-floating-element events-element-2">
                 <img src="/calendar.png" alt="Industry Events" />
               </div>
-              <div className="events-floating-card-icon events-card-3">
+              <div className="events-floating-element events-element-3">
                 <img src="/office-building.png" alt="Community" />
               </div>
             </div>
@@ -292,44 +306,44 @@ Join us at this flagship event to discover cutting-edge solutions and connect wi
 
         {/* Lightbox Modal */}
         {selectedItem && (
-          <div className="lightbox-overlay" onClick={closeLightbox}>
-            <div className="lightbox-content" onClick={(e) => e.stopPropagation()}>
-              <button className="lightbox-close" onClick={closeLightbox}>
+          <div className="events-lightbox-overlay" onClick={closeLightbox}>
+            <div className="events-lightbox-content" onClick={(e) => e.stopPropagation()}>
+              <button className="events-lightbox-close" onClick={closeLightbox}>
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
                   <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
               </button>
 
-              <div className="lightbox-body">
+              <div className="events-lightbox-body">
                 {/* Image Slideshow */}
                 {selectedItem.images && selectedItem.images.length > 0 && (
-                  <div className="lightbox-slideshow">
-                    <div className="slideshow-container">
+                  <div className="events-lightbox-slideshow">
+                    <div className="events-slideshow-container">
                       <img
                         src={selectedItem.images[currentImageIndex]}
                         alt={selectedItem.title}
-                        className="slideshow-image"
+                        className="events-slideshow-image"
                       />
 
                       {selectedItem.images.length > 1 && (
                         <>
-                          <button className="slideshow-btn prev-btn" onClick={prevImage}>
+                          <button className="events-slideshow-btn events-prev-btn" onClick={prevImage}>
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
                               <path d="M15 18L9 12L15 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                             </svg>
                           </button>
-                          <button className="slideshow-btn next-btn" onClick={nextImage}>
+                          <button className="events-slideshow-btn events-next-btn" onClick={nextImage}>
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
                               <path d="M9 18L15 12L9 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                             </svg>
                           </button>
 
                           {/* Dot indicators */}
-                          <div className="slideshow-dots">
+                          <div className="events-slideshow-dots">
                             {selectedItem.images.map((_, index) => (
                               <button
                                 key={index}
-                                className={`dot ${index === currentImageIndex ? 'active' : ''}`}
+                                className={`events-dot ${index === currentImageIndex ? 'active' : ''}`}
                                 onClick={() => goToImage(index)}
                               />
                             ))}
@@ -341,21 +355,21 @@ Join us at this flagship event to discover cutting-edge solutions and connect wi
                 )}
 
                 {/* Content Details */}
-                <div className="lightbox-details">
-                  <div className="lightbox-header">
-                    <span className="lightbox-category">{selectedItem.category}</span>
-                    <span className="lightbox-date">{selectedItem.date}</span>
+                <div className="events-lightbox-details">
+                  <div className="events-lightbox-header">
+                    <span className="events-lightbox-category">{selectedItem.category}</span>
+                    <span className="events-lightbox-date">{selectedItem.date}</span>
                   </div>
 
-                  <h2 className="lightbox-title">{selectedItem.title}</h2>
+                  <h2 className="events-lightbox-title">{selectedItem.title}</h2>
 
                   {selectedItem.location && (
-                    <div className="lightbox-location">
+                    <div className="events-lightbox-location">
                       <strong>Location:</strong> {selectedItem.location}
                     </div>
                   )}
 
-                  <div className="lightbox-content-text">
+                  <div className="events-lightbox-content-text">
                     {selectedItem.fullContent.split('\n\n').map((paragraph, index) => (
                       <p key={index}>{paragraph}</p>
                     ))}

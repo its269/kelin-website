@@ -10,6 +10,7 @@
     font-size: 2.5rem;
     color: #333;
     margin-bottom: 1rem;
+    font-family: 'Bison-Bold', Arial, sans-serif !important;
 }
 
 .product-detail-description {
@@ -35,6 +36,7 @@
     text-align: center;
     position: relative;
     padding-bottom: 0.5rem;
+    font-family: 'Bison-Bold', Arial, sans-serif !important;
 }
 
 .category-title::after {
@@ -80,6 +82,7 @@
     font-weight: 700;
     color: #1e293b;
     margin-bottom: 0.5rem;
+    font-family: 'Bison-Bold', Arial, sans-serif !important;
 }
 
 .product-description {
@@ -98,6 +101,7 @@
     font-weight: 600;
     color: #374151;
     margin-bottom: 0.5rem;
+    font-family: 'Bison-Bold', Arial, sans-serif !important;
 }
 
 .product-features ul {
@@ -131,6 +135,7 @@
     font-weight: 600;
     color: #374151;
     margin-bottom: 0.75rem;
+    font-family: 'Bison-Bold', Arial, sans-serif !important;
 }
 
 .application-tags {
@@ -160,6 +165,7 @@
     font-size: 2rem;
     color: #1e293b;
     margin-bottom: 2rem;
+    font-family: 'Bison-Bold', Arial, sans-serif !important;
 }
 
 .info-grid {
@@ -177,6 +183,7 @@
     font-size: 1.2rem;
     color: #374151;
     margin-bottom: 1rem;
+    font-family: 'Bison-Bold', Arial, sans-serif !important;
 }
 
 .info-item p {
@@ -196,6 +203,7 @@
 .contact-section h2 {
     font-size: 2rem;
     margin-bottom: 1rem;
+    font-family: 'Bison-Bold', Arial, sans-serif !important;
 }
 
 .contact-section p {

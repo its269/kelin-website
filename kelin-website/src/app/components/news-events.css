@@ -25,6 +25,7 @@
     color: #1a1a1a;
     margin: 0 0 16px 0;
     letter-spacing: -0.02em;
+    font-family: 'Bison-Bold', Arial, sans-serif !important;
 }
 
 .news-events-subtitle {
@@ -33,6 +34,7 @@
     margin: 0;
     font-weight: 400;
     line-height: 1.6;
+    font-family: 'Bison-Bold', Arial, sans-serif !important;
 }
 
 /* Grid Layout */
