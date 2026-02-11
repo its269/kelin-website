@@ -21,7 +21,7 @@
     /* max-width: 1400px; */
     margin: 0 auto;
     text-align: center;
-    background: linear-gradient(135deg, rgba(16, 185, 129, 0.05) 0%, rgba(5, 150, 105, 0.08) 100%);
+    background: linear-gradient(135deg, rgba(71, 85, 105, 0.05) 0%, rgba(51, 65, 85, 0.08) 100%);
     border-radius: 80px;
     margin-bottom: 60px;
     position: relative;
@@ -35,7 +35,7 @@
     left: -50%;
     width: 200%;
     height: 200%;
-    background: radial-gradient(circle, rgba(16, 185, 129, 0.1) 0%, transparent 50%);
+    background: radial-gradient(circle, rgba(71, 85, 105, 0.1) 0%, transparent 50%);
     animation: eco-sol-float 20s ease-in-out infinite;
     pointer-events: none;
 }
@@ -61,7 +61,7 @@
     font-size: 3.5rem;
     font-weight: 800;
     font-family: 'Bison-Bold', Arial, sans-serif;
-    background: linear-gradient(135deg, #10b981 0%, #059669 50%, #047857 100%);
+    background: linear-gradient(135deg, #1e293b 0%, #334155 50%, #475569 100%);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -94,13 +94,13 @@
     background: rgba(255, 255, 255, 0.8);
     border-radius: 16px;
     backdrop-filter: blur(10px);
-    border: 1px solid rgba(16, 185, 129, 0.1);
+    border: 1px solid rgba(71, 85, 105, 0.1);
 }
 
 .eco-sol-stat-number {
     font-size: 2rem;
     font-weight: 800;
-    color: #10b981;
+    color: #334155;
     display: block;
 }
 
@@ -157,7 +157,7 @@
     border-radius: 24px;
     overflow: hidden;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
-    border: 1px solid rgba(16, 185, 129, 0.1);
+    border: 1px solid rgba(71, 85, 105, 0.1);
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
     cursor: pointer;
@@ -170,14 +170,14 @@
     left: 0;
     right: 0;
     height: 4px;
-    background: linear-gradient(90deg, #10b981, #059669, #047857);
+    background: linear-gradient(90deg, #334155, #475569, #64748b);
     transform: scaleX(0);
     transition: transform 0.4s ease;
 }
 
 .eco-sol-machine-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 20px 60px rgba(16, 185, 129, 0.15);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
 }
 
 .eco-sol-machine-card:hover::before {
@@ -209,7 +209,7 @@
     position: absolute;
     top: 16px;
     right: 16px;
-    background: linear-gradient(135deg, #10b981, #059669);
+    background: linear-gradient(135deg, #334155, #475569);
     color: white;
     padding: 6px 12px;
     border-radius: 20px;
@@ -253,7 +253,7 @@
 .eco-sol-spec-icon {
     width: 16px;
     height: 16px;
-    background: linear-gradient(135deg, #10b981, #059669);
+    background: linear-gradient(135deg, #334155, #475569);
     border-radius: 50%;
     margin-right: 12px;
     position: relative;
@@ -279,7 +279,7 @@
 }
 
 .eco-sol-view-btn {
-    background: linear-gradient(135deg, #10b981, #059669);
+    background: linear-gradient(135deg, #334155, #475569);
     color: white;
     border: none;
     padding: 12px 24px;
@@ -295,7 +295,7 @@
 }
 
 .eco-sol-view-btn:hover {
-    background: linear-gradient(135deg, #059669, #047857);
+    background: linear-gradient(135deg, #1e293b, #334155);
     transform: translateX(4px);
 }
 
@@ -310,7 +310,7 @@
 }
 
 .eco-sol-machine-price {
-    color: #10b981;
+    color: #334155;
     font-weight: 700;
     font-size: 1.1rem;
 }
@@ -324,9 +324,9 @@
 }
 
 .eco-sol-clickable-price:hover {
-    background: rgba(16, 185, 129, 0.1);
+    background: rgba(71, 85, 105, 0.1);
     transform: scale(1.05);
-    text-shadow: 0 0 8px rgba(16, 185, 129, 0.3);
+    text-shadow: 0 0 8px rgba(71, 85, 105, 0.3);
 }
 
 /* Features Section */
@@ -386,10 +386,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, #10b981, #34d399);
+    background: linear-gradient(135deg, #64748b, #94a3b8);
     border-radius: 50%;
     padding: 16px;
-    box-shadow: 0 8px 25px rgba(16, 185, 129, 0.25);
+    box-shadow: 0 8px 25px rgba(71, 85, 105, 0.25);
 }
 
 .eco-sol-feature-icon svg {
@@ -595,8 +595,8 @@
 .eco-sol-form-group input:focus,
 .eco-sol-form-group textarea:focus {
     outline: none;
-    border-color: #10b981;
-    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+    border-color: #475569;
+    box-shadow: 0 0 0 3px rgba(71, 85, 105, 0.1);
 }
 
 .eco-sol-form-group textarea {
@@ -632,8 +632,8 @@
 
 .eco-sol-country-select:focus {
     outline: none;
-    border-color: #10b981;
-    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+    border-color: #475569;
+    box-shadow: 0 0 0 3px rgba(71, 85, 105, 0.1);
 }
 
 .eco-sol-phone-input input[type="tel"] {
@@ -648,12 +648,12 @@
 
 .eco-sol-phone-input input[type="tel"]:focus {
     outline: none;
-    border-color: #10b981;
-    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+    border-color: #475569;
+    box-shadow: 0 0 0 3px rgba(71, 85, 105, 0.1);
 }
 
 .eco-sol-btn-primary {
-    background: linear-gradient(135deg, #10b981, #059669);
+    background: linear-gradient(135deg, #334155, #475569);
     color: white;
     border: none;
     padding: 12px 24px;
@@ -665,7 +665,7 @@
 }
 
 .eco-sol-btn-primary:hover {
-    background: linear-gradient(135deg, #059669, #047857);
+    background: linear-gradient(135deg, #1e293b, #334155);
     transform: translateY(-2px);
 }
 

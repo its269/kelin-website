@@ -54,7 +54,7 @@
     background: white;
     border-radius: 16px;
     box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
-    border: 1px solid rgba(148, 163, 184, 0.1);
+    /* border: 1px solid rgba(148, 163, 184, 0.1); */
     min-width: 120px;
     transition: all 0.3s ease;
 }

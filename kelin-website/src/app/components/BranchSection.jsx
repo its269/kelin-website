@@ -73,7 +73,7 @@ export default function BranchSection() {
     return (
         <section className="branch-section">
             <div className="branch-header">
-                <h2 className="section-title">Our Locations</h2>
+                <h2 className="section-title">Our Branches</h2>
                 <p className="section-subtitle">Visit us at any of our branches nationwide</p>
             </div>
 

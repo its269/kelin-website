@@ -21,7 +21,7 @@ export default function EcoSolventPrinters() {
             ],
             badge: 'Heavy Duty',
             price: 'Contact us for more details',
-            link: '/products/machine/eco-solvent-printers/smart-rj24-2004'
+            link: '/smart-rj24-2004-i3200-eco-solvent'
         },
         {
             id: 'xline-eco-solvent',
@@ -36,7 +36,7 @@ export default function EcoSolventPrinters() {
             ],
             badge: 'Versatile',
             price: 'Contact us for more details',
-            link: '/products/machine/eco-solvent-printers/xline-eco-solvent'
+            link: '/xline-eco-solvent'
         }
     ];
 

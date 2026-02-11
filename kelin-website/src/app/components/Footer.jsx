@@ -10,11 +10,11 @@ export default function Footer() {
                     <div className="footer-section">
                         <div className="footer-logo">
                             <Link href="/" className="logo-link">
-                                Kelin Graphics System
+                                KELIN GRAPHICS SYSTEM
                             </Link>
                         </div>
                         <p className="footer-description">
-                            Your trusted long-term printing solutions provider
+                            YOUR TRUSTED LONG-TERM PRINTING SOLUTIONS PROVIDER
                         </p>
                     </div>
 

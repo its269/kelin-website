@@ -168,6 +168,13 @@ export default function Header() {
         };
     }, []);
 
+    // Handle mobile menu overlay click
+    const handleMobileMenuOverlayClick = (e) => {
+        if (e.target === e.currentTarget) {
+            setOpen(false);
+        }
+    };
+
     return (
         <header className="header">
             <div className="header-container">
@@ -286,8 +293,8 @@ export default function Header() {
                 </nav>
 
                 {/* Mobile Menu Button */}
-                <button className="menu-btn" onClick={() => setOpen(!open)}>
-                    ☰
+                <button className={`menu-btn ${open ? 'menu-btn-active' : ''}`} onClick={() => setOpen(!open)}>
+                    {open ? '✕' : '☰'}
                 </button>
             </div>
             <div className={`nav-menu ${isScrolled ? 'scrolled' : ''}`}>
@@ -359,137 +366,139 @@ export default function Header() {
                 <Link href="/contact" id="connectwithus" className={`dropdown-toggle ${isActive("/contact") ? "" : ""}`}>Connect with Us</Link>
             </div>
 
-            {/* Mobile Menu */}
+            {/* Mobile Menu Overlay */}
             {open && (
-                <nav className="nav-mobile">
-                    {/* Mobile Search Bar - Inline */}
-                    <div className="search-wrapper-mobile" ref={searchMobileRef}>
-                        <form className="search-form-mobile" onSubmit={handleSearch}>
-                            <div className="search-container-mobile">
-                                <input
-                                    type="text"
-                                    className="search-input"
-                                    placeholder="Search..."
-                                    value={searchQuery}
-                                    onChange={handleSearchChange}
-                                    onFocus={() => searchQuery.trim() && setShowSearchResults(true)}
-                                />
-                                <button type="submit" className="search-btn">
-                                    <svg
-                                        width="16"
-                                        height="16"
-                                        viewBox="0 0 24 24"
-                                        fill="none"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                    >
-                                        <path
-                                            d="M21 21L15.0001 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z"
-                                            stroke="currentColor"
-                                            strokeWidth="2"
-                                            strokeLinecap="round"
-                                            strokeLinejoin="round"
-                                        />
-                                    </svg>
-                                </button>
-                            </div>
-                        </form>
-
-                        {/* Search Results Dropdown - Mobile */}
-                        {showSearchResults && searchResults.length > 0 && (
-                            <div className="search-dropdown-mobile">
-                                {searchResults.map((result, index) => (
-                                    <div
-                                        key={index}
-                                        className="search-result-item"
-                                        onClick={() => {
-                                            handleResultSelect(result.path);
-                                            setOpen(false);
-                                        }}
-                                    >
-                                        <div className="search-result-title">{result.title}</div>
-                                        <div className="search-result-type">{result.type}</div>
-                                    </div>
-                                ))}
-                                {searchQuery.trim() && searchResults.length === 0 && (
-                                    <div className="search-no-results">
-                                        No results found for "{searchQuery}"
-                                    </div>
-                                )}
-                            </div>
-                        )}
-                    </div>
-
-                    <Link href="/" className={isActive("/") ? "active" : ""} onClick={() => setOpen(false)}>Home</Link>
-                    <Link href="/explore" className={isActive("/explore") ? "active" : ""} onClick={() => setOpen(false)}>Explore</Link>
-
-                    {/* Mobile Products Dropdown */}
-                    <div className="mobile-dropdown">
-                        <button
-                            className={`mobile-dropdown-toggle ${isActive("/products") ? "active" : ""}`}
-                            onClick={() => setProductsOpen(!productsOpen)}
-                            aria-expanded={productsOpen}
-                            aria-controls="mobile-products-submenu"
-                            aria-label="Toggle products menu"
-                        >
-                            Products
-                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none">
-                                <path d="M6 9L12 15L18 9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                            </svg>
-                        </button>
-
-                        {productsOpen && (
-                            <div
-                                id="mobile-products-submenu"
-                                className="mobile-dropdown-menu"
-                                role="menu"
-                            >
-                                <Link href="/products/inks" onClick={() => setOpen(false)} role="menuitem">Inks</Link>
-                                <Link href="/products/materials" onClick={() => setOpen(false)} role="menuitem">Materials</Link>
-                                <Link href="/products/accessories" onClick={() => setOpen(false)} role="menuitem">Accessories</Link>
-                                <Link href="/products/promotional-display" onClick={() => setOpen(false)} role="menuitem">Promotional Display</Link>
-
-                                {/* Mobile Machine Nested Dropdown */}
-                                <div className="mobile-dropdown-nested">
-                                    <button
-                                        className="mobile-dropdown-toggle-nested"
-                                        onClick={() => setMachineOpen(!machineOpen)}
-                                        aria-expanded={machineOpen}
-                                        aria-controls="mobile-machine-submenu"
-                                        aria-label="Toggle machine categories"
-                                    >
-                                        Machine
-                                        <svg width="10" height="10" viewBox="0 0 24 24" fill="none">
-                                            <path d="M6 9L12 15L18 9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                <div className="mobile-menu-overlay" onClick={handleMobileMenuOverlayClick}>
+                    <nav className="nav-mobile">
+                        {/* Mobile Search Bar - Inline */}
+                        <div className="search-wrapper-mobile" ref={searchMobileRef}>
+                            <form className="search-form-mobile" onSubmit={handleSearch}>
+                                <div className="search-container-mobile">
+                                    <input
+                                        type="text"
+                                        className="search-input"
+                                        placeholder="Search..."
+                                        value={searchQuery}
+                                        onChange={handleSearchChange}
+                                        onFocus={() => searchQuery.trim() && setShowSearchResults(true)}
+                                    />
+                                    <button type="submit" className="search-btn">
+                                        <svg
+                                            width="16"
+                                            height="16"
+                                            viewBox="0 0 24 24"
+                                            fill="none"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                        >
+                                            <path
+                                                d="M21 21L15.0001 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z"
+                                                stroke="currentColor"
+                                                strokeWidth="2"
+                                                strokeLinecap="round"
+                                                strokeLinejoin="round"
+                                            />
                                         </svg>
                                     </button>
+                                </div>
+                            </form>
 
-                                    {machineOpen && (
+                            {/* Search Results Dropdown - Mobile */}
+                            {showSearchResults && searchResults.length > 0 && (
+                                <div className="search-dropdown-mobile">
+                                    {searchResults.map((result, index) => (
                                         <div
-                                            id="mobile-machine-submenu"
-                                            className="mobile-dropdown-menu-nested"
-                                            role="menu"
+                                            key={index}
+                                            className="search-result-item"
+                                            onClick={() => {
+                                                handleResultSelect(result.path);
+                                                setOpen(false);
+                                            }}
                                         >
-                                            <Link href="/products/machine/eco-solvent-printers" onClick={() => setOpen(false)} role="menuitem">Eco - Solvent Printers</Link>
-                                            <Link href="/products/machine/solvent-printers" onClick={() => setOpen(false)} role="menuitem">Solvent Printers</Link>
-                                            <Link href="/products/machine/cutting-machine" onClick={() => setOpen(false)} role="menuitem">Cutting Machine</Link>
-                                            <Link href="/products/machine/sublimation-dtf" onClick={() => setOpen(false)} role="menuitem">Sublimation and DTF</Link>
-                                            <Link href="/products/machine/uv-printers" onClick={() => setOpen(false)} role="menuitem">UV Printers</Link>
-                                            <Link href="/products/machine/heatpress" onClick={() => setOpen(false)} role="menuitem">Heatpress</Link>
-                                            <Link href="/products/machine/laminator" onClick={() => setOpen(false)} role="menuitem">Laminator</Link>
-                                            <Link href="/products/machine/laser-machine" onClick={() => setOpen(false)} role="menuitem">Laser Machine</Link>
-                                            <Link href="/products/machine/embroidery-knitting" onClick={() => setOpen(false)} role="menuitem">Embroidery and Knitting</Link>
-                                            <Link href="/products/machine/3d-printer" onClick={() => setOpen(false)} role="menuitem">3D Printer</Link>
+                                            <div className="search-result-title">{result.title}</div>
+                                            <div className="search-result-type">{result.type}</div>
+                                        </div>
+                                    ))}
+                                    {searchQuery.trim() && searchResults.length === 0 && (
+                                        <div className="search-no-results">
+                                            No results found for "{searchQuery}"
                                         </div>
                                     )}
                                 </div>
-                            </div>
-                        )}
-                    </div>
+                            )}
+                        </div>
 
-                    <Link href="/about" className={isActive("/about") ? "active" : ""} onClick={() => setOpen(false)}>About Us</Link>
-                    <Link href="/events" className={isActive("/events") ? "active" : ""} onClick={() => setOpen(false)}>News and Events</Link>
-                    <Link href="/contact" className={isActive("/contact") ? "active" : ""} onClick={() => setOpen(false)}>Connect with Us</Link>
-                </nav>
+                        <Link href="/" className={isActive("/") ? "active" : ""} onClick={() => setOpen(false)}>Home</Link>
+                        <Link href="/explore" className={isActive("/explore") ? "active" : ""} onClick={() => setOpen(false)}>Explore</Link>
+
+                        {/* Mobile Products Dropdown */}
+                        <div className="mobile-dropdown">
+                            <button
+                                className={`mobile-dropdown-toggle ${isActive("/products") ? "active" : ""}`}
+                                onClick={() => setProductsOpen(!productsOpen)}
+                                aria-expanded={productsOpen}
+                                aria-controls="mobile-products-submenu"
+                                aria-label="Toggle products menu"
+                            >
+                                Products
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none">
+                                    <path d="M6 9L12 15L18 9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                                </svg>
+                            </button>
+
+                            {productsOpen && (
+                                <div
+                                    id="mobile-products-submenu"
+                                    className="mobile-dropdown-menu"
+                                    role="menu"
+                                >
+                                    <Link href="/products/inks" onClick={() => setOpen(false)} role="menuitem">Inks</Link>
+                                    <Link href="/products/materials" onClick={() => setOpen(false)} role="menuitem">Materials</Link>
+                                    <Link href="/products/accessories" onClick={() => setOpen(false)} role="menuitem">Accessories</Link>
+                                    <Link href="/products/promotional-display" onClick={() => setOpen(false)} role="menuitem">Promotional Display</Link>
+
+                                    {/* Mobile Machine Nested Dropdown */}
+                                    <div className="mobile-dropdown-nested">
+                                        <button
+                                            className="mobile-dropdown-toggle-nested"
+                                            onClick={() => setMachineOpen(!machineOpen)}
+                                            aria-expanded={machineOpen}
+                                            aria-controls="mobile-machine-submenu"
+                                            aria-label="Toggle machine categories"
+                                        >
+                                            Machine
+                                            <svg width="10" height="10" viewBox="0 0 24 24" fill="none">
+                                                <path d="M6 9L12 15L18 9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                                            </svg>
+                                        </button>
+
+                                        {machineOpen && (
+                                            <div
+                                                id="mobile-machine-submenu"
+                                                className="mobile-dropdown-menu-nested"
+                                                role="menu"
+                                            >
+                                                <Link href="/products/machine/eco-solvent-printers" onClick={() => setOpen(false)} role="menuitem">Eco - Solvent Printers</Link>
+                                                <Link href="/products/machine/solvent-printers" onClick={() => setOpen(false)} role="menuitem">Solvent Printers</Link>
+                                                <Link href="/products/machine/cutting-machine" onClick={() => setOpen(false)} role="menuitem">Cutting Machine</Link>
+                                                <Link href="/products/machine/sublimation-dtf" onClick={() => setOpen(false)} role="menuitem">Sublimation and DTF</Link>
+                                                <Link href="/products/machine/uv-printers" onClick={() => setOpen(false)} role="menuitem">UV Printers</Link>
+                                                <Link href="/products/machine/heatpress" onClick={() => setOpen(false)} role="menuitem">Heatpress</Link>
+                                                <Link href="/products/machine/laminator" onClick={() => setOpen(false)} role="menuitem">Laminator</Link>
+                                                <Link href="/products/machine/laser-machine" onClick={() => setOpen(false)} role="menuitem">Laser Machine</Link>
+                                                <Link href="/products/machine/embroidery-knitting" onClick={() => setOpen(false)} role="menuitem">Embroidery and Knitting</Link>
+                                                <Link href="/products/machine/3d-printer" onClick={() => setOpen(false)} role="menuitem">3D Printer</Link>
+                                            </div>
+                                        )}
+                                    </div>
+                                </div>
+                            )}
+                        </div>
+
+                        <Link href="/about" className={isActive("/about") ? "active" : ""} onClick={() => setOpen(false)}>About Us</Link>
+                        <Link href="/events" className={isActive("/events") ? "active" : ""} onClick={() => setOpen(false)}>News and Events</Link>
+                        <Link href="/contact" className={isActive("/contact") ? "active" : ""} onClick={() => setOpen(false)}>Connect with Us</Link>
+                    </nav>
+                </div>
             )}
         </header>
     );

@@ -21,7 +21,8 @@
   position: relative;
 }
 
-.hero-title {
+.hero-title,
+.explore-hero-title {
   font-size: 3.5rem;
   font-weight: 900;
   color: #1e293b;

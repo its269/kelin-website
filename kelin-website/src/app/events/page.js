@@ -228,10 +228,10 @@ Join us at this flagship event to discover cutting-edge solutions and connect wi
                 <span className="events-stat-number">8+</span>
                 <span className="events-stat-label">Upcoming Events</span>
               </div>
-              <div className="events-stat">
+              {/* <div className="events-stat">
                 <span className="events-stat-number">3</span>
                 <span className="events-stat-label">Major Regions</span>
-              </div>
+              </div> */}
               <div className="events-stat">
                 <span className="events-stat-number">2026</span>
                 <span className="events-stat-label">Exhibition Year</span>
