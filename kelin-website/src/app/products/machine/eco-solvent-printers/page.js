@@ -69,7 +69,7 @@ export default function EcoSolventPrinters() {
                             Discover our comprehensive range of professional eco-solvent printers designed for outdoor signage, vehicle wraps, and durable graphics applications with exceptional quality and environmental responsibility.
                         </p>
 
-                        <div className="eco-sol-hero-stats">
+                        {/* <div className="eco-sol-hero-stats">
                             <div className="eco-sol-stat">
                                 <span className="eco-sol-stat-number">2</span>
                                 <span className="eco-sol-stat-label">Machine Models</span>
@@ -82,7 +82,7 @@ export default function EcoSolventPrinters() {
                                 <span className="eco-sol-stat-number">2.0m</span>
                                 <span className="eco-sol-stat-label">Max Width</span>
                             </div>
-                        </div>
+                        </div> */}
                     </div>
                 </section>
 

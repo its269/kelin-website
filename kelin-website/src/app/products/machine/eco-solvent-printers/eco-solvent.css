@@ -147,9 +147,10 @@
 
 .eco-sol-machines-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(400px, 500px));
     gap: 40px;
     margin-top: 60px;
+    justify-content: center;
 }
 
 .eco-sol-machine-card {

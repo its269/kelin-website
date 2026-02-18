@@ -1,7 +1,6 @@
 "use client";
 import { useState } from 'react';
 import Header from '../components/Header';
-import Footer from '../components/Footer';
 import './contact.css';
 
 export default function Contact() {
@@ -85,8 +84,7 @@ export default function Contact() {
                                         </div>
                                         <div className="contact-text">
                                             <h3>Email</h3>
-                                            <p>info@kelinprinting.com</p>
-                                            <p>sales@kelinprinting.com</p>
+                                            <p>info@kelinph.com</p>
                                         </div>
                                     </div>
 
@@ -260,7 +258,6 @@ export default function Contact() {
                     </div>
                 </div>
             </main>
-            <Footer />
         </>
     );
 }

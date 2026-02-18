@@ -14,6 +14,7 @@ export default function Header() {
     const [searchResults, setSearchResults] = useState([]);
     const [showSearchResults, setShowSearchResults] = useState(false);
     const [searchExpanded, setSearchExpanded] = useState(false);
+    const [showScrollTop, setShowScrollTop] = useState(false);
     const searchRef = useRef(null);
     const searchMobileRef = useRef(null);
 
@@ -133,11 +134,12 @@ export default function Header() {
         };
     }, [searchExpanded, searchQuery]);
 
-    // Handle scroll detection for nav-menu positioning
+    // Handle scroll detection for nav-menu positioning and scroll-to-top button
     useEffect(() => {
         const handleScroll = () => {
             const scrollPosition = window.scrollY;
             setIsScrolled(scrollPosition > 150);
+            setShowScrollTop(scrollPosition > 300);
         };
 
         window.addEventListener('scroll', handleScroll);
@@ -173,6 +175,14 @@ export default function Header() {
         if (e.target === e.currentTarget) {
             setOpen(false);
         }
+    };
+
+    // Scroll to top function
+    const scrollToTop = () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
     };
 
     return (
@@ -499,6 +509,17 @@ export default function Header() {
                         <Link href="/contact" className={isActive("/contact") ? "active" : ""} onClick={() => setOpen(false)}>Connect with Us</Link>
                     </nav>
                 </div>
+            )}
+
+            {/* Global Scroll to Top Button */}
+            {showScrollTop && (
+                <button
+                    className="scroll-to-top-btn"
+                    onClick={scrollToTop}
+                    aria-label="Scroll to top"
+                >
+                    ↑
+                </button>
             )}
         </header>
     );

@@ -16,27 +16,6 @@ import "./montserrat-font.css";
 // 🔧 SSG CODE PATTERN: Default export function component
 // This is the basic pattern for SSG in Next.js App Router
 export default function Home() {
-  // Scroll to top button state
-  const [showScrollTop, setShowScrollTop] = useState(false);
-
-  // Handle scroll events to show/hide scroll-to-top button
-  useEffect(() => {
-    const handleScroll = () => {
-      setShowScrollTop(window.scrollY > 300);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  // Scroll to top function
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    });
-  };
-
   // Sample data for the carousel
   const carouselItems = [
     {
@@ -268,17 +247,6 @@ export default function Home() {
         {/* 🔧 SSG CODE PATTERN: Component with no props */}
         {/* No props passed = no dynamic data = SSG will pre-render this */}
         <BranchSection />
-
-        {/* Scroll to Top Button */}
-        {showScrollTop && (
-          <button
-            className="scroll-to-top-btn"
-            onClick={scrollToTop}
-            aria-label="Scroll to top"
-          >
-            ↑
-          </button>
-        )}
       </main>
     </div>
   );

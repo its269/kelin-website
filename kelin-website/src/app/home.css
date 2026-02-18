@@ -70,28 +70,54 @@
 }
 
 .btn {
-    background-color: rgba(51, 51, 51, 0.219);
-    backdrop-filter: blur(10px);
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.1));
+    backdrop-filter: blur(20px);
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    border-radius: 15px;
-    padding: 20px 15px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
-    min-width: 180px;
-    max-width: 220px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 24px;
+    padding: 25px 20px;
+    box-shadow:
+        0 8px 32px rgba(0, 0, 0, 0.12),
+        0 2px 8px rgba(0, 0, 0, 0.08),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    min-width: 200px;
+    max-width: 240px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.6s;
 }
 
 .btn:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    transform: translateY(-8px) scale(1.05);
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.2),
+        0 8px 32px rgba(0, 0, 0, 0.15),
+        inset 0 1px 0 rgba(255, 255, 255, 0.4);
+    border-color: rgba(255, 255, 255, 0.3);
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.35), rgba(255, 255, 255, 0.15));
+}
 
-    .number {
-        color: #9ca3af;
-    }
+.btn:hover::before {
+    left: 100%;
+}
+
+.btn:hover .number {
+    color: #ffffff;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
 }
 
 .number {
@@ -109,14 +135,22 @@
 }
 
 .btn a {
-    font-size: 1rem;
-    font-weight: 600;
-    /* the original font-weight is 600 */
-    color: #5e5e5e;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #2d3748;
     text-decoration: none;
     text-align: center;
-    line-height: 1.4;
-    transition: color 0.3s ease;
+    line-height: 1.3;
+    transition: all 0.3s ease;
+    font-family: 'Bison-Bold', sans-serif;
+    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
+    letter-spacing: 0.3px;
+}
+
+.btn:hover a {
+    color: #1a202c;
+    text-shadow: 0 1px 3px rgba(255, 255, 255, 0.9);
+    transform: translateY(-1px);
 }
 
 .btn:hover a {
@@ -173,13 +207,129 @@
 
 .hero-buttons {
     display: flex;
-    gap: 2rem;
+    gap: 2.5rem;
     justify-content: center;
     flex-wrap: wrap;
     width: 100%;
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 40px 20px;
+}
+
+/* Button Loading Animation */
+.btn {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: buttonSlideUp 0.8s ease-out forwards;
+}
+
+.btn:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.btn:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.btn:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.btn:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+.btn:nth-child(5) {
+    animation-delay: 0.5s;
+}
+
+@keyframes buttonSlideUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Individual Button Styles */
+.btn-primary-cat {
+    background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+    -webkit-background-clip: text;
+    /* -webkit-text-fill-color: transparent; */
+    background-clip: text;
+    position: relative;
+}
+
+.btn-secondary-cat {
+    background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+    -webkit-background-clip: text;
+    /* -webkit-text-fill-color: transparent; */
+    background-clip: text;
+    position: relative;
+}
+
+.btn-tertiary-cat {
+    background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+    -webkit-background-clip: text;
+    /* -webkit-text-fill-color: transparent; */
+    background-clip: text;
+    position: relative;
+}
+
+.btn-quaternary-cat {
+    background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+    -webkit-background-clip: text;
+    /* -webkit-text-fill-color: transparent; */
+    background-clip: text;
+    position: relative;
+}
+
+.btn-quinary-cat {
+    background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+    -webkit-background-clip: text;
+    /* -webkit-text-fill-color: transparent; */
+    background-clip: text;
+    position: relative;
+}
+
+/* Hover states for colored buttons */
+.btn:hover .btn-primary-cat {
+    background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 0 30px rgba(250, 112, 154, 0.5);
+}
+
+.btn:hover .btn-secondary-cat {
+    background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 0 30px rgba(250, 112, 154, 0.5);
+}
+
+.btn:hover .btn-tertiary-cat {
+    background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 0 30px rgba(250, 112, 154, 0.5);
+}
+
+.btn:hover .btn-quaternary-cat {
+    background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 0 30px rgba(250, 112, 154, 0.5);
+}
+
+.btn:hover .btn-quinary-cat {
+    background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 0 30px rgba(250, 112, 154, 0.5);
 }
 
 /* .btn-primary {
@@ -384,8 +534,25 @@
     .hero-buttons {
         flex-direction: column;
         align-items: center;
-        gap: 1.5rem;
-        padding: 15px;
+        gap: 2rem;
+        padding: 30px 15px;
+        max-width: 400px;
+    }
+
+    .btn {
+        min-width: 280px;
+        max-width: 320px;
+        padding: 22px 18px;
+        border-radius: 20px;
+    }
+
+    .btn a {
+        font-size: 1.05rem;
+        letter-spacing: 0.2px;
+    }
+
+    .btn:hover {
+        transform: translateY(-6px) scale(1.03);
     }
 
     .btn {
@@ -479,18 +646,27 @@
     .hero-buttons {
         flex-direction: row !important;
         justify-content: center;
-        gap: 1rem !important;
-        padding: 15px 10px !important;
+        gap: 1.5rem !important;
+        padding: 25px 15px !important;
         flex-wrap: wrap;
     }
 
     .btn {
-        min-width: 140px !important;
-        max-width: 160px !important;
-        padding: 15px 10px !important;
-        flex: 0 1 calc(50% - 0.5rem);
-        margin-bottom: 1rem;
-        width: auto !important;
+        min-width: 160px !important;
+        max-width: 180px !important;
+        padding: 20px 15px !important;
+        flex: 0 1 calc(50% - 0.75rem);
+        margin-bottom: 1.5rem;
+        border-radius: 18px;
+    }
+
+    .btn a {
+        font-size: 0.98rem;
+        font-weight: 650;
+    }
+
+    .btn:hover {
+        transform: translateY(-5px) scale(1.02);
     }
 
     .number {
@@ -618,50 +794,5 @@
 
     .feature-card h3 {
         font-size: 1.5rem;
-    }
-}
-
-/* Scroll to Top Button */
-.scroll-to-top-btn {
-    position: fixed;
-    bottom: 30px;
-    left: 30px;
-    width: 50px;
-    height: 50px;
-    background: linear-gradient(135deg, #6b7280 0%, #4b5563 100%);
-    color: white;
-    border: none;
-    border-radius: 50%;
-    font-size: 1.5rem;
-    font-weight: bold;
-    cursor: pointer;
-    z-index: 1000;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-    transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0.9;
-}
-
-.scroll-to-top-btn:hover {
-    background: linear-gradient(135deg, #4b5563 0%, #374151 100%);
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
-    opacity: 1;
-}
-
-.scroll-to-top-btn:active {
-    transform: translateY(0);
-}
-
-/* Responsive scroll button */
-@media (max-width: 768px) {
-    .scroll-to-top-btn {
-        width: 45px;
-        height: 45px;
-        bottom: 20px;
-        left: 20px;
-        font-size: 1.3rem;
     }
 }
