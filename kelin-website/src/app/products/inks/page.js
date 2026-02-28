@@ -173,7 +173,7 @@ const getInkProductsData = () => {
             name: "Eagle V2 1L. Cyan",
             size: "1L",
             color: "Cyan",
-            image: "/inks/Eagle V2 1L/Eagle V2 1L Cyan (Transparent).png",
+            image: "/inks/Eagle V2 1L/Eagle V2 1L Cyan (Transparent1).png",
             description: "Professional solvent-based cyan ink with excellent weather resistance for outdoor applications.",
             specifications: {
               "Volume": "1 Liter",
@@ -184,7 +184,7 @@ const getInkProductsData = () => {
             name: "Eagle V2 1L. Magenta",
             size: "1L",
             color: "Magenta",
-            image: "/inks/Eagle V2 1L/Eagle V2 1L Magenta  (Transparent).png",
+            image: "/inks/Eagle V2 1L/Eagle V2 1L Magenta  (Transparent1).png",
             description: "Professional solvent-based magenta ink with excellent weather resistance for outdoor applications.",
             specifications: {
               "Volume": "1 Liter",
@@ -195,7 +195,7 @@ const getInkProductsData = () => {
             name: "Eagle V2 1L. Yellow",
             size: "1L",
             color: "Yellow",
-            image: "/inks/Eagle V2 1L/Eagle V2 1L Yellow  (Transparent).png",
+            image: "/inks/Eagle V2 1L/Eagle V2 1L Yellow  (Transparent1).png",
             description: "Professional solvent-based yellow ink with excellent weather resistance for outdoor applications.",
             specifications: {
               "Volume": "1 Liter",
@@ -206,7 +206,7 @@ const getInkProductsData = () => {
             name: "Eagle V2 1L. Black",
             size: "1L",
             color: "Black",
-            image: "/inks/Eagle V2 1L/Eagle V2 1L Black  (Transparent).png",
+            image: "/inks/Eagle V2 1L/Eagle V2 1L Black  (Transparent1).png",
             description: "Professional solvent-based black ink with excellent weather resistance for outdoor applications.",
             specifications: {
               "Volume": "1 Liter",
@@ -217,7 +217,7 @@ const getInkProductsData = () => {
             name: "Eagle V2 5L. Cyan",
             size: "5L",
             color: "Cyan",
-            image: "/inks/Eagle V2 5L/Eagle V2 5L Cyan (Transparent).png",
+            image: "/inks/Eagle V2 5L/Eagle V2 5L Cyan (Transparent1).png",
             description: "Large volume professional solvent-based cyan ink for high-volume printing.",
             specifications: {
               "Volume": "5 Liters",
@@ -239,7 +239,7 @@ const getInkProductsData = () => {
             name: "Eagle V2 5L. Yellow",
             size: "5L",
             color: "Yellow",
-            image: "/inks/Eagle V2 5L/Eagle V2 5L Yellow  (Transparent).png",
+            image: "/inks/Eagle V2 5L/Eagle V2 5L Yellow  (Transparent1).png",
             description: "Large volume professional solvent-based yellow ink for high-volume printing.",
             specifications: {
               "Volume": "5 Liters",
@@ -250,7 +250,7 @@ const getInkProductsData = () => {
             name: "Eagle V2 5L. Black",
             size: "5L",
             color: "Black",
-            image: "/inks/Eagle V2 5L/Eagle V2 5L Black (Transparent).png",
+            image: "/inks/Eagle V2 5L/Eagle V2 5L Black (Transparent1).png",
             description: "Large volume professional solvent-based black ink for high-volume printing.",
             specifications: {
               "Volume": "5 Liters",
