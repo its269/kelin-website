@@ -112,23 +112,6 @@ export default function ApolloMaxPlusII() {
         <div>
             <Header />
             <main className="apollo-main">
-                {/* Breadcrumb Navigation */}
-                <section className="apollo-breadcrumb-section">
-                    <div className="apollo-breadcrumb-container">
-                        <nav className="apollo-breadcrumb-nav">
-                            <Link href="/" className="apollo-breadcrumb-link">Home</Link>
-                            <span className="apollo-breadcrumb-separator">›</span>
-                            <Link href="/products" className="apollo-breadcrumb-link">Products</Link>
-                            <span className="apollo-breadcrumb-separator">›</span>
-                            <Link href="/products/machine" className="apollo-breadcrumb-link">Machines</Link>
-                            <span className="apollo-breadcrumb-separator">›</span>
-                            <Link href="/products/machine/solvent-printers" className="apollo-breadcrumb-link">Solvent Printers</Link>
-                            <span className="apollo-breadcrumb-separator">›</span>
-                            <span className="apollo-breadcrumb-current">{machineDetails.model}</span>
-                        </nav>
-                    </div>
-                </section>
-
                 {/* Product Hero Section */}
                 <section className="apollo-hero product-hero">
                     <div className="apollo-hero-layout">

@@ -111,7 +111,7 @@
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    margin: 0 0 24px 0;
+    margin-top: 70px;
     line-height: 1.1;
     letter-spacing: -0.02em;
 }
@@ -738,6 +738,10 @@
         padding: 80px 30px 60px;
     }
 
+    .xline-hero.product-hero {
+        border-radius: 0px 0px 50px 50px;
+    }
+
     .xline-hero-layout {
         gap: 60px;
     }
@@ -749,11 +753,11 @@
     .xline-specs-grid {
         grid-template-columns: 1fr;
     }
+}
 
-    .xline-applications-grid {
-        grid-template-columns: 1fr;
-        gap: 60px;
-    }
+.xline-applications-grid {
+    grid-template-columns: 1fr;
+    gap: 60px;
 }
 
 @media (max-width: 768px) {
@@ -767,6 +771,11 @@
         border-radius: 0px 0px 40px 40px;
     }
 
+    .xline-hero.product-hero {
+        padding: 50px 20px;
+        text-align: center;
+    }
+
     .xline-hero-layout {
         grid-template-columns: 1fr;
         gap: 40px;
@@ -778,19 +787,45 @@
         margin-top: 65px;
     }
 
+    .xline-hero-title.product-title {
+        font-size: 2.2rem;
+        text-align: center;
+    }
+
     .xline-hero-subtitle {
         font-size: 1.1rem;
         max-width: 100%;
     }
 
+    .xline-hero-subtitle.product-subtitle {
+        text-align: center;
+        max-width: 100%;
+        font-size: 1rem;
+        margin-bottom: 25px;
+    }
+
     .xline-button-group {
         justify-content: center;
+        gap: 15px;
+        margin-bottom: 25px;
+    }
+
+    .xline-hero-image {
+        max-width: 350px;
+        width: 90%;
+        height: auto;
+        margin: 0 auto;
     }
 
     .xline-hero-stats {
         justify-content: center;
-        flex-direction: column;
-        gap: 16px;
+        gap: 15px;
+        margin-top: 30px;
+        display: grid;
+        grid-template-columns: 1fr;
+        max-width: 280px;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .xline-features-section,
@@ -872,10 +907,13 @@
     .xline-stat {
         min-width: 100px;
         padding: 16px 20px;
+        margin: 0;
+        width: 100%;
+        box-sizing: border-box;
     }
 
     .xline-stat-number {
-        font-size: 1.6rem;
+        font-size: 1.5rem;
     }
 
     .xline-stat-label {

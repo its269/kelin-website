@@ -1,0 +1,694 @@
+/* Cutting Machines Page Styles */
+
+/* Font Face Declaration */
+@font-face {
+    font-family: 'Bison-Bold';
+    src: url('/fonts/Bison-Bold(PersonalUse).ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+.cutting-main {
+    min-height: 100vh;
+    margin-top: 60px;
+    background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+}
+
+/* Hero Section */
+.cutting-hero {
+    padding: 100px 40px 80px;
+    /* max-width: 1400px; */
+    margin: 0 auto;
+    text-align: center;
+    background: linear-gradient(135deg, rgba(71, 85, 105, 0.05) 0%, rgba(51, 65, 85, 0.08) 100%);
+    border-radius: 80px;
+    margin-bottom: 60px;
+    position: relative;
+    overflow: hidden;
+}
+
+.cutting-hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(71, 85, 105, 0.1) 0%, transparent 50%);
+    animation: cutting-float 20s ease-in-out infinite;
+    pointer-events: none;
+}
+
+@keyframes cutting-float {
+
+    0%,
+    100% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+
+    50% {
+        transform: translate(-20px, -20px) rotate(180deg);
+    }
+}
+
+.cutting-hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.cutting-hero-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    font-family: 'Bison-Bold', Arial, sans-serif;
+    background: linear-gradient(135deg, #1e293b 0%, #334155 50%, #475569 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: 40px 0 24px 0;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+}
+
+.cutting-hero-subtitle {
+    font-size: 1.3rem;
+    color: #64748b;
+    line-height: 1.6;
+    margin: 0 0 40px 0;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cutting-hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 40px;
+    flex-wrap: wrap;
+}
+
+.cutting-stat {
+    text-align: center;
+    padding: 20px 30px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 16px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(71, 85, 105, 0.1);
+}
+
+.cutting-stat-number {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #334155;
+    display: block;
+}
+
+.cutting-stat-label {
+    font-size: 0.9rem;
+    color: #64748b;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Machines Grid Section */
+.cutting-machines-section {
+    padding: 80px 40px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.cutting-section-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.cutting-section-title {
+    font-family: 'Bison-Bold', sans-serif;
+    font-size: 2.8rem;
+    font-weight: 800;
+    color: #1e293b;
+    margin: 0 0 16px 0;
+    background: linear-gradient(135deg, #64748b, #94a3b8);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.cutting-section-subtitle {
+    font-size: 1.1rem;
+    color: #64748b;
+    margin: 0;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cutting-machines-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 500px));
+    gap: 40px;
+    margin-top: 60px;
+    justify-content: center;
+}
+
+.cutting-machine-card {
+    background: white;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(71, 85, 105, 0.1);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    cursor: pointer;
+}
+
+.cutting-machine-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #334155, #475569, #64748b);
+    transform: scaleX(0);
+    transition: transform 0.4s ease;
+}
+
+.cutting-machine-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+}
+
+.cutting-machine-card:hover::before {
+    transform: scaleX(1);
+}
+
+.cutting-machine-image {
+    height: 380px;
+    overflow: hidden;
+    position: relative;
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cutting-machine-image img {
+    width: 90%;
+    /* height: 100%; */
+    object-fit: cover;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.cutting-machine-card:hover .cutting-machine-image img {
+    transform: scale(1.08);
+}
+
+.cutting-machine-badge {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: linear-gradient(135deg, #334155, #475569);
+    color: white;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.cutting-machine-content {
+    padding: 30px;
+}
+
+.cutting-machine-title {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin: 0 0 16px 0;
+    line-height: 1.3;
+}
+
+.cutting-machine-description {
+    color: #64748b;
+    line-height: 1.7;
+    margin: 0 0 24px 0;
+    font-size: 1rem;
+}
+
+.cutting-machine-specs {
+    margin-bottom: 24px;
+}
+
+.cutting-spec-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+    color: #475569;
+    font-size: 0.95rem;
+}
+
+.cutting-spec-icon {
+    width: 16px;
+    height: 16px;
+    background: linear-gradient(135deg, #334155, #475569);
+    border-radius: 50%;
+    margin-right: 12px;
+    position: relative;
+    flex-shrink: 0;
+}
+
+.cutting-spec-icon::after {
+    content: '✓';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 10px;
+    font-weight: bold;
+}
+
+.cutting-machine-action {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: auto;
+}
+
+.cutting-view-btn {
+    background: linear-gradient(135deg, #334155, #475569);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.cutting-view-btn:hover {
+    background: linear-gradient(135deg, #1e293b, #334155);
+    transform: translateX(4px);
+}
+
+.cutting-view-btn svg {
+    width: 16px;
+    height: 16px;
+    transition: transform 0.3s ease;
+}
+
+.cutting-view-btn:hover svg {
+    transform: translateX(4px);
+}
+
+.cutting-machine-price {
+    color: #334155;
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.cutting-clickable-price {
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 8px 12px;
+    border-radius: 8px;
+    position: relative;
+}
+
+.cutting-clickable-price:hover {
+    background: rgba(71, 85, 105, 0.1);
+    transform: scale(1.05);
+    text-shadow: 0 0 8px rgba(71, 85, 105, 0.3);
+}
+
+/* Features Section */
+.cutting-features-section {
+    background: linear-gradient(135deg, #334155 0%, #475569 100%);
+    color: white;
+    padding: 80px 40px;
+}
+
+.cutting-features-container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.cutting-features-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.cutting-features-title {
+    font-family: 'Bison-Bold', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin: 0 0 16px 0;
+    background: linear-gradient(135deg, #64748b, #94a3b8);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.cutting-features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+}
+
+.cutting-feature-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 40px 30px;
+    text-align: center;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.cutting-feature-card:hover {
+    transform: translateY(-8px);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.cutting-feature-icon {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 24px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #64748b, #94a3b8);
+    border-radius: 50%;
+    padding: 16px;
+    box-shadow: 0 8px 25px rgba(71, 85, 105, 0.25);
+}
+
+.cutting-feature-icon svg {
+    width: 28px;
+    height: 28px;
+    color: white;
+}
+
+.cutting-feature-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin: 0 0 16px 0;
+}
+
+.cutting-feature-text {
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Inquiry Modal Styles */
+.cutting-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    padding: 20px;
+}
+
+.cutting-inquiry-modal {
+    background: white;
+    border-radius: 16px;
+    max-width: 600px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.cutting-inquiry-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 30px 0;
+    margin-bottom: 20px;
+}
+
+.cutting-inquiry-header h2 {
+    font-size: 1.2rem;
+    color: #2d3748;
+    font-weight: 700;
+    margin: 0;
+}
+
+.cutting-close-btn {
+    background: #f56565;
+    color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 24px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.cutting-close-btn:hover {
+    background: #e53e3e;
+    transform: scale(1.1);
+}
+
+.cutting-inquiry-form {
+    padding: 0 30px 30px;
+}
+
+.cutting-form-group {
+    margin-bottom: 20px;
+}
+
+.cutting-form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.cutting-form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #2d3748;
+    font-size: 0.95rem;
+}
+
+.cutting-form-group input,
+.cutting-form-group textarea {
+    width: 100%;
+    padding: 12px 16px;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+.cutting-form-group input:focus,
+.cutting-form-group textarea:focus {
+    outline: none;
+    border-color: #334155;
+    box-shadow: 0 0 0 3px rgba(71, 85, 105, 0.1);
+}
+
+.cutting-form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.cutting-form-actions {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #e2e8f0;
+}
+
+.cutting-btn-primary {
+    background: linear-gradient(135deg, #334155, #475569);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    flex: 1;
+}
+
+.cutting-btn-primary:hover {
+    background: linear-gradient(135deg, #1e293b, #334155);
+}
+
+.cutting-btn-secondary {
+    background: #f7fafc;
+    color: #4a5568;
+    border: 2px solid #e2e8f0;
+    padding: 10px 22px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    flex: 1;
+}
+
+.cutting-btn-secondary:hover {
+    background: #edf2f7;
+    border-color: #cbd5e0;
+}
+
+/* Phone Input Styling */
+.cutting-phone-input {
+    display: flex;
+    gap: 8px;
+}
+
+.cutting-country-select {
+    background: white;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 12px 8px;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 120px;
+}
+
+.cutting-country-select:focus {
+    outline: none;
+    border-color: #334155;
+    box-shadow: 0 0 0 3px rgba(71, 85, 105, 0.1);
+}
+
+.cutting-phone-input input {
+    flex: 1;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .cutting-hero {
+        padding: 80px 30px 60px;
+    }
+
+    .cutting-hero-title {
+        font-size: 3rem;
+    }
+
+    .cutting-machines-grid {
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 30px;
+    }
+
+    .cutting-hero-stats {
+        gap: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .cutting-main {
+        margin-top: 0;
+    }
+
+    .cutting-hero {
+        padding: 60px 20px;
+        margin-bottom: 40px;
+        border-radius: 40px;
+    }
+
+    .cutting-hero-title {
+        font-size: 2.5rem;
+        margin-top: 65px;
+    }
+
+    .cutting-hero-subtitle {
+        font-size: 1.1rem;
+    }
+
+    .cutting-machines-section,
+    .cutting-features-section {
+        padding: 60px 20px;
+    }
+
+    .cutting-machines-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .cutting-section-title {
+        font-size: 2.2rem;
+    }
+
+    .cutting-features-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .cutting-hero-stats {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .cutting-machine-content {
+        padding: 24px;
+    }
+
+    .cutting-form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .cutting-phone-input {
+        flex-direction: column;
+    }
+
+    .cutting-country-select {
+        min-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .cutting-hero-title {
+        font-size: 2rem;
+    }
+
+    .cutting-section-title {
+        font-size: 1.8rem;
+    }
+
+    .cutting-stat {
+        min-width: 100px;
+        padding: 16px 20px;
+    }
+
+    .cutting-stat-number {
+        font-size: 1.6rem;
+    }
+
+    .cutting-stat-label {
+        font-size: 0.8rem;
+    }
+
+    .cutting-machine-image {
+        height: 280px;
+    }
+}

@@ -292,7 +292,71 @@
 }
 
 /* Hover states for colored buttons */
-.btn:hover .btn-primary-cat {
+@media (min-width: 769px) {
+    .btn:hover {
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    .btn:hover::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.4);
+        backdrop-filter: blur(2px);
+        border-radius: 24px;
+        z-index: 1;
+        box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.5);
+    }
+
+    .btn:hover .btn-primary-cat,
+    .btn:hover .btn-secondary-cat,
+    .btn:hover .btn-tertiary-cat,
+    .btn:hover .btn-quaternary-cat,
+    .btn:hover .btn-quinary-cat {
+        position: relative;
+        z-index: 2;
+    }
+
+    .btn:hover a {
+        position: relative;
+        z-index: 2;
+        color: #ffffff !important;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8) !important;
+        font-weight: 800;
+    }
+
+    /* Cutting Machine background */
+    .btn:has(.btn-primary-cat):hover {
+        background-image: url('/GCC Expert LX  EX-52LX  With Stand (1).png');
+    }
+
+    /* Eco-Solvent Printer background */
+    .btn:has(.btn-secondary-cat):hover {
+        background-image: url('/SMART Eco-Solvent Machine.png');
+    }
+
+    /* Solvent Printer background */
+    .btn:has(.btn-tertiary-cat):hover {
+        background-image: url('/Machine V2 (1).png');
+    }
+
+    /* Sublimation Printer background */
+    .btn:has(.btn-quaternary-cat):hover {
+        background-image: url('/sublimation_dtf/SUBL Kirin DA182T Plus Sublimation Printer (1).png');
+    }
+
+    /* DTF Printer background */
+    .btn:has(.btn-quinary-cat):hover {
+        background-image: url('/sublimation_dtf/DTF SMART DTF Machine (1).png');
+    }
+}
+
+/* .btn:hover .btn-primary-cat {
     background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -330,7 +394,7 @@
     -webkit-text-fill-color: transparent;
     background-clip: text;
     text-shadow: 0 0 30px rgba(250, 112, 154, 0.5);
-}
+} */
 
 /* .btn-primary {
     background-color: #333;

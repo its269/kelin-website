@@ -64,7 +64,7 @@
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    margin: 40px 0 24px 0;
+    margin-top: 70px;
     line-height: 1.1;
     letter-spacing: -0.02em;
 }
@@ -455,6 +455,10 @@
 
     .smart-rj24-hero {
         padding: 80px 30px 60px;
+    }
+
+    .smart-rj24-hero.product-hero {
+        border-radius: 0px 0px 50px 50px;
     }
 
     .smart-rj24-hero-title {

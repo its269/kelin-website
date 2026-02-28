@@ -2,6 +2,7 @@ import "./globals.css";
 import "./bison-global.css";
 import Footer from "./components/Footer";
 import CookieConsent from "./components/CookieConsent";
+import GlobalChatbot from "./components/GlobalChatbot";
 
 export const metadata = {
   title: 'Kelin Graphics System - Professional Printing Solutions',
@@ -30,6 +31,7 @@ export default function RootLayout({ children }) {
           {children}
           <Footer />
           <CookieConsent />
+          <GlobalChatbot />
         </div>
       </body>
     </html>

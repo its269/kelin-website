@@ -1151,17 +1151,24 @@
     align-items: center;
     justify-content: center;
     opacity: 0.9;
+    /* iOS specific fixes */
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
 }
 
 .scroll-to-top-btn:hover {
     background: linear-gradient(135deg, #4b5563 0%, #374151 100%);
-    transform: translateY(-2px);
+    transform: translateY(-2px) translateZ(0);
+    -webkit-transform: translateY(-2px) translateZ(0);
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
     opacity: 1;
 }
 
 .scroll-to-top-btn:active {
-    transform: translateY(0);
+    transform: translateY(0) translateZ(0);
+    -webkit-transform: translateY(0) translateZ(0);
 }
 
 /* Responsive scroll button */
@@ -1172,5 +1179,48 @@
         bottom: 20px;
         left: 20px;
         font-size: 1.3rem;
+        /* iOS Safari bottom safe area */
+        bottom: calc(20px + env(safe-area-inset-bottom));
+    }
+}
+
+/* Admin link styling */
+.admin-link {
+    background: #ef4444 !important;
+    color: white !important;
+    padding: 6px 12px !important;
+    border-radius: 6px !important;
+    font-size: 0.85rem !important;
+    font-weight: 500 !important;
+    margin-left: 12px !important;
+    transition: all 0.3s ease !important;
+}
+
+.admin-link:hover {
+    background: #dc2626 !important;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(239, 68, 68, 0.3);
+}
+
+.admin-link.active {
+    background: #dc2626 !important;
+}
+
+/* iOS specific fixes */
+@supports (-webkit-touch-callout: none) {
+    .scroll-to-top-btn {
+        /* Additional iOS fixes */
+        -webkit-user-select: none;
+        user-select: none;
+        -webkit-tap-highlight-color: transparent;
+        /* Ensure proper positioning on iOS */
+        bottom: calc(30px + env(safe-area-inset-bottom));
+    }
+
+    @media (max-width: 768px) {
+        .scroll-to-top-btn {
+            bottom: calc(20px + env(safe-area-inset-bottom, 20px));
+            left: calc(20px + env(safe-area-inset-left, 0px));
+        }
     }
 }

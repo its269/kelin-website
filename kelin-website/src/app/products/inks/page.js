@@ -26,7 +26,7 @@ const getInkProductsData = () => {
             name: "Eco M15 1L Cyan",
             size: "1L",
             color: "Cyan",
-            image: "/KELIN-LOGO-01.png",
+            image: "/inks/ECO M15/M15 Cyan (Transparent).png",
             description: "High-quality eco-solvent ink with excellent color reproduction and minimal odor.",
             specifications: {
               "Volume": "1 Liter",
@@ -37,7 +37,7 @@ const getInkProductsData = () => {
             name: "Eco M15 1L Magenta",
             size: "1L",
             color: "Magenta",
-            image: "/KELIN-LOGO-01.png",
+            image: "/inks/ECO M15/M15 Magenta (Transparent).png",
             description: "Vibrant magenta eco-solvent ink for professional printing applications.",
             specifications: {
               "Volume": "1 Liter",
@@ -48,7 +48,7 @@ const getInkProductsData = () => {
             name: "Eco M15 1L Yellow",
             size: "1L",
             color: "Yellow",
-            image: "/KELIN-LOGO-01.png",
+            image: "/inks/ECO M15/M15 Yellow (Transparent).png",
             description: "Bright yellow eco-solvent ink with excellent lightfastness.",
             specifications: {
               "Volume": "1 Liter",
@@ -59,7 +59,7 @@ const getInkProductsData = () => {
             name: "Eco M15 1L Black",
             size: "1L",
             color: "Black",
-            image: "/KELIN-LOGO-01.png",
+            image: "/inks/ECO M15/M15 Black (Transparent).png",
             description: "Deep black eco-solvent ink for sharp text and solid areas.",
             specifications: {
               "Volume": "1 Liter",
@@ -70,7 +70,7 @@ const getInkProductsData = () => {
             name: "M21 Cyan (i3200)",
             size: "1L",
             color: "Cyan",
-            image: "/KELIN-LOGO-01.png",
+            image: "/inks/M21/M21 Cyan (Transparent).png",
             description: "Specialized cyan ink optimized for i3200 printheads.",
             specifications: {
               "Volume": "1 Liter",
@@ -81,22 +81,18 @@ const getInkProductsData = () => {
             name: "M21 Magenta (i3200)",
             size: "1L",
             color: "Magenta",
-            image: "/KELIN-LOGO-01.png",
+            image: "/inks/M21/M21 Magenta (Transparent).png",
             description: "Specialized magenta ink optimized for i3200 printheads.",
             specifications: {
               "Volume": "1 Liter",
-              "Type": "Eco-Solvent",
-              "Printhead": "i3200 Compatible",
-              "Viscosity": "8-12 cP",
-              "Shelf Life": "24 months",
-              "Storage": "Cool, dry place"
+              "Type": "Eco-Solvent"
             }
           },
           {
             name: "M21 Yellow (i3200)",
             size: "1L",
             color: "Yellow",
-            image: "/KELIN-LOGO-01.png",
+            image: "/inks/M21/M21 Yellow (Transparent).png",
             description: "Specialized yellow ink optimized for i3200 printheads.",
             specifications: {
               "Volume": "1 Liter",
@@ -107,7 +103,7 @@ const getInkProductsData = () => {
             name: "M21 Black (i3200)",
             size: "1L",
             color: "Black",
-            image: "/KELIN-LOGO-01.png",
+            image: "/inks/M21/M21 Black (Transparent).png",
             description: "Specialized black ink optimized for i3200 printheads.",
             specifications: {
               "Volume": "1 Liter",
@@ -118,7 +114,7 @@ const getInkProductsData = () => {
             name: "Phoenix E2 1L. Cyan",
             size: "1L",
             color: "Cyan",
-            image: "/KELIN-LOGO-01.png",
+            image: "/inks/PHOENIX E2 1L/PHOENIX E2 1L Cyan (Transparent).png",
             description: "Premium Phoenix E2 cyan ink for superior print quality.",
             specifications: {
               "Volume": "1 Liter",
@@ -129,7 +125,7 @@ const getInkProductsData = () => {
             name: "Phoenix E2 1L. Magenta",
             size: "1L",
             color: "Magenta",
-            image: "/KELIN-LOGO-01.png",
+            image: "/inks/PHOENIX E2 1L/PHOENIX E2 1L Magenta (Transparent).png",
             description: "Premium Phoenix E2 magenta ink for superior print quality.",
             specifications: {
               "Volume": "1 Liter",
@@ -140,7 +136,7 @@ const getInkProductsData = () => {
             name: "Phoenix E2 1L. Yellow",
             size: "1L",
             color: "Yellow",
-            image: "/KELIN-LOGO-01.png",
+            image: "/inks/PHOENIX E2 1L/PHOENIX E2 1L Yellow (Transparent).png",
             description: "Premium Phoenix E2 yellow ink for superior print quality.",
             specifications: {
               "Volume": "1 Liter",
@@ -151,15 +147,11 @@ const getInkProductsData = () => {
             name: "Phoenix E2 1L. Black",
             size: "1L",
             color: "Black",
-            image: "/KELIN-LOGO-01.png",
+            image: "/inks/PHOENIX E2 1L/PHOENIX E2 1L Black (Transparent).png",
             description: "Premium Phoenix E2 black ink for superior print quality.",
             specifications: {
               "Volume": "1 Liter",
-              "Type": "Eco-Solvent",
-              "Series": "Phoenix E2",
-              "Viscosity": "12-16 cP",
-              "Color Density": "High",
-              "Shelf Life": "20 months"
+              "Type": "Eco-Solvent"
             }
           }
         ]
@@ -181,120 +173,88 @@ const getInkProductsData = () => {
             name: "Eagle V2 1L. Cyan",
             size: "1L",
             color: "Cyan",
-            image: "/KELIN-LOGO-01.png",
+            image: "/inks/Eagle V2 1L/Eagle V2 1L Cyan (Transparent).png",
             description: "Professional solvent-based cyan ink with excellent weather resistance for outdoor applications.",
             specifications: {
               "Volume": "1 Liter",
-              "Type": "Solvent",
-              "Series": "Eagle V2",
-              "Weather Resistance": "Excellent",
-              "Viscosity": "8-12 cP",
-              "Shelf Life": "24 months"
+              "Type": "Solvent"
             }
           },
           {
             name: "Eagle V2 1L. Magenta",
             size: "1L",
             color: "Magenta",
-            image: "/KELIN-LOGO-01.png",
+            image: "/inks/Eagle V2 1L/Eagle V2 1L Magenta  (Transparent).png",
             description: "Professional solvent-based magenta ink with excellent weather resistance for outdoor applications.",
             specifications: {
               "Volume": "1 Liter",
-              "Type": "Solvent",
-              "Series": "Eagle V2",
-              "Weather Resistance": "Excellent",
-              "Viscosity": "8-12 cP",
-              "Shelf Life": "24 months"
+              "Type": "Solvent"
             }
           },
           {
             name: "Eagle V2 1L. Yellow",
             size: "1L",
             color: "Yellow",
-            image: "/KELIN-LOGO-01.png",
+            image: "/inks/Eagle V2 1L/Eagle V2 1L Yellow  (Transparent).png",
             description: "Professional solvent-based yellow ink with excellent weather resistance for outdoor applications.",
             specifications: {
               "Volume": "1 Liter",
-              "Type": "Solvent",
-              "Series": "Eagle V2",
-              "Weather Resistance": "Excellent",
-              "Viscosity": "8-12 cP",
-              "Shelf Life": "24 months"
+              "Type": "Solvent"
             }
           },
           {
             name: "Eagle V2 1L. Black",
             size: "1L",
             color: "Black",
-            image: "/KELIN-LOGO-01.png",
+            image: "/inks/Eagle V2 1L/Eagle V2 1L Black  (Transparent).png",
             description: "Professional solvent-based black ink with excellent weather resistance for outdoor applications.",
             specifications: {
               "Volume": "1 Liter",
-              "Type": "Solvent",
-              "Series": "Eagle V2",
-              "Weather Resistance": "Excellent",
-              "Viscosity": "8-12 cP",
-              "Shelf Life": "24 months"
+              "Type": "Solvent"
             }
           },
           {
             name: "Eagle V2 5L. Cyan",
             size: "5L",
             color: "Cyan",
-            image: "/KELIN-LOGO-01.png",
+            image: "/inks/Eagle V2 5L/Eagle V2 5L Cyan (Transparent).png",
             description: "Large volume professional solvent-based cyan ink for high-volume printing.",
             specifications: {
               "Volume": "5 Liters",
-              "Type": "Solvent",
-              "Series": "Eagle V2",
-              "Weather Resistance": "Excellent",
-              "Viscosity": "8-12 cP",
-              "Shelf Life": "24 months"
+              "Type": "Solvent"
             }
           },
           {
             name: "Eagle V2 5L. Magenta",
             size: "5L",
             color: "Magenta",
-            image: "/KELIN-LOGO-01.png",
+            image: "/inks/Eagle V2 5L/Eagle V2 5L Magenta.png",
             description: "Large volume professional solvent-based magenta ink for high-volume printing.",
             specifications: {
               "Volume": "5 Liters",
-              "Type": "Solvent",
-              "Series": "Eagle V2",
-              "Weather Resistance": "Excellent",
-              "Viscosity": "8-12 cP",
-              "Shelf Life": "24 months"
+              "Type": "Solvent"
             }
           },
           {
             name: "Eagle V2 5L. Yellow",
             size: "5L",
             color: "Yellow",
-            image: "/KELIN-LOGO-01.png",
+            image: "/inks/Eagle V2 5L/Eagle V2 5L Yellow  (Transparent).png",
             description: "Large volume professional solvent-based yellow ink for high-volume printing.",
             specifications: {
               "Volume": "5 Liters",
-              "Type": "Solvent",
-              "Series": "Eagle V2",
-              "Weather Resistance": "Excellent",
-              "Viscosity": "8-12 cP",
-              "Shelf Life": "24 months"
+              "Type": "Solvent"
             }
           },
           {
             name: "Eagle V2 5L. Black",
             size: "5L",
             color: "Black",
-            image: "/KELIN-LOGO-01.png",
+            image: "/inks/Eagle V2 5L/Eagle V2 5L Black (Transparent).png",
             description: "Large volume professional solvent-based black ink for high-volume printing.",
             specifications: {
               "Volume": "5 Liters",
-              "Type": "Solvent",
-              "Series": "Eagle V2",
-              "Weather Resistance": "Excellent",
-              "Viscosity": "8-12 cP",
-              "Shelf Life": "24 months"
+              "Type": "Solvent"
             }
           },
           {
@@ -305,11 +265,7 @@ const getInkProductsData = () => {
             description: "T14 series cyan solvent ink for professional printing applications.",
             specifications: {
               "Volume": "1 Liter",
-              "Type": "Solvent",
-              "Series": "T14",
-              "Viscosity": "10-14 cP",
-              "Shelf Life": "18 months",
-              "Storage": "Cool, dry place"
+              "Type": "Solvent"
             }
           },
           {
@@ -320,11 +276,7 @@ const getInkProductsData = () => {
             description: "T14 series magenta solvent ink for professional printing applications.",
             specifications: {
               "Volume": "1 Liter",
-              "Type": "Solvent",
-              "Series": "T14",
-              "Viscosity": "10-14 cP",
-              "Shelf Life": "18 months",
-              "Storage": "Cool, dry place"
+              "Type": "Solvent"
             }
           },
           {
@@ -335,11 +287,7 @@ const getInkProductsData = () => {
             description: "T14 series yellow solvent ink for professional printing applications.",
             specifications: {
               "Volume": "1 Liter",
-              "Type": "Solvent",
-              "Series": "T14",
-              "Viscosity": "10-14 cP",
-              "Shelf Life": "18 months",
-              "Storage": "Cool, dry place"
+              "Type": "Solvent"
             }
           },
           {
@@ -350,71 +298,51 @@ const getInkProductsData = () => {
             description: "T14 series black solvent ink for professional printing applications.",
             specifications: {
               "Volume": "1 Liter",
-              "Type": "Solvent",
-              "Series": "T14",
-              "Viscosity": "10-14 cP",
-              "Shelf Life": "18 months",
-              "Storage": "Cool, dry place"
+              "Type": "Solvent"
             }
           },
           {
             name: "T14 Eco Plus 2L Cyan",
             size: "2L",
             color: "Cyan",
-            image: "/KELIN-LOGO-01.png",
+            image: "/inks/T14 ECO PLUS 2L INKS/T14 Eco Plus 2L  Cyan (Transparent).png",
             description: "Enhanced T14 Eco Plus cyan ink with improved environmental properties.",
             specifications: {
               "Volume": "2 Liters",
-              "Type": "Solvent",
-              "Series": "T14 Eco Plus",
-              "Viscosity": "9-13 cP",
-              "Eco-Friendly": "Enhanced formula",
-              "Shelf Life": "20 months"
+              "Type": "Solvent"
             }
           },
           {
             name: "T14 Eco Plus 2L Magenta",
             size: "2L",
             color: "Magenta",
-            image: "/KELIN-LOGO-01.png",
+            image: "/inks/T14 ECO PLUS 2L INKS/T14 Eco Plus 2L Magenta (Transparent).png",
             description: "Enhanced T14 Eco Plus magenta ink with improved environmental properties.",
             specifications: {
               "Volume": "2 Liters",
-              "Type": "Solvent",
-              "Series": "T14 Eco Plus",
-              "Viscosity": "9-13 cP",
-              "Eco-Friendly": "Enhanced formula",
-              "Shelf Life": "20 months"
+              "Type": "Solvent"
             }
           },
           {
             name: "T14 Eco Plus 2L Yellow",
             size: "2L",
             color: "Yellow",
-            image: "/KELIN-LOGO-01.png",
+            image: "/inks/T14 ECO PLUS 2L INKS/T14 Eco Plus 2L Yellow (Transparent).png",
             description: "Enhanced T14 Eco Plus yellow ink with improved environmental properties.",
             specifications: {
               "Volume": "2 Liters",
-              "Type": "Solvent",
-              "Series": "T14 Eco Plus",
-              "Viscosity": "9-13 cP",
-              "Eco-Friendly": "Enhanced formula",
-              "Shelf Life": "20 months"
+              "Type": "Solvent"
             }
           },
           {
             name: "T14 Eco Plus 2L Black",
             size: "2L",
             color: "Black",
-            image: "/KELIN-LOGO-01.png",
+            image: "/inks/T14 ECO PLUS 2L INKS/T14 Eco Plus 2L Black (Transparent).png",
             description: "Enhanced T14 Eco Plus black ink with improved environmental properties.",
             specifications: {
               "Volume": "2 Liters",
-              "Type": "Solvent",
-              "Series": "T14 Eco Plus",
-              "Viscosity": "9-13 cP",
-              "Eco-Friendly": "Enhanced formula",
-              "Shelf Life": "20 months"
+              "Type": "Solvent"
             }
           },
           {
@@ -422,15 +350,11 @@ const getInkProductsData = () => {
             size: "1L",
             color: "Clear",
             type: "Cleaning Solution",
-            image: "/KELIN-LOGO-01.png",
+            image: "/inks/CLEANING SOLUTIONS/Cleaning Solution 1L. (Transparent).png",
             description: "Professional cleaning solution for maintaining print quality and extending printhead life.",
             specifications: {
               "Volume": "1 Liter",
-              "Type": "Cleaning Solution",
-              "Application": "Printhead cleaning",
-              "Compatibility": "All solvent systems",
-              "Shelf Life": "36 months",
-              "Storage": "Room temperature"
+              "Type": "Cleaning Solution"
             }
           },
           {
@@ -438,15 +362,11 @@ const getInkProductsData = () => {
             size: "5L",
             color: "Clear",
             type: "Cleaning Solution",
-            image: "/KELIN-LOGO-01.png",
+            image: "/inks/CLEANING SOLUTIONS/Cleaning Solution 5L (Transparent).png",
             description: "Large volume professional cleaning solution for high-usage environments.",
             specifications: {
               "Volume": "5 Liters",
-              "Type": "Cleaning Solution",
-              "Application": "Printhead cleaning",
-              "Compatibility": "All solvent systems",
-              "Shelf Life": "36 months",
-              "Storage": "Room temperature"
+              "Type": "Cleaning Solution"
             }
           },
           {
@@ -454,15 +374,11 @@ const getInkProductsData = () => {
             size: "4L",
             color: "Clear",
             type: "Cleaning Solution",
-            image: "/KELIN-LOGO-01.png",
+            image: "/inks/CLEANING SOLUTIONS/Cleaning Solution 4L. T Series (Transparent).png",
             description: "Specialized cleaning solution optimized for T Series printing systems.",
             specifications: {
               "Volume": "4 Liters",
-              "Type": "Cleaning Solution",
-              "Series": "T Series Compatible",
-              "Application": "System maintenance",
-              "Shelf Life": "36 months",
-              "Storage": "Cool, dry place"
+              "Type": "Cleaning Solution"
             }
           },
           {
@@ -470,15 +386,11 @@ const getInkProductsData = () => {
             size: "1L",
             color: "Clear",
             type: "Cleaning Solution",
-            image: "/KELIN-LOGO-01.png",
+            image: "/inks/CLEANING SOLUTIONS/Cleaning Solution 1L. T Series (Transparent).png",
             description: "Specialized cleaning solution optimized for T Series printing systems.",
             specifications: {
               "Volume": "1 Liter",
-              "Type": "Cleaning Solution",
-              "Series": "T Series Compatible",
-              "Application": "System maintenance",
-              "Shelf Life": "36 months",
-              "Storage": "Cool, dry place"
+              "Type": "Cleaning Solution"
             }
           }
         ]
@@ -496,22 +408,184 @@ const getInkProductsData = () => {
         ],
         applications: ["T-shirt printing", "Textile decoration", "Fashion apparel", "Custom garments"],
         products: [
-          { name: "Brilliant DTF Textile 1L. Cyan", size: "1L", color: "Cyan" },
-          { name: "Brilliant DTF Textile 1L. Magenta", size: "1L", color: "Magenta" },
-          { name: "Brilliant DTF Textile 1L. Yellow", size: "1L", color: "Yellow" },
-          { name: "Brilliant DTF Textile 1L. Black", size: "1L", color: "Black" },
-          { name: "Brilliant DTF Textile 1L. White", size: "1L", color: "White" },
-          { name: "Vivid DTF Textile 1L. Cyan", size: "1L", color: "Cyan" },
-          { name: "Vivid DTF Textile 1L. Magenta", size: "1L", color: "Magenta" },
-          { name: "Vivid DTF Textile 1L. Yellow", size: "1L", color: "Yellow" },
-          { name: "Vivid DTF Textile 1L. Black", size: "1L", color: "Black" },
-          { name: "Vivid DTF Textile 1L. White", size: "1L", color: "White" },
-          { name: "Brilliant DTF Textile 1L. Fluorescent Yellow", size: "1L", color: "Fluorescent Yellow" },
-          { name: "Brilliant DTF Textile 1L. Fluorescent Pink", size: "1L", color: "Fluorescent Pink" },
-          { name: "Brilliant DTF Textile 1L. Fluorescent Orange", size: "1L", color: "Fluorescent Orange" },
-          { name: "Brilliant DTF Textile 1L. Fluorescent Red", size: "1L", color: "Fluorescent Red" },
-          { name: "DTF Cleaning Solution 500ml", size: "500ml", color: "Clear", type: "Cleaning Solution" },
-          { name: "DTF Cleaning Solution 1L", size: "1L", color: "Clear", type: "Cleaning Solution" }
+          {
+            name: "Brilliant DTF Textile 1L. Cyan",
+            size: "1L",
+            color: "Cyan",
+            image: "/inks/BRILLIANT DTF INK 1L/Brilliant DTF Ink 1L Cyan (Transparent).png",
+            description: "High-quality brilliant DTF cyan ink for vibrant textile printing with excellent wash fastness.",
+            specifications: {
+              "Volume": "1 Liter",
+              "Type": "DTF Textile"
+            }
+          },
+          {
+            name: "Brilliant DTF Textile 1L. Magenta",
+            size: "1L",
+            color: "Magenta",
+            image: "/inks/BRILLIANT DTF INK 1L/Brilliant DTF Ink 1L Magenta (Transparent).png",
+            description: "High-quality brilliant DTF magenta ink for vibrant textile printing with excellent wash fastness.",
+            specifications: {
+              "Volume": "1 Liter",
+              "Type": "DTF Textile"
+            }
+          },
+          {
+            name: "Brilliant DTF Textile 1L. Yellow",
+            size: "1L",
+            color: "Yellow",
+            image: "/inks/BRILLIANT DTF INK 1L/Brilliant DTF Ink 1L Yellow (Transparent).png",
+            description: "High-quality brilliant DTF yellow ink for vibrant textile printing with excellent wash fastness.",
+            specifications: {
+              "Volume": "1 Liter",
+              "Type": "DTF Textile"
+            }
+          },
+          {
+            name: "Brilliant DTF Textile 1L. Black",
+            size: "1L",
+            color: "Black",
+            image: "/inks/BRILLIANT DTF INK 1L/Brilliant DTF Ink 1L Black (Transparent).png",
+            description: "High-quality brilliant DTF black ink for vibrant textile printing with excellent wash fastness.",
+            specifications: {
+              "Volume": "1 Liter",
+              "Type": "DTF Textile"
+            }
+          },
+          {
+            name: "Brilliant DTF Textile 1L. White",
+            size: "1L",
+            color: "White",
+            image: "/inks/BRILLIANT DTF INK 1L/Brilliant DTF Ink 1L White (Transparent).png",
+            description: "High-quality brilliant DTF white ink for vibrant textile printing with excellent opacity.",
+            specifications: {
+              "Volume": "1 Liter",
+              "Type": "DTF Textile"
+            }
+          },
+          {
+            name: "Vivid DTF Textile 1L. Cyan",
+            size: "1L",
+            color: "Cyan",
+            image: "/inks/VIVID DTF TEXTILE 1L/Brilliant DTF Textile 1L Cyan (Transparent).png",
+            description: "Premium vivid DTF cyan ink for exceptional color reproduction and durability.",
+            specifications: {
+              "Volume": "1 Liter",
+              "Type": "DTF Textile"
+            }
+          },
+          {
+            name: "Vivid DTF Textile 1L. Magenta",
+            size: "1L",
+            color: "Magenta",
+            image: "/inks/VIVID DTF TEXTILE 1L/Brilliant DTF Textile 1L Magenta (Transparent).png",
+            description: "Premium vivid DTF magenta ink for exceptional color reproduction and durability.",
+            specifications: {
+              "Volume": "1 Liter",
+              "Type": "DTF Textile"
+            }
+          },
+          {
+            name: "Vivid DTF Textile 1L. Yellow",
+            size: "1L",
+            color: "Yellow",
+            image: "/inks/VIVID DTF TEXTILE 1L/Brilliant DTF Textile 1L Yellow (Transparent).png",
+            description: "Premium vivid DTF yellow ink for exceptional color reproduction and durability.",
+            specifications: {
+              "Volume": "1 Liter",
+              "Type": "DTF Textile"
+            }
+          },
+          {
+            name: "Vivid DTF Textile 1L. Black",
+            size: "1L",
+            color: "Black",
+            image: "/inks/VIVID DTF TEXTILE 1L/Brilliant DTF Textile 1L Black (Transparent).png",
+            description: "Premium vivid DTF black ink for exceptional color reproduction and durability.",
+            specifications: {
+              "Volume": "1 Liter",
+              "Type": "DTF Textile"
+            }
+          },
+          {
+            name: "Vivid DTF Textile 1L. White",
+            size: "1L",
+            color: "White",
+            image: "/inks/VIVID DTF TEXTILE 1L/Brilliant DTF Textile 1L White (Transparent).png",
+            description: "Premium vivid DTF white ink for exceptional opacity and coverage.",
+            specifications: {
+              "Volume": "1 Liter",
+              "Type": "DTF Textile"
+            }
+          },
+          {
+            name: "Brilliant DTF Textile 1L. Fluorescent Yellow",
+            size: "1L",
+            color: "Fluorescent Yellow",
+            image: "/inks/BRILLIANT DTF INK 1L/Brilliant DTF Ink 1L Yellow (Transparent).png",
+            description: "Specialty fluorescent yellow DTF ink for eye-catching designs with vibrant glow effect.",
+            specifications: {
+              "Volume": "1 Liter",
+              "Type": "DTF Fluorescent"
+            }
+          },
+          {
+            name: "Brilliant DTF Textile 1L. Fluorescent Pink",
+            size: "1L",
+            color: "Fluorescent Pink",
+            image: "/inks/BRILLIANT DTF INK 1L/Brilliant DTF Ink 1L Magenta (Transparent).png",
+            description: "Specialty fluorescent pink DTF ink for eye-catching designs with vibrant glow effect.",
+            specifications: {
+              "Volume": "1 Liter",
+              "Type": "DTF Fluorescent"
+            }
+          },
+          {
+            name: "Brilliant DTF Textile 1L. Fluorescent Orange",
+            size: "1L",
+            color: "Fluorescent Orange",
+            image: "/inks/BRILLIANT DTF INK 1L/Brilliant DTF Ink 1L Yellow (Transparent).png",
+            description: "Specialty fluorescent orange DTF ink for eye-catching designs with vibrant glow effect.",
+            specifications: {
+              "Volume": "1 Liter",
+              "Type": "DTF Fluorescent"
+            }
+          },
+          {
+            name: "Brilliant DTF Textile 1L. Fluorescent Red",
+            size: "1L",
+            color: "Fluorescent Red",
+            image: "/inks/BRILLIANT DTF INK 1L/Brilliant DTF Ink 1L Magenta (Transparent).png",
+            description: "Specialty fluorescent red DTF ink for eye-catching designs with vibrant glow effect.",
+            specifications: {
+              "Volume": "1 Liter",
+              "Type": "DTF Fluorescent"
+            }
+          },
+          {
+            name: "DTF Cleaning Solution 500ml",
+            size: "500ml",
+            color: "Clear",
+            type: "Cleaning Solution",
+            image: "/inks/DTF CLEANING SOLUTIONS/DTF Cleaning Solution 500ml (Transparent).png",
+            description: "Specialized DTF cleaning solution for maintaining print heads and system performance.",
+            specifications: {
+              "Volume": "500ml",
+              "Type": "DTF Cleaning Solution"
+            }
+          },
+          {
+            name: "DTF Cleaning Solution 1L",
+            size: "1L",
+            color: "Clear",
+            type: "Cleaning Solution",
+            image: "/inks/DTF CLEANING SOLUTIONS/DTF Cleaning Solution 1L (Transparent).png",
+            description: "Large volume DTF cleaning solution for maintaining print heads and system performance.",
+            specifications: {
+              "Volume": "1 Liter",
+              "Type": "DTF Cleaning Solution"
+            }
+          }
         ]
       },
       {
@@ -527,26 +601,226 @@ const getInkProductsData = () => {
         ],
         applications: ["Sportswear", "Mugs & tumblers", "Phone cases", "Polyester fabrics"],
         products: [
-          { name: "Vivid Sublimation 1L Cyan", size: "1L", color: "Cyan" },
-          { name: "Vivid Sublimation 1L Magenta", size: "1L", color: "Magenta" },
-          { name: "Vivid Sublimation 1L Yellow", size: "1L", color: "Yellow" },
-          { name: "Vivid Sublimation 1L Black", size: "1L", color: "Black" },
-          { name: "Vivid Sublimation 5L Cyan", size: "5L", color: "Cyan" },
-          { name: "Vivid Sublimation 5L Magenta", size: "5L", color: "Magenta" },
-          { name: "Vivid Sublimation 5L Yellow", size: "5L", color: "Yellow" },
-          { name: "Vivid Sublimation 5L Black", size: "5L", color: "Black" },
-          { name: "Brilliant Sublimation 1L Cyan", size: "1L", color: "Cyan" },
-          { name: "Brilliant Sublimation 1L Magenta", size: "1L", color: "Magenta" },
-          { name: "Brilliant Sublimation 1L Yellow", size: "1L", color: "Yellow" },
-          { name: "Brilliant Sublimation 1L Black", size: "1L", color: "Black" },
-          { name: "Papijet LTI 203 Cyan", size: "1L", color: "Cyan" },
-          { name: "Papijet LTI 203 Magenta", size: "1L", color: "Magenta" },
-          { name: "Papijet LTI 203 Yellow", size: "1L", color: "Yellow" },
-          { name: "Papijet LTI 203 Black", size: "1L", color: "Black" },
-          { name: "Papijet LTIP Light Cyan", size: "1L", color: "Light Cyan" },
-          { name: "Papijet LTIP Light Magenta", size: "1L", color: "Light Magenta" },
-          { name: "Papijet LTI 202 Fluorescent Yellow", size: "1L", color: "Fluorescent Yellow" },
-          { name: "Papijet LTI 202 Fluorescent Pink", size: "1L", color: "Fluorescent Pink" }
+          {
+            name: "Vivid Sublimation 1L Cyan",
+            size: "1L",
+            color: "Cyan",
+            image: "/inks/VIVID SUBLIMATION 1L INK/Vivid Sublimation Ink Cyan 1L (Transparent).png",
+            description: "High-performance vivid sublimation cyan ink for brilliant color transfer and excellent heat stability.",
+            specifications: {
+              "Volume": "1 Liter",
+              "Type": "Sublimation"
+            }
+          },
+          {
+            name: "Vivid Sublimation 1L Magenta",
+            size: "1L",
+            color: "Magenta",
+            image: "/inks/VIVID SUBLIMATION 1L INK/Vivid Sublimation Ink Magenta 1L (Transparent).png",
+            description: "High-performance vivid sublimation magenta ink for brilliant color transfer and excellent heat stability.",
+            specifications: {
+              "Volume": "1 Liter",
+              "Type": "Sublimation"
+            }
+          },
+          {
+            name: "Vivid Sublimation 1L Yellow",
+            size: "1L",
+            color: "Yellow",
+            image: "/inks/VIVID SUBLIMATION 1L INK/Vivid Sublimation Ink Yellow 1L  (Transparent).png",
+            description: "High-performance vivid sublimation yellow ink for brilliant color transfer and excellent heat stability.",
+            specifications: {
+              "Volume": "1 Liter",
+              "Type": "Sublimation"
+            }
+          },
+          {
+            name: "Vivid Sublimation 1L Black",
+            size: "1L",
+            color: "Black",
+            image: "/inks/VIVID SUBLIMATION 1L INK/Vivid Sublimation Ink Black 1L (Transparent).png",
+            description: "High-performance vivid sublimation black ink for brilliant color transfer and excellent heat stability.",
+            specifications: {
+              "Volume": "1 Liter",
+              "Type": "Sublimation"
+            }
+          },
+          {
+            name: "Vivid Sublimation 5L Cyan",
+            size: "5L",
+            color: "Cyan",
+            image: "/inks/VIVID SUBLIMATION 5L INK/Vivid Sublimation 5L Cyan (Transparent).png",
+            description: "Large volume vivid sublimation cyan ink for high-volume printing with consistent quality.",
+            specifications: {
+              "Volume": "5 Liters",
+              "Type": "Sublimation"
+            }
+          },
+          {
+            name: "Vivid Sublimation 5L Magenta",
+            size: "5L",
+            color: "Magenta",
+            image: "/inks/VIVID SUBLIMATION 5L INK/Vivid Sublimation 5L  Magenta (Transparent).png",
+            description: "Large volume vivid sublimation magenta ink for high-volume printing with consistent quality.",
+            specifications: {
+              "Volume": "5 Liters",
+              "Type": "Sublimation"
+            }
+          },
+          {
+            name: "Vivid Sublimation 5L Yellow",
+            size: "5L",
+            color: "Yellow",
+            image: "/inks/VIVID SUBLIMATION 5L INK/Vivid Sublimation 5L  Yellow (Transparent).png",
+            description: "Large volume vivid sublimation yellow ink for high-volume printing with consistent quality.",
+            specifications: {
+              "Volume": "5 Liters",
+              "Type": "Sublimation"
+            }
+          },
+          {
+            name: "Vivid Sublimation 5L Black",
+            size: "5L",
+            color: "Black",
+            image: "/inks/VIVID SUBLIMATION 5L INK/Vivid Sublimation 5L Black (Transparent).png",
+            description: "Large volume vivid sublimation black ink for high-volume printing with consistent quality.",
+            specifications: {
+              "Volume": "5 Liters",
+              "Type": "Sublimation"
+            }
+          },
+          {
+            name: "Brilliant Sublimation 1L Cyan",
+            size: "1L",
+            color: "Cyan",
+            image: "/inks/BRILLIANT SUBLIMATION INK 1L/Brilliant Sublimation Ink Cyan 1L (Transparent).png",
+            description: "Premium brilliant sublimation cyan ink with superior color reproduction and durability.",
+            specifications: {
+              "Volume": "1 Liter",
+              "Type": "Sublimation"
+            }
+          },
+          {
+            name: "Brilliant Sublimation 1L Magenta",
+            size: "1L",
+            color: "Magenta",
+            image: "/inks/BRILLIANT SUBLIMATION INK 1L/Brilliant Sublimation Ink Magenta 1L (Transparent).png",
+            description: "Premium brilliant sublimation magenta ink with superior color reproduction and durability.",
+            specifications: {
+              "Volume": "1 Liter",
+              "Type": "Sublimation"
+            }
+          },
+          {
+            name: "Brilliant Sublimation 1L Yellow",
+            size: "1L",
+            color: "Yellow",
+            image: "/inks/BRILLIANT SUBLIMATION INK 1L/Brilliant Sublimation Ink Yellow 1L (Transparent).png",
+            description: "Premium brilliant sublimation yellow ink with superior color reproduction and durability.",
+            specifications: {
+              "Volume": "1 Liter",
+              "Type": "Sublimation"
+            }
+          },
+          {
+            name: "Brilliant Sublimation 1L Black",
+            size: "1L",
+            color: "Black",
+            image: "/inks/BRILLIANT SUBLIMATION INK 1L/Brilliant Sublimation Ink Black 1L (Transparent).png",
+            description: "Premium brilliant sublimation black ink with superior color reproduction and durability.",
+            specifications: {
+              "Volume": "1 Liter",
+              "Type": "Sublimation"
+            }
+          },
+          {
+            name: "Papijet LTI 203 Cyan",
+            size: "1L",
+            color: "Cyan",
+            image: "/inks/PAPIJET/Papijet 203 LIT Cyan (Transparent).png",
+            description: "Professional Papijet LTI 203 cyan sublimation ink optimized for textile applications.",
+            specifications: {
+              "Volume": "1 Liter",
+              "Type": "Sublimation"
+            }
+          },
+          {
+            name: "Papijet LTI 203 Magenta",
+            size: "1L",
+            color: "Magenta",
+            image: "/inks/PAPIJET/Papijet LIT 203 Magenta  (Transparent).png",
+            description: "Professional Papijet LTI 203 magenta sublimation ink optimized for textile applications.",
+            specifications: {
+              "Volume": "1 Liter",
+              "Type": "Sublimation"
+            }
+          },
+          {
+            name: "Papijet LTI 203 Yellow",
+            size: "1L",
+            color: "Yellow",
+            image: "/inks/PAPIJET/Papijet LIT 203 Yellow (Transparent).png",
+            description: "Professional Papijet LTI 203 yellow sublimation ink optimized for textile applications.",
+            specifications: {
+              "Volume": "1 Liter",
+              "Type": "Sublimation"
+            }
+          },
+          {
+            name: "Papijet LTI 203 Black",
+            size: "1L",
+            color: "Black",
+            image: "/inks/PAPIJET/Papijet 203 LIT Black (Transparent).png",
+            description: "Professional Papijet LTI 203 black sublimation ink optimized for textile applications.",
+            specifications: {
+              "Volume": "1 Liter",
+              "Type": "Sublimation"
+            }
+          },
+          {
+            name: "Papijet LTIP Light Cyan",
+            size: "1L",
+            color: "Light Cyan",
+            image: "/inks/PAPIJET/Papijet LITP Light Cyan  (Transparent).png",
+            description: "Specialized Papijet LTIP light cyan ink for enhanced color gradation and photo quality.",
+            specifications: {
+              "Volume": "1 Liter",
+              "Type": "Sublimation"
+            }
+          },
+          {
+            name: "Papijet LTIP Light Magenta",
+            size: "1L",
+            color: "Light Magenta",
+            image: "/inks/PAPIJET/Papijet LITP Light Magenta (Transparent).png",
+            description: "Specialized Papijet LTIP light magenta ink for enhanced color gradation and photo quality.",
+            specifications: {
+              "Volume": "1 Liter",
+              "Type": "Sublimation"
+            }
+          },
+          {
+            name: "Papijet LTI 202 Fluorescent Yellow",
+            size: "1L",
+            color: "Fluorescent Yellow",
+            image: "/inks/PAPIJET/Papijet Fluorescent Yellow (Transparent).png",
+            description: "Specialty Papijet LTI 202 fluorescent yellow ink for eye-catching designs with vibrant glow.",
+            specifications: {
+              "Volume": "1 Liter",
+              "Type": "Sublimation Fluorescent"
+            }
+          },
+          {
+            name: "Papijet LTI 202 Fluorescent Pink",
+            size: "1L",
+            color: "Fluorescent Pink",
+            image: "/inks/PAPIJET/Papijet LTI 202 Fluorescent Pink (Transparent) (1).png",
+            description: "Specialty Papijet LTI 202 fluorescent pink ink for eye-catching designs with vibrant glow.",
+            specifications: {
+              "Volume": "1 Liter",
+              "Type": "Sublimation Fluorescent"
+            }
+          }
         ]
       },
       {
@@ -562,11 +836,61 @@ const getInkProductsData = () => {
         ],
         applications: ["Rigid substrates", "Industrial labels", "Packaging", "Electronics"],
         products: [
-          { name: "Smart UV 1L Cyan", size: "1L", color: "Cyan" },
-          { name: "Smart UV 1L Magenta", size: "1L", color: "Magenta" },
-          { name: "Smart UV 1L Yellow", size: "1L", color: "Yellow" },
-          { name: "Smart UV 1L Black", size: "1L", color: "Black" },
-          { name: "Smart UV 1L White", size: "1L", color: "White" }
+          {
+            name: "Smart UV 1L Cyan",
+            size: "1L",
+            color: "Cyan",
+            image: "/KELIN-LOGO-01.png",
+            description: "Instant-curing UV cyan ink with exceptional durability and superior color density for industrial applications.",
+            specifications: {
+              "Volume": "1 Liter",
+              "Type": "UV Curable"
+            }
+          },
+          {
+            name: "Smart UV 1L Magenta",
+            size: "1L",
+            color: "Magenta",
+            image: "/KELIN-LOGO-01.png",
+            description: "Instant-curing UV magenta ink with exceptional durability and superior color density for industrial applications.",
+            specifications: {
+              "Volume": "1 Liter",
+              "Type": "UV Curable"
+            }
+          },
+          {
+            name: "Smart UV 1L Yellow",
+            size: "1L",
+            color: "Yellow",
+            image: "/KELIN-LOGO-01.png",
+            description: "Instant-curing UV yellow ink with exceptional durability and superior color density for industrial applications.",
+            specifications: {
+              "Volume": "1 Liter",
+              "Type": "UV Curable"
+            }
+          },
+          {
+            name: "Smart UV 1L Black",
+            size: "1L",
+            color: "Black",
+            image: "/KELIN-LOGO-01.png",
+            description: "Instant-curing UV black ink with exceptional durability and superior color density for industrial applications.",
+            specifications: {
+              "Volume": "1 Liter",
+              "Type": "UV Curable"
+            }
+          },
+          {
+            name: "Smart UV 1L White",
+            size: "1L",
+            color: "White",
+            image: "/KELIN-LOGO-01.png",
+            description: "Instant-curing UV white ink with exceptional opacity and coverage for specialty printing applications.",
+            specifications: {
+              "Volume": "1 Liter",
+              "Type": "UV Curable"
+            }
+          }
         ]
       }
     ]

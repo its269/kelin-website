@@ -2,7 +2,7 @@
 import Header from '../components/Header';
 import Link from 'next/link';
 import { useState } from 'react';
-import './smart-rj24.css';
+import './smart-rj24-unique.css';
 
 export default function SmartRJ24I3200EcoSolvent() {
     const [inquiryModalOpen, setInquiryModalOpen] = useState(false);
@@ -106,23 +106,6 @@ export default function SmartRJ24I3200EcoSolvent() {
         <div>
             <Header />
             <main className="smart-rj24-main">
-                {/* Breadcrumb Navigation */}
-                <section className="smart-rj24-breadcrumb-section">
-                    <div className="smart-rj24-breadcrumb-container">
-                        <nav className="smart-rj24-breadcrumb-nav">
-                            <Link href="/" className="smart-rj24-breadcrumb-link">Home</Link>
-                            <span className="smart-rj24-breadcrumb-separator">›</span>
-                            <Link href="/products" className="smart-rj24-breadcrumb-link">Products</Link>
-                            <span className="smart-rj24-breadcrumb-separator">›</span>
-                            <Link href="/products/machine" className="smart-rj24-breadcrumb-link">Machines</Link>
-                            <span className="smart-rj24-breadcrumb-separator">›</span>
-                            <Link href="/products/machine/eco-solvent-printers" className="smart-rj24-breadcrumb-link">Eco-Solvent Printers</Link>
-                            <span className="smart-rj24-breadcrumb-separator">›</span>
-                            <span className="smart-rj24-breadcrumb-current">{machineDetails.model}</span>
-                        </nav>
-                    </div>
-                </section>
-
                 {/* Product Hero Section */}
                 <section className="smart-rj24-hero product-hero">
                     <div className="smart-rj24-hero-layout">

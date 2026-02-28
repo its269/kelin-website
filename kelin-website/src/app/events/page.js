@@ -1,7 +1,7 @@
 "use client";
 import { useState } from 'react';
 import Header from '../components/Header';
-import './news.css';
+import './events-grayscale.css';
 
 export default function NewsAndEvents() {
   const [selectedItem, setSelectedItem] = useState(null);
@@ -218,28 +218,24 @@ Join us at this flagship event to discover cutting-edge solutions and connect wi
       <main className="events-main">
         {/* Hero Section */}
         <section className="events-hero">
-          <div className="events-hero-content">
-            <h1 className="events-hero-title">News & Events</h1>
-            <p className="events-hero-subtitle">
-              Stay connected with the latest innovations, industry updates, and exciting developments from Kelin Graphics System.
-            </p>
-            <div className="events-hero-stats">
-              <div className="events-stat">
-                <span className="events-stat-number">8+</span>
-                <span className="events-stat-label">Upcoming Events</span>
-              </div>
-              {/* <div className="events-stat">
-                <span className="events-stat-number">3</span>
-                <span className="events-stat-label">Major Regions</span>
-              </div> */}
-              <div className="events-stat">
-                <span className="events-stat-number">2026</span>
-                <span className="events-stat-label">Exhibition Year</span>
+          <div className="hero-page-content">
+            <div className="hero-page-text">
+              <h1 className="hero-page-title">News & Events</h1>
+              <p className="hero-page-subtitle">
+                Stay connected with the latest innovations, industry updates, and exciting developments from Kelin Graphics System.
+              </p>
+              <div className="hero-page-stats">
+                <div className="events-stat">
+                  <span className="events-stat-number">8+</span>
+                  <span className="events-stat-label">Upcoming Events</span>
+                </div>
+                <div className="events-stat">
+                  <span className="events-stat-number">2026</span>
+                  <span className="events-stat-label">Exhibition Year</span>
+                </div>
               </div>
             </div>
-          </div>
-          <div className="events-hero-visual">
-            <div className="events-floating-cards">
+            <div className="hero-page-visual">
               <div className="events-floating-element events-element-1">
                 <img src="/messages.png" alt="News Updates" />
               </div>

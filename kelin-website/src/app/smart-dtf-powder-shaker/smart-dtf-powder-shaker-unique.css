@@ -1,0 +1,777 @@
+/* SMART DTF POWDER SHAKER Page Styles */
+
+/* Font Face Declaration */
+@font-face {
+    font-family: 'Bison-Bold';
+    src: url('/fonts/Bison-Bold(PersonalUse).ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+.smart-powder-shaker-main {
+    min-height: 100vh;
+    margin-top: 60px;
+}
+
+/* Breadcrumb Section */
+.smart-powder-shaker-breadcrumb-section {
+    background: #f8fafc;
+    padding: 16px 0;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.smart-powder-shaker-breadcrumb-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+.smart-powder-shaker-breadcrumb-nav {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+}
+
+.smart-powder-shaker-breadcrumb-link {
+    color: #64748b;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.smart-powder-shaker-breadcrumb-link:hover {
+    color: #334155;
+}
+
+.smart-powder-shaker-breadcrumb-separator {
+    color: #94a3b8;
+    font-weight: 300;
+}
+
+.smart-powder-shaker-breadcrumb-current {
+    color: #1e293b;
+    font-weight: 600;
+}
+
+/* Product Hero Section */
+.smart-powder-shaker-hero {
+    padding: 100px 40px 80px;
+    margin: 0 auto;
+    text-align: center;
+    background: linear-gradient(135deg, rgba(71, 85, 105, 0.05) 0%, rgba(51, 65, 85, 0.08) 100%);
+    border-radius: 0px 0px 80px 80px;
+    margin-bottom: 60px;
+    position: relative;
+    overflow: hidden;
+}
+
+.smart-powder-shaker-hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(71, 85, 105, 0.1) 0%, transparent 50%);
+    animation: smart-powder-shaker-float 20s ease-in-out infinite;
+    pointer-events: none;
+}
+
+@keyframes smart-powder-shaker-float {
+
+    0%,
+    100% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+
+    50% {
+        transform: translate(-20px, -20px) rotate(180deg);
+    }
+}
+
+.smart-powder-shaker-hero.product-hero {
+    text-align: left;
+    padding: 80px 40px;
+}
+
+.smart-powder-shaker-hero-layout {
+    max-width: 1400px;
+    margin: 0 auto;
+    gap: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 2;
+}
+
+.smart-powder-shaker-hero-left {
+    text-align: left;
+}
+
+.smart-powder-shaker-hero-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    font-family: 'Bison-Bold', Arial, sans-serif;
+    background: linear-gradient(135deg, #1e293b 0%, #334155 50%, #475569 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-top: 70px;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+}
+
+.smart-powder-shaker-hero-title.product-title {
+    font-size: 2.8rem;
+    margin-bottom: 20px;
+}
+
+.smart-powder-shaker-hero-subtitle {
+    font-size: 1.3rem;
+    color: #64748b;
+    line-height: 1.6;
+    margin: 0 0 40px 0;
+    max-width: 600px;
+}
+
+.smart-powder-shaker-hero-subtitle.product-subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    max-width: 500px;
+}
+
+.smart-powder-shaker-button-group {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.smart-powder-shaker-view-btn {
+    background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+    color: white;
+    border: none;
+    padding: 16px 32px;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    position: relative;
+    overflow: hidden;
+}
+
+.smart-powder-shaker-view-btn.large {
+    font-size: 1.1rem;
+    padding: 18px 36px;
+}
+
+.smart-powder-shaker-view-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 40px rgba(30, 41, 59, 0.4);
+}
+
+.smart-powder-shaker-btn-secondary {
+    background: transparent;
+    color: #334155;
+    border: 2px solid #e2e8f0;
+    padding: 16px 32px;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+}
+
+.smart-powder-shaker-btn-secondary.large {
+    font-size: 1.1rem;
+    padding: 18px 36px;
+}
+
+.smart-powder-shaker-btn-secondary:hover {
+    background: #f8fafc;
+    border-color: #cbd5e1;
+    transform: translateY(-1px);
+}
+
+.smart-powder-shaker-hero-stats {
+    display: flex;
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.smart-powder-shaker-stat {
+    text-align: left;
+}
+
+.smart-powder-shaker-stat-number {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 4px;
+}
+
+.smart-powder-shaker-stat-label {
+    font-size: 0.9rem;
+    color: #64748b;
+    font-weight: 500;
+}
+
+.smart-powder-shaker-hero-right {
+    text-align: center;
+}
+
+.smart-powder-shaker-hero-image {
+    max-width: 500px;
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    /* box-shadow: 0 25px 60px rgba(30, 41, 59, 0.15); */
+    transition: transform 0.3s ease;
+}
+
+.smart-powder-shaker-hero-image:hover {
+    transform: scale(1.02);
+}
+
+/* Overview Section */
+.smart-powder-shaker-overview-section {
+    padding: 80px 40px;
+    background: #fafafa;
+}
+
+.smart-powder-shaker-overview-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.smart-powder-shaker-section-title {
+    font-size: 2.8rem;
+    font-weight: 700;
+    font-family: 'Bison-Bold', Arial, sans-serif;
+    color: #1e293b;
+    margin-bottom: 24px;
+    line-height: 1.2;
+}
+
+.smart-powder-shaker-overview-text {
+    font-size: 1.2rem;
+    color: #475569;
+    line-height: 1.7;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Features Section */
+.smart-powder-shaker-features-section {
+    padding: 100px 40px;
+    background: white;
+}
+
+.smart-powder-shaker-features-container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.smart-powder-shaker-features-header {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.smart-powder-shaker-features-title {
+    font-size: 2.8rem;
+    font-weight: 700;
+    font-family: 'Bison-Bold', Arial, sans-serif;
+    color: #1e293b;
+    margin-bottom: 20px;
+}
+
+.smart-powder-shaker-features-subtitle {
+    font-size: 1.2rem;
+    color: #64748b;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.smart-powder-shaker-features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    margin-top: 60px;
+}
+
+.smart-powder-shaker-feature-card {
+    background: #f8fafc;
+    padding: 40px 32px;
+    border-radius: 20px;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.smart-powder-shaker-feature-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 60px rgba(30, 41, 59, 0.1);
+    border-color: #e2e8f0;
+}
+
+.smart-powder-shaker-feature-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 24px auto;
+    color: white;
+}
+
+.smart-powder-shaker-feature-icon svg {
+    width: 28px;
+    height: 28px;
+}
+
+.smart-powder-shaker-feature-title {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #1e293b;
+    margin-bottom: 16px;
+}
+
+.smart-powder-shaker-feature-text {
+    color: #64748b;
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+/* Specifications Section */
+.smart-powder-shaker-specs-section {
+    padding: 100px 40px;
+    background: #f8fafc;
+}
+
+.smart-powder-shaker-specs-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.smart-powder-shaker-specs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    gap: 40px;
+    margin-top: 60px;
+}
+
+.smart-powder-shaker-spec-card {
+    background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+    border: 1px solid #e2e8f0;
+    border-radius: 20px;
+    padding: 40px 30px;
+}
+
+.smart-powder-shaker-spec-card-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin: 0 0 30px 0;
+    text-align: center;
+}
+
+.smart-powder-shaker-spec-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(226, 232, 240, 0.5);
+    gap: 20px;
+}
+
+.smart-powder-shaker-spec-item:last-child {
+    border-bottom: none;
+}
+
+.smart-powder-shaker-spec-label {
+    font-weight: 600;
+    color: #475569;
+    flex-shrink: 0;
+    min-width: 140px;
+}
+
+.smart-powder-shaker-spec-value {
+    color: #1e293b;
+    text-align: right;
+    font-weight: 500;
+}
+
+/* Applications Section */
+.smart-powder-shaker-applications-section {
+    padding: 100px 40px;
+    background: white;
+}
+
+.smart-powder-shaker-applications-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.smart-powder-shaker-applications-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    text-align: center;
+}
+
+.smart-powder-shaker-applications-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.smart-powder-shaker-applications-subtitle {
+    font-size: 1.2rem;
+    color: #64748b;
+    margin-bottom: 40px;
+}
+
+.smart-powder-shaker-applications-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.smart-powder-shaker-application-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 20px;
+    background: #f8fafc;
+    border-radius: 12px;
+    font-weight: 500;
+    color: #334155;
+    transition: all 0.2s ease;
+}
+
+.smart-powder-shaker-application-item:hover {
+    background: #f1f5f9;
+    transform: translateX(4px);
+}
+
+.smart-powder-shaker-check-icon {
+    width: 20px;
+    height: 20px;
+    color: #22c55e;
+    flex-shrink: 0;
+}
+
+/* Advantages Section */
+.smart-powder-shaker-advantages-section {
+    padding: 100px 40px;
+    background: #f8fafc;
+}
+
+.smart-powder-shaker-advantages-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.smart-powder-shaker-advantages-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 32px;
+    margin-top: 60px;
+}
+
+.smart-powder-shaker-advantage-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 28px;
+    background: white;
+    border-radius: 16px;
+    text-align: left;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.smart-powder-shaker-advantage-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 15px 40px rgba(30, 41, 59, 0.08);
+    border-color: #e2e8f0;
+}
+
+.smart-powder-shaker-advantage-icon {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    color: white;
+}
+
+.smart-powder-shaker-advantage-icon svg {
+    width: 20px;
+    height: 20px;
+}
+
+.smart-powder-shaker-advantage-text {
+    color: #475569;
+    line-height: 1.6;
+    margin: 0;
+    font-size: 1rem;
+}
+
+/* Modal Styles */
+.smart-powder-shaker-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    padding: 20px;
+}
+
+.smart-powder-shaker-inquiry-modal {
+    background: white;
+    border-radius: 20px;
+    max-width: 600px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+}
+
+.smart-powder-shaker-inquiry-header {
+    padding: 32px 32px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #e2e8f0;
+    margin-bottom: 32px;
+    padding-bottom: 24px;
+}
+
+.smart-powder-shaker-inquiry-header h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #1e293b;
+    margin: 0;
+}
+
+.smart-powder-shaker-close-btn {
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    color: #64748b;
+    cursor: pointer;
+    padding: 4px;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+}
+
+.smart-powder-shaker-close-btn:hover {
+    background: #f1f5f9;
+    color: #334155;
+}
+
+.smart-powder-shaker-inquiry-form {
+    padding: 0 32px 32px;
+}
+
+.smart-powder-shaker-form-row {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 24px;
+}
+
+.smart-powder-shaker-form-group {
+    flex: 1;
+    margin-bottom: 24px;
+}
+
+.smart-powder-shaker-form-group label {
+    display: block;
+    font-weight: 500;
+    color: #334155;
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+}
+
+.smart-powder-shaker-form-group input,
+.smart-powder-shaker-form-group textarea {
+    width: 100%;
+    padding: 12px 16px;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.2s ease;
+    background: white;
+}
+
+.smart-powder-shaker-form-group input:focus,
+.smart-powder-shaker-form-group textarea:focus {
+    outline: none;
+    border-color: #334155;
+}
+
+.smart-powder-shaker-phone-input {
+    display: flex;
+    gap: 8px;
+}
+
+.smart-powder-shaker-country-select {
+    min-width: 100px;
+    padding: 12px 8px;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    background: white;
+}
+
+.smart-powder-shaker-form-actions {
+    display: flex;
+    gap: 16px;
+    justify-content: flex-end;
+    margin-top: 32px;
+}
+
+.smart-powder-shaker-btn-primary {
+    background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+    color: white;
+    border: none;
+    padding: 14px 28px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.smart-powder-shaker-btn-primary:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 20px rgba(30, 41, 59, 0.3);
+}
+
+.smart-powder-shaker-btn-secondary {
+    background: transparent;
+    color: #64748b;
+    border: 2px solid #e2e8f0;
+    padding: 14px 28px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.smart-powder-shaker-btn-secondary:hover {
+    background: #f8fafc;
+    border-color: #cbd5e1;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .smart-powder-shaker-hero-layout {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .smart-powder-shaker-hero-title {
+        font-size: 2.5rem;
+    }
+
+    .smart-powder-shaker-hero-title.product-title {
+        font-size: 2.2rem;
+    }
+
+    .smart-powder-shaker-hero-stats {
+        gap: 20px;
+        justify-content: center;
+    }
+
+    .smart-powder-shaker-button-group {
+        justify-content: center;
+    }
+
+    .smart-powder-shaker-features-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .smart-powder-shaker-spec-row {
+        flex-direction: column;
+        text-align: center;
+        gap: 8px;
+    }
+
+    .smart-powder-shaker-spec-label,
+    .smart-powder-shaker-spec-value {
+        text-align: center;
+    }
+
+    .smart-powder-shaker-spec-divider {
+        display: none;
+    }
+
+    .smart-powder-shaker-applications-list {
+        grid-template-columns: 1fr;
+    }
+
+    .smart-powder-shaker-advantages-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .smart-powder-shaker-form-row {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .smart-powder-shaker-form-actions {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 480px) {
+    .smart-powder-shaker-hero {
+        padding: 60px 20px 40px;
+    }
+
+    .smart-powder-shaker-features-section,
+    .smart-powder-shaker-specs-section,
+    .smart-powder-shaker-applications-section,
+    .smart-powder-shaker-advantages-section,
+    .smart-powder-shaker-overview-section {
+        padding: 60px 20px;
+    }
+
+    .smart-powder-shaker-section-title {
+        font-size: 2.2rem;
+    }
+
+    .smart-powder-shaker-features-title {
+        font-size: 2.2rem;
+    }
+}

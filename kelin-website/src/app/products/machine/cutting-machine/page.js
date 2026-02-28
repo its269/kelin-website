@@ -37,7 +37,7 @@ export default function CuttingMachine() {
             ],
             badge: 'High Speed',
             price: 'Contact us for more details',
-            link: '/products/cutting/iecho-pk4'
+            link: '/iecho-pk4'
         },
         {
             id: 'iecho-bk3',
@@ -52,7 +52,7 @@ export default function CuttingMachine() {
             ],
             badge: 'Industrial',
             price: 'Contact us for more details',
-            link: '/products/cutting/iecho-bk3'
+            link: '/iecho-bk3'
         },
         {
             id: 'iecho-bk4',
@@ -67,7 +67,7 @@ export default function CuttingMachine() {
             ],
             badge: 'Premium',
             price: 'Contact us for more details',
-            link: '/products/cutting/iecho-bk4'
+            link: '/iecho-bk4'
         },
         {
             id: 'iecho-tk4s',
@@ -82,7 +82,7 @@ export default function CuttingMachine() {
             ],
             badge: 'Smart Tech',
             price: 'Contact us for more details',
-            link: '/products/cutting/iecho-tk4s'
+            link: '/iecho-tk4s'
         },
         {
             id: 'gcc-puma-24',
@@ -97,7 +97,7 @@ export default function CuttingMachine() {
             ],
             badge: 'Compact',
             price: 'Contact us for more details',
-            link: '/products/cutting/gcc-puma-24'
+            link: '/gcc-ar24-desktop'
         },
         {
             id: 'gcc-puma-52',
@@ -112,7 +112,7 @@ export default function CuttingMachine() {
             ],
             badge: 'Wide Format',
             price: 'Contact us for more details',
-            link: '/products/cutting/gcc-puma-52'
+            link: '/gcc-puma-iv'
         },
         {
             id: 'gcc-expert-24-lx',
@@ -127,7 +127,7 @@ export default function CuttingMachine() {
             ],
             badge: 'Expert',
             price: 'Contact us for more details',
-            link: '/products/cutting/gcc-expert-24lx'
+            link: '/gcc-expert-24lx'
         },
         {
             id: 'gcc-expert-52-lx',
@@ -142,7 +142,7 @@ export default function CuttingMachine() {
             ],
             badge: 'Professional',
             price: 'Contact us for more details',
-            link: '/products/cutting/gcc-expert-52lx'
+            link: '/gcc-expert-52lx'
         }
     ];
 

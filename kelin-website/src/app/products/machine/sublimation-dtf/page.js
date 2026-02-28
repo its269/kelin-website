@@ -10,36 +10,6 @@ export default function SublimationDTF() {
 
     const sublimationDTFMachines = [
         {
-            id: 'r2000-roller-sublimation',
-            name: 'R2000 Roller Type Sublimation Machine GS 1200',
-            image: '/sublimation_dtf/SUBL R2000 Roller Type Sublimation Machine GS 1200 (1).png',
-            description: 'HIGH-PERFORMANCE ROLLER SUBLIMATION - Professional roller-type sublimation machine with GS 1200 technology for continuous heat transfer applications and large-scale production.',
-            specs: [
-                'Print Width: up to 1200mm',
-                'Speed: up to 120 sqm/hr',
-                'Temperature: 200°C max',
-                'Pressure: Automatic control'
-            ],
-            badge: 'Professional',
-            price: 'Contact us for more details',
-            link: '/products/sublimation/r2000-roller'
-        },
-        {
-            id: 'dual-pneumatic-sublimation',
-            name: 'Dual Pneumatic Sublimation Machine 80cm x 100cm',
-            image: '/sublimation_dtf/SUBL Dual Pneumatic Sublimation Machine 80cm x 100cm (1).png',
-            description: 'PRECISION DUAL PNEUMATIC SYSTEM - Advanced dual pneumatic sublimation press with large 80x100cm platen for oversized garments and professional applications.',
-            specs: [
-                'Platen Size: 80cm x 100cm',
-                'Dual Pneumatic: Yes',
-                'Temperature: Up to 220°C',
-                'Pressure: Adjustable'
-            ],
-            badge: 'Large Format',
-            price: 'Contact us for more details',
-            link: '/products/sublimation/dual-pneumatic'
-        },
-        {
             id: 'sublimation-printer-fd6198e',
             name: 'Sublimation Printer FD6198E',
             image: '/sublimation_dtf/SUBL Sublimation Printer FD6198E (1).png',
@@ -52,22 +22,7 @@ export default function SublimationDTF() {
             ],
             badge: 'Industrial',
             price: 'Contact us for more details',
-            link: '/products/sublimation/fd6198e'
-        },
-        {
-            id: 'smart-sublimation',
-            name: 'Smart Sublimation',
-            image: '/sublimation_dtf/SUBL Smart Sublimation (1).png',
-            description: 'INTELLIGENT SUBLIMATION SOLUTION - Smart sublimation system with automated controls, temperature monitoring, and intelligent pressure adjustment for consistent results.',
-            specs: [
-                'Smart Controls: Touchscreen',
-                'Auto Temperature: Yes',
-                'Digital Timer: Precision',
-                'Safety Features: Advanced'
-            ],
-            badge: 'Smart Tech',
-            price: 'Contact us for more details',
-            link: '/products/sublimation/smart-sublimation'
+            link: '/sublimation-printer-fd6198e'
         },
         {
             id: 'kirin-da182t-plus',
@@ -82,57 +37,102 @@ export default function SublimationDTF() {
             ],
             badge: 'Premium',
             price: 'Contact us for more details',
-            link: '/products/sublimation/kirin-da182t'
+            link: '/kirin'
         },
         {
-            id: 'dtf-uv-printer-sf303',
-            name: 'DTF UV Printer SF303-i3200 2ft',
-            image: '/sublimation_dtf/DTF UV Printer SF303-i3200 2ft (1).png',
-            description: 'COMPACT DTF UV PRINTING - Professional 2ft DTF UV printer SF303 with i3200 print head technology for direct-to-film applications and custom transfers.',
+            id: 'r2000-roller-sublimation',
+            name: 'R2000 Roller Type Sublimation Machine GS 1200',
+            image: '/sublimation_dtf/SUBL R2000 Roller Type Sublimation Machine GS 1200 (1).png',
+            description: 'HIGH-PERFORMANCE ROLLER SUBLIMATION - Professional roller-type sublimation machine with GS 1200 technology for continuous heat transfer applications and large-scale production.',
             specs: [
-                'Print Width: 24 inches (2ft)',
-                'Print Head: i3200',
-                'UV Curing: LED system',
-                'Film Handling: Automatic'
+                'Print Width: up to 1200mm',
+                'Speed: up to 120 sqm/hr',
+                'Temperature: 200°C max',
+                'Pressure: Automatic control'
             ],
-            badge: 'Compact',
+            badge: 'Professional',
             price: 'Contact us for more details',
-            link: '/products/dtf/sf303-i3200'
+            link: '/r2000-roller'
         },
         {
-            id: 'dtf-uv-printer-sf604',
-            name: 'DTF UV Printer SF604-i3200 2ft - High Res',
-            image: '/sublimation_dtf/DTF UV Printer SF604-i3200 2ft. - High Res (1).png',
-            description: 'HIGH-RESOLUTION DTF PRINTING - Premium DTF UV printer SF604 with enhanced i3200 technology and high-resolution capabilities for superior print quality.',
+            id: 'dual-pneumatic-sublimation',
+            name: 'Dual Pneumatic Sublimation Machine 80cm x 100cm',
+            image: '/sublimation_dtf/SUBL Dual Pneumatic Sublimation Machine 80cm x 100cm (1).png',
+            description: 'PRECISION DUAL PNEUMATIC SYSTEM - Advanced dual pneumatic sublimation press with large 80x100cm platen for oversized garments and professional applications.',
             specs: [
-                'Print Width: 24 inches (2ft)',
-                'Resolution: High definition',
-                'Print Head: Enhanced i3200',
-                'Quality: Professional grade'
+                'Platen Size: 80cm x 100cm',
+                'Dual Pneumatic: Yes',
+                'Temperature: Up to 220°C',
+                'Pressure: Adjustable'
             ],
-            badge: 'High Resolution',
+            badge: 'Large Format',
             price: 'Contact us for more details',
-            link: '/products/dtf/sf604-high-res'
+            link: '/dual-pneumatic'
         },
         {
-            id: 'luxor-rtr',
-            name: 'Luxor RTR',
-            image: '/sublimation_dtf/DTF Luxor RTR (1).png',
-            description: 'ROLL-TO-ROLL DTF SYSTEM - Advanced Luxor RTR system for continuous roll-to-roll DTF printing with automated feeding and take-up for efficient production.',
+            id: 'smart-sublimation',
+            name: 'Smart Sublimation',
+            image: '/sublimation_dtf/SUBL Smart Sublimation (1).png',
+            description: 'INTELLIGENT SUBLIMATION SOLUTION - Smart sublimation system with automated controls, temperature monitoring, and intelligent pressure adjustment for consistent results.',
             specs: [
-                'System Type: Roll-to-Roll',
-                'Automation: Full feeding',
-                'Production: Continuous',
-                'Efficiency: Maximum'
+                'Smart Controls: Touchscreen',
+                'Auto Temperature: Yes',
+                'Digital Timer: Precision',
+                'Safety Features: Advanced'
             ],
-            badge: 'Automated',
+            badge: 'Smart Tech',
             price: 'Contact us for more details',
-            link: '/products/dtf/luxor-rtr'
+            link: '/smart-sublimation'
         },
+        // {
+        //     id: 'dtf-uv-printer-sf303',
+        //     name: 'DTF UV Printer SF303-i3200 2ft',
+        //     image: '/sublimation_dtf/DTF UV Printer SF303-i3200 2ft (1).png',
+        //     description: 'COMPACT DTF UV PRINTING - Professional 2ft DTF UV printer SF303 with i3200 print head technology for direct-to-film applications and custom transfers.',
+        //     specs: [
+        //         'Print Width: 24 inches (2ft)',
+        //         'Print Head: i3200',
+        //         'UV Curing: LED system',
+        //         'Film Handling: Automatic'
+        //     ],
+        //     badge: 'Compact',
+        //     price: 'Contact us for more details',
+        //     link: '/products/dtf/sf303-i3200'
+        // },
+        // {
+        //     id: 'dtf-uv-printer-sf604',
+        //     name: 'DTF UV Printer SF604-i3200 2ft - High Res',
+        //     image: '/sublimation_dtf/DTF UV Printer SF604-i3200 2ft. - High Res (1).png',
+        //     description: 'HIGH-RESOLUTION DTF PRINTING - Premium DTF UV printer SF604 with enhanced i3200 technology and high-resolution capabilities for superior print quality.',
+        //     specs: [
+        //         'Print Width: 24 inches (2ft)',
+        //         'Resolution: High definition',
+        //         'Print Head: Enhanced i3200',
+        //         'Quality: Professional grade'
+        //     ],
+        //     badge: 'High Resolution',
+        //     price: 'Contact us for more details',
+        //     link: '/products/dtf/sf604-high-res'
+        // },
+        // {
+        //     id: 'luxor-rtr',
+        //     name: 'Luxor RTR',
+        //     image: '/sublimation_dtf/DTF Luxor RTR (1).png',
+        //     description: 'ROLL-TO-ROLL DTF SYSTEM - Advanced Luxor RTR system for continuous roll-to-roll DTF printing with automated feeding and take-up for efficient production.',
+        //     specs: [
+        //         'System Type: Roll-to-Roll',
+        //         'Automation: Full feeding',
+        //         'Production: Continuous',
+        //         'Efficiency: Maximum'
+        //     ],
+        //     badge: 'Automated',
+        //     price: 'Contact us for more details',
+        //     link: '/products/dtf/luxor-rtr'
+        // },
         {
             id: 'smart-dtf-powder-shaker-w650',
             name: 'Smart DTF Powder Shaker W650-4C',
-            image: '/sublimation_dtf/DTF Smart DTF Powder Shaker W650-4C (1).png',
+            image: '/sublimation_dtf/Powder shaker D650 Model.png',
             description: 'INTELLIGENT POWDER APPLICATION - Smart DTF powder shaker W650 with 4-color capability and intelligent powder distribution for consistent DTF film preparation.',
             specs: [
                 'Width Capacity: 650mm',
@@ -142,22 +142,7 @@ export default function SublimationDTF() {
             ],
             badge: 'Smart',
             price: 'Contact us for more details',
-            link: '/products/dtf/powder-shaker-w650'
-        },
-        {
-            id: 'powder-shaker-d650',
-            name: 'Powder shaker D650 Model',
-            image: '/sublimation_dtf/DTF Powder shaker D650 Model (1).png',
-            description: 'PROFESSIONAL POWDER SHAKER - D650 model powder shaker with precise powder distribution and adjustable settings for optimal DTF film preparation.',
-            specs: [
-                'Model: D650 Professional',
-                'Width: 650mm capacity',
-                'Settings: Adjustable',
-                'Application: Even distribution'
-            ],
-            badge: 'Professional',
-            price: 'Contact us for more details',
-            link: '/products/dtf/powder-shaker-d650'
+            link: '/smart-dtf-powder-shaker'
         },
         {
             id: 'smart-dtf-machine',
@@ -172,7 +157,7 @@ export default function SublimationDTF() {
             ],
             badge: 'All-in-One',
             price: 'Contact us for more details',
-            link: '/products/dtf/smart-dtf-machine'
+            link: '/smart-dtf-machine'
         }
     ];
 

@@ -114,23 +114,6 @@ export default function IEchoPK() {
         <div>
             <Header />
             <main className="iecho-pk-main">
-                {/* Breadcrumb Navigation */}
-                <section className="iecho-pk-breadcrumb-section">
-                    <div className="iecho-pk-breadcrumb-container">
-                        <nav className="iecho-pk-breadcrumb-nav">
-                            <Link href="/" className="iecho-pk-breadcrumb-link">Home</Link>
-                            <span className="iecho-pk-breadcrumb-separator">›</span>
-                            <Link href="/products" className="iecho-pk-breadcrumb-link">Products</Link>
-                            <span className="iecho-pk-breadcrumb-separator">›</span>
-                            <Link href="/products/machine" className="iecho-pk-breadcrumb-link">Machines</Link>
-                            <span className="iecho-pk-breadcrumb-separator">›</span>
-                            <Link href="/products/machine/cutting-machine" className="iecho-pk-breadcrumb-link">Cutting Machines</Link>
-                            <span className="iecho-pk-breadcrumb-separator">›</span>
-                            <span className="iecho-pk-breadcrumb-current">{machineDetails.model}</span>
-                        </nav>
-                    </div>
-                </section>
-
                 {/* Product Hero Section */}
                 <section className="iecho-pk-hero product-hero">
                     <div className="iecho-pk-hero-layout">
@@ -223,24 +206,28 @@ export default function IEchoPK() {
                 <section className="iecho-pk-specs-section">
                     <div className="iecho-pk-specs-container">
                         <h2 className="iecho-pk-section-title">Technical Specifications</h2>
-                        <div className="iecho-pk-specs-grid">
-                            <div className="iecho-pk-spec-card">
-                                <h3 className="iecho-pk-spec-card-title">Cutting Specifications</h3>
-                                {machineDetails.specifications.slice(0, 8).map((spec, index) => (
-                                    <div key={index} className="iecho-pk-spec-item">
-                                        <span className="iecho-pk-spec-label">{spec.label}:</span>
-                                        <span className="iecho-pk-spec-value">{spec.value}</span>
-                                    </div>
-                                ))}
-                            </div>
-                            <div className="iecho-pk-spec-card">
-                                <h3 className="iecho-pk-spec-card-title">Performance Specifications</h3>
-                                {machineDetails.specifications.slice(8).map((spec, index) => (
-                                    <div key={index} className="iecho-pk-spec-item">
-                                        <span className="iecho-pk-spec-label">{spec.label}:</span>
-                                        <span className="iecho-pk-spec-value">{spec.value}</span>
-                                    </div>
-                                ))}
+                        <p className="iecho-pk-section-subtitle">
+                            Complete technical details for iECHO PK cutting plotter
+                        </p>
+                        <div className="iecho-pk-specs-table-wrapper">
+                            <div className="iecho-pk-spec-table">
+                                <div className="iecho-pk-spec-table-header">
+                                    <h3 className="iecho-pk-spec-table-title">
+                                        <span className="iecho-pk-spec-icon">⚙️</span>
+                                        Machine Specifications
+                                    </h3>
+                                </div>
+                                <div className="iecho-pk-spec-table-body">
+                                    {machineDetails.specifications.map((spec, index) => (
+                                        <div key={index} className="iecho-pk-spec-row">
+                                            <div className="iecho-pk-spec-label">
+                                                {spec.label}
+                                            </div>
+                                            <div className="iecho-pk-spec-divider"></div>
+                                            <div className="iecho-pk-spec-value">{spec.value}</div>
+                                        </div>
+                                    ))}
+                                </div>
                             </div>
                         </div>
                     </div>

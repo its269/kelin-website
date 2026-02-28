@@ -8,14 +8,14 @@
 
 .accessories-title {
     font-size: 2.5rem;
-    color: #333;
+    color: #111827;
     margin-bottom: 1rem;
     font-family: 'Bison-Bold', Arial, sans-serif !important;
 }
 
 .accessories-description {
     font-size: 1.1rem;
-    color: #666;
+    color: #4b5563;
     line-height: 1.6;
     margin-bottom: 2rem;
 }
@@ -31,7 +31,7 @@
 
 .accessory-category-title {
     font-size: 2rem;
-    color: #1e293b;
+    color: #111827;
     margin-bottom: 2rem;
     text-align: center;
     position: relative;
@@ -47,7 +47,7 @@
     transform: translateX(-50%);
     width: 60px;
     height: 3px;
-    background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+    background: linear-gradient(135deg, #6b7280 0%, #4b5563 100%);
     border-radius: 2px;
 }
 
@@ -70,7 +70,7 @@
 
 .accessory-card:hover {
     transform: translateY(-4px);
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
 }
 
 .accessory-info {
@@ -80,14 +80,14 @@
 .accessory-name {
     font-size: 1.4rem;
     font-weight: 700;
-    color: #1e293b;
+    color: #111827;
     margin-bottom: 0.5rem;
     font-family: 'Bison-Bold', Arial, sans-serif !important;
 }
 
 .accessory-description {
     font-size: 1rem;
-    color: #64748b;
+    color: #6b7280;
     line-height: 1.6;
     margin-bottom: 1.5rem;
 }
@@ -112,7 +112,7 @@
 
 .accessory-features li {
     padding: 0.25rem 0;
-    color: #64748b;
+    color: #6b7280;
     font-size: 0.9rem;
     position: relative;
     padding-left: 1rem;
@@ -120,7 +120,7 @@
 
 .accessory-features li::before {
     content: '✓';
-    color: #10b981;
+    color: #4b5563;
     font-weight: bold;
     position: absolute;
     left: 0;
@@ -145,7 +145,7 @@
 }
 
 .accessory-application-tag {
-    background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+    background: linear-gradient(135deg, #6b7280 0%, #4b5563 100%);
     color: white;
     padding: 0.25rem 0.75rem;
     border-radius: 20px;
@@ -156,14 +156,14 @@
 .accessories-info {
     margin-top: 4rem;
     padding: 2rem;
-    background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+    background: linear-gradient(135deg, #f9fafb 0%, #f3f4f6 100%);
     border-radius: 16px;
     text-align: center;
 }
 
 .accessories-info h2 {
     font-size: 2rem;
-    color: #1e293b;
+    color: #111827;
     margin-bottom: 2rem;
     font-family: 'Bison-Bold', Arial, sans-serif !important;
 }
@@ -187,7 +187,7 @@
 }
 
 .accessories-info-item p {
-    color: #64748b;
+    color: #6b7280;
     line-height: 1.6;
 }
 
@@ -195,7 +195,7 @@
     margin-top: 4rem;
     text-align: center;
     padding: 3rem 2rem;
-    background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+    background: linear-gradient(135deg, #111827 0%, #374151 100%);
     color: white;
     border-radius: 16px;
 }
@@ -230,13 +230,13 @@
 }
 
 .btn-primary-accessories {
-    background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+    background: linear-gradient(135deg, #6b7280 0%, #4b5563 100%);
     color: white;
 }
 
 .btn-primary-accessories:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(249, 115, 22, 0.3);
+    box-shadow: 0 8px 25px rgba(107, 114, 128, 0.3);
 }
 
 .btn-secondary-accessories {

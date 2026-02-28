@@ -1,0 +1,814 @@
+/* GCC Puma IV Cutting Plotter Page Styles */
+
+/* Font Face Declaration */
+@font-face {
+    font-family: 'Bison-Bold';
+    src: url('/fonts/Bison-Bold(PersonalUse).ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+.gcc-puma-main {
+    min-height: 100vh;
+    margin-top: 60px;
+}
+
+/* Breadcrumb Section */
+.gcc-puma-breadcrumb-section {
+    background: #f8fafc;
+    padding: 16px 0;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.gcc-puma-breadcrumb-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+.gcc-puma-breadcrumb-nav {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+}
+
+.gcc-puma-breadcrumb-link {
+    color: #64748b;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.gcc-puma-breadcrumb-link:hover {
+    color: #334155;
+}
+
+.gcc-puma-breadcrumb-separator {
+    color: #94a3b8;
+    font-weight: 300;
+}
+
+.gcc-puma-breadcrumb-current {
+    color: #1e293b;
+    font-weight: 600;
+}
+
+/* Product Hero Section */
+.gcc-puma-hero {
+    padding: 100px 40px 80px;
+    margin: 0 auto;
+    text-align: center;
+    background: linear-gradient(135deg, rgba(71, 85, 105, 0.05) 0%, rgba(51, 65, 85, 0.08) 100%);
+    border-radius: 80px;
+    margin-bottom: 60px;
+    position: relative;
+    overflow: hidden;
+}
+
+.gcc-puma-hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(71, 85, 105, 0.1) 0%, transparent 50%);
+    animation: gcc-puma-float 20s ease-in-out infinite;
+    pointer-events: none;
+}
+
+@keyframes gcc-puma-float {
+
+    0%,
+    100% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+
+    50% {
+        transform: translate(-20px, -20px) rotate(180deg);
+    }
+}
+
+.gcc-puma-hero.product-hero {
+    text-align: left;
+    padding: 80px 40px;
+}
+
+.gcc-puma-hero-layout {
+    max-width: 1400px;
+    margin: 0 auto;
+    gap: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 2;
+}
+
+.gcc-puma-hero-left {
+    text-align: left;
+}
+
+.gcc-puma-hero-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    font-family: 'Bison-Bold', Arial, sans-serif;
+    background: linear-gradient(135deg, #1e293b 0%, #334155 50%, #475569 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-top: 70px;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+}
+
+.gcc-puma-hero-title.product-title {
+    font-size: 2.8rem;
+    margin-bottom: 20px;
+}
+
+.gcc-puma-hero-subtitle {
+    font-size: 1.3rem;
+    color: #64748b;
+    line-height: 1.6;
+    margin: 0 0 40px 0;
+    max-width: 600px;
+}
+
+.gcc-puma-hero-subtitle.product-subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    max-width: 500px;
+}
+
+.gcc-puma-button-group {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.gcc-puma-view-btn {
+    background: linear-gradient(135deg, #334155, #475569);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.gcc-puma-view-btn.large {
+    padding: 15px 30px;
+    font-size: 1rem;
+}
+
+.gcc-puma-view-btn:hover {
+    background: linear-gradient(135deg, #1e293b, #334155);
+    transform: translateX(4px);
+}
+
+.gcc-puma-view-btn svg {
+    width: 16px;
+    height: 16px;
+    transition: transform 0.3s ease;
+}
+
+.gcc-puma-view-btn:hover svg {
+    transform: translateX(4px);
+}
+
+.gcc-puma-btn-secondary {
+    background: #f7fafc;
+    color: #4a5568;
+    border: 2px solid #e2e8f0;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.gcc-puma-btn-secondary.large {
+    padding: 15px 30px;
+    font-size: 1rem;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+}
+
+.gcc-puma-btn-secondary:hover {
+    background: #edf2f7;
+    border-color: #cbd5e0;
+}
+
+.gcc-puma-hero-stats {
+    display: flex;
+    justify-content: flex-start;
+    gap: 40px;
+    margin-top: 40px;
+    flex-wrap: wrap;
+}
+
+.gcc-puma-hero-stats.product-stats {
+    justify-content: flex-start;
+}
+
+.gcc-puma-stat {
+    text-align: center;
+    padding: 20px 30px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 16px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(71, 85, 105, 0.1);
+}
+
+.gcc-puma-stat-number {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #334155;
+    display: block;
+    line-height: 1.2;
+}
+
+.gcc-puma-stat-label {
+    font-size: 0.9rem;
+    color: #64748b;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-top: 4px;
+}
+
+.gcc-puma-hero-right {
+    text-align: center;
+}
+
+.gcc-puma-hero-image {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    border-radius: 16px;
+}
+
+/* Overview Section */
+.gcc-puma-overview-section {
+    padding: 80px 40px;
+    background: white;
+}
+
+.gcc-puma-overview-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.gcc-puma-section-title {
+    font-size: 2.8rem;
+    font-weight: 800;
+    font-family: 'Bison-Bold', Arial, sans-serif;
+    color: #1e293b;
+    margin: 0 0 16px 0;
+    background: linear-gradient(135deg, #1e293b 0%, #475569 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+}
+
+.gcc-puma-section-subtitle {
+    font-size: 1.2rem;
+    color: #64748b;
+    text-align: center;
+    margin-bottom: 60px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.gcc-puma-overview-text {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #475569;
+    margin: 0;
+}
+
+/* Features Section */
+.gcc-puma-features-section {
+    background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+    color: white;
+    padding: 80px 40px;
+}
+
+.gcc-puma-features-container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.gcc-puma-features-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.gcc-puma-features-title {
+    font-family: 'Bison-Bold', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin: 0 0 16px 0;
+    background: linear-gradient(135deg, #64748b, #94a3b8);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.gcc-puma-features-subtitle {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+.gcc-puma-features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+}
+
+.gcc-puma-feature-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 40px 30px;
+    text-align: center;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.gcc-puma-feature-card:hover {
+    transform: translateY(-8px);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.gcc-puma-feature-icon {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 24px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #64748b, #94a3b8);
+    border-radius: 50%;
+    padding: 16px;
+    box-shadow: 0 8px 25px rgba(71, 85, 105, 0.25);
+    color: white;
+}
+
+.gcc-puma-feature-icon svg {
+    width: 28px;
+    height: 28px;
+    color: white;
+}
+
+.gcc-puma-feature-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin: 0 0 16px 0;
+}
+
+.gcc-puma-feature-text {
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Specifications Section */
+.gcc-puma-specs-section {
+    padding: 80px 40px;
+    background: #f8fafc;
+}
+
+.gcc-puma-specs-container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.gcc-puma-specs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    gap: 40px;
+    margin-top: 60px;
+}
+
+.gcc-puma-spec-card {
+    background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+    border: 1px solid #e2e8f0;
+    border-radius: 20px;
+    padding: 40px 30px;
+}
+
+.gcc-puma-spec-card-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin: 0 0 30px 0;
+    text-align: center;
+}
+
+.gcc-puma-spec-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(226, 232, 240, 0.5);
+    gap: 20px;
+}
+
+.gcc-puma-spec-item:last-child {
+    border-bottom: none;
+}
+
+.gcc-puma-spec-label {
+    font-weight: 600;
+    color: #475569;
+    flex-shrink: 0;
+    min-width: 140px;
+}
+
+.gcc-puma-spec-value {
+    color: #1e293b;
+    text-align: right;
+    line-height: 1.4;
+}
+
+/* Applications Section */
+.gcc-puma-applications-section {
+    padding: 80px 40px;
+    background: white;
+}
+
+.gcc-puma-applications-container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.gcc-puma-applications-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 60px;
+}
+
+.gcc-puma-applications-content {
+    text-align: center;
+}
+
+.gcc-puma-applications-subtitle {
+    font-size: 1.1rem;
+    color: #64748b;
+    margin-bottom: 40px;
+    line-height: 1.6;
+}
+
+.gcc-puma-applications-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 16px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+}
+
+.gcc-puma-application-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.gcc-puma-application-item:hover {
+    background: #f1f5f9;
+    transform: translateY(-2px);
+}
+
+.gcc-puma-check-icon {
+    width: 24px;
+    height: 24px;
+    color: #10b981;
+    flex-shrink: 0;
+}
+
+/* Advantages Section */
+.gcc-puma-advantages-section {
+    padding: 80px 40px;
+    background: #f8fafc;
+}
+
+.gcc-puma-advantages-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.gcc-puma-advantages-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    margin-top: 60px;
+}
+
+.gcc-puma-advantage-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 24px;
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    transition: all 0.3s ease;
+    text-align: left;
+}
+
+.gcc-puma-advantage-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.gcc-puma-advantage-icon {
+    width: 24px;
+    height: 24px;
+    color: #10b981;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.gcc-puma-advantage-text {
+    color: #475569;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Modal Styles */
+.gcc-puma-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    padding: 20px;
+}
+
+.gcc-puma-inquiry-modal {
+    background: white;
+    border-radius: 20px;
+    width: 100%;
+    max-width: 600px;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+}
+
+.gcc-puma-inquiry-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 40px 20px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.gcc-puma-inquiry-header h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin: 0;
+}
+
+.gcc-puma-close-btn {
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: #64748b;
+    cursor: pointer;
+    padding: 0;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.gcc-puma-close-btn:hover {
+    background: #f1f5f9;
+    color: #1e293b;
+}
+
+.gcc-puma-inquiry-form {
+    padding: 30px 40px 40px;
+}
+
+.gcc-puma-form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 24px;
+}
+
+.gcc-puma-form-group {
+    margin-bottom: 24px;
+}
+
+.gcc-puma-form-group label {
+    display: block;
+    font-weight: 600;
+    color: #374151;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+}
+
+.gcc-puma-form-group input,
+.gcc-puma-form-group textarea,
+.gcc-puma-form-group select {
+    width: 100%;
+    padding: 12px 16px;
+    border: 2px solid #e5e7eb;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    font-family: inherit;
+}
+
+.gcc-puma-form-group input:focus,
+.gcc-puma-form-group textarea:focus,
+.gcc-puma-form-group select:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.gcc-puma-phone-input {
+    display: flex;
+    gap: 8px;
+}
+
+.gcc-puma-country-select {
+    flex-shrink: 0;
+    width: 120px;
+}
+
+.gcc-puma-form-actions {
+    display: flex;
+    gap: 16px;
+    justify-content: flex-end;
+    margin-top: 32px;
+}
+
+.gcc-puma-btn-primary {
+    background: linear-gradient(135deg, #334155, #475569);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.gcc-puma-btn-primary:hover {
+    background: linear-gradient(135deg, #1e293b, #334155);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .gcc-puma-hero-layout {
+        gap: 40px;
+    }
+
+    .gcc-puma-hero.product-hero {
+        border-radius: 0px 0px 50px 50px;
+    }
+
+    .gcc-puma-specs-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 900px) {
+    .gcc-puma-hero-stats {
+        gap: 25px;
+        justify-content: center;
+    }
+
+    .gcc-puma-stat {
+        padding: 18px 25px;
+        min-width: 140px;
+    }
+
+    .gcc-puma-hero-title.product-title {
+        font-size: 2.4rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .gcc-puma-hero {
+        border-radius: 0px 0px 40px 40px;
+        padding: 60px 20px 40px;
+    }
+
+    .gcc-puma-hero.product-hero {
+        padding: 50px 20px;
+        text-align: center;
+    }
+
+    .gcc-puma-hero-title.product-title {
+        font-size: 2.2rem;
+        text-align: center;
+    }
+
+    .gcc-puma-hero-subtitle.product-subtitle {
+        text-align: center;
+        max-width: 100%;
+        font-size: 1rem;
+        margin-bottom: 25px;
+    }
+
+    .gcc-puma-button-group {
+        justify-content: center;
+        gap: 15px;
+        margin-bottom: 25px;
+    }
+
+    .gcc-puma-hero-image {
+        max-width: 350px;
+        width: 90%;
+        height: auto;
+        margin: 0 auto;
+    }
+
+    .gcc-puma-hero-stats {
+        justify-content: center;
+        gap: 15px;
+        margin-top: 30px;
+        display: grid;
+        grid-template-columns: 1fr;
+        max-width: 280px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .gcc-puma-stat {
+        padding: 16px 20px;
+        margin: 0;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .gcc-puma-stat-number {
+        font-size: 1.5rem;
+    }
+
+    .gcc-puma-stat-label {
+        font-size: 0.8rem;
+    }
+
+    .gcc-puma-form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .gcc-puma-phone-input {
+        flex-direction: column;
+    }
+
+    .gcc-puma-country-select {
+        width: 100%;
+    }
+
+    .gcc-puma-applications-list {
+        grid-template-columns: 1fr;
+    }
+
+    .gcc-puma-advantages-grid {
+        grid-template-columns: 1fr;
+    }
+}

@@ -589,10 +589,13 @@
 }
 
 .inks-lightbox-content {
-    display: grid;
-    grid-template-columns: 300px 1fr;
+    /* display: grid;
+    grid-template-columns: 300px 1fr; */
     gap: 40px;
     padding: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .inks-lightbox-image {
@@ -746,6 +749,7 @@
         grid-template-columns: 1fr;
         gap: 25px;
         padding: 25px;
+        flex-wrap: wrap;
     }
 
     .inks-lightbox-image {

@@ -1,0 +1,699 @@
+/* 3D Printer Machines Page Styles */
+
+/* Font Face Declaration */
+@font-face {
+    font-family: 'Bison-Bold';
+    src: url('/fonts/Bison-Bold(PersonalUse).ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+.threed-main {
+    min-height: 100vh;
+    margin-top: 60px;
+    background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+}
+
+/* Hero Section */
+.threed-hero {
+    padding: 120px 40px 100px;
+    margin: 0 auto;
+    text-align: center;
+    background: linear-gradient(135deg, rgba(71, 85, 105, 0.08) 0%, rgba(51, 65, 85, 0.12) 100%);
+    border-radius: 80px;
+    margin-bottom: 80px;
+    position: relative;
+    overflow: hidden;
+}
+
+.threed-hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(71, 85, 105, 0.1) 0%, transparent 50%);
+    animation: threed-float 20s ease-in-out infinite;
+    pointer-events: none;
+}
+
+@keyframes threed-float {
+
+    0%,
+    100% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+
+    50% {
+        transform: translate(-20px, -20px) rotate(180deg);
+    }
+}
+
+.threed-hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.threed-hero-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    font-family: 'Bison-Bold', Arial, sans-serif;
+    background: linear-gradient(135deg, #1e293b 0%, #334155 50%, #475569 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: 40px 0 24px 0;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+}
+
+.threed-hero-subtitle {
+    font-size: 1.3rem;
+    color: #64748b;
+    line-height: 1.6;
+    margin: 0 0 40px 0;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.threed-hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 40px;
+    flex-wrap: wrap;
+}
+
+.threed-stat {
+    text-align: center;
+    padding: 20px 30px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 16px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(71, 85, 105, 0.1);
+}
+
+.threed-stat-number {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #334155;
+    display: block;
+}
+
+.threed-stat-label {
+    font-size: 0.9rem;
+    color: #64748b;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Machines Grid Section */
+.threed-machines-section {
+    padding: 100px 40px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.threed-section-header {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.threed-section-title {
+    font-family: 'Bison-Bold', sans-serif;
+    font-size: 3rem;
+    font-weight: 800;
+    color: #1e293b;
+    margin: 0 0 20px 0;
+    background: linear-gradient(135deg, #475569, #64748b);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.threed-section-subtitle {
+    font-size: 1.1rem;
+    color: #64748b;
+    margin: 0;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.threed-machines-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(420px, 520px));
+    gap: 50px;
+    margin-top: 80px;
+    justify-content: center;
+}
+
+.threed-machine-card {
+    background: white;
+    border-radius: 28px;
+    overflow: hidden;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(71, 85, 105, 0.08);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    cursor: pointer;
+}
+
+.threed-machine-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #334155, #475569, #64748b);
+    transform: scaleX(0);
+    transition: transform 0.4s ease;
+}
+
+.threed-machine-card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 25px 80px rgba(0, 0, 0, 0.18);
+}
+
+.threed-machine-card:hover::before {
+    transform: scaleX(1);
+}
+
+.threed-machine-image {
+    height: 400px;
+    overflow: hidden;
+    position: relative;
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.threed-machine-image img {
+    width: 90%;
+    object-fit: cover;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.threed-machine-card:hover .threed-machine-image img {
+    transform: scale(1.08);
+}
+
+.threed-machine-badge {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: linear-gradient(135deg, #334155, #475569);
+    color: white;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.threed-machine-content {
+    padding: 35px;
+}
+
+.threed-machine-title {
+    font-size: 1.7rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin: 0 0 18px 0;
+    line-height: 1.3;
+}
+
+.threed-machine-description {
+    color: #64748b;
+    line-height: 1.7;
+    margin: 0 0 28px 0;
+    font-size: 1.05rem;
+}
+
+.threed-machine-specs {
+    margin-bottom: 24px;
+}
+
+.threed-spec-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+    color: #475569;
+    font-size: 0.95rem;
+}
+
+.threed-spec-icon {
+    width: 16px;
+    height: 16px;
+    background: linear-gradient(135deg, #334155, #475569);
+    border-radius: 50%;
+    margin-right: 12px;
+    position: relative;
+    flex-shrink: 0;
+}
+
+.threed-spec-icon::after {
+    content: '✓';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 10px;
+    font-weight: bold;
+}
+
+.threed-machine-action {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: auto;
+}
+
+.threed-view-btn {
+    background: linear-gradient(135deg, #334155, #475569);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.threed-view-btn:hover {
+    background: linear-gradient(135deg, #1e293b, #334155);
+    transform: translateX(4px);
+}
+
+.threed-view-btn svg {
+    width: 16px;
+    height: 16px;
+    transition: transform 0.3s ease;
+}
+
+.threed-view-btn:hover svg {
+    transform: translateX(4px);
+}
+
+.threed-machine-price {
+    color: #334155;
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.threed-clickable-price {
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 8px 12px;
+    border-radius: 8px;
+    position: relative;
+}
+
+.threed-clickable-price:hover {
+    background: rgba(71, 85, 105, 0.1);
+    transform: scale(1.05);
+    text-shadow: 0 0 8px rgba(71, 85, 105, 0.3);
+}
+
+/* Features Section */
+.threed-features-section {
+    background: linear-gradient(135deg, rgba(71, 85, 105, 0.08) 0%, rgba(51, 65, 85, 0.12) 100%);
+    color: #1e293b;
+    padding: 100px 40px;
+    border-radius: 60px;
+    margin-top: 100px;
+}
+
+.threed-features-container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.threed-features-header {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.threed-features-title {
+    font-family: 'Bison-Bold', sans-serif;
+    font-size: 2.8rem;
+    font-weight: 800;
+    margin: 0 0 20px 0;
+    background: linear-gradient(135deg, #475569, #64748b);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.threed-features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 50px;
+    margin-top: 60px;
+}
+
+.threed-feature-card {
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(71, 85, 105, 0.1);
+    border-radius: 24px;
+    padding: 45px 35px;
+    text-align: center;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.threed-feature-card:hover {
+    transform: translateY(-8px);
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+}
+
+.threed-feature-icon {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 28px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #475569, #64748b);
+    border-radius: 50%;
+    padding: 18px;
+    box-shadow: 0 10px 30px rgba(71, 85, 105, 0.25);
+}
+
+.threed-feature-icon svg {
+    width: 32px;
+    height: 32px;
+    color: white;
+}
+
+.threed-feature-card h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0 0 18px 0;
+    color: #1e293b;
+}
+
+.threed-feature-card p {
+    color: #64748b;
+    line-height: 1.7;
+    margin: 0;
+    font-size: 1.05rem;
+}
+
+/* Inquiry Modal Styles */
+.threed-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    padding: 20px;
+}
+
+.threed-inquiry-modal {
+    background: white;
+    border-radius: 16px;
+    max-width: 600px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.threed-inquiry-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 30px 0;
+    margin-bottom: 20px;
+}
+
+.threed-inquiry-header h2 {
+    font-size: 1.2rem;
+    color: #2d3748;
+    font-weight: 700;
+    margin: 0;
+}
+
+.threed-close-btn {
+    background: #f56565;
+    color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 24px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.threed-close-btn:hover {
+    background: #e53e3e;
+    transform: scale(1.1);
+}
+
+.threed-inquiry-form {
+    padding: 0 30px 30px;
+}
+
+.threed-form-group {
+    margin-bottom: 20px;
+}
+
+.threed-form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.threed-form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #2d3748;
+    font-size: 0.95rem;
+}
+
+.threed-form-group input,
+.threed-form-group textarea {
+    width: 100%;
+    padding: 12px 16px;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+.threed-form-group input:focus,
+.threed-form-group textarea:focus {
+    outline: none;
+    border-color: #334155;
+    box-shadow: 0 0 0 3px rgba(71, 85, 105, 0.1);
+}
+
+.threed-form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.threed-form-actions {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #e2e8f0;
+}
+
+.threed-btn-primary {
+    background: linear-gradient(135deg, #334155, #475569);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    flex: 1;
+}
+
+.threed-btn-primary:hover {
+    background: linear-gradient(135deg, #1e293b, #334155);
+}
+
+.threed-btn-secondary {
+    background: #f7fafc;
+    color: #4a5568;
+    border: 2px solid #e2e8f0;
+    padding: 10px 22px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    flex: 1;
+}
+
+.threed-btn-secondary:hover {
+    background: #edf2f7;
+    border-color: #cbd5e0;
+}
+
+/* Phone Input Styling */
+.threed-phone-input {
+    display: flex;
+    gap: 8px;
+}
+
+.threed-country-select {
+    background: white;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 12px 8px;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 120px;
+}
+
+.threed-country-select:focus {
+    outline: none;
+    border-color: #334155;
+    box-shadow: 0 0 0 3px rgba(71, 85, 105, 0.1);
+}
+
+.threed-phone-input input {
+    flex: 1;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .threed-hero {
+        padding: 80px 30px 60px;
+    }
+
+    .threed-hero-title {
+        font-size: 3rem;
+    }
+
+    .threed-machines-grid {
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 30px;
+    }
+
+    .threed-hero-stats {
+        gap: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .threed-main {
+        margin-top: 0;
+    }
+
+    .threed-hero {
+        padding: 60px 20px;
+        margin-bottom: 40px;
+        border-radius: 40px;
+    }
+
+    .threed-hero-title {
+        font-size: 2.5rem;
+        margin-top: 65px;
+    }
+
+    .threed-hero-subtitle {
+        font-size: 1.1rem;
+    }
+
+    .threed-machines-section,
+    .threed-features-section {
+        padding: 60px 20px;
+    }
+
+    .threed-machines-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .threed-section-title {
+        font-size: 2.2rem;
+    }
+
+    .threed-features-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .threed-hero-stats {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .threed-machine-content {
+        padding: 24px;
+    }
+
+    .threed-form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .threed-phone-input {
+        flex-direction: column;
+    }
+
+    .threed-country-select {
+        min-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .threed-hero-title {
+        font-size: 2rem;
+    }
+
+    .threed-section-title {
+        font-size: 1.8rem;
+    }
+
+    .threed-stat {
+        min-width: 100px;
+        padding: 16px 20px;
+    }
+
+    .threed-stat-number {
+        font-size: 1.6rem;
+    }
+
+    .threed-stat-label {
+        font-size: 0.8rem;
+    }
+
+    .threed-machine-image {
+        height: 280px;
+    }
+}

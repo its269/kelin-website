@@ -22,7 +22,7 @@ export default function UVPrinters() {
             ],
             badge: 'Compact',
             price: 'Contact us for more details',
-            link: '/products/uv/sf303-dtf'
+            link: '/dtf-uv-printer-sf303-f1080'
         },
         {
             id: 'dtf-uv-sf604',
@@ -37,7 +37,7 @@ export default function UVPrinters() {
             ],
             badge: 'High Resolution',
             price: 'Contact us for more details',
-            link: '/products/uv/sf604-high-res'
+            link: '/dtf-uv-printer-sf604-i3200'
         },
         {
             id: 'luxor-rtr-uv',
@@ -52,7 +52,7 @@ export default function UVPrinters() {
             ],
             badge: 'Automated',
             price: 'Contact us for more details',
-            link: '/products/uv/luxor-rtr'
+            link: '/luxor-rtr-uv'
         },
         {
             id: 'automatic-uv-crystal',
@@ -83,6 +83,21 @@ export default function UVPrinters() {
             badge: 'Hybrid',
             price: 'Contact us for more details',
             link: '/products/uv/liyu-hybrid'
+        },
+        {
+            id: 'smart-uv-printer',
+            name: 'SMART UV Printer',
+            image: '/uv-machines/SMART UV Printer.png',
+            description: 'SMART UV TECHNOLOGY - Advanced SMART UV printer with intelligent printing features and automated UV curing for professional applications and superior print quality.',
+            specs: [
+                'Technology: Smart UV printing',
+                'Operation: Intelligent automation',
+                'UV Curing: Advanced LED system',
+                'Quality: Professional grade'
+            ],
+            badge: 'Smart Tech',
+            price: 'Contact us for more details',
+            link: '/products/uv/smart-uv'
         }
     ];
 

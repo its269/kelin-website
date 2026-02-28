@@ -1,0 +1,905 @@
+/* R2000 Roller Heat Transfer Machine Page Styles */
+
+/* Font Face Declaration */
+@font-face {
+    font-family: 'Bison-Bold';
+    src: url('/fonts/Bison-Bold(PersonalUse).ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+.r2000-roller-main {
+    min-height: 100vh;
+    margin-top: 60px;
+}
+
+/* Breadcrumb Section */
+.r2000-roller-breadcrumb-section {
+    background: #f8fafc;
+    padding: 16px 0;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.r2000-roller-breadcrumb-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+.r2000-roller-breadcrumb-nav {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+}
+
+.r2000-roller-breadcrumb-link {
+    color: #64748b;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.r2000-roller-breadcrumb-link:hover {
+    color: #334155;
+}
+
+.r2000-roller-breadcrumb-separator {
+    color: #94a3b8;
+    font-weight: 300;
+}
+
+.r2000-roller-breadcrumb-current {
+    color: #1e293b;
+    font-weight: 600;
+}
+
+/* Product Hero Section */
+.r2000-roller-hero {
+    padding: 100px 40px 80px;
+    margin: 0 auto;
+    text-align: center;
+    background: linear-gradient(135deg, rgba(71, 85, 105, 0.05) 0%, rgba(51, 65, 85, 0.08) 100%);
+    border-radius: 0px 0px 80px 80px;
+    margin-bottom: 60px;
+    position: relative;
+    overflow: hidden;
+}
+
+.r2000-roller-hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(71, 85, 105, 0.1) 0%, transparent 50%);
+    animation: r2000-roller-float 20s ease-in-out infinite;
+    pointer-events: none;
+}
+
+@keyframes r2000-roller-float {
+
+    0%,
+    100% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+
+    50% {
+        transform: translate(-20px, -20px) rotate(180deg);
+    }
+}
+
+.r2000-roller-hero.product-hero {
+    text-align: left;
+    padding: 80px 40px;
+}
+
+.r2000-roller-hero-layout {
+    max-width: 1400px;
+    margin: 0 auto;
+    gap: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 2;
+}
+
+.r2000-roller-hero-left {
+    text-align: left;
+}
+
+.r2000-roller-hero-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    font-family: 'Bison-Bold', Arial, sans-serif;
+    background: linear-gradient(135deg, #1e293b 0%, #334155 50%, #475569 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-top: 70px;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+}
+
+.r2000-roller-hero-title.product-title {
+    font-size: 2.8rem;
+    margin-bottom: 20px;
+}
+
+.r2000-roller-hero-subtitle {
+    font-size: 1.3rem;
+    color: #64748b;
+    line-height: 1.6;
+    margin: 0 0 40px 0;
+    max-width: 600px;
+}
+
+.r2000-roller-hero-subtitle.product-subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    max-width: 500px;
+}
+
+.r2000-roller-button-group {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.r2000-roller-view-btn {
+    background: linear-gradient(135deg, #334155, #475569);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.r2000-roller-view-btn.large {
+    padding: 15px 30px;
+    font-size: 1rem;
+}
+
+.r2000-roller-view-btn:hover {
+    background: linear-gradient(135deg, #1e293b, #334155);
+    transform: translateX(4px);
+}
+
+.r2000-roller-view-btn svg {
+    width: 16px;
+    height: 16px;
+    transition: transform 0.3s ease;
+}
+
+.r2000-roller-view-btn:hover svg {
+    transform: translateX(4px);
+}
+
+.r2000-roller-btn-secondary {
+    background: #f7fafc;
+    color: #4a5568;
+    border: 2px solid #e2e8f0;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.r2000-roller-btn-secondary.large {
+    padding: 15px 30px;
+    font-size: 1rem;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+}
+
+.r2000-roller-btn-secondary:hover {
+    background: #edf2f7;
+    border-color: #cbd5e0;
+}
+
+.r2000-roller-hero-stats {
+    display: flex;
+    justify-content: flex-start;
+    gap: 40px;
+    margin-top: 40px;
+    flex-wrap: wrap;
+}
+
+.r2000-roller-hero-stats.product-stats {
+    justify-content: flex-start;
+}
+
+.r2000-roller-stat {
+    text-align: center;
+    padding: 20px 30px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 16px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(71, 85, 105, 0.1);
+}
+
+.r2000-roller-stat-number {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #334155;
+    display: block;
+    line-height: 1.2;
+}
+
+.r2000-roller-stat-label {
+    font-size: 0.9rem;
+    color: #64748b;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-top: 4px;
+}
+
+.r2000-roller-hero-right {
+    text-align: center;
+}
+
+.r2000-roller-hero-image {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    border-radius: 16px;
+}
+
+/* Overview Section */
+.r2000-roller-overview-section {
+    padding: 80px 40px;
+    background: white;
+}
+
+.r2000-roller-overview-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.r2000-roller-section-title {
+    font-size: 2.8rem;
+    font-weight: 800;
+    font-family: 'Bison-Bold', Arial, sans-serif;
+    color: #1e293b;
+    margin: 0 0 16px 0;
+    background: linear-gradient(135deg, #1e293b 0%, #475569 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+}
+
+.r2000-roller-section-subtitle {
+    font-size: 1.2rem;
+    color: #64748b;
+    text-align: center;
+    margin-bottom: 60px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.r2000-roller-overview-text {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #475569;
+    margin: 0;
+}
+
+/* Features Section */
+.r2000-roller-features-section {
+    background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+    color: white;
+    padding: 80px 40px;
+}
+
+.r2000-roller-features-container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.r2000-roller-features-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.r2000-roller-features-title {
+    font-family: 'Bison-Bold', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin: 0 0 16px 0;
+    background: linear-gradient(135deg, #64748b, #94a3b8);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.r2000-roller-features-subtitle {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+.r2000-roller-features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+}
+
+.r2000-roller-feature-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 40px 30px;
+    text-align: center;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.r2000-roller-feature-card:hover {
+    transform: translateY(-8px);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.r2000-roller-feature-icon {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 24px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #64748b, #94a3b8);
+    border-radius: 50%;
+    padding: 16px;
+    box-shadow: 0 8px 25px rgba(71, 85, 105, 0.25);
+    color: white;
+}
+
+.r2000-roller-feature-icon svg {
+    width: 28px;
+    height: 28px;
+    color: white;
+}
+
+.r2000-roller-feature-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin: 0 0 16px 0;
+}
+
+.r2000-roller-feature-text {
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Specifications Section */
+.r2000-roller-specs-section {
+    padding: 80px 40px;
+    background: #f8fafc;
+}
+
+.r2000-roller-specs-container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.r2000-roller-specs-table-wrapper {
+    margin-top: 60px;
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    border: 1px solid #e2e8f0;
+}
+
+.r2000-roller-spec-table {
+    width: 100%;
+}
+
+.r2000-roller-spec-table-header {
+    background: linear-gradient(135deg, #1e293b, #334155);
+    padding: 25px 30px;
+    text-align: center;
+}
+
+.r2000-roller-spec-table-title {
+    color: white;
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+.r2000-roller-spec-icon {
+    font-size: 1.3rem;
+    opacity: 0.9;
+}
+
+.r2000-roller-spec-table-body {
+    padding: 0;
+}
+
+.r2000-roller-spec-row {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    padding: 18px 30px;
+    border-bottom: 1px solid rgba(226, 232, 240, 0.4);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.r2000-roller-spec-row:hover {
+    background: rgba(59, 130, 246, 0.03);
+    transform: translateX(4px);
+}
+
+.r2000-roller-spec-row:last-child {
+    border-bottom: none;
+}
+
+.r2000-roller-spec-label {
+    font-weight: 600;
+    color: #374151;
+    font-size: 0.95rem;
+}
+
+.r2000-roller-spec-divider {
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #cbd5e0, transparent);
+    margin: 0 20px;
+}
+
+.r2000-roller-spec-value {
+    color: #1e293b;
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-align: right;
+    background: linear-gradient(135deg, #1e293b, #475569);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Applications Section */
+.r2000-roller-applications-section {
+    padding: 80px 40px;
+    background: white;
+}
+
+.r2000-roller-applications-container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.r2000-roller-applications-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 60px;
+}
+
+.r2000-roller-applications-content {
+    text-align: center;
+}
+
+.r2000-roller-applications-subtitle {
+    font-size: 1.1rem;
+    color: #64748b;
+    margin-bottom: 40px;
+    line-height: 1.6;
+}
+
+.r2000-roller-applications-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 16px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+}
+
+.r2000-roller-application-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.r2000-roller-application-item:hover {
+    background: #f1f5f9;
+    transform: translateY(-2px);
+}
+
+.r2000-roller-check-icon {
+    width: 24px;
+    height: 24px;
+    color: #10b981;
+    flex-shrink: 0;
+}
+
+/* Advantages Section */
+.r2000-roller-advantages-section {
+    padding: 80px 40px;
+    background: #f8fafc;
+}
+
+.r2000-roller-advantages-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.r2000-roller-advantages-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    margin-top: 60px;
+}
+
+.r2000-roller-advantage-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 24px;
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    transition: all 0.3s ease;
+    text-align: left;
+}
+
+.r2000-roller-advantage-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.r2000-roller-advantage-icon {
+    width: 24px;
+    height: 24px;
+    color: #10b981;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.r2000-roller-advantage-text {
+    color: #475569;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Modal Styles */
+.r2000-roller-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    padding: 20px;
+}
+
+.r2000-roller-inquiry-modal {
+    background: white;
+    border-radius: 20px;
+    width: 100%;
+    max-width: 600px;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+}
+
+.r2000-roller-inquiry-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 40px 20px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.r2000-roller-inquiry-header h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin: 0;
+}
+
+.r2000-roller-close-btn {
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: #64748b;
+    cursor: pointer;
+    padding: 0;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.r2000-roller-close-btn:hover {
+    background: #f1f5f9;
+    color: #1e293b;
+}
+
+.r2000-roller-inquiry-form {
+    padding: 30px 40px 40px;
+}
+
+.r2000-roller-form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 24px;
+}
+
+.r2000-roller-form-group {
+    margin-bottom: 24px;
+}
+
+.r2000-roller-form-group label {
+    display: block;
+    font-weight: 600;
+    color: #374151;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+}
+
+.r2000-roller-form-group input,
+.r2000-roller-form-group textarea,
+.r2000-roller-form-group select {
+    width: 100%;
+    padding: 12px 16px;
+    border: 2px solid #e5e7eb;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    font-family: inherit;
+}
+
+.r2000-roller-form-group input:focus,
+.r2000-roller-form-group textarea:focus,
+.r2000-roller-form-group select:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+/* .r2000-roller-phone-input {
+    display: flex;
+    gap: 8px;
+} */
+
+.r2000-roller-country-select {
+    flex-shrink: 0;
+    width: 120px;
+    margin-bottom: 8px;
+}
+
+.r2000-roller-form-actions {
+    display: flex;
+    gap: 16px;
+    justify-content: flex-end;
+    margin-top: 32px;
+}
+
+.r2000-roller-btn-primary {
+    background: linear-gradient(135deg, #334155, #475569);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.r2000-roller-btn-primary:hover {
+    background: linear-gradient(135deg, #1e293b, #334155);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .r2000-roller-hero-layout {
+        gap: 40px;
+    }
+
+    .r2000-roller-specs-table-wrapper {
+        margin-top: 40px;
+        border-radius: 15px;
+    }
+
+    .r2000-roller-spec-table-header {
+        padding: 20px 15px;
+    }
+
+    .r2000-roller-spec-table-title {
+        font-size: 1.2rem;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .r2000-roller-spec-row {
+        grid-template-columns: 1fr;
+        gap: 8px;
+        padding: 15px 20px;
+        text-align: center;
+    }
+
+    .r2000-roller-spec-row:hover {
+        transform: none;
+    }
+
+    .r2000-roller-spec-divider {
+        display: none;
+    }
+
+    .r2000-roller-spec-label {
+        font-size: 0.85rem;
+        margin-bottom: 5px;
+        color: #64748b;
+    }
+
+    .r2000-roller-spec-value {
+        text-align: center;
+        font-size: 0.9rem;
+        font-weight: 700;
+    }
+
+    .r2000-roller-hero {
+        border-radius: 0px 0px 60px 60px;
+        padding: 80px 30px 60px;
+    }
+
+    .r2000-roller-hero.product-hero {
+        padding: 60px 30px;
+    }
+}
+
+@media (max-width: 900px) {
+    .r2000-roller-hero-stats {
+        gap: 25px;
+        justify-content: center;
+    }
+
+    .r2000-roller-stat {
+        padding: 18px 25px;
+        min-width: 140px;
+    }
+
+    .r2000-roller-hero-title.product-title {
+        font-size: 2.4rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .r2000-roller-hero-title.product-title {
+        font-size: 2.2rem;
+        text-align: center;
+    }
+
+    .r2000-roller-hero-subtitle.product-subtitle {
+        text-align: center;
+        max-width: 100%;
+        font-size: 1rem;
+        margin-bottom: 25px;
+    }
+
+    .r2000-roller-button-group {
+        justify-content: center;
+        gap: 15px;
+        margin-bottom: 25px;
+    }
+
+    .r2000-roller-hero-stats {
+        justify-content: center;
+        gap: 15px;
+        margin-top: 30px;
+        display: grid;
+        grid-template-columns: 1fr;
+        max-width: 280px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .r2000-roller-stat {
+        padding: 16px 20px;
+        margin: 0;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .r2000-roller-stat-number {
+        font-size: 1.5rem;
+    }
+
+    .r2000-roller-stat-label {
+        font-size: 0.8rem;
+    }
+
+    .r2000-roller-hero {
+        border-radius: 0px 0px 40px 40px;
+        padding: 60px 20px 40px;
+    }
+
+    .r2000-roller-hero.product-hero {
+        padding: 50px 20px;
+        text-align: center;
+    }
+
+    .r2000-roller-hero-layout {
+        gap: 30px;
+        flex-direction: column;
+    }
+
+    .r2000-roller-hero-left {
+        text-align: center;
+        width: 100%;
+    }
+
+    .r2000-roller-hero-right {
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    .r2000-roller-hero-image {
+        max-width: 350px;
+        width: 90%;
+    }
+
+    .r2000-roller-form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .r2000-roller-phone-input {
+        flex-direction: column;
+    }
+
+    .r2000-roller-country-select {
+        width: 100%;
+    }
+
+    .r2000-roller-applications-list {
+        grid-template-columns: 1fr;
+    }
+
+    .r2000-roller-advantages-grid {
+        grid-template-columns: 1fr;
+    }
+}

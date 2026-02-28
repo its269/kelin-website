@@ -104,23 +104,6 @@ export default function XlineEcoSolventPage() {
         <div>
             <Header />
             <main className="xline-main">
-                {/* Breadcrumb Navigation */}
-                <section className="xline-breadcrumb-section">
-                    <div className="xline-breadcrumb-container">
-                        <nav className="xline-breadcrumb-nav">
-                            <Link href="/" className="xline-breadcrumb-link">Home</Link>
-                            <span className="xline-breadcrumb-separator">›</span>
-                            <Link href="/products" className="xline-breadcrumb-link">Products</Link>
-                            <span className="xline-breadcrumb-separator">›</span>
-                            <Link href="/products/machine" className="xline-breadcrumb-link">Machines</Link>
-                            <span className="xline-breadcrumb-separator">›</span>
-                            <Link href="/products/machine/eco-solvent-printers" className="xline-breadcrumb-link">Eco-Solvent Printers</Link>
-                            <span className="xline-breadcrumb-separator">›</span>
-                            <span className="xline-breadcrumb-current">{machineDetails.model}</span>
-                        </nav>
-                    </div>
-                </section>
-
                 {/* Product Hero Section */}
                 <section className="xline-hero product-hero">
                     <div className="xline-hero-layout">
@@ -213,24 +196,28 @@ export default function XlineEcoSolventPage() {
                 <section className="xline-specs-section">
                     <div className="xline-specs-container">
                         <h2 className="xline-section-title">Technical Specifications</h2>
-                        <div className="xline-specs-grid">
-                            <div className="xline-spec-card">
-                                <h3 className="xline-spec-card-title">Print Specifications</h3>
-                                {machineDetails.specifications.slice(0, 8).map((spec, index) => (
-                                    <div key={index} className="xline-spec-item">
-                                        <span className="xline-spec-label">{spec.label}:</span>
-                                        <span className="xline-spec-value">{spec.value}</span>
-                                    </div>
-                                ))}
-                            </div>
-                            <div className="xline-spec-card">
-                                <h3 className="xline-spec-card-title">Physical Specifications</h3>
-                                {machineDetails.specifications.slice(8).map((spec, index) => (
-                                    <div key={index} className="xline-spec-item">
-                                        <span className="xline-spec-label">{spec.label}:</span>
-                                        <span className="xline-spec-value">{spec.value}</span>
-                                    </div>
-                                ))}
+                        <p className="xline-section-subtitle">
+                            Complete technical details for XLINE eco-solvent printer
+                        </p>
+                        <div className="xline-specs-table-wrapper">
+                            <div className="xline-spec-table">
+                                <div className="xline-spec-table-header">
+                                    <h3 className="xline-spec-table-title">
+                                        <span className="xline-spec-icon">⚙️</span>
+                                        Machine Specifications
+                                    </h3>
+                                </div>
+                                <div className="xline-spec-table-body">
+                                    {machineDetails.specifications.map((spec, index) => (
+                                        <div key={index} className="xline-spec-row">
+                                            <div className="xline-spec-label">
+                                                {spec.label}
+                                            </div>
+                                            <div className="xline-spec-divider"></div>
+                                            <div className="xline-spec-value">{spec.value}</div>
+                                        </div>
+                                    ))}
+                                </div>
                             </div>
                         </div>
                     </div>
