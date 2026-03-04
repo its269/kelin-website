@@ -671,11 +671,6 @@
     gap: 8px;
 }
 
-.dtf-uv-sf303-country-select {
-    flex-shrink: 0;
-    width: 120px;
-}
-
 .dtf-uv-sf303-form-actions {
     display: flex;
     gap: 16px;
@@ -798,10 +793,6 @@
 
     .dtf-uv-sf303-phone-input {
         flex-direction: column;
-    }
-
-    .dtf-uv-sf303-country-select {
-        width: 100%;
     }
 
     .dtf-uv-sf303-applications-list {

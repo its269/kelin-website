@@ -891,11 +891,7 @@
         flex-direction: column;
     }
 
-    .dual-pneumatic-country-select {
-        width: 100%;
-    }
-
-    .dual-pneumatic-applications-list {
+    .dual-pneumatic-advantages-grid {
         grid-template-columns: 1fr;
     }
 

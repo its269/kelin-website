@@ -708,11 +708,6 @@
     gap: 8px;
 }
 
-.dtf-uv-sf604-country-select {
-    flex-shrink: 0;
-    width: 120px;
-}
-
 .dtf-uv-sf604-form-actions {
     display: flex;
     gap: 16px;
@@ -835,10 +830,6 @@
 
     .dtf-uv-sf604-phone-input {
         flex-direction: column;
-    }
-
-    .dtf-uv-sf604-country-select {
-        width: 100%;
     }
 
     .dtf-uv-sf604-applications-list {

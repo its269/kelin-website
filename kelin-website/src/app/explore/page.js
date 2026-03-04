@@ -21,7 +21,7 @@ export default function Explore() {
       description: 'Premium quality inks designed for professional printing applications including eco-solvent, latex, UV-curable, and water-based formulations.',
       icon: '/inks.png',
       productCount: '12+',
-      href: '/products/inks',
+      href: '/inks',
       image: '/cat_inks.png',
       products: [
         { name: 'Eco-Solvent Inks', desc: 'Environmental-friendly outdoor graphics' },
@@ -35,7 +35,7 @@ export default function Explore() {
       description: 'High-performance printing materials and substrates for every application, from flexible vinyls to rigid panels and specialty textiles.',
       icon: '/materials.png',
       productCount: '8+',
-      href: '/products/materials',
+      href: '/materials',
       image: '/cat_materials.png',
       products: [
         { name: 'Vinyl Films', desc: 'Adhesive and non-adhesive options' },
@@ -63,7 +63,7 @@ export default function Explore() {
       description: 'Essential accessories and consumables including maintenance kits, software solutions, and professional installation tools.',
       icon: '/accessories.png',
       productCount: '15+',
-      href: '/products/accessories',
+      href: '/accessories',
       image: '/cat_accessories.png',
       products: [
         { name: 'Maintenance Kits', desc: 'Keep equipment running smoothly' },
@@ -77,7 +77,7 @@ export default function Explore() {
       description: 'Eye-catching display solutions for marketing including banner stands, pop-up displays, and exhibition systems.',
       icon: '/display.png',
       productCount: '6+',
-      href: '/products/promotional-display',
+      href: '/promotional-display',
       image: '/cat_promotional-display.png',
       products: [
         { name: 'Banner Stands', desc: 'Portable retractable systems' },

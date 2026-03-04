@@ -46,7 +46,7 @@ export default function sitemap() {
 
         // Product categories
         {
-            url: `${baseUrl}/products/inks`,
+            url: `${baseUrl}/inks`,
             lastModified: new Date(),
             changeFrequency: 'monthly',
             priority: 0.9,
@@ -58,19 +58,19 @@ export default function sitemap() {
             priority: 0.9,
         },
         {
-            url: `${baseUrl}/products/materials`,
+            url: `${baseUrl}/materials`,
             lastModified: new Date(),
             changeFrequency: 'monthly',
             priority: 0.8,
         },
         {
-            url: `${baseUrl}/products/accessories`,
+            url: `${baseUrl}/accessories`,
             lastModified: new Date(),
             changeFrequency: 'monthly',
             priority: 0.8,
         },
         {
-            url: `${baseUrl}/products/promotional-display`,
+            url: `${baseUrl}/promotional-display`,
             lastModified: new Date(),
             changeFrequency: 'monthly',
             priority: 0.8,
@@ -78,61 +78,61 @@ export default function sitemap() {
 
         // Machine category pages
         {
-            url: `${baseUrl}/products/machine/eco-solvent-printers`,
+            url: `${baseUrl}/eco-solvent-printers`,
             lastModified: new Date(),
             changeFrequency: 'monthly',
             priority: 0.8,
         },
         {
-            url: `${baseUrl}/products/machine/solvent-printers`,
+            url: `${baseUrl}/solvent-printers`,
             lastModified: new Date(),
             changeFrequency: 'monthly',
             priority: 0.8,
         },
         {
-            url: `${baseUrl}/products/machine/cutting-machine`,
+            url: `${baseUrl}/cutting-machine`,
             lastModified: new Date(),
             changeFrequency: 'monthly',
             priority: 0.8,
         },
         {
-            url: `${baseUrl}/products/machine/sublimation-dtf`,
+            url: `${baseUrl}/sublimation-dtf`,
             lastModified: new Date(),
             changeFrequency: 'monthly',
             priority: 0.8,
         },
         {
-            url: `${baseUrl}/products/machine/uv-printers`,
+            url: `${baseUrl}/uv-printers`,
             lastModified: new Date(),
             changeFrequency: 'monthly',
             priority: 0.8,
         },
         {
-            url: `${baseUrl}/products/machine/heatpress`,
+            url: `${baseUrl}/heatpress`,
             lastModified: new Date(),
             changeFrequency: 'monthly',
             priority: 0.8,
         },
         {
-            url: `${baseUrl}/products/machine/laminator`,
+            url: `${baseUrl}/laminator`,
             lastModified: new Date(),
             changeFrequency: 'monthly',
             priority: 0.8,
         },
         {
-            url: `${baseUrl}/products/machine/laser-machine`,
+            url: `${baseUrl}/laser-machine`,
             lastModified: new Date(),
             changeFrequency: 'monthly',
             priority: 0.8,
         },
         {
-            url: `${baseUrl}/products/machine/embroidery-knitting`,
+            url: `${baseUrl}/embroidery-knitting`,
             lastModified: new Date(),
             changeFrequency: 'monthly',
             priority: 0.8,
         },
         {
-            url: `${baseUrl}/products/machine/3d-printer`,
+            url: `${baseUrl}/3d-printer`,
             lastModified: new Date(),
             changeFrequency: 'monthly',
             priority: 0.8,
@@ -140,25 +140,25 @@ export default function sitemap() {
 
         // Legacy machine subcategories
         {
-            url: `${baseUrl}/products/machine/printers`,
+            url: `${baseUrl}/printers`,
             lastModified: new Date(),
             changeFrequency: 'monthly',
             priority: 0.7,
         },
         {
-            url: `${baseUrl}/products/machine/cutters`,
+            url: `${baseUrl}/cutters`,
             lastModified: new Date(),
             changeFrequency: 'monthly',
             priority: 0.7,
         },
         {
-            url: `${baseUrl}/products/machine/laminators`,
+            url: `${baseUrl}/laminator`,
             lastModified: new Date(),
             changeFrequency: 'monthly',
             priority: 0.7,
         },
         {
-            url: `${baseUrl}/products/machine/heat-press`,
+            url: `${baseUrl}/heat-press`,
             lastModified: new Date(),
             changeFrequency: 'monthly',
             priority: 0.7,

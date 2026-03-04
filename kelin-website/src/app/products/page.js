@@ -25,70 +25,124 @@ export default function Products() {
     {
       id: 'inks',
       name: 'Inks',
-      description: 'High-quality inks for all your printing needs.',
+      description: 'High-quality printing inks including sublimation, DTF, eco-solvent, and UV inks for vibrant, long-lasting results.',
       image: '/se.webp',
       alt: 'Printing Inks',
-      href: '/products/inks'
+      href: '/inks',
+      icon: '🎨',
+      color: '#3b82f6'
     },
     {
       id: 'materials',
       name: 'Materials',
-      description: 'Premium printing materials and substrates.',
+      description: 'Premium substrates including vinyl, tarpaulin, textiles, and specialty media for diverse printing applications.',
       image: '/se.webp',
       alt: 'Printing Materials',
-      href: '/products/materials'
+      href: '/materials',
+      icon: '📄',
+      color: '#8b5cf6'
     },
     {
       id: 'accessories',
       name: 'Accessories',
-      description: 'Essential accessories for your printing setup.',
+      description: 'Essential tools and supplies including cutting tools, squeegees, and maintenance equipment for optimal results.',
       image: '/se.webp',
       alt: 'Printing Accessories',
-      href: '/products/accessories'
+      href: '/accessories',
+      icon: '🔧',
+      color: '#ec4899'
     },
     {
       id: 'promotional-display',
       name: 'Promotional Display',
-      description: 'Eye-catching displays for marketing.',
+      description: 'Professional display solutions including banners, stands, and exhibition materials for maximum brand visibility.',
       image: '/se.webp',
       alt: 'Promotional Display',
-      href: '/products/promotional-display'
+      href: '/promotional-display',
+      icon: '📢',
+      color: '#f59e0b'
     },
     {
       id: 'machine',
-      name: 'Machine',
-      description: 'Professional printing machines and equipment.',
+      name: 'Machines',
+      description: 'Advanced printing equipment including UV printers, sublimation machines, cutters, and heat presses for professional production.',
       image: '/se.webp',
       alt: 'Printing Machines',
-      href: '/products/machine'
+      href: '/machine',
+      icon: '⚙️',
+      color: '#10b981'
     }
   ];
   return (
     <div>
       {/* 🔧 SSG CODE PATTERN: Static component with no props */}
       <Header />
-      <main className="products-container">
-        {/* 🔧 SSG CODE PATTERN: Hardcoded static content */}
-        <h1 className="products-title">Our Products</h1>
-        <p className="products-description">Browse our comprehensive range of printing products and materials.</p>
+      <main className="products-container products-page-modern">
+        {/* Hero Section */}
+        <div className="products-hero">
+          <div className="products-hero-content">
+            <h1 className="products-hero-title">Our Products</h1>
+            <p className="products-hero-description">
+              Discover our comprehensive range of professional printing solutions designed to elevate your business.
+              From high-quality inks to cutting-edge machinery, we provide everything you need for exceptional results.
+            </p>
+            <div className="products-stats">
+              <div className="stat-item">
+                <span className="stat-number">5</span>
+                <span className="stat-label">Product Categories</span>
+              </div>
+              <div className="stat-item">
+                <span className="stat-number">500+</span>
+                <span className="stat-label">Products Available</span>
+              </div>
+              <div className="stat-item">
+                <span className="stat-number">24/7</span>
+                <span className="stat-label">Support Available</span>
+              </div>
+            </div>
+          </div>
+        </div>
 
-        <div className="products-grid">
+        {/* Products Grid */}
+        <div className="products-grid-modern">
           {/* 🔧 SSG CODE PATTERN: Static array mapping */}
           {/* products array is hardcoded = rendered at build time */}
           {products.map((product) => (
-            <div key={product.id} className="product-card">
-              <div className="product-image-container">
-                {/* 🔧 SSG CODE PATTERN: Static image paths */}
-                <img src={product.image} alt={product.alt} className="product-image" />
+            <Link key={product.id} href={product.href} className="product-card-modern">
+              <div className="product-card-header" style={{ background: `linear-gradient(135deg, ${product.color}15 0%, ${product.color}05 100%)` }}>
+                <div className="product-icon" style={{ background: product.color }}>
+                  {product.icon}
+                </div>
+                <div className="product-image-wrapper">
+                  <img src={product.image} alt={product.alt} className="product-image-modern" />
+                </div>
               </div>
-              <div className="product-content">
-                <h3>{product.name}</h3>
-                <p>{product.description}</p>
-                {/* 🔧 SSG CODE PATTERN: Static navigation links */}
-                <Link href={product.href} className="product-link">View More →</Link>
+              <div className="product-card-body">
+                <h3 className="product-name">{product.name}</h3>
+                <p className="product-description">{product.description}</p>
+                <div className="product-link-arrow">
+                  <span>Explore Products</span>
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                    <path d="M4 10h12M10 4l6 6-6 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </div>
               </div>
-            </div>
+            </Link>
           ))}
+        </div>
+
+        {/* Call to Action */}
+        <div className="products-cta">
+          <div className="products-cta-content">
+            <h2>Need Help Finding the Right Product?</h2>
+            <p>Our experts are ready to help you choose the perfect products for your specific needs.</p>
+            <Link href="/contact" className="products-cta-button">
+              Contact Our Team
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <path d="M4 10h12M10 4l6 6-6 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </Link>
+          </div>
         </div>
       </main>
     </div>
