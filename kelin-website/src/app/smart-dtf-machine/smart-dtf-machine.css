@@ -891,11 +891,7 @@
         flex-direction: column;
     }
 
-    .smart-dtf-powder-shaker-country-select {
-        width: 100%;
-    }
-
-    .smart-dtf-powder-shaker-applications-list {
+    .smart-dtf-powder-shaker-advantages-grid {
         grid-template-columns: 1fr;
     }
 

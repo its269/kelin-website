@@ -1,4 +1,4 @@
-/* SMART RJ24 ECO-SOLVENT Page Styles */
+/* SMART RJ24 Eco-Solvent Machine Page Styles */
 
 /* Font Face Declaration */
 @font-face {
@@ -14,53 +14,13 @@
     margin-top: 60px;
 }
 
-/* Breadcrumb Section */
-.smart-rj24-breadcrumb-section {
-    background: #f8fafc;
-    padding: 16px 0;
-    border-bottom: 1px solid #e2e8f0;
-}
-
-.smart-rj24-breadcrumb-container {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 0 40px;
-}
-
-.smart-rj24-breadcrumb-nav {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 0.9rem;
-}
-
-.smart-rj24-breadcrumb-link {
-    color: #64748b;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.smart-rj24-breadcrumb-link:hover {
-    color: #334155;
-}
-
-.smart-rj24-breadcrumb-separator {
-    color: #94a3b8;
-    font-weight: 300;
-}
-
-.smart-rj24-breadcrumb-current {
-    color: #1e293b;
-    font-weight: 600;
-}
-
 /* Product Hero Section */
 .smart-rj24-hero {
     padding: 100px 40px 80px;
     margin: 0 auto;
     text-align: center;
     background: linear-gradient(135deg, rgba(71, 85, 105, 0.05) 0%, rgba(51, 65, 85, 0.08) 100%);
-    border-radius: 0px 0px 80px 80px;
+    border-radius: 80px;
     margin-bottom: 60px;
     position: relative;
     overflow: hidden;
@@ -151,12 +111,47 @@
 }
 
 .smart-rj24-view-btn {
-    background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+    background: linear-gradient(135deg, #334155, #475569);
     color: white;
     border: none;
-    padding: 16px 32px;
+    padding: 12px 24px;
     border-radius: 12px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.smart-rj24-view-btn.large {
+    padding: 15px 30px;
     font-size: 1rem;
+}
+
+.smart-rj24-view-btn:hover {
+    background: linear-gradient(135deg, #1e293b, #334155);
+    transform: translateX(4px);
+}
+
+.smart-rj24-view-btn svg {
+    width: 16px;
+    height: 16px;
+    transition: transform 0.3s ease;
+}
+
+.smart-rj24-view-btn:hover svg {
+    transform: translateX(4px);
+}
+
+.smart-rj24-btn-secondary {
+    background: #f7fafc;
+    color: #4a5568;
+    border: 2px solid #e2e8f0;
+    padding: 12px 24px;
+    border-radius: 8px;
     font-weight: 600;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -164,68 +159,50 @@
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    position: relative;
-    overflow: hidden;
-}
-
-.smart-rj24-view-btn.large {
-    font-size: 1.1rem;
-    padding: 18px 36px;
-}
-
-.smart-rj24-view-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 12px 40px rgba(30, 41, 59, 0.4);
-}
-
-.smart-rj24-btn-secondary {
-    background: transparent;
-    color: #334155;
-    border: 2px solid #e2e8f0;
-    padding: 16px 32px;
-    border-radius: 12px;
-    font-size: 1rem;
-    font-weight: 600;
-    text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    transition: all 0.3s ease;
 }
 
 .smart-rj24-btn-secondary.large {
-    font-size: 1.1rem;
-    padding: 18px 36px;
+    padding: 15px 30px;
+    font-size: 1rem;
 }
 
 .smart-rj24-btn-secondary:hover {
-    background: #f8fafc;
-    border-color: #cbd5e1;
-    transform: translateY(-1px);
+    background: #edf2f7;
+    border-color: #cbd5e0;
 }
 
 .smart-rj24-hero-stats {
     display: flex;
+    justify-content: flex-start;
     gap: 40px;
     margin-top: 40px;
+    flex-wrap: wrap;
 }
 
 .smart-rj24-stat {
-    text-align: left;
+    text-align: center;
+    padding: 20px 30px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 16px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(71, 85, 105, 0.1);
 }
 
 .smart-rj24-stat-number {
-    display: block;
     font-size: 2rem;
-    font-weight: 700;
-    color: #1e293b;
-    margin-bottom: 4px;
+    font-weight: 800;
+    color: #334155;
+    display: block;
+    line-height: 1.2;
 }
 
 .smart-rj24-stat-label {
     font-size: 0.9rem;
     color: #64748b;
     font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-top: 4px;
 }
 
 .smart-rj24-hero-right {
@@ -233,51 +210,49 @@
 }
 
 .smart-rj24-hero-image {
-    max-width: 500px;
     width: 100%;
+    max-width: 500px;
     height: auto;
-    border-radius: 20px;
-    box-shadow: 0 25px 60px rgba(30, 41, 59, 0.15);
-    transition: transform 0.3s ease;
-}
-
-.smart-rj24-hero-image:hover {
-    transform: scale(1.02);
+    border-radius: 16px;
 }
 
 /* Overview Section */
 .smart-rj24-overview-section {
     padding: 80px 40px;
-    background: #fafafa;
+    background: white;
 }
 
 .smart-rj24-overview-container {
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
     text-align: center;
 }
 
 .smart-rj24-section-title {
     font-size: 2.8rem;
-    font-weight: 700;
+    font-weight: 800;
     font-family: 'Bison-Bold', Arial, sans-serif;
     color: #1e293b;
-    margin-bottom: 24px;
-    line-height: 1.2;
+    margin: 0 0 16px 0;
+    background: linear-gradient(135deg, #1e293b 0%, #475569 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .smart-rj24-overview-text {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
+    line-height: 1.8;
     color: #475569;
-    line-height: 1.7;
-    max-width: 800px;
+    max-width: 1000px;
     margin: 0 auto;
 }
 
 /* Features Section */
 .smart-rj24-features-section {
-    padding: 100px 40px;
-    background: white;
+    background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+    color: white;
+    padding: 80px 40px;
 }
 
 .smart-rj24-features-container {
@@ -287,55 +262,54 @@
 
 .smart-rj24-features-header {
     text-align: center;
-    margin-bottom: 80px;
+    margin-bottom: 60px;
 }
 
 .smart-rj24-features-title {
-    font-size: 2.8rem;
-    font-weight: 700;
-    font-family: 'Bison-Bold', Arial, sans-serif;
-    color: #1e293b;
-    margin-bottom: 20px;
+    font-family: 'Bison-Bold', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin: 0 0 16px 0;
+    background: linear-gradient(135deg, #64748b, #94a3b8);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .smart-rj24-features-subtitle {
-    font-size: 1.2rem;
-    color: #64748b;
-    max-width: 600px;
-    margin: 0 auto;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.1rem;
 }
 
 .smart-rj24-features-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 40px;
-    margin-top: 60px;
 }
 
 .smart-rj24-feature-card {
-    background: #f8fafc;
-    padding: 40px 32px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 20px;
+    padding: 40px 30px;
     text-align: center;
     transition: all 0.3s ease;
-    border: 2px solid transparent;
 }
 
 .smart-rj24-feature-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 20px 60px rgba(30, 41, 59, 0.1);
-    border-color: #e2e8f0;
+    background: rgba(255, 255, 255, 0.08);
 }
 
 .smart-rj24-feature-icon {
     width: 60px;
     height: 60px;
-    background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
-    border-radius: 16px;
+    margin: 0 auto 24px auto;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0 auto 24px auto;
+    background: linear-gradient(135deg, #64748b, #94a3b8);
+    border-radius: 50%;
     color: white;
 }
 
@@ -346,226 +320,171 @@
 
 .smart-rj24-feature-title {
     font-size: 1.4rem;
-    font-weight: 600;
-    color: #1e293b;
+    font-weight: 700;
     margin-bottom: 16px;
 }
 
 .smart-rj24-feature-text {
-    color: #64748b;
+    color: rgba(255, 255, 255, 0.8);
     line-height: 1.6;
-    font-size: 1rem;
 }
 
-/* Specifications Section */
+/* Specs Section */
 .smart-rj24-specs-section {
-    padding: 100px 40px;
+    padding: 80px 40px;
     background: #f8fafc;
 }
 
 .smart-rj24-specs-container {
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
-    text-align: center;
 }
 
 .smart-rj24-section-subtitle {
-    font-size: 1.2rem;
+    text-align: center;
     color: #64748b;
-    margin-bottom: 60px;
+    margin-bottom: 40px;
 }
 
-.smart-rj24-specs-table-wrapper {
+.smart-rj24-specs-grid {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.smart-rj24-spec-card {
     background: white;
+    border: 1px solid #e2e8f0;
     border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0 10px 40px rgba(30, 41, 59, 0.08);
+    padding: 40px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 }
 
-.smart-rj24-spec-table {
-    width: 100%;
+.smart-rj24-spec-card-title {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    color: #1e293b;
+    border-bottom: 2px solid #f1f5f9;
+    padding-bottom: 15px;
 }
 
-.smart-rj24-spec-table-header {
-    background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
-    padding: 24px;
-    color: white;
-}
-
-.smart-rj24-spec-table-title {
-    font-size: 1.4rem;
-    font-weight: 600;
-    margin: 0;
+.smart-rj24-spec-item {
     display: flex;
-    align-items: center;
-    gap: 12px;
-}
-
-.smart-rj24-spec-icon {
-    font-size: 1.2rem;
-}
-
-.smart-rj24-spec-table-body {
-    padding: 0;
-}
-
-.smart-rj24-spec-row {
-    display: flex;
-    align-items: center;
-    padding: 20px 24px;
+    justify-content: space-between;
+    padding: 12px 0;
     border-bottom: 1px solid #f1f5f9;
-    transition: background-color 0.2s ease;
-}
-
-.smart-rj24-spec-row:hover {
-    background: #f8fafc;
-}
-
-.smart-rj24-spec-row:last-child {
-    border-bottom: none;
 }
 
 .smart-rj24-spec-label {
     font-weight: 600;
-    color: #334155;
-    flex: 1;
-    text-align: left;
-}
-
-.smart-rj24-spec-divider {
-    border-top: 2px dotted #e2e8f0;
-    flex: 1;
-    margin: 0 20px;
-    min-width: 20px;
+    color: #64748b;
 }
 
 .smart-rj24-spec-value {
-    color: #64748b;
-    font-weight: 500;
+    color: #1e293b;
     text-align: right;
+    font-weight: 500;
 }
 
-/* Applications Section */
+/* Applications & Advantages Section */
 .smart-rj24-applications-section {
-    padding: 100px 40px;
+    padding: 80px 40px;
     background: white;
 }
 
 .smart-rj24-applications-container {
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
 }
 
 .smart-rj24-applications-grid {
     display: grid;
-    grid-template-columns: 1fr;
-    align-items: center;
-    text-align: center;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
 }
 
-.smart-rj24-applications-content {
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.smart-rj24-applications-subtitle {
-    font-size: 1.2rem;
+.smart-rj24-applications-intro {
     color: #64748b;
-    margin-bottom: 40px;
-}
-
-.smart-rj24-applications-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
-    list-style: none;
-    padding: 0;
-    margin: 0;
+    margin-bottom: 30px;
 }
 
 .smart-rj24-application-item {
     display: flex;
     align-items: center;
     gap: 12px;
-    padding: 16px 20px;
+    margin-bottom: 12px;
+    padding: 10px;
     background: #f8fafc;
-    border-radius: 12px;
-    font-weight: 500;
-    color: #334155;
-    transition: all 0.2s ease;
+    border-radius: 8px;
 }
 
-.smart-rj24-application-item:hover {
-    background: #f1f5f9;
-    transform: translateX(4px);
-}
-
-.smart-rj24-check-icon {
-    width: 20px;
-    height: 20px;
-    color: #22c55e;
-    flex-shrink: 0;
-}
-
-/* Advantages Section */
-.smart-rj24-advantages-section {
-    padding: 100px 40px;
-    background: #f8fafc;
-}
-
-.smart-rj24-advantages-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    text-align: center;
-}
-
-.smart-rj24-advantages-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 32px;
-    margin-top: 60px;
+.smart-rj24-application-dot {
+    width: 8px;
+    height: 8px;
+    background: #334155;
+    border-radius: 50%;
 }
 
 .smart-rj24-advantage-item {
     display: flex;
-    align-items: flex-start;
-    gap: 16px;
-    padding: 28px;
-    background: white;
-    border-radius: 16px;
-    text-align: left;
-    transition: all 0.3s ease;
-    border: 2px solid transparent;
-}
-
-.smart-rj24-advantage-item:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 15px 40px rgba(30, 41, 59, 0.08);
-    border-color: #e2e8f0;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
 }
 
 .smart-rj24-advantage-icon {
-    width: 40px;
-    height: 40px;
-    background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-    color: white;
+    width: 10px;
+    height: 10px;
+    background: #10b981;
+    border-radius: 2px;
 }
 
-.smart-rj24-advantage-icon svg {
-    width: 20px;
-    height: 20px;
+/* CTA Section */
+.smart-rj24-cta-section {
+    padding: 80px 40px;
+    background: #f1f5f9;
+    text-align: center;
 }
 
-.smart-rj24-advantage-text {
+.smart-rj24-cta-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.smart-rj24-cta-title {
+    font-family: 'Bison-Bold', sans-serif;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.smart-rj24-cta-text {
+    font-size: 1.1rem;
     color: #475569;
-    line-height: 1.6;
-    margin: 0;
-    font-size: 1rem;
+    margin-bottom: 40px;
+}
+
+.smart-rj24-cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.smart-rj24-cta-btn-primary {
+    background: #1e293b;
+    color: white;
+    padding: 15px 30px;
+    border-radius: 8px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+}
+
+.smart-rj24-cta-btn-secondary {
+    border: 2px solid #1e293b;
+    padding: 15px 30px;
+    border-radius: 8px;
+    font-weight: 600;
+    color: #1e293b;
+    text-decoration: none;
 }
 
 /* Modal Styles */
@@ -575,231 +494,119 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(0, 0, 0, 0.7);
     display: flex;
     align-items: center;
     justify-content: center;
     z-index: 1000;
-    padding: 20px;
 }
 
 .smart-rj24-inquiry-modal {
     background: white;
     border-radius: 20px;
+    width: 90%;
     max-width: 600px;
-    width: 100%;
     max-height: 90vh;
     overflow-y: auto;
-    position: relative;
 }
 
 .smart-rj24-inquiry-header {
-    padding: 32px 32px 0;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    padding: 20px 40px;
     border-bottom: 1px solid #e2e8f0;
-    margin-bottom: 32px;
-    padding-bottom: 24px;
-}
-
-.smart-rj24-inquiry-header h2 {
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: #1e293b;
-    margin: 0;
 }
 
 .smart-rj24-close-btn {
-    background: none;
+    font-size: 2rem;
     border: none;
-    font-size: 1.8rem;
-    color: #64748b;
+    background: none;
     cursor: pointer;
-    padding: 4px;
-    border-radius: 4px;
-    transition: all 0.2s ease;
-}
-
-.smart-rj24-close-btn:hover {
-    background: #f1f5f9;
-    color: #334155;
 }
 
 .smart-rj24-inquiry-form {
-    padding: 0 32px 32px;
+    padding: 30px 40px;
 }
 
 .smart-rj24-form-row {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     gap: 20px;
-    margin-bottom: 24px;
 }
 
 .smart-rj24-form-group {
-    flex: 1;
-    margin-bottom: 24px;
+    margin-bottom: 20px;
 }
 
 .smart-rj24-form-group label {
     display: block;
-    font-weight: 500;
-    color: #334155;
     margin-bottom: 8px;
-    font-size: 0.95rem;
+    font-weight: 600;
 }
 
 .smart-rj24-form-group input,
-.smart-rj24-form-group textarea {
+.smart-rj24-form-group textarea,
+.smart-rj24-form-group select {
     width: 100%;
-    padding: 12px 16px;
-    border: 2px solid #e2e8f0;
+    padding: 12px;
+    border: 1px solid #e2e8f0;
     border-radius: 8px;
-    font-size: 1rem;
-    transition: border-color 0.2s ease;
-    background: white;
-}
-
-.smart-rj24-form-group input:focus,
-.smart-rj24-form-group textarea:focus {
-    outline: none;
-    border-color: #334155;
 }
 
 .smart-rj24-phone-input {
     display: flex;
-    gap: 8px;
+    gap: 10px;
 }
 
 .smart-rj24-country-select {
-    min-width: 100px;
-    padding: 12px 8px;
-    border: 2px solid #e2e8f0;
-    border-radius: 8px;
-    font-size: 0.9rem;
-    background: white;
+    width: 100px !important;
 }
 
 .smart-rj24-form-actions {
     display: flex;
-    gap: 16px;
     justify-content: flex-end;
-    margin-top: 32px;
+    gap: 15px;
+    margin-top: 20px;
 }
 
 .smart-rj24-btn-primary {
-    background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+    background: #1e293b;
     color: white;
+    padding: 12px 24px;
+    border-radius: 8px;
     border: none;
-    padding: 14px 28px;
-    border-radius: 8px;
-    font-size: 1rem;
+    cursor: pointer;
     font-weight: 600;
-    cursor: pointer;
-    transition: all 0.2s ease;
 }
 
-.smart-rj24-btn-primary:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 8px 20px rgba(30, 41, 59, 0.3);
-}
-
-.smart-rj24-btn-secondary {
-    background: transparent;
-    color: #64748b;
-    border: 2px solid #e2e8f0;
-    padding: 14px 28px;
-    border-radius: 8px;
-    font-size: 1rem;
-    font-weight: 500;
-    cursor: pointer;
-    transition: all 0.2s ease;
-}
-
-.smart-rj24-btn-secondary:hover {
-    background: #f8fafc;
-    border-color: #cbd5e1;
-}
-
-/* Responsive Design */
+/* Responsive */
 @media (max-width: 768px) {
     .smart-rj24-hero-layout {
         flex-direction: column;
-        gap: 40px;
+        text-align: center;
     }
 
-    .smart-rj24-hero-title {
-        font-size: 2.5rem;
-    }
-
-    .smart-rj24-hero-title.product-title {
-        font-size: 2.2rem;
-    }
-
-    .smart-rj24-hero-stats {
-        gap: 20px;
-        justify-content: center;
+    .smart-rj24-hero-left {
+        text-align: center;
     }
 
     .smart-rj24-button-group {
         justify-content: center;
     }
 
-    .smart-rj24-features-grid {
-        grid-template-columns: 1fr;
+    .smart-rj24-hero-stats {
+        justify-content: center;
     }
 
-    .smart-rj24-spec-row {
-        flex-direction: column;
-        text-align: center;
-        gap: 8px;
-    }
-
-    .smart-rj24-spec-label,
-    .smart-rj24-spec-value {
-        text-align: center;
-    }
-
-    .smart-rj24-spec-divider {
-        display: none;
-    }
-
-    .smart-rj24-applications-list {
-        grid-template-columns: 1fr;
-    }
-
-    .smart-rj24-advantages-grid {
+    .smart-rj24-applications-grid {
         grid-template-columns: 1fr;
     }
 
     .smart-rj24-form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .smart-rj24-cta-buttons {
         flex-direction: column;
-        gap: 0;
-    }
-
-    .smart-rj24-form-actions {
-        flex-direction: column;
-    }
-}
-
-@media (max-width: 480px) {
-    .smart-rj24-hero {
-        padding: 60px 20px 40px;
-    }
-
-    .smart-rj24-features-section,
-    .smart-rj24-specs-section,
-    .smart-rj24-applications-section,
-    .smart-rj24-advantages-section,
-    .smart-rj24-overview-section {
-        padding: 60px 20px;
-    }
-
-    .smart-rj24-section-title {
-        font-size: 2.2rem;
-    }
-
-    .smart-rj24-features-title {
-        font-size: 2.2rem;
     }
 }

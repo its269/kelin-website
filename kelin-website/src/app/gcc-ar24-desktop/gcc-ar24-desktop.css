@@ -672,11 +672,6 @@
     gap: 8px;
 }
 
-.gcc-ar24-country-select {
-    flex-shrink: 0;
-    width: 120px;
-}
-
 .gcc-ar24-form-actions {
     display: flex;
     gap: 16px;
@@ -843,11 +838,7 @@
         flex-direction: column;
     }
 
-    .gcc-ar24-country-select {
-        width: 100%;
-    }
-
-    .gcc-ar24-form-actions {
+    .gcc-ar24-applications-list {
         flex-direction: column-reverse;
         gap: 10px;
     }

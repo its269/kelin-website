@@ -20,29 +20,143 @@ export default function Header() {
 
     // Search data - you can expand this or fetch from API
     const searchData = [
+        // Main Pages
+        { title: "Home", path: "/", type: "page" },
         { title: "Explore", path: "/explore", type: "page" },
         { title: "Products", path: "/products", type: "page" },
-        { title: "Inks", path: "/products/inks", type: "product" },
-        { title: "Materials", path: "/products/materials", type: "product" },
-        { title: "Accessories", path: "/products/accessories", type: "product" },
-        { title: "Promotional Display", path: "/products/promotional-display", type: "product" },
-        { title: "Machine", path: "/products/machine", type: "product" },
-        { title: "Eco - Solvent Printers", path: "/products/machine/eco-solvent-printers", type: "product" },
-        { title: "Solvent Printers", path: "/products/machine/solvent-printers", type: "product" },
-        { title: "Cutting Machine", path: "/products/machine/cutting-machine", type: "product" },
-        { title: "Sublimation and DTF", path: "/products/machine/sublimation-dtf", type: "product" },
-        { title: "UV Printers", path: "/products/machine/uv-printers", type: "product" },
-        { title: "Heatpress", path: "/products/machine/heatpress", type: "product" },
-        { title: "Laminator", path: "/products/machine/laminator", type: "product" },
-        { title: "Laser Machine", path: "/products/machine/laser-machine", type: "product" },
-        { title: "Embroidery and Knitting", path: "/products/machine/embroidery-knitting", type: "product" },
-        { title: "3D Printer", path: "/products/machine/3d-printer", type: "product" },
         { title: "About Us", path: "/about", type: "page" },
         { title: "News and Events", path: "/events", type: "page" },
-        { title: "Services", path: "/about", type: "page" },
         { title: "Contact", path: "/contact", type: "page" },
         { title: "Connect with Us", path: "/contact", type: "page" },
-        { title: "events", path: "/events", type: "page" }
+        { title: "Privacy Policy", path: "/privacy-policy", type: "page" },
+
+        // Product Categories
+        { title: "Inks", path: "/inks", type: "category" },
+        { title: "Materials", path: "/materials", type: "category" },
+        { title: "Accessories", path: "/accessories", type: "category" },
+        { title: "Promotional Display", path: "/promotional-display", type: "category" },
+        { title: "Machine", path: "/machine", type: "category" },
+        { title: "Printers", path: "/printers", type: "category" },
+        { title: "Cutters", path: "/cutters", type: "category" },
+
+        // Machine Categories
+        { title: "Eco-Solvent Printers", path: "/eco-solvent-printers", type: "category" },
+        { title: "Solvent Printers", path: "/solvent-printers", type: "category" },
+        { title: "Cutting Machine", path: "/cutting-machine", type: "category" },
+        { title: "Sublimation and DTF", path: "/sublimation-dtf", type: "category" },
+        { title: "UV Printers", path: "/uv-printers", type: "category" },
+        { title: "Heatpress", path: "/heatpress", type: "category" },
+        { title: "Heat Press", path: "/heat-press", type: "category" },
+        { title: "Laminator", path: "/laminator", type: "category" },
+        { title: "Laser Machine", path: "/laser-machine", type: "category" },
+        { title: "Embroidery and Knitting", path: "/embroidery-knitting", type: "category" },
+        { title: "3D Printer", path: "/3d-printer", type: "category" },
+
+        // Ink Products
+        { title: "Brilliant DTF Ink 1L", path: "/inks", type: "ink" },
+        { title: "Brilliant Sublimation Ink 1L", path: "/inks", type: "ink" },
+        { title: "Cleaning Solutions", path: "/inks", type: "ink" },
+        { title: "DTF Cleaning Solutions", path: "/inks", type: "ink" },
+        { title: "Eagle V2 1L", path: "/inks", type: "ink" },
+        { title: "Eagle V2 5L", path: "/inks", type: "ink" },
+        { title: "Eco M15", path: "/inks", type: "ink" },
+        { title: "M21 Ink", path: "/inks", type: "ink" },
+        { title: "Papijet", path: "/inks", type: "ink" },
+        { title: "Papijet LTI 203", path: "/inks", type: "ink" },
+        { title: "Phoenix E2 1L", path: "/inks", type: "ink" },
+        { title: "T14 Eco Plus 2L Inks", path: "/inks", type: "ink" },
+        { title: "Vivid DTF Textile 1L", path: "/inks", type: "ink" },
+        { title: "Vivid Sublimation 1L Ink", path: "/inks", type: "ink" },
+        { title: "Vivid Sublimation 5L Ink", path: "/inks", type: "ink" },
+
+        // Eco-Solvent & Solvent Machines
+        { title: "Smart RJ24 2004 I3200 Eco Solvent", path: "/smart-rj24-2004-i3200-eco-solvent", type: "machine" },
+        { title: "SMART Eco-Solvent Machine", path: "/smart-rj24-2004-i3200-eco-solvent", type: "machine" },
+        { title: "Xline Eco Solvent", path: "/xline-eco-solvent", type: "machine" },
+        { title: "Apollo Xline", path: "/xline-eco-solvent", type: "machine" },
+        { title: "Liyu X-Line DQS UV Hybrid Printer", path: "/liyu-x-line-dqs-uv-hybrid-printer", type: "machine" },
+
+        // Cutting Machines
+        { title: "iEcho BK3", path: "/iecho-bk3", type: "machine" },
+        { title: "BK3 Cutting Machine", path: "/iecho-bk3", type: "machine" },
+        { title: "iEcho BK4", path: "/iecho-bk4", type: "machine" },
+        { title: "BK4 Cutting Machine", path: "/iecho-bk4", type: "machine" },
+        { title: "iEcho PK", path: "/iecho-pk", type: "machine" },
+        { title: "PK1209 Cutting Machine", path: "/iecho-pk", type: "machine" },
+        { title: "iEcho PK4", path: "/iecho-pk4", type: "machine" },
+        { title: "PK4 Cutting Machine", path: "/iecho-pk4", type: "machine" },
+        { title: "iEcho TK4S", path: "/iecho-tk4s", type: "machine" },
+        { title: "TK4S Large Format Cutting System", path: "/iecho-tk4s", type: "machine" },
+        { title: "GCC AR24 Desktop", path: "/gcc-ar24-desktop", type: "machine" },
+        { title: "GCC AR-24 Desktop Cutter", path: "/gcc-ar24-desktop", type: "machine" },
+        { title: "GCC Expert 24LX", path: "/gcc-expert-24lx", type: "machine" },
+        { title: "GCC Expert LX EX-24LX", path: "/gcc-expert-24lx", type: "machine" },
+        { title: "GCC Expert 52LX", path: "/gcc-expert-52lx", type: "machine" },
+        { title: "GCC Expert LX EX-52LX", path: "/gcc-expert-52lx", type: "machine" },
+        { title: "GCC Puma IV", path: "/gcc-puma-iv", type: "machine" },
+        { title: "GCC PUMA IV Cutter", path: "/gcc-puma-iv", type: "machine" },
+
+        // Sublimation & DTF Machines
+        { title: "Smart Sublimation", path: "/smart-sublimation", type: "machine" },
+        { title: "SUBL Smart Sublimation", path: "/smart-sublimation", type: "machine" },
+        { title: "Smart DTF Machine", path: "/smart-dtf-machine", type: "machine" },
+        { title: "DTF SMART DTF Machine", path: "/smart-dtf-machine", type: "machine" },
+        { title: "Smart DTF Powder Shaker", path: "/smart-dtf-powder-shaker", type: "machine" },
+        { title: "DTF Powder Shaker D650", path: "/smart-dtf-powder-shaker", type: "machine" },
+        { title: "DTF Smart Powder Shaker W650-4C", path: "/smart-dtf-powder-shaker", type: "machine" },
+        { title: "Sublimation Printer FD6198E", path: "/sublimation-printer-fd6198e", type: "machine" },
+        { title: "SUBL Sublimation Printer FD6198E", path: "/sublimation-printer-fd6198e", type: "machine" },
+        { title: "Kirin", path: "/kirin", type: "machine" },
+        { title: "Kirin DA182T Plus Sublimation Printer", path: "/kirin", type: "machine" },
+        { title: "R2000 Roller", path: "/r2000-roller", type: "machine" },
+        { title: "R2000 Roller Type Sublimation Machine GS 1200", path: "/r2000-roller", type: "machine" },
+
+        // UV Printers
+        { title: "Smart UV Printer", path: "/smart-uv-printer", type: "machine" },
+        { title: "SMART UV Printer RJ24U", path: "/smart-uv-printer", type: "machine" },
+        { title: "DTF UV Printer SF303 F1080", path: "/dtf-uv-printer-sf303-f1080", type: "machine" },
+        { title: "DTF UV Printer SF303-i3200 2ft", path: "/dtf-uv-printer-sf303-f1080", type: "machine" },
+        { title: "DTF UV Printer SF604 I3200", path: "/dtf-uv-printer-sf604-i3200", type: "machine" },
+        { title: "DTF UV Printer SF604-i3200 2ft", path: "/dtf-uv-printer-sf604-i3200", type: "machine" },
+        { title: "Luxor RTR UV", path: "/luxor-rtr-uv", type: "machine" },
+        { title: "LUXOR UV-A3 RTR", path: "/luxor-rtr-uv", type: "machine" },
+        { title: "DTF Luxor RTR", path: "/luxor-rtr-uv", type: "machine" },
+        { title: "Automatic UV Crystal Flat Pasting", path: "/automatic-uv-crystal-flat-pasting", type: "machine" },
+        { title: "Automatic UV Crystal Flat Pasting Machine 3.82m x 1.72m", path: "/automatic-uv-crystal-flat-pasting", type: "machine" },
+
+        // Heat Press Machines
+        { title: "Sapphire Heat Press", path: "/sapphire-heat-press", type: "machine" },
+        { title: "Sapphire Heatpress 60cm x 90cm", path: "/sapphire-heat-press", type: "machine" },
+        { title: "Subli-Mate Manual Heat Press", path: "/subli-mate-manual-heat-press", type: "machine" },
+        { title: "Subli-Mate Manual Heat Press 80cm x 100cm", path: "/subli-mate-manual-heat-press", type: "machine" },
+        { title: "Dual Pneumatic", path: "/dual-pneumatic", type: "machine" },
+        { title: "Dual Pneumatic Sublimation Machine 80cm x 100cm", path: "/dual-pneumatic", type: "machine" },
+
+        // Laminator Machines
+        { title: "Cold Laminator", path: "/cold-laminator", type: "machine" },
+        { title: "Cold Laminating Machine", path: "/cold-laminator", type: "machine" },
+        { title: "Fulei BU-1425FA Flatbed Laminator", path: "/fulei-bu-1425fa-flatbed-laminator", type: "machine" },
+        { title: "Fulei BU-1425FA Flatbed", path: "/fulei-bu-1425fa-flatbed-laminator", type: "machine" },
+        { title: "Fulei BU-1600E Warm Auto Laminator", path: "/fulei-bu-1600e-warm-auto-laminator", type: "machine" },
+        { title: "Fulei BU-1600E Warm Auto", path: "/fulei-bu-1600e-warm-auto-laminator", type: "machine" },
+
+        // Laser Machines
+        { title: "Handheld Fiber Laser", path: "/handheld-fiber-laser", type: "machine" },
+        { title: "TFZ-S Mini Handheld Laser Welding", path: "/handheld-fiber-laser", type: "machine" },
+        { title: "Handheld Fiber Laser Welding Machine", path: "/handheld-fiber-laser", type: "machine" },
+        { title: "Reci Handheld Fiber Laser Welding Machine R-A80 800W", path: "/laser-machine", type: "machine" },
+        { title: "Hanniu K1390 CO2 Laser Cutting Machine 150w", path: "/laser-machine", type: "machine" },
+        { title: "Hanniu K1390 CO2 Laser Cutting Machine 300w", path: "/laser-machine", type: "machine" },
+        { title: "K-Sign Desktop Laser B330", path: "/laser-machine", type: "machine" },
+        { title: "K-Sign DF-1916 Laser Fabric Cutting", path: "/laser-machine", type: "machine" },
+        { title: "K-Sign Desktop Laser Marking", path: "/laser-machine", type: "machine" },
+        { title: "Yueming Fiber Laser CMA-1325C-G-G 1000w", path: "/laser-machine", type: "machine" },
+        { title: "Yueming Fiber Laser HL1530C-G-E 1500w IPG", path: "/laser-machine", type: "machine" },
+
+        // 3D Printer
+        { title: "Apollomax Plus II", path: "/apollomax-plus-II", type: "machine" },
+        { title: "ApolloMax Plus II PZG3208-KV", path: "/apollomax-plus-II", type: "machine" },
+        { title: "K-Sign Letter Shell 3D Printer", path: "/3d-printer", type: "machine" }
     ];
 
     // Helper function to check if link is active
@@ -349,23 +463,23 @@ export default function Header() {
 
                                 {machineOpen && (
                                     <div className="dropdown-menu-nested">
-                                        <Link href="/products/machine/eco-solvent-printers">Eco - Solvent Printers</Link>
-                                        <Link href="/products/machine/solvent-printers">Solvent Printers</Link>
-                                        <Link href="/products/machine/cutting-machine">Cutting Machine</Link>
-                                        <Link href="/products/machine/sublimation-dtf">Sublimation and DTF</Link>
-                                        <Link href="/products/machine/uv-printers">UV Printers</Link>
-                                        <Link href="/products/machine/heatpress">Heatpress</Link>
-                                        <Link href="/products/machine/laminator">Laminator</Link>
-                                        <Link href="/products/machine/laser-machine">Laser Machine</Link>
-                                        <Link href="/products/machine/embroidery-knitting">Embroidery and Knitting</Link>
-                                        <Link href="/products/machine/3d-printer">3D Printer</Link>
+                                        <Link href="/eco-solvent-printers">Eco - Solvent Printers</Link>
+                                        <Link href="/solvent-printers">Solvent Printers</Link>
+                                        <Link href="/cutting-machine">Cutting Machine</Link>
+                                        <Link href="/sublimation-dtf">Sublimation and DTF</Link>
+                                        <Link href="/uv-printers">UV Printers</Link>
+                                        <Link href="/heatpress">Heatpress</Link>
+                                        <Link href="/laminator">Laminator</Link>
+                                        <Link href="/laser-machine">Laser Machine</Link>
+                                        <Link href="/embroidery-knitting">Embroidery and Knitting</Link>
+                                        <Link href="/3d-printer">3D Printer</Link>
                                     </div>
                                 )}
                             </div>
-                            <Link href="/products/inks">Inks</Link>
-                            <Link href="/products/materials">Materials</Link>
-                            <Link href="/products/accessories">Accessories</Link>
-                            <Link href="/products/promotional-display">Promotional Display</Link>
+                            <Link href="/inks">Inks</Link>
+                            <Link href="/materials">Materials</Link>
+                            <Link href="/accessories">Accessories</Link>
+                            <Link href="/promotional-display">Promotional Display</Link>
                         </div>
                     )}
                 </div>
@@ -461,10 +575,10 @@ export default function Header() {
                                     className="mobile-dropdown-menu"
                                     role="menu"
                                 >
-                                    <Link href="/products/inks" onClick={() => setOpen(false)} role="menuitem">Inks</Link>
-                                    <Link href="/products/materials" onClick={() => setOpen(false)} role="menuitem">Materials</Link>
-                                    <Link href="/products/accessories" onClick={() => setOpen(false)} role="menuitem">Accessories</Link>
-                                    <Link href="/products/promotional-display" onClick={() => setOpen(false)} role="menuitem">Promotional Display</Link>
+                                    <Link href="/inks" onClick={() => setOpen(false)} role="menuitem">Inks</Link>
+                                    <Link href="/materials" onClick={() => setOpen(false)} role="menuitem">Materials</Link>
+                                    <Link href="/accessories" onClick={() => setOpen(false)} role="menuitem">Accessories</Link>
+                                    <Link href="/promotional-display" onClick={() => setOpen(false)} role="menuitem">Promotional Display</Link>
 
                                     {/* Mobile Machine Nested Dropdown */}
                                     <div className="mobile-dropdown-nested">
@@ -487,16 +601,16 @@ export default function Header() {
                                                 className="mobile-dropdown-menu-nested"
                                                 role="menu"
                                             >
-                                                <Link href="/products/machine/eco-solvent-printers" onClick={() => setOpen(false)} role="menuitem">Eco - Solvent Printers</Link>
-                                                <Link href="/products/machine/solvent-printers" onClick={() => setOpen(false)} role="menuitem">Solvent Printers</Link>
-                                                <Link href="/products/machine/cutting-machine" onClick={() => setOpen(false)} role="menuitem">Cutting Machine</Link>
-                                                <Link href="/products/machine/sublimation-dtf" onClick={() => setOpen(false)} role="menuitem">Sublimation and DTF</Link>
-                                                <Link href="/products/machine/uv-printers" onClick={() => setOpen(false)} role="menuitem">UV Printers</Link>
-                                                <Link href="/products/machine/heatpress" onClick={() => setOpen(false)} role="menuitem">Heatpress</Link>
-                                                <Link href="/products/machine/laminator" onClick={() => setOpen(false)} role="menuitem">Laminator</Link>
-                                                <Link href="/products/machine/laser-machine" onClick={() => setOpen(false)} role="menuitem">Laser Machine</Link>
-                                                <Link href="/products/machine/embroidery-knitting" onClick={() => setOpen(false)} role="menuitem">Embroidery and Knitting</Link>
-                                                <Link href="/products/machine/3d-printer" onClick={() => setOpen(false)} role="menuitem">3D Printer</Link>
+                                                <Link href="/eco-solvent-printers" onClick={() => setOpen(false)} role="menuitem">Eco - Solvent Printers</Link>
+                                                <Link href="/solvent-printers" onClick={() => setOpen(false)} role="menuitem">Solvent Printers</Link>
+                                                <Link href="/cutting-machine" onClick={() => setOpen(false)} role="menuitem">Cutting Machine</Link>
+                                                <Link href="/sublimation-dtf" onClick={() => setOpen(false)} role="menuitem">Sublimation and DTF</Link>
+                                                <Link href="/uv-printers" onClick={() => setOpen(false)} role="menuitem">UV Printers</Link>
+                                                <Link href="/heatpress" onClick={() => setOpen(false)} role="menuitem">Heatpress</Link>
+                                                <Link href="/laminator" onClick={() => setOpen(false)} role="menuitem">Laminator</Link>
+                                                <Link href="/laser-machine" onClick={() => setOpen(false)} role="menuitem">Laser Machine</Link>
+                                                <Link href="/embroidery-knitting" onClick={() => setOpen(false)} role="menuitem">Embroidery and Knitting</Link>
+                                                <Link href="/3d-printer" onClick={() => setOpen(false)} role="menuitem">3D Printer</Link>
                                             </div>
                                         )}
                                     </div>

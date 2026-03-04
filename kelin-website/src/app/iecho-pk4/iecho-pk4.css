@@ -460,15 +460,6 @@
 .iecho-pk4-applications-container {
     max-width: 1400px;
     margin: 0 auto;
-}
-
-.iecho-pk4-applications-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 60px;
-}
-
-.iecho-pk4-applications-content {
     text-align: center;
 }
 
@@ -479,37 +470,62 @@
     line-height: 1.6;
 }
 
-.iecho-pk4-applications-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 16px;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    text-align: left;
+.iecho-pk4-applications-scroll {
+    overflow-x: auto;
+    overflow-y: hidden;
+    margin-top: 40px;
+    padding-bottom: 20px;
+    -webkit-overflow-scrolling: touch;
+    cursor: grab;
+    user-select: none;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
 }
 
-.iecho-pk4-application-item {
+.iecho-pk4-applications-scroll::-webkit-scrollbar {
+    display: none;
+}
+
+.iecho-pk4-applications-scroll:active {
+    cursor: grabbing;
+}
+
+.iecho-pk4-applications-image-grid {
     display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 16px;
-    background: #f8fafc;
+    gap: 24px;
+    width: max-content;
+}
+
+.iecho-pk4-application-image-item {
+    flex: 0 0 280px;
+    background: white;
     border: 1px solid #e2e8f0;
     border-radius: 12px;
+    overflow: hidden;
     transition: all 0.3s ease;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
-.iecho-pk4-application-item:hover {
-    background: #f1f5f9;
-    transform: translateY(-2px);
+.iecho-pk4-application-image-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    border-color: #3b82f6;
 }
 
-.iecho-pk4-check-icon {
-    width: 24px;
-    height: 24px;
-    color: #10b981;
-    flex-shrink: 0;
+.iecho-pk4-application-image-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
+
+.iecho-pk4-application-image-item p {
+    padding: 16px;
+    margin: 0;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #334155;
+    text-align: center;
 }
 
 /* Advantages Section */
@@ -671,11 +687,6 @@
     gap: 8px;
 }
 
-.iecho-pk4-country-select {
-    flex-shrink: 0;
-    width: 120px;
-}
-
 .iecho-pk4-form-actions {
     display: flex;
     gap: 16px;
@@ -798,10 +809,6 @@
 
     .iecho-pk4-phone-input {
         flex-direction: column;
-    }
-
-    .iecho-pk4-country-select {
-        width: 100%;
     }
 
     .iecho-pk4-applications-list {
