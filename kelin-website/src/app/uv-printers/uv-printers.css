@@ -28,7 +28,7 @@
 }
 
 .uv-printers-hero::before {
-    content: '';
+    content: '✔';
     position: absolute;
     top: -50%;
     left: -50%;
@@ -132,7 +132,7 @@
 }
 
 .uv-printers-machine-card::before {
-    content: '';
+    content: '✔';
     position: absolute;
     top: 0;
     left: 0;
@@ -228,7 +228,7 @@
 }
 
 .uv-printers-spec-icon::after {
-    content: 'âœ“';
+    content: '✔';
     position: absolute;
     top: 50%;
     left: 50%;

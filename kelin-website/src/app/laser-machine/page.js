@@ -82,7 +82,7 @@ export default function LaserMachine() {
             ],
             badge: 'Fabric Specialist',
             price: 'Contact us for more details',
-            link: '/products/laser/k-sign-fabric'
+            link: '/k-sign-df-1916-laser-fabric-cutting'
         },
         {
             id: 'k-sign-desktop-marking',
@@ -97,7 +97,7 @@ export default function LaserMachine() {
             ],
             badge: 'Marking',
             price: 'Contact us for more details',
-            link: '/products/laser/k-sign-marking'
+            link: '/k-sign-desktop-laser-marking'
         },
         {
             id: 'reci-handheld-welding',
@@ -112,7 +112,7 @@ export default function LaserMachine() {
             ],
             badge: 'Welding Pro',
             price: 'Contact us for more details',
-            link: '/products/laser/reci-welding'
+            link: '/reci-handheld-fiber-laser-welding'
         },
         {
             id: 'yueming-fiber-1000w',
@@ -127,7 +127,7 @@ export default function LaserMachine() {
             ],
             badge: 'Industrial',
             price: 'Contact us for more details',
-            link: '/products/laser/yueming-1000w'
+            link: '/yueming-fiber-laser-cma-1325c-g-g'
         },
         {
             id: 'yueming-fiber-1500w',
@@ -142,7 +142,7 @@ export default function LaserMachine() {
             ],
             badge: 'Premium',
             price: 'Contact us for more details',
-            link: '/products/laser/yueming-1500w'
+            link: '/yueming-fiber-laser-hl1530c-g-e'
         }
     ];
 

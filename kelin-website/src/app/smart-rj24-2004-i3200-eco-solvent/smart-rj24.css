@@ -28,7 +28,7 @@
 }
 
 .smart-rj24-hero::before {
-    content: '';
+    content: '✔';
     position: absolute;
     top: -50%;
     left: -50%;
@@ -776,7 +776,7 @@
 }
 
 .smart-rj24-advantage-icon::after {
-    content: 'âœ“';
+    content: 'ÃƒÂ¢Ã…â€œÃ¢â‚¬Å“';
     color: white;
     font-weight: bold;
     font-size: 10px;

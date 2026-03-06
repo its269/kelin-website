@@ -49,7 +49,7 @@ export default function Explore() {
       description: 'State-of-the-art printing and finishing equipment including printers, cutters, laminators, and heat presses for professional production.',
       icon: '/machines.png',
       productCount: '10+',
-      href: '/products/machine',
+      href: '/machine',
       image: '/cat_machine.png',
       products: [
         { name: 'Digital Printers', desc: 'Wide format printing solutions' },

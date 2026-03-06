@@ -1,5 +1,5 @@
 import Header from '../components/Header';
-import '../../product-detail.css';
+import '../products/product-detail.css';
 
 export default function HeatPress() {
   return (

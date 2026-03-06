@@ -29,7 +29,7 @@
 }
 
 .eco-sol-hero::before {
-    content: '';
+    content: '✔';
     position: absolute;
     top: -50%;
     left: -50%;
@@ -165,7 +165,7 @@
 }
 
 .eco-sol-machine-card::before {
-    content: '';
+    content: '✔';
     position: absolute;
     top: 0;
     left: 0;
@@ -262,7 +262,7 @@
 }
 
 .eco-sol-spec-icon::after {
-    content: 'âœ“';
+    content: '✔';
     position: absolute;
     top: 50%;
     left: 50%;

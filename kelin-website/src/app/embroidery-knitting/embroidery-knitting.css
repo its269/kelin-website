@@ -28,7 +28,7 @@
 }
 
 .embroidery-hero::before {
-    content: '';
+    content: '✔';
     position: absolute;
     top: -50%;
     left: -50%;
@@ -164,7 +164,7 @@
 }
 
 .embroidery-machine-card::before {
-    content: '';
+    content: '✔';
     position: absolute;
     top: 0;
     left: 0;
@@ -260,7 +260,7 @@
 }
 
 .embroidery-spec-icon::after {
-    content: 'âœ“';
+    content: '✔';
     position: absolute;
     top: 50%;
     left: 50%;

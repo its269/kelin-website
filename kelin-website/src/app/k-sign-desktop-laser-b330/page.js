@@ -35,7 +35,7 @@ export default function KSignDesktopLaserB330() {
     };
 
     const machineDetails = {
-        name: 'K-SIGN',
+        name: 'K-Sign Desktop Laser B330',
         model: 'LASER ENGRAVING MACHINE',
         images: [
             '/laser-machines/K-Sign Desktop Laser B330.png',
@@ -77,7 +77,7 @@ export default function KSignDesktopLaserB330() {
             { label: 'Laser Tube', value: 'Optical Power 5W, Wavelength 445nm' },
             { label: 'Safety Detection', value: 'Tilt Protection' },
             { label: 'Guide Rail', value: 'High Speed Linear Guideway' },
-            { label: 'Max. Acceleration', value: '10000mm/sÃ‚Â²' },
+            { label: 'Max. Acceleration', value: '10000mm/s²' },
             { label: 'Max. Engraving Speed', value: '600mm/s' },
             { label: 'Connection Method', value: 'USB/WIFI' },
             { label: 'Compatible Software', value: 'LaserGRBL Lightburn, Craft Express' },
@@ -98,7 +98,7 @@ export default function KSignDesktopLaserB330() {
             'Desktop crafting'
         ],
         advantages: [
-            'Ultra-fast 44-seconds engraving (80Ãƒâ€”90mm)',
+            'Ultra-fast 44-seconds engraving (80×90mm)',
             'Industrial-grade 600mm/s speed',
             '0.01mm precision engraving',
             'Tilt protection safety feature',
@@ -107,7 +107,7 @@ export default function KSignDesktopLaserB330() {
             'Desktop protection tray included',
             'Smoke purifier for clean operation',
             'High speed linear guideway',
-            '10000mm/sÃ‚Â² max acceleration',
+            '10000mm/s² max acceleration',
             'USB/WiFi connectivity',
             'Compatible with LaserGRBL, Lightburn, Craft Express'
         ]
@@ -281,7 +281,7 @@ export default function KSignDesktopLaserB330() {
                 {/* Advantages */}
                 <section className="ksign-b330-advantages-section">
                     <div className="ksign-b330-advantages-container">
-                        <h2 className="ksign-b330-section-title">Why Choose K1390 CO2 Laser (300W)?</h2>
+                        <h2 className="ksign-b330-section-title">Why Choose K-Sign Desktop Laser B330?</h2>
                         <div className="ksign-b330-advantages-grid">
                             {machineDetails.advantages.map((advantage, index) => (
                                 <div key={index} className="ksign-b330-advantage-item">
@@ -305,7 +305,7 @@ export default function KSignDesktopLaserB330() {
                     <div className="ksign-b330-inquiry-modal" onClick={(e) => e.stopPropagation()}>
                         <div className="ksign-b330-inquiry-header">
                             <h2>Request Quote - {machineDetails.model}</h2>
-                            <button onClick={closeInquiryModal} className="ksign-b330-close-btn">Ãƒâ€”</button>
+                            <button onClick={closeInquiryModal} className="ksign-b330-close-btn">×</button>
                         </div>
 
                         <form onSubmit={handleSubmitInquiry} className="ksign-b330-inquiry-form">
@@ -335,17 +335,24 @@ export default function KSignDesktopLaserB330() {
                                 <label htmlFor="phone">Phone Number *</label>
                                 <div className="ksign-b330-phone-input">
                                     <select className="ksign-b330-country-select" name="countryCode" defaultValue="+63">
-                                        <option value="+1">Ã°Å¸â€¡ÂºÃ°Å¸â€¡Â¸ +1</option>
-                                        <option value="+33">Ã°Å¸â€¡Â«Ã°Å¸â€¡Â· +33</option>
-                                        <option value="+44">Ã°Å¸â€¡Â¬Ã°Å¸â€¡Â§ +44</option>
-                                        <option value="+49">Ã°Å¸â€¡Â©Ã°Å¸â€¡Âª +49</option>
-                                        <option value="+55">Ã°Å¸â€¡Â§Ã°Å¸â€¡Â· +55</option>
-                                        <option value="+61">Ã°Å¸â€¡Â¦Ã°Å¸â€¡Âº +61</option>
-                                        <option value="+63">Ã°Å¸â€¡ÂµÃ°Å¸â€¡Â­ +63</option>
-                                        <option value="+81">Ã°Å¸â€¡Â¯Ã°Å¸â€¡Âµ +81</option>
-                                        <option value="+82">Ã°Å¸â€¡Â°Ã°Å¸â€¡Â· +82</option>
-                                        <option value="+86">Ã°Å¸â€¡Â¨Ã°Å¸â€¡Â³ +86</option>
-                                        <option value="+91">Ã°Å¸â€¡Â®Ã°Å¸â€¡Â³ +91</option>
+                                        <option value="+63">🇵🇭 +63</option>
+                                        <option value="+1">🇺🇸 +1</option>
+                                        <option value="+86">🇨🇳 +86</option>
+                                        <option value="+81">🇯🇵 +81</option>
+                                        <option value="+82">🇰🇷 +82</option>
+                                        <option value="+65">🇸🇬 +65</option>
+                                        <option value="+60">🇲🇾 +60</option>
+                                        <option value="+66">🇹🇭 +66</option>
+                                        <option value="+84">🇻🇳 +84</option>
+                                        <option value="+62">🇮🇩 +62</option>
+                                        <option value="+91">🇮🇳 +91</option>
+                                        <option value="+44">🇬🇧 +44</option>
+                                        <option value="+49">🇩🇪 +49</option>
+                                        <option value="+33">🇫🇷 +33</option>
+                                        <option value="+39">🇮🇹 +39</option>
+                                        <option value="+34">🇪🇸 +34</option>
+                                        <option value="+61">🇦🇺 +61</option>
+                                        <option value="+64">🇳🇿 +64</option>
                                     </select>
                                     <input type="tel" name="phone" placeholder="Enter phone number" required />
                                 </div>

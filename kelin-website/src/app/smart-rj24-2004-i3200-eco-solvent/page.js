@@ -1,12 +1,38 @@
 "use client";
 import Header from '../components/Header';
 import Link from 'next/link';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import './smart-rj24-unique.css';
 
 export default function SmartRJ24I3200EcoSolvent() {
     const [inquiryModalOpen, setInquiryModalOpen] = useState(false);
     const [selectedImage, setSelectedImage] = useState('/SMART Eco-Solvent Machine.png');
+    const scrollRef = useRef(null);
+    const [isDragging, setIsDragging] = useState(false);
+    const [startX, setStartX] = useState(0);
+    const [scrollLeft, setScrollLeft] = useState(0);
+
+    const handleMouseDown = (e) => {
+        setIsDragging(true);
+        setStartX(e.pageX - scrollRef.current.offsetLeft);
+        setScrollLeft(scrollRef.current.scrollLeft);
+    };
+
+    const handleMouseMove = (e) => {
+        if (!isDragging) return;
+        e.preventDefault();
+        const x = e.pageX - scrollRef.current.offsetLeft;
+        const walk = (x - startX) * 2;
+        scrollRef.current.scrollLeft = scrollLeft - walk;
+    };
+
+    const handleMouseUp = () => {
+        setIsDragging(false);
+    };
+
+    const handleMouseLeave = () => {
+        setIsDragging(false);
+    };
 
     const machineDetails = {
         name: 'SMART ECO-SOLVENT RJ24-2002 & 2004 6FT',
@@ -224,39 +250,72 @@ export default function SmartRJ24I3200EcoSolvent() {
                 {/* Applications */}
                 <section className="smart-rj24-applications-section">
                     <div className="smart-rj24-applications-container">
-                        <div className="smart-rj24-applications-grid">
-                            <div className="smart-rj24-applications-left">
-                                <h2 className="smart-rj24-section-title">Applications</h2>
-                                <p className="smart-rj24-applications-intro">
-                                    Perfect for a wide range of professional printing applications
-                                </p>
-                                <div className="smart-rj24-applications-grid-items">
-                                    {machineDetails.applications.map((application, index) => (
-                                        <div key={index} className="smart-rj24-application-item">
-                                            <div className="smart-rj24-application-dot"></div>
-                                            <span className="smart-rj24-application-text">{application}</span>
-                                        </div>
-                                    ))}
+                        <h2 className="smart-rj24-section-title">Applications</h2>
+                        <p className="smart-rj24-applications-subtitle">
+                            Professional eco-solvent printing solutions for diverse applications
+                        </p>
+                        <div
+                            ref={scrollRef}
+                            className="smart-rj24-applications-scroll"
+                            onMouseDown={handleMouseDown}
+                            onMouseMove={handleMouseMove}
+                            onMouseUp={handleMouseUp}
+                            onMouseLeave={handleMouseLeave}
+                        >
+                            <div className="smart-rj24-applications-image-grid">
+                                <div className="smart-rj24-application-image-item">
+                                    <img src="/application/_0000_6.jpg" alt="Vehicle Wraps" />
+                                    <p>Vehicle Wraps</p>
+                                </div>
+                                <div className="smart-rj24-application-image-item">
+                                    <img src="/application/_0001_5.jpg" alt="Art Reproduction / Wall Decor" />
+                                    <p>Art Reproduction / Wall Decor</p>
+                                </div>
+                                <div className="smart-rj24-application-image-item">
+                                    <img src="/application/_0002_4.jpg" alt="Interior Decoration / Wall Murals" />
+                                    <p>Interior Decoration / Wall Murals</p>
+                                </div>
+                                <div className="smart-rj24-application-image-item">
+                                    <img src="/application/_0003_3.jpg" alt="Exhibition Graphics / Posters" />
+                                    <p>Exhibition Graphics / Posters</p>
+                                </div>
+                                <div className="smart-rj24-application-image-item">
+                                    <img src="/application/_0004_2.jpg" alt="Outdoor Banners" />
+                                    <p>Outdoor Banners</p>
+                                </div>
+                                <div className="smart-rj24-application-image-item">
+                                    <img src="/application/_0005_1.jpg" alt="Large Format Signage" />
+                                    <p>Large Format Signage</p>
+                                </div>
+                                <div className="smart-rj24-application-image-item">
+                                    <img src="/application/_0000_6.jpg" alt="Commercial Advertising" />
+                                    <p>Commercial Advertising</p>
+                                </div>
+                                <div className="smart-rj24-application-image-item">
+                                    <img src="/application/_0001_5.jpg" alt="Retail Graphics" />
+                                    <p>Retail Graphics</p>
                                 </div>
                             </div>
-                            <div className="smart-rj24-applications-right">
-                                <h2 className="smart-rj24-section-title">Advantages</h2>
-                                <p className="smart-rj24-applications-intro">
-                                    Why choose the SMART RJ24-2004-i3200 for your business
-                                </p>
-                                <div className="smart-rj24-advantages-list">
-                                    {machineDetails.advantages.map((advantage, index) => (
-                                        <div key={index} className="smart-rj24-advantage-item">
-                                            <div className="smart-rj24-advantage-icon">
-                                                {/* <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="3">
-                                                    <path d="m9 12 2 2 4-4" />
-                                                </svg> */}
-                                            </div>
-                                            <span className="smart-rj24-advantage-text">{advantage}</span>
-                                        </div>
-                                    ))}
+                        </div>
+                    </div>
+                </section>
+
+                {/* Advantages */}
+                <section className="smart-rj24-advantages-section">
+                    <div className="smart-rj24-advantages-container">
+                        <h2 className="smart-rj24-section-title">Why Choose SMART RJ24-2004-i3200?</h2>
+                        <div className="smart-rj24-advantages-grid">
+                            {machineDetails.advantages.map((advantage, index) => (
+                                <div key={index} className="smart-rj24-advantage-item">
+                                    <div className="smart-rj24-advantage-icon">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                            <circle cx="12" cy="12" r="10" />
+                                            <path d="M9 12l2 2 4-4" />
+                                        </svg>
+                                    </div>
+                                    <p className="smart-rj24-advantage-text">{advantage}</p>
                                 </div>
-                            </div>
+                            ))}
                         </div>
                     </div>
                 </section>

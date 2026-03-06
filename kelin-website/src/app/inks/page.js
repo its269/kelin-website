@@ -260,7 +260,7 @@ const getInkProductsData = () => {
             name: "T14 Cyan",
             size: "1L",
             color: "Cyan",
-            image: "/KELIN-LOGO-01.png",
+            image: "/inks/T14 1L/_0002_T14-Ink-1L-Cyan-(Transparent).png",
             description: "T14 series cyan solvent ink for professional printing applications.",
             specifications: {
               "Volume": "1 Liter",
@@ -271,7 +271,7 @@ const getInkProductsData = () => {
             name: "T14 Magenta",
             size: "1L",
             color: "Magenta",
-            image: "/KELIN-LOGO-01.png",
+            image: "/inks/T14 1L/_0001_T14-Ink-1L-Magenta-(Transparent).png",
             description: "T14 series magenta solvent ink for professional printing applications.",
             specifications: {
               "Volume": "1 Liter",
@@ -282,7 +282,7 @@ const getInkProductsData = () => {
             name: "T14 Yellow",
             size: "1L",
             color: "Yellow",
-            image: "/KELIN-LOGO-01.png",
+            image: "/inks/T14 1L/_0000_T14-Ink-1L-Yellow-(Transparent).png",
             description: "T14 series yellow solvent ink for professional printing applications.",
             specifications: {
               "Volume": "1 Liter",
@@ -293,7 +293,7 @@ const getInkProductsData = () => {
             name: "T14 Black",
             size: "1L",
             color: "Black",
-            image: "/KELIN-LOGO-01.png",
+            image: "/inks/T14 1L/_0003_T14-Ink-1L-Black-(Transparent).png",
             description: "T14 series black solvent ink for professional printing applications.",
             specifications: {
               "Volume": "1 Liter",
@@ -1053,7 +1053,7 @@ export default function Inks() {
                 Browse our complete selection of professional printing inks for all your projects.
                 From eco-friendly options to high-performance solutions.
               </p>
-              <div className="inks-hero-stats">
+              {/* <div className="inks-hero-stats">
                 <div className="inks-stat">
                   <span className="inks-stat-number">70+</span>
                   <span className="inks-stat-label">Products</span>
@@ -1066,7 +1066,7 @@ export default function Inks() {
                   <span className="inks-stat-number">24/7</span>
                   <span className="inks-stat-label">Support</span>
                 </div>
-              </div>
+              </div> */}
             </div>
           </header>
 
