@@ -405,33 +405,47 @@
 
 .iecho-pk-specs-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
-    gap: 40px;
+    grid-template-columns: 1fr;
+    gap: 30px;
     margin-top: 60px;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .iecho-pk-spec-card {
-    background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+    background: #ffffff;
     border: 1px solid #e2e8f0;
-    border-radius: 20px;
-    padding: 40px 30px;
+    border-radius: 8px;
+    padding: 24px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 .iecho-pk-spec-card-title {
     font-size: 1.5rem;
-    font-weight: 700;
+    font-weight: 600;
     color: #1e293b;
-    margin: 0 0 30px 0;
+    margin: 0 0 24px 0;
     text-align: center;
 }
 
+.iecho-pk-spec-card-body {
+    display: grid;
+    gap: 1px;
+}
+
 .iecho-pk-spec-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    padding: 12px 0;
-    border-bottom: 1px solid rgba(226, 232, 240, 0.5);
-    gap: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 16px;
+    padding: 12px 16px;
+    background: #f8fafc;
+    border: none;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.iecho-pk-spec-item:nth-child(even) {
+    background: #ffffff;
 }
 
 .iecho-pk-spec-item:last-child {
@@ -441,14 +455,19 @@
 .iecho-pk-spec-label {
     font-weight: 600;
     color: #475569;
-    flex-shrink: 0;
-    min-width: 140px;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
 }
 
 .iecho-pk-spec-value {
     color: #1e293b;
+    font-weight: 500;
+    font-size: 0.9rem;
     text-align: right;
-    line-height: 1.4;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
 }
 
 /* Applications Section */

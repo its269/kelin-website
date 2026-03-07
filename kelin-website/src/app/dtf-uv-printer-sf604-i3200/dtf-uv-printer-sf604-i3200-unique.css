@@ -514,6 +514,63 @@
     color: #64748b;
     margin-bottom: 40px;
     line-height: 1.6;
+    text-align: center;
+}
+
+.dtf-uv-sf604-applications-scroll {
+    width: 100%;
+    overflow-x: auto;
+    cursor: grab;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.dtf-uv-sf604-applications-scroll::-webkit-scrollbar {
+    display: none;
+}
+
+.dtf-uv-sf604-applications-scroll:active {
+    cursor: grabbing;
+}
+
+.dtf-uv-sf604-applications-image-grid {
+    display: flex;
+    gap: 24px;
+    padding: 20px 0;
+}
+
+.dtf-uv-sf604-application-image-item {
+    min-width: 280px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 20px;
+    transition: all 0.3s ease;
+}
+
+.dtf-uv-sf604-application-image-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.dtf-uv-sf604-application-image-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 12px;
+}
+
+.dtf-uv-sf604-application-image-item p {
+    font-size: 1rem;
+    color: #334155;
+    margin: 0;
+    font-weight: 500;
 }
 
 .dtf-uv-sf604-applications-list {

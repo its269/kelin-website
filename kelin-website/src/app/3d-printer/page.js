@@ -13,16 +13,16 @@ export default function ThreeDPrinterMachine() {
             id: 'k-sign-letter-shell',
             name: 'K-Sign Letter Shell 3D Printer',
             image: '/K-Sign Letter Shell 3D Printer.png',
-            description: 'PROFESSIONAL 3D PRINTING SOLUTION - Advanced 3D printer specialized in letter shell production with precision layer control and professional-grade printing capabilities for signage applications.',
+            description: 'SMART AUTO-LEVELING WITH DATABASE - Automatically stores platform configurations, eliminating the need for re-leveling, streamlining workflow, reducing manual effort, and ensuring consistent, high-volume output. Building speed 700 mm/s.',
             specs: [
-                'Application: Letter shell printing',
-                'Technology: Advanced 3D printing',
-                'Precision: High-resolution layers',
-                'Materials: Professional grade'
+                'Printing Speed: 700 mm/s',
+                'Layer Thickness: 10μm',
+                'Filament: PLA',
+                'Auto-leveling with database storage'
             ],
             badge: 'Professional',
             price: 'Contact us for more details',
-            link: '/products/3d-printer/k-sign-letter-shell'
+            link: '/k-sign-letter-shell-3d-printer'
         }
     ];
 

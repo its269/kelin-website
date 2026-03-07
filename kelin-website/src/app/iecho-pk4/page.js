@@ -1,12 +1,38 @@
 "use client";
 import Header from '../components/Header';
 import Link from 'next/link';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import './iecho-pk4.css';
 
 export default function IEchoPK4() {
     const [inquiryModalOpen, setInquiryModalOpen] = useState(false);
     const [selectedImage, setSelectedImage] = useState('/PK4 (2).png');
+    const scrollRef = useRef(null);
+    const [isDragging, setIsDragging] = useState(false);
+    const [startX, setStartX] = useState(0);
+    const [scrollLeft, setScrollLeft] = useState(0);
+
+    const handleMouseDown = (e) => {
+        setIsDragging(true);
+        setStartX(e.pageX - scrollRef.current.offsetLeft);
+        setScrollLeft(scrollRef.current.scrollLeft);
+    };
+
+    const handleMouseMove = (e) => {
+        if (!isDragging) return;
+        e.preventDefault();
+        const x = e.pageX - scrollRef.current.offsetLeft;
+        const walk = (x - startX) * 2;
+        scrollRef.current.scrollLeft = scrollLeft - walk;
+    };
+
+    const handleMouseUp = () => {
+        setIsDragging(false);
+    };
+
+    const handleMouseLeave = () => {
+        setIsDragging(false);
+    };
 
     const machineDetails = {
         name: 'iecho pk4',
@@ -222,23 +248,67 @@ export default function IEchoPK4() {
                 {/* Applications */}
                 <section className="iecho-pk4-applications-section">
                     <div className="iecho-pk4-applications-container">
-                        <div className="iecho-pk4-applications-grid">
-                            <div className="iecho-pk4-applications-content">
-                                <h2 className="iecho-pk4-section-title">Applications</h2>
-                                <p className="iecho-pk4-applications-subtitle">
-                                    Versatile cutting solutions for professional applications
-                                </p>
-                                <ul className="iecho-pk4-applications-list">
-                                    {machineDetails.applications.map((application, index) => (
-                                        <li key={index} className="iecho-pk4-application-item">
-                                            <svg className="iecho-pk4-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                                                <path d="M9 12l2 2 4-4" />
-                                                <circle cx="12" cy="12" r="10" />
-                                            </svg>
-                                            {application}
-                                        </li>
-                                    ))}
-                                </ul>
+                        <h2 className="iecho-pk4-section-title">Applications</h2>
+                        <p className="iecho-pk4-applications-subtitle">
+                            Versatile cutting solutions for professional applications
+                        </p>
+                        <div
+                            ref={scrollRef}
+                            className="iecho-pk4-applications-scroll"
+                            onMouseDown={handleMouseDown}
+                            onMouseMove={handleMouseMove}
+                            onMouseUp={handleMouseUp}
+                            onMouseLeave={handleMouseLeave}
+                        >
+                            <div className="iecho-pk4-applications-image-grid">
+                                <div className="iecho-pk4-application-image-item">
+                                    <img src="/application/_0000_6.jpg" alt="KT Board Processing" />
+                                    <p>KT Board Processing</p>
+                                </div>
+                                <div className="iecho-pk4-application-image-item">
+                                    <img src="/application/_0001_5.jpg" alt="PP Paper Cutting" />
+                                    <p>PP Paper Cutting</p>
+                                </div>
+                                <div className="iecho-pk4-application-image-item">
+                                    <img src="/application/_0002_4.jpg" alt="Sticker & Vinyl Applications" />
+                                    <p>Sticker & Vinyl Applications</p>
+                                </div>
+                                <div className="iecho-pk4-application-image-item">
+                                    <img src="/application/_0003_3.jpg" alt="Foam Board Manufacturing" />
+                                    <p>Foam Board Manufacturing</p>
+                                </div>
+                                <div className="iecho-pk4-application-image-item">
+                                    <img src="/application/_0004_2.jpg" alt="Plastic Sheet Processing" />
+                                    <p>Plastic Sheet Processing</p>
+                                </div>
+                                <div className="iecho-pk4-application-image-item">
+                                    <img src="/application/_0005_1.jpg" alt="Magnetic Sticker Production" />
+                                    <p>Magnetic Sticker Production</p>
+                                </div>
+                                <div className="iecho-pk4-application-image-item">
+                                    <img src="/application/_0000_6.jpg" alt="Corrugated Board Cutting" />
+                                    <p>Corrugated Board Cutting</p>
+                                </div>
+                                <div className="iecho-pk4-application-image-item">
+                                    <img src="/application/_0001_5.jpg" alt="Card Board Processing" />
+                                    <p>Card Board Processing</p>
+                                </div>
+                                <div className="iecho-pk4-application-image-item">
+                                    <img src="/application/_0002_4.jpg" alt="Reflective Material Cutting" />
+                                    <p>Reflective Material Cutting</p>
+                                </div>
+                                <div className="iecho-pk4-application-image-item">
+                                    <img src="/application/_0003_3.jpg" alt="Industrial Production" />
+                                    <p>Industrial Production</p>
+                                </div>
+                                <div className="iecho-pk4-application-image-item">
+                                    <img src="/application/_0004_2.jpg" alt="Short-Run Manufacturing" />
+                                    <p>Short-Run Manufacturing</p>
+                                </div>
+                                <div className="iecho-pk4-application-image-item">
+                                    <img src="/application/_0005_1.jpg" alt="Auto Feeding Applications" />
+                                    <p>Auto Feeding Applications</p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -251,12 +321,10 @@ export default function IEchoPK4() {
                         <div className="iecho-pk4-advantages-grid">
                             {machineDetails.advantages.map((advantage, index) => (
                                 <div key={index} className="iecho-pk4-advantage-item">
-                                    <div className="iecho-pk4-advantage-icon">
-                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                                            <circle cx="12" cy="12" r="10" />
-                                            <path d="M9 12l2 2 4-4" />
-                                        </svg>
-                                    </div>
+                                    <svg className="iecho-pk4-advantage-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                        <circle cx="12" cy="12" r="10" />
+                                        <path d="M9 12l2 2 4-4" />
+                                    </svg>
                                     <p className="iecho-pk4-advantage-text">{advantage}</p>
                                 </div>
                             ))}

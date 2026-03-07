@@ -71,22 +71,22 @@ export default function Header() {
 
         // Eco-Solvent & Solvent Machines
         { title: "Smart RJ24 2004 I3200 Eco Solvent", path: "/smart-rj24-2004-i3200-eco-solvent", type: "machine" },
-        { title: "SMART Eco-Solvent Machine", path: "/smart-rj24-2004-i3200-eco-solvent", type: "machine" },
+        { title: "SMART Eco-Solvent Machine RJ24-2004", path: "/smart-rj24-2004-i3200-eco-solvent", type: "machine" },
         { title: "Xline Eco Solvent", path: "/xline-eco-solvent", type: "machine" },
-        { title: "Apollo Xline", path: "/xline-eco-solvent", type: "machine" },
+        { title: "Apollo Xline Eco Solvent Printer", path: "/xline-eco-solvent", type: "machine" },
         { title: "Liyu X-Line DQS UV Hybrid Printer", path: "/liyu-x-line-dqs-uv-hybrid-printer", type: "machine" },
 
         // Cutting Machines
         { title: "iEcho BK3", path: "/iecho-bk3", type: "machine" },
-        { title: "BK3 Cutting Machine", path: "/iecho-bk3", type: "machine" },
+        { title: "iEcho BK3 Cutting Machine", path: "/iecho-bk3", type: "machine" },
         { title: "iEcho BK4", path: "/iecho-bk4", type: "machine" },
-        { title: "BK4 Cutting Machine", path: "/iecho-bk4", type: "machine" },
+        { title: "iEcho BK4 Cutting Machine", path: "/iecho-bk4", type: "machine" },
         { title: "iEcho PK", path: "/iecho-pk", type: "machine" },
-        { title: "PK1209 Cutting Machine", path: "/iecho-pk", type: "machine" },
+        { title: "iEcho PK1209 Cutting Machine", path: "/iecho-pk", type: "machine" },
         { title: "iEcho PK4", path: "/iecho-pk4", type: "machine" },
-        { title: "PK4 Cutting Machine", path: "/iecho-pk4", type: "machine" },
+        { title: "iEcho PK4 Cutting Machine", path: "/iecho-pk4", type: "machine" },
         { title: "iEcho TK4S", path: "/iecho-tk4s", type: "machine" },
-        { title: "TK4S Large Format Cutting System", path: "/iecho-tk4s", type: "machine" },
+        { title: "iEcho TK4S Large Format Cutting System", path: "/iecho-tk4s", type: "machine" },
         { title: "GCC AR24 Desktop", path: "/gcc-ar24-desktop", type: "machine" },
         { title: "GCC AR-24 Desktop Cutter", path: "/gcc-ar24-desktop", type: "machine" },
         { title: "GCC Expert 24LX", path: "/gcc-expert-24lx", type: "machine" },
@@ -98,7 +98,7 @@ export default function Header() {
 
         // Sublimation & DTF Machines
         { title: "Smart Sublimation", path: "/smart-sublimation", type: "machine" },
-        { title: "SUBL Smart Sublimation", path: "/smart-sublimation", type: "machine" },
+        { title: "SUBL Smart Sublimation Printer", path: "/smart-sublimation", type: "machine" },
         { title: "Smart DTF Machine", path: "/smart-dtf-machine", type: "machine" },
         { title: "DTF SMART DTF Machine", path: "/smart-dtf-machine", type: "machine" },
         { title: "Smart DTF Powder Shaker", path: "/smart-dtf-powder-shaker", type: "machine" },
@@ -120,9 +120,9 @@ export default function Header() {
         { title: "DTF UV Printer SF604-i3200 2ft", path: "/dtf-uv-printer-sf604-i3200", type: "machine" },
         { title: "Luxor RTR UV", path: "/luxor-rtr-uv", type: "machine" },
         { title: "LUXOR UV-A3 RTR", path: "/luxor-rtr-uv", type: "machine" },
-        { title: "DTF Luxor RTR", path: "/luxor-rtr-uv", type: "machine" },
+        { title: "DTF Luxor RTR UV Printer", path: "/luxor-rtr-uv", type: "machine" },
         { title: "Automatic UV Crystal Flat Pasting", path: "/automatic-uv-crystal-flat-pasting", type: "machine" },
-        { title: "Automatic UV Crystal Flat Pasting Machine 3.82m x 1.72m", path: "/automatic-uv-crystal-flat-pasting", type: "machine" },
+        { title: "Automatic UV Crystal Flat Pasting Machine", path: "/automatic-uv-crystal-flat-pasting", type: "machine" },
 
         // Heat Press Machines
         { title: "Sapphire Heat Press", path: "/sapphire-heat-press", type: "machine" },
@@ -130,7 +130,8 @@ export default function Header() {
         { title: "Subli-Mate Manual Heat Press", path: "/subli-mate-manual-heat-press", type: "machine" },
         { title: "Subli-Mate Manual Heat Press 80cm x 100cm", path: "/subli-mate-manual-heat-press", type: "machine" },
         { title: "Dual Pneumatic", path: "/dual-pneumatic", type: "machine" },
-        { title: "Dual Pneumatic Sublimation Machine 80cm x 100cm", path: "/dual-pneumatic", type: "machine" },
+        { title: "Dual Pneumatic Sublimation Machine", path: "/dual-pneumatic", type: "machine" },
+        { title: "Dual Pneumatic Heat Press 80cm x 100cm", path: "/dual-pneumatic", type: "machine" },
 
         // Laminator Machines
         { title: "Cold Laminator", path: "/cold-laminator", type: "machine" },
@@ -144,19 +145,39 @@ export default function Header() {
         { title: "Handheld Fiber Laser", path: "/handheld-fiber-laser", type: "machine" },
         { title: "TFZ-S Mini Handheld Laser Welding", path: "/handheld-fiber-laser", type: "machine" },
         { title: "Handheld Fiber Laser Welding Machine", path: "/handheld-fiber-laser", type: "machine" },
-        { title: "Reci Handheld Fiber Laser Welding Machine R-A80 800W", path: "/laser-machine", type: "machine" },
-        { title: "Hanniu K1390 CO2 Laser Cutting Machine 150w", path: "/laser-machine", type: "machine" },
-        { title: "Hanniu K1390 CO2 Laser Cutting Machine 300w", path: "/laser-machine", type: "machine" },
-        { title: "K-Sign Desktop Laser B330", path: "/laser-machine", type: "machine" },
-        { title: "K-Sign DF-1916 Laser Fabric Cutting", path: "/laser-machine", type: "machine" },
-        { title: "K-Sign Desktop Laser Marking", path: "/laser-machine", type: "machine" },
-        { title: "Yueming Fiber Laser CMA-1325C-G-G 1000w", path: "/laser-machine", type: "machine" },
-        { title: "Yueming Fiber Laser HL1530C-G-E 1500w IPG", path: "/laser-machine", type: "machine" },
+        { title: "Reci Handheld Fiber Laser Welding", path: "/reci-handheld-fiber-laser-welding", type: "machine" },
+        { title: "Reci Handheld Fiber Laser Welding Machine R-A80 800W", path: "/reci-handheld-fiber-laser-welding", type: "machine" },
+        { title: "Hanniu K1390 CO2 Laser 150w CCD", path: "/hanniu-k1390-co2-laser-150w-ccd", type: "machine" },
+        { title: "Hanniu K1390 CO2 Laser Cutting Machine 150w", path: "/hanniu-k1390-co2-laser-150w-ccd", type: "machine" },
+        { title: "Hanniu K1390 CO2 Laser 300w", path: "/hanniu-k1390-co2-laser-300w", type: "machine" },
+        { title: "Hanniu K1390 CO2 Laser Cutting Machine 300w", path: "/hanniu-k1390-co2-laser-300w", type: "machine" },
+        { title: "K-Sign Desktop Laser B330", path: "/k-sign-desktop-laser-b330", type: "machine" },
+        { title: "K-Sign Desktop Laser Engraving B330", path: "/k-sign-desktop-laser-b330", type: "machine" },
+        { title: "K-Sign DF-1916 Laser Fabric Cutting", path: "/k-sign-df-1916-laser-fabric-cutting", type: "machine" },
+        { title: "K-Sign DF-1916 Laser Fabric Cutter", path: "/k-sign-df-1916-laser-fabric-cutting", type: "machine" },
+        { title: "K-Sign Desktop Laser Marking", path: "/k-sign-desktop-laser-marking", type: "machine" },
+        { title: "K-Sign Desktop Laser Marking Machine", path: "/k-sign-desktop-laser-marking", type: "machine" },
+        { title: "Yueming Fiber Laser CMA-1325C-G-G", path: "/yueming-fiber-laser-cma-1325c-g-g", type: "machine" },
+        { title: "Yueming Fiber Laser CMA-1325C-G-G 1000w", path: "/yueming-fiber-laser-cma-1325c-g-g", type: "machine" },
+        { title: "Yueming Fiber Laser HL1530C-G-E", path: "/yueming-fiber-laser-hl1530c-g-e", type: "machine" },
+        { title: "Yueming Fiber Laser HL1530C-G-E 1500w IPG", path: "/yueming-fiber-laser-hl1530c-g-e", type: "machine" },
 
-        // 3D Printer
+        // Embroidery and Knitting Machines
+        { title: "PROMAKER Embroidery 1201", path: "/promaker-embroidery-1201", type: "machine" },
+        { title: "PROMAKER Embroidery Single Head 1201", path: "/promaker-embroidery-1201", type: "machine" },
+        { title: "PROMAKER Embroidery 1202", path: "/promaker-embroidery-1202", type: "machine" },
+        { title: "PROMAKER Embroidery Dual Head 1202", path: "/promaker-embroidery-1202", type: "machine" },
+        { title: "PROMAKER Embroidery 1204", path: "/promaker-embroidery-1204", type: "machine" },
+        { title: "PROMAKER Embroidery 1804", path: "/promaker-embroidery-1204", type: "machine" },
+        { title: "PROMAKER Embroidery Quad Head 1804", path: "/promaker-embroidery-1204", type: "machine" },
+        { title: "Smartex Knitting GS-CE152", path: "/smartex-knitting-gsce-1-52", type: "machine" },
+        { title: "Smartex Knitting Machine GS-CE152", path: "/smartex-knitting-gsce-1-52", type: "machine" },
+
+        // 3D Printers
         { title: "Apollomax Plus II", path: "/apollomax-plus-II", type: "machine" },
         { title: "ApolloMax Plus II PZG3208-KV", path: "/apollomax-plus-II", type: "machine" },
-        { title: "K-Sign Letter Shell 3D Printer", path: "/3d-printer", type: "machine" }
+        { title: "K-Sign Letter Shell 3D Printer", path: "/k-sign-letter-shell-3d-printer", type: "machine" },
+        { title: "K-Sign 3D Printer Letter Shell", path: "/k-sign-letter-shell-3d-printer", type: "machine" }
     ];
 
     // Helper function to check if link is active

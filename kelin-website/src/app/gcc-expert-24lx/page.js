@@ -1,12 +1,38 @@
 "use client";
 import Header from '../components/Header';
 import Link from 'next/link';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import './gcc-expert-24lx.css';
 
 export default function GCCExpert24LX() {
     const [inquiryModalOpen, setInquiryModalOpen] = useState(false);
     const [selectedImage, setSelectedImage] = useState('/GCC Expert LX  EX-24LX  Without Stand (1).png');
+    const scrollRef = useRef(null);
+    const [isDragging, setIsDragging] = useState(false);
+    const [startX, setStartX] = useState(0);
+    const [scrollLeft, setScrollLeft] = useState(0);
+
+    const handleMouseDown = (e) => {
+        setIsDragging(true);
+        setStartX(e.pageX - scrollRef.current.offsetLeft);
+        setScrollLeft(scrollRef.current.scrollLeft);
+    };
+
+    const handleMouseMove = (e) => {
+        if (!isDragging) return;
+        e.preventDefault();
+        const x = e.pageX - scrollRef.current.offsetLeft;
+        const walk = (x - startX) * 2;
+        scrollRef.current.scrollLeft = scrollLeft - walk;
+    };
+
+    const handleMouseUp = () => {
+        setIsDragging(false);
+    };
+
+    const handleMouseLeave = () => {
+        setIsDragging(false);
+    };
 
     const machineDetails = {
         name: 'GCC Expert 24 LX',
@@ -214,23 +240,59 @@ export default function GCCExpert24LX() {
                 {/* Applications */}
                 <section className="gcc-expert-24lx-applications-section">
                     <div className="gcc-expert-24lx-applications-container">
-                        <div className="gcc-expert-24lx-applications-grid">
-                            <div className="gcc-expert-24lx-applications-content">
-                                <h2 className="gcc-expert-24lx-section-title">Applications</h2>
-                                <p className="gcc-expert-24lx-applications-subtitle">
-                                    Versatile cutting solutions for professional applications
-                                </p>
-                                <ul className="gcc-expert-24lx-applications-list">
-                                    {machineDetails.applications.map((application, index) => (
-                                        <li key={index} className="gcc-expert-24lx-application-item">
-                                            <svg className="gcc-expert-24lx-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                                                <path d="M9 12l2 2 4-4" />
-                                                <circle cx="12" cy="12" r="10" />
-                                            </svg>
-                                            {application}
-                                        </li>
-                                    ))}
-                                </ul>
+                        <h2 className="gcc-expert-24lx-section-title">Applications</h2>
+                        <p className="gcc-expert-24lx-applications-subtitle">
+                            Versatile cutting solutions for professional applications
+                        </p>
+                        <div
+                            ref={scrollRef}
+                            className="gcc-expert-24lx-applications-scroll"
+                            onMouseDown={handleMouseDown}
+                            onMouseMove={handleMouseMove}
+                            onMouseUp={handleMouseUp}
+                            onMouseLeave={handleMouseLeave}
+                        >
+                            <div className="gcc-expert-24lx-applications-image-grid">
+                                <div className="gcc-expert-24lx-application-image-item">
+                                    <img src="/application/_0000_6.jpg" alt="Craft Market Projects" />
+                                    <p>Craft Market Projects</p>
+                                </div>
+                                <div className="gcc-expert-24lx-application-image-item">
+                                    <img src="/application/_0001_5.jpg" alt="Vinyl Cutting & Weeding" />
+                                    <p>Vinyl Cutting & Weeding</p>
+                                </div>
+                                <div className="gcc-expert-24lx-application-image-item">
+                                    <img src="/application/_0002_4.jpg" alt="Heat Transfer Vinyl (HTV)" />
+                                    <p>Heat Transfer Vinyl (HTV)</p>
+                                </div>
+                                <div className="gcc-expert-24lx-application-image-item">
+                                    <img src="/application/_0003_3.jpg" alt="Scrapbooking Materials" />
+                                    <p>Scrapbooking Materials</p>
+                                </div>
+                                <div className="gcc-expert-24lx-application-image-item">
+                                    <img src="/application/_0004_2.jpg" alt="Card Making & Paper Crafts" />
+                                    <p>Card Making & Paper Crafts</p>
+                                </div>
+                                <div className="gcc-expert-24lx-application-image-item">
+                                    <img src="/application/_0005_1.jpg" alt="Stencil Creation" />
+                                    <p>Stencil Creation</p>
+                                </div>
+                                <div className="gcc-expert-24lx-application-image-item">
+                                    <img src="/application/_0000_6.jpg" alt="Decal & Label Production" />
+                                    <p>Decal & Label Production</p>
+                                </div>
+                                <div className="gcc-expert-24lx-application-image-item">
+                                    <img src="/application/_0001_5.jpg" alt="Sign Making Projects" />
+                                    <p>Sign Making Projects</p>
+                                </div>
+                                <div className="gcc-expert-24lx-application-image-item">
+                                    <img src="/application/_0002_4.jpg" alt="Contour Cutting" />
+                                    <p>Contour Cutting</p>
+                                </div>
+                                <div className="gcc-expert-24lx-application-image-item">
+                                    <img src="/application/_0003_3.jpg" alt="Small Business Production" />
+                                    <p>Small Business Production</p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -243,12 +305,10 @@ export default function GCCExpert24LX() {
                         <div className="gcc-expert-24lx-advantages-grid">
                             {machineDetails.advantages.map((advantage, index) => (
                                 <div key={index} className="gcc-expert-24lx-advantage-item">
-                                    <div className="gcc-expert-24lx-advantage-icon">
-                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                                            <circle cx="12" cy="12" r="10" />
-                                            <path d="M9 12l2 2 4-4" />
-                                        </svg>
-                                    </div>
+                                    <svg className="gcc-expert-24lx-advantage-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                        <circle cx="12" cy="12" r="10" />
+                                        <path d="M9 12l2 2 4-4" />
+                                    </svg>
                                     <p className="gcc-expert-24lx-advantage-text">{advantage}</p>
                                 </div>
                             ))}

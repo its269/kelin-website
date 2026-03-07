@@ -1,12 +1,38 @@
 "use client";
 import Header from '../components/Header';
 import Link from 'next/link';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import './iecho-pk.css';
 
 export default function IEchoPK() {
     const [inquiryModalOpen, setInquiryModalOpen] = useState(false);
     const [selectedImage, setSelectedImage] = useState('/PK1209 (1).png');
+    const scrollRef = useRef(null);
+    const [isDragging, setIsDragging] = useState(false);
+    const [startX, setStartX] = useState(0);
+    const [scrollLeft, setScrollLeft] = useState(0);
+
+    const handleMouseDown = (e) => {
+        setIsDragging(true);
+        setStartX(e.pageX - scrollRef.current.offsetLeft);
+        setScrollLeft(scrollRef.current.scrollLeft);
+    };
+
+    const handleMouseMove = (e) => {
+        if (!isDragging) return;
+        e.preventDefault();
+        const x = e.pageX - scrollRef.current.offsetLeft;
+        const walk = (x - startX) * 2;
+        scrollRef.current.scrollLeft = scrollLeft - walk;
+    };
+
+    const handleMouseUp = () => {
+        setIsDragging(false);
+    };
+
+    const handleMouseLeave = () => {
+        setIsDragging(false);
+    };
 
     const machineDetails = {
         name: 'iEcho PK',
@@ -209,21 +235,17 @@ export default function IEchoPK() {
                         <p className="iecho-pk-section-subtitle">
                             Complete technical details for iECHO PK cutting plotter
                         </p>
-                        <div className="iecho-pk-specs-table-wrapper">
-                            <div className="iecho-pk-spec-table">
-                                <div className="iecho-pk-spec-table-header">
-                                    <h3 className="iecho-pk-spec-table-title">
-                                        <span className="iecho-pk-spec-icon">⚙️</span>
-                                        Machine Specifications
-                                    </h3>
-                                </div>
-                                <div className="iecho-pk-spec-table-body">
+                        <div className="iecho-pk-specs-grid">
+                            <div className="iecho-pk-spec-card">
+                                <h3 className="iecho-pk-spec-card-title">
+                                    Machine Specifications
+                                </h3>
+                                <div className="iecho-pk-spec-card-body">
                                     {machineDetails.specifications.map((spec, index) => (
-                                        <div key={index} className="iecho-pk-spec-row">
+                                        <div key={index} className="iecho-pk-spec-item">
                                             <div className="iecho-pk-spec-label">
                                                 {spec.label}
                                             </div>
-                                            <div className="iecho-pk-spec-divider"></div>
                                             <div className="iecho-pk-spec-value">{spec.value}</div>
                                         </div>
                                     ))}
@@ -236,23 +258,59 @@ export default function IEchoPK() {
                 {/* Applications */}
                 <section className="iecho-pk-applications-section">
                     <div className="iecho-pk-applications-container">
-                        <div className="iecho-pk-applications-grid">
-                            <div className="iecho-pk-applications-content">
-                                <h2 className="iecho-pk-section-title">Applications</h2>
-                                <p className="iecho-pk-applications-subtitle">
-                                    Versatile cutting solutions for professional applications
-                                </p>
-                                <ul className="iecho-pk-applications-list">
-                                    {machineDetails.applications.map((application, index) => (
-                                        <li key={index} className="iecho-pk-application-item">
-                                            <svg className="iecho-pk-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                                                <path d="M9 12l2 2 4-4" />
-                                                <circle cx="12" cy="12" r="10" />
-                                            </svg>
-                                            {application}
-                                        </li>
-                                    ))}
-                                </ul>
+                        <h2 className="iecho-pk-section-title">Applications</h2>
+                        <p className="iecho-pk-applications-subtitle">
+                            Versatile cutting solutions for professional applications
+                        </p>
+                        <div
+                            ref={scrollRef}
+                            className="iecho-pk-applications-scroll"
+                            onMouseDown={handleMouseDown}
+                            onMouseMove={handleMouseMove}
+                            onMouseUp={handleMouseUp}
+                            onMouseLeave={handleMouseLeave}
+                        >
+                            <div className="iecho-pk-applications-image-grid">
+                                <div className="iecho-pk-application-image-item">
+                                    <img src="/application/_0000_6.jpg" alt="Sample Making for Signs Industry" />
+                                    <p>Sample Making for Signs Industry</p>
+                                </div>
+                                <div className="iecho-pk-application-image-item">
+                                    <img src="/application/_0001_5.jpg" alt="Short-Run Customized Production" />
+                                    <p>Short-Run Customized Production</p>
+                                </div>
+                                <div className="iecho-pk-application-image-item">
+                                    <img src="/application/_0002_4.jpg" alt="Printing Industry Applications" />
+                                    <p>Printing Industry Applications</p>
+                                </div>
+                                <div className="iecho-pk-application-image-item">
+                                    <img src="/application/_0003_3.jpg" alt="Packaging Industry Processing" />
+                                    <p>Packaging Industry Processing</p>
+                                </div>
+                                <div className="iecho-pk-application-image-item">
+                                    <img src="/application/_0004_2.jpg" alt="Through Cutting & Half Cutting" />
+                                    <p>Through Cutting & Half Cutting</p>
+                                </div>
+                                <div className="iecho-pk-application-image-item">
+                                    <img src="/application/_0005_1.jpg" alt="Creasing & Marking Operations" />
+                                    <p>Creasing & Marking Operations</p>
+                                </div>
+                                <div className="iecho-pk-application-image-item">
+                                    <img src="/application/_0000_6.jpg" alt="Registration Cutting" />
+                                    <p>Registration Cutting</p>
+                                </div>
+                                <div className="iecho-pk-application-image-item">
+                                    <img src="/application/_0001_5.jpg" alt="Labels & Tags Production" />
+                                    <p>Labels & Tags Production</p>
+                                </div>
+                                <div className="iecho-pk-application-image-item">
+                                    <img src="/application/_0002_4.jpg" alt="Creative Processing" />
+                                    <p>Creative Processing</p>
+                                </div>
+                                <div className="iecho-pk-application-image-item">
+                                    <img src="/application/_0003_3.jpg" alt="Roll Materials Processing" />
+                                    <p>Roll Materials Processing</p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -265,12 +323,10 @@ export default function IEchoPK() {
                         <div className="iecho-pk-advantages-grid">
                             {machineDetails.advantages.map((advantage, index) => (
                                 <div key={index} className="iecho-pk-advantage-item">
-                                    <div className="iecho-pk-advantage-icon">
-                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                                            <circle cx="12" cy="12" r="10" />
-                                            <path d="M9 12l2 2 4-4" />
-                                        </svg>
-                                    </div>
+                                    <svg className="iecho-pk-advantage-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                        <circle cx="12" cy="12" r="10" />
+                                        <path d="M9 12l2 2 4-4" />
+                                    </svg>
                                     <p className="iecho-pk-advantage-text">{advantage}</p>
                                 </div>
                             ))}

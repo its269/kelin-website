@@ -1,12 +1,38 @@
 "use client";
 import Header from '../components/Header';
 import Link from 'next/link';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import './apollo.css';
 
 export default function ApolloMaxPlusII() {
     const [inquiryModalOpen, setInquiryModalOpen] = useState(false);
     const [selectedImage, setSelectedImage] = useState('/ApolloMax Plus II PZG3208-KV.png');
+    const scrollRef = useRef(null);
+    const [isDragging, setIsDragging] = useState(false);
+    const [startX, setStartX] = useState(0);
+    const [scrollLeft, setScrollLeft] = useState(0);
+
+    const handleMouseDown = (e) => {
+        setIsDragging(true);
+        setStartX(e.pageX - scrollRef.current.offsetLeft);
+        setScrollLeft(scrollRef.current.scrollLeft);
+    };
+
+    const handleMouseMove = (e) => {
+        if (!isDragging) return;
+        e.preventDefault();
+        const x = e.pageX - scrollRef.current.offsetLeft;
+        const walk = (x - startX) * 2;
+        scrollRef.current.scrollLeft = scrollLeft - walk;
+    };
+
+    const handleMouseUp = () => {
+        setIsDragging(false);
+    };
+
+    const handleMouseLeave = () => {
+        setIsDragging(false);
+    };
 
     const machineDetails = {
         name: 'ApolloMax Plus II PZG3208-KV',
@@ -230,39 +256,80 @@ export default function ApolloMaxPlusII() {
                 {/* Applications */}
                 <section className="apollo-applications-section">
                     <div className="apollo-applications-container">
-                        <div className="apollo-applications-grid">
-                            <div className="apollo-applications-left">
-                                <h2 className="apollo-section-title">Applications</h2>
-                                <p className="apollo-applications-intro">
-                                    Perfect for a wide range of professional printing applications
-                                </p>
-                                <div className="apollo-applications-grid-items">
-                                    {machineDetails.applications.map((application, index) => (
-                                        <div key={index} className="apollo-application-item">
-                                            <div className="apollo-application-dot"></div>
-                                            <span className="apollo-application-text">{application}</span>
-                                        </div>
-                                    ))}
+                        <h2 className="apollo-section-title">Applications</h2>
+                        <p className="apollo-applications-subtitle">
+                            Professional large format printing solutions for diverse applications
+                        </p>
+                        <div
+                            ref={scrollRef}
+                            className="apollo-applications-scroll"
+                            onMouseDown={handleMouseDown}
+                            onMouseMove={handleMouseMove}
+                            onMouseUp={handleMouseUp}
+                            onMouseLeave={handleMouseLeave}
+                        >
+                            <div className="apollo-applications-image-grid">
+                                <div className="apollo-application-image-item">
+                                    <img src="/application/_0000_6.jpg" alt="Large Format Billboards" />
+                                    <p>Large Format Billboards</p>
+                                </div>
+                                <div className="apollo-application-image-item">
+                                    <img src="/application/_0001_5.jpg" alt="Building Wraps" />
+                                    <p>Building Wraps</p>
+                                </div>
+                                <div className="apollo-application-image-item">
+                                    <img src="/application/_0002_4.jpg" alt="Vehicle Graphics" />
+                                    <p>Vehicle Graphics</p>
+                                </div>
+                                <div className="apollo-application-image-item">
+                                    <img src="/application/_0003_3.jpg" alt="Commercial Banners" />
+                                    <p>Commercial Banners</p>
+                                </div>
+                                <div className="apollo-application-image-item">
+                                    <img src="/application/_0004_2.jpg" alt="Exhibition Graphics" />
+                                    <p>Exhibition Graphics</p>
+                                </div>
+                                <div className="apollo-application-image-item">
+                                    <img src="/application/_0005_1.jpg" alt="Industrial Production" />
+                                    <p>Industrial Production</p>
+                                </div>
+                                <div className="apollo-application-image-item">
+                                    <img src="/application/_0000_6.jpg" alt="High-Volume Projects" />
+                                    <p>High-Volume Projects</p>
+                                </div>
+                                <div className="apollo-application-image-item">
+                                    <img src="/application/_0001_5.jpg" alt="Retail Graphics" />
+                                    <p>Retail Graphics</p>
+                                </div>
+                                <div className="apollo-application-image-item">
+                                    <img src="/application/_0002_4.jpg" alt="Sports Graphics" />
+                                    <p>Sports Graphics</p>
+                                </div>
+                                <div className="apollo-application-image-item">
+                                    <img src="/application/_0003_3.jpg" alt="Entertainment Displays" />
+                                    <p>Entertainment Displays</p>
                                 </div>
                             </div>
-                            <div className="apollo-applications-right">
-                                <h2 className="apollo-section-title">Advantages</h2>
-                                <p className="apollo-applications-intro">
-                                    Why choose the ApolloMax Plus II PZG3208-KV for your business
-                                </p>
-                                <div className="apollo-advantages-list">
-                                    {machineDetails.advantages.map((advantage, index) => (
-                                        <div key={index} className="apollo-advantage-item">
-                                            <div className="apollo-advantage-icon">
-                                                {/* <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="3">
-                                                    <path d="m9 12 2 2 4-4" />
-                                                </svg> */}
-                                            </div>
-                                            <span className="apollo-advantage-text">{advantage}</span>
-                                        </div>
-                                    ))}
+                        </div>
+                    </div>
+                </section>
+
+                {/* Advantages */}
+                <section className="apollo-advantages-section">
+                    <div className="apollo-advantages-container">
+                        <h2 className="apollo-section-title">Why Choose ApolloMax Plus II?</h2>
+                        <div className="apollo-advantages-grid">
+                            {machineDetails.advantages.map((advantage, index) => (
+                                <div key={index} className="apollo-advantage-item">
+                                    <div className="apollo-advantage-icon">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                            <circle cx="12" cy="12" r="10" />
+                                            <path d="M9 12l2 2 4-4" />
+                                        </svg>
+                                    </div>
+                                    <p className="apollo-advantage-text">{advantage}</p>
                                 </div>
-                            </div>
+                            ))}
                         </div>
                     </div>
                 </section>

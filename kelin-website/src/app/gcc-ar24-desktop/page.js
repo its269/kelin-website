@@ -1,13 +1,39 @@
 "use client";
 import Header from '../components/Header';
 import Link from 'next/link';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import InquiryStorage from '../utils/InquiryStorage';
 import './gcc-ar24-desktop.css';
 
 export default function GCCAR24Desktop() {
     const [inquiryModalOpen, setInquiryModalOpen] = useState(false);
     const [selectedImage, setSelectedImage] = useState('/GCC AR-24 Desktop (1).png');
+    const scrollRef = useRef(null);
+    const [isDragging, setIsDragging] = useState(false);
+    const [startX, setStartX] = useState(0);
+    const [scrollLeft, setScrollLeft] = useState(0);
+
+    const handleMouseDown = (e) => {
+        setIsDragging(true);
+        setStartX(e.pageX - scrollRef.current.offsetLeft);
+        setScrollLeft(scrollRef.current.scrollLeft);
+    };
+
+    const handleMouseMove = (e) => {
+        if (!isDragging) return;
+        e.preventDefault();
+        const x = e.pageX - scrollRef.current.offsetLeft;
+        const walk = (x - startX) * 2;
+        scrollRef.current.scrollLeft = scrollLeft - walk;
+    };
+
+    const handleMouseUp = () => {
+        setIsDragging(false);
+    };
+
+    const handleMouseLeave = () => {
+        setIsDragging(false);
+    };
 
     const machineDetails = {
         name: 'GCC AR-24',
@@ -250,23 +276,59 @@ export default function GCCAR24Desktop() {
                 {/* Applications */}
                 <section className="gcc-ar24-applications-section">
                     <div className="gcc-ar24-applications-container">
-                        <div className="gcc-ar24-applications-grid">
-                            <div className="gcc-ar24-applications-content">
-                                <h2 className="gcc-ar24-section-title">Applications</h2>
-                                <p className="gcc-ar24-applications-subtitle">
-                                    Versatile cutting solutions for professional applications
-                                </p>
-                                <ul className="gcc-ar24-applications-list">
-                                    {machineDetails.applications.map((application, index) => (
-                                        <li key={index} className="gcc-ar24-application-item">
-                                            <svg className="gcc-ar24-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                                                <path d="M9 12l2 2 4-4" />
-                                                <circle cx="12" cy="12" r="10" />
-                                            </svg>
-                                            {application}
-                                        </li>
-                                    ))}
-                                </ul>
+                        <h2 className="gcc-ar24-section-title">Applications</h2>
+                        <p className="gcc-ar24-applications-subtitle">
+                            Versatile cutting solutions for professional applications
+                        </p>
+                        <div
+                            ref={scrollRef}
+                            className="gcc-ar24-applications-scroll"
+                            onMouseDown={handleMouseDown}
+                            onMouseMove={handleMouseMove}
+                            onMouseUp={handleMouseUp}
+                            onMouseLeave={handleMouseLeave}
+                        >
+                            <div className="gcc-ar24-applications-image-grid">
+                                <div className="gcc-ar24-application-image-item">
+                                    <img src="/application/_0000_6.jpg" alt="Labels and Decals" />
+                                    <p>Labels and Decals</p>
+                                </div>
+                                <div className="gcc-ar24-application-image-item">
+                                    <img src="/application/_0001_5.jpg" alt="Custom Stickers" />
+                                    <p>Custom Stickers</p>
+                                </div>
+                                <div className="gcc-ar24-application-image-item">
+                                    <img src="/application/_0002_4.jpg" alt="Print-and-Cut Jobs" />
+                                    <p>Print-and-Cut Jobs</p>
+                                </div>
+                                <div className="gcc-ar24-application-image-item">
+                                    <img src="/application/_0003_3.jpg" alt="Vinyl Graphics" />
+                                    <p>Vinyl Graphics</p>
+                                </div>
+                                <div className="gcc-ar24-application-image-item">
+                                    <img src="/application/_0004_2.jpg" alt="Sign Making" />
+                                    <p>Sign Making</p>
+                                </div>
+                                <div className="gcc-ar24-application-image-item">
+                                    <img src="/application/_0005_1.jpg" alt="Vehicle Graphics" />
+                                    <p>Vehicle Graphics</p>
+                                </div>
+                                <div className="gcc-ar24-application-image-item">
+                                    <img src="/application/_0000_6.jpg" alt="Promotional Materials" />
+                                    <p>Promotional Materials</p>
+                                </div>
+                                <div className="gcc-ar24-application-image-item">
+                                    <img src="/application/_0001_5.jpg" alt="Craft Projects" />
+                                    <p>Craft Projects</p>
+                                </div>
+                                <div className="gcc-ar24-application-image-item">
+                                    <img src="/application/_0002_4.jpg" alt="Heat Transfer Vinyl" />
+                                    <p>Heat Transfer Vinyl</p>
+                                </div>
+                                <div className="gcc-ar24-application-image-item">
+                                    <img src="/application/_0003_3.jpg" alt="Small Format Cutting" />
+                                    <p>Small Format Cutting</p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -275,16 +337,14 @@ export default function GCCAR24Desktop() {
                 {/* Advantages */}
                 <section className="gcc-ar24-advantages-section">
                     <div className="gcc-ar24-advantages-container">
-                        <h2 className="gcc-ar24-section-title">Why Choose iEcho BK3?</h2>
+                        <h2 className="gcc-ar24-section-title">Why Choose GCC AR-24?</h2>
                         <div className="gcc-ar24-advantages-grid">
                             {machineDetails.advantages.map((advantage, index) => (
                                 <div key={index} className="gcc-ar24-advantage-item">
-                                    <div className="gcc-ar24-advantage-icon">
-                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                                            <circle cx="12" cy="12" r="10" />
-                                            <path d="M9 12l2 2 4-4" />
-                                        </svg>
-                                    </div>
+                                    <svg className="gcc-ar24-advantage-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                        <circle cx="12" cy="12" r="10" />
+                                        <path d="M9 12l2 2 4-4" />
+                                    </svg>
                                     <p className="gcc-ar24-advantage-text">{advantage}</p>
                                 </div>
                             ))}

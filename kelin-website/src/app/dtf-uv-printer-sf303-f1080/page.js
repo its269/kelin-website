@@ -1,12 +1,39 @@
 "use client";
 import Header from '../components/Header';
 import Link from 'next/link';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import './dtf-uv-printer-sf303-f1080-unique.css';
 
 export default function DTFUVPrinterSF303F1080() {
     const [inquiryModalOpen, setInquiryModalOpen] = useState(false);
     const [selectedImage, setSelectedImage] = useState('/DTF UV Printer SF303-i3200 2ft (1).png');
+
+    const scrollRef = useRef(null);
+    const [isDragging, setIsDragging] = useState(false);
+    const [startX, setStartX] = useState(0);
+    const [scrollLeft, setScrollLeft] = useState(0);
+
+    const handleMouseDown = (e) => {
+        setIsDragging(true);
+        setStartX(e.pageX - scrollRef.current.offsetLeft);
+        setScrollLeft(scrollRef.current.scrollLeft);
+    };
+
+    const handleMouseMove = (e) => {
+        if (!isDragging) return;
+        e.preventDefault();
+        const x = e.pageX - scrollRef.current.offsetLeft;
+        const walk = (x - startX) * 2;
+        scrollRef.current.scrollLeft = scrollLeft - walk;
+    };
+
+    const handleMouseUp = () => {
+        setIsDragging(false);
+    };
+
+    const handleMouseLeave = () => {
+        setIsDragging(false);
+    };
 
     const machineDetails = {
         name: 'LUXOR SF30-3',
@@ -231,23 +258,59 @@ export default function DTFUVPrinterSF303F1080() {
                 {/* Applications */}
                 <section className="dtf-uv-sf303-applications-section">
                     <div className="dtf-uv-sf303-applications-container">
-                        <div className="dtf-uv-sf303-applications-grid">
-                            <div className="dtf-uv-sf303-applications-content">
-                                <h2 className="dtf-uv-sf303-section-title">Applications</h2>
-                                <p className="dtf-uv-sf303-applications-subtitle">
-                                    Professional UV DTF printing solutions for diverse applications
-                                </p>
-                                <ul className="dtf-uv-sf303-applications-list">
-                                    {machineDetails.applications.map((application, index) => (
-                                        <li key={index} className="dtf-uv-sf303-application-item">
-                                            <svg className="dtf-uv-sf303-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                                                <path d="M9 12l2 2 4-4" />
-                                                <circle cx="12" cy="12" r="10" />
-                                            </svg>
-                                            {application}
-                                        </li>
-                                    ))}
-                                </ul>
+                        <h2 className="dtf-uv-sf303-section-title">Applications</h2>
+                        <p className="dtf-uv-sf303-applications-subtitle">
+                            Professional UV DTF printing solutions for diverse applications
+                        </p>
+                        <div
+                            ref={scrollRef}
+                            className="dtf-uv-sf303-applications-scroll"
+                            onMouseDown={handleMouseDown}
+                            onMouseMove={handleMouseMove}
+                            onMouseUp={handleMouseUp}
+                            onMouseLeave={handleMouseLeave}
+                        >
+                            <div className="dtf-uv-sf303-applications-image-grid">
+                                <div className="dtf-uv-sf303-application-image-item">
+                                    <img src="/application/_0000_6.jpg" alt="T-Shirt Printing" />
+                                    <p>T-Shirt Printing</p>
+                                </div>
+                                <div className="dtf-uv-sf303-application-image-item">
+                                    <img src="/application/_0001_5.jpg" alt="Mug Printing" />
+                                    <p>Mug Printing</p>
+                                </div>
+                                <div className="dtf-uv-sf303-application-image-item">
+                                    <img src="/application/_0002_4.jpg" alt="Signage & Banners" />
+                                    <p>Signage & Banners</p>
+                                </div>
+                                <div className="dtf-uv-sf303-application-image-item">
+                                    <img src="/application/_0003_3.jpg" alt="Promotional Products" />
+                                    <p>Promotional Products</p>
+                                </div>
+                                <div className="dtf-uv-sf303-application-image-item">
+                                    <img src="/application/_0004_2.jpg" alt="Custom Apparel" />
+                                    <p>Custom Apparel</p>
+                                </div>
+                                <div className="dtf-uv-sf303-application-image-item">
+                                    <img src="/application/_0005_1.jpg" alt="Phone Cases" />
+                                    <p>Phone Cases</p>
+                                </div>
+                                <div className="dtf-uv-sf303-application-image-item">
+                                    <img src="/application/_0000_6.jpg" alt="Sportswear" />
+                                    <p>Sportswear</p>
+                                </div>
+                                <div className="dtf-uv-sf303-application-image-item">
+                                    <img src="/application/_0001_5.jpg" alt="Home Decor" />
+                                    <p>Home Decor</p>
+                                </div>
+                                <div className="dtf-uv-sf303-application-image-item">
+                                    <img src="/application/_0002_4.jpg" alt="Packaging" />
+                                    <p>Packaging</p>
+                                </div>
+                                <div className="dtf-uv-sf303-application-image-item">
+                                    <img src="/application/_0003_3.jpg" alt="Labels & Stickers" />
+                                    <p>Labels & Stickers</p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -260,12 +323,10 @@ export default function DTFUVPrinterSF303F1080() {
                         <div className="dtf-uv-sf303-advantages-grid">
                             {machineDetails.advantages.map((advantage, index) => (
                                 <div key={index} className="dtf-uv-sf303-advantage-item">
-                                    <div className="dtf-uv-sf303-advantage-icon">
-                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                                            <circle cx="12" cy="12" r="10" />
-                                            <path d="M9 12l2 2 4-4" />
-                                        </svg>
-                                    </div>
+                                    <svg className="dtf-uv-sf303-advantage-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                        <circle cx="12" cy="12" r="10" />
+                                        <path d="M9 12l2 2 4-4" />
+                                    </svg>
                                     <p className="dtf-uv-sf303-advantage-text">{advantage}</p>
                                 </div>
                             ))}

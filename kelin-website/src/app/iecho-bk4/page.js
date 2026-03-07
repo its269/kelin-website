@@ -1,13 +1,39 @@
 "use client";
 import Header from '../components/Header';
 import Link from 'next/link';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import InquiryStorage from '../utils/InquiryStorage';
 import './iecho-bk4.css';
 
 export default function IEchoBK4() {
     const [inquiryModalOpen, setInquiryModalOpen] = useState(false);
     const [selectedImage, setSelectedImage] = useState('/bk4 (1).png');
+    const scrollRef = useRef(null);
+    const [isDragging, setIsDragging] = useState(false);
+    const [startX, setStartX] = useState(0);
+    const [scrollLeft, setScrollLeft] = useState(0);
+
+    const handleMouseDown = (e) => {
+        setIsDragging(true);
+        setStartX(e.pageX - scrollRef.current.offsetLeft);
+        setScrollLeft(scrollRef.current.scrollLeft);
+    };
+
+    const handleMouseMove = (e) => {
+        if (!isDragging) return;
+        e.preventDefault();
+        const x = e.pageX - scrollRef.current.offsetLeft;
+        const walk = (x - startX) * 2;
+        scrollRef.current.scrollLeft = scrollLeft - walk;
+    };
+
+    const handleMouseUp = () => {
+        setIsDragging(false);
+    };
+
+    const handleMouseLeave = () => {
+        setIsDragging(false);
+    };
 
     const machineDetails = {
         name: 'iEcho BK4',
@@ -249,23 +275,59 @@ export default function IEchoBK4() {
                 {/* Applications */}
                 <section className="iecho-bk4-applications-section">
                     <div className="iecho-bk4-applications-container">
-                        <div className="iecho-bk4-applications-grid">
-                            <div className="iecho-bk4-applications-content">
-                                <h2 className="iecho-bk4-section-title">Applications</h2>
-                                <p className="iecho-bk4-applications-subtitle">
-                                    Versatile cutting solutions for professional applications
-                                </p>
-                                <ul className="iecho-bk4-applications-list">
-                                    {machineDetails.applications.map((application, index) => (
-                                        <li key={index} className="iecho-bk4-application-item">
-                                            <svg className="iecho-bk4-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                                                <path d="M9 12l2 2 4-4" />
-                                                <circle cx="12" cy="12" r="10" />
-                                            </svg>
-                                            {application}
-                                        </li>
-                                    ))}
-                                </ul>
+                        <h2 className="iecho-bk4-section-title">Applications</h2>
+                        <p className="iecho-bk4-applications-subtitle">
+                            Versatile cutting solutions for professional applications
+                        </p>
+                        <div
+                            ref={scrollRef}
+                            className="iecho-bk4-applications-scroll"
+                            onMouseDown={handleMouseDown}
+                            onMouseMove={handleMouseMove}
+                            onMouseUp={handleMouseUp}
+                            onMouseLeave={handleMouseLeave}
+                        >
+                            <div className="iecho-bk4-applications-image-grid">
+                                <div className="iecho-bk4-application-image-item">
+                                    <img src="/application/_0000_6.jpg" alt="Textile Fabrics" />
+                                    <p>Textile Fabrics</p>
+                                </div>
+                                <div className="iecho-bk4-application-image-item">
+                                    <img src="/application/_0001_5.jpg" alt="Acrylic Sheets" />
+                                    <p>Acrylic Sheets</p>
+                                </div>
+                                <div className="iecho-bk4-application-image-item">
+                                    <img src="/application/_0002_4.jpg" alt="Corrugated Cardboard" />
+                                    <p>Corrugated Cardboard</p>
+                                </div>
+                                <div className="iecho-bk4-application-image-item">
+                                    <img src="/application/_0003_3.jpg" alt="PVC Composites" />
+                                    <p>PVC Composites</p>
+                                </div>
+                                <div className="iecho-bk4-application-image-item">
+                                    <img src="/application/_0004_2.jpg" alt="Foil Graphics" />
+                                    <p>Foil Graphics</p>
+                                </div>
+                                <div className="iecho-bk4-application-image-item">
+                                    <img src="/application/_0005_1.jpg" alt="Die-Cut Windows" />
+                                    <p>Die-Cut Windows</p>
+                                </div>
+                                <div className="iecho-bk4-application-image-item">
+                                    <img src="/application/_0000_6.jpg" alt="Sign Making" />
+                                    <p>Sign Making</p>
+                                </div>
+                                <div className="iecho-bk4-application-image-item">
+                                    <img src="/application/_0001_5.jpg" alt="Display Manufacturing" />
+                                    <p>Display Manufacturing</p>
+                                </div>
+                                <div className="iecho-bk4-application-image-item">
+                                    <img src="/application/_0002_4.jpg" alt="Packaging Production" />
+                                    <p>Packaging Production</p>
+                                </div>
+                                <div className="iecho-bk4-application-image-item">
+                                    <img src="/application/_0003_3.jpg" alt="Industrial Cutting" />
+                                    <p>Industrial Cutting</p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -274,16 +336,14 @@ export default function IEchoBK4() {
                 {/* Advantages */}
                 <section className="iecho-bk4-advantages-section">
                     <div className="iecho-bk4-advantages-container">
-                        <h2 className="iecho-bk4-section-title">Why Choose iEcho BK3?</h2>
+                        <h2 className="iecho-bk4-section-title">Why Choose iEcho BK4?</h2>
                         <div className="iecho-bk4-advantages-grid">
                             {machineDetails.advantages.map((advantage, index) => (
                                 <div key={index} className="iecho-bk4-advantage-item">
-                                    <div className="iecho-bk4-advantage-icon">
-                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                                            <circle cx="12" cy="12" r="10" />
-                                            <path d="M9 12l2 2 4-4" />
-                                        </svg>
-                                    </div>
+                                    <svg className="iecho-bk4-advantage-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                        <circle cx="12" cy="12" r="10" />
+                                        <path d="M9 12l2 2 4-4" />
+                                    </svg>
                                     <p className="iecho-bk4-advantage-text">{advantage}</p>
                                 </div>
                             ))}

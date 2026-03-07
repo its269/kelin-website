@@ -1,12 +1,39 @@
 "use client";
 import Header from '../components/Header';
 import Link from 'next/link';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import './sublimation-printer-fd6198e.css';
 
 export default function SublimationPrinterFD6198E() {
     const [inquiryModalOpen, setInquiryModalOpen] = useState(false);
     const [selectedImage, setSelectedImage] = useState('/sublimation_dtf/SUBL Sublimation Printer FD6198E (1).png');
+
+    const scrollRef = useRef(null);
+    const [isDragging, setIsDragging] = useState(false);
+    const [startX, setStartX] = useState(0);
+    const [scrollLeft, setScrollLeft] = useState(0);
+
+    const handleMouseDown = (e) => {
+        setIsDragging(true);
+        setStartX(e.pageX - scrollRef.current.offsetLeft);
+        setScrollLeft(scrollRef.current.scrollLeft);
+    };
+
+    const handleMouseMove = (e) => {
+        if (!isDragging) return;
+        e.preventDefault();
+        const x = e.pageX - scrollRef.current.offsetLeft;
+        const walk = (x - startX) * 2;
+        scrollRef.current.scrollLeft = scrollLeft - walk;
+    };
+
+    const handleMouseUp = () => {
+        setIsDragging(false);
+    };
+
+    const handleMouseLeave = () => {
+        setIsDragging(false);
+    };
 
     const machineDetails = {
         name: 'sublimation-printer-fd6198e',
@@ -217,23 +244,59 @@ export default function SublimationPrinterFD6198E() {
                 {/* Applications */}
                 <section className="fd6198e-printer-applications-section">
                     <div className="fd6198e-printer-applications-container">
-                        <div className="fd6198e-printer-applications-grid">
-                            <div className="fd6198e-printer-applications-content">
-                                <h2 className="fd6198e-printer-section-title">Applications</h2>
-                                <p className="fd6198e-printer-applications-subtitle">
-                                    Versatile cutting solutions for professional applications
-                                </p>
-                                <ul className="fd6198e-printer-applications-list">
-                                    {machineDetails.applications.map((application, index) => (
-                                        <li key={index} className="fd6198e-printer-application-item">
-                                            <svg className="fd6198e-printer-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                                                <path d="M9 12l2 2 4-4" />
-                                                <circle cx="12" cy="12" r="10" />
-                                            </svg>
-                                            {application}
-                                        </li>
-                                    ))}
-                                </ul>
+                        <h2 className="fd6198e-printer-section-title">Applications</h2>
+                        <p className="fd6198e-printer-applications-subtitle">
+                            Versatile cutting solutions for professional applications
+                        </p>
+                        <div
+                            ref={scrollRef}
+                            className="fd6198e-printer-applications-scroll"
+                            onMouseDown={handleMouseDown}
+                            onMouseMove={handleMouseMove}
+                            onMouseUp={handleMouseUp}
+                            onMouseLeave={handleMouseLeave}
+                        >
+                            <div className="fd6198e-printer-applications-image-grid">
+                                <div className="fd6198e-printer-application-image-item">
+                                    <img src="/application/_0000_6.jpg" alt="T-Shirt Printing" />
+                                    <p>T-Shirt Printing</p>
+                                </div>
+                                <div className="fd6198e-printer-application-image-item">
+                                    <img src="/application/_0001_5.jpg" alt="Mug Printing" />
+                                    <p>Mug Printing</p>
+                                </div>
+                                <div className="fd6198e-printer-application-image-item">
+                                    <img src="/application/_0002_4.jpg" alt="Signage & Banners" />
+                                    <p>Signage & Banners</p>
+                                </div>
+                                <div className="fd6198e-printer-application-image-item">
+                                    <img src="/application/_0003_3.jpg" alt="Promotional Products" />
+                                    <p>Promotional Products</p>
+                                </div>
+                                <div className="fd6198e-printer-application-image-item">
+                                    <img src="/application/_0004_2.jpg" alt="Custom Apparel" />
+                                    <p>Custom Apparel</p>
+                                </div>
+                                <div className="fd6198e-printer-application-image-item">
+                                    <img src="/application/_0005_1.jpg" alt="Phone Cases" />
+                                    <p>Phone Cases</p>
+                                </div>
+                                <div className="fd6198e-printer-application-image-item">
+                                    <img src="/application/_0000_6.jpg" alt="Sportswear" />
+                                    <p>Sportswear</p>
+                                </div>
+                                <div className="fd6198e-printer-application-image-item">
+                                    <img src="/application/_0001_5.jpg" alt="Home Decor" />
+                                    <p>Home Decor</p>
+                                </div>
+                                <div className="fd6198e-printer-application-image-item">
+                                    <img src="/application/_0002_4.jpg" alt="Packaging" />
+                                    <p>Packaging</p>
+                                </div>
+                                <div className="fd6198e-printer-application-image-item">
+                                    <img src="/application/_0003_3.jpg" alt="Labels & Stickers" />
+                                    <p>Labels & Stickers</p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -246,12 +309,10 @@ export default function SublimationPrinterFD6198E() {
                         <div className="fd6198e-printer-advantages-grid">
                             {machineDetails.advantages.map((advantage, index) => (
                                 <div key={index} className="fd6198e-printer-advantage-item">
-                                    <div className="fd6198e-printer-advantage-icon">
-                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                                            <circle cx="12" cy="12" r="10" />
-                                            <path d="M9 12l2 2 4-4" />
-                                        </svg>
-                                    </div>
+                                    <svg className="fd6198e-printer-advantage-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                        <circle cx="12" cy="12" r="10" />
+                                        <path d="M9 12l2 2 4-4" />
+                                    </svg>
                                     <p className="fd6198e-printer-advantage-text">{advantage}</p>
                                 </div>
                             ))}

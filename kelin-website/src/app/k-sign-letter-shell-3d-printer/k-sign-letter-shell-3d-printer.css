@@ -1,4 +1,4 @@
-﻿/* XLINE Eco-Solvent Printer Page Styles */
+﻿/* Cold Laminator Unique Styles */
 
 /* Font Face Declaration */
 /* @font-face {
@@ -9,62 +9,64 @@
     font-display: swap;
 } */
 
-.xline-main {
+.k-sign-3d-printer-main {
     min-height: 100vh;
     margin-top: 60px;
 }
 
-/* Breadcrumb Navigation */
-.xline-breadcrumb-section {
-    padding: 20px 40px;
+/* Breadcrumb Section */
+.k-sign-3d-printer-breadcrumb-section {
     background: #f8fafc;
+    padding: 16px 0;
     border-bottom: 1px solid #e2e8f0;
 }
 
-.xline-breadcrumb-container {
+.k-sign-3d-printer-breadcrumb-container {
     max-width: 1400px;
     margin: 0 auto;
+    padding: 0 40px;
 }
 
-.xline-breadcrumb-nav {
+.k-sign-3d-printer-breadcrumb-nav {
     display: flex;
     align-items: center;
     gap: 8px;
     font-size: 0.9rem;
 }
 
-.xline-breadcrumb-link {
+.k-sign-3d-printer-breadcrumb-link {
     color: #64748b;
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
-.xline-breadcrumb-link:hover {
-    color: #475569;
+.k-sign-3d-printer-breadcrumb-link:hover {
+    color: #334155;
 }
 
-.xline-breadcrumb-separator {
-    color: #cbd5e0;
+.k-sign-3d-printer-breadcrumb-separator {
+    color: #94a3b8;
     font-weight: 300;
 }
 
-.xline-breadcrumb-current {
+.k-sign-3d-printer-breadcrumb-current {
     color: #1e293b;
     font-weight: 600;
 }
 
-/* Hero Section */
-.xline-hero {
+/* Product Hero Section */
+.k-sign-3d-printer-hero {
     padding: 100px 40px 80px;
     margin: 0 auto;
+    text-align: center;
     background: linear-gradient(135deg, rgba(71, 85, 105, 0.05) 0%, rgba(51, 65, 85, 0.08) 100%);
-    border-radius: 0px 0px 80px 80px;
+    border-radius: 80px;
     margin-bottom: 60px;
     position: relative;
     overflow: hidden;
 }
 
-.xline-hero::before {
+.k-sign-3d-printer-hero::before {
     content: '';
     position: absolute;
     top: -50%;
@@ -72,11 +74,11 @@
     width: 200%;
     height: 200%;
     background: radial-gradient(circle, rgba(71, 85, 105, 0.1) 0%, transparent 50%);
-    animation: xline-float 20s ease-in-out infinite;
+    animation: k-sign-3d-printer-float 20s ease-in-out infinite;
     pointer-events: none;
 }
 
-@keyframes xline-float {
+@keyframes k-sign-3d-printer-float {
 
     0%,
     100% {
@@ -88,22 +90,28 @@
     }
 }
 
-.xline-hero-layout {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 80px;
-    align-items: center;
+.k-sign-3d-printer-hero.product-hero {
+    text-align: left;
+    padding: 80px 40px;
+}
+
+.k-sign-3d-printer-hero-layout {
     max-width: 1400px;
     margin: 0 auto;
+    gap: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
     position: relative;
     z-index: 2;
 }
 
-.xline-hero-left {
+.k-sign-3d-printer-hero-left {
     text-align: left;
 }
 
-.xline-hero-title {
+.k-sign-3d-printer-hero-title {
     font-size: 3.5rem;
     font-weight: 800;
     font-family: 'Bison-Bold', Arial, sans-serif;
@@ -116,67 +124,33 @@
     letter-spacing: -0.02em;
 }
 
-.xline-hero-subtitle {
+.k-sign-3d-printer-hero-title.product-title {
+    font-size: 2.8rem;
+    margin-bottom: 20px;
+}
+
+.k-sign-3d-printer-hero-subtitle {
     font-size: 1.3rem;
     color: #64748b;
     line-height: 1.6;
     margin: 0 0 40px 0;
+    max-width: 600px;
+}
+
+.k-sign-3d-printer-hero-subtitle.product-subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
     max-width: 500px;
 }
 
-.xline-button-group {
+.k-sign-3d-printer-button-group {
     display: flex;
-    gap: 16px;
-    margin-bottom: 40px;
+    gap: 20px;
+    margin-bottom: 30px;
     flex-wrap: wrap;
 }
 
-.xline-hero-stats {
-    display: flex;
-    gap: 32px;
-    flex-wrap: wrap;
-}
-
-.xline-stat {
-    text-align: center;
-    padding: 20px 30px;
-    background: rgba(255, 255, 255, 0.8);
-    border-radius: 16px;
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(71, 85, 105, 0.1);
-    min-width: 120px;
-}
-
-.xline-stat-number {
-    font-size: 2rem;
-    font-weight: 800;
-    color: #334155;
-    display: block;
-}
-
-.xline-stat-label {
-    font-size: 0.9rem;
-    color: #64748b;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-.xline-hero-right {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.xline-hero-image {
-    max-width: 100%;
-    height: auto;
-    border-radius: 20px;
-    /* box-shadow: 0 20px 60px rgba(71, 85, 105, 0.2); */
-}
-
-/* Buttons */
-.xline-view-btn {
+.k-sign-3d-printer-view-btn {
     background: linear-gradient(135deg, #334155, #475569);
     color: white;
     border: none;
@@ -192,22 +166,27 @@
     gap: 8px;
 }
 
-.xline-view-btn:hover {
+.k-sign-3d-printer-view-btn.large {
+    padding: 15px 30px;
+    font-size: 1rem;
+}
+
+.k-sign-3d-printer-view-btn:hover {
     background: linear-gradient(135deg, #1e293b, #334155);
     transform: translateX(4px);
 }
 
-.xline-view-btn svg {
+.k-sign-3d-printer-view-btn svg {
     width: 16px;
     height: 16px;
     transition: transform 0.3s ease;
 }
 
-.xline-view-btn:hover svg {
+.k-sign-3d-printer-view-btn:hover svg {
     transform: translateX(4px);
 }
 
-.xline-btn-secondary {
+.k-sign-3d-printer-btn-secondary {
     background: #f7fafc;
     color: #4a5568;
     border: 2px solid #e2e8f0;
@@ -222,18 +201,81 @@
     gap: 8px;
 }
 
-.xline-btn-secondary:hover {
+.k-sign-3d-printer-btn-secondary.large {
+    padding: 15px 30px;
+    font-size: 1rem;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+}
+
+.k-sign-3d-printer-btn-secondary:hover {
     background: #edf2f7;
     border-color: #cbd5e0;
 }
 
-.large {
-    padding: 16px 32px;
-    font-size: 1rem;
+.k-sign-3d-printer-hero-stats {
+    display: flex;
+    justify-content: flex-start;
+    gap: 40px;
+    margin-top: 40px;
+    flex-wrap: wrap;
 }
 
-/* Section Titles */
-.xline-section-title {
+.k-sign-3d-printer-hero-stats.product-stats {
+    justify-content: flex-start;
+}
+
+.k-sign-3d-printer-stat {
+    text-align: center;
+    padding: 20px 30px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 16px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(71, 85, 105, 0.1);
+}
+
+.k-sign-3d-printer-stat-number {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #334155;
+    display: block;
+    line-height: 1.2;
+}
+
+.k-sign-3d-printer-stat-label {
+    font-size: 0.9rem;
+    color: #64748b;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-top: 4px;
+}
+
+.k-sign-3d-printer-hero-right {
+    text-align: center;
+}
+
+.k-sign-3d-printer-hero-image {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    border-radius: 16px;
+}
+
+/* Overview Section */
+.k-sign-3d-printer-overview-section {
+    padding: 80px 40px;
+    background: white;
+}
+
+.k-sign-3d-printer-overview-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.k-sign-3d-printer-section-title {
     font-size: 2.8rem;
     font-weight: 800;
     font-family: 'Bison-Bold', Arial, sans-serif;
@@ -246,7 +288,12 @@
     text-align: center;
 }
 
-.xline-section-subtitle {
+.k-sign-3d-printer-country-select {
+    border-radius: 10px;
+    border-color: #94a3b8;
+}
+
+.k-sign-3d-printer-section-subtitle {
     font-size: 1.2rem;
     color: #64748b;
     text-align: center;
@@ -256,43 +303,31 @@
     margin-right: auto;
 }
 
-/* Overview Section */
-.xline-overview-section {
-    padding: 80px 40px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.xline-overview-container {
-    text-align: center;
-}
-
-.xline-overview-text {
+.k-sign-3d-printer-overview-text {
     font-size: 1.1rem;
     line-height: 1.8;
-    color: #64748b;
-    max-width: 800px;
-    margin: 0 auto;
+    color: #475569;
+    margin: 0;
 }
 
 /* Features Section */
-.xline-features-section {
+.k-sign-3d-printer-features-section {
     background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
     color: white;
     padding: 80px 40px;
 }
 
-.xline-features-container {
+.k-sign-3d-printer-features-container {
     max-width: 1400px;
     margin: 0 auto;
 }
 
-.xline-features-header {
+.k-sign-3d-printer-features-header {
     text-align: center;
     margin-bottom: 60px;
 }
 
-.xline-features-title {
+.k-sign-3d-printer-features-title {
     font-family: 'Bison-Bold', sans-serif;
     font-size: 2.5rem;
     font-weight: 800;
@@ -303,19 +338,19 @@
     -webkit-text-fill-color: transparent;
 }
 
-.xline-features-subtitle {
+.k-sign-3d-printer-features-subtitle {
     color: rgba(255, 255, 255, 0.8);
     font-size: 1.1rem;
-    margin-bottom: 40px;
+    margin: 0;
 }
 
-.xline-features-grid {
+.k-sign-3d-printer-features-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 40px;
 }
 
-.xline-feature-card {
+.k-sign-3d-printer-feature-card {
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 20px;
@@ -325,12 +360,12 @@
     backdrop-filter: blur(10px);
 }
 
-.xline-feature-card:hover {
+.k-sign-3d-printer-feature-card:hover {
     transform: translateY(-8px);
     background: rgba(255, 255, 255, 0.08);
 }
 
-.xline-feature-icon {
+.k-sign-3d-printer-feature-icon {
     width: 60px;
     height: 60px;
     margin: 0 auto 24px auto;
@@ -341,38 +376,39 @@
     border-radius: 50%;
     padding: 16px;
     box-shadow: 0 8px 25px rgba(71, 85, 105, 0.25);
+    color: white;
 }
 
-.xline-feature-icon svg {
+.k-sign-3d-printer-feature-icon svg {
     width: 28px;
     height: 28px;
     color: white;
 }
 
-.xline-feature-title {
+.k-sign-3d-printer-feature-title {
     font-size: 1.4rem;
     font-weight: 700;
     margin: 0 0 16px 0;
 }
 
-.xline-feature-text {
+.k-sign-3d-printer-feature-text {
     color: rgba(255, 255, 255, 0.8);
     line-height: 1.6;
     margin: 0;
 }
 
 /* Specifications Section */
-.xline-specs-section {
+.k-sign-3d-printer-specs-section {
     padding: 80px 40px;
     background: #f8fafc;
 }
 
-.xline-specs-container {
+.k-sign-3d-printer-specs-container {
     max-width: 1400px;
     margin: 0 auto;
 }
 
-.xline-specs-grid {
+.k-sign-3d-printer-specs-grid {
     display: grid;
     grid-template-columns: 1fr;
     gap: 30px;
@@ -382,7 +418,7 @@
     margin-right: auto;
 }
 
-.xline-spec-card {
+.k-sign-3d-printer-spec-card {
     background: #ffffff;
     border: 1px solid #e2e8f0;
     border-radius: 8px;
@@ -390,7 +426,7 @@
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
-.xline-spec-card-title {
+.k-sign-3d-printer-spec-card-title {
     font-size: 1.5rem;
     font-weight: 600;
     color: #1e293b;
@@ -398,12 +434,12 @@
     text-align: center;
 }
 
-.xline-spec-card-body {
+.k-sign-3d-printer-spec-card-body {
     display: grid;
     gap: 1px;
 }
 
-.xline-spec-item {
+.k-sign-3d-printer-spec-item {
     display: grid;
     grid-template-columns: 1fr 1.2fr;
     gap: 16px;
@@ -413,15 +449,15 @@
     border-bottom: 1px solid #e2e8f0;
 }
 
-.xline-spec-item:nth-child(even) {
+.k-sign-3d-printer-spec-item:nth-child(even) {
     background: #ffffff;
 }
 
-.xline-spec-item:last-child {
+.k-sign-3d-printer-spec-item:last-child {
     border-bottom: none;
 }
 
-.xline-spec-label {
+.k-sign-3d-printer-spec-label {
     font-weight: 600;
     color: #475569;
     font-size: 0.9rem;
@@ -429,7 +465,7 @@
     align-items: center;
 }
 
-.xline-spec-value {
+.k-sign-3d-printer-spec-value {
     color: #1e293b;
     font-weight: 500;
     font-size: 0.9rem;
@@ -440,25 +476,25 @@
 }
 
 /* Applications Section */
-.xline-applications-section {
+.k-sign-3d-printer-applications-section {
     padding: 80px 40px;
     background: white;
 }
 
-.xline-applications-container {
+.k-sign-3d-printer-applications-container {
     max-width: 1400px;
     margin: 0 auto;
     text-align: center;
 }
 
-.xline-applications-subtitle {
+.k-sign-3d-printer-applications-subtitle {
     font-size: 1.1rem;
     color: #64748b;
     margin-bottom: 40px;
     line-height: 1.6;
 }
 
-.xline-applications-scroll {
+.k-sign-3d-printer-applications-scroll {
     overflow-x: auto;
     overflow-y: hidden;
     margin-top: 40px;
@@ -467,24 +503,27 @@
     cursor: grab;
     user-select: none;
     scrollbar-width: none;
+    /* Firefox */
     -ms-overflow-style: none;
+    /* IE and Edge */
 }
 
-.xline-applications-scroll::-webkit-scrollbar {
+.k-sign-3d-printer-applications-scroll::-webkit-scrollbar {
     display: none;
+    /* Chrome, Safari, Opera */
 }
 
-.xline-applications-scroll:active {
+.k-sign-3d-printer-applications-scroll:active {
     cursor: grabbing;
 }
 
-.xline-applications-image-grid {
+.k-sign-3d-printer-applications-image-grid {
     display: flex;
     gap: 24px;
     width: max-content;
 }
 
-.xline-application-image-item {
+.k-sign-3d-printer-application-image-item {
     flex: 0 0 280px;
     background: white;
     border: 1px solid #e2e8f0;
@@ -494,20 +533,20 @@
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
-.xline-application-image-item:hover {
+.k-sign-3d-printer-application-image-item:hover {
     transform: translateY(-4px);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
     border-color: #3b82f6;
 }
 
-.xline-application-image-item img {
+.k-sign-3d-printer-application-image-item img {
     width: 100%;
     height: 200px;
     object-fit: cover;
     display: block;
 }
 
-.xline-application-image-item p {
+.k-sign-3d-printer-application-image-item p {
     padding: 16px;
     margin: 0;
     font-size: 0.95rem;
@@ -516,25 +555,26 @@
     text-align: center;
 }
 
-.xline-advantages-section {
+/* Advantages Section */
+.k-sign-3d-printer-advantages-section {
     padding: 80px 40px;
     background: #f8fafc;
 }
 
-.xline-advantages-container {
+.k-sign-3d-printer-advantages-container {
     max-width: 1400px;
     margin: 0 auto;
     text-align: center;
 }
 
-.xline-advantages-grid {
+.k-sign-3d-printer-advantages-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 30px;
     margin-top: 60px;
 }
 
-.xline-advantage-item {
+.k-sign-3d-printer-advantage-item {
     display: flex;
     align-items: flex-start;
     gap: 16px;
@@ -546,12 +586,12 @@
     text-align: left;
 }
 
-.xline-advantage-item:hover {
+.k-sign-3d-printer-advantage-item:hover {
     transform: translateY(-4px);
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
 }
 
-.xline-advantage-icon {
+.k-sign-3d-printer-advantage-icon {
     width: 24px;
     height: 24px;
     color: #10b981;
@@ -559,92 +599,20 @@
     margin-top: 2px;
 }
 
-.xline-advantage-text {
+.k-sign-3d-printer-advantage-text {
+    color: #475569;
+    line-height: 1.6;
     margin: 0;
-    color: #334155;
-    font-size: 0.95rem;
-    line-height: 1.6;
-}
-
-/* CTA Section */
-.xline-cta-section {
-    padding: 80px 40px;
-    background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
-    color: white;
-    text-align: center;
-}
-
-.xline-cta-container {
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.xline-cta-title {
-    font-family: 'Bison-Bold', sans-serif;
-    font-size: 2.5rem;
-    font-weight: 800;
-    margin: 0 0 20px 0;
-    line-height: 1.2;
-}
-
-.xline-cta-text {
-    font-size: 1.1rem;
-    color: rgba(255, 255, 255, 0.8);
-    line-height: 1.6;
-    margin: 0 0 40px 0;
-}
-
-.xline-cta-buttons {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-.xline-cta-btn-primary {
-    background: linear-gradient(135deg, #334155, #475569);
-    color: white;
-    border: none;
-    padding: 16px 32px;
-    border-radius: 12px;
-    font-weight: 600;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    text-decoration: none;
-}
-
-.xline-cta-btn-primary:hover {
-    background: linear-gradient(135deg, #1e293b, #334155);
-    transform: translateY(-2px);
-}
-
-.xline-cta-btn-secondary {
-    background: rgba(255, 255, 255, 0.1);
-    color: white;
-    border: 2px solid rgba(255, 255, 255, 0.2);
-    padding: 14px 30px;
-    border-radius: 12px;
-    font-weight: 600;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    text-decoration: none;
-}
-
-.xline-cta-btn-secondary:hover {
-    background: rgba(255, 255, 255, 0.15);
-    border-color: rgba(255, 255, 255, 0.3);
 }
 
 /* Modal Styles */
-.xline-modal-overlay {
+.k-sign-3d-printer-modal-overlay {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0, 0.6);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -652,224 +620,203 @@
     padding: 20px;
 }
 
-.xline-inquiry-modal {
+.k-sign-3d-printer-inquiry-modal {
     background: white;
-    border-radius: 16px;
+    border-radius: 20px;
     max-width: 600px;
     width: 100%;
     max-height: 90vh;
     overflow-y: auto;
     position: relative;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
 }
 
-.xline-inquiry-header {
+.k-sign-3d-printer-inquiry-header {
+    padding: 32px 32px 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 30px 30px 0;
-    margin-bottom: 20px;
+    border-bottom: 1px solid #e2e8f0;
+    margin-bottom: 32px;
+    padding-bottom: 24px;
 }
 
-.xline-inquiry-header h2 {
-    font-size: 1.2rem;
-    color: #2d3748;
-    font-weight: 700;
+.k-sign-3d-printer-inquiry-header h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #1e293b;
     margin: 0;
 }
 
-.xline-close-btn {
-    background: #f56565;
-    color: white;
+.k-sign-3d-printer-close-btn {
+    background: none;
     border: none;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    font-size: 24px;
+    font-size: 1.8rem;
+    color: #64748b;
     cursor: pointer;
+    padding: 4px;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+}
+
+.k-sign-3d-printer-close-btn:hover {
+    background: #f1f5f9;
+    color: #334155;
+}
+
+.k-sign-3d-printer-inquiry-form {
+    padding: 0 32px 32px;
+}
+
+.k-sign-3d-printer-form-row {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease;
+    gap: 20px;
+    margin-bottom: 24px;
 }
 
-.xline-close-btn:hover {
-    background: #e53e3e;
-    transform: scale(1.1);
+.k-sign-3d-printer-form-group {
+    flex: 1;
+    margin-bottom: 24px;
 }
 
-.xline-inquiry-form {
-    padding: 0 30px 30px;
-}
-
-.xline-form-group {
-    margin-bottom: 20px;
-}
-
-.xline-form-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 15px;
-    margin-bottom: 20px;
-}
-
-.xline-form-group label {
+.k-sign-3d-printer-form-group label {
     display: block;
+    font-weight: 500;
+    color: #334155;
     margin-bottom: 8px;
-    font-weight: 600;
-    color: #2d3748;
     font-size: 0.95rem;
 }
 
-.xline-form-group input,
-.xline-form-group textarea {
+.k-sign-3d-printer-form-group input,
+.k-sign-3d-printer-form-group textarea {
     width: 100%;
     padding: 12px 16px;
     border: 2px solid #e2e8f0;
     border-radius: 8px;
     font-size: 1rem;
-    transition: all 0.3s ease;
-    box-sizing: border-box;
+    transition: border-color 0.2s ease;
+    background: white;
 }
 
-.xline-form-group input:focus,
-.xline-form-group textarea:focus {
+.k-sign-3d-printer-form-group input:focus,
+.k-sign-3d-printer-form-group textarea:focus {
     outline: none;
-    border-color: #475569;
-    box-shadow: 0 0 0 3px rgba(71, 85, 105, 0.1);
+    border-color: #334155;
 }
 
-.xline-form-group textarea {
-    resize: vertical;
-    min-height: 100px;
-}
-
-.xline-form-actions {
-    display: flex;
-    gap: 15px;
-    margin-top: 30px;
-    padding-top: 20px;
-    border-top: 1px solid #e2e8f0;
-}
-
-.xline-btn-primary {
-    background: linear-gradient(135deg, #334155, #475569);
-    color: white;
-    border: none;
-    padding: 12px 24px;
-    border-radius: 8px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    flex: 1;
-}
-
-.xline-btn-primary:hover {
-    background: linear-gradient(135deg, #1e293b, #334155);
-}
-
-/* Phone Input Styling */
-.xline-phone-input {
+.k-sign-3d-printer-phone-input {
     display: flex;
     gap: 8px;
 }
 
-.xline-country-select:focus {
-    outline: none;
-    border-color: #475569;
-    box-shadow: 0 0 0 3px rgba(71, 85, 105, 0.1);
+.k-sign-3d-printer-form-actions {
+    display: flex;
+    gap: 16px;
+    justify-content: flex-end;
+    margin-top: 32px;
 }
 
-.xline-phone-input input {
-    flex: 1;
+.k-sign-3d-printer-btn-primary {
+    background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+    color: white;
+    border: none;
+    padding: 14px 28px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.k-sign-3d-printer-btn-primary:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 20px rgba(30, 41, 59, 0.3);
+}
+
+.k-sign-3d-printer-btn-secondary {
+    background: transparent;
+    color: #64748b;
+    border: 2px solid #e2e8f0;
+    padding: 14px 28px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.k-sign-3d-printer-btn-secondary:hover {
+    background: #f8fafc;
+    border-color: #cbd5e1;
 }
 
 /* Responsive Design */
 @media (max-width: 1024px) {
-    .xline-hero {
-        padding: 80px 30px 60px;
+    .k-sign-3d-printer-hero-layout {
+        gap: 40px;
     }
 
-    .xline-hero.product-hero {
+    .k-sign-3d-printer-hero.product-hero {
         border-radius: 0px 0px 50px 50px;
     }
 
-    .xline-hero-layout {
-        gap: 60px;
-    }
-
-    .xline-hero-title {
-        font-size: 3rem;
-    }
-
-    .xline-specs-grid {
+    .k-sign-3d-printer-specs-grid {
         grid-template-columns: 1fr;
     }
 }
 
-.xline-applications-grid {
-    grid-template-columns: 1fr;
-    gap: 60px;
+@media (max-width: 900px) {
+    .k-sign-3d-printer-hero-stats {
+        gap: 25px;
+        justify-content: center;
+    }
+
+    .k-sign-3d-printer-stat {
+        padding: 18px 25px;
+        min-width: 140px;
+    }
+
+    .k-sign-3d-printer-hero-title.product-title {
+        font-size: 2.4rem;
+    }
 }
 
 @media (max-width: 768px) {
-    .xline-main {
-        margin-top: 0;
-    }
-
-    .xline-hero {
-        padding: 60px 20px;
-        margin-bottom: 40px;
+    .k-sign-3d-printer-hero {
         border-radius: 0px 0px 40px 40px;
+        padding: 60px 20px 40px;
     }
 
-    .xline-hero.product-hero {
+    .k-sign-3d-printer-hero.product-hero {
         padding: 50px 20px;
         text-align: center;
     }
 
-    .xline-hero-layout {
-        grid-template-columns: 1fr;
-        gap: 40px;
-        text-align: center;
-    }
-
-    .xline-hero-title {
-        font-size: 2.5rem;
-        margin-top: 65px;
-    }
-
-    .xline-hero-title.product-title {
+    .k-sign-3d-printer-hero-title.product-title {
         font-size: 2.2rem;
         text-align: center;
     }
 
-    .xline-hero-subtitle {
-        font-size: 1.1rem;
-        max-width: 100%;
-    }
-
-    .xline-hero-subtitle.product-subtitle {
+    .k-sign-3d-printer-hero-subtitle.product-subtitle {
         text-align: center;
         max-width: 100%;
         font-size: 1rem;
         margin-bottom: 25px;
     }
 
-    .xline-button-group {
+    .k-sign-3d-printer-button-group {
         justify-content: center;
         gap: 15px;
         margin-bottom: 25px;
     }
 
-    .xline-hero-image {
+    .k-sign-3d-printer-hero-image {
         max-width: 350px;
         width: 90%;
         height: auto;
         margin: 0 auto;
     }
 
-    .xline-hero-stats {
+    .k-sign-3d-printer-hero-stats {
         justify-content: center;
         gap: 15px;
         margin-top: 30px;
@@ -880,91 +827,64 @@
         margin-right: auto;
     }
 
-    .xline-features-section,
-    .xline-specs-section,
-    .xline-applications-section,
-    .xline-cta-section {
-        padding: 60px 20px;
-    }
-
-    .xline-features-grid {
-        grid-template-columns: 1fr;
-        gap: 24px;
-    }
-
-    .xline-section-title {
-        font-size: 2.2rem;
-    }
-
-    .xline-specs-grid {
-        grid-template-columns: 1fr;
-        gap: 30px;
-        margin-top: 40px;
-    }
-
-    .xline-spec-card {
-        padding: 30px 20px;
-    }
-
-    .xline-applications-grid-items,
-    .xline-advantages-list {
-        grid-template-columns: 1fr;
-    }
-
-    .xline-cta-title {
-        font-size: 2rem;
-    }
-
-    .xline-cta-buttons {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .xline-cta-btn-primary,
-    .xline-cta-btn-secondary {
-        width: 100%;
-        max-width: 300px;
-    }
-
-    .xline-breadcrumb-section {
-        padding: 15px 20px;
-    }
-
-    .xline-breadcrumb-nav {
-        flex-wrap: wrap;
-    }
-
-    .xline-form-row {
-        grid-template-columns: 1fr;
-    }
-
-    .xline-phone-input {
-        flex-direction: column;
-    }
-}
-
-@media (max-width: 480px) {
-    .xline-hero-title {
-        font-size: 2rem;
-    }
-
-    .xline-section-title {
-        font-size: 1.8rem;
-    }
-
-    .xline-stat {
-        min-width: 100px;
+    .k-sign-3d-printer-stat {
         padding: 16px 20px;
         margin: 0;
         width: 100%;
         box-sizing: border-box;
     }
 
-    .xline-stat-number {
+    .k-sign-3d-printer-stat-number {
         font-size: 1.5rem;
     }
 
-    .xline-stat-label {
+    .k-sign-3d-printer-stat-label {
         font-size: 0.8rem;
+    }
+
+    .k-sign-3d-printer-form-row {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .k-sign-3d-printer-form-actions {
+        flex-direction: column;
+    }
+
+    .k-sign-3d-printer-applications-list {
+        grid-template-columns: 1fr;
+    }
+
+    .k-sign-3d-printer-advantages-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Mobile Specifications Table Styles */
+    .k-sign-3d-printer-spec-card {
+        padding: 16px;
+    }
+
+    .k-sign-3d-printer-spec-card-title {
+        font-size: 1.3rem;
+        margin-bottom: 16px;
+    }
+
+    .k-sign-3d-printer-spec-item {
+        grid-template-columns: 1fr;
+        gap: 4px;
+        padding: 10px 12px;
+    }
+
+    .k-sign-3d-printer-spec-label {
+        font-size: 0.85rem;
+        margin-bottom: 2px;
+    }
+
+    .k-sign-3d-printer-spec-value {
+        font-size: 0.8rem;
+        text-align: left;
+        justify-content: flex-start;
+        color: #64748b;
+        font-weight: 400;
     }
 }

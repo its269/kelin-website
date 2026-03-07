@@ -1,12 +1,39 @@
 "use client";
 import Header from '../components/Header';
 import Link from 'next/link';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import './smart-dtf-machine-unique.css';
 
 export default function SmartDTFMachine() {
     const [inquiryModalOpen, setInquiryModalOpen] = useState(false);
     const [selectedImage, setSelectedImage] = useState('/sublimation_dtf/DTF SMART DTF Machine (1).png');
+
+    const scrollRef = useRef(null);
+    const [isDragging, setIsDragging] = useState(false);
+    const [startX, setStartX] = useState(0);
+    const [scrollLeft, setScrollLeft] = useState(0);
+
+    const handleMouseDown = (e) => {
+        setIsDragging(true);
+        setStartX(e.pageX - scrollRef.current.offsetLeft);
+        setScrollLeft(scrollRef.current.scrollLeft);
+    };
+
+    const handleMouseMove = (e) => {
+        if (!isDragging) return;
+        e.preventDefault();
+        const x = e.pageX - scrollRef.current.offsetLeft;
+        const walk = (x - startX) * 2;
+        scrollRef.current.scrollLeft = scrollLeft - walk;
+    };
+
+    const handleMouseUp = () => {
+        setIsDragging(false);
+    };
+
+    const handleMouseLeave = () => {
+        setIsDragging(false);
+    };
 
     const machineDetails = {
         name: 'SMART DTF',
@@ -220,23 +247,59 @@ export default function SmartDTFMachine() {
                 {/* Applications */}
                 <section className="smart-dtf-applications-section">
                     <div className="smart-dtf-applications-container">
-                        <div className="smart-dtf-applications-grid">
-                            <div className="smart-dtf-applications-content">
-                                <h2 className="smart-dtf-section-title">Applications</h2>
-                                <p className="smart-dtf-applications-subtitle">
-                                    Versatile DTF printing solutions for custom textile applications
-                                </p>
-                                <ul className="smart-dtf-applications-list">
-                                    {machineDetails.applications.map((application, index) => (
-                                        <li key={index} className="smart-dtf-application-item">
-                                            <svg className="smart-dtf-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                                                <path d="M9 12l2 2 4-4" />
-                                                <circle cx="12" cy="12" r="10" />
-                                            </svg>
-                                            {application}
-                                        </li>
-                                    ))}
-                                </ul>
+                        <h2 className="smart-dtf-section-title">Applications</h2>
+                        <p className="smart-dtf-applications-subtitle">
+                            Versatile DTF printing solutions for custom textile applications
+                        </p>
+                        <div
+                            ref={scrollRef}
+                            className="smart-dtf-applications-scroll"
+                            onMouseDown={handleMouseDown}
+                            onMouseMove={handleMouseMove}
+                            onMouseUp={handleMouseUp}
+                            onMouseLeave={handleMouseLeave}
+                        >
+                            <div className="smart-dtf-applications-image-grid">
+                                <div className="smart-dtf-application-image-item">
+                                    <img src="/application/_0000_6.jpg" alt="T-Shirt Printing" />
+                                    <p>T-Shirt Printing</p>
+                                </div>
+                                <div className="smart-dtf-application-image-item">
+                                    <img src="/application/_0001_5.jpg" alt="Mug Printing" />
+                                    <p>Mug Printing</p>
+                                </div>
+                                <div className="smart-dtf-application-image-item">
+                                    <img src="/application/_0002_4.jpg" alt="Signage & Banners" />
+                                    <p>Signage & Banners</p>
+                                </div>
+                                <div className="smart-dtf-application-image-item">
+                                    <img src="/application/_0003_3.jpg" alt="Promotional Products" />
+                                    <p>Promotional Products</p>
+                                </div>
+                                <div className="smart-dtf-application-image-item">
+                                    <img src="/application/_0004_2.jpg" alt="Custom Apparel" />
+                                    <p>Custom Apparel</p>
+                                </div>
+                                <div className="smart-dtf-application-image-item">
+                                    <img src="/application/_0005_1.jpg" alt="Phone Cases" />
+                                    <p>Phone Cases</p>
+                                </div>
+                                <div className="smart-dtf-application-image-item">
+                                    <img src="/application/_0000_6.jpg" alt="Sportswear" />
+                                    <p>Sportswear</p>
+                                </div>
+                                <div className="smart-dtf-application-image-item">
+                                    <img src="/application/_0001_5.jpg" alt="Home Decor" />
+                                    <p>Home Decor</p>
+                                </div>
+                                <div className="smart-dtf-application-image-item">
+                                    <img src="/application/_0002_4.jpg" alt="Packaging" />
+                                    <p>Packaging</p>
+                                </div>
+                                <div className="smart-dtf-application-image-item">
+                                    <img src="/application/_0003_3.jpg" alt="Labels & Stickers" />
+                                    <p>Labels & Stickers</p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -249,12 +312,10 @@ export default function SmartDTFMachine() {
                         <div className="smart-dtf-advantages-grid">
                             {machineDetails.advantages.map((advantage, index) => (
                                 <div key={index} className="smart-dtf-advantage-item">
-                                    <div className="smart-dtf-advantage-icon">
-                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                                            <circle cx="12" cy="12" r="10" />
-                                            <path d="M9 12l2 2 4-4" />
-                                        </svg>
-                                    </div>
+                                    <svg className="smart-dtf-advantage-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                        <circle cx="12" cy="12" r="10" />
+                                        <path d="M9 12l2 2 4-4" />
+                                    </svg>
                                     <p className="smart-dtf-advantage-text">{advantage}</p>
                                 </div>
                             ))}

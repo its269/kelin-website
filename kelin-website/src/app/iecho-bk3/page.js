@@ -1,13 +1,39 @@
 "use client";
 import Header from '../components/Header';
 import Link from 'next/link';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import InquiryStorage from '../utils/InquiryStorage';
 import './iecho-bk3.css';
 
 export default function IEchoBK3() {
     const [inquiryModalOpen, setInquiryModalOpen] = useState(false);
     const [selectedImage, setSelectedImage] = useState('/bk3.png');
+    const scrollRef = useRef(null);
+    const [isDragging, setIsDragging] = useState(false);
+    const [startX, setStartX] = useState(0);
+    const [scrollLeft, setScrollLeft] = useState(0);
+
+    const handleMouseDown = (e) => {
+        setIsDragging(true);
+        setStartX(e.pageX - scrollRef.current.offsetLeft);
+        setScrollLeft(scrollRef.current.scrollLeft);
+    };
+
+    const handleMouseMove = (e) => {
+        if (!isDragging) return;
+        e.preventDefault();
+        const x = e.pageX - scrollRef.current.offsetLeft;
+        const walk = (x - startX) * 2;
+        scrollRef.current.scrollLeft = scrollLeft - walk;
+    };
+
+    const handleMouseUp = () => {
+        setIsDragging(false);
+    };
+
+    const handleMouseLeave = () => {
+        setIsDragging(false);
+    };
 
     const machineDetails = {
         name: 'iEcho BK3',
@@ -253,23 +279,59 @@ export default function IEchoBK3() {
                 {/* Applications */}
                 <section className="iecho-bk3-applications-section">
                     <div className="iecho-bk3-applications-container">
-                        <div className="iecho-bk3-applications-grid">
-                            <div className="iecho-bk3-applications-content">
-                                <h2 className="iecho-bk3-section-title">Applications</h2>
-                                <p className="iecho-bk3-applications-subtitle">
-                                    Versatile cutting solutions for professional applications
-                                </p>
-                                <ul className="iecho-bk3-applications-list">
-                                    {machineDetails.applications.map((application, index) => (
-                                        <li key={index} className="iecho-bk3-application-item">
-                                            <svg className="iecho-bk3-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                                                <path d="M9 12l2 2 4-4" />
-                                                <circle cx="12" cy="12" r="10" />
-                                            </svg>
-                                            {application}
-                                        </li>
-                                    ))}
-                                </ul>
+                        <h2 className="iecho-bk3-section-title">Applications</h2>
+                        <p className="iecho-bk3-applications-subtitle">
+                            Versatile cutting solutions for professional applications
+                        </p>
+                        <div
+                            ref={scrollRef}
+                            className="iecho-bk3-applications-scroll"
+                            onMouseDown={handleMouseDown}
+                            onMouseMove={handleMouseMove}
+                            onMouseUp={handleMouseUp}
+                            onMouseLeave={handleMouseLeave}
+                        >
+                            <div className="iecho-bk3-applications-image-grid">
+                                <div className="iecho-bk3-application-image-item">
+                                    <img src="/application/_0000_6.jpg" alt="Sign Industry Sample Making" />
+                                    <p>Sign Industry Sample Making</p>
+                                </div>
+                                <div className="iecho-bk3-application-image-item">
+                                    <img src="/application/_0001_5.jpg" alt="Advertising Printing Production" />
+                                    <p>Advertising Printing Production</p>
+                                </div>
+                                <div className="iecho-bk3-application-image-item">
+                                    <img src="/application/_0002_4.jpg" alt="Packaging Industry Mass Production" />
+                                    <p>Packaging Industry Mass Production</p>
+                                </div>
+                                <div className="iecho-bk3-application-image-item">
+                                    <img src="/application/_0003_3.jpg" alt="Short Run Production" />
+                                    <p>Short Run Production</p>
+                                </div>
+                                <div className="iecho-bk3-application-image-item">
+                                    <img src="/application/_0004_2.jpg" alt="Through Cutting Operations" />
+                                    <p>Through Cutting Operations</p>
+                                </div>
+                                <div className="iecho-bk3-application-image-item">
+                                    <img src="/application/_0005_1.jpg" alt="Kiss Cutting Applications" />
+                                    <p>Kiss Cutting Applications</p>
+                                </div>
+                                <div className="iecho-bk3-application-image-item">
+                                    <img src="/application/_0000_6.jpg" alt="Milling and Punching" />
+                                    <p>Milling and Punching</p>
+                                </div>
+                                <div className="iecho-bk3-application-image-item">
+                                    <img src="/application/_0001_5.jpg" alt="Creasing and Marking" />
+                                    <p>Creasing and Marking</p>
+                                </div>
+                                <div className="iecho-bk3-application-image-item">
+                                    <img src="/application/_0002_4.jpg" alt="High-Speed Production Lines" />
+                                    <p>High-Speed Production Lines</p>
+                                </div>
+                                <div className="iecho-bk3-application-image-item">
+                                    <img src="/application/_0003_3.jpg" alt="Automated Manufacturing" />
+                                    <p>Automated Manufacturing</p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -282,12 +344,10 @@ export default function IEchoBK3() {
                         <div className="iecho-bk3-advantages-grid">
                             {machineDetails.advantages.map((advantage, index) => (
                                 <div key={index} className="iecho-bk3-advantage-item">
-                                    <div className="iecho-bk3-advantage-icon">
-                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                                            <circle cx="12" cy="12" r="10" />
-                                            <path d="M9 12l2 2 4-4" />
-                                        </svg>
-                                    </div>
+                                    <svg className="iecho-bk3-advantage-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                        <circle cx="12" cy="12" r="10" />
+                                        <path d="M9 12l2 2 4-4" />
+                                    </svg>
                                     <p className="iecho-bk3-advantage-text">{advantage}</p>
                                 </div>
                             ))}

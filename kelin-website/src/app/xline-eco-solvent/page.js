@@ -1,12 +1,38 @@
 "use client";
 import Header from '../components/Header';
 import Link from 'next/link';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import './xline.css';
 
 export default function XlineEcoSolventPage() {
     const [inquiryModalOpen, setInquiryModalOpen] = useState(false);
     const [selectedImage, setSelectedImage] = useState('/Apollo Xline (1).png');
+    const scrollRef = useRef(null);
+    const [isDragging, setIsDragging] = useState(false);
+    const [startX, setStartX] = useState(0);
+    const [scrollLeft, setScrollLeft] = useState(0);
+
+    const handleMouseDown = (e) => {
+        setIsDragging(true);
+        setStartX(e.pageX - scrollRef.current.offsetLeft);
+        setScrollLeft(scrollRef.current.scrollLeft);
+    };
+
+    const handleMouseMove = (e) => {
+        if (!isDragging) return;
+        e.preventDefault();
+        const x = e.pageX - scrollRef.current.offsetLeft;
+        const walk = (x - startX) * 2;
+        scrollRef.current.scrollLeft = scrollLeft - walk;
+    };
+
+    const handleMouseUp = () => {
+        setIsDragging(false);
+    };
+
+    const handleMouseLeave = () => {
+        setIsDragging(false);
+    };
 
     const machineDetails = {
         name: 'XLINE Eco-Solvent Printer',
@@ -199,21 +225,17 @@ export default function XlineEcoSolventPage() {
                         <p className="xline-section-subtitle">
                             Complete technical details for XLINE eco-solvent printer
                         </p>
-                        <div className="xline-specs-table-wrapper">
-                            <div className="xline-spec-table">
-                                <div className="xline-spec-table-header">
-                                    <h3 className="xline-spec-table-title">
-                                        <span className="xline-spec-icon">⚙️</span>
-                                        Machine Specifications
-                                    </h3>
-                                </div>
-                                <div className="xline-spec-table-body">
+                        <div className="xline-specs-grid">
+                            <div className="xline-spec-card">
+                                <h3 className="xline-spec-card-title">
+                                    Machine Specifications
+                                </h3>
+                                <div className="xline-spec-card-body">
                                     {machineDetails.specifications.map((spec, index) => (
-                                        <div key={index} className="xline-spec-row">
+                                        <div key={index} className="xline-spec-item">
                                             <div className="xline-spec-label">
                                                 {spec.label}
                                             </div>
-                                            <div className="xline-spec-divider"></div>
                                             <div className="xline-spec-value">{spec.value}</div>
                                         </div>
                                     ))}
@@ -226,35 +248,72 @@ export default function XlineEcoSolventPage() {
                 {/* Applications */}
                 <section className="xline-applications-section">
                     <div className="xline-applications-container">
-                        <div className="xline-applications-grid">
-                            <div className="xline-applications-left">
-                                <h2 className="xline-section-title">Applications</h2>
-                                <p className="xline-applications-intro">
-                                    Perfect for a wide range of professional printing applications
-                                </p>
-                                <div className="xline-applications-grid-items">
-                                    {machineDetails.applications.map((application, index) => (
-                                        <div key={index} className="xline-application-item">
-                                            <div className="xline-application-dot"></div>
-                                            <span className="xline-application-text">{application}</span>
-                                        </div>
-                                    ))}
+                        <h2 className="xline-section-title">Applications</h2>
+                        <p className="xline-applications-subtitle">
+                            Professional eco-solvent printing solutions for diverse applications
+                        </p>
+                        <div
+                            ref={scrollRef}
+                            className="xline-applications-scroll"
+                            onMouseDown={handleMouseDown}
+                            onMouseMove={handleMouseMove}
+                            onMouseUp={handleMouseUp}
+                            onMouseLeave={handleMouseLeave}
+                        >
+                            <div className="xline-applications-image-grid">
+                                <div className="xline-application-image-item">
+                                    <img src="/application/_0000_6.jpg" alt="Large Format Signage" />
+                                    <p>Large Format Signage</p>
+                                </div>
+                                <div className="xline-application-image-item">
+                                    <img src="/application/_0001_5.jpg" alt="Outdoor Banners" />
+                                    <p>Outdoor Banners</p>
+                                </div>
+                                <div className="xline-application-image-item">
+                                    <img src="/application/_0002_4.jpg" alt="Vehicle Wraps" />
+                                    <p>Vehicle Wraps</p>
+                                </div>
+                                <div className="xline-application-image-item">
+                                    <img src="/application/_0003_3.jpg" alt="Billboard Advertising" />
+                                    <p>Billboard Advertising</p>
+                                </div>
+                                <div className="xline-application-image-item">
+                                    <img src="/application/_0004_2.jpg" alt="Exhibition Graphics" />
+                                    <p>Exhibition Graphics</p>
+                                </div>
+                                <div className="xline-application-image-item">
+                                    <img src="/application/_0005_1.jpg" alt="Retail Displays" />
+                                    <p>Retail Displays</p>
+                                </div>
+                                <div className="xline-application-image-item">
+                                    <img src="/application/_0000_6.jpg" alt="Architectural Graphics" />
+                                    <p>Architectural Graphics</p>
+                                </div>
+                                <div className="xline-application-image-item">
+                                    <img src="/application/_0001_5.jpg" alt="Textile Printing" />
+                                    <p>Textile Printing</p>
                                 </div>
                             </div>
-                            <div className="xline-applications-right">
-                                <h2 className="xline-section-title">Advantages</h2>
-                                <p className="xline-applications-intro">
-                                    Why choose the XLINE Eco-Solvent for your business
-                                </p>
-                                <div className="xline-advantages-list">
-                                    {machineDetails.advantages.map((advantage, index) => (
-                                        <div key={index} className="xline-advantage-item">
-                                            <div className="xline-advantage-icon"></div>
-                                            <span className="xline-advantage-text">{advantage}</span>
-                                        </div>
-                                    ))}
+                        </div>
+                    </div>
+                </section>
+
+                {/* Advantages */}
+                <section className="xline-advantages-section">
+                    <div className="xline-advantages-container">
+                        <h2 className="xline-section-title">Why Choose XLINE Eco-Solvent?</h2>
+                        <div className="xline-advantages-grid">
+                            {machineDetails.advantages.map((advantage, index) => (
+                                <div key={index} className="xline-advantage-item">
+                                    <div className="xline-advantage-icon">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                            <circle cx="12" cy="12" r="10" />
+                                            <path d="M9 12l2 2 4-4" />
+                                        </svg>
+                                    </div>
+                                    <p className="xline-advantage-text">{advantage}</p>
                                 </div>
-                            </div>
+                            ))}
                         </div>
                     </div>
                 </section>

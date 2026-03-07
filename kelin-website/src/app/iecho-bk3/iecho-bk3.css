@@ -811,11 +811,38 @@
         flex-direction: column;
     }
 
-    .iecho-bk3-applications-list {
-        grid-template-columns: 1fr;
+    .iecho-bk3-applications-scroll {
+        margin-top: 30px;
+        padding-bottom: 15px;
+    }
+
+    .iecho-bk3-application-image-item {
+        flex: 0 0 240px;
+    }
+
+    .iecho-bk3-application-image-item img {
+        height: 160px;
+    }
+
+    .iecho-bk3-application-image-item p {
+        padding: 12px;
+        font-size: 0.85rem;
     }
 
     .iecho-bk3-advantages-grid {
         grid-template-columns: 1fr;
+    }
+
+    .iecho-bk3-advantage-item {
+        padding: 20px;
+    }
+
+    .iecho-bk3-section-title {
+        font-size: 2rem;
+    }
+
+    .iecho-bk3-applications-subtitle,
+    .iecho-bk3-section-subtitle {
+        font-size: 1rem;
     }
 }

@@ -1,12 +1,39 @@
 "use client";
 import Header from '../components/Header';
 import Link from 'next/link';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import './smart-sublimation-unique.css';
 
 export default function SmartSublimation() {
     const [inquiryModalOpen, setInquiryModalOpen] = useState(false);
     const [selectedImage, setSelectedImage] = useState('/sublimation_dtf/SUBL Smart Sublimation (1).png');
+
+    const scrollRef = useRef(null);
+    const [isDragging, setIsDragging] = useState(false);
+    const [startX, setStartX] = useState(0);
+    const [scrollLeft, setScrollLeft] = useState(0);
+
+    const handleMouseDown = (e) => {
+        setIsDragging(true);
+        setStartX(e.pageX - scrollRef.current.offsetLeft);
+        setScrollLeft(scrollRef.current.scrollLeft);
+    };
+
+    const handleMouseMove = (e) => {
+        if (!isDragging) return;
+        e.preventDefault();
+        const x = e.pageX - scrollRef.current.offsetLeft;
+        const walk = (x - startX) * 2;
+        scrollRef.current.scrollLeft = scrollLeft - walk;
+    };
+
+    const handleMouseUp = () => {
+        setIsDragging(false);
+    };
+
+    const handleMouseLeave = () => {
+        setIsDragging(false);
+    };
 
     const machineDetails = {
         name: 'SMART SUBLIMATION RJ24 2002 & 2004 6FT',
@@ -225,23 +252,59 @@ export default function SmartSublimation() {
                 {/* Applications */}
                 <section className="smart-sublimation-applications-section">
                     <div className="smart-sublimation-applications-container">
-                        <div className="smart-sublimation-applications-grid">
-                            <div className="smart-sublimation-applications-content">
-                                <h2 className="smart-sublimation-section-title">Applications</h2>
-                                <p className="smart-sublimation-applications-subtitle">
-                                    Versatile sublimation printing solutions for professional applications
-                                </p>
-                                <ul className="smart-sublimation-applications-list">
-                                    {machineDetails.applications.map((application, index) => (
-                                        <li key={index} className="smart-sublimation-application-item">
-                                            <svg className="smart-sublimation-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                                                <path d="M9 12l2 2 4-4" />
-                                                <circle cx="12" cy="12" r="10" />
-                                            </svg>
-                                            {application}
-                                        </li>
-                                    ))}
-                                </ul>
+                        <h2 className="smart-sublimation-section-title">Applications</h2>
+                        <p className="smart-sublimation-applications-subtitle">
+                            Versatile sublimation printing solutions for professional applications
+                        </p>
+                        <div
+                            ref={scrollRef}
+                            className="smart-sublimation-applications-scroll"
+                            onMouseDown={handleMouseDown}
+                            onMouseMove={handleMouseMove}
+                            onMouseUp={handleMouseUp}
+                            onMouseLeave={handleMouseLeave}
+                        >
+                            <div className="smart-sublimation-applications-image-grid">
+                                <div className="smart-sublimation-application-image-item">
+                                    <img src="/application/_0000_6.jpg" alt="T-Shirt Printing" />
+                                    <p>T-Shirt Printing</p>
+                                </div>
+                                <div className="smart-sublimation-application-image-item">
+                                    <img src="/application/_0001_5.jpg" alt="Mug Printing" />
+                                    <p>Mug Printing</p>
+                                </div>
+                                <div className="smart-sublimation-application-image-item">
+                                    <img src="/application/_0002_4.jpg" alt="Signage & Banners" />
+                                    <p>Signage & Banners</p>
+                                </div>
+                                <div className="smart-sublimation-application-image-item">
+                                    <img src="/application/_0003_3.jpg" alt="Promotional Products" />
+                                    <p>Promotional Products</p>
+                                </div>
+                                <div className="smart-sublimation-application-image-item">
+                                    <img src="/application/_0004_2.jpg" alt="Custom Apparel" />
+                                    <p>Custom Apparel</p>
+                                </div>
+                                <div className="smart-sublimation-application-image-item">
+                                    <img src="/application/_0005_1.jpg" alt="Phone Cases" />
+                                    <p>Phone Cases</p>
+                                </div>
+                                <div className="smart-sublimation-application-image-item">
+                                    <img src="/application/_0000_6.jpg" alt="Sportswear" />
+                                    <p>Sportswear</p>
+                                </div>
+                                <div className="smart-sublimation-application-image-item">
+                                    <img src="/application/_0001_5.jpg" alt="Home Decor" />
+                                    <p>Home Decor</p>
+                                </div>
+                                <div className="smart-sublimation-application-image-item">
+                                    <img src="/application/_0002_4.jpg" alt="Packaging" />
+                                    <p>Packaging</p>
+                                </div>
+                                <div className="smart-sublimation-application-image-item">
+                                    <img src="/application/_0003_3.jpg" alt="Labels & Stickers" />
+                                    <p>Labels & Stickers</p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -250,16 +313,14 @@ export default function SmartSublimation() {
                 {/* Advantages */}
                 <section className="smart-sublimation-advantages-section">
                     <div className="smart-sublimation-advantages-container">
-                        <h2 className="smart-sublimation-section-title">Why Choose Dual Pneumatic Heat Press?</h2>
+                        <h2 className="smart-sublimation-section-title">Why Choose Smart Sublimation?</h2>
                         <div className="smart-sublimation-advantages-grid">
                             {machineDetails.advantages.map((advantage, index) => (
                                 <div key={index} className="smart-sublimation-advantage-item">
-                                    <div className="smart-sublimation-advantage-icon">
-                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                                            <circle cx="12" cy="12" r="10" />
-                                            <path d="M9 12l2 2 4-4" />
-                                        </svg>
-                                    </div>
+                                    <svg className="smart-sublimation-advantage-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                        <circle cx="12" cy="12" r="10" />
+                                        <path d="M9 12l2 2 4-4" />
+                                    </svg>
                                     <p className="smart-sublimation-advantage-text">{advantage}</p>
                                 </div>
                             ))}

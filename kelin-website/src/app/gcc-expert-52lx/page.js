@@ -1,12 +1,39 @@
 "use client";
 import Header from '../components/Header';
 import Link from 'next/link';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import './gcc-expert-52lx.css';
 
 export default function GCCExpert52LX() {
     const [inquiryModalOpen, setInquiryModalOpen] = useState(false);
     const [selectedImage, setSelectedImage] = useState('/GCC Expert LX  EX-52LX  With Stand (1).png');
+
+    const scrollRef = useRef(null);
+    const [isDragging, setIsDragging] = useState(false);
+    const [startX, setStartX] = useState(0);
+    const [scrollLeft, setScrollLeft] = useState(0);
+
+    const handleMouseDown = (e) => {
+        setIsDragging(true);
+        setStartX(e.pageX - scrollRef.current.offsetLeft);
+        setScrollLeft(scrollRef.current.scrollLeft);
+    };
+
+    const handleMouseMove = (e) => {
+        if (!isDragging) return;
+        e.preventDefault();
+        const x = e.pageX - scrollRef.current.offsetLeft;
+        const walk = (x - startX) * 2;
+        scrollRef.current.scrollLeft = scrollLeft - walk;
+    };
+
+    const handleMouseUp = () => {
+        setIsDragging(false);
+    };
+
+    const handleMouseLeave = () => {
+        setIsDragging(false);
+    };
 
     const machineDetails = {
         name: 'GCC Expert 52 LX',
@@ -214,23 +241,59 @@ export default function GCCExpert52LX() {
                 {/* Applications */}
                 <section className="gcc-expert-52lx-applications-section">
                     <div className="gcc-expert-52lx-applications-container">
-                        <div className="gcc-expert-52lx-applications-grid">
-                            <div className="gcc-expert-52lx-applications-content">
-                                <h2 className="gcc-expert-52lx-section-title">Applications</h2>
-                                <p className="gcc-expert-52lx-applications-subtitle">
-                                    Versatile cutting solutions for professional applications
-                                </p>
-                                <ul className="gcc-expert-52lx-applications-list">
-                                    {machineDetails.applications.map((application, index) => (
-                                        <li key={index} className="gcc-expert-52lx-application-item">
-                                            <svg className="gcc-expert-52lx-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                                                <path d="M9 12l2 2 4-4" />
-                                                <circle cx="12" cy="12" r="10" />
-                                            </svg>
-                                            {application}
-                                        </li>
-                                    ))}
-                                </ul>
+                        <h2 className="gcc-expert-52lx-section-title">Applications</h2>
+                        <p className="gcc-expert-52lx-applications-subtitle">
+                            Versatile cutting solutions for professional applications
+                        </p>
+                        <div
+                            ref={scrollRef}
+                            className="gcc-expert-52lx-applications-scroll"
+                            onMouseDown={handleMouseDown}
+                            onMouseMove={handleMouseMove}
+                            onMouseUp={handleMouseUp}
+                            onMouseLeave={handleMouseLeave}
+                        >
+                            <div className="gcc-expert-52lx-applications-image-grid">
+                                <div className="gcc-expert-52lx-application-image-item">
+                                    <img src="/application/_0000_6.jpg" alt="T-Shirt Printing" />
+                                    <p>T-Shirt Printing</p>
+                                </div>
+                                <div className="gcc-expert-52lx-application-image-item">
+                                    <img src="/application/_0001_5.jpg" alt="Mug Printing" />
+                                    <p>Mug Printing</p>
+                                </div>
+                                <div className="gcc-expert-52lx-application-image-item">
+                                    <img src="/application/_0002_4.jpg" alt="Signage & Banners" />
+                                    <p>Signage & Banners</p>
+                                </div>
+                                <div className="gcc-expert-52lx-application-image-item">
+                                    <img src="/application/_0003_3.jpg" alt="Promotional Products" />
+                                    <p>Promotional Products</p>
+                                </div>
+                                <div className="gcc-expert-52lx-application-image-item">
+                                    <img src="/application/_0004_2.jpg" alt="Custom Apparel" />
+                                    <p>Custom Apparel</p>
+                                </div>
+                                <div className="gcc-expert-52lx-application-image-item">
+                                    <img src="/application/_0005_1.jpg" alt="Phone Cases" />
+                                    <p>Phone Cases</p>
+                                </div>
+                                <div className="gcc-expert-52lx-application-image-item">
+                                    <img src="/application/_0000_6.jpg" alt="Sportswear" />
+                                    <p>Sportswear</p>
+                                </div>
+                                <div className="gcc-expert-52lx-application-image-item">
+                                    <img src="/application/_0001_5.jpg" alt="Home Decor" />
+                                    <p>Home Decor</p>
+                                </div>
+                                <div className="gcc-expert-52lx-application-image-item">
+                                    <img src="/application/_0002_4.jpg" alt="Packaging" />
+                                    <p>Packaging</p>
+                                </div>
+                                <div className="gcc-expert-52lx-application-image-item">
+                                    <img src="/application/_0003_3.jpg" alt="Labels & Stickers" />
+                                    <p>Labels & Stickers</p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -239,16 +302,14 @@ export default function GCCExpert52LX() {
                 {/* Advantages */}
                 <section className="gcc-expert-52lx-advantages-section">
                     <div className="gcc-expert-52lx-advantages-container">
-                        <h2 className="gcc-expert-52lx-section-title">Why Choose GCC Expert 24 LX?</h2>
+                        <h2 className="gcc-expert-52lx-section-title">Why Choose GCC Expert 52 LX?</h2>
                         <div className="gcc-expert-52lx-advantages-grid">
                             {machineDetails.advantages.map((advantage, index) => (
                                 <div key={index} className="gcc-expert-52lx-advantage-item">
-                                    <div className="gcc-expert-52lx-advantage-icon">
-                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                                            <circle cx="12" cy="12" r="10" />
-                                            <path d="M9 12l2 2 4-4" />
-                                        </svg>
-                                    </div>
+                                    <svg className="gcc-expert-52lx-advantage-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                        <circle cx="12" cy="12" r="10" />
+                                        <path d="M9 12l2 2 4-4" />
+                                    </svg>
                                     <p className="gcc-expert-52lx-advantage-text">{advantage}</p>
                                 </div>
                             ))}

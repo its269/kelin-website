@@ -1,12 +1,39 @@
 "use client";
 import Header from '../components/Header';
 import Link from 'next/link';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import './smart-dtf-powder-shaker-unique.css';
 
 export default function SmartDTFPowderShaker() {
     const [inquiryModalOpen, setInquiryModalOpen] = useState(false);
     const [selectedImage, setSelectedImage] = useState('/sublimation_dtf/Powder shaker D650 Model.png');
+
+    const scrollRef = useRef(null);
+    const [isDragging, setIsDragging] = useState(false);
+    const [startX, setStartX] = useState(0);
+    const [scrollLeft, setScrollLeft] = useState(0);
+
+    const handleMouseDown = (e) => {
+        setIsDragging(true);
+        setStartX(e.pageX - scrollRef.current.offsetLeft);
+        setScrollLeft(scrollRef.current.scrollLeft);
+    };
+
+    const handleMouseMove = (e) => {
+        if (!isDragging) return;
+        e.preventDefault();
+        const x = e.pageX - scrollRef.current.offsetLeft;
+        const walk = (x - startX) * 2;
+        scrollRef.current.scrollLeft = scrollLeft - walk;
+    };
+
+    const handleMouseUp = () => {
+        setIsDragging(false);
+    };
+
+    const handleMouseLeave = () => {
+        setIsDragging(false);
+    };
 
     const machineDetails = {
         name: 'SMART DTF POWDER SHAKER',
@@ -227,23 +254,59 @@ export default function SmartDTFPowderShaker() {
                 {/* Applications */}
                 <section className="smart-powder-shaker-applications-section">
                     <div className="smart-powder-shaker-applications-container">
-                        <div className="smart-powder-shaker-applications-grid">
-                            <div className="smart-powder-shaker-applications-content">
-                                <h2 className="smart-powder-shaker-section-title">Applications</h2>
-                                <p className="smart-powder-shaker-applications-subtitle">
-                                    Versatile powder shaking solutions for professional applications
-                                </p>
-                                <ul className="smart-powder-shaker-applications-list">
-                                    {machineDetails.applications.map((application, index) => (
-                                        <li key={index} className="smart-powder-shaker-application-item">
-                                            <svg className="smart-powder-shaker-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                                                <path d="M9 12l2 2 4-4" />
-                                                <circle cx="12" cy="12" r="10" />
-                                            </svg>
-                                            {application}
-                                        </li>
-                                    ))}
-                                </ul>
+                        <h2 className="smart-powder-shaker-section-title">Applications</h2>
+                        <p className="smart-powder-shaker-applications-subtitle">
+                            Versatile powder shaking solutions for professional applications
+                        </p>
+                        <div
+                            ref={scrollRef}
+                            className="smart-powder-shaker-applications-scroll"
+                            onMouseDown={handleMouseDown}
+                            onMouseMove={handleMouseMove}
+                            onMouseUp={handleMouseUp}
+                            onMouseLeave={handleMouseLeave}
+                        >
+                            <div className="smart-powder-shaker-applications-image-grid">
+                                <div className="smart-powder-shaker-application-image-item">
+                                    <img src="/application/_0000_6.jpg" alt="T-Shirt Printing" />
+                                    <p>T-Shirt Printing</p>
+                                </div>
+                                <div className="smart-powder-shaker-application-image-item">
+                                    <img src="/application/_0001_5.jpg" alt="Mug Printing" />
+                                    <p>Mug Printing</p>
+                                </div>
+                                <div className="smart-powder-shaker-application-image-item">
+                                    <img src="/application/_0002_4.jpg" alt="Signage & Banners" />
+                                    <p>Signage & Banners</p>
+                                </div>
+                                <div className="smart-powder-shaker-application-image-item">
+                                    <img src="/application/_0003_3.jpg" alt="Promotional Products" />
+                                    <p>Promotional Products</p>
+                                </div>
+                                <div className="smart-powder-shaker-application-image-item">
+                                    <img src="/application/_0004_2.jpg" alt="Custom Apparel" />
+                                    <p>Custom Apparel</p>
+                                </div>
+                                <div className="smart-powder-shaker-application-image-item">
+                                    <img src="/application/_0005_1.jpg" alt="Phone Cases" />
+                                    <p>Phone Cases</p>
+                                </div>
+                                <div className="smart-powder-shaker-application-image-item">
+                                    <img src="/application/_0000_6.jpg" alt="Sportswear" />
+                                    <p>Sportswear</p>
+                                </div>
+                                <div className="smart-powder-shaker-application-image-item">
+                                    <img src="/application/_0001_5.jpg" alt="Home Decor" />
+                                    <p>Home Decor</p>
+                                </div>
+                                <div className="smart-powder-shaker-application-image-item">
+                                    <img src="/application/_0002_4.jpg" alt="Packaging" />
+                                    <p>Packaging</p>
+                                </div>
+                                <div className="smart-powder-shaker-application-image-item">
+                                    <img src="/application/_0003_3.jpg" alt="Labels & Stickers" />
+                                    <p>Labels & Stickers</p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -256,12 +319,10 @@ export default function SmartDTFPowderShaker() {
                         <div className="smart-powder-shaker-advantages-grid">
                             {machineDetails.advantages.map((advantage, index) => (
                                 <div key={index} className="smart-powder-shaker-advantage-item">
-                                    <div className="smart-powder-shaker-advantage-icon">
-                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                                            <circle cx="12" cy="12" r="10" />
-                                            <path d="M9 12l2 2 4-4" />
-                                        </svg>
-                                    </div>
+                                    <svg className="smart-powder-shaker-advantage-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                        <circle cx="12" cy="12" r="10" />
+                                        <path d="M9 12l2 2 4-4" />
+                                    </svg>
                                     <p className="smart-powder-shaker-advantage-text">{advantage}</p>
                                 </div>
                             ))}

@@ -13,61 +13,61 @@ export default function EmbroideryKnittingMachine() {
             id: 'promaker-1201',
             name: 'Promaker Embroidery 1201',
             image: '/embroidery_knitting/Promaker Embroidery 1201.png',
-            description: 'PROFESSIONAL EMBROIDERY MACHINE - High-precision single-head embroidery machine with advanced stitch control and professional-grade embroidery capabilities for commercial applications.',
+            description: 'PROFESSIONAL EMBROIDERY MACHINE - High-precision single-head embroidery machine with advanced stitch control and professional-grade embroidery capabilities with industrial max speed up to 1200 RPM.',
             specs: [
                 'Type: Single-head embroidery',
                 'Model: Promaker 1201',
-                'Application: Commercial embroidery',
-                'Control: Advanced stitch system'
+                'Embroidery Area: 360mm x 200mm',
+                'Max Speed: 1200 RPM with mater jump'
             ],
             badge: 'Professional',
             price: 'Contact us for more details',
-            link: '/products/embroidery/promaker-1201'
+            link: '/promaker-embroidery-1201'
         },
         {
             id: 'promaker-1202',
             name: 'Promaker Embroidery 1202',
             image: '/embroidery_knitting/Promaker Embroidery 1202.png',
-            description: 'ADVANCED EMBROIDERY SYSTEM - Enhanced embroidery machine with improved features and superior precision for high-quality embroidery production and commercial use.',
+            description: 'ADVANCED EMBROIDERY SYSTEM - Enhanced dual-head embroidery machine with improved features and superior precision for high-quality embroidery production with industrial max speed up to 1200 RPM.',
             specs: [
-                'Type: Advanced embroidery',
+                'Type: Dual-head embroidery',
                 'Model: Promaker 1202',
-                'Features: Enhanced precision',
-                'Application: High-quality production'
+                'Embroidery Area: 1430mm x 620mm',
+                'Max Speed: 1200 RPM with mater jump'
             ],
             badge: 'Advanced',
             price: 'Contact us for more details',
-            link: '/products/embroidery/promaker-1202'
+            link: '/promaker-embroidery-1202'
         },
         {
             id: 'promaker-1204',
-            name: 'Promaker Embroidery 1204',
+            name: 'Promaker Embroidery 1804',
             image: '/embroidery_knitting/Promaker Embroidery 1204.png',
-            description: 'PREMIUM EMBROIDERY SOLUTION - Top-tier embroidery machine with multiple head capability and professional features for large-scale embroidery operations.',
+            description: 'PREMIUM EMBROIDERY SOLUTION - Top-tier embroidery machine with 4-head capability and professional features for large-scale embroidery operations with industrial max speed up to 1200 RPM.',
             specs: [
-                'Type: Premium embroidery',
-                'Model: Promaker 1204',
-                'Capability: Multi-head system',
-                'Scale: Large production'
+                'Type: Premium 4-head embroidery',
+                'Model: Promaker 1804',
+                'Embroidery Area: 1400mm x 2400mm',
+                'Max Speed: 1200 RPM with mater jump'
             ],
             badge: 'Premium',
             price: 'Contact us for more details',
-            link: '/products/embroidery/promaker-1204'
+            link: '/promaker-embroidery-1204'
         },
         {
             id: 'smartex-knitting-gsce',
-            name: 'Smartex Knitting Machine GSCE-1-52',
+            name: 'Smartex Knitting Machine GS-CE152',
             image: '/embroidery_knitting/Smartex Knitting Machine GSCE-1-52.png',
-            description: 'PROFESSIONAL KNITTING SYSTEM - Advanced knitting machine with computerized control and precision knitting capabilities for professional textile manufacturing.',
+            description: 'PROFESSIONAL KNITTING SYSTEM - Advanced knitting machine with 128-section precision stitch control and maximum knitting speed 1.4 m/s for industrial-grade textile manufacturing.',
             specs: [
                 'Type: Computerized knitting',
-                'Model: GSCE-1-52',
-                'Control: Digital system',
-                'Application: Textile manufacturing'
+                'Model: GS-CE152',
+                'Knitting Width: 52 inches',
+                'Max Speed: 1.4 m/s'
             ],
             badge: 'Knitting Pro',
             price: 'Contact us for more details',
-            link: '/products/knitting/smartex-gsce'
+            link: '/smartex-knitting-gsce-1-52'
         }
     ];
 

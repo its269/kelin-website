@@ -1,13 +1,39 @@
 "use client";
 import Header from '../components/Header';
 import Link from 'next/link';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import InquiryStorage from '../utils/InquiryStorage';
 import './iecho-tk4s.css';
 
 export default function IEchoTK4S() {
     const [inquiryModalOpen, setInquiryModalOpen] = useState(false);
     const [selectedImage, setSelectedImage] = useState('/TK4S Large format cutting system.png');
+    const scrollRef = useRef(null);
+    const [isDragging, setIsDragging] = useState(false);
+    const [startX, setStartX] = useState(0);
+    const [scrollLeft, setScrollLeft] = useState(0);
+
+    const handleMouseDown = (e) => {
+        setIsDragging(true);
+        setStartX(e.pageX - scrollRef.current.offsetLeft);
+        setScrollLeft(scrollRef.current.scrollLeft);
+    };
+
+    const handleMouseMove = (e) => {
+        if (!isDragging) return;
+        e.preventDefault();
+        const x = e.pageX - scrollRef.current.offsetLeft;
+        const walk = (x - startX) * 2;
+        scrollRef.current.scrollLeft = scrollLeft - walk;
+    };
+
+    const handleMouseUp = () => {
+        setIsDragging(false);
+    };
+
+    const handleMouseLeave = () => {
+        setIsDragging(false);
+    };
 
     const machineDetails = {
         name: 'iEcho TK4S',
@@ -247,23 +273,59 @@ export default function IEchoTK4S() {
                 {/* Applications */}
                 <section className="iecho-tk4s-applications-section">
                     <div className="iecho-tk4s-applications-container">
-                        <div className="iecho-tk4s-applications-grid">
-                            <div className="iecho-tk4s-applications-content">
-                                <h2 className="iecho-tk4s-section-title">Applications</h2>
-                                <p className="iecho-tk4s-applications-subtitle">
-                                    Versatile cutting solutions for professional applications
-                                </p>
-                                <ul className="iecho-tk4s-applications-list">
-                                    {machineDetails.applications.map((application, index) => (
-                                        <li key={index} className="iecho-tk4s-application-item">
-                                            <svg className="iecho-tk4s-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                                                <path d="M9 12l2 2 4-4" />
-                                                <circle cx="12" cy="12" r="10" />
-                                            </svg>
-                                            {application}
-                                        </li>
-                                    ))}
-                                </ul>
+                        <h2 className="iecho-tk4s-section-title">Applications</h2>
+                        <p className="iecho-tk4s-applications-subtitle">
+                            Versatile cutting solutions for professional applications
+                        </p>
+                        <div
+                            ref={scrollRef}
+                            className="iecho-tk4s-applications-scroll"
+                            onMouseDown={handleMouseDown}
+                            onMouseMove={handleMouseMove}
+                            onMouseUp={handleMouseUp}
+                            onMouseLeave={handleMouseLeave}
+                        >
+                            <div className="iecho-tk4s-applications-image-grid">
+                                <div className="iecho-tk4s-application-image-item">
+                                    <img src="/application/_0000_6.jpg" alt="Furniture & Textile Manufacturing" />
+                                    <p>Furniture & Textile Manufacturing</p>
+                                </div>
+                                <div className="iecho-tk4s-application-image-item">
+                                    <img src="/application/_0001_5.jpg" alt="Sign & Advertising Production" />
+                                    <p>Sign & Advertising Production</p>
+                                </div>
+                                <div className="iecho-tk4s-application-image-item">
+                                    <img src="/application/_0002_4.jpg" alt="Packaging Industry" />
+                                    <p>Packaging Industry</p>
+                                </div>
+                                <div className="iecho-tk4s-application-image-item">
+                                    <img src="/application/_0003_3.jpg" alt="Automobile Upholstery" />
+                                    <p>Automobile Upholstery</p>
+                                </div>
+                                <div className="iecho-tk4s-application-image-item">
+                                    <img src="/application/_0004_2.jpg" alt="Leather Goods Manufacturing" />
+                                    <p>Leather Goods Manufacturing</p>
+                                </div>
+                                <div className="iecho-tk4s-application-image-item">
+                                    <img src="/application/_0005_1.jpg" alt="Canvas and Fabric Cutting" />
+                                    <p>Canvas and Fabric Cutting</p>
+                                </div>
+                                <div className="iecho-tk4s-application-image-item">
+                                    <img src="/application/_0000_6.jpg" alt="Composite Materials" />
+                                    <p>Composite Materials</p>
+                                </div>
+                                <div className="iecho-tk4s-application-image-item">
+                                    <img src="/application/_0001_5.jpg" alt="Gasket Manufacturing" />
+                                    <p>Gasket Manufacturing</p>
+                                </div>
+                                <div className="iecho-tk4s-application-image-item">
+                                    <img src="/application/_0002_4.jpg" alt="Carpet and Rug Production" />
+                                    <p>Carpet and Rug Production</p>
+                                </div>
+                                <div className="iecho-tk4s-application-image-item">
+                                    <img src="/application/_0003_3.jpg" alt="Technical Textiles" />
+                                    <p>Technical Textiles</p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -272,16 +334,14 @@ export default function IEchoTK4S() {
                 {/* Advantages */}
                 <section className="iecho-tk4s-advantages-section">
                     <div className="iecho-tk4s-advantages-container">
-                        <h2 className="iecho-tk4s-section-title">Why Choose iEcho BK3?</h2>
+                        <h2 className="iecho-tk4s-section-title">Why Choose iEcho TK4S?</h2>
                         <div className="iecho-tk4s-advantages-grid">
                             {machineDetails.advantages.map((advantage, index) => (
                                 <div key={index} className="iecho-tk4s-advantage-item">
-                                    <div className="iecho-tk4s-advantage-icon">
-                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                                            <circle cx="12" cy="12" r="10" />
-                                            <path d="M9 12l2 2 4-4" />
-                                        </svg>
-                                    </div>
+                                    <svg className="iecho-tk4s-advantage-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                        <circle cx="12" cy="12" r="10" />
+                                        <path d="M9 12l2 2 4-4" />
+                                    </svg>
                                     <p className="iecho-tk4s-advantage-text">{advantage}</p>
                                 </div>
                             ))}

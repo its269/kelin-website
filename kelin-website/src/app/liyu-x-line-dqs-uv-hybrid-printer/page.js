@@ -314,12 +314,10 @@ export default function LiyuXLineDQS() {
                         <div className="liyu-xline-dqs-advantages-grid">
                             {machineDetails.advantages.map((advantage, index) => (
                                 <div key={index} className="liyu-xline-dqs-advantage-item">
-                                    <div className="liyu-xline-dqs-advantage-icon">
-                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                                            <circle cx="12" cy="12" r="10" />
-                                            <path d="M9 12l2 2 4-4" />
-                                        </svg>
-                                    </div>
+                                    <svg className="liyu-xline-dqs-advantage-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                        <circle cx="12" cy="12" r="10" />
+                                        <path d="M9 12l2 2 4-4" />
+                                    </svg>
                                     <p className="liyu-xline-dqs-advantage-text">{advantage}</p>
                                 </div>
                             ))}

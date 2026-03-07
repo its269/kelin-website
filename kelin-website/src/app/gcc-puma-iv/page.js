@@ -1,12 +1,38 @@
 "use client";
 import Header from '../components/Header';
 import Link from 'next/link';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import './gcc-puma-iv.css';
 
 export default function GCCPumaIV() {
     const [inquiryModalOpen, setInquiryModalOpen] = useState(false);
     const [selectedImage, setSelectedImage] = useState('/GCC PUMA IV.png');
+    const scrollRef = useRef(null);
+    const [isDragging, setIsDragging] = useState(false);
+    const [startX, setStartX] = useState(0);
+    const [scrollLeft, setScrollLeft] = useState(0);
+
+    const handleMouseDown = (e) => {
+        setIsDragging(true);
+        setStartX(e.pageX - scrollRef.current.offsetLeft);
+        setScrollLeft(scrollRef.current.scrollLeft);
+    };
+
+    const handleMouseMove = (e) => {
+        if (!isDragging) return;
+        e.preventDefault();
+        const x = e.pageX - scrollRef.current.offsetLeft;
+        const walk = (x - startX) * 2;
+        scrollRef.current.scrollLeft = scrollLeft - walk;
+    };
+
+    const handleMouseUp = () => {
+        setIsDragging(false);
+    };
+
+    const handleMouseLeave = () => {
+        setIsDragging(false);
+    };
 
     const machineDetails = {
         name: 'GCC Puma IV',
@@ -224,23 +250,59 @@ export default function GCCPumaIV() {
                 {/* Applications */}
                 <section className="gcc-puma-applications-section">
                     <div className="gcc-puma-applications-container">
-                        <div className="gcc-puma-applications-grid">
-                            <div className="gcc-puma-applications-content">
-                                <h2 className="gcc-puma-section-title">Applications</h2>
-                                <p className="gcc-puma-applications-subtitle">
-                                    Versatile cutting solutions for professional applications
-                                </p>
-                                <ul className="gcc-puma-applications-list">
-                                    {machineDetails.applications.map((application, index) => (
-                                        <li key={index} className="gcc-puma-application-item">
-                                            <svg className="gcc-puma-check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                                                <path d="M9 12l2 2 4-4" />
-                                                <circle cx="12" cy="12" r="10" />
-                                            </svg>
-                                            {application}
-                                        </li>
-                                    ))}
-                                </ul>
+                        <h2 className="gcc-puma-section-title">Applications</h2>
+                        <p className="gcc-puma-applications-subtitle">
+                            Versatile cutting solutions for professional applications
+                        </p>
+                        <div
+                            ref={scrollRef}
+                            className="gcc-puma-applications-scroll"
+                            onMouseDown={handleMouseDown}
+                            onMouseMove={handleMouseMove}
+                            onMouseUp={handleMouseUp}
+                            onMouseLeave={handleMouseLeave}
+                        >
+                            <div className="gcc-puma-applications-image-grid">
+                                <div className="gcc-puma-application-image-item">
+                                    <img src="/application/_0000_6.jpg" alt="Car Decals" />
+                                    <p>Car Decals</p>
+                                </div>
+                                <div className="gcc-puma-application-image-item">
+                                    <img src="/application/_0001_5.jpg" alt="Box Packaging" />
+                                    <p>Box Packaging</p>
+                                </div>
+                                <div className="gcc-puma-application-image-item">
+                                    <img src="/application/_0002_4.jpg" alt="Vinyl Sign/Custom Decal" />
+                                    <p>Vinyl Sign/Custom Decal</p>
+                                </div>
+                                <div className="gcc-puma-application-image-item">
+                                    <img src="/application/_0003_3.jpg" alt="Food Label" />
+                                    <p>Food Label</p>
+                                </div>
+                                <div className="gcc-puma-application-image-item">
+                                    <img src="/application/_0004_2.jpg" alt="Colored Sticker" />
+                                    <p>Colored Sticker</p>
+                                </div>
+                                <div className="gcc-puma-application-image-item">
+                                    <img src="/application/_0005_1.jpg" alt="Sign Making" />
+                                    <p>Sign Making</p>
+                                </div>
+                                <div className="gcc-puma-application-image-item">
+                                    <img src="/application/_0000_6.jpg" alt="Graphics Production" />
+                                    <p>Graphics Production</p>
+                                </div>
+                                <div className="gcc-puma-application-image-item">
+                                    <img src="/application/_0001_5.jpg" alt="Vehicle Graphics" />
+                                    <p>Vehicle Graphics</p>
+                                </div>
+                                <div className="gcc-puma-application-image-item">
+                                    <img src="/application/_0002_4.jpg" alt="Window Graphics" />
+                                    <p>Window Graphics</p>
+                                </div>
+                                <div className="gcc-puma-application-image-item">
+                                    <img src="/application/_0003_3.jpg" alt="Promotional Materials" />
+                                    <p>Promotional Materials</p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -249,16 +311,14 @@ export default function GCCPumaIV() {
                 {/* Advantages */}
                 <section className="gcc-puma-advantages-section">
                     <div className="gcc-puma-advantages-container">
-                        <h2 className="gcc-puma-section-title">Why Choose iEcho PK?</h2>
+                        <h2 className="gcc-puma-section-title">Why Choose GCC Puma IV?</h2>
                         <div className="gcc-puma-advantages-grid">
                             {machineDetails.advantages.map((advantage, index) => (
                                 <div key={index} className="gcc-puma-advantage-item">
-                                    <div className="gcc-puma-advantage-icon">
-                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                                            <circle cx="12" cy="12" r="10" />
-                                            <path d="M9 12l2 2 4-4" />
-                                        </svg>
-                                    </div>
+                                    <svg className="gcc-puma-advantage-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                        <circle cx="12" cy="12" r="10" />
+                                        <path d="M9 12l2 2 4-4" />
+                                    </svg>
                                     <p className="gcc-puma-advantage-text">{advantage}</p>
                                 </div>
                             ))}

@@ -313,12 +313,10 @@ export default function SmartUVPrinter() {
                         <div className="smart-uv-printer-advantages-grid">
                             {machineDetails.advantages.map((advantage, index) => (
                                 <div key={index} className="smart-uv-printer-advantage-item">
-                                    <div className="smart-uv-printer-advantage-icon">
-                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                                            <circle cx="12" cy="12" r="10" />
-                                            <path d="M9 12l2 2 4-4" />
-                                        </svg>
-                                    </div>
+                                    <svg className="smart-uv-printer-advantage-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                        <circle cx="12" cy="12" r="10" />
+                                        <path d="M9 12l2 2 4-4" />
+                                    </svg>
                                     <p className="smart-uv-printer-advantage-text">{advantage}</p>
                                 </div>
                             ))}
