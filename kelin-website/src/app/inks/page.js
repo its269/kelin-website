@@ -12,7 +12,7 @@ const getInkProductsData = () => {
         id: 1,
         name: "Eco-Solvent Inks",
         description: "Environmentally friendly inks with low odor and reduced VOC emissions, perfect for indoor and outdoor use.",
-        image: "/KELIN-LOGO-01.png",
+        image: "/inks.png",
         features: [
           "Low VOC emissions",
           "Minimal odor",
@@ -25,7 +25,7 @@ const getInkProductsData = () => {
             name: "Eco M15 1L Cyan",
             size: "1L",
             color: "Cyan",
-            image: "/inks/ECO M15/M15 Cyan (Transparent).png",
+            image: "/inks/ECO M15/M15 Cyan (Transparent).webp",
             description: "High-quality eco-solvent ink with excellent color reproduction and minimal odor.",
             specifications: {
               "Volume": "1 Liter",
@@ -36,7 +36,7 @@ const getInkProductsData = () => {
             name: "Eco M15 1L Magenta",
             size: "1L",
             color: "Magenta",
-            image: "/inks/ECO M15/M15 Magenta (Transparent).png",
+            image: "/inks/ECO M15/M15 Magenta (Transparent).webp",
             description: "Vibrant magenta eco-solvent ink for professional printing applications.",
             specifications: {
               "Volume": "1 Liter",
@@ -47,7 +47,7 @@ const getInkProductsData = () => {
             name: "Eco M15 1L Yellow",
             size: "1L",
             color: "Yellow",
-            image: "/inks/ECO M15/M15 Yellow (Transparent).png",
+            image: "/inks/ECO M15/M15 Yellow (Transparent).webp",
             description: "Bright yellow eco-solvent ink with excellent lightfastness.",
             specifications: {
               "Volume": "1 Liter",
@@ -58,7 +58,7 @@ const getInkProductsData = () => {
             name: "Eco M15 1L Black",
             size: "1L",
             color: "Black",
-            image: "/inks/ECO M15/M15 Black (Transparent).png",
+            image: "/inks/ECO M15/M15 Black (Transparent).webp",
             description: "Deep black eco-solvent ink for sharp text and solid areas.",
             specifications: {
               "Volume": "1 Liter",
@@ -69,7 +69,7 @@ const getInkProductsData = () => {
             name: "M21 Cyan (i3200)",
             size: "1L",
             color: "Cyan",
-            image: "/inks/M21/M21 Cyan (Transparent).png",
+            image: "/inks/M21/M21 Cyan (Transparent).webp",
             description: "Specialized cyan ink optimized for i3200 printheads.",
             specifications: {
               "Volume": "1 Liter",
@@ -80,7 +80,7 @@ const getInkProductsData = () => {
             name: "M21 Magenta (i3200)",
             size: "1L",
             color: "Magenta",
-            image: "/inks/M21/M21 Magenta (Transparent).png",
+            image: "/inks/M21/M21 Magenta (Transparent).webp",
             description: "Specialized magenta ink optimized for i3200 printheads.",
             specifications: {
               "Volume": "1 Liter",
@@ -91,7 +91,7 @@ const getInkProductsData = () => {
             name: "M21 Yellow (i3200)",
             size: "1L",
             color: "Yellow",
-            image: "/inks/M21/M21 Yellow (Transparent).png",
+            image: "/inks/M21/M21 Yellow (Transparent).webp",
             description: "Specialized yellow ink optimized for i3200 printheads.",
             specifications: {
               "Volume": "1 Liter",
@@ -102,7 +102,7 @@ const getInkProductsData = () => {
             name: "M21 Black (i3200)",
             size: "1L",
             color: "Black",
-            image: "/inks/M21/M21 Black (Transparent).png",
+            image: "/inks/M21/M21 Black (Transparent).webp",
             description: "Specialized black ink optimized for i3200 printheads.",
             specifications: {
               "Volume": "1 Liter",
@@ -113,7 +113,7 @@ const getInkProductsData = () => {
             name: "Phoenix E2 1L. Cyan",
             size: "1L",
             color: "Cyan",
-            image: "/inks/PHOENIX E2 1L/PHOENIX E2 1L Cyan (Transparent).png",
+            image: "/inks/PHOENIX E2 1L/PHOENIX E2 1L Cyan (Transparent).webp",
             description: "Premium Phoenix E2 cyan ink for superior print quality.",
             specifications: {
               "Volume": "1 Liter",
@@ -124,7 +124,7 @@ const getInkProductsData = () => {
             name: "Phoenix E2 1L. Magenta",
             size: "1L",
             color: "Magenta",
-            image: "/inks/PHOENIX E2 1L/PHOENIX E2 1L Magenta (Transparent).png",
+            image: "/inks/PHOENIX E2 1L/PHOENIX E2 1L Magenta (Transparent).webp",
             description: "Premium Phoenix E2 magenta ink for superior print quality.",
             specifications: {
               "Volume": "1 Liter",
@@ -135,7 +135,7 @@ const getInkProductsData = () => {
             name: "Phoenix E2 1L. Yellow",
             size: "1L",
             color: "Yellow",
-            image: "/inks/PHOENIX E2 1L/PHOENIX E2 1L Yellow (Transparent).png",
+            image: "/inks/PHOENIX E2 1L/PHOENIX E2 1L Yellow (Transparent).webp",
             description: "Premium Phoenix E2 yellow ink for superior print quality.",
             specifications: {
               "Volume": "1 Liter",
@@ -146,7 +146,7 @@ const getInkProductsData = () => {
             name: "Phoenix E2 1L. Black",
             size: "1L",
             color: "Black",
-            image: "/inks/PHOENIX E2 1L/PHOENIX E2 1L Black (Transparent).png",
+            image: "/inks/PHOENIX E2 1L/PHOENIX E2 1L Black (Transparent).webp",
             description: "Premium Phoenix E2 black ink for superior print quality.",
             specifications: {
               "Volume": "1 Liter",
@@ -159,7 +159,7 @@ const getInkProductsData = () => {
         id: 2,
         name: "Solvent Inks",
         description: "High-performance solvent-based inks designed for outdoor applications and durable signage. Includes cleaning solutions.",
-        image: "/KELIN-LOGO-01.png",
+        image: "/inks.png",
         features: [
           "Excellent weather resistance",
           "Vibrant color reproduction",
@@ -172,7 +172,7 @@ const getInkProductsData = () => {
             name: "Eagle V2 1L. Cyan",
             size: "1L",
             color: "Cyan",
-            image: "/inks/EAGLE%20V2%201L/Eagle%20V2%201L%20Cyan%20(Transparent1).png",
+            image: "/inks/EAGLE%20V2%201L/Eagle%20V2%201L%20Cyan%20(Transparent1).webp",
             description: "Professional solvent-based cyan ink with excellent weather resistance for outdoor applications.",
             specifications: {
               "Volume": "1 Liter",
@@ -183,7 +183,7 @@ const getInkProductsData = () => {
             name: "Eagle V2 1L. Magenta",
             size: "1L",
             color: "Magenta",
-            image: "/inks/EAGLE%20V2%201L/Eagle%20V2%201L%20Magenta%20%20(Transparent1).png",
+            image: "/inks/EAGLE%20V2%201L/Eagle%20V2%201L%20Magenta%20%20(Transparent1).webp",
             description: "Professional solvent-based magenta ink with excellent weather resistance for outdoor applications.",
             specifications: {
               "Volume": "1 Liter",
@@ -194,7 +194,7 @@ const getInkProductsData = () => {
             name: "Eagle V2 1L. Yellow",
             size: "1L",
             color: "Yellow",
-            image: "/inks/EAGLE%20V2%201L/Eagle%20V2%201L%20Yellow%20%20(Transparent1).png",
+            image: "/inks/EAGLE%20V2%201L/Eagle%20V2%201L%20Yellow%20%20(Transparent1).webp",
             description: "Professional solvent-based yellow ink with excellent weather resistance for outdoor applications.",
             specifications: {
               "Volume": "1 Liter",
@@ -205,7 +205,7 @@ const getInkProductsData = () => {
             name: "Eagle V2 1L. Black",
             size: "1L",
             color: "Black",
-            image: "/inks/EAGLE%20V2%201L/Eagle%20V2%201L%20Black%20%20(Transparent1).png",
+            image: "/inks/EAGLE%20V2%201L/Eagle%20V2%201L%20Black%20%20(Transparent1).webp",
             description: "Professional solvent-based black ink with excellent weather resistance for outdoor applications.",
             specifications: {
               "Volume": "1 Liter",
@@ -216,7 +216,7 @@ const getInkProductsData = () => {
             name: "Eagle V2 5L. Cyan",
             size: "5L",
             color: "Cyan",
-            image: "/inks/EAGLE%20V2%205L/Eagle%20V2%205L%20Cyan%20(Transparent1).png",
+            image: "/inks/EAGLE%20V2%205L/Eagle%20V2%205L%20Cyan%20(Transparent1).webp",
             description: "Large volume professional solvent-based cyan ink for high-volume printing.",
             specifications: {
               "Volume": "5 Liters",
@@ -227,7 +227,7 @@ const getInkProductsData = () => {
             name: "Eagle V2 5L. Magenta",
             size: "5L",
             color: "Magenta",
-            image: "/inks/EAGLE%20V2%205L/Eagle%20V2%205L%20Magenta%20(Transparent1).png",
+            image: "/inks/EAGLE%20V2%205L/Eagle%20V2%205L%20Magenta%20(Transparent1).webp",
             description: "Large volume professional solvent-based magenta ink for high-volume printing.",
             specifications: {
               "Volume": "5 Liters",
@@ -238,7 +238,7 @@ const getInkProductsData = () => {
             name: "Eagle V2 5L. Yellow",
             size: "5L",
             color: "Yellow",
-            image: "/inks/EAGLE%20V2%205L/Eagle%20V2%205L%20Yellow%20%20(Transparent1).png",
+            image: "/inks/EAGLE%20V2%205L/Eagle%20V2%205L%20Yellow%20%20(Transparent1).webp",
             description: "Large volume professional solvent-based yellow ink for high-volume printing.",
             specifications: {
               "Volume": "5 Liters",
@@ -249,7 +249,7 @@ const getInkProductsData = () => {
             name: "Eagle V2 5L. Black",
             size: "5L",
             color: "Black",
-            image: "/inks/EAGLE%20V2%205L/Eagle%20V2%205L%20Black%20(Transparent1).png",
+            image: "/inks/EAGLE%20V2%205L/Eagle%20V2%205L%20Black%20(Transparent1).webp",
             description: "Large volume professional solvent-based black ink for high-volume printing.",
             specifications: {
               "Volume": "5 Liters",
@@ -260,7 +260,7 @@ const getInkProductsData = () => {
             name: "T14 Cyan",
             size: "1L",
             color: "Cyan",
-            image: "/inks/T14 1L/_0002_T14-Ink-1L-Cyan-(Transparent).png",
+            image: "/inks/T14 1L/_0002_T14-Ink-1L-Cyan-(Transparent).webp",
             description: "T14 series cyan solvent ink for professional printing applications.",
             specifications: {
               "Volume": "1 Liter",
@@ -271,7 +271,7 @@ const getInkProductsData = () => {
             name: "T14 Magenta",
             size: "1L",
             color: "Magenta",
-            image: "/inks/T14 1L/_0001_T14-Ink-1L-Magenta-(Transparent).png",
+            image: "/inks/T14 1L/_0001_T14-Ink-1L-Magenta-(Transparent).webp",
             description: "T14 series magenta solvent ink for professional printing applications.",
             specifications: {
               "Volume": "1 Liter",
@@ -282,7 +282,7 @@ const getInkProductsData = () => {
             name: "T14 Yellow",
             size: "1L",
             color: "Yellow",
-            image: "/inks/T14 1L/_0000_T14-Ink-1L-Yellow-(Transparent).png",
+            image: "/inks/T14 1L/_0000_T14-Ink-1L-Yellow-(Transparent).webp",
             description: "T14 series yellow solvent ink for professional printing applications.",
             specifications: {
               "Volume": "1 Liter",
@@ -293,7 +293,7 @@ const getInkProductsData = () => {
             name: "T14 Black",
             size: "1L",
             color: "Black",
-            image: "/inks/T14 1L/_0003_T14-Ink-1L-Black-(Transparent).png",
+            image: "/inks/T14 1L/_0003_T14-Ink-1L-Black-(Transparent).webp",
             description: "T14 series black solvent ink for professional printing applications.",
             specifications: {
               "Volume": "1 Liter",
@@ -304,7 +304,7 @@ const getInkProductsData = () => {
             name: "T14 Eco Plus 2L Cyan",
             size: "2L",
             color: "Cyan",
-            image: "/inks/T14 ECO PLUS 2L INKS/T14 Eco Plus 2L  Cyan (Transparent).png",
+            image: "/inks/T14 ECO PLUS 2L INKS/T14 Eco Plus 2L  Cyan (Transparent).webp",
             description: "Enhanced T14 Eco Plus cyan ink with improved environmental properties.",
             specifications: {
               "Volume": "2 Liters",
@@ -315,7 +315,7 @@ const getInkProductsData = () => {
             name: "T14 Eco Plus 2L Magenta",
             size: "2L",
             color: "Magenta",
-            image: "/inks/T14 ECO PLUS 2L INKS/T14 Eco Plus 2L Magenta (Transparent).png",
+            image: "/inks/T14 ECO PLUS 2L INKS/T14 Eco Plus 2L Magenta (Transparent).webp",
             description: "Enhanced T14 Eco Plus magenta ink with improved environmental properties.",
             specifications: {
               "Volume": "2 Liters",
@@ -326,7 +326,7 @@ const getInkProductsData = () => {
             name: "T14 Eco Plus 2L Yellow",
             size: "2L",
             color: "Yellow",
-            image: "/inks/T14 ECO PLUS 2L INKS/T14 Eco Plus 2L Yellow (Transparent).png",
+            image: "/inks/T14 ECO PLUS 2L INKS/T14 Eco Plus 2L Yellow (Transparent).webp",
             description: "Enhanced T14 Eco Plus yellow ink with improved environmental properties.",
             specifications: {
               "Volume": "2 Liters",
@@ -337,7 +337,7 @@ const getInkProductsData = () => {
             name: "T14 Eco Plus 2L Black",
             size: "2L",
             color: "Black",
-            image: "/inks/T14 ECO PLUS 2L INKS/T14 Eco Plus 2L Black (Transparent).png",
+            image: "/inks/T14 ECO PLUS 2L INKS/T14 Eco Plus 2L Black (Transparent).webp",
             description: "Enhanced T14 Eco Plus black ink with improved environmental properties.",
             specifications: {
               "Volume": "2 Liters",
@@ -349,7 +349,7 @@ const getInkProductsData = () => {
             size: "1L",
             color: "Clear",
             type: "Cleaning Solution",
-            image: "/inks/CLEANING SOLUTIONS/Cleaning Solution 1L. (Transparent).png",
+            image: "/inks/CLEANING SOLUTIONS/Cleaning Solution 1L. (Transparent).webp",
             description: "Professional cleaning solution for maintaining print quality and extending printhead life.",
             specifications: {
               "Volume": "1 Liter",
@@ -361,7 +361,7 @@ const getInkProductsData = () => {
             size: "5L",
             color: "Clear",
             type: "Cleaning Solution",
-            image: "/inks/CLEANING SOLUTIONS/Cleaning Solution 5L (Transparent).png",
+            image: "/inks/CLEANING SOLUTIONS/Cleaning Solution 5L (Transparent).webp",
             description: "Large volume professional cleaning solution for high-usage environments.",
             specifications: {
               "Volume": "5 Liters",
@@ -373,7 +373,7 @@ const getInkProductsData = () => {
             size: "4L",
             color: "Clear",
             type: "Cleaning Solution",
-            image: "/inks/CLEANING SOLUTIONS/Cleaning Solution 4L. T Series (Transparent).png",
+            image: "/inks/CLEANING SOLUTIONS/Cleaning Solution 4L. T Series (Transparent).webp",
             description: "Specialized cleaning solution optimized for T Series printing systems.",
             specifications: {
               "Volume": "4 Liters",
@@ -385,7 +385,7 @@ const getInkProductsData = () => {
             size: "1L",
             color: "Clear",
             type: "Cleaning Solution",
-            image: "/inks/CLEANING SOLUTIONS/Cleaning Solution 1L. T Series (Transparent).png",
+            image: "/inks/CLEANING SOLUTIONS/Cleaning Solution 1L. T Series (Transparent).webp",
             description: "Specialized cleaning solution optimized for T Series printing systems.",
             specifications: {
               "Volume": "1 Liter",
@@ -398,7 +398,7 @@ const getInkProductsData = () => {
         id: 3,
         name: "DTF Inks",
         description: "Direct-to-Film inks for textile printing with exceptional color vibrancy and wash fastness.",
-        image: "/KELIN-LOGO-01.png",
+        image: "/inks.png",
         features: [
           "Excellent color vibrancy",
           "Superior wash fastness",
@@ -411,7 +411,7 @@ const getInkProductsData = () => {
             name: "Brilliant DTF Textile 1L. Cyan",
             size: "1L",
             color: "Cyan",
-            image: "/inks/BRILLIANT DTF INK 1L/Brilliant DTF Ink 1L Cyan (Transparent).png",
+            image: "/inks/BRILLIANT DTF INK 1L/Brilliant DTF Ink 1L Cyan (Transparent).webp",
             description: "High-quality brilliant DTF cyan ink for vibrant textile printing with excellent wash fastness.",
             specifications: {
               "Volume": "1 Liter",
@@ -422,7 +422,7 @@ const getInkProductsData = () => {
             name: "Brilliant DTF Textile 1L. Magenta",
             size: "1L",
             color: "Magenta",
-            image: "/inks/BRILLIANT DTF INK 1L/Brilliant DTF Ink 1L Magenta (Transparent).png",
+            image: "/inks/BRILLIANT DTF INK 1L/Brilliant DTF Ink 1L Magenta (Transparent).webp",
             description: "High-quality brilliant DTF magenta ink for vibrant textile printing with excellent wash fastness.",
             specifications: {
               "Volume": "1 Liter",
@@ -433,7 +433,7 @@ const getInkProductsData = () => {
             name: "Brilliant DTF Textile 1L. Yellow",
             size: "1L",
             color: "Yellow",
-            image: "/inks/BRILLIANT DTF INK 1L/Brilliant DTF Ink 1L Yellow (Transparent).png",
+            image: "/inks/BRILLIANT DTF INK 1L/Brilliant DTF Ink 1L Yellow (Transparent).webp",
             description: "High-quality brilliant DTF yellow ink for vibrant textile printing with excellent wash fastness.",
             specifications: {
               "Volume": "1 Liter",
@@ -444,7 +444,7 @@ const getInkProductsData = () => {
             name: "Brilliant DTF Textile 1L. Black",
             size: "1L",
             color: "Black",
-            image: "/inks/BRILLIANT DTF INK 1L/Brilliant DTF Ink 1L Black (Transparent).png",
+            image: "/inks/BRILLIANT DTF INK 1L/Brilliant DTF Ink 1L Black (Transparent).webp",
             description: "High-quality brilliant DTF black ink for vibrant textile printing with excellent wash fastness.",
             specifications: {
               "Volume": "1 Liter",
@@ -455,7 +455,7 @@ const getInkProductsData = () => {
             name: "Brilliant DTF Textile 1L. White",
             size: "1L",
             color: "White",
-            image: "/inks/BRILLIANT DTF INK 1L/Brilliant DTF Ink 1L White (Transparent).png",
+            image: "/inks/BRILLIANT DTF INK 1L/Brilliant DTF Ink 1L White (Transparent).webp",
             description: "High-quality brilliant DTF white ink for vibrant textile printing with excellent opacity.",
             specifications: {
               "Volume": "1 Liter",
@@ -466,7 +466,7 @@ const getInkProductsData = () => {
             name: "Vivid DTF Textile 1L. Cyan",
             size: "1L",
             color: "Cyan",
-            image: "/inks/VIVID DTF TEXTILE 1L/Brilliant DTF Textile 1L Cyan (Transparent).png",
+            image: "/inks/VIVID DTF TEXTILE 1L/Brilliant DTF Textile 1L Cyan (Transparent).webp",
             description: "Premium vivid DTF cyan ink for exceptional color reproduction and durability.",
             specifications: {
               "Volume": "1 Liter",
@@ -477,7 +477,7 @@ const getInkProductsData = () => {
             name: "Vivid DTF Textile 1L. Magenta",
             size: "1L",
             color: "Magenta",
-            image: "/inks/VIVID DTF TEXTILE 1L/Brilliant DTF Textile 1L Magenta (Transparent).png",
+            image: "/inks/VIVID DTF TEXTILE 1L/Brilliant DTF Textile 1L Magenta (Transparent).webp",
             description: "Premium vivid DTF magenta ink for exceptional color reproduction and durability.",
             specifications: {
               "Volume": "1 Liter",
@@ -488,7 +488,7 @@ const getInkProductsData = () => {
             name: "Vivid DTF Textile 1L. Yellow",
             size: "1L",
             color: "Yellow",
-            image: "/inks/VIVID DTF TEXTILE 1L/Brilliant DTF Textile 1L Yellow (Transparent).png",
+            image: "/inks/VIVID DTF TEXTILE 1L/Brilliant DTF Textile 1L Yellow (Transparent).webp",
             description: "Premium vivid DTF yellow ink for exceptional color reproduction and durability.",
             specifications: {
               "Volume": "1 Liter",
@@ -499,7 +499,7 @@ const getInkProductsData = () => {
             name: "Vivid DTF Textile 1L. Black",
             size: "1L",
             color: "Black",
-            image: "/inks/VIVID DTF TEXTILE 1L/Brilliant DTF Textile 1L Black (Transparent).png",
+            image: "/inks/VIVID DTF TEXTILE 1L/Brilliant DTF Textile 1L Black (Transparent).webp",
             description: "Premium vivid DTF black ink for exceptional color reproduction and durability.",
             specifications: {
               "Volume": "1 Liter",
@@ -510,63 +510,63 @@ const getInkProductsData = () => {
             name: "Vivid DTF Textile 1L. White",
             size: "1L",
             color: "White",
-            image: "/inks/VIVID DTF TEXTILE 1L/Brilliant DTF Textile 1L White (Transparent).png",
+            image: "/inks/VIVID DTF TEXTILE 1L/Brilliant DTF Textile 1L White (Transparent).webp",
             description: "Premium vivid DTF white ink for exceptional opacity and coverage.",
             specifications: {
               "Volume": "1 Liter",
               "Type": "DTF Textile"
             }
           },
-          {
-            name: "Brilliant DTF Textile 1L. Fluorescent Yellow",
-            size: "1L",
-            color: "Fluorescent Yellow",
-            image: "/inks/BRILLIANT DTF INK 1L/Brilliant DTF Ink 1L Yellow (Transparent).png",
-            description: "Specialty fluorescent yellow DTF ink for eye-catching designs with vibrant glow effect.",
-            specifications: {
-              "Volume": "1 Liter",
-              "Type": "DTF Fluorescent"
-            }
-          },
-          {
-            name: "Brilliant DTF Textile 1L. Fluorescent Pink",
-            size: "1L",
-            color: "Fluorescent Pink",
-            image: "/inks/BRILLIANT DTF INK 1L/Brilliant DTF Ink 1L Magenta (Transparent).png",
-            description: "Specialty fluorescent pink DTF ink for eye-catching designs with vibrant glow effect.",
-            specifications: {
-              "Volume": "1 Liter",
-              "Type": "DTF Fluorescent"
-            }
-          },
-          {
-            name: "Brilliant DTF Textile 1L. Fluorescent Orange",
-            size: "1L",
-            color: "Fluorescent Orange",
-            image: "/inks/BRILLIANT DTF INK 1L/Brilliant DTF Ink 1L Yellow (Transparent).png",
-            description: "Specialty fluorescent orange DTF ink for eye-catching designs with vibrant glow effect.",
-            specifications: {
-              "Volume": "1 Liter",
-              "Type": "DTF Fluorescent"
-            }
-          },
-          {
-            name: "Brilliant DTF Textile 1L. Fluorescent Red",
-            size: "1L",
-            color: "Fluorescent Red",
-            image: "/inks/BRILLIANT DTF INK 1L/Brilliant DTF Ink 1L Magenta (Transparent).png",
-            description: "Specialty fluorescent red DTF ink for eye-catching designs with vibrant glow effect.",
-            specifications: {
-              "Volume": "1 Liter",
-              "Type": "DTF Fluorescent"
-            }
-          },
+          // {
+          //   name: "Brilliant DTF Textile 1L. Fluorescent Yellow",
+          //   size: "1L",
+          //   color: "Fluorescent Yellow",
+          //   image: "/inks/BRILLIANT DTF INK 1L/Brilliant DTF Ink 1L Yellow (Transparent).webp",
+          //   description: "Specialty fluorescent yellow DTF ink for eye-catching designs with vibrant glow effect.",
+          //   specifications: {
+          //     "Volume": "1 Liter",
+          //     "Type": "DTF Fluorescent"
+          //   }
+          // },
+          // {
+          //   name: "Brilliant DTF Textile 1L. Fluorescent Pink",
+          //   size: "1L",
+          //   color: "Fluorescent Pink",
+          //   image: "/inks/BRILLIANT DTF INK 1L/Brilliant DTF Ink 1L Magenta (Transparent).webp",
+          //   description: "Specialty fluorescent pink DTF ink for eye-catching designs with vibrant glow effect.",
+          //   specifications: {
+          //     "Volume": "1 Liter",
+          //     "Type": "DTF Fluorescent"
+          //   }
+          // },
+          // {
+          //   name: "Brilliant DTF Textile 1L. Fluorescent Orange",
+          //   size: "1L",
+          //   color: "Fluorescent Orange",
+          //   image: "/inks/BRILLIANT DTF INK 1L/Brilliant DTF Ink 1L Yellow (Transparent).webp",
+          //   description: "Specialty fluorescent orange DTF ink for eye-catching designs with vibrant glow effect.",
+          //   specifications: {
+          //     "Volume": "1 Liter",
+          //     "Type": "DTF Fluorescent"
+          //   }
+          // },
+          // {
+          //   name: "Brilliant DTF Textile 1L. Fluorescent Red",
+          //   size: "1L",
+          //   color: "Fluorescent Red",
+          //   image: "/inks/BRILLIANT DTF INK 1L/Brilliant DTF Ink 1L Magenta (Transparent).webp",
+          //   description: "Specialty fluorescent red DTF ink for eye-catching designs with vibrant glow effect.",
+          //   specifications: {
+          //     "Volume": "1 Liter",
+          //     "Type": "DTF Fluorescent"
+          //   }
+          // },
           {
             name: "DTF Cleaning Solution 500ml",
             size: "500ml",
             color: "Clear",
             type: "Cleaning Solution",
-            image: "/inks/DTF CLEANING SOLUTIONS/DTF Cleaning Solution 500ml (Transparent).png",
+            image: "/inks/DTF CLEANING SOLUTIONS/DTF Cleaning Solution 500ml.webp",
             description: "Specialized DTF cleaning solution for maintaining print heads and system performance.",
             specifications: {
               "Volume": "500ml",
@@ -578,7 +578,7 @@ const getInkProductsData = () => {
             size: "1L",
             color: "Clear",
             type: "Cleaning Solution",
-            image: "/inks/DTF CLEANING SOLUTIONS/DTF Cleaning Solution 1L (Transparent).png",
+            image: "/inks/DTF CLEANING SOLUTIONS/DTF Cleaning Solution 1L (Transparent).webp",
             description: "Large volume DTF cleaning solution for maintaining print heads and system performance.",
             specifications: {
               "Volume": "1 Liter",
@@ -591,7 +591,7 @@ const getInkProductsData = () => {
         id: 4,
         name: "Sublimation Inks",
         description: "High-quality sublimation inks for vibrant transfers on polyester fabrics and polymer-coated substrates.",
-        image: "/KELIN-LOGO-01.png",
+        image: "/inks.png",
         features: [
           "Vibrant color transfer",
           "Excellent heat stability",
@@ -604,7 +604,7 @@ const getInkProductsData = () => {
             name: "Vivid Sublimation 1L Cyan",
             size: "1L",
             color: "Cyan",
-            image: "/inks/VIVID SUBLIMATION 1L INK/Vivid Sublimation Ink Cyan 1L (Transparent).png",
+            image: "/inks/VIVID SUBLIMATION 1L INK/Vivid Sublimation Ink Cyan 1L (Transparent).webp",
             description: "High-performance vivid sublimation cyan ink for brilliant color transfer and excellent heat stability.",
             specifications: {
               "Volume": "1 Liter",
@@ -615,7 +615,7 @@ const getInkProductsData = () => {
             name: "Vivid Sublimation 1L Magenta",
             size: "1L",
             color: "Magenta",
-            image: "/inks/VIVID SUBLIMATION 1L INK/Vivid Sublimation Ink Magenta 1L (Transparent).png",
+            image: "/inks/VIVID SUBLIMATION 1L INK/Vivid Sublimation Ink Magenta 1L (Transparent).webp",
             description: "High-performance vivid sublimation magenta ink for brilliant color transfer and excellent heat stability.",
             specifications: {
               "Volume": "1 Liter",
@@ -626,7 +626,7 @@ const getInkProductsData = () => {
             name: "Vivid Sublimation 1L Yellow",
             size: "1L",
             color: "Yellow",
-            image: "/inks/VIVID SUBLIMATION 1L INK/Vivid Sublimation Ink Yellow 1L  (Transparent).png",
+            image: "/inks/VIVID SUBLIMATION 1L INK/Vivid Sublimation Ink Yellow 1L  (Transparent).webp",
             description: "High-performance vivid sublimation yellow ink for brilliant color transfer and excellent heat stability.",
             specifications: {
               "Volume": "1 Liter",
@@ -637,7 +637,7 @@ const getInkProductsData = () => {
             name: "Vivid Sublimation 1L Black",
             size: "1L",
             color: "Black",
-            image: "/inks/VIVID SUBLIMATION 1L INK/Vivid Sublimation Ink Black 1L (Transparent).png",
+            image: "/inks/VIVID SUBLIMATION 1L INK/Vivid Sublimation Ink Black 1L (Transparent).webp",
             description: "High-performance vivid sublimation black ink for brilliant color transfer and excellent heat stability.",
             specifications: {
               "Volume": "1 Liter",
@@ -648,7 +648,7 @@ const getInkProductsData = () => {
             name: "Vivid Sublimation 5L Cyan",
             size: "5L",
             color: "Cyan",
-            image: "/inks/VIVID SUBLIMATION 5L INK/Vivid Sublimation 5L Cyan (Transparent).png",
+            image: "/inks/VIVID SUBLIMATION 5L INK/Vivid Sublimation 5L Cyan (Transparent).webp",
             description: "Large volume vivid sublimation cyan ink for high-volume printing with consistent quality.",
             specifications: {
               "Volume": "5 Liters",
@@ -659,7 +659,7 @@ const getInkProductsData = () => {
             name: "Vivid Sublimation 5L Magenta",
             size: "5L",
             color: "Magenta",
-            image: "/inks/VIVID SUBLIMATION 5L INK/Vivid Sublimation 5L  Magenta (Transparent).png",
+            image: "/inks/VIVID SUBLIMATION 5L INK/Vivid Sublimation 5L  Magenta (Transparent).webp",
             description: "Large volume vivid sublimation magenta ink for high-volume printing with consistent quality.",
             specifications: {
               "Volume": "5 Liters",
@@ -670,7 +670,7 @@ const getInkProductsData = () => {
             name: "Vivid Sublimation 5L Yellow",
             size: "5L",
             color: "Yellow",
-            image: "/inks/VIVID SUBLIMATION 5L INK/Vivid Sublimation 5L  Yellow (Transparent).png",
+            image: "/inks/VIVID SUBLIMATION 5L INK/Vivid Sublimation 5L  Yellow (Transparent).webp",
             description: "Large volume vivid sublimation yellow ink for high-volume printing with consistent quality.",
             specifications: {
               "Volume": "5 Liters",
@@ -681,7 +681,7 @@ const getInkProductsData = () => {
             name: "Vivid Sublimation 5L Black",
             size: "5L",
             color: "Black",
-            image: "/inks/VIVID SUBLIMATION 5L INK/Vivid Sublimation 5L Black (Transparent).png",
+            image: "/inks/VIVID SUBLIMATION 5L INK/Vivid Sublimation 5L Black (Transparent).webp",
             description: "Large volume vivid sublimation black ink for high-volume printing with consistent quality.",
             specifications: {
               "Volume": "5 Liters",
@@ -692,7 +692,7 @@ const getInkProductsData = () => {
             name: "Brilliant Sublimation 1L Cyan",
             size: "1L",
             color: "Cyan",
-            image: "/inks/BRILLIANT SUBLIMATION INK 1L/Brilliant Sublimation Ink Cyan 1L (Transparent).png",
+            image: "/inks/BRILLIANT SUBLIMATION INK 1L/Brilliant Sublimation Ink Cyan 1L (Transparent).webp",
             description: "Premium brilliant sublimation cyan ink with superior color reproduction and durability.",
             specifications: {
               "Volume": "1 Liter",
@@ -703,7 +703,7 @@ const getInkProductsData = () => {
             name: "Brilliant Sublimation 1L Magenta",
             size: "1L",
             color: "Magenta",
-            image: "/inks/BRILLIANT SUBLIMATION INK 1L/Brilliant Sublimation Ink Magenta 1L (Transparent).png",
+            image: "/inks/BRILLIANT SUBLIMATION INK 1L/Brilliant Sublimation Ink Magenta 1L (Transparent).webp",
             description: "Premium brilliant sublimation magenta ink with superior color reproduction and durability.",
             specifications: {
               "Volume": "1 Liter",
@@ -714,7 +714,7 @@ const getInkProductsData = () => {
             name: "Brilliant Sublimation 1L Yellow",
             size: "1L",
             color: "Yellow",
-            image: "/inks/BRILLIANT SUBLIMATION INK 1L/Brilliant Sublimation Ink Yellow 1L (Transparent).png",
+            image: "/inks/BRILLIANT SUBLIMATION INK 1L/Brilliant Sublimation Ink Yellow 1L (Transparent).webp",
             description: "Premium brilliant sublimation yellow ink with superior color reproduction and durability.",
             specifications: {
               "Volume": "1 Liter",
@@ -725,7 +725,7 @@ const getInkProductsData = () => {
             name: "Brilliant Sublimation 1L Black",
             size: "1L",
             color: "Black",
-            image: "/inks/BRILLIANT SUBLIMATION INK 1L/Brilliant Sublimation Ink Black 1L (Transparent).png",
+            image: "/inks/BRILLIANT SUBLIMATION INK 1L/Brilliant Sublimation Ink Black 1L (Transparent).webp",
             description: "Premium brilliant sublimation black ink with superior color reproduction and durability.",
             specifications: {
               "Volume": "1 Liter",
@@ -736,7 +736,7 @@ const getInkProductsData = () => {
             name: "Papijet LTI 203 Cyan",
             size: "1L",
             color: "Cyan",
-            image: "/inks/PAPIJET/Papijet 203 LIT Cyan (Transparent).png",
+            image: "/inks/PAPIJET/Papijet 203 LIT Cyan (Transparent).webp",
             description: "Professional Papijet LTI 203 cyan sublimation ink optimized for textile applications.",
             specifications: {
               "Volume": "1 Liter",
@@ -747,7 +747,7 @@ const getInkProductsData = () => {
             name: "Papijet LTI 203 Magenta",
             size: "1L",
             color: "Magenta",
-            image: "/inks/PAPIJET/Papijet LIT 203 Magenta  (Transparent).png",
+            image: "/inks/PAPIJET/Papijet LIT 203 Magenta  (Transparent).webp",
             description: "Professional Papijet LTI 203 magenta sublimation ink optimized for textile applications.",
             specifications: {
               "Volume": "1 Liter",
@@ -758,7 +758,7 @@ const getInkProductsData = () => {
             name: "Papijet LTI 203 Yellow",
             size: "1L",
             color: "Yellow",
-            image: "/inks/PAPIJET/Papijet LIT 203 Yellow (Transparent).png",
+            image: "/inks/PAPIJET/Papijet LIT 203 Yellow (Transparent).webp",
             description: "Professional Papijet LTI 203 yellow sublimation ink optimized for textile applications.",
             specifications: {
               "Volume": "1 Liter",
@@ -769,7 +769,7 @@ const getInkProductsData = () => {
             name: "Papijet LTI 203 Black",
             size: "1L",
             color: "Black",
-            image: "/inks/PAPIJET/Papijet 203 LIT Black (Transparent).png",
+            image: "/inks/PAPIJET/Papijet 203 LIT Black (Transparent).webp",
             description: "Professional Papijet LTI 203 black sublimation ink optimized for textile applications.",
             specifications: {
               "Volume": "1 Liter",
@@ -780,7 +780,7 @@ const getInkProductsData = () => {
             name: "Papijet LTIP Light Cyan",
             size: "1L",
             color: "Light Cyan",
-            image: "/inks/PAPIJET/Papijet LITP Light Cyan  (Transparent).png",
+            image: "/inks/PAPIJET/Papijet LITP Light Cyan  (Transparent).webp",
             description: "Specialized Papijet LTIP light cyan ink for enhanced color gradation and photo quality.",
             specifications: {
               "Volume": "1 Liter",
@@ -791,7 +791,7 @@ const getInkProductsData = () => {
             name: "Papijet LTIP Light Magenta",
             size: "1L",
             color: "Light Magenta",
-            image: "/inks/PAPIJET/Papijet LITP Light Magenta (Transparent).png",
+            image: "/inks/PAPIJET/Papijet LITP Light Magenta (Transparent).webp",
             description: "Specialized Papijet LTIP light magenta ink for enhanced color gradation and photo quality.",
             specifications: {
               "Volume": "1 Liter",
@@ -802,7 +802,7 @@ const getInkProductsData = () => {
             name: "Papijet LTI 202 Fluorescent Yellow",
             size: "1L",
             color: "Fluorescent Yellow",
-            image: "/inks/PAPIJET/Papijet Fluorescent Yellow (Transparent).png",
+            image: "/inks/PAPIJET/Papijet Fluorescent Yellow (Transparent).webp",
             description: "Specialty Papijet LTI 202 fluorescent yellow ink for eye-catching designs with vibrant glow.",
             specifications: {
               "Volume": "1 Liter",
@@ -813,7 +813,7 @@ const getInkProductsData = () => {
             name: "Papijet LTI 202 Fluorescent Pink",
             size: "1L",
             color: "Fluorescent Pink",
-            image: "/inks/PAPIJET/Papijet LTI 202 Fluorescent Pink (Transparent) (1).png",
+            image: "/inks/PAPIJET/Papijet LTI 202 Fluorescent Pink (Transparent) (1).webp",
             description: "Specialty Papijet LTI 202 fluorescent pink ink for eye-catching designs with vibrant glow.",
             specifications: {
               "Volume": "1 Liter",
@@ -826,7 +826,7 @@ const getInkProductsData = () => {
         id: 5,
         name: "UV Inks",
         description: "Instant-curing UV inks that provide exceptional durability and print quality for demanding applications.",
-        image: "/KELIN-LOGO-01.png",
+        image: "/inks.png",
         features: [
           "Instant curing",
           "Superior durability",
@@ -1334,25 +1334,139 @@ export default function Inks() {
                   <div className="inks-form-group">
                     <label htmlFor="phone">Phone Number</label>
                     <div className="inks-phone-input">
-                      <select name="countryCode" className="inks-country-select">
+                      <select name="countryCode" className="inks-country-select" defaultValue="+63">
                         <option value="+63">🇵🇭 +63</option>
                         <option value="+1">🇺🇸 +1</option>
+                        <option value="+1">🇨🇦 +1</option>
+                        <option value="+52">🇲🇽 +52</option>
+                        <option value="+54">🇦🇷 +54</option>
+                        <option value="+55">🇧🇷 +55</option>
+                        <option value="+56">🇨🇱 +56</option>
+                        <option value="+57">🇨🇴 +57</option>
+                        <option value="+58">🇻🇪 +58</option>
+                        <option value="+51">🇵🇪 +51</option>
+                        <option value="+593">🇪🇨 +593</option>
+                        <option value="+595">🇵🇾 +595</option>
+                        <option value="+598">🇺🇾 +598</option>
+                        <option value="+591">🇧🇴 +591</option>
+                        <option value="+592">🇬🇾 +592</option>
+                        <option value="+597">🇸🇷 +597</option>
+                        <option value="+44">🇬🇧 +44</option>
+                        <option value="+353">🇮🇪 +353</option>
+                        <option value="+33">🇫🇷 +33</option>
+                        <option value="+49">🇩🇪 +49</option>
+                        <option value="+34">🇪🇸 +34</option>
+                        <option value="+39">🇮🇹 +39</option>
+                        <option value="+31">🇳🇱 +31</option>
+                        <option value="+32">🇧🇪 +32</option>
+                        <option value="+41">🇨🇭 +41</option>
+                        <option value="+43">🇦🇹 +43</option>
+                        <option value="+45">🇩🇰 +45</option>
+                        <option value="+46">🇸🇪 +46</option>
+                        <option value="+47">🇳🇴 +47</option>
+                        <option value="+48">🇵🇱 +48</option>
+                        <option value="+420">🇨🇿 +420</option>
+                        <option value="+421">🇸🇰 +421</option>
+                        <option value="+36">🇭🇺 +36</option>
+                        <option value="+40">🇷🇴 +40</option>
+                        <option value="+359">🇧🇬 +359</option>
+                        <option value="+30">🇬🇷 +30</option>
+                        <option value="+351">🇵🇹 +351</option>
+                        <option value="+354">🇮🇸 +354</option>
+                        <option value="+356">🇲🇹 +356</option>
+                        <option value="+357">🇨🇾 +357</option>
+                        <option value="+372">🇪🇪 +372</option>
+                        <option value="+371">🇱🇻 +371</option>
+                        <option value="+370">🇱🇹 +370</option>
+                        <option value="+386">🇸🇮 +386</option>
+                        <option value="+385">🇭🇷 +385</option>
+                        <option value="+381">🇷🇸 +381</option>
+                        <option value="+382">🇲🇪 +382</option>
+                        <option value="+387">🇧🇦 +387</option>
+                        <option value="+389">🇲🇰 +389</option>
+                        <option value="+355">🇦🇱 +355</option>
+                        <option value="+373">🇲🇩 +373</option>
+                        <option value="+380">🇺🇦 +380</option>
+                        <option value="+375">🇧🇾 +375</option>
+                        <option value="+7">🇷🇺 +7</option>
                         <option value="+86">🇨🇳 +86</option>
                         <option value="+81">🇯🇵 +81</option>
                         <option value="+82">🇰🇷 +82</option>
+                        <option value="+852">🇭🇰 +852</option>
+                        <option value="+853">🇲🇴 +853</option>
+                        <option value="+886">🇹🇼 +886</option>
                         <option value="+65">🇸🇬 +65</option>
                         <option value="+60">🇲🇾 +60</option>
                         <option value="+66">🇹🇭 +66</option>
                         <option value="+84">🇻🇳 +84</option>
                         <option value="+62">🇮🇩 +62</option>
+                        <option value="+673">🇧🇳 +673</option>
+                        <option value="+856">🇱🇦 +856</option>
+                        <option value="+855">🇰🇭 +855</option>
+                        <option value="+95">🇲🇲 +95</option>
                         <option value="+91">🇮🇳 +91</option>
-                        <option value="+44">🇬🇧 +44</option>
-                        <option value="+49">🇩🇪 +49</option>
-                        <option value="+33">🇫🇷 +33</option>
-                        <option value="+39">🇮🇹 +39</option>
-                        <option value="+34">🇪🇸 +34</option>
+                        <option value="+92">🇵🇰 +92</option>
+                        <option value="+880">🇧🇩 +880</option>
+                        <option value="+94">🇱🇰 +94</option>
+                        <option value="+977">🇳🇵 +977</option>
+                        <option value="+975">🇧🇹 +975</option>
+                        <option value="+960">🇲🇻 +960</option>
+                        <option value="+93">🇦🇫 +93</option>
+                        <option value="+98">🇮🇷 +98</option>
+                        <option value="+964">🇮🇶 +964</option>
+                        <option value="+962">🇯🇴 +962</option>
+                        <option value="+966">🇸🇦 +966</option>
+                        <option value="+971">🇦🇪 +971</option>
+                        <option value="+968">🇴🇲 +968</option>
+                        <option value="+974">🇶🇦 +974</option>
+                        <option value="+973">🇧🇭 +973</option>
+                        <option value="+965">🇰🇼 +965</option>
+                        <option value="+90">🇹🇷 +90</option>
+                        <option value="+972">🇮🇱 +972</option>
+                        <option value="+20">🇪🇬 +20</option>
+                        <option value="+27">🇿🇦 +27</option>
+                        <option value="+234">🇳🇬 +234</option>
+                        <option value="+254">🇰🇪 +254</option>
+                        <option value="+255">🇹🇿 +255</option>
+                        <option value="+256">🇺🇬 +256</option>
+                        <option value="+251">🇪🇹 +251</option>
+                        <option value="+212">🇲🇦 +212</option>
+                        <option value="+213">🇩🇿 +213</option>
+                        <option value="+216">🇹🇳 +216</option>
+                        <option value="+218">🇱🇾 +218</option>
+                        <option value="+233">🇬🇭 +233</option>
+                        <option value="+221">🇸🇳 +221</option>
+                        <option value="+225">🇨🇮 +225</option>
+                        <option value="+237">🇨🇲 +237</option>
+                        <option value="+243">🇨🇩 +243</option>
+                        <option value="+242">🇨🇬 +242</option>
+                        <option value="+240">🇬🇶 +240</option>
+                        <option value="+241">🇬🇦 +241</option>
+                        <option value="+250">🇷🇼 +250</option>
+                        <option value="+257">🇧🇮 +257</option>
+                        <option value="+260">🇿🇲 +260</option>
+                        <option value="+263">🇿🇼 +263</option>
+                        <option value="+258">🇲🇿 +258</option>
+                        <option value="+264">🇳🇦 +264</option>
+                        <option value="+267">🇧🇼 +267</option>
+                        <option value="+266">🇱🇸 +266</option>
+                        <option value="+268">🇸🇿 +268</option>
+                        <option value="+261">🇲🇬 +261</option>
+                        <option value="+230">🇲🇺 +230</option>
+                        <option value="+248">🇸🇨 +248</option>
                         <option value="+61">🇦🇺 +61</option>
                         <option value="+64">🇳🇿 +64</option>
+                        <option value="+675">🇵🇬 +675</option>
+                        <option value="+679">🇫🇯 +679</option>
+                        <option value="+685">🇼🇸 +685</option>
+                        <option value="+676">🇹🇴 +676</option>
+                        <option value="+678">🇻🇺 +678</option>
+                        <option value="+691">🇫🇲 +691</option>
+                        <option value="+692">🇲🇭 +692</option>
+                        <option value="+680">🇵🇼 +680</option>
+                        <option value="+688">🇹🇻 +688</option>
+                        <option value="+682">🇨🇰 +682</option>
+                        <option value="+683">🇳🇺 +683</option>
                       </select>
                       <input
                         type="tel"

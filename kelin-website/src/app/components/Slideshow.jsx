@@ -4,9 +4,9 @@ import { useEffect, useState } from "react";
 import "./Slideshow.css";
 
 const images = [
-    "/DTF UV Printer SF303-i3200 2ft (1).png",
-    "/DTF UV Printer SF604-i3200 2ft. - High Res (1).png",
-    "/LUXOR UV-A3 RTR.png",
+    "/DTF UV Printer SF303-i3200 2ft (1).webp",
+    "/DTF UV Printer SF604-i3200 2ft. - High Res (1).webp",
+    "/LUXOR UV-A3 RTR.webp",
 ];
 
 export default function Slideshow() {

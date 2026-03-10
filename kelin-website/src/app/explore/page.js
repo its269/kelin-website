@@ -22,7 +22,7 @@ export default function Explore() {
       icon: '/inks.png',
       productCount: '12+',
       href: '/inks',
-      image: '/cat_inks.png',
+      image: '/cat_inks.webp',
       products: [
         { name: 'Eco-Solvent Inks', desc: 'Environmental-friendly outdoor graphics' },
         { name: 'Latex Inks', desc: 'Water-based indoor/outdoor solutions' },
@@ -36,7 +36,7 @@ export default function Explore() {
       icon: '/materials.png',
       productCount: '8+',
       href: '/materials',
-      image: '/cat_materials.png',
+      image: '/cat_materials.webp',
       products: [
         { name: 'Vinyl Films', desc: 'Adhesive and non-adhesive options' },
         { name: 'Canvas & Textiles', desc: 'Fabric materials for soft signage' },
@@ -50,7 +50,7 @@ export default function Explore() {
       icon: '/machines.png',
       productCount: '10+',
       href: '/machine',
-      image: '/cat_machine.png',
+      image: '/cat_machine.webp',
       products: [
         { name: 'Digital Printers', desc: 'Wide format printing solutions' },
         { name: 'Cutting Plotters', desc: 'Precision cutting equipment' },
@@ -64,7 +64,7 @@ export default function Explore() {
       icon: '/accessories.png',
       productCount: '15+',
       href: '/accessories',
-      image: '/cat_accessories.png',
+      image: '/cat_accessories.webp',
       products: [
         { name: 'Maintenance Kits', desc: 'Keep equipment running smoothly' },
         { name: 'RIP Software', desc: 'Color management solutions' },
@@ -78,7 +78,7 @@ export default function Explore() {
       icon: '/display.png',
       productCount: '6+',
       href: '/promotional-display',
-      image: '/cat_promotional-display.png',
+      image: '/cat_promotional-display.webp',
       products: [
         { name: 'Banner Stands', desc: 'Portable retractable systems' },
         { name: 'Pop-up Displays', desc: 'Trade show exhibitions' },

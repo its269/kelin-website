@@ -88,6 +88,9 @@
     border: 1px solid rgba(255, 255, 255, 0.2);
     position: relative;
     overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
 }
 
 .btn::before {
@@ -320,9 +323,12 @@
     .btn:hover .btn-quinary-cat {
         position: relative;
         z-index: 2;
+        color: #ffffff !important;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8) !important;
+        font-weight: 800;
     }
 
-    .btn:hover a {
+    .btn:hover div {
         position: relative;
         z-index: 2;
         color: #ffffff !important;
@@ -352,7 +358,7 @@
 
     /* DTF Printer background */
     .btn:has(.btn-quinary-cat):hover {
-        background-image: url('/sublimation_dtf/DTF SMART DTF Machine (1).png');
+        background-image: url('/embroidery_knitting/Promaker Embroidery 1204.png');
     }
 }
 

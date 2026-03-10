@@ -172,6 +172,7 @@ font-weight: 400;
 .progress-bar {
     position: fixed;
     bottom: 25px;
+    bottom: max(25px, env(safe-area-inset-bottom));
     left: 50%;
     transform: translateX(-50%);
     width: 180px;
@@ -180,6 +181,8 @@ font-weight: 400;
     border-radius: 1px;
     overflow: hidden;
     z-index: 10;
+    -webkit-transform: translateX(-50%) translateZ(0);
+    will-change: transform;
 }
 
 .progress-fill {
@@ -267,6 +270,8 @@ font-weight: 400;
 
     .progress-bar {
         width: 200px;
+        bottom: 20px;
+        bottom: max(20px, calc(env(safe-area-inset-bottom) + 10px));
     }
 }
 

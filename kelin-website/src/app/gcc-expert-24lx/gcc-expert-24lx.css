@@ -687,10 +687,10 @@
     gap: 8px;
 }
 
-.gcc-expert-24lx-country-select {
+/* .gcc-expert-24lx-country-select {
     flex-shrink: 0;
     width: 120px;
-}
+} */
 
 .gcc-expert-24lx-form-actions {
     display: flex;

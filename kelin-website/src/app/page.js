@@ -20,91 +20,91 @@ export default function Home() {
   const carouselItems = [
     {
       id: 1,
-      image: "/Solutions Category/Industrial Sublimation.png",
+      image: "/Solutions Category/Industrial Sublimation.webp",
       title: "Industrial Sublimation",
       buttonText: "View More",
       onButtonClick: (item) => console.log(`Button clicked for ${item.title}`)
     },
     {
       id: 2,
-      image: "/Solutions Category/Textile and Apparel.png",
+      image: "/Solutions Category/Textile and Apparel.webp",
       title: "Textile and Apparel",
       buttonText: "Learn More",
       onButtonClick: (item) => console.log(`Button clicked for ${item.title}`)
     },
     {
       id: 3,
-      image: "/Solutions Category/Direct to Film (DTF).png",
+      image: "/Solutions Category/Direct to Film (DTF).webp",
       title: "Direct to Film (DTF)",
       buttonText: "View More",
       onButtonClick: (item) => console.log(`Button clicked for ${item.title}`)
     },
     {
       id: 4,
-      image: "/Solutions Category/UV DTF.png",
+      image: "/Solutions Category/UV DTF.webp",
       title: "UV DTF",
       buttonText: "Explore",
       onButtonClick: (item) => console.log(`Button clicked for ${item.title}`)
     },
     {
       id: 5,
-      image: "/Solutions Category/Threadwork.png",
+      image: "/Solutions Category/Threadwork.webp",
       title: "Threadwork",
       buttonText: "View More",
       onButtonClick: (item) => console.log(`Button clicked for ${item.title}`)
     },
     {
       id: 6,
-      image: "/Solutions Category/Digital Printing Equipment.png",
+      image: "/Solutions Category/Digital Printing Equipment.webp",
       title: "Digital Printing Equipment",
       buttonText: "Learn More",
       onButtonClick: (item) => console.log(`Button clicked for ${item.title}`)
     },
     {
       id: 7,
-      image: "/Solutions Category/Signage.png",
+      image: "/Solutions Category/Signage.webp",
       title: "Signages",
       buttonText: "View More",
       onButtonClick: (item) => console.log(`Button clicked for ${item.title}`)
     },
     {
       id: 8,
-      image: "/Solutions Category/Industrial Cutter.png",
+      image: "/Solutions Category/Industrial Cutter.webp",
       title: "Industrial Cutter",
       buttonText: "Explore",
       onButtonClick: (item) => console.log(`Button clicked for ${item.title}`)
     },
     {
       id: 9,
-      image: "/Solutions Category/Cutting Solutions.png",
+      image: "/Solutions Category/Cutting Solutions.webp",
       title: "Cutting Solution",
       buttonText: "Learn More",
       onButtonClick: (item) => console.log(`Button clicked for ${item.title}`)
     },
     {
       id: 10,
-      image: "/Solutions Category/Laser Machine Solution.png",
+      image: "/Solutions Category/Laser Machine Solution.webp",
       title: "Laser Machine Solution",
       buttonText: "View More",
       onButtonClick: (item) => console.log(`Button clicked for ${item.title}`)
     },
     {
       id: 11,
-      image: "/Solutions Category/Personalized Machine Solution.png",
+      image: "/Solutions Category/Personalized Machine Solution.webp",
       title: "Personalized Machine Solution",
       buttonText: "Explore",
       onButtonClick: (item) => console.log(`Button clicked for ${item.title}`)
     },
     {
       id: 12,
-      image: "/Solutions Category/Exhibition Displays.png",
+      image: "/Solutions Category/Exhibition Displays.webp",
       title: "Exhibition Displays",
       buttonText: "View More",
       onButtonClick: (item) => console.log(`Button clicked for ${item.title}`)
     },
     {
       id: 13,
-      image: "/Solutions Category/Substrates and Materials.png",
+      image: "/Solutions Category/Substrates and Materials.webp",
       title: "Substrates and Materials",
       buttonText: "Explore",
       onButtonClick: (item) => console.log(`Button clicked for ${item.title}`)
@@ -141,21 +141,21 @@ export default function Home() {
             {/* 🔧 SSG CODE PATTERN: Static navigation links */}
             {/* href values are hardcoded = pre-rendered in static HTML */}
             <div className="hero-buttons">
-              <div className="btn">
-                <a href="/explore" className="btn-primary-cat">Cutting Machine</a>
-              </div>
-              <div className="btn">
-                <a href="/about" className="btn-secondary-cat">Eco-Solvent<br></br>Printer Machine</a>
-              </div>
-              <div className="btn">
-                <a href="/support" className="btn-tertiary-cat">Solvent<br></br>Printer Machine</a>
-              </div>
-              <div className="btn">
-                <a href="/resources" className="btn-quaternary-cat">Sublimation<br></br>Printer Machine</a>
-              </div>
-              <div className="btn">
-                <a href="/blog" className="btn-quinary-cat">DTF<br></br>Printer Machine</a>
-              </div>
+              <a href="/cutting-machine" className="btn">
+                <div className="btn-primary-cat">Cutting Machine</div>
+              </a>
+              <a href="/eco-solvent-printers" className="btn">
+                <div className="btn-secondary-cat">Eco-Solvent<br></br>Printer Machine</div>
+              </a>
+              <a href="/solvent-printers" className="btn">
+                <div className="btn-tertiary-cat">Solvent<br></br>Printer Machine</div>
+              </a>
+              <a href="/sublimation-dtf" className="btn">
+                <div className="btn-quaternary-cat">Sublimation<br></br>Printer Machine</div>
+              </a>
+              <a href="/embroidery-knitting" className="btn">
+                <div className="btn-quinary-cat">Embroidery<br></br>Knitting</div>
+              </a>
             </div>
           </section>
 
@@ -194,7 +194,7 @@ export default function Home() {
             <div className="feature-card">
               <div className="laminator-image">
                 <Image
-                  src="/DTF UV Printer SF604-i3200 2ft. - High Res (1).png"
+                  src="/DTF UV Printer SF604-i3200 2ft. - High Res (1).webp"
                   alt="LUXOR SF60-4 DTF UV Printer"
                   width={250}
                   height={200}
@@ -209,7 +209,7 @@ export default function Home() {
             <div className="feature-card">
               <div className="laminator-image">
                 <Image
-                  src="/LUXOR UV-A3 RTR.png"
+                  src="/LUXOR UV-A3 RTR.webp"
                   alt="LUXOR UV-A3 Flatbed Printer"
                   width={250}
                   height={200}
@@ -224,7 +224,7 @@ export default function Home() {
             <div className="feature-card">
               <div className="laminator-image">
                 <Image
-                  src="/DTF UV Printer SF303-i3200 2ft (1).png"
+                  src="/DTF UV Printer SF303-i3200 2ft (1).webp"
                   alt="LUXOR SF30-3 DTF UV Printer"
                   width={250}
                   height={200}

@@ -1134,7 +1134,9 @@
 .scroll-to-top-btn {
     position: fixed;
     bottom: 30px;
+    bottom: max(30px, env(safe-area-inset-bottom, 30px));
     left: 30px;
+    left: max(30px, env(safe-area-inset-left, 30px));
     width: 50px;
     height: 50px;
     background: linear-gradient(135deg, #6b7280 0%, #4b5563 100%);
@@ -1156,6 +1158,10 @@
     transform: translateZ(0);
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
+    will-change: transform;
+    -webkit-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .scroll-to-top-btn:hover {
@@ -1177,10 +1183,10 @@
         width: 45px;
         height: 45px;
         bottom: 20px;
+        bottom: max(20px, calc(env(safe-area-inset-bottom, 0px) + 10px));
         left: 20px;
+        left: max(20px, calc(env(safe-area-inset-left, 0px) + 10px));
         font-size: 1.3rem;
-        /* iOS Safari bottom safe area */
-        bottom: calc(20px + env(safe-area-inset-bottom));
     }
 }
 
@@ -1209,18 +1215,15 @@
 /* iOS specific fixes */
 @supports (-webkit-touch-callout: none) {
     .scroll-to-top-btn {
-        /* Additional iOS fixes */
-        -webkit-user-select: none;
-        user-select: none;
-        -webkit-tap-highlight-color: transparent;
-        /* Ensure proper positioning on iOS */
-        bottom: calc(30px + env(safe-area-inset-bottom));
+        /* Ensure proper positioning on iOS with safe areas */
+        bottom: max(30px, calc(env(safe-area-inset-bottom, 0px) + 20px)) !important;
+        left: max(30px, calc(env(safe-area-inset-left, 0px) + 10px)) !important;
     }
 
     @media (max-width: 768px) {
         .scroll-to-top-btn {
-            bottom: calc(20px + env(safe-area-inset-bottom, 20px));
-            left: calc(20px + env(safe-area-inset-left, 0px));
+            bottom: max(20px, calc(env(safe-area-inset-bottom, 0px) + 15px)) !important;
+            left: max(20px, calc(env(safe-area-inset-left, 0px) + 10px)) !important;
         }
     }
 }

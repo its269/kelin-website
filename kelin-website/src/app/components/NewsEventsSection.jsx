@@ -14,7 +14,7 @@ export default function NewsEventsSection() {
             title: "Graphic Expo",
             date: "July 16-18, 2026",
             category: "Exhibition",
-            image: "/3D Printer (1).png",
+            image: "/3D Printer (1).webp",
             description: "Join us at SMX Manila (MOA) for the premier graphics and printing exhibition showcasing the latest in digital printing technology.",
             fullDescription: "Join us at SMX Manila (MOA) for the premier graphics and printing exhibition showcasing the latest in digital printing technology. This three-day event brings together industry leaders, innovative technologies, and cutting-edge solutions in the graphics and printing sector.",
             location: "SMX Manila (MOA), Pasay City, Philippines",
@@ -28,9 +28,10 @@ export default function NewsEventsSection() {
                 "New Product Launches"
             ],
             contact: {
-                email: "events@kelin.com",
-                phone: "+63 2 8123 4567",
-                website: "www.kelin.com/events"
+                email: "info@kelinph.com",
+                telephone: "(02) 8711-1888",
+                mobile: "0917 678 0608 | 0908 196 0836",
+                website: "www.kelinph.com/events/"
             }
         },
         {
@@ -38,7 +39,7 @@ export default function NewsEventsSection() {
             title: "Print Philippines (PrintCon)",
             date: "July 2-4, 2026",
             category: "Exhibition",
-            image: "/3D Printer (1).png",
+            image: "/3D Printer (1).webp",
             description: "Visit our booth at SMX Manila (MOA) during the Philippines' leading print technology exhibition and conference.",
             fullDescription: "Visit our booth at SMX Manila (MOA) during the Philippines' leading print technology exhibition and conference. PrintCon Philippines is the country's premier event for printing professionals, featuring the latest innovations in printing technology and solutions.",
             location: "SMX Manila (MOA), Pasay City, Philippines",
@@ -52,9 +53,10 @@ export default function NewsEventsSection() {
                 "Exclusive Product Previews"
             ],
             contact: {
-                email: "printcon@kelin.com",
-                phone: "+63 2 8123 4567",
-                website: "www.kelin.com/printcon"
+                email: "info@kelinph.com",
+                telephone: "(02) 8711-1888",
+                mobile: "0917 678 0608 | 0908 196 0836",
+                website: "www.kelinph.com/events/"
             }
         },
         {
@@ -62,7 +64,7 @@ export default function NewsEventsSection() {
             title: "Pack Print Plas (Manila)",
             date: "October 8-10, 2026",
             category: "Exhibition",
-            image: "/3D Printer (1).png",
+            image: "/3D Printer (1).webp",
             description: "Don't miss our participation at SMX Manila (MOA) for the main packaging, printing, and plastics exhibition in the Philippines.",
             fullDescription: "Don't miss our participation at SMX Manila (MOA) for the main packaging, printing, and plastics exhibition in the Philippines. This comprehensive trade show covers the entire spectrum of packaging, printing, and plastics industries with innovative solutions and technologies.",
             location: "SMX Manila (MOA), Pasay City, Philippines",
@@ -76,9 +78,10 @@ export default function NewsEventsSection() {
                 "Business Matching Sessions"
             ],
             contact: {
-                email: "packprint@kelin.com",
-                phone: "+63 2 8123 4567",
-                website: "www.kelin.com/packprint"
+                email: "info@kelinph.com",
+                telephone: "(02) 8711-1888",
+                mobile: "0917 678 0608 | 0908 196 0836",
+                website: "www.kelinph.com/events/"
             }
         }
     ];
@@ -234,7 +237,8 @@ export default function NewsEventsSection() {
                                     </h4>
                                     <div className="contact-details">
                                         <p><strong>Email:</strong> {selectedEvent.contact.email}</p>
-                                        <p><strong>Phone:</strong> {selectedEvent.contact.phone}</p>
+                                        <p><strong>Telephone:</strong> {selectedEvent.contact.telephone}</p>
+                                        <p><strong>Mobile:</strong> {selectedEvent.contact.mobile}</p>
                                         <p><strong>Website:</strong> {selectedEvent.contact.website}</p>
                                     </div>
                                 </div>

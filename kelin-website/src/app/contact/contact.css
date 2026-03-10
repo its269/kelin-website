@@ -172,6 +172,47 @@
     font-family: inherit;
 }
 
+/* Phone Input with Country Code */
+.contact-phone-input {
+    display: flex;
+    gap: 10px;
+}
+
+.contact-country-select {
+    flex: 0 0 120px;
+    padding: 12px 8px;
+    border: 2px solid #e9ecef;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    background: rgba(255, 255, 255, 0.8);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.contact-country-select:focus {
+    outline: none;
+    border-color: #6b7280;
+    box-shadow: 0 0 0 3px rgba(107, 114, 128, 0.1);
+    background: rgba(255, 255, 255, 0.95);
+}
+
+.contact-phone-input input[type="tel"] {
+    flex: 1;
+    padding: 12px 16px;
+    border: 2px solid #e9ecef;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    background: rgba(255, 255, 255, 0.8);
+    transition: all 0.3s ease;
+}
+
+.contact-phone-input input[type="tel"]:focus {
+    outline: none;
+    border-color: #6b7280;
+    box-shadow: 0 0 0 3px rgba(107, 114, 128, 0.1);
+    background: rgba(255, 255, 255, 0.95);
+}
+
 .submit-btn {
     width: 100%;
     padding: 16px 32px;
@@ -261,6 +302,15 @@
     .contact-icon {
         width: 40px;
         height: 40px;
+    }
+
+    .contact-phone-input {
+        flex-direction: column;
+    }
+
+    .contact-country-select {
+        flex: 1;
+        width: 100%;
     }
 }
 
