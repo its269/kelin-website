@@ -484,7 +484,7 @@ export default function Header() {
 
                                 {machineOpen && (
                                     <div className="dropdown-menu-nested">
-                                        <Link href="/eco-solvent-printers">Eco - Solvent Printers</Link>
+                                        <Link href="/eco-solvent-printers">Eco Solvent Printers</Link>
                                         <Link href="/solvent-printers">Solvent Printers</Link>
                                         <Link href="/cutting-machine">Cutting Machine</Link>
                                         <Link href="/sublimation-dtf">Sublimation and DTF</Link>

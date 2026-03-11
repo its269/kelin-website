@@ -145,7 +145,7 @@ export default function Contact() {
                                         </div>
                                         <div className="contact-text">
                                             <h3>Website</h3>
-                                            <p>www.kelinph.com/events/</p>
+                                            <p>www.kelinph.com</p>
                                         </div>
                                     </div>
 
