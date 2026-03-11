@@ -6,7 +6,7 @@ import './smart-rj24-unique.css';
 
 export default function SmartRJ24I3200EcoSolvent() {
     const [inquiryModalOpen, setInquiryModalOpen] = useState(false);
-    const [selectedImage, setSelectedImage] = useState('/SMART Eco-Solvent Machine.png');
+    const [selectedImage, setSelectedImage] = useState('/eco-solvent-machines/SMART.webp');
     const scrollRef = useRef(null);
     const [isDragging, setIsDragging] = useState(false);
     const [startX, setStartX] = useState(0);
@@ -38,8 +38,8 @@ export default function SmartRJ24I3200EcoSolvent() {
         name: 'SMART ECO-SOLVENT RJ24-2002 & 2004 6FT',
         model: 'RJ24-2002 & RJ24-2004',
         images: [
-            '/SMART Eco-Solvent Machine.png',
-            '/SMART Eco-Solvent Machine.png', // Add more images if available
+            '/eco-solvent-machines/SMART.webp',
+            '/eco-solvent-machines/SMART.webp', // Add more images if available
         ],
         shortDescription: 'Vibrant, Efficient Production: Precision High-Speed Printing with EPSON i3200 printheads for speeds up to 97 m²/h.',
         detailedDescription: 'The SMART-JET 2002-04 Eco Solvent Printer offers Vibrant, Efficient Production: Precision High-Speed Printing with EPSON i3200 printheads. Key features include an all-aluminum alloy carriage, precise media feeding, quick ink supply, an external infrared heating fan, and Maintop RIP software. It also provides adjustable print head height, carriage anti-collision, auto-feeding, auto-take-up, and preheated infrared drying.',

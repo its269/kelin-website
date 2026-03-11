@@ -7,7 +7,7 @@ import './iecho-bk4.css';
 
 export default function IEchoBK4() {
     const [inquiryModalOpen, setInquiryModalOpen] = useState(false);
-    const [selectedImage, setSelectedImage] = useState('/bk4 (1).png');
+    const [selectedImage, setSelectedImage] = useState('/cutting-machines/bk4 (1).webp');
     const scrollRef = useRef(null);
     const [isDragging, setIsDragging] = useState(false);
     const [startX, setStartX] = useState(0);
@@ -39,8 +39,8 @@ export default function IEchoBK4() {
         name: 'iEcho BK4',
         model: 'BK4 High Speed Digital Cutting System',
         images: [
-            '/bk4 (1).png',
-            '/bk4 (1).png', // Add more images if available
+            '/cutting-machines/bk4 (1).webp',
+            '/cutting-machines/bk4 (1).webp', // Add more images if available
         ],
         shortDescription: 'HIGH SPEED DIGITAL CUTTING SYSTEM - Ultra-high strength integrated frame with 1800mm/s cutting speed, featuring intelligent EchoMC precision motion control.',
         detailedDescription: 'The BK4 High Speed Digital Cutting System features an ultra-high strength integrated frame with 12MM steel frame and qualified connection technology, machine body frame weighs 600KG. Strength increased by 30%, reliable and durable. With intelligent EchoMC precision motion control, the machine achieves hardness speeds of 1800mm/s. The BK4 offers modular cutting options, upgrade circuit layout, multi-material unwinder, and intelligent conveyor system for seamless cutting and collecting operations.',

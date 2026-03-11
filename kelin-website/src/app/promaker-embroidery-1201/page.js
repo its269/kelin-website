@@ -6,7 +6,7 @@ import './promaker-embroidery-1201.css';
 
 export default function PromakerEmbroidery1201() {
     const [inquiryModalOpen, setInquiryModalOpen] = useState(false);
-    const [selectedImage, setSelectedImage] = useState('/embroidery_knitting/Promaker Embroidery 1201.png');
+    const [selectedImage, setSelectedImage] = useState('/embroidery_knitting/Promaker Embroidery 1201.webp');
     const scrollRef = useRef(null);
     const [isDragging, setIsDragging] = useState(false);
     const [startX, setStartX] = useState(0);
@@ -38,8 +38,8 @@ export default function PromakerEmbroidery1201() {
         name: 'PROMAKER EMBROIDERY MACHINE 1201',
         model: '1 HEAD | 12O1 | 12 HEADS | 1804',
         images: [
-            '/embroidery_knitting/Promaker Embroidery 1201.png',
-            '/embroidery_knitting/Promaker Embroidery 1201.png',
+            '/embroidery_knitting/Promaker Embroidery 1201.webp',
+            '/embroidery_knitting/Promaker Embroidery 1201.webp',
         ],
         shortDescription: 'PRECISION STITCHED. POSSIBILITIES UNLIMITED. - PROMAKER Embroidery Machine designed for precision, efficiency, and versatility. This machine is engineered to meet the demands of both custom designs and high-volume production. Whether you\'re embroidering on caps, garments, or bags, the PROMAKER machine delivers exceptional quality and performance.',
         detailedDescription: 'The PROMAKER Embroidery Machine is designed for precision, efficiency, and versatility. Engineered to meet the demands of both custom designs and high-volume production, this industrial-grade embroidery system features advanced control systems, efficient thread management, and Japanese hook technology. With an industrial max speed up to 1200 RPM with mater jump, the PROMAKER delivers exceptional quality and performance for professional embroidery applications.',

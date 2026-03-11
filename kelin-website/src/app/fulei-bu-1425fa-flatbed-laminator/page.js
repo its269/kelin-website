@@ -6,7 +6,7 @@ import './fulei-bu-1425fa.css';
 
 export default function FuleiBU1425FAFlatbedLaminator() {
     const [inquiryModalOpen, setInquiryModalOpen] = useState(false);
-    const [selectedImage, setSelectedImage] = useState('/laminator/Fulei BU-1425FA Flatbed Laminator (1).png');
+    const [selectedImage, setSelectedImage] = useState('/laminator/Fulei BU-1425FA Flatbed Laminator (1).webp');
     const scrollRef = useRef(null);
     const [isDragging, setIsDragging] = useState(false);
     const [startX, setStartX] = useState(0);
@@ -38,8 +38,8 @@ export default function FuleiBU1425FAFlatbedLaminator() {
         name: 'FLATBED LAMINATOR',
         model: 'FULEI FLATBED LAMINATOR',
         images: [
-            '/laminator/Fulei BU-1425FA Flatbed Laminator (1).png',
-            '/laminator/Fulei BU-1425FA Flatbed Laminator (1).png',
+            '/laminator/Fulei BU-1425FA Flatbed Laminator (1).webp',
+            '/laminator/Fulei BU-1425FA Flatbed Laminator (1).webp',
         ],
         shortDescription: 'VERSATILE FLATBED MEDIA LAMINATION - Laminator ideal for one person to laminate on poster, sheet, or mount on rigid substrates, be of board acrylic, aluminum composite panel, wooden board etc.',
         detailedDescription: 'Our wide-format laminators - cold, flatbed, and auto warm - are built to handle everything from soft prints to hard boards with speed, accuracy, and ease. The Flatbed Laminator is versatile and ideal for one person to laminate posters, sheets, or mount on rigid substrates including board acrylic, aluminum composite panel, and wooden boards.',

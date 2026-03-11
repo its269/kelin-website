@@ -12,7 +12,7 @@ export default function UVPrinters() {
         {
             id: 'dtf-uv-sf303',
             name: 'DTF UV Printer SF303-i3200 2ft',
-            image: '/uv-machines/DTF UV Printer SF303-i3200 2ft (1).png',
+            image: '/uv-machines/DTF UV Printer SF303-i3200 2ft (1).webp',
             description: 'COMPACT UV DTF PRINTING - Professional 2ft DTF UV printer SF303 with i3200 print head technology for direct-to-film applications and high-quality transfers.',
             specs: [
                 'Print Width: 24 inches (2ft)',
@@ -27,7 +27,7 @@ export default function UVPrinters() {
         {
             id: 'dtf-uv-sf604',
             name: 'DTF UV Printer SF604-i3200 2ft - High Res',
-            image: '/uv-machines/DTF UV Printer SF604-i3200 2ft. - High Res (1).png',
+            image: '/uv-machines/DTF UV Printer SF604-i3200 2ft. - High Res (1).webp',
             description: 'HIGH-RESOLUTION UV DTF - Premium DTF UV printer SF604 with enhanced i3200 technology and superior resolution capabilities for professional printing applications.',
             specs: [
                 'Print Width: 24 inches (2ft)',
@@ -42,7 +42,7 @@ export default function UVPrinters() {
         {
             id: 'luxor-rtr-uv',
             name: 'Luxor RTR UV System',
-            image: '/uv-machines/Luxor RTR (1).png',
+            image: '/uv-machines/Luxor RTR (1).webp',
             description: 'ROLL-TO-ROLL UV SYSTEM - Advanced Luxor RTR UV system for continuous roll-to-roll printing with automated feeding and UV curing for efficient production.',
             specs: [
                 'System Type: Roll-to-Roll',
@@ -57,7 +57,7 @@ export default function UVPrinters() {
         {
             id: 'automatic-uv-crystal',
             name: 'Automatic UV Crystal Flat Pasting Machine',
-            image: '/uv-machines/Automatic UV Crystal Flat Pasting Machine 3.82m x 1.72m (1).png',
+            image: '/uv-machines/Automatic UV Crystal Flat Pasting Machine 3.82m x 1.72m (1).webp',
             description: 'LARGE FORMAT UV CRYSTAL - Professional automatic UV crystal flat pasting machine with large 3.82m x 1.72m format for industrial crystal and UV applications.',
             specs: [
                 'Format Size: 3.82m x 1.72m',
@@ -72,7 +72,7 @@ export default function UVPrinters() {
         {
             id: 'liyu-x-line-hybrid',
             name: 'Liyu X-Line DQS UV Hybrid Printer',
-            image: '/uv-machines/Photo (1).png',
+            image: '/uv-machines/Photo (1).webp',
             description: 'HYBRID UV PRINTING - Advanced Liyu X-Line DQS UV hybrid printer with versatile printing capabilities and professional UV curing technology.',
             specs: [
                 'Technology: UV hybrid printing',
@@ -87,7 +87,7 @@ export default function UVPrinters() {
         {
             id: 'smart-uv-printer',
             name: 'SMART UV Printer',
-            image: '/uv-machines/SMART UV Printer.png',
+            image: '/uv-machines/SMART UV Printer.webp',
             description: 'SMART UV TECHNOLOGY - Advanced SMART UV printer with intelligent printing features and automated UV curing for professional applications and superior print quality.',
             specs: [
                 'Technology: Smart UV printing',

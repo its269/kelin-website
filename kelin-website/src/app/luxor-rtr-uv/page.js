@@ -6,7 +6,7 @@ import './luxor-rtr-uv.css';
 
 export default function LuxorRTRUV() {
     const [inquiryModalOpen, setInquiryModalOpen] = useState(false);
-    const [selectedImage, setSelectedImage] = useState('/uv-machines/Luxor RTR (1).png');
+    const [selectedImage, setSelectedImage] = useState('/uv-machines/Luxor RTR (1).webp');
 
     const scrollRef = useRef(null);
     const [isDragging, setIsDragging] = useState(false);
@@ -39,8 +39,8 @@ export default function LuxorRTRUV() {
         name: 'LUXOR UV-A3 DTF PRINTER',
         model: 'UV DTF PRINTER',
         images: [
-            '/uv-machines/LUXOR-UV-A3-DTF-Printer-1.png',
-            '/uv-machines/LUXOR-UV-A3-DTF-Printer-1.png',
+            '/uv-machines/LUXOR-UV-A3-DTF-Printer-1.webp',
+            '/uv-machines/LUXOR-UV-A3-DTF-Printer-1.webp',
         ],
         shortDescription: 'MULTI-FUNCTION DESIGN SUPPORTING 4 APPLICATIONS - Flatbed, Cylinder, Roll-to-roll, and UV DTF all in one machine. Production speed 0.28-3 m²/h ideal for high quality, cost-efficient production.',
         detailedDescription: 'The LUXOR UV-A3 DTF Printer offers flatbed, cylinder, roll-to-roll, and UV DTF printing in one compact unit, ideal for high quality, cost-efficient production. Featuring advanced technology with production speeds ranging from 0.28-3 m²/h, this versatile machine delivers exceptional results for diverse printing applications.',

@@ -6,7 +6,7 @@ import './k-sign-desktop-laser-marking.css';
 
 export default function KSignDesktopLaserMarking() {
     const [inquiryModalOpen, setInquiryModalOpen] = useState(false);
-    const [selectedImage, setSelectedImage] = useState('/laser-machines/K-sign_Desktop Laser Marking.png');
+    const [selectedImage, setSelectedImage] = useState('/laser-machines/K-sign_Desktop Laser Marking.webp');
     const scrollRef = useRef(null);
     const [isDragging, setIsDragging] = useState(false);
     const [startX, setStartX] = useState(0);
@@ -38,8 +38,8 @@ export default function KSignDesktopLaserMarking() {
         name: 'K-Sign Desktop Laser Marking',
         model: 'LASER MARKING MACHINE',
         images: [
-            '/laser-machines/K-sign_Desktop Laser Marking.png',
-            '/laser-machines/K-sign_Desktop Laser Marking.png',
+            '/laser-machines/K-sign_Desktop Laser Marking.webp',
+            '/laser-machines/K-sign_Desktop Laser Marking.webp',
         ],
         shortDescription: 'Instantly increase production with reliable offline engraving function - Efficiency by 5-10 times. No need for a professional marking technician, learn as fast as you can within 10 minutes. Available with rotary for cylindrical marking.',
         detailedDescription: 'K-Sign Laser Marking Machine with reliable offline engraving function delivers efficiency 5-10 times faster than traditional methods. No professional marking technician needed - learn as fast as you can within 10 minutes. Features high-definition field mirror for precise results, high-speed galvanometer with outstanding speed marking, extended optical path with stable space and enhanced beam, and beam height adjuster aligned with adjustable height control. Easily handle various materials including Cold, silver, copper, iron, stainless steel, aluminum alloy, hard alloy, nylon, and hard plastics. Perfect for electroplating, ABS, PVC, PES (engineering plastics, hard plastics).',

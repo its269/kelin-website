@@ -11,7 +11,7 @@ export default function EcoSolventPrinters() {
         {
             id: 'smart-rj24-2004',
             name: 'SMART RJ24-2004-i3200',
-            image: '/SMART Eco-Solvent Machine.png',
+            image: '/eco-solvent-machines/SMART.webp',
             description: 'Professional eco-solvent printer with heavy duty media system designed for excellent quality outputs in fast-paced environments.',
             specs: [
                 'Print Width: 2.0m',
@@ -26,7 +26,7 @@ export default function EcoSolventPrinters() {
         {
             id: 'xline-eco-solvent',
             name: 'XLINE Eco-Solvent',
-            image: '/Apollo Xline (1).png',
+            image: '/eco-solvent-machines/Apollo.webp',
             description: 'High-performance printing system designed to tackle diverse range of large-format printing projects with vibrant quality results.',
             specs: [
                 'Large Format Printing',

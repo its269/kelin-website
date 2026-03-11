@@ -6,7 +6,7 @@ import './dtf-uv-printer-sf604-i3200-unique.css';
 
 export default function DTFUVPrinterSF604I3200() {
     const [inquiryModalOpen, setInquiryModalOpen] = useState(false);
-    const [selectedImage, setSelectedImage] = useState('/DTF UV Printer SF604-i3200 2ft. - High Res (1).png');
+    const [selectedImage, setSelectedImage] = useState('/DTF UV Printer SF604-i3200 2ft. - High Res (1).webp');
 
     const scrollRef = useRef(null);
     const [isDragging, setIsDragging] = useState(false);
@@ -39,8 +39,8 @@ export default function DTFUVPrinterSF604I3200() {
         name: 'LUXOR SF60-4',
         model: 'DTF UV PRINTER WITH GOLD STAMPING',
         images: [
-            '/DTF UV Printer SF604-i3200 2ft. - High Res (1).png',
-            '/DTF UV Printer SF604-i3200 2ft. - High Res (1).png', // Add more images if available
+            '/DTF UV Printer SF604-i3200 2ft. - High Res (1).webp',
+            '/DTF UV Printer SF604-i3200 2ft. - High Res (1).webp', // Add more images if available
         ],
         shortDescription: 'ADVANCED W+CMYK+V PRINTING CAPABILITY - Combines white ink, CMYK, and varnish for high-definition printing on dark, transparent, or textured surfaces—delivering superior detail, contrast, and finish.',
         detailedDescription: 'The LUXOR SF60-4 DTF UV Printer with Gold Stamping delivers advanced W+CMYK+V printing capability. Featuring PRECISION CORE printhead powered by EPSON, this industrial-grade printer achieves 8 m²/h printing speed with superior detail, contrast, and finish. Available with optional built-in gold foil stamping for premium finishing effects on diverse surfaces.',

@@ -6,7 +6,7 @@ import './k-sign-desktop-laser-b330.css';
 
 export default function KSignDesktopLaserB330() {
     const [inquiryModalOpen, setInquiryModalOpen] = useState(false);
-    const [selectedImage, setSelectedImage] = useState('/laser-machines/K-Sign Desktop Laser B330.png');
+    const [selectedImage, setSelectedImage] = useState('/laser-machines/K-Sign Desktop Laser B330.webp');
     const scrollRef = useRef(null);
     const [isDragging, setIsDragging] = useState(false);
     const [startX, setStartX] = useState(0);
@@ -38,8 +38,8 @@ export default function KSignDesktopLaserB330() {
         name: 'K-Sign Desktop Laser B330',
         model: 'LASER ENGRAVING MACHINE',
         images: [
-            '/laser-machines/K-Sign Desktop Laser B330.png',
-            '/laser-machines/K-Sign Desktop Laser B330.png',
+            '/laser-machines/K-Sign Desktop Laser B330.webp',
+            '/laser-machines/K-Sign Desktop Laser B330.webp',
         ],
         shortDescription: 'Ultra-fast 44-seconds engraving desktop laser machine - engrave an 80 x 90mm design in just 44 seconds with 0.01mm precision, featuring industrial-grade 600mm/s speed and comprehensive safety features.',
         detailedDescription: 'Engrave an 80 x 90mm design in just 44 seconds with 0.01mm precision. The K-Sign Desktop Laser Engraving Machine delivers ultra-fast performance with industrial-grade speed of 600mm/s. Featuring tilt protection for enhanced safety, adjustable air assist for smoother cleaner results, honeycomb table designed with full soft honeycomb table, and desktop protection tray to keep table and surroundings clean. Complete with smoke purifier, laser tube, safety detection, USB/WiFi connectivity, and LaserGRBL Lightburn craft express compatible software.',

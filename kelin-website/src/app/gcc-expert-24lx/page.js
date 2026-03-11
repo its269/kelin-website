@@ -6,7 +6,7 @@ import './gcc-expert-24lx.css';
 
 export default function GCCExpert24LX() {
     const [inquiryModalOpen, setInquiryModalOpen] = useState(false);
-    const [selectedImage, setSelectedImage] = useState('/GCC Expert LX  EX-24LX  Without Stand (1).png');
+    const [selectedImage, setSelectedImage] = useState('/cutting-machines/GCC Expert LX  EX-24LX  Without Stand (1).webp');
     const scrollRef = useRef(null);
     const [isDragging, setIsDragging] = useState(false);
     const [startX, setStartX] = useState(0);
@@ -38,8 +38,8 @@ export default function GCCExpert24LX() {
         name: 'GCC Expert 24 LX',
         model: 'Expert 24 LX Cutting Plotter',
         images: [
-            '/GCC Expert LX  EX-24LX  Without Stand (1).png',
-            '/GCC Expert LX  EX-24LX  Without Stand (1).png', // Add more images if available
+            '/cutting-machines/GCC Expert LX  EX-24LX  Without Stand (1).webp',
+            '/cutting-machines/GCC Expert LX  EX-24LX  Without Stand (1).webp', // Add more images if available
         ],
         shortDescription: 'SMART VISION - ULTRA-PRECISE, FAST FLEXIBLE CUTTING - Professional grade plotters offering up to 400mm/sec cutting speed with Advanced Automatic Aligning System (AAS) for precise contour cutting.',
         detailedDescription: 'The GCC Expert 24 LX is a color plotter offering up to 250 grams of cutting force and optimum 15.7 ips cutting speed. It features an Automatic Aligning System (AAS) for auto contour cutting, targeting the craft market. This reliable and affordable machine uses professional-grade components.',

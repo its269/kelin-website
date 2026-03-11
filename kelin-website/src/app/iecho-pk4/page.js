@@ -6,7 +6,7 @@ import './iecho-pk4.css';
 
 export default function IEchoPK4() {
     const [inquiryModalOpen, setInquiryModalOpen] = useState(false);
-    const [selectedImage, setSelectedImage] = useState('/PK4 (2).png');
+    const [selectedImage, setSelectedImage] = useState('/cutting-machines/PK4 (2).webp');
     const scrollRef = useRef(null);
     const [isDragging, setIsDragging] = useState(false);
     const [startX, setStartX] = useState(0);
@@ -38,8 +38,8 @@ export default function IEchoPK4() {
         name: 'iecho pk4',
         model: 'PK4 Automatic Intelligent Cutting System',
         images: [
-            '/PK4 (2).png',
-            '/PK4 (2).png', // Add more images if available
+            '/cutting-machines/PK4 (2).webp',
+            '/cutting-machines/PK4 (2).webp', // Add more images if available
         ],
         shortDescription: 'SMART CUTTING SYSTEM WITH AUTO FEEDING - Industrial grade speed up to 1000mm/s. Performs automatic sheet feeding, precision cutting, and collection. Ideal for short-run, on-demand production with minimal labor cost and maximum efficiency.',
         detailedDescription: 'The iecho pk4 Automatic Intelligent Cutting System features advanced automation with industrial grade cutting speed of 1000mm/s. Equipped with smart cutting system, auto feeding capabilities, and precision cutting technology, it offers maximum efficiency for professional applications. The system includes high frequency electronic oscillating knife, precision automatic positioning system, barcode management system, and automatic feeding system for streamlined production workflow.',

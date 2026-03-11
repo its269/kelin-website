@@ -6,7 +6,7 @@ import './r2000-roller.css';
 
 export default function R2000Roller() {
     const [inquiryModalOpen, setInquiryModalOpen] = useState(false);
-    const [selectedImage, setSelectedImage] = useState('/sublimation_dtf/SUBL R2000 Roller Type Sublimation Machine GS 1200 (1).png');
+    const [selectedImage, setSelectedImage] = useState('/sublimation_dtf/SUBL R2000 Roller Type Sublimation Machine GS 1200 (1).webp');
 
     const scrollRef = useRef(null);
     const [isDragging, setIsDragging] = useState(false);
@@ -39,8 +39,8 @@ export default function R2000Roller() {
         name: 'R2000 Roller',
         model: 'Sublimation Machine GS1200 / GS1900',
         images: [
-            '/sublimation_dtf/SUBL R2000 Roller Type Sublimation Machine GS 1200 (1).png',
-            '/sublimation_dtf/SUBL R2000 Roller Type Sublimation Machine GS 1200 (1).png', // Add more images if available
+            '/sublimation_dtf/SUBL R2000 Roller Type Sublimation Machine GS 1200 (1).webp',
+            '/sublimation_dtf/SUBL R2000 Roller Type Sublimation Machine GS 1200 (1).webp', // Add more images if available
         ],
         shortDescription: 'MULTI-FUNCTIONAL HEAT TRANSFER FOR QUALITY & EFFICIENCY - The CS-R05 Mini Roller Heat Transfer Machine is a versatile unit offering simultaneous print, transfer and die cutting. It delivers vivid colors, enhanced gloss, and strong, waterproof adhesion on various materials.',
         detailedDescription: 'The CS-R05 Mini Roller Heat Transfer Machine is a versatile unit offering simultaneous print, transfer and die cutting. It delivers vivid colors, enhanced gloss, and strong, waterproof adhesion on various materials. Key features include efficient anti-counterfeiting capabilities, ensuring high-quality output and production efficiency.',

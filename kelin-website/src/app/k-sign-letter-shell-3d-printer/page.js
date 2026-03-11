@@ -6,7 +6,7 @@ import './k-sign-letter-shell-3d-printer.css';
 
 export default function KSignLetterShell3DPrinter() {
     const [inquiryModalOpen, setInquiryModalOpen] = useState(false);
-    const [selectedImage, setSelectedImage] = useState('/K-Sign Letter Shell 3D Printer.png');
+    const [selectedImage, setSelectedImage] = useState('/3D Printer (1).webp');
     const scrollRef = useRef(null);
     const [isDragging, setIsDragging] = useState(false);
     const [startX, setStartX] = useState(0);
@@ -38,8 +38,8 @@ export default function KSignLetterShell3DPrinter() {
         name: 'K-SIGN LETTER SHELL 3D PRINTER',
         model: 'LETTER SHELL 3D PRINTER',
         images: [
-            '/K-Sign Letter Shell 3D Printer.png',
-            '/K-Sign Letter Shell 3D Printer.png',
+            '/3D Printer (1).webp',
+            '/3D Printer (1).webp',
         ],
         shortDescription: 'SMART AUTO-LEVELING WITH DATABASE - Automatically stores platform configurations, eliminating the need for re-leveling, streamlining workflow, reducing manual effort, and ensuring consistent, high-volume output. Significantly improves the printing efficiency with building speed 700 mm/s.',
         detailedDescription: 'The K-SIGN Letter Shell 3D Printer represents the cutting edge of professional 3D printing technology for signage and letter shell production. Featuring smart auto-leveling with database storage that automatically saves platform configurations, this system eliminates the need for re-leveling, streamlining workflow and reducing manual effort. With an impressive building speed of 700 mm/s, integrated Z-axis for precision, filament sensor for material monitoring, ultra-flat printing platform, and fast, stable 2-in-1-out system for easy two-color printing, this printer delivers consistent, high-volume output for professional applications.',

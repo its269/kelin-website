@@ -12,7 +12,7 @@ export default function EmbroideryKnittingMachine() {
         {
             id: 'promaker-1201',
             name: 'Promaker Embroidery 1201',
-            image: '/embroidery_knitting/Promaker Embroidery 1201.png',
+            image: '/embroidery_knitting/Promaker Embroidery 1201.webp',
             description: 'PROFESSIONAL EMBROIDERY MACHINE - High-precision single-head embroidery machine with advanced stitch control and professional-grade embroidery capabilities with industrial max speed up to 1200 RPM.',
             specs: [
                 'Type: Single-head embroidery',
@@ -27,7 +27,7 @@ export default function EmbroideryKnittingMachine() {
         {
             id: 'promaker-1202',
             name: 'Promaker Embroidery 1202',
-            image: '/embroidery_knitting/Promaker Embroidery 1202.png',
+            image: '/embroidery_knitting/Promaker Embroidery 1202.webp',
             description: 'ADVANCED EMBROIDERY SYSTEM - Enhanced dual-head embroidery machine with improved features and superior precision for high-quality embroidery production with industrial max speed up to 1200 RPM.',
             specs: [
                 'Type: Dual-head embroidery',
@@ -42,7 +42,7 @@ export default function EmbroideryKnittingMachine() {
         {
             id: 'promaker-1204',
             name: 'Promaker Embroidery 1804',
-            image: '/embroidery_knitting/Promaker Embroidery 1204.png',
+            image: '/embroidery_knitting/Promaker Embroidery 1204.webp',
             description: 'PREMIUM EMBROIDERY SOLUTION - Top-tier embroidery machine with 4-head capability and professional features for large-scale embroidery operations with industrial max speed up to 1200 RPM.',
             specs: [
                 'Type: Premium 4-head embroidery',
@@ -57,7 +57,7 @@ export default function EmbroideryKnittingMachine() {
         {
             id: 'smartex-knitting-gsce',
             name: 'Smartex Knitting Machine GS-CE152',
-            image: '/embroidery_knitting/Smartex Knitting Machine GSCE-1-52.png',
+            image: '/embroidery_knitting/Smartex Knitting Machine GSCE-1-52.webp',
             description: 'PROFESSIONAL KNITTING SYSTEM - Advanced knitting machine with 128-section precision stitch control and maximum knitting speed 1.4 m/s for industrial-grade textile manufacturing.',
             specs: [
                 'Type: Computerized knitting',

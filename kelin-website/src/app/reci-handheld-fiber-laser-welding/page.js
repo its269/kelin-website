@@ -6,7 +6,7 @@ import './reci-handheld-fiber-laser-welding.css';
 
 export default function ReciHandheldFiberLaserWelding() {
     const [inquiryModalOpen, setInquiryModalOpen] = useState(false);
-    const [selectedImage, setSelectedImage] = useState('/laser-machines/Reci Handheld Fiber Laser Welding Machine R-A80 800W 1.png');
+    const [selectedImage, setSelectedImage] = useState('/laser-machines/Reci Handheld Fiber Laser Welding Machine R-A80 800W 1.webp');
     const scrollRef = useRef(null);
     const [isDragging, setIsDragging] = useState(false);
     const [startX, setStartX] = useState(0);
@@ -38,8 +38,8 @@ export default function ReciHandheldFiberLaserWelding() {
         name: 'Reci Handheld Fiber Laser Welding R-A80 800W',
         model: 'HANDHELD FIBER LASER WELDING MACHINE',
         images: [
-            '/laser-machines/Reci Handheld Fiber Laser Welding Machine R-A80 800W 1.png',
-            '/laser-machines/Reci Handheld Fiber Laser Welding Machine R-A80 800W 1.png',
+            '/laser-machines/Reci Handheld Fiber Laser Welding Machine R-A80 800W 1.webp',
+            '/laser-machines/Reci Handheld Fiber Laser Welding Machine R-A80 800W 1.webp',
         ],
         shortDescription: 'Air-cooled handheld laser welder - High welding efficiency 10X FASTER than TIG type. RECI Laser Air-Cooled Handheld Welder: A compact (37-45kg), integrated welding and wire feeding system with a quiet, multi-level speed control. Experience easy, efficient, and precise welding without an external chiller. Based in Manila, achieve superior results with this innovative solution.',
         detailedDescription: 'RECI Laser Air-Cooled Handheld Welder: A compact (37-45kg), integrated welding and wire feeding system with a quiet, multi-level speed control. Experience easy, efficient, and precise welding without an external chiller. Based in Manila, achieve superior results with this innovative solution. Available in three models: R-A80 800W, R-A150 1500W, and R-A200 2000W. Features optimized airflow with air-cooled engine for maximum efficiency, ultimate efficiency & precision for a quality and seamless weld, silent precision welding with reduced vibration for absolute safety, and compact air-cooled integrated welding system. Max welding thickness from 2mm to 4mm depending on model. Quiet operation with low noise during operation.',

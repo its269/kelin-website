@@ -6,7 +6,7 @@ import './sublimation-printer-fd6198e.css';
 
 export default function SublimationPrinterFD6198E() {
     const [inquiryModalOpen, setInquiryModalOpen] = useState(false);
-    const [selectedImage, setSelectedImage] = useState('/sublimation_dtf/SUBL Sublimation Printer FD6198E (1).png');
+    const [selectedImage, setSelectedImage] = useState('/sublimation_dtf/SUBL Sublimation Printer FD6198E (1).webp');
 
     const scrollRef = useRef(null);
     const [isDragging, setIsDragging] = useState(false);
@@ -39,8 +39,8 @@ export default function SublimationPrinterFD6198E() {
         name: 'sublimation-printer-fd6198e',
         model: 'Eight-Head Dye Sublimation Printer',
         images: [
-            '/sublimation_dtf/SUBL Sublimation Printer FD6198E (1).png',
-            '/sublimation_dtf/SUBL Sublimation Printer FD6198E (1).png', // Add more images if available
+            '/sublimation_dtf/SUBL Sublimation Printer FD6198E (1).webp',
+            '/sublimation_dtf/SUBL Sublimation Printer FD6198E (1).webp', // Add more images if available
         ],
         shortDescription: 'ULTRA-FAST INDUSTRIAL PRINTING SPEED - Achieve up to 370m²/h with 8 Epson I3200-A1 heads—ideal for bulk orders, faster turnarounds, and high efficiency printing without quality loss.',
         detailedDescription: 'The FD6198E-A is an eight-head dye sublimation printer designed for maximum productivity with ultra-fast industrial printing speeds. Featuring advanced industrial motor technology, intelligent ink supply system, smart drying system, and anti-collision carriage protection, this printer delivers exceptional performance for high-volume production environments.',

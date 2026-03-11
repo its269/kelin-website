@@ -7,7 +7,7 @@ import './gcc-ar24-desktop.css';
 
 export default function GCCAR24Desktop() {
     const [inquiryModalOpen, setInquiryModalOpen] = useState(false);
-    const [selectedImage, setSelectedImage] = useState('/GCC AR-24 Desktop (1).png');
+    const [selectedImage, setSelectedImage] = useState('/cutting-machines/GCC AR-24 Desktop (1).webp');
     const scrollRef = useRef(null);
     const [isDragging, setIsDragging] = useState(false);
     const [startX, setStartX] = useState(0);
@@ -39,8 +39,8 @@ export default function GCCAR24Desktop() {
         name: 'GCC AR-24',
         model: 'AR-24 Cutter Plotter',
         images: [
-            '/GCC AR-24 Desktop (1).png',
-            '/GCC AR-24 Desktop (1).png', // Add more AR-24 images if available
+            '/cutting-machines/GCC AR-24 Desktop (1).webp',
+            '/cutting-machines/GCC AR-24 Desktop (1).webp', // Add more AR-24 images if available
         ],
         shortDescription: 'CUTTER PLOTTER - Industrial grade speed with 400mm/sec cutting speed, featuring precise contour cutting with AAS II system for accurate print-and-cut applications.',
         detailedDescription: 'The GCC AR-24 Cutter Plotter is equipped with the AAS II system for automatic detection of registration marks, providing accurate contour cutting ideal for print-and-cut jobs like labels, decals, and custom stickers. With industrial grade speed of 400mm/sec and 250g force, this desktop cutter plotter offers superior functionality and precision for a wide range of applications.',

@@ -6,7 +6,7 @@ import './smartex-knitting-gsce-1-52.css';
 
 export default function SmartexKnittingGSCE152() {
     const [inquiryModalOpen, setInquiryModalOpen] = useState(false);
-    const [selectedImage, setSelectedImage] = useState('/embroidery_knitting/Smartex Knitting Machine GSCE-1-52.png');
+    const [selectedImage, setSelectedImage] = useState('/embroidery_knitting/Smartex Knitting Machine GSCE-1-52.webp');
     const scrollRef = useRef(null);
     const [isDragging, setIsDragging] = useState(false);
     const [startX, setStartX] = useState(0);
@@ -38,8 +38,8 @@ export default function SmartexKnittingGSCE152() {
         name: 'SMARTEX GS-CE152 KNITTING MACHINE',
         model: 'GS-CE152',
         images: [
-            '/embroidery_knitting/Smartex Knitting Machine GSCE-1-52.png',
-            '/embroidery_knitting/Smartex Knitting Machine GSCE-1-52.png',
+            '/embroidery_knitting/Smartex Knitting Machine GSCE-1-52.webp',
+            '/embroidery_knitting/Smartex Knitting Machine GSCE-1-52.webp',
         ],
         shortDescription: '128-SECTION PRECISION STITCH CONTROL - Achieve unmatched fabric consistency and shaping accuracy with fine-tuned density adjustments powered by advanced stepping motor technology. Maximum knitting speed 1.4 m/s for industrial-grade productivity.',
         detailedDescription: 'The SMARTEX GS-CE152 Knitting Machine represents the pinnacle of industrial knitting technology. Featuring 128-section precision stitch control powered by advanced stepping motor technology, this machine delivers unmatched fabric consistency and shaping accuracy. With a maximum knitting speed of 1.4 m/s, single system single carriage design, and user-friendly 10.4" LCD interface with USB support, the GS-CE152 is engineered for professional textile manufacturing with automatic error detection and dual-sided 6-feeder yarn carrier.',

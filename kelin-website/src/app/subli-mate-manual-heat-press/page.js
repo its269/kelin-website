@@ -6,7 +6,7 @@ import './subli-mate-manual-heat-press.css';
 
 export default function SubliMateManualHeatPress() {
     const [inquiryModalOpen, setInquiryModalOpen] = useState(false);
-    const [selectedImage, setSelectedImage] = useState('/heatpress/Subli-Mate Manual Heat Press 80cm x 100cm (1).png');
+    const [selectedImage, setSelectedImage] = useState('/heatpress/Subli-Mate Manual Heat Press 80cm x 100cm (1).webp');
     const scrollRef = useRef(null);
     const [isDragging, setIsDragging] = useState(false);
     const [startX, setStartX] = useState(0);
@@ -38,8 +38,8 @@ export default function SubliMateManualHeatPress() {
         name: 'SUBLI-MATE HEAT PRESS',
         model: 'MANUAL HEATPRESS 80CM X 100CM',
         images: [
-            '/heatpress/Subli-Mate Manual Heat Press 80cm x 100cm (1).png',
-            '/heatpress/Subli-Mate Manual Heat Press 80cm x 100cm (1).png',
+            '/heatpress/Subli-Mate Manual Heat Press 80cm x 100cm (1).webp',
+            '/heatpress/Subli-Mate Manual Heat Press 80cm x 100cm (1).webp',
         ],
         shortDescription: 'The Manual Heatpress is a specialized heat press designed for ease of use and safety. Its unique drawer-like design simplifies material placement while preventing burns.',
         detailedDescription: 'The Manual Heatpress is a specialized heat press designed for ease of use and safety. Its unique drawer-like design simplifies material placement while preventing burns. Additionally, it features an integrated roller that allows for precise multidirectional movement and angular positioning, offering operational flexibility to suit various workspace configurations and application needs.',

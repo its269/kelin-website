@@ -6,7 +6,7 @@ import './yueming-fiber-laser.css';
 
 export default function YuemingHL1530C() {
     const [inquiryModalOpen, setInquiryModalOpen] = useState(false);
-    const [selectedImage, setSelectedImage] = useState('/laser-machines/Yueming Fiber Laser HL1530C-G-E 1500w IPG.png');
+    const [selectedImage, setSelectedImage] = useState('/laser-machines/Yueming Fiber Laser HL1530C-G-E 1500w IPG.webp');
     const scrollRef = useRef(null);
     const [isDragging, setIsDragging] = useState(false);
     const [startX, setStartX] = useState(0);
@@ -38,8 +38,8 @@ export default function YuemingHL1530C() {
         name: 'Yueming Fiber Laser HL1530C-G-E 1500W IPG',
         model: 'HL1530C-G-E FIBER LASER',
         images: [
-            '/laser-machines/Yueming Fiber Laser HL1530C-G-E 1500w IPG.png',
-            '/laser-machines/Yueming Fiber Laser HL1530C-G-E 1500w IPG.png',
+            '/laser-machines/Yueming Fiber Laser HL1530C-G-E 1500w IPG.webp',
+            '/laser-machines/Yueming Fiber Laser HL1530C-G-E 1500w IPG.webp',
         ],
         shortDescription: 'INDUSTRIAL GRADING SPEED 60m/min - SMART LEAPFROG MOTION FOR FASTER & SMOOTHER CUTS - The parabolic "frog jump" system replaces rectangular motion, using PLC to auto-adjust height for faster contour switching and improved cutting efficiency.',
         detailedDescription: 'The YueMing HL1530C-G-E Fiber Laser is a high-performance industrial-grade cutting machine featuring smart leapfrog motion technology. With a cutting speed of 60m/min, this advanced fiber laser utilizes a parabolic "frog jump" system that replaces traditional rectangular motion, using PLC to automatically adjust height for faster contour switching and improved cutting efficiency. The machine features a core part laser head with four focus adjustable core precision generators for fast, precise cutting. Equipped with intelligent analysis capabilities including power, oil mometer, real-time data visualization, and filter monitoring, the system provides comprehensive diagnostics. The machine sensor dashboard offers multiple platform availability for easier mobile phone monitoring. Working area of 1500mm×3000mm with exceptional positioning accuracy of ±0.03mm/1000mm makes it ideal for precision metal cutting applications.',

@@ -12,7 +12,7 @@ export default function HeatPress() {
         {
             id: 'sapphire-heatpress',
             name: 'Sapphire Heat Press',
-            image: '/heatpress/Sapphire Heatpress (2).png',
+            image: '/heatpress/Sapphire Heatpress (2).webp',
             description: 'PROFESSIONAL HEAT TRANSFER - Advanced Sapphire heat press with precision temperature control and even heat distribution for professional sublimation and vinyl transfer applications.',
             specs: [
                 'Platen Size: Professional grade',
@@ -27,7 +27,7 @@ export default function HeatPress() {
         {
             id: 'sublimate-manual-press',
             name: 'Subli-Mate Manual Heat Press 80cm x 100cm',
-            image: '/heatpress/Subli-Mate Manual Heat Press 80cm x 100cm (1).png',
+            image: '/heatpress/Subli-Mate Manual Heat Press 80cm x 100cm (1).webp',
             description: 'LARGE FORMAT HEAT PRESS - Extra large 80cm x 100cm Subli-Mate manual heat press perfect for wide format sublimation transfers, textiles, and large-scale printing projects.',
             specs: [
                 'Platen Size: 80cm x 100cm',

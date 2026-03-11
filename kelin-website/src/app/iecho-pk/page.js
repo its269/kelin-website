@@ -6,7 +6,7 @@ import './iecho-pk.css';
 
 export default function IEchoPK() {
     const [inquiryModalOpen, setInquiryModalOpen] = useState(false);
-    const [selectedImage, setSelectedImage] = useState('/PK1209 (1).png');
+    const [selectedImage, setSelectedImage] = useState('/cutting-machines/PK1209 (1).webp');
     const scrollRef = useRef(null);
     const [isDragging, setIsDragging] = useState(false);
     const [startX, setStartX] = useState(0);
@@ -38,8 +38,8 @@ export default function IEchoPK() {
         name: 'iEcho PK',
         model: 'PK Automatic Intelligent Cutting System',
         images: [
-            '/PK1209 (1).png',
-            '/PK1209 (1).png', // Add more images if available
+            '/cutting-machines/PK1209 (1).webp',
+            '/cutting-machines/PK1209 (1).webp', // Add more images if available
         ],
         shortDescription: 'PRECISION CUTTING, PROFESSIONAL PERFORMANCE - Professional vinyl cutting plotter with advanced servo motor system and superior cutting accuracy for signage and graphics applications.',
         detailedDescription: 'The iEcho PK Automatic Intelligent Cutting System adopts fully automatic vacuum chuck and automatic lifting and feeding platform. Equipped with various tools, it can quickly and precisely make through cutting, half cutting, creasing and marking. Perfect for sample making and short-run customized production for Signs, printing and Packaging industries. Cost-effective smart equipment that meets all creative processing needs.',

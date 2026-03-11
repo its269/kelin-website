@@ -6,7 +6,7 @@ import './liyu-x-line-dqs-uv-hybrid-printer.css';
 
 export default function LiyuXLineDQS() {
     const [inquiryModalOpen, setInquiryModalOpen] = useState(false);
-    const [selectedImage, setSelectedImage] = useState('/uv-machines/Photo (3).png');
+    const [selectedImage, setSelectedImage] = useState('/uv-machines/Photo (3).webp');
     const scrollRef = useRef(null);
     const [isDragging, setIsDragging] = useState(false);
     const [startX, setStartX] = useState(0);
@@ -38,8 +38,8 @@ export default function LiyuXLineDQS() {
         name: 'LIYU X-LINE DQS',
         model: 'UV HYBRID PRINTER',
         images: [
-            '/uv-machines/Photo (3).png',
-            '/uv-machines/Photo (3).png',
+            '/uv-machines/Photo (3).webp',
+            '/uv-machines/Photo (3).webp',
         ],
         shortDescription: 'HIGH-SPEED OUTPUT WITHOUT COMPROMISING QUALITY - The Liyu Xline DQS UV Hybrid Printer delivers precise, versatile printing for small-format materials. Powered by Epson and Ricoh printheads, it supports CWC and WCV applications, with upgraded hardware ensuring stable, high-speed output and optional platforms for continuous light-plate printing.',
         detailedDescription: 'The Liyu Xline DQS UV Hybrid Printer is an industrial-grade, high-speed printing solution designed for versatility and precision. Equipped with Epson and Ricoh printheads, it supports both CWC (Corrugated, White, and CMYK) and WCV (White, CMYK, and Varnish) applications. With upgraded hardware, this printer ensures stable operation and delivers up to 90m²/h industrial-grade speed. Optional platforms enable continuous light-plate printing, making it ideal for small-format materials, signage, and promotional applications.',

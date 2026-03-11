@@ -12,7 +12,7 @@ export default function LaserMachine() {
         {
             id: 'handheld-fiber-laser',
             name: 'Handheld Fiber Laser',
-            image: '/laser-machines/Handheld Fiber Laser.png',
+            image: '/laser-machines/Handheld Fiber Laser.webp',
             description: 'PORTABLE LASER POWER - Professional handheld fiber laser for precision cleaning, welding, and cutting applications with advanced safety features and ergonomic design.',
             specs: [
                 'Type: Handheld fiber laser',
@@ -27,7 +27,7 @@ export default function LaserMachine() {
         {
             id: 'hanniu-k1390-150w',
             name: 'Hanniu K1390 CO2 Laser 150W with CCD',
-            image: '/laser-machines/Hanniu K1390 CO2 Laser Cutting Machine 150w with CCD.png',
+            image: '/laser-machines/Hanniu K1390 CO2 Laser Cutting Machine 150w with CCD.webp',
             description: 'PRECISION CO2 CUTTING - Advanced CO2 laser cutting machine with 150W power and CCD camera system for precise positioning and automated cutting operations.',
             specs: [
                 'Power: 150W CO2 laser',
@@ -42,7 +42,7 @@ export default function LaserMachine() {
         {
             id: 'hanniu-k1390-300w',
             name: 'Hanniu K1390 CO2 Laser 300W',
-            image: '/laser-machines/Hanniu K1390 CO2 Laser Cutting Machine 300w.png',
+            image: '/laser-machines/Hanniu K1390 CO2 Laser Cutting Machine 300w.webp',
             description: 'HIGH-POWER CO2 LASER - Professional 300W CO2 laser cutting machine with enhanced power for thick materials and high-speed cutting applications.',
             specs: [
                 'Power: 300W CO2 laser',
@@ -57,7 +57,7 @@ export default function LaserMachine() {
         {
             id: 'k-sign-desktop-b330',
             name: 'K-Sign Desktop Laser B330',
-            image: '/laser-machines/K-Sign Desktop Laser B330.png',
+            image: '/laser-machines/K-Sign Desktop Laser B330.webp',
             description: 'COMPACT DESKTOP LASER - Professional desktop laser engraving and cutting system with precision control for small to medium-scale operations.',
             specs: [
                 'Type: Desktop laser system',
@@ -72,7 +72,7 @@ export default function LaserMachine() {
         {
             id: 'k-sign-fabric-df1916',
             name: 'K-Sign DF-1916 Laser Fabric Cutting',
-            image: '/laser-machines/K-Sign DF-1916 Laser Fabric Cutting.png',
+            image: '/laser-machines/K-Sign DF-1916 Laser Fabric Cutting.webp',
             description: 'FABRIC CUTTING SPECIALIST - Advanced laser system specifically designed for fabric cutting with clean edges and precision for textile industry applications.',
             specs: [
                 'Specialization: Fabric cutting',
@@ -87,7 +87,7 @@ export default function LaserMachine() {
         {
             id: 'k-sign-desktop-marking',
             name: 'K-Sign Desktop Laser Marking',
-            image: '/laser-machines/K-sign_Desktop Laser Marking.png',
+            image: '/laser-machines/K-sign_Desktop Laser Marking.webp',
             description: 'PRECISION LASER MARKING - Professional desktop laser marking system for permanent marking, engraving, and etching on various materials.',
             specs: [
                 'Function: Laser marking',
@@ -102,7 +102,7 @@ export default function LaserMachine() {
         {
             id: 'reci-handheld-welding',
             name: 'Reci Handheld Fiber Laser Welding R-A80 800W',
-            image: '/laser-machines/Reci Handheld Fiber Laser Welding Machine R-A80 800W 1.png',
+            image: '/laser-machines/Reci Handheld Fiber Laser Welding Machine R-A80 800W 1.webp',
             description: 'PROFESSIONAL LASER WELDING - High-power 800W handheld fiber laser welding system with advanced beam quality for industrial welding applications.',
             specs: [
                 'Power: 800W fiber laser',
@@ -117,7 +117,7 @@ export default function LaserMachine() {
         {
             id: 'yueming-fiber-1000w',
             name: 'Yueming Fiber Laser CMA-1325C-G-G 1000W',
-            image: '/laser-machines/Yueming Fiber Laser  CMA-1325C-G-G 1000w.png',
+            image: '/laser-machines/Yueming Fiber Laser  CMA-1325C-G-G 1000w.webp',
             description: 'INDUSTRIAL FIBER LASER - Professional 1000W fiber laser cutting system with large format capability for industrial metal cutting applications.',
             specs: [
                 'Power: 1000W fiber laser',
@@ -132,7 +132,7 @@ export default function LaserMachine() {
         {
             id: 'yueming-fiber-1500w',
             name: 'Yueming Fiber Laser HL1530C-G-E 1500W IPG',
-            image: '/laser-machines/Yueming Fiber Laser HL1530C-G-E 1500w IPG.png',
+            image: '/laser-machines/Yueming Fiber Laser HL1530C-G-E 1500w IPG.webp',
             description: 'ULTIMATE FIBER LASER - Premium 1500W IPG fiber laser cutting system with superior beam quality and maximum cutting capability for heavy-duty applications.',
             specs: [
                 'Power: 1500W IPG fiber',

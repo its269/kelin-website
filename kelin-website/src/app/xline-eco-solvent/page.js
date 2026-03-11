@@ -6,7 +6,7 @@ import './xline.css';
 
 export default function XlineEcoSolventPage() {
     const [inquiryModalOpen, setInquiryModalOpen] = useState(false);
-    const [selectedImage, setSelectedImage] = useState('/Apollo Xline (1).png');
+    const [selectedImage, setSelectedImage] = useState('/eco-solvent-machines/Apollo.webp');
     const scrollRef = useRef(null);
     const [isDragging, setIsDragging] = useState(false);
     const [startX, setStartX] = useState(0);
@@ -38,8 +38,8 @@ export default function XlineEcoSolventPage() {
         name: 'XLINE Eco-Solvent Printer',
         model: 'XLINE-2004',
         images: [
-            '/Apollo Xline (1).png',
-            '/Apollo Xline (1).png', // Add more images if available
+            '/eco-solvent-machines/Apollo.webp',
+            '/eco-solvent-machines/Apollo.webp', // Add more images if available
         ],
         shortDescription: 'High-performance printing system designed to tackle diverse range of large-format printing projects with vibrant quality results.',
         detailedDescription: 'The XLINE Eco-Solvent Printer represents cutting-edge large-format printing technology. Engineered for versatility and high-quality output, this printer delivers exceptional results across diverse printing applications. With advanced print head technology and robust media handling, it\'s perfect for commercial printing, signage production, and creative applications.',

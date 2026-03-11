@@ -7,7 +7,7 @@ import './iecho-bk3.css';
 
 export default function IEchoBK3() {
     const [inquiryModalOpen, setInquiryModalOpen] = useState(false);
-    const [selectedImage, setSelectedImage] = useState('/bk3.png');
+    const [selectedImage, setSelectedImage] = useState('/cutting-machines/bk3.webp');
     const scrollRef = useRef(null);
     const [isDragging, setIsDragging] = useState(false);
     const [startX, setStartX] = useState(0);
@@ -39,8 +39,8 @@ export default function IEchoBK3() {
         name: 'iEcho BK3',
         model: 'BK3 High Speed Digital Cutting System',
         images: [
-            '/bk3.png',
-            '/bk3.png', // Add more images if available
+            '/cutting-machines/bk3.webp',
+            '/cutting-machines/bk3.webp', // Add more images if available
         ],
         shortDescription: 'HIGH SPEED DIGITAL CUTTING SYSTEM - Fully automatic production with minimize manual intervention, featuring advanced conveyor system and high-precision cutting capabilities.',
         detailedDescription: 'The BK3 High Speed Digital Cutting System is a fully automated cutting solution designed for high-volume production. Material is automatically sent to the loading area by the sheet feeder, fed to the cutting area with automatic conveyor system, and collected after cutting. The system minimizes manual intervention while maximizing productivity. BK3 can realize through cutting, kiss cutting, milling, punching, creasing and marking functions with high speed and high precision. Perfect for sample making, short run and mass production in sign, advertising printing and packaging industries.',

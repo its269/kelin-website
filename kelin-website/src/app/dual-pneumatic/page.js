@@ -6,7 +6,7 @@ import './dual-pneumatic.css';
 
 export default function DualPneumatic() {
     const [inquiryModalOpen, setInquiryModalOpen] = useState(false);
-    const [selectedImage, setSelectedImage] = useState('/sublimation_dtf/SUBL Dual Pneumatic Sublimation Machine 80cm x 100cm (1).png');
+    const [selectedImage, setSelectedImage] = useState('/sublimation_dtf/SUBL Dual Pneumatic Sublimation Machine 80cm x 100cm (1).webp');
 
     const scrollRef = useRef(null);
     const [isDragging, setIsDragging] = useState(false);
@@ -39,8 +39,8 @@ export default function DualPneumatic() {
         name: 'Dual Pneumatic Heat Press Machine',
         model: '80cm x 100cm | 100cm x 120cm',
         images: [
-            '/sublimation_dtf/SUBL Dual Pneumatic Sublimation Machine 80cm x 100cm (1).png',
-            '/sublimation_dtf/SUBL Dual Pneumatic Sublimation Machine 80cm x 100cm (1).png', // Add more images if available
+            '/sublimation_dtf/SUBL Dual Pneumatic Sublimation Machine 80cm x 100cm (1).webp',
+            '/sublimation_dtf/SUBL Dual Pneumatic Sublimation Machine 80cm x 100cm (1).webp', // Add more images if available
         ],
         shortDescription: 'ADVANCED PULLING-TYPE PLATFORM DESIGN - A user-friendly, energy-saving upgrade with a sliding frame and heat-resistant mesh for easier operation, improved safety, and efficient heat distribution.',
         detailedDescription: 'The Dual Pneumatic Heat Press Machine features an advanced pulling-type platform design that provides user-friendly operation and energy efficiency. With uniform heating technology and digital microprocessor control, it delivers consistent temperature across a large working area while ensuring reliable and uniform heat distribution. The machine offers dual manual/automatic modes with aluminum-cast heater and base for enhanced durability and performance.',

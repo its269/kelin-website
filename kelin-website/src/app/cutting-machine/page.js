@@ -12,7 +12,7 @@ export default function CuttingMachine() {
         {
             id: 'iecho-pk',
             name: 'iEcho PK',
-            image: '/PK1209 (1).png',
+            image: '/cutting-machines/PK1209 (1).webp',
             description: 'PRECISION CUTTING, PROFESSIONAL PERFORMANCE - Professional vinyl cutting plotter with advanced servo motor system and superior cutting accuracy for signage and graphics applications.',
             specs: [
                 'Cutting Width: up to 1350mm',
@@ -27,7 +27,7 @@ export default function CuttingMachine() {
         {
             id: 'iecho-pk4',
             name: 'iEcho PK4',
-            image: '/PK4 (2).png',
+            image: '/cutting-machines/PK4 (2).webp',
             description: 'HIGH-SPEED CUTTING EXCELLENCE - Advanced 4-head cutting system with exceptional speed and precision for high-volume production environments and commercial applications.',
             specs: [
                 'Cutting Width: up to 1650mm',
@@ -42,7 +42,7 @@ export default function CuttingMachine() {
         {
             id: 'iecho-bk3',
             name: 'iEcho BK3',
-            image: '/bk3.png',
+            image: '/cutting-machines/bk3.webp',
             description: 'INDUSTRIAL CUTTING POWER - Heavy-duty cutting solution with advanced blade technology and robust construction for industrial applications and continuous operation.',
             specs: [
                 'Cutting Width: up to 1800mm',
@@ -57,7 +57,7 @@ export default function CuttingMachine() {
         {
             id: 'iecho-bk4',
             name: 'iEcho BK4',
-            image: '/BK4 (1).png',
+            image: '/cutting-machines/BK4 (1).webp',
             description: 'ULTIMATE CUTTING PERFORMANCE - Premium cutting system with superior blade control and maximum force capability for the most demanding cutting applications.',
             specs: [
                 'Cutting Width: up to 2000mm',
@@ -72,7 +72,7 @@ export default function CuttingMachine() {
         {
             id: 'iecho-tk4s',
             name: 'iEcho TK4S',
-            image: '/TK4S Large format cutting system.png',
+            image: '/cutting-machines/TK4S Large format cutting system.webp',
             description: 'SMART CUTTING TECHNOLOGY - Intelligent cutting system with automated features and smart material detection for enhanced productivity and ease of use.',
             specs: [
                 'Cutting Width: up to 1600mm',
@@ -87,7 +87,7 @@ export default function CuttingMachine() {
         {
             id: 'gcc-puma-24',
             name: 'GCC AR-24 DESKTOP',
-            image: '/GCC AR-24 Desktop (1).png',
+            image: '/cutting-machines/GCC AR-24 Desktop (1).webp',
             description: 'COMPACT CUTTING SOLUTION - Professional 24-inch cutting plotter with excellent precision and reliability for small to medium-scale cutting operations.',
             specs: [
                 'Cutting Width: 610mm (24")',
@@ -102,7 +102,7 @@ export default function CuttingMachine() {
         {
             id: 'gcc-puma-52',
             name: 'GCC PUMA IV',
-            image: '/GCC PUMA IV.png',
+            image: '/cutting-machines/GCC PUMA IV.webp',
             description: 'WIDE FORMAT CUTTING - Large format cutting plotter with 52-inch width capability for wide vinyl and material cutting applications with professional accuracy.',
             specs: [
                 'Cutting Width: 1320mm (52")',
@@ -117,7 +117,7 @@ export default function CuttingMachine() {
         {
             id: 'gcc-expert-24-lx',
             name: 'GCC EXPERT 24 LX',
-            image: '/GCC Expert LX  EX-24LX  Without Stand (1).png',
+            image: '/cutting-machines/GCC Expert LX  EX-24LX  Without Stand (1).webp',
             description: 'EXPERT PRECISION CUTTING - High-precision 24-inch cutting system with expert-level features and enhanced cutting capabilities for professional applications.',
             specs: [
                 'Cutting Width: 610mm (24")',
@@ -132,7 +132,7 @@ export default function CuttingMachine() {
         {
             id: 'gcc-expert-52-lx',
             name: 'GCC EXPERT 52 LX',
-            image: '/gcc-expert-lx.png',
+            image: '/cutting-machines/gcc-expert-lx.webp',
             description: 'PROFESSIONAL WIDE CUTTING - Premium 52-inch cutting system with expert features, superior precision, and advanced material handling for professional operations.',
             specs: [
                 'Cutting Width: 1320mm (52")',

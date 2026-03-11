@@ -6,7 +6,7 @@ import './fulei-bu-1600e.css';
 
 export default function FuleiBU1600EWarmAutoLaminator() {
     const [inquiryModalOpen, setInquiryModalOpen] = useState(false);
-    const [selectedImage, setSelectedImage] = useState('/laminator/Fulei BU-1600E Warm Auto Laminator (1).png');
+    const [selectedImage, setSelectedImage] = useState('/laminator/Fulei BU-1600E Warm Auto Laminator (1).webp');
     const scrollRef = useRef(null);
     const [isDragging, setIsDragging] = useState(false);
     const [startX, setStartX] = useState(0);
@@ -38,8 +38,8 @@ export default function FuleiBU1600EWarmAutoLaminator() {
         name: 'AUTO WARM LAMINATOR',
         model: 'FULEI AUTO WARM LAMINATOR',
         images: [
-            '/laminator/Fulei BU-1600E Warm Auto Laminator (1).png',
-            '/laminator/Fulei BU-1600E Warm Auto Laminator (1).png',
+            '/laminator/Fulei BU-1600E Warm Auto Laminator (1).webp',
+            '/laminator/Fulei BU-1600E Warm Auto Laminator (1).webp',
         ],
         shortDescription: 'EVEN HEAT AND EASY LEVEL FILM - E Warm series is very level film, you can let it be warm same image with you get better film look, even better the accurate CNC metal cutting program precise align laminate and quality finish ease.',
         detailedDescription: 'Our wide-format laminators - cold, flatbed, and auto warm - are built to handle everything from soft prints to hard boards with speed, accuracy, and ease. The Auto Warm Laminator features even heat distribution and easy level film operation with precise CNC metal cutting program for accurate alignment and quality finish.',

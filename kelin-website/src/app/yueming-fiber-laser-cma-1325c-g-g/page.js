@@ -6,7 +6,7 @@ import './yueming-fiber-laser.css';
 
 export default function YuemingFiberLaser() {
     const [inquiryModalOpen, setInquiryModalOpen] = useState(false);
-    const [selectedImage, setSelectedImage] = useState('/laser-machines/Yueming Fiber Laser  CMA-1325C-G-G 1000w.png');
+    const [selectedImage, setSelectedImage] = useState('/laser-machines/Yueming Fiber Laser  CMA-1325C-G-G 1000w.webp');
     const scrollRef = useRef(null);
     const [isDragging, setIsDragging] = useState(false);
     const [startX, setStartX] = useState(0);
@@ -38,8 +38,8 @@ export default function YuemingFiberLaser() {
         name: 'Yueming Fiber Laser CMA-1325C-G-G 1000W',
         model: 'CMA1325C-G-G FIBER LASER',
         images: [
-            '/laser-machines/Yueming Fiber Laser  CMA-1325C-G-G 1000w.png',
-            '/laser-machines/Yueming Fiber Laser  CMA-1325C-G-G 1000w.png',
+            '/laser-machines/Yueming Fiber Laser  CMA-1325C-G-G 1000w.webp',
+            '/laser-machines/Yueming Fiber Laser  CMA-1325C-G-G 1000w.webp',
         ],
         shortDescription: 'INDUSTRIAL GRADING SPEED 60m/min - AUTO-FOCUS CUTTING HEAD WITH SPRINT PIERCING - Auto-focus head with Sprint piercing and Z-axis control cuts piercing time by up to 80%, excels at thick, reflective metals, and protects optics for higher productivity.',
         detailedDescription: 'The YueMing CMA1325C-G-G Fiber Laser is a high-performance industrial-grade cutting machine designed for precision and speed. With an industrial grading speed of 60m/min, this fiber laser features an auto-focus cutting head with sprint piercing technology that reduces piercing time by up to 80%. The reinforced welding bed is milled and preprocessed by the large gantry, with tempered treatment and vibration aging to eliminate stress. Equipped with trusted global components from Siemens, Delta, SMC and other imported well-known brands, it uses IPG fiber laser generator and German ICUS cable for reliability and stability. The lightweight high-performance crossbeam is crafted through drawing and finishing processes for reduced weight and superior dynamic motion. Working area of 3600mm×1800mm with positioning accuracy of ±0.05mm/1000mm makes it ideal for various metal cutting applications.',

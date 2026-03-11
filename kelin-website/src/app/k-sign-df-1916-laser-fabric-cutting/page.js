@@ -6,7 +6,7 @@ import './k-sign-df-1916-laser-fabric-cutting.css';
 
 export default function KSignDf1916LaserFabricCutting() {
     const [inquiryModalOpen, setInquiryModalOpen] = useState(false);
-    const [selectedImage, setSelectedImage] = useState('/laser-machines/K-Sign DF-1916 Laser Fabric Cutting.png');
+    const [selectedImage, setSelectedImage] = useState('/laser-machines/K-Sign DF-1916 Laser Fabric Cutting.webp');
     const scrollRef = useRef(null);
     const [isDragging, setIsDragging] = useState(false);
     const [startX, setStartX] = useState(0);
@@ -38,8 +38,8 @@ export default function KSignDf1916LaserFabricCutting() {
         name: 'K-Sign DF-1916 Laser Fabric Cutting',
         model: 'LASER MACHINE DF-1916',
         images: [
-            '/laser-machines/K-Sign DF-1916 Laser Fabric Cutting.png',
-            '/laser-machines/K-Sign DF-1916 Laser Fabric Cutting.png',
+            '/laser-machines/K-Sign DF-1916 Laser Fabric Cutting.webp',
+            '/laser-machines/K-Sign DF-1916 Laser Fabric Cutting.webp',
         ],
         shortDescription: 'Smart laser precision for fast flexible cutting - DF-1916 150-180W Laser Machine: a high-precision, high-speed CO2 laser cutter with an 1800×2200mm working area. Featuring intelligent vision and automatic identification, it delivers ultra-precise shape cutting for diverse flexible materials from textiles to leather, ensuring efficiency across industries.',
         detailedDescription: 'DF-1916 150-180W Laser Machine: a high-precision, high-speed CO2 laser cutter with an 1800×2200mm working area. Featuring intelligent vision and automatic identification, it delivers ultra-precise shape cutting for diverse flexible materials from textiles to leather, ensuring efficiency across industries. With maximum cutting speed up to 6000mm/s, Canon camera brand for precision, water cooling system, and support for multiple image formats including DXF, DWG, JPEG, BMP, and GIF.',

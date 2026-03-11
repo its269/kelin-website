@@ -7,7 +7,7 @@ import './iecho-tk4s.css';
 
 export default function IEchoTK4S() {
     const [inquiryModalOpen, setInquiryModalOpen] = useState(false);
-    const [selectedImage, setSelectedImage] = useState('/TK4S Large format cutting system.png');
+    const [selectedImage, setSelectedImage] = useState('/cutting-machines/TK4S Large format cutting system.webp');
     const scrollRef = useRef(null);
     const [isDragging, setIsDragging] = useState(false);
     const [startX, setStartX] = useState(0);
@@ -39,8 +39,8 @@ export default function IEchoTK4S() {
         name: 'iEcho TK4S',
         model: 'TK4S Large Format Cutting System',
         images: [
-            '/TK4S Large format cutting system.png',
-            '/TK4S Large format cutting system.png', // Add more TK4S images if available
+            '/cutting-machines/TK4S Large format cutting system.webp',
+            '/cutting-machines/TK4S Large format cutting system.webp', // Add more TK4S images if available
         ],
         shortDescription: 'LARGE FORMAT CUTTING SYSTEM - Precision dual-beam cutting technology with 1500mm/s speed, featuring intelligent EchoMC precision motion control for high-volume production.',
         detailedDescription: 'The TK4S Large Format Cutting System delivers unmatched speed, accuracy, and versatility to meet the demands of any cutting application. For high-volume production or precision work on complex materials, the TK4S provides precision dual-beam cutting technology with intelligent EchoMC motion control. With maximum cutting speed of 1500mm/s and cutting precision of 0.1mm, the TK4S excels in furniture & textile, sign & advertising/packaging, automobile upholstery, and other industries.',

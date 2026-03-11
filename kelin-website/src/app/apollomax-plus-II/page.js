@@ -6,7 +6,7 @@ import './apollo.css';
 
 export default function ApolloMaxPlusII() {
     const [inquiryModalOpen, setInquiryModalOpen] = useState(false);
-    const [selectedImage, setSelectedImage] = useState('/ApolloMax Plus II PZG3208-KV.png');
+    const [selectedImage, setSelectedImage] = useState('/ApolloMax Plus II PZG3208-KV.webp');
     const scrollRef = useRef(null);
     const [isDragging, setIsDragging] = useState(false);
     const [startX, setStartX] = useState(0);
@@ -38,8 +38,8 @@ export default function ApolloMaxPlusII() {
         name: 'ApolloMax Plus II PZG3208-KV',
         model: 'PZG3304-KV / PZG3308-KV',
         images: [
-            '/ApolloMax Plus II PZG3208-KV.png',
-            '/ApolloMax Plus II PZG3208-KV.png', // Add more images if available
+            '/ApolloMax Plus II PZG3208-KV.webp',
+            '/ApolloMax Plus II PZG3208-KV.webp', // Add more images if available
         ],
         shortDescription: 'PRECISION PRINTING, ACCELERATED PERFORMANCE - Industrial-grade speed printing up to 230 m²/h with high-volume, high-speed printing capabilities and industrial Konica Minolta KM512/14PL printheads.',
         detailedDescription: 'The PZH Series Grand Format Line delivers excellent quality (up to 1440dpi) and high durability for high-volume production printing with industrial Konica Minolta KM512/14PL printheads. Features precision printing and accelerated performance with high-volume, high-speed printing, pinch roller handle for flexible media handling, efficient heat technology for optimal curing, and silent carriage motion for smooth operation.',

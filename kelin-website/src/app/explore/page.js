@@ -102,7 +102,7 @@ export default function Explore() {
           <div className="hero-visual">
             <div className="floating-cards">
               <div className="floating-card card-1">
-                <img src="/3D Printer (1).png" alt="Printing Solutions" />
+                <img src="/3D Printer (1).webp" alt="Printing Solutions" />
               </div>
               <div className="floating-card card-2">
                 <img src="/CMA AL160 Multi-function Channel Letter Bending  Machine (1).png" alt="Materials" />

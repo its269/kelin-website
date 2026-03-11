@@ -6,7 +6,7 @@ import './hanniu-k1390-co2-laser-300w.css';
 
 export default function HanniuK1390CO2Laser300W() {
     const [inquiryModalOpen, setInquiryModalOpen] = useState(false);
-    const [selectedImage, setSelectedImage] = useState('/laser-machines/Hanniu K1390 CO2 Laser Cutting Machine 300w.png');
+    const [selectedImage, setSelectedImage] = useState('/laser-machines/Hanniu K1390 CO2 Laser Cutting Machine 300w.webp');
     const scrollRef = useRef(null);
     const [isDragging, setIsDragging] = useState(false);
     const [startX, setStartX] = useState(0);
@@ -38,8 +38,8 @@ export default function HanniuK1390CO2Laser300W() {
         name: 'Hanniu K1390',
         model: 'CO2 LASER CUTTING MACHINE',
         images: [
-            '/laser-machines/Hanniu K1390 CO2 Laser Cutting Machine 300w.png',
-            '/laser-machines/Hanniu K1390 CO2 Laser Cutting Machine 300w.png',
+            '/laser-machines/Hanniu K1390 CO2 Laser Cutting Machine 300w.webp',
+            '/laser-machines/Hanniu K1390 CO2 Laser Cutting Machine 300w.webp',
         ],
         shortDescription: 'Advanced CO2 laser cutting machine excels at demanding creations, precisely cutting and engraving diverse non-metals (1300×900mm, up to 300W), ensuring stable, accurate results with DSP control and high precision components.',
         detailedDescription: 'Our CO2 Laser excels at Advanced Laser Technology for Demanding Creations. It precisely cuts and engraves diverse non-metals (1300×900mm, up to 300W), ensuring stable, accurate results with DSP control and high precision components. Featuring industrial engraving speed up to 64000mm/min, this machine delivers consistent cutting effect with continuous curve cutting combined with automatic power compensation for stable results, DSP intelligent control technology with ultra-advanced DSP internal control, and precise motion system with imported high precision linear guide rails and professional optics.',

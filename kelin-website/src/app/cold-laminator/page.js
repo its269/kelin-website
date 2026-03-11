@@ -6,7 +6,7 @@ import './cold-laminator.css';
 
 export default function ColdLaminator() {
     const [inquiryModalOpen, setInquiryModalOpen] = useState(false);
-    const [selectedImage, setSelectedImage] = useState('/laminator/Cold Laminator (1).png');
+    const [selectedImage, setSelectedImage] = useState('/laminator/Cold Laminator (1).webp');
     const scrollRef = useRef(null);
     const [isDragging, setIsDragging] = useState(false);
     const [startX, setStartX] = useState(0);
@@ -38,8 +38,8 @@ export default function ColdLaminator() {
         name: 'COLD LAMINATOR',
         model: 'COLD LAMINATING MACHINE',
         images: [
-            '/laminator/Cold Laminator (1).png',
-            '/laminator/Cold Laminator (1).png',
+            '/laminator/Cold Laminator (1).webp',
+            '/laminator/Cold Laminator (1).webp',
         ],
         shortDescription: 'PRESSURE-SENSITIVE ADHESIVE PERFORMANCE - Cold laminators use a pressure-sensitive adhesive that does not need to be activated by heat, but they still must peel the sheet of lamination together.',
         detailedDescription: 'Our wide-format laminators - cold, flatbed, and auto warm - are built to handle everything from soft prints to hard boards with speed, accuracy, and ease. Cold laminators use a pressure-sensitive adhesive that does not need to be activated by heat, ensuring safe and efficient lamination for various materials.',

@@ -6,7 +6,7 @@ import './smart-dtf-machine-unique.css';
 
 export default function SmartDTFMachine() {
     const [inquiryModalOpen, setInquiryModalOpen] = useState(false);
-    const [selectedImage, setSelectedImage] = useState('/sublimation_dtf/DTF SMART DTF Machine (1).png');
+    const [selectedImage, setSelectedImage] = useState('/sublimation_dtf/DTF SMART DTF Machine (1).webp');
 
     const scrollRef = useRef(null);
     const [isDragging, setIsDragging] = useState(false);
@@ -39,8 +39,8 @@ export default function SmartDTFMachine() {
         name: 'SMART DTF',
         model: 'Direct To Film',
         images: [
-            '/sublimation_dtf/DTF SMART DTF Machine (1).png',
-            '/sublimation_dtf/DTF SMART DTF Machine (1).png', // Add more images if available
+            '/sublimation_dtf/DTF SMART DTF Machine (1).webp',
+            '/sublimation_dtf/DTF SMART DTF Machine (1).webp', // Add more images if available
         ],
         shortDescription: 'SUPPORT FOR UP TO 8 COLORS - Delivers ultra-rich tones, smoother gradients, and precise color layering with industrial grade speed.',
         detailedDescription: 'The SMART DTF (Direct To Film) delivers ultra-rich tones, smoother gradients, and precise color layering. This industrial-grade equipment supports up to 8 colors for comprehensive DTF production with a printing speed of 28m²/h. Featuring wider platform, adjustable pinch roller, improved capping, and newly improved damper technology for superior print quality and efficient production workflow.',

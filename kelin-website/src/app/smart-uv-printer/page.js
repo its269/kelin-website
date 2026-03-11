@@ -6,7 +6,7 @@ import './smart-uv-printer.css';
 
 export default function SmartUVPrinter() {
     const [inquiryModalOpen, setInquiryModalOpen] = useState(false);
-    const [selectedImage, setSelectedImage] = useState('/uv-machines/SMART UV Printer.png');
+    const [selectedImage, setSelectedImage] = useState('/uv-machines/SMART UV Printer.webp');
     const scrollRef = useRef(null);
     const [isDragging, setIsDragging] = useState(false);
     const [startX, setStartX] = useState(0);
@@ -38,8 +38,8 @@ export default function SmartUVPrinter() {
         name: 'SMART UV PRINTER',
         model: 'RJ24U*2002-I3200 6FT',
         images: [
-            '/uv-machines/SMART UV Printer.png',
-            '/uv-machines/SMART UV Printer.png',
+            '/uv-machines/SMART UV Printer.webp',
+            '/uv-machines/SMART UV Printer.webp',
         ],
         shortDescription: 'DUAL EPSON 3200U1: SPEED. PRECISION. UNMATCHED QUALITY. - SMTJET 2002 UV Eco Solvent Printer, a robust printing powerhouse designed for professional demands. Featuring advanced dual Epson 3200U1 printheads and a precision-engineered motion system, it delivers exceptional output speed, vivid color accuracy, and razor-sharp detail, ensuring superior, consistent quality on a wide range of substrates for every application.',
         detailedDescription: 'The SMTJET 2002 UV Eco Solvent Printer (RJ24U*2002-I3200 6FT) represents the pinnacle of professional UV printing technology. Equipped with dual Epson 3200U1 printheads, this industrial-grade printer achieves up to 12m²/h printing speed while maintaining exceptional quality. The advanced LED curing lamp delivers high-precision UV curing, while the high-performance control system ensures stable operation. Built with an aluminum alloy carriage station for durability and featuring an external infrared heating fan for optimal ink adhesion, this printer excels in producing UV-printed display graphics, wall murals, backlit displays, and decor panels with unmatched consistency and quality.',

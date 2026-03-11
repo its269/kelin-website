@@ -6,7 +6,7 @@ import './hanniu-k1390-co2-laser-150w-ccd.css';
 
 export default function HanniuK1390CO2Laser150WCCD() {
     const [inquiryModalOpen, setInquiryModalOpen] = useState(false);
-    const [selectedImage, setSelectedImage] = useState('/laser-machines/Hanniu K1390 CO2 Laser Cutting Machine 150w with CCD.png');
+    const [selectedImage, setSelectedImage] = useState('/laser-machines/Hanniu K1390 CO2 Laser Cutting Machine 150w with CCD.webp');
     const scrollRef = useRef(null);
     const [isDragging, setIsDragging] = useState(false);
     const [startX, setStartX] = useState(0);
@@ -38,8 +38,8 @@ export default function HanniuK1390CO2Laser150WCCD() {
         name: 'Hanniu K1390',
         model: 'CO2 LASER CUTTING MACHINE WITH CCD',
         images: [
-            '/laser-machines/Hanniu K1390 CO2 Laser Cutting Machine 150w with CCD.png',
-            '/laser-machines/Hanniu K1390 CO2 Laser Cutting Machine 150w with CCD.png',
+            '/laser-machines/Hanniu K1390 CO2 Laser Cutting Machine 150w with CCD.webp',
+            '/laser-machines/Hanniu K1390 CO2 Laser Cutting Machine 150w with CCD.webp',
         ],
         shortDescription: 'Industrial-grade CO2 laser cutting machine with CCD vision system for precision cutting at 64000 mm/min engraving speed, delivering accurate border detection and contour recognition.',
         detailedDescription: 'The Hanniu K1390 CO2 Laser Cutting Machine with CCD combines ultra high-definition camera technology with automatic positioning for accurate border detection and contour recognition. Featuring an all-in-one standalone operation with computer-integrated software, this machine offers industrial-grade speed of up to 64000 mm/min with a smart CCD camera and auto border detection system for freely converted precision cutting.',

@@ -39,7 +39,7 @@
 /* Hero Section */
 .hero-section {
     background-color: rgb(211, 211, 211);
-    background-image: url("/background.png");
+    background-image: url("/background.webp");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -338,27 +338,27 @@
 
     /* Cutting Machine background */
     .btn:has(.btn-primary-cat):hover {
-        background-image: url('/GCC Expert LX  EX-52LX  With Stand (1).png');
+        background-image: url('/cutting-machines/bk3.webp');
     }
 
     /* Eco-Solvent Printer background */
     .btn:has(.btn-secondary-cat):hover {
-        background-image: url('/SMART Eco-Solvent Machine.png');
+        background-image: url('/eco-solvent-machines/Apollo.webp');
     }
 
     /* Solvent Printer background */
     .btn:has(.btn-tertiary-cat):hover {
-        background-image: url('/Machine V2 (1).png');
+        background-image: url('/ApolloMax Plus II PZG3208-KV.webp');
     }
 
     /* Sublimation Printer background */
     .btn:has(.btn-quaternary-cat):hover {
-        background-image: url('/sublimation_dtf/SUBL Kirin DA182T Plus Sublimation Printer (1).png');
+        background-image: url('/sublimation_dtf/SUBL Kirin DA182T Plus Sublimation Printer (1).webp');
     }
 
     /* DTF Printer background */
     .btn:has(.btn-quinary-cat):hover {
-        background-image: url('/embroidery_knitting/Promaker Embroidery 1204.png');
+        background-image: url('/embroidery_knitting/Promaker Embroidery 1204.webp');
     }
 }
 
@@ -577,7 +577,7 @@
 
     .hero-section {
         padding: 60px 0px 100px 0px;
-        background-image: url("/background.png");
+        background-image: url("/background.webp");
     }
 
     .hero-title {

@@ -6,7 +6,7 @@ import './dtf-uv-printer-sf303-f1080-unique.css';
 
 export default function DTFUVPrinterSF303F1080() {
     const [inquiryModalOpen, setInquiryModalOpen] = useState(false);
-    const [selectedImage, setSelectedImage] = useState('/DTF UV Printer SF303-i3200 2ft (1).png');
+    const [selectedImage, setSelectedImage] = useState('/DTF UV Printer SF303-i3200 2ft (1).webp');
 
     const scrollRef = useRef(null);
     const [isDragging, setIsDragging] = useState(false);
@@ -39,8 +39,8 @@ export default function DTFUVPrinterSF303F1080() {
         name: 'LUXOR SF30-3',
         model: 'UV DTF PRINTER',
         images: [
-            '/DTF UV Printer SF303-i3200 2ft (1).png',
-            '/DTF UV Printer SF303-i3200 2ft (1).png', // Add more images if available
+            '/DTF UV Printer SF303-i3200 2ft (1).webp',
+            '/DTF UV Printer SF303-i3200 2ft (1).webp', // Add more images if available
         ],
         shortDescription: 'BRILLIANT COLOR PRINTING WITH VARNISH - Get vibrant, detailed prints with CMYK+W+V and UV ink. The SF30-3 delivers rich layers, smooth gradients, and long-lasting quality.',
         detailedDescription: 'The LUXOR SF30-3 UV DTF Printer delivers brilliant color printing with varnish technology. Featuring PRECISION CORE printhead powered by EPSON, this industrial-grade printer achieves 4.5 m²/h printing speed with vibrant, detailed prints using CMYK+W+V and UV ink. The SF30-3 delivers rich layers, smooth gradients, and long-lasting quality for professional UV DTF applications.',

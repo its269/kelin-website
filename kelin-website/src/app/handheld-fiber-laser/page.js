@@ -6,7 +6,7 @@ import './handheld-fiber-laser.css';
 
 export default function HandheldFiberLaser() {
     const [inquiryModalOpen, setInquiryModalOpen] = useState(false);
-    const [selectedImage, setSelectedImage] = useState('/laser-machines/Handheld Fiber Laser.png');
+    const [selectedImage, setSelectedImage] = useState('/laser-machines/Handheld Fiber Laser.webp');
     const scrollRef = useRef(null);
     const [isDragging, setIsDragging] = useState(false);
     const [startX, setStartX] = useState(0);
@@ -38,8 +38,8 @@ export default function HandheldFiberLaser() {
         name: 'TFZ-S Mini Handheld Laser Welding Machine',
         model: 'MINI HANDHELD LASER WELDING MACHINE',
         images: [
-            '/laser-machines/Handheld Fiber Laser.png',
-            '/laser-machines/Handheld Fiber Laser.png',
+            '/laser-machines/Handheld Fiber Laser.webp',
+            '/laser-machines/Handheld Fiber Laser.webp',
         ],
         shortDescription: 'The TFZ-S 1500W significantly reduces production time with high-speed laser welding, enabling rapid joint formation while maintaining superior accuracy and consistency.',
         detailedDescription: 'The TFZ-S 1500W significantly reduces production time with high-speed laser welding, enabling rapid joint formation while maintaining superior accuracy and consistency. This mini handheld laser welding machine is 5-10× faster than traditional welding methods, featuring industrial-grade speed of 120mm/s and a wire feeder for enhanced welding capabilities.',

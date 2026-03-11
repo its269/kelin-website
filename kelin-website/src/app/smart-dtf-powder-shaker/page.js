@@ -6,7 +6,7 @@ import './smart-dtf-powder-shaker-unique.css';
 
 export default function SmartDTFPowderShaker() {
     const [inquiryModalOpen, setInquiryModalOpen] = useState(false);
-    const [selectedImage, setSelectedImage] = useState('/sublimation_dtf/Powder shaker D650 Model.png');
+    const [selectedImage, setSelectedImage] = useState('/sublimation_dtf/Powder shaker D650 Model.webp');
 
     const scrollRef = useRef(null);
     const [isDragging, setIsDragging] = useState(false);
@@ -39,8 +39,8 @@ export default function SmartDTFPowderShaker() {
         name: 'SMART DTF POWDER SHAKER',
         model: 'W650 White Shaker | J850-2 Shaker',
         images: [
-            '/sublimation_dtf/Powder shaker D650 Model.png',
-            '/sublimation_dtf/Powder shaker D650 Model.png', // Add more images if available
+            '/sublimation_dtf/Powder shaker D650 Model.webp',
+            '/sublimation_dtf/Powder shaker D650 Model.webp', // Add more images if available
         ],
         shortDescription: 'SUPPORT FOR UP TO 8 COLORS - Delivers ultra-rich tones, smoother gradients, and precise color layering with advanced DTF powder shaking technology.',
         detailedDescription: 'The SMART DTF POWDER SHAKER delivers ultra-rich tones, smoother gradients, and precise color layering. This industrial-grade equipment supports up to 8 colors for comprehensive DTF production. Featuring wider platform compatibility, adjustable pinch roller technology, improved capping systems, and newly improved damper technology for consistent powder application and superior print quality.',

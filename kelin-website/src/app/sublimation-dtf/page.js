@@ -12,7 +12,7 @@ export default function SublimationDTF() {
         {
             id: 'sublimation-printer-fd6198e',
             name: 'Sublimation Printer FD6198E',
-            image: '/sublimation_dtf/SUBL Sublimation Printer FD6198E (1).png',
+            image: '/sublimation_dtf/SUBL Sublimation Printer FD6198E (1).webp',
             description: 'INDUSTRIAL SUBLIMATION PRINTING - High-resolution sublimation printer FD6198E with industrial-grade components for continuous operation and superior print quality.',
             specs: [
                 'Print Resolution: 1440 DPI',
@@ -27,7 +27,7 @@ export default function SublimationDTF() {
         {
             id: 'kirin-da182t-plus',
             name: 'Kirin DA182T Plus Sublimation Printer',
-            image: '/sublimation_dtf/SUBL Kirin DA182T Plus Sublimation Printer (1).png',
+            image: '/sublimation_dtf/SUBL Kirin DA182T Plus Sublimation Printer (1).webp',
             description: 'PREMIUM SUBLIMATION PRINTING - Kirin DA182T Plus with advanced print head technology and premium ink system for exceptional color reproduction and print quality.',
             specs: [
                 'Print Head: Advanced Technology',
@@ -42,7 +42,7 @@ export default function SublimationDTF() {
         {
             id: 'r2000-roller-sublimation',
             name: 'R2000 Roller Type Sublimation Machine GS 1200',
-            image: '/sublimation_dtf/SUBL R2000 Roller Type Sublimation Machine GS 1200 (1).png',
+            image: '/sublimation_dtf/SUBL R2000 Roller Type Sublimation Machine GS 1200 (1).webp',
             description: 'HIGH-PERFORMANCE ROLLER SUBLIMATION - Professional roller-type sublimation machine with GS 1200 technology for continuous heat transfer applications and large-scale production.',
             specs: [
                 'Print Width: up to 1200mm',
@@ -57,7 +57,7 @@ export default function SublimationDTF() {
         {
             id: 'dual-pneumatic-sublimation',
             name: 'Dual Pneumatic Sublimation Machine 80cm x 100cm',
-            image: '/sublimation_dtf/SUBL Dual Pneumatic Sublimation Machine 80cm x 100cm (1).png',
+            image: '/sublimation_dtf/SUBL Dual Pneumatic Sublimation Machine 80cm x 100cm (1).webp',
             description: 'PRECISION DUAL PNEUMATIC SYSTEM - Advanced dual pneumatic sublimation press with large 80x100cm platen for oversized garments and professional applications.',
             specs: [
                 'Platen Size: 80cm x 100cm',
@@ -72,7 +72,7 @@ export default function SublimationDTF() {
         {
             id: 'smart-sublimation',
             name: 'Smart Sublimation',
-            image: '/sublimation_dtf/SUBL Smart Sublimation (1).png',
+            image: '/sublimation_dtf/SUBL Smart Sublimation (1).webp',
             description: 'INTELLIGENT SUBLIMATION SOLUTION - Smart sublimation system with automated controls, temperature monitoring, and intelligent pressure adjustment for consistent results.',
             specs: [
                 'Smart Controls: Touchscreen',
@@ -87,7 +87,7 @@ export default function SublimationDTF() {
         // {
         //     id: 'dtf-uv-printer-sf303',
         //     name: 'DTF UV Printer SF303-i3200 2ft',
-        //     image: '/sublimation_dtf/DTF UV Printer SF303-i3200 2ft (1).png',
+        //     image: '/sublimation_dtf/DTF UV Printer SF303-i3200 2ft (1).webp',
         //     description: 'COMPACT DTF UV PRINTING - Professional 2ft DTF UV printer SF303 with i3200 print head technology for direct-to-film applications and custom transfers.',
         //     specs: [
         //         'Print Width: 24 inches (2ft)',
@@ -102,7 +102,7 @@ export default function SublimationDTF() {
         // {
         //     id: 'dtf-uv-printer-sf604',
         //     name: 'DTF UV Printer SF604-i3200 2ft - High Res',
-        //     image: '/sublimation_dtf/DTF UV Printer SF604-i3200 2ft. - High Res (1).png',
+        //     image: '/sublimation_dtf/DTF UV Printer SF604-i3200 2ft. - High Res (1).webp',
         //     description: 'HIGH-RESOLUTION DTF PRINTING - Premium DTF UV printer SF604 with enhanced i3200 technology and high-resolution capabilities for superior print quality.',
         //     specs: [
         //         'Print Width: 24 inches (2ft)',
@@ -117,7 +117,7 @@ export default function SublimationDTF() {
         // {
         //     id: 'luxor-rtr',
         //     name: 'Luxor RTR',
-        //     image: '/sublimation_dtf/DTF Luxor RTR (1).png',
+        //     image: '/sublimation_dtf/DTF Luxor RTR (1).webp',
         //     description: 'ROLL-TO-ROLL DTF SYSTEM - Advanced Luxor RTR system for continuous roll-to-roll DTF printing with automated feeding and take-up for efficient production.',
         //     specs: [
         //         'System Type: Roll-to-Roll',
@@ -132,7 +132,7 @@ export default function SublimationDTF() {
         {
             id: 'smart-dtf-powder-shaker-w650',
             name: 'Smart DTF Powder Shaker W650-4C',
-            image: '/sublimation_dtf/Powder shaker D650 Model.png',
+            image: '/sublimation_dtf/Powder shaker D650 Model.webp',
             description: 'INTELLIGENT POWDER APPLICATION - Smart DTF powder shaker W650 with 4-color capability and intelligent powder distribution for consistent DTF film preparation.',
             specs: [
                 'Width Capacity: 650mm',
@@ -147,7 +147,7 @@ export default function SublimationDTF() {
         {
             id: 'smart-dtf-machine',
             name: 'SMART DTF Machine',
-            image: '/sublimation_dtf/DTF SMART DTF Machine (1).png',
+            image: '/sublimation_dtf/DTF SMART DTF Machine (1).webp',
             description: 'COMPLETE DTF SOLUTION - All-in-one smart DTF machine with integrated printing, powder application, and curing system for streamlined DTF production workflow.',
             specs: [
                 'System: All-in-one',

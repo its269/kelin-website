@@ -12,7 +12,7 @@ export default function Laminator() {
         {
             id: 'cold-laminator',
             name: 'Cold Laminator',
-            image: '/laminator/Cold Laminator (1).png',
+            image: '/laminator/Cold Laminator (1).webp',
             description: 'PROFESSIONAL COLD LAMINATION - Advanced cold laminator with precise pressure control for bubble-free lamination of documents, photos, and signage without heat.',
             specs: [
                 'Operation: Cold lamination',
@@ -27,7 +27,7 @@ export default function Laminator() {
         {
             id: 'fulei-bu-1425fa',
             name: 'Fulei BU-1425FA Flatbed Laminator',
-            image: '/laminator/Fulei BU-1425FA Flatbed Laminator (1).png',
+            image: '/laminator/Fulei BU-1425FA Flatbed Laminator (1).webp',
             description: 'FLATBED LAMINATION SYSTEM - Professional Fulei BU-1425FA flatbed laminator with advanced heating and pressure control for large format materials and precise lamination.',
             specs: [
                 'Type: Flatbed system',
@@ -42,7 +42,7 @@ export default function Laminator() {
         {
             id: 'fulei-bu-1600e',
             name: 'Fulei BU-1600E Warm Auto Laminator',
-            image: '/laminator/Fulei BU-1600E Warm Auto Laminator (1).png',
+            image: '/laminator/Fulei BU-1600E Warm Auto Laminator (1).webp',
             description: 'AUTOMATIC WARM LAMINATION - Advanced Fulei BU-1600E automatic warm laminator with intelligent temperature control and automatic feeding for efficient production.',
             specs: [
                 'Type: Automatic warm laminator',

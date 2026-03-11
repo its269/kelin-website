@@ -12,7 +12,7 @@ export default function ThreeDPrinterMachine() {
         {
             id: 'k-sign-letter-shell',
             name: 'K-Sign Letter Shell 3D Printer',
-            image: '/K-Sign Letter Shell 3D Printer.png',
+            image: '/3D Printer (1).webp',
             description: 'SMART AUTO-LEVELING WITH DATABASE - Automatically stores platform configurations, eliminating the need for re-leveling, streamlining workflow, reducing manual effort, and ensuring consistent, high-volume output. Building speed 700 mm/s.',
             specs: [
                 'Printing Speed: 700 mm/s',

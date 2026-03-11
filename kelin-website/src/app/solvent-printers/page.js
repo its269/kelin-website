@@ -12,7 +12,7 @@ export default function SolventPrinters() {
         {
             id: 'apollo-max-plus-ii',
             name: 'ApolloMax Plus II PZG3208-KV',
-            image: '/ApolloMax Plus II PZG3208-KV.png',
+            image: '/ApolloMax Plus II PZG3208-KV.webp',
             description: 'PRECISION PRINTING, ACCELERATED PERFORMANCE - Industrial-grade speed printing up to 230 m²/h with high-volume, high-speed printing capabilities and industrial Konica Minolta KM512/14PL printheads.',
             specs: [
                 'Print Width: 3.2m',

@@ -6,7 +6,7 @@ import './kirin.css';
 
 export default function KirinDA182TPlus() {
     const [inquiryModalOpen, setInquiryModalOpen] = useState(false);
-    const [selectedImage, setSelectedImage] = useState('/sublimation_dtf/SUBL Kirin DA182T Plus Sublimation Printer (1).png');
+    const [selectedImage, setSelectedImage] = useState('/sublimation_dtf/SUBL Kirin DA182T Plus Sublimation Printer (1).webp');
 
     const scrollRef = useRef(null);
     const [isDragging, setIsDragging] = useState(false);
@@ -39,8 +39,8 @@ export default function KirinDA182TPlus() {
         name: 'KIRIN DA182T PLUS',
         model: 'High-speed Roll to Roll Dye Sublimation Digital Textile Printer',
         images: [
-            '/sublimation_dtf/SUBL Kirin DA182T Plus Sublimation Printer (1).png',
-            '/sublimation_dtf/SUBL Kirin DA182T Plus Sublimation Printer (1).png', // Add more images if available
+            '/sublimation_dtf/SUBL Kirin DA182T Plus Sublimation Printer (1).webp',
+            '/sublimation_dtf/SUBL Kirin DA182T Plus Sublimation Printer (1).webp', // Add more images if available
         ],
         shortDescription: 'HIGH-SPEED PERFORMANCE FOR LARGE-SCALE DEMANDS - The DA182T Plus, equipped with 8 Kyocera industrial print heads, achieves speeds up to 650m²/hr (400x600dpi, 1 pass), making it perfect for high-volume textile printing where speed and quality matter.',
         detailedDescription: 'The Kirin DA182T Plus is designed for high daily output, using industrial Kyocera print heads and a specialized control system to maximize productivity. It significantly boosts overall printing efficiency with automatic cleaning and monitoring, reducing print head blockages, improving output stability, and enabling operation by just one person.',

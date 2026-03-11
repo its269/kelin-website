@@ -6,7 +6,7 @@ import './smart-sublimation-unique.css';
 
 export default function SmartSublimation() {
     const [inquiryModalOpen, setInquiryModalOpen] = useState(false);
-    const [selectedImage, setSelectedImage] = useState('/sublimation_dtf/SUBL Smart Sublimation (1).png');
+    const [selectedImage, setSelectedImage] = useState('/sublimation_dtf/SUBL Smart Sublimation (1).webp');
 
     const scrollRef = useRef(null);
     const [isDragging, setIsDragging] = useState(false);
@@ -39,8 +39,8 @@ export default function SmartSublimation() {
         name: 'SMART SUBLIMATION RJ24 2002 & 2004 6FT',
         model: 'RJ24 2002 | RJ24 2004',
         images: [
-            '/sublimation_dtf/SUBL Smart Sublimation (1).png',
-            '/sublimation_dtf/SUBL Smart Sublimation (1).png', // Add more images if available
+            '/sublimation_dtf/SUBL Smart Sublimation (1).webp',
+            '/sublimation_dtf/SUBL Smart Sublimation (1).webp', // Add more images if available
         ],
         shortDescription: 'VIBRANT, EFFICIENT PRODUCTION: PRECISION HIGH-SPEED PRINTING - The SMT-JET 2002-04 Eco Solvent Printer offers efficient production with precision high-speed printing at various speeds.',
         detailedDescription: 'The SMART SUBLIMATION RJ24 2002 & 2004 6FT printer offers vibrant, efficient production with precision high-speed printing at head speeds up to 56 m2/h. Key features include an all aluminum alloy carriage, precise media feeding, CQIUK ink supply, an external infrared heating fan, and Maintop RIP software. It also provides adjustable printhead height, carriage anti-collision, auto-feeding, auto-take-up, and pre/post infrared drying.',

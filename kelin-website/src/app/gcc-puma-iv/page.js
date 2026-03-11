@@ -6,7 +6,7 @@ import './gcc-puma-iv.css';
 
 export default function GCCPumaIV() {
     const [inquiryModalOpen, setInquiryModalOpen] = useState(false);
-    const [selectedImage, setSelectedImage] = useState('/GCC PUMA IV.png');
+    const [selectedImage, setSelectedImage] = useState('/cutting-machines/GCC PUMA IV.webp');
     const scrollRef = useRef(null);
     const [isDragging, setIsDragging] = useState(false);
     const [startX, setStartX] = useState(0);
@@ -38,8 +38,8 @@ export default function GCCPumaIV() {
         name: 'GCC Puma IV',
         model: 'Puma IV Cutting Plotter',
         images: [
-            '/GCC PUMA IV.png',
-            '/GCC PUMA IV.png', // Add more Puma IV images if available
+            '/cutting-machines/GCC PUMA IV.webp',
+            '/cutting-machines/GCC PUMA IV.webp', // Add more Puma IV images if available
         ],
         shortDescription: 'BEST CUTTING PERFORMANCE WITH LOW INVESTMENT COST - High-performance cutting plotter with maximum speed up to 1020mm/sec, delivering unrivaled precision and reliability through digitally controlled servo system.',
         detailedDescription: 'The GCC Puma IV is a high-performance cutting plotter that delivers unrivaled precision, speed, and unwavering reliability through a digitally controlled servo system, advanced contour cutting features, and robust connectivity, making it an ideal solution for sign makers. With maximum cutting speed up to 1020mm/sec and enhanced AAS II contour cutting system for LX models, the Puma IV offers best cutting performance with low investment cost.',

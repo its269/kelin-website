@@ -6,7 +6,7 @@ import './sapphire-heat-press.css';
 
 export default function SapphireHeatPress() {
     const [inquiryModalOpen, setInquiryModalOpen] = useState(false);
-    const [selectedImage, setSelectedImage] = useState('/heatpress/Sapphire Heatpress (2).png');
+    const [selectedImage, setSelectedImage] = useState('/heatpress/Sapphire Heatpress (2).webp');
     const scrollRef = useRef(null);
     const [isDragging, setIsDragging] = useState(false);
     const [startX, setStartX] = useState(0);
@@ -38,8 +38,8 @@ export default function SapphireHeatPress() {
         name: 'SAPPHIRE HD HEAT PRESS',
         model: 'MANUAL HEATPRESS 60CM X 90CM',
         images: [
-            '/heatpress/Sapphire Heatpress (2).png',
-            '/heatpress/Sapphire Heatpress (2).png',
+            '/heatpress/Sapphire Heatpress (2).webp',
+            '/heatpress/Sapphire Heatpress (2).webp',
         ],
         shortDescription: 'The Sapphire HD Heat Press is a 60x90cm large-format, drawer-type machine. It offers precise control over time, temperature, and pressure for professional grade heat transfers on big items.',
         detailedDescription: 'The Sapphire HD Heat Press is a 60x90cm large-format, drawer-type machine. It offers precise control over time, temperature, and pressure for professional grade heat transfers on big items, with a pull-out lower platen for safe and easy operation. Features a silicon grip pulling handle for comfortable operation and a digital time/temperature panel for exact settings.',

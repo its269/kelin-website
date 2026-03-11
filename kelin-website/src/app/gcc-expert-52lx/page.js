@@ -6,7 +6,7 @@ import './gcc-expert-52lx.css';
 
 export default function GCCExpert52LX() {
     const [inquiryModalOpen, setInquiryModalOpen] = useState(false);
-    const [selectedImage, setSelectedImage] = useState('/GCC Expert LX  EX-52LX  With Stand (1).png');
+    const [selectedImage, setSelectedImage] = useState('/cutting-machines/gcc-expert-lx.webp');
 
     const scrollRef = useRef(null);
     const [isDragging, setIsDragging] = useState(false);
@@ -39,8 +39,8 @@ export default function GCCExpert52LX() {
         name: 'GCC Expert 52 LX',
         model: 'Expert 52 LX Cutting Plotter',
         images: [
-            '/GCC Expert LX  EX-52LX  With Stand (1).png',
-            '/GCC Expert LX  EX-52LX  With Stand (1).png', // Add more images if available
+            '/cutting-machines/gcc-expert-lx.webp',
+            '/cutting-machines/gcc-expert-lx.webp', // Add more images if available
         ],
         shortDescription: 'SMART VISION - ULTRA-PRECISE, FAST FLEXIBLE CUTTING - Professional grade plotters offering up to 400mm/sec cutting speed with Advanced Automatic Aligning System (AAS) for precise contour cutting.',
         detailedDescription: 'The GCC Expert 52 LX is a wide-format color plotter offering up to 250 grams of cutting force and optimum 15.7 ips cutting speed. It features an Automatic Aligning System (AAS) for auto contour cutting, targeting larger craft market projects and sign making applications. This reliable and affordable machine uses professional-grade components with extended width capacity.',

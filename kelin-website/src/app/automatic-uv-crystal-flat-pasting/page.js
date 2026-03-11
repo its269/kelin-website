@@ -6,7 +6,7 @@ import './automatic-uv-crystal-flat-pasting.css';
 
 export default function AutomaticUVCrystalFlatPasting() {
     const [inquiryModalOpen, setInquiryModalOpen] = useState(false);
-    const [selectedImage, setSelectedImage] = useState('/uv-machines/Automatic UV Crystal Flat Pasting Machine 3.82m x 1.72m (1).png');
+    const [selectedImage, setSelectedImage] = useState('/uv-machines/Automatic UV Crystal Flat Pasting Machine 3.82m x 1.72m (1).webp');
 
     const scrollRef = useRef(null);
     const [isDragging, setIsDragging] = useState(false);
@@ -39,8 +39,8 @@ export default function AutomaticUVCrystalFlatPasting() {
         name: 'AUTOMATIC UV CRYSTAL FLAT PASTING MACHINE',
         model: 'UV CRYSTAL LAMINATING MACHINE',
         images: [
-            '/uv-machines/Automatic UV Crystal Flat Pasting Machine 3.82m x 1.72m (1).png',
-            '/uv-machines/Automatic UV Crystal Flat Pasting Machine 3.82m x 1.72m (1).png',
+            '/uv-machines/Automatic UV Crystal Flat Pasting Machine 3.82m x 1.72m (1).webp',
+            '/uv-machines/Automatic UV Crystal Flat Pasting Machine 3.82m x 1.72m (1).webp',
         ],
         shortDescription: 'FULLY INTEGRATED 3-IN-1 OPERATION - Lamination, Gluing, and UV Curing. Integrates UV glue, hot melt adhesive, and crystal film covering in one system—eliminating separate machines and enhancing workflow efficiency.',
         detailedDescription: 'The Automatic UV Crystal Flat Pasting Machine offers a fully integrated 3-in-1 operation combining lamination, gluing, and UV curing in one compact unit. With a lamination width up to 1260mm, this versatile machine features smart touchscreen control, high temperature-resistant silicone shaft, and large format capability—perfect for advertising billboards, background walls, and decorative industries.',
