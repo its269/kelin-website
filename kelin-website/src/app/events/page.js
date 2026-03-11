@@ -24,10 +24,10 @@ Key features include automated maintenance systems, advanced color management, v
 
 This launch reinforces our commitment to innovation and providing our customers with the most advanced printing solutions available in the market today.`,
       images: [
-        '/luxor2.png',
-        '/KELIN-LOGO-01.png',
-        '/se.webp',
-        '/luxor2.png'
+        '/DTF UV Printer SF604-i3200 2ft. - High Res (1).webp',
+        '/DTF UV Printer SF303-i3200 2ft (1).webp',
+        '/LUXOR UV-A3 RTR.webp',
+        '/ApolloMax Plus II PZG3208-KV.webp'
       ]
     },
     {
@@ -45,9 +45,9 @@ Special show promotions will be available exclusively for expo attendees, includ
 
 Don't miss our daily presentations at 2 PM covering "Future Trends in Digital Printing" and networking sessions with industry leaders. We look forward to meeting you at SGIA Expo 2025!`,
       images: [
-        '/KELIN-LOGO-01.png',
-        '/se.webp',
-        '/luxor2.png'
+        '/SMART Eco-Solvent Machine.png',
+        '/Machine V2 (1).png',
+        '/Apollo Xline (1).png'
       ]
     },
     {
@@ -65,9 +65,9 @@ Key benefits include improved product integration, faster technical support resp
 
 The collaboration will also focus on joint research and development initiatives, ensuring that our customers benefit from the latest innovations in digital printing technology. We anticipate this partnership will drive significant value for our customers and strengthen our position in the global market.`,
       images: [
-        '/se.webp',
-        '/KELIN-LOGO-01.png',
-        '/luxor2.png'
+        '/K-Sign Letter Shell 3D Printer.png',
+        '/GCC Expert LX  EX-52LX  With Stand (1).png',
+        '/CMA AL160 Multi-function Channel Letter Bending  Machine (1).png'
       ]
     }
   ];
@@ -89,9 +89,9 @@ Event highlights include technical seminars, product launches, networking sessio
 
 Visit us to explore our latest innovations and discover how our solutions can enhance your printing capabilities.`,
       images: [
-        '/luxor2.png',
-        '/se.webp',
-        '/KELIN-LOGO-01.png'
+        '/DTF UV Printer SF604-i3200 2ft. - High Res (1).webp',
+        '/LUXOR UV-A3 RTR.webp',
+        '/DTF UV Printer SF303-i3200 2ft (1).webp'
       ],
       location: 'SMX Manila (MOA)'
     },
@@ -110,9 +110,9 @@ The exhibition features focused sessions on regional market opportunities, local
 
 This event provides an excellent opportunity to connect with industry professionals in the region and explore partnerships with local businesses.`,
       images: [
-        '/KELIN-LOGO-01.png',
-        '/luxor2.png',
-        '/se.webp'
+        '/ApolloMax Plus II PZG3208-KV.webp',
+        '/SMART Eco-Solvent Machine.png',
+        '/Machine V2 (1).png'
       ],
       location: 'Waterfront Cebu City'
     },
@@ -131,9 +131,9 @@ The event offers valuable networking opportunities with industry professionals, 
 
 Join us to discover how our advanced printing solutions can help grow your business and stay ahead of industry trends.`,
       images: [
-        '/se.webp',
-        '/luxor2.png',
-        '/KELIN-LOGO-01.png'
+        '/Apollo Xline (1).png',
+        '/K-Sign Letter Shell 3D Printer.png',
+        '/GCC Expert LX  EX-52LX  With Stand (1).png'
       ],
       location: 'SMX Manila (MOA)'
     },
@@ -152,9 +152,9 @@ The exhibition provides an excellent platform to connect with construction profe
 
 This event represents our commitment to serving diverse industries across all regions of the Philippines.`,
       images: [
-        '/luxor2.png',
-        '/KELIN-LOGO-01.png',
-        '/se.webp'
+        '/CMA AL160 Multi-function Channel Letter Bending  Machine (1).png',
+        '/3D Printer (1).webp',
+        '/DTF UV Printer SF604-i3200 2ft. - High Res (1).webp'
       ],
       location: 'SMX Davao (SM Lanang)'
     },
@@ -173,9 +173,9 @@ This exhibition serves as the industry's primary networking and business develop
 
 Join us at this flagship event to discover cutting-edge solutions and connect with industry leaders who are shaping the future of packaging and printing in the Philippines and beyond.`,
       images: [
-        '/se.webp',
-        '/KELIN-LOGO-01.png',
-        '/luxor2.png'
+        '/DTF UV Printer SF303-i3200 2ft (1).webp',
+        '/ApolloMax Plus II PZG3208-KV.webp',
+        '/SMART Eco-Solvent Machine.png'
       ],
       location: 'SMX Manila (MOA)'
     }
