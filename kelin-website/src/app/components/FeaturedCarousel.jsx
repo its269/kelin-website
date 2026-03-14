@@ -3,10 +3,11 @@
 import { useRef, useEffect, useState } from 'react';
 import styles from './FeaturedCarousel.module.css';
 
-const FeaturedCarousel = ({ items = [], title = "Featured Subjects", label }) => {
+const FeaturedCarousel = ({ items = [], title = "Featured Subjects", label, onActiveItemChange }) => {
     const carouselRef = useRef(null);
     const [isDragging, setIsDragging] = useState(false);
     const [dragStart, setDragStart] = useState({ x: 0, scrollLeft: 0 });
+    const [activeItemIndex, setActiveItemIndex] = useState(null);
 
     // Update active state - only center item is active
     const updateActiveItem = () => {
@@ -18,8 +19,9 @@ const FeaturedCarousel = ({ items = [], title = "Featured Subjects", label }) =>
 
         let closestItem = null;
         let closestDistance = Infinity;
+        let closestIndex = -1;
 
-        itemElements.forEach(item => {
+        itemElements.forEach((item, index) => {
             const itemCenter = item.offsetLeft + item.offsetWidth / 2;
             const distance = Math.abs(center - itemCenter);
 
@@ -30,12 +32,17 @@ const FeaturedCarousel = ({ items = [], title = "Featured Subjects", label }) =>
             if (distance < closestDistance) {
                 closestDistance = distance;
                 closestItem = item;
+                closestIndex = index;
             }
         });
 
         // Only the center-most item becomes active
         if (closestItem) {
             closestItem.classList.add(styles.active);
+            setActiveItemIndex(closestIndex);
+            if (onActiveItemChange && items[closestIndex]) {
+                onActiveItemChange(items[closestIndex]);
+            }
         }
     };
 
@@ -135,6 +142,12 @@ const FeaturedCarousel = ({ items = [], title = "Featured Subjects", label }) =>
                     {label && <div className={styles.label}>{label}</div>}
                     <h2 className={styles.title}>{title}</h2>
                 </div>
+                {activeItemIndex !== null && items[activeItemIndex]?.description && (
+                    <div className={styles.descriptionBox}>
+                        <h3 className={styles.descriptionTitle}>{items[activeItemIndex].title}</h3>
+                        <p className={styles.descriptionText}>{items[activeItemIndex].description}</p>
+                    </div>
+                )}
             </div>
             <div className={styles.carouselWrapper}>
 

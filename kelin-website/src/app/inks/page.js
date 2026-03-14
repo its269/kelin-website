@@ -822,76 +822,76 @@ const getInkProductsData = () => {
           }
         ]
       },
-      {
-        id: 5,
-        name: "UV Inks",
-        description: "Instant-curing UV inks that provide exceptional durability and print quality for demanding applications.",
-        image: "/inks.png",
-        features: [
-          "Instant curing",
-          "Superior durability",
-          "No heat required",
-          "Excellent color density"
-        ],
-        applications: ["Rigid substrates", "Industrial labels", "Packaging", "Electronics"],
-        products: [
-          {
-            name: "Smart UV 1L Cyan",
-            size: "1L",
-            color: "Cyan",
-            image: "/KELIN-LOGO-01.png",
-            description: "Instant-curing UV cyan ink with exceptional durability and superior color density for industrial applications.",
-            specifications: {
-              "Volume": "1 Liter",
-              "Type": "UV Curable"
-            }
-          },
-          {
-            name: "Smart UV 1L Magenta",
-            size: "1L",
-            color: "Magenta",
-            image: "/KELIN-LOGO-01.png",
-            description: "Instant-curing UV magenta ink with exceptional durability and superior color density for industrial applications.",
-            specifications: {
-              "Volume": "1 Liter",
-              "Type": "UV Curable"
-            }
-          },
-          {
-            name: "Smart UV 1L Yellow",
-            size: "1L",
-            color: "Yellow",
-            image: "/KELIN-LOGO-01.png",
-            description: "Instant-curing UV yellow ink with exceptional durability and superior color density for industrial applications.",
-            specifications: {
-              "Volume": "1 Liter",
-              "Type": "UV Curable"
-            }
-          },
-          {
-            name: "Smart UV 1L Black",
-            size: "1L",
-            color: "Black",
-            image: "/KELIN-LOGO-01.png",
-            description: "Instant-curing UV black ink with exceptional durability and superior color density for industrial applications.",
-            specifications: {
-              "Volume": "1 Liter",
-              "Type": "UV Curable"
-            }
-          },
-          {
-            name: "Smart UV 1L White",
-            size: "1L",
-            color: "White",
-            image: "/KELIN-LOGO-01.png",
-            description: "Instant-curing UV white ink with exceptional opacity and coverage for specialty printing applications.",
-            specifications: {
-              "Volume": "1 Liter",
-              "Type": "UV Curable"
-            }
-          }
-        ]
-      }
+      // {
+      //   id: 5,
+      //   name: "UV Inks",
+      //   description: "Instant-curing UV inks that provide exceptional durability and print quality for demanding applications.",
+      //   image: "/inks.png",
+      //   features: [
+      //     "Instant curing",
+      //     "Superior durability",
+      //     "No heat required",
+      //     "Excellent color density"
+      //   ],
+      //   applications: ["Rigid substrates", "Industrial labels", "Packaging", "Electronics"],
+      //   products: [
+      //     {
+      //       name: "Smart UV 1L Cyan",
+      //       size: "1L",
+      //       color: "Cyan",
+      //       image: "/KELIN-LOGO-01.png",
+      //       description: "Instant-curing UV cyan ink with exceptional durability and superior color density for industrial applications.",
+      //       specifications: {
+      //         "Volume": "1 Liter",
+      //         "Type": "UV Curable"
+      //       }
+      //     },
+      //     {
+      //       name: "Smart UV 1L Magenta",
+      //       size: "1L",
+      //       color: "Magenta",
+      //       image: "/KELIN-LOGO-01.png",
+      //       description: "Instant-curing UV magenta ink with exceptional durability and superior color density for industrial applications.",
+      //       specifications: {
+      //         "Volume": "1 Liter",
+      //         "Type": "UV Curable"
+      //       }
+      //     },
+      //     {
+      //       name: "Smart UV 1L Yellow",
+      //       size: "1L",
+      //       color: "Yellow",
+      //       image: "/KELIN-LOGO-01.png",
+      //       description: "Instant-curing UV yellow ink with exceptional durability and superior color density for industrial applications.",
+      //       specifications: {
+      //         "Volume": "1 Liter",
+      //         "Type": "UV Curable"
+      //       }
+      //     },
+      //     {
+      //       name: "Smart UV 1L Black",
+      //       size: "1L",
+      //       color: "Black",
+      //       image: "/KELIN-LOGO-01.png",
+      //       description: "Instant-curing UV black ink with exceptional durability and superior color density for industrial applications.",
+      //       specifications: {
+      //         "Volume": "1 Liter",
+      //         "Type": "UV Curable"
+      //       }
+      //     },
+      //     {
+      //       name: "Smart UV 1L White",
+      //       size: "1L",
+      //       color: "White",
+      //       image: "/KELIN-LOGO-01.png",
+      //       description: "Instant-curing UV white ink with exceptional opacity and coverage for specialty printing applications.",
+      //       specifications: {
+      //         "Volume": "1 Liter",
+      //         "Type": "UV Curable"
+      //       }
+      //     }
+      //   ]
+      // }
     ]
   };
 };

@@ -211,7 +211,7 @@
 .hero-buttons {
     display: flex;
     gap: 2.5rem;
-    justify-content: center;
+    justify-content: flex-start;
     flex-wrap: wrap;
     width: 100%;
     max-width: 1400px;
@@ -436,7 +436,11 @@
 .features-section-landing {
     padding: 80px 0 60px 0;
     /* max-width: 1200px; */
-    background-color: #1a202c;
+    /* background-color: #1a202c; */
+    background-image: url('/background-dark.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -467,7 +471,7 @@
 }
 
 .feature-card {
-    padding: 2.5rem 2rem 2rem 2rem;
+    padding: 0;
     text-align: left;
     border-radius: 20px;
     background: rgba(255, 255, 255, 0.1);
@@ -479,7 +483,12 @@
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    text-decoration: none;
+    cursor: pointer;
+    background-image: url('/luxor-background-machine.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .feature-card::before {
@@ -489,7 +498,7 @@
     left: 0;
     right: 0;
     height: 5px;
-    background: linear-gradient(90deg, #f59e42, #f97316, #ea580c);
+    background: linear-gradient(90deg, #f0f0f0, #ffffff, #e0e0e0);
     border-radius: 0 0 8px 8px;
     opacity: 0.7;
     transform: scaleX(0);
@@ -497,9 +506,22 @@
 }
 
 .feature-card:hover {
-    box-shadow: 0 8px 32px rgba(249, 115, 22, 0.4);
+    box-shadow: 0 8px 32px rgba(255, 255, 255, 0.4);
     transform: translateY(-4px) scale(1.025);
-    background: rgba(255, 255, 255, 0.15);
+}
+
+.feature-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: linear-gradient(90deg, #f0f0f0, #ffffff, #e0e0e0);
+    border-radius: 0 0 8px 8px;
+    opacity: 0.7;
+    transform: scaleX(0);
+    transition: transform 0.3s;
 }
 
 .feature-card:hover::before {
@@ -507,28 +529,28 @@
 }
 
 /* Laminator product image styling */
-.laminator-image {
+.luxor-image {
     margin-bottom: 2rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 1.2rem;
-    /* background: #f1f5f9; */
-    border-radius: 16px;
+    display: block;
     position: relative;
-    height: 220px;
     width: 100%;
-    /* box-shadow: 0 2px 12px rgba(30, 41, 59, 0.06); */
+    max-width: 100%;
+}
+
+.luxor-image img {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    object-fit: contain;
+    display: block !important;
 }
 
 .product-card-image {
-    width: 220px;
-    height: 170px;
-    object-fit: contain;
-    border-radius: 12px;
-    /* box-shadow: 0 2px 8px rgba(234, 88, 12, 0.07); */
-    filter: brightness(1.04) contrast(1.08);
-    background: rgba(255, 255, 255, 0.9);
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    object-fit: contain !important;
+    display: block !important;
 }
 
 .feature-card h3 {
@@ -539,14 +561,26 @@
     line-height: 1.3;
     letter-spacing: -0.01em;
     text-align: left;
+    width: 100%;
 }
 
 .feature-card h4 {
     font-size: 1.02rem;
-    color: #ea580c;
+    color: #ffffff;
     font-weight: 600;
     margin-bottom: 0.7rem;
     text-align: left;
+    width: 100%;
+}
+
+.feature-card p {
+    color: #d1d5db;
+    line-height: 1.7;
+    margin: 0;
+    font-size: 0.97rem;
+    font-weight: 400;
+    text-align: left;
+    width: 100%;
 }
 
 .feature-card p {
@@ -657,7 +691,7 @@
     }
 
     /* Mobile laminator image styles */
-    .laminator-image {
+    .luxor-image {
         margin-bottom: 1.5rem;
         padding: 0.8rem;
     }
@@ -701,7 +735,7 @@
         max-width: 200px;
     }
 
-    .laminator-image {
+    .luxor-image {
         margin-bottom: 1.8rem;
         padding: 0.9rem;
     }
@@ -754,7 +788,7 @@
         max-width: 150px !important;
     }
 
-    .laminator-image {
+    .luxor-image {
         margin-bottom: 1.2rem !important;
         padding: 0.7rem !important;
     }
@@ -796,7 +830,7 @@
         max-width: 130px !important;
     }
 
-    .laminator-image {
+    .luxor-image {
         margin-bottom: 1rem !important;
         padding: 0.6rem !important;
     }
@@ -848,7 +882,7 @@
         max-width: 250px;
     }
 
-    .laminator-image {
+    .luxor-image {
         margin-bottom: 2.5rem;
         padding: 1.2rem;
     }
