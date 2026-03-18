@@ -47,7 +47,7 @@ export default function Footer() {
                             <div className="footer-contact">
                                 <p>
                                     <strong>Address:</strong><br />
-                                    3M COMPOUND FIRST STREET WAREHOUSE 11 SANTA ROSA II MARILAO BULACAN
+                                    2115, 1014 Felix Huertas Rd, Santa Cruz, Manila, 1014 Metro Manila
                                 </p>
                                 <p>
                                     <strong>Mobile:</strong><br />
