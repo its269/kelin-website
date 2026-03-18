@@ -13,6 +13,7 @@ import Link from "next/link";
 import "./home.css";
 import "./bison-font.css";
 import "./montserrat-font.css";
+import "./arial-bold-font.css";
 
 // 🔧 SSG CODE PATTERN: Default export function component
 // This is the basic pattern for SSG in Next.js App Router
@@ -139,40 +140,62 @@ export default function Home() {
       <main className="home-container">
         <div className="marquee-container">
           <section className="hero-section">
-            {/* 🔧 SSG CODE PATTERN: Hardcoded static content */}
-            {/* These strings are known at build time = perfect for SSG */}
-            <div className="home-tagline-text">
-              <div className="tagline">
-                {/* <p className="kgs">KGS</p> */}
-                <h1 className="hero1-title">YOUR TRUSTED<br></br>LONG-TERM PRINTING SOLUTIONS PROVIDER</h1>
-              </div>
-              <div className="hero-image">
-                {/* <img src="/DTF UV Printer SF604-i3200 2ft. - High Res (1).png" alt="Kelin Graphics System Logo" className="kelin-logo-hero" /> */}
-                {/* <b>Powering high-quality output at any scale.</b><br></br>From your vision to powerful,
+            <div className="hero-section2">
+              {/* 🔧 SSG CODE PATTERN: Hardcoded static content */}
+              {/* These strings are known at build time = perfect for SSG */}
+              <div className="home-tagline-text">
+                <div className="tagline">
+                  {/* <p className="kgs">KGS</p> */}
+                  <h1 className="hero1-title">YOUR TRUSTED<br></br>LONG-TERM PRINTING SOLUTIONS PROVIDER</h1>
+                  <div className="button-categories">
+                    <a href="/cutting-machine" className="btns">
+                      <div className="btns-primary-cat">Cutting Machine</div>
+                    </a>
+                    <a href="/eco-solvent-printers" className="btns">
+                      <div className="btns-secondary-cat">Eco-Solvent<br></br>Printer Machine</div>
+                    </a>
+                    <a href="/solvent-printers" className="btns">
+                      <div className="btns-tertiary-cat">Solvent<br></br>Printer Machine</div>
+                    </a>
+                    <a href="/sublimation-dtf" className="btns">
+                      <div className="btns-quaternary-cat">Sublimation<br></br>Printer Machine</div>
+                    </a>
+                    <a href="/embroidery-knitting" className="btns">
+                      <div className="btns-quinary-cat">Embroidery<br></br>Knitting</div>
+                    </a>
+                  </div>
+                </div>
+                <div className="hero-image">
+                  {/* <img src="/DTF UV Printer SF604-i3200 2ft. - High Res (1).png" alt="Kelin Graphics System Logo" className="kelin-logo-hero" /> */}
+                  {/* <b>Powering high-quality output at any scale.</b><br></br>From your vision to powerful,
                 large-scale prints. */}
-                <Slideshow />
+                  <Slideshow />
+                  {/* <img src="/liyuxline.png" alt="Kelin Graphics System Logo" className="right-top-image" /> */}
+                </div>
               </div>
-            </div>
 
-            {/* 🔧 SSG CODE PATTERN: Static navigation links */}
-            {/* href values are hardcoded = pre-rendered in static HTML */}
-            <div className="hero-buttons">
-              <a href="/cutting-machine" className="btn">
-                <div className="btn-primary-cat">Cutting Machine</div>
+              {/* 🔧 SSG CODE PATTERN: Static navigation links */}
+              {/* href values are hardcoded = pre-rendered in static HTML */}
+              {/* <div className="hero-buttons">
+              <a href="/cutting-machine" className="btns">
+                <div className="btns-primary-cat">Cutting Machine</div>
               </a>
-              <a href="/eco-solvent-printers" className="btn">
-                <div className="btn-secondary-cat">Eco-Solvent<br></br>Printer Machine</div>
+              <a href="/eco-solvent-printers" className="btns">
+                <div className="btns-secondary-cat">Eco-Solvent<br></br>Printer Machine</div>
               </a>
-              <a href="/solvent-printers" className="btn">
-                <div className="btn-tertiary-cat">Solvent<br></br>Printer Machine</div>
+              <a href="/solvent-printers" className="btns">
+                <div className="btns-tertiary-cat">Solvent<br></br>Printer Machine</div>
               </a>
-              <a href="/sublimation-dtf" className="btn">
-                <div className="btn-quaternary-cat">Sublimation<br></br>Printer Machine</div>
+              <a href="/sublimation-dtf" className="btns">
+                <div className="btns-quaternary-cat">Sublimation<br></br>Printer Machine</div>
               </a>
-              <a href="/embroidery-knitting" className="btn">
-                <div className="btn-quinary-cat">Embroidery<br></br>Knitting</div>
+              <a href="/embroidery-knitting" className="btns">
+                <div className="btns-quinary-cat">Embroidery<br></br>Knitting</div>
               </a>
+            </div> */}
             </div>
+            <img src="/background-elements.svg" alt="Decorative Element" className="decorative-element-home bg-elements-home" />
+            <img src="/background-elements(2).svg" alt="Decorative Element 2" className="decorative-element-2-home bg-elements-home" />
           </section>
 
           <div className="marquee-logo">
@@ -194,66 +217,70 @@ export default function Home() {
           />
         </div>
         <section className="features-section-landing">
-          {/* 🔧 SSG CODE PATTERN: Static array rendering */}
-          {/* This grid is hardcoded, not from API = SSG compatible */}
-          <TextSection
-            label="LUXOR"
-            title={
-              <>
-                The perfect printing solution, tailored by you.<br className="desktop-break" />
+          <div className="luxor-components">
+            {/* 🔧 SSG CODE PATTERN: Static array rendering */}
+            {/* This grid is hardcoded, not from API = SSG compatible */}
+            <TextSection
+              label="LUXOR"
+              title={
+                <>
+                  The perfect printing solution, tailored by you.<br className="desktop-break" />
 
-              </>
-            }
-            description="Whether you need high-quality DTF printing, precise UV printing, or professional direct-to-film solutions, LUXOR delivers exceptional results for your business."
-            layout="reverse"
-          />
-          <div className="features-grid">
-            <Link href="/dtf-uv-printer-sf604-i3200" className="feature-card">
-              <div className="luxor-image">
-                <Image
-                  src="/Luxor-sf60-4.webp"
-                  alt="LUXOR SF60-4 DTF UV Printer"
-                  width={250}
-                  height={200}
-                  className="product-card-image"
-                  priority
-                />
-              </div>
-              {/* <h3>LUXOR SF60-4 | DTF UV PRINTER</h3> */}
-              <h4>ADVANCE W+CMYK+V PRINTING CAPABILITY</h4>
-              <p><b>Import THK Guide Rail</b><br></br>THK mute linear guide - stable, durable, and quiet.<br></br><br></br><b>Double chain Design</b><br></br>Ink Chain and Cable Chain separation, avoid signal disturb, ensure communicate Smoothly</p>
-            </Link>
-            <Link href="/dtf-uv-printer-sf303-f1080" className="feature-card">
-              <div className="luxor-image">
-                <Image
-                  src="/Luxor-UV.webp"
-                  alt="LUXOR SF30-3 DTF UV Printer"
-                  width={250}
-                  height={200}
-                  className="product-card-image"
-                  priority
-                />
-              </div>
-              {/*  <h3>LUXOR SF30-3 | DTF UV PRINTER </h3> */}
-              <h4>BRILLIANT COLOR PRINTING WITH VARNISH</h4>
-              <p><b>Air-cooled LED UV Lamp</b><br></br>30% Lower Energy Consumption.<br></br><br></br><b>CMYK + W + V Ink Printing</b><br></br>Original ink, printing bright, high degree of color reduction.</p>
-            </Link>
-            <Link href="/luxor-rtr-uv" className="feature-card">
-              <div className="luxor-image">
-                <Image
-                  src="/Luxor-sf30-3.webp"
-                  alt="LUXOR UV-A3 Flatbed Printer"
-                  width={250}
-                  height={200}
-                  className="product-card-image"
-                  priority
-                />
-              </div>
-              {/* <h3>LUXOR UV-A3 WITH CYLINDER AND RTR | FLATBED PRINTER</h3> */}
-              <h4>HIGH-FUNCTION DESIGN  SUPPORTING 4 APPLICATIONS</h4>
-              <p><b>High-Quality Printing</b><br></br>Epson i3200(8)-U1 printhead, 1200DPI for high-resolution output.<br></br><br></br><b>Intelligent Ink Supply</b><br></br>New ink tank with auto circulation and low ink alarm.</p>
-            </Link>
+                </>
+              }
+              description="Whether you need high-quality DTF printing, precise UV printing, or professional direct-to-film solutions, LUXOR delivers exceptional results for your business."
+              layout="reverse"
+            />
+            <div className="features-grid">
+              <Link href="/dtf-uv-printer-sf604-i3200" className="feature-card">
+                <div className="luxor-image">
+                  <Image
+                    src="/Luxor-sf60-4.webp"
+                    alt="LUXOR SF60-4 DTF UV Printer"
+                    width={250}
+                    height={200}
+                    className="product-card-image"
+                    priority
+                  />
+                </div>
+                {/* <h3>LUXOR SF60-4 | DTF UV PRINTER</h3> */}
+                <h4>ADVANCE W+CMYK+V PRINTING CAPABILITY</h4>
+                <p><b>Import THK Guide Rail</b><br></br>THK mute linear guide - stable, durable, and quiet.<br></br><br></br><b>Double chain Design</b><br></br>Ink Chain and Cable Chain separation, avoid signal disturb, ensure communicate Smoothly</p>
+              </Link>
+              <Link href="/dtf-uv-printer-sf303-f1080" className="feature-card">
+                <div className="luxor-image">
+                  <Image
+                    src="/Luxor-UV.webp"
+                    alt="LUXOR SF30-3 DTF UV Printer"
+                    width={250}
+                    height={200}
+                    className="product-card-image"
+                    priority
+                  />
+                </div>
+                {/*  <h3>LUXOR SF30-3 | DTF UV PRINTER </h3> */}
+                <h4>BRILLIANT COLOR PRINTING WITH VARNISH</h4>
+                <p><b>Air-cooled LED UV Lamp</b><br></br>30% Lower Energy Consumption.<br></br><br></br><b>CMYK + W + V Ink Printing</b><br></br>Original ink, printing bright, high degree of color reduction.</p>
+              </Link>
+              <Link href="/luxor-rtr-uv" className="feature-card">
+                <div className="luxor-image">
+                  <Image
+                    src="/Luxor-sf30-3.webp"
+                    alt="LUXOR UV-A3 Flatbed Printer"
+                    width={250}
+                    height={200}
+                    className="product-card-image"
+                    priority
+                  />
+                </div>
+                {/* <h3>LUXOR UV-A3 WITH CYLINDER AND RTR | FLATBED PRINTER</h3> */}
+                <h4>HIGH-FUNCTION DESIGN  SUPPORTING 4 APPLICATIONS</h4>
+                <p><b>High-Quality Printing</b><br></br>Epson i3200(8)-U1 printhead, 1200DPI for high-resolution output.<br></br><br></br><b>Intelligent Ink Supply</b><br></br>New ink tank with auto circulation and low ink alarm.</p>
+              </Link>
+            </div>
           </div>
+          <img src="/background-elements.svg" alt="LUXOR Background" className="luxor-background-elements luxor-bg-elements" />
+          <img src="/background-elements(2).svg" alt="LUXOR Background" className="luxor-background-elements2 luxor-bg-elements" />
         </section>
 
         {/* News & Events Section */}

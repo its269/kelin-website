@@ -40,36 +40,6 @@ export default function SublimationDTF() {
             link: '/kirin'
         },
         {
-            id: 'r2000-roller-sublimation',
-            name: 'R2000 Roller Type Sublimation Machine GS 1200',
-            image: '/sublimation_dtf/SUBL R2000 Roller Type Sublimation Machine GS 1200 (1).webp',
-            description: 'HIGH-PERFORMANCE ROLLER SUBLIMATION - Professional roller-type sublimation machine with GS 1200 technology for continuous heat transfer applications and large-scale production.',
-            specs: [
-                'Print Width: up to 1200mm',
-                'Speed: up to 120 sqm/hr',
-                'Temperature: 200°C max',
-                'Pressure: Automatic control'
-            ],
-            badge: 'Professional',
-            price: 'Contact us for more details',
-            link: '/r2000-roller'
-        },
-        {
-            id: 'dual-pneumatic-sublimation',
-            name: 'Dual Pneumatic Sublimation Machine 80cm x 100cm',
-            image: '/sublimation_dtf/SUBL Dual Pneumatic Sublimation Machine 80cm x 100cm (1).webp',
-            description: 'PRECISION DUAL PNEUMATIC SYSTEM - Advanced dual pneumatic sublimation press with large 80x100cm platen for oversized garments and professional applications.',
-            specs: [
-                'Platen Size: 80cm x 100cm',
-                'Dual Pneumatic: Yes',
-                'Temperature: Up to 220°C',
-                'Pressure: Adjustable'
-            ],
-            badge: 'Large Format',
-            price: 'Contact us for more details',
-            link: '/dual-pneumatic'
-        },
-        {
             id: 'smart-sublimation',
             name: 'Smart Sublimation',
             image: '/sublimation_dtf/SUBL Smart Sublimation (1).webp',

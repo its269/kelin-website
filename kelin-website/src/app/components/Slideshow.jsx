@@ -7,6 +7,7 @@ const images = [
     "/DTF UV Printer SF303-i3200 2ft (1).webp",
     "/DTF UV Printer SF604-i3200 2ft. - High Res (1).webp",
     "/LUXOR UV-A3 RTR.webp",
+    "/liyuxline.png",
 ];
 
 export default function Slideshow() {
@@ -22,14 +23,15 @@ export default function Slideshow() {
 
     return (
         <div className="slideshow">
-            {images.map((img, index) => (
+            {/* {images.map((img, index) => (
                 <div
                     key={index}
                     className={`slide ${index === current ? "active" : ""}`}
                 >
                     <img src={img} alt={`Slide ${index + 1}`} />
                 </div>
-            ))}
+            ))} */}
+            <img src="/liyuxline.png" alt="Kelin Graphics System Logo" className="right-top-image" />
         </div>
     );
 }

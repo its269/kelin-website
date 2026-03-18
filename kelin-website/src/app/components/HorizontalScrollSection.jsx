@@ -71,31 +71,36 @@ export default function HorizontalScrollSection() {
             title: "Innovation",
             subtitle: "Cutting-Edge Technology",
             description: "Advanced printing solutions that push the boundaries of what's possible in modern manufacturing.",
-            icon: "/innovation-icon.png"
+            icon: "/innovation-icon.png",
+            image: "/INNOVATION.png"
         },
         {
             title: "Quality",
             subtitle: "Premium Materials",
             description: "Industry-leading materials and equipment from trusted global manufacturers and suppliers.",
-            icon: "/quality-icon.png"
+            icon: "/quality-icon.png",
+            image: "/QUALITY.png"
         },
         {
             title: "Support",
             subtitle: "Expert Assistance",
             description: "Professional technical support and comprehensive training for all your printing requirements.",
-            icon: "/support-icon.png"
+            icon: "/support-icon.png",
+            image: "/SUPPORT.png"
         },
         {
             title: "Solutions",
             subtitle: "Custom Approach",
             description: "Tailored printing solutions designed to meet your specific business needs and objectives.",
-            icon: "/solutions-icon.png"
+            icon: "/solutions-icon.png",
+            image: "/SOLUTIONS.png"
         },
         {
             title: "Scale",
             subtitle: "Enterprise Ready",
             description: "Scalable solutions that grow with your business, from small projects to large-scale operations.",
-            icon: "/scale-icon.png"
+            icon: "/scale-icon.png",
+            image: "/SCALE.png"
         },
     ];
 
@@ -110,19 +115,33 @@ export default function HorizontalScrollSection() {
                 {sections.map((section, index) => (
                     <div key={index} ref={addToRefs} className="scroll-section">
                         <div className="section-content">
-                            <div className="section-icon">
+                            {/* Desktop version - Image only */}
+                            <div className="desktop-content">
                                 <Image
-                                    src={section.icon}
-                                    alt={`${section.title} icon`}
-                                    width={48}
-                                    height={48}
+                                    src={section.image}
+                                    alt={section.title}
+                                    width={1000}
+                                    height={1000}
                                     priority
                                 />
                             </div>
-                            <h2 className="section-title">{section.title}</h2>
-                            <h3 className="section-subtitle">{section.subtitle}</h3>
-                            <p className="section-description">{section.description}</p>
-                            <div className="section-number">0{index + 1}</div>
+
+                            {/* Mobile version - Original content */}
+                            <div className="mobile-content">
+                                <div className="section-icon">
+                                    <Image
+                                        src={section.icon}
+                                        alt={`${section.title} icon`}
+                                        width={48}
+                                        height={48}
+                                        priority
+                                    />
+                                </div>
+                                <h2 className="section-title">{section.title}</h2>
+                                <h3 className="section-subtitle">{section.subtitle}</h3>
+                                <p className="section-description">{section.description}</p>
+                                <div className="section-number">0{index + 1}</div>
+                            </div>
                         </div>
                     </div>
                 ))}

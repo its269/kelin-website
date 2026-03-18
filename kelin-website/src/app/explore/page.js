@@ -1,19 +1,41 @@
+'use client';
+
+import { useState, useEffect } from 'react';
 import Header from '../components/Header';
 import Link from 'next/link';
 import './explore.css';
 
-export const metadata = {
-  title: 'Explore Products - Kelin Graphics System | Complete Printing Solutions',
-  description: 'Explore our complete range of printing solutions including inks, materials, machines, accessories, and promotional displays.',
-  keywords: 'printing solutions, explore products, printing equipment, inks, materials, accessories, promotional display',
-  openGraph: {
-    title: 'Explore Products - Kelin Graphics System',
-    description: 'Complete range of professional printing solutions and equipment',
-    type: 'website',
-  },
-};
-
 export default function Explore() {
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  const sliderImages = [
+    {
+      src: '/slider/Carousel1.png',
+      alt: 'Printing Solutions',
+      title: 'Built for Every Stage of Printing',
+      description: 'Discover an integrated range of professional printing products, featuring premium-grade inks, reliable materials, innovative machinery, and productivity-driven accessories.',
+      buttonLink: '/products'
+    },
+    {
+      src: '/slider/Carousel2.png',
+      alt: 'Materials',
+      title: 'Precision Engineering for Perfect Results',
+      description: 'Advanced machinery designed for professional channel letter fabrication, delivering consistent quality and efficiency for your signage business.',
+      buttonLink: '/machine'
+    }
+  ];
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % sliderImages.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, [sliderImages.length]);
+
+  const goToSlide = (index) => {
+    setCurrentSlide(index);
+  };
+
   const productCategories = [
     {
       id: 'inks',
@@ -91,24 +113,37 @@ export default function Explore() {
     <div>
       <Header />
       <main className="explore-main">
-        {/* Hero Section */}
-        <section className="explore-hero">
-          <div className="hero-content">
-            <h1 className="explore-hero-title">Built for Every Stage of Printing</h1>
-            <p className="hero-subtitle">
-              Discover an integrated range of professional printing products, featuring premium-grade inks, reliable materials, innovative machinery, and productivity-driven accessories.
-            </p>
-          </div>
-          <div className="hero-visual">
-            <div className="floating-cards">
-              <div className="floating-card card-1">
-                <img src="/3D Printer (1).webp" alt="Printing Solutions" />
-              </div>
-              <div className="floating-card card-2">
-                <img src="/CMA AL160 Multi-function Channel Letter Bending  Machine (1).png" alt="Materials" />
-              </div>
-              <div className="floating-card card-3">
-                <img src="/Machine V2 (1).png" alt="Equipment" />
+        {/* Hero Section with Image Slider */}
+        <section className="explore-hero-slider">
+          <div className="hero-slider-wrapper">
+            <div className="slider-track" style={{ transform: `translateX(-${currentSlide * 100}%)` }}>
+              {sliderImages.map((image, index) => (
+                <div key={index} className="hero-slide">
+                  <img src={image.src} alt={image.alt} />
+                  <div className="slide-overlay"></div>
+                  <div className="slide-text-overlay">
+                    <div className="slide-text-content">
+                      <h1 className="slide-title">{image.title}</h1>
+                      <p className="slide-description">{image.description}</p>
+                    </div>
+                    <Link href={image.buttonLink} className="slide-explore-btn">
+                      EXPLORE NOW
+                    </Link>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div className="slider-controls-bottom">
+              <div className="slider-dots">
+                {sliderImages.map((_, index) => (
+                  <button
+                    key={index}
+                    className={`slider-dot ${currentSlide === index ? 'active' : ''}`}
+                    onClick={() => goToSlide(index)}
+                    aria-label={`Go to slide ${index + 1}`}
+                  />
+                ))}
               </div>
             </div>
           </div>
@@ -135,47 +170,53 @@ export default function Explore() {
         </section>
 
         {/* Product Categories */}
-        <section className="product-categories">
-          <div className="section-header">
-            <h2>Product Categories</h2>
-            <p>Comprehensive solutions for all your printing needs</p>
-          </div>
+        <div className="explore-main-content">
+          <section className="product-categories">
+            <div className="section-header">
+              <h2 className="categories-h2">Product Categories</h2>
+              <p>Comprehensive solutions for all your printing needs</p>
+            </div>
 
-          <div className="categories-grid">
-            {productCategories.map((category, index) => (
-              <div key={category.id} className={`category-showcase ${index % 2 === 1 ? 'reversed' : ''}`}>
-                <div className="category-content">
-                  <div className="category-info">
-                    <div className="category-header">
-                      <span className="category-icon">
-                        <img src={category.icon} alt={category.name} />
-                      </span>
-                      <h3 className="category-name">{category.name}</h3>
+            <div className="categories-grid">
+              {productCategories.map((category, index) => (
+                <div key={category.id} className={`category-showcase ${index % 2 === 1 ? 'reversed' : ''}`}>
+                  <div className="category-content">
+                    <div className="category-info">
+                      <div className="category-header">
+                        <span className="category-icon">
+                          <img src={category.icon} alt={category.name} />
+                        </span>
+                        <h3 className="category-name">{category.name}</h3>
+                      </div>
+                      <p className="category-description">{category.description}</p>
+                      <div className="category-products">
+                        {category.products.map((product, idx) => (
+                          <div key={idx} className="product-item">
+                            <h4>{product.name}</h4>
+                            <p>{product.desc}</p>
+                          </div>
+                        ))}
+                      </div>
+                      <Link href={category.href} className="category-link">
+                        Explore {category.name} →
+                      </Link>
                     </div>
-                    <p className="category-description">{category.description}</p>
-                    <div className="category-products">
-                      {category.products.map((product, idx) => (
-                        <div key={idx} className="product-item">
-                          <h4>{product.name}</h4>
-                          <p>{product.desc}</p>
-                        </div>
-                      ))}
-                    </div>
-                    <Link href={category.href} className="category-link">
-                      Explore {category.name} →
-                    </Link>
-                  </div>
-                  <div className="category-visual">
-                    <img src={category.image} alt={category.name} />
-                    <div className="visual-overlay">
-                      <span className="product-badge">{category.productCount} Products</span>
+                    <div className="category-visual">
+                      <img src={category.image} alt={category.name} />
+                      <div className="visual-overlay">
+                        <span className="product-badge">{category.productCount} Products</span>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            ))}
-          </div>
-        </section>
+              ))}
+            </div>
+            {/* <img src="/background-elements.svg" alt="Decorative Element" className="decorative-element bg-elements" />
+          <img src="/background-elements(2).svg" alt="Decorative Element 2" className="decorative-element-2 bg-elements" /> */}
+          </section>
+          <img src="/background-elements.svg" alt="Decorative Element" className="decorative-element bg-elements" />
+          <img src="/background-elements(2).svg" alt="Decorative Element 2" className="decorative-element-2 bg-elements" />
+        </div>
       </main>
     </div>
   );
