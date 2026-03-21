@@ -433,6 +433,7 @@
     display: flex;
     gap: 24px;
     width: max-content;
+    /* background-color: red; */
 }
 
 .smart-rj24-application-image-item {

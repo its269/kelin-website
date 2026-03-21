@@ -1,37 +1,162 @@
 "use client";
 import Header from '../components/Header';
 import Link from 'next/link';
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import './xline.css';
 
 export default function XlineEcoSolventPage() {
     const [inquiryModalOpen, setInquiryModalOpen] = useState(false);
     const [selectedImage, setSelectedImage] = useState('/eco-solvent-machines/Apollo.webp');
     const scrollRef = useRef(null);
-    const [isDragging, setIsDragging] = useState(false);
-    const [startX, setStartX] = useState(0);
-    const [scrollLeft, setScrollLeft] = useState(0);
+    const isDraggingRef = useRef(false);
+    const startXRef = useRef(0);
+    const scrollLeftRef = useRef(0);
+    const animationFrameRef = useRef(null);
+    const lastTimestampRef = useRef(0);
+
+    const applications = [
+        { image: '/application/eco-sol-two-application.png', label: 'Large Format Signage' },
+        { image: '/application/eco-sol-two-application(2).png', label: 'Outdoor Banners' },
+        { image: '/application/eco-sol-two-application(3).png', label: 'Vehicle Wraps' },
+        { image: '/application/eco-sol-two-application(4).png', label: 'Billboard Advertising' }
+    ];
+
+    const loopedApplications = [...applications, ...applications, ...applications];
+
+    const normalizeInfiniteScroll = () => {
+        const scrollElement = scrollRef.current;
+        if (!scrollElement) {
+            return;
+        }
+
+        const segmentWidth = scrollElement.scrollWidth / 3;
+        const boundaryOffset = 4;
+
+        if (scrollElement.scrollLeft <= boundaryOffset) {
+            scrollElement.scrollLeft += segmentWidth;
+        } else if (scrollElement.scrollLeft >= segmentWidth * 2 - boundaryOffset) {
+            scrollElement.scrollLeft -= segmentWidth;
+        }
+    };
+
+    useEffect(() => {
+        const scrollElement = scrollRef.current;
+        if (!scrollElement) {
+            return;
+        }
+
+        const initializeLoopPosition = () => {
+            const segmentWidth = scrollElement.scrollWidth / 3;
+            scrollElement.scrollLeft = segmentWidth;
+        };
+
+        initializeLoopPosition();
+        window.addEventListener('resize', initializeLoopPosition);
+
+        return () => {
+            window.removeEventListener('resize', initializeLoopPosition);
+        };
+    }, []);
+
+    useEffect(() => {
+        const scrollElement = scrollRef.current;
+        if (!scrollElement) {
+            return;
+        }
+
+        const speedPixelsPerMs = 0.05;
+
+        const animate = (timestamp) => {
+            if (lastTimestampRef.current === 0) {
+                lastTimestampRef.current = timestamp;
+            }
+
+            const delta = timestamp - lastTimestampRef.current;
+            lastTimestampRef.current = timestamp;
+
+            if (!isDraggingRef.current && scrollRef.current) {
+                scrollRef.current.scrollLeft += delta * speedPixelsPerMs;
+                normalizeInfiniteScroll();
+            }
+
+            animationFrameRef.current = window.requestAnimationFrame(animate);
+        };
+
+        animationFrameRef.current = window.requestAnimationFrame(animate);
+
+        return () => {
+            if (animationFrameRef.current) {
+                window.cancelAnimationFrame(animationFrameRef.current);
+            }
+            lastTimestampRef.current = 0;
+        };
+    }, []);
 
     const handleMouseDown = (e) => {
-        setIsDragging(true);
-        setStartX(e.pageX - scrollRef.current.offsetLeft);
-        setScrollLeft(scrollRef.current.scrollLeft);
+        const scrollElement = scrollRef.current;
+        if (!scrollElement) {
+            return;
+        }
+
+        isDraggingRef.current = true;
+        startXRef.current = e.pageX - scrollElement.offsetLeft;
+        scrollLeftRef.current = scrollElement.scrollLeft;
     };
 
     const handleMouseMove = (e) => {
-        if (!isDragging) return;
+        if (!isDraggingRef.current) return;
+
+        const scrollElement = scrollRef.current;
+        if (!scrollElement) {
+            return;
+        }
+
         e.preventDefault();
-        const x = e.pageX - scrollRef.current.offsetLeft;
-        const walk = (x - startX) * 2;
-        scrollRef.current.scrollLeft = scrollLeft - walk;
+        const x = e.pageX - scrollElement.offsetLeft;
+        const walk = (x - startXRef.current) * 2;
+        scrollElement.scrollLeft = scrollLeftRef.current - walk;
+        normalizeInfiniteScroll();
     };
 
     const handleMouseUp = () => {
-        setIsDragging(false);
+        isDraggingRef.current = false;
     };
 
     const handleMouseLeave = () => {
-        setIsDragging(false);
+        isDraggingRef.current = false;
+    };
+
+    const handleTouchStart = (e) => {
+        const scrollElement = scrollRef.current;
+        if (!scrollElement) {
+            return;
+        }
+
+        const touchX = e.touches[0].pageX;
+        isDraggingRef.current = true;
+        startXRef.current = touchX - scrollElement.offsetLeft;
+        scrollLeftRef.current = scrollElement.scrollLeft;
+    };
+
+    const handleTouchMove = (e) => {
+        if (!isDraggingRef.current) {
+            return;
+        }
+
+        const scrollElement = scrollRef.current;
+        if (!scrollElement) {
+            return;
+        }
+
+        const touchX = e.touches[0].pageX;
+        const x = touchX - scrollElement.offsetLeft;
+        const walk = (x - startXRef.current) * 2;
+        scrollElement.scrollLeft = scrollLeftRef.current - walk;
+        normalizeInfiniteScroll();
+    };
+
+    const handleTouchEnd = () => {
+        isDraggingRef.current = false;
     };
 
     const machineDetails = {
@@ -259,40 +384,17 @@ export default function XlineEcoSolventPage() {
                             onMouseMove={handleMouseMove}
                             onMouseUp={handleMouseUp}
                             onMouseLeave={handleMouseLeave}
+                            onTouchStart={handleTouchStart}
+                            onTouchMove={handleTouchMove}
+                            onTouchEnd={handleTouchEnd}
+                            onScroll={normalizeInfiniteScroll}
                         >
                             <div className="xline-applications-image-grid">
-                                <div className="xline-application-image-item">
-                                    <img src="/application/_0000_6.jpg" alt="Large Format Signage" />
-                                    <p>Large Format Signage</p>
-                                </div>
-                                <div className="xline-application-image-item">
-                                    <img src="/application/_0001_5.jpg" alt="Outdoor Banners" />
-                                    <p>Outdoor Banners</p>
-                                </div>
-                                <div className="xline-application-image-item">
-                                    <img src="/application/_0002_4.jpg" alt="Vehicle Wraps" />
-                                    <p>Vehicle Wraps</p>
-                                </div>
-                                <div className="xline-application-image-item">
-                                    <img src="/application/_0003_3.jpg" alt="Billboard Advertising" />
-                                    <p>Billboard Advertising</p>
-                                </div>
-                                <div className="xline-application-image-item">
-                                    <img src="/application/_0004_2.jpg" alt="Exhibition Graphics" />
-                                    <p>Exhibition Graphics</p>
-                                </div>
-                                <div className="xline-application-image-item">
-                                    <img src="/application/_0005_1.jpg" alt="Retail Displays" />
-                                    <p>Retail Displays</p>
-                                </div>
-                                <div className="xline-application-image-item">
-                                    <img src="/application/_0000_6.jpg" alt="Architectural Graphics" />
-                                    <p>Architectural Graphics</p>
-                                </div>
-                                <div className="xline-application-image-item">
-                                    <img src="/application/_0001_5.jpg" alt="Textile Printing" />
-                                    <p>Textile Printing</p>
-                                </div>
+                                {loopedApplications.map((application, index) => (
+                                    <div key={`${application.label}-${index}`} className="xline-application-image-item">
+                                        <img src={application.image} alt={application.label} />
+                                    </div>
+                                ))}
                             </div>
                         </div>
                     </div>

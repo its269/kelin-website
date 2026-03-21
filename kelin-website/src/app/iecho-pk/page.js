@@ -1,37 +1,167 @@
 "use client";
 import Header from '../components/Header';
 import Link from 'next/link';
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import './iecho-pk.css';
 
 export default function IEchoPK() {
     const [inquiryModalOpen, setInquiryModalOpen] = useState(false);
     const [selectedImage, setSelectedImage] = useState('/cutting-machines/PK1209 (1).webp');
     const scrollRef = useRef(null);
-    const [isDragging, setIsDragging] = useState(false);
-    const [startX, setStartX] = useState(0);
-    const [scrollLeft, setScrollLeft] = useState(0);
+    const isDraggingRef = useRef(false);
+    const startXRef = useRef(0);
+    const scrollLeftRef = useRef(0);
+    const animationFrameRef = useRef(null);
+    const lastTimestampRef = useRef(0);
+
+    const applicationItems = [
+        { image: '/application/pk-application.png', label: 'KT Board' },
+        { image: '/application/pk-application(2).png', label: 'PP Paper' },
+        { image: '/application/pk-application(3).png', label: 'Sticker & Vinyl' },
+        { image: '/application/pk-application(4).png', label: 'Foam Board' },
+        { image: '/application/pk-application(5).png', label: 'Plastic Sheet' },
+        { image: '/application/pk-application(6).png', label: 'Magnetic Sticker' },
+        { image: '/application/pk-application(7).png', label: 'Corrugated Board' }
+    ];
+
+    const loopedApplicationItems = [...applicationItems, ...applicationItems, ...applicationItems];
+
+    const normalizeInfiniteScroll = () => {
+        const scrollElement = scrollRef.current;
+        if (!scrollElement) {
+            return;
+        }
+
+        const segmentWidth = scrollElement.scrollWidth / 3;
+        const boundaryOffset = 4;
+
+        if (scrollElement.scrollLeft <= boundaryOffset) {
+            scrollElement.scrollLeft += segmentWidth;
+        } else if (scrollElement.scrollLeft >= segmentWidth * 2 - boundaryOffset) {
+            scrollElement.scrollLeft -= segmentWidth;
+        }
+    };
+
+    useEffect(() => {
+        const scrollElement = scrollRef.current;
+        if (!scrollElement) {
+            return;
+        }
+
+        const initializeLoopPosition = () => {
+            const segmentWidth = scrollElement.scrollWidth / 3;
+            scrollElement.scrollLeft = segmentWidth;
+        };
+
+        initializeLoopPosition();
+        window.addEventListener('resize', initializeLoopPosition);
+
+        return () => {
+            window.removeEventListener('resize', initializeLoopPosition);
+        };
+    }, []);
+
+    useEffect(() => {
+        const scrollElement = scrollRef.current;
+        if (!scrollElement) {
+            return;
+        }
+
+        const speedPixelsPerMs = 0.05;
+
+        const animate = (timestamp) => {
+            if (lastTimestampRef.current === 0) {
+                lastTimestampRef.current = timestamp;
+            }
+
+            const delta = timestamp - lastTimestampRef.current;
+            lastTimestampRef.current = timestamp;
+
+            if (!isDraggingRef.current && scrollRef.current) {
+                scrollRef.current.scrollLeft += delta * speedPixelsPerMs;
+                normalizeInfiniteScroll();
+            }
+
+            animationFrameRef.current = window.requestAnimationFrame(animate);
+        };
+
+        animationFrameRef.current = window.requestAnimationFrame(animate);
+
+        return () => {
+            if (animationFrameRef.current) {
+                window.cancelAnimationFrame(animationFrameRef.current);
+            }
+            lastTimestampRef.current = 0;
+        };
+    }, []);
 
     const handleMouseDown = (e) => {
-        setIsDragging(true);
-        setStartX(e.pageX - scrollRef.current.offsetLeft);
-        setScrollLeft(scrollRef.current.scrollLeft);
+        const scrollElement = scrollRef.current;
+        if (!scrollElement) {
+            return;
+        }
+
+        isDraggingRef.current = true;
+        startXRef.current = e.pageX - scrollElement.offsetLeft;
+        scrollLeftRef.current = scrollElement.scrollLeft;
     };
 
     const handleMouseMove = (e) => {
-        if (!isDragging) return;
+        if (!isDraggingRef.current) {
+            return;
+        }
+
+        const scrollElement = scrollRef.current;
+        if (!scrollElement) {
+            return;
+        }
+
         e.preventDefault();
-        const x = e.pageX - scrollRef.current.offsetLeft;
-        const walk = (x - startX) * 2;
-        scrollRef.current.scrollLeft = scrollLeft - walk;
+        const x = e.pageX - scrollElement.offsetLeft;
+        const walk = (x - startXRef.current) * 2;
+        scrollElement.scrollLeft = scrollLeftRef.current - walk;
+        normalizeInfiniteScroll();
     };
 
     const handleMouseUp = () => {
-        setIsDragging(false);
+        isDraggingRef.current = false;
     };
 
     const handleMouseLeave = () => {
-        setIsDragging(false);
+        isDraggingRef.current = false;
+    };
+
+    const handleTouchStart = (e) => {
+        const scrollElement = scrollRef.current;
+        if (!scrollElement) {
+            return;
+        }
+
+        const touchX = e.touches[0].pageX;
+        isDraggingRef.current = true;
+        startXRef.current = touchX - scrollElement.offsetLeft;
+        scrollLeftRef.current = scrollElement.scrollLeft;
+    };
+
+    const handleTouchMove = (e) => {
+        if (!isDraggingRef.current) {
+            return;
+        }
+
+        const scrollElement = scrollRef.current;
+        if (!scrollElement) {
+            return;
+        }
+
+        const touchX = e.touches[0].pageX;
+        const x = touchX - scrollElement.offsetLeft;
+        const walk = (x - startXRef.current) * 2;
+        scrollElement.scrollLeft = scrollLeftRef.current - walk;
+        normalizeInfiniteScroll();
+    };
+
+    const handleTouchEnd = () => {
+        isDraggingRef.current = false;
     };
 
     const machineDetails = {
@@ -269,37 +399,19 @@ export default function IEchoPK() {
                             onMouseMove={handleMouseMove}
                             onMouseUp={handleMouseUp}
                             onMouseLeave={handleMouseLeave}
+                            onTouchStart={handleTouchStart}
+                            onTouchMove={handleTouchMove}
+                            onTouchEnd={handleTouchEnd}
+                            onScroll={normalizeInfiniteScroll}
                         >
                             <div className="iecho-pk-applications-image-grid">
-                                <div className="iecho-pk-application-image-item">
-                                    <img src="/application/_0000_6.jpg" alt="Sample Making for Signs Industry" />
-                                    <p>Sample Making for Signs Industry</p>
-                                </div>
-                                <div className="iecho-pk-application-image-item">
-                                    <img src="/application/_0001_5.jpg" alt="Short-Run Customized Production" />
-                                    <p>Short-Run Customized Production</p>
-                                </div>
-                                <div className="iecho-pk-application-image-item">
-                                    <img src="/application/_0002_4.jpg" alt="Printing Industry Applications" />
-                                    <p>Printing Industry Applications</p>
-                                </div>
-                                <div className="iecho-pk-application-image-item">
-                                    <img src="/application/_0003_3.jpg" alt="Packaging Industry Processing" />
-                                    <p>Packaging Industry Processing</p>
-                                </div>
-                                <div className="iecho-pk-application-image-item">
-                                    <img src="/application/_0004_2.jpg" alt="Through Cutting & Half Cutting" />
-                                    <p>Through Cutting & Half Cutting</p>
-                                </div>
-                                <div className="iecho-pk-application-image-item">
-                                    <img src="/application/_0005_1.jpg" alt="Creasing & Marking Operations" />
-                                    <p>Creasing & Marking Operations</p>
-                                </div>
-                                <div className="iecho-pk-application-image-item">
-                                    <img src="/application/_0000_6.jpg" alt="Registration Cutting" />
-                                    <p>Registration Cutting</p>
-                                </div>
-                                <div className="iecho-pk-application-image-item">
+                                {loopedApplicationItems.map((item, index) => (
+                                    <div key={`${item.label}-${index}`} className="iecho-pk-application-image-item">
+                                        <img src={item.image} alt={item.label} />
+                                        <p>{item.label}</p>
+                                    </div>
+                                ))}
+                                {/* <div className="iecho-pk-application-image-item">
                                     <img src="/application/_0001_5.jpg" alt="Labels & Tags Production" />
                                     <p>Labels & Tags Production</p>
                                 </div>
@@ -310,7 +422,7 @@ export default function IEchoPK() {
                                 <div className="iecho-pk-application-image-item">
                                     <img src="/application/_0003_3.jpg" alt="Roll Materials Processing" />
                                     <p>Roll Materials Processing</p>
-                                </div>
+                                </div> */}
                             </div>
                         </div>
                     </div>
