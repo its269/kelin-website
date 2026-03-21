@@ -264,7 +264,7 @@ export default function PromotionalDisplayPage() {
 
               <div className="materials-slideshow-container">
                 <img
-                  src={selectedProduct.images[currentImageIndex]}
+                  src="/dummy-image-square.jpg"
                   alt={selectedProduct.name}
                   className="materials-slideshow-image"
                 />

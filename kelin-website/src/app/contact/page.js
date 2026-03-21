@@ -181,7 +181,7 @@ export default function Contact() {
                             </div>
 
                             {/* Contact Form */}
-                            <div className="contact-form-container">
+                            <div className="contact-form-container" id="inquiry-form">
                                 <h2>Send us a Message</h2>
                                 <p>Fill out the form below and we'll get back to you within 24 hours.</p>
 

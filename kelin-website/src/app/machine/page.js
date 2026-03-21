@@ -5,12 +5,12 @@ import '../products/products.css';
 export default function Machine() {
     const machines = [
         {
-            id: 'printers',
-            name: 'Digital Printers',
-            description: 'High-performance digital printers for large format and specialty applications with superior print quality.',
-            image: '/se.webp',
-            features: ['Large Format', 'High Resolution', 'Multiple Media'],
-            href: '/printers',
+            id: 'eco-solvent-printers',
+            name: 'Eco Solvent Printers',
+            description: 'High-performance eco-solvent printers for durable indoor and outdoor graphics with vibrant color output.',
+            image: '/dummy-image-square.jpg',
+            features: ['Outdoor Durable', 'Vibrant Colors', 'Large Format'],
+            href: '/eco-solvent-printers',
             icon: (
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                     <polyline points="6,9 6,2 18,2 18,9" />
@@ -20,12 +20,27 @@ export default function Machine() {
             )
         },
         {
-            id: 'cutters',
+            id: 'solvent-printers',
+            name: 'Solvent Printers',
+            description: 'Industrial solvent printing solutions for high-volume production and long-lasting outdoor applications.',
+            image: '/dummy-image-square.jpg',
+            features: ['Industrial Output', 'High Speed', 'Weather Resistant'],
+            href: '/solvent-printers',
+            icon: (
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <polyline points="6,9 6,2 18,2 18,9" />
+                    <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2" />
+                    <rect x="6" y="14" width="12" height="8" />
+                </svg>
+            )
+        },
+        {
+            id: 'cutting-machine',
             name: 'Cutting Machines',
             description: 'Precision cutting machines for vinyl, paper, and various materials with computer-controlled accuracy.',
-            image: '/se.webp',
+            image: '/dummy-image-square.jpg',
             features: ['Precision Cutting', 'Multi-Material', 'Computer Control'],
-            href: '/cutters',
+            href: '/cutting-machine',
             icon: (
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                     <circle cx="6" cy="6" r="3" />
@@ -37,11 +52,52 @@ export default function Machine() {
             )
         },
         {
-            id: 'laminators',
-            name: 'Laminating Equipment',
-            description: 'Professional laminating machines for document protection, enhancement, and finishing applications.',
-            image: '/se.webp',
-            features: ['Hot & Cold Lamination', 'Variable Speed', 'Professional Grade'],
+            id: 'sublimation-dtf',
+            name: 'Sublimation and DTF',
+            description: 'Specialized sublimation and DTF printing systems for textile transfer, apparel, and custom product production.',
+            image: '/dummy-image-square.jpg',
+            features: ['Textile Transfer', 'High Color Accuracy', 'Production Ready'],
+            href: '/sublimation-dtf',
+            icon: (
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M14 14.76V3.5a2.5 2.5 0 0 0-5 0v11.26a4.5 4.5 0 1 0 5 0z" />
+                </svg>
+            )
+        },
+        {
+            id: 'uv-printers',
+            name: 'UV Printers',
+            description: 'UV printing machines for rigid and flexible media with instant curing and high-detail output.',
+            image: '/dummy-image-square.jpg',
+            features: ['Instant Curing', 'Rigid Media', 'Detail Precision'],
+            href: '/uv-printers',
+            icon: (
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <polyline points="6,9 6,2 18,2 18,9" />
+                    <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2" />
+                    <rect x="6" y="14" width="12" height="8" />
+                </svg>
+            )
+        },
+        {
+            id: 'heatpress',
+            name: 'Heatpress',
+            description: 'Heatpress machines for transfer printing, sublimation workflow, and custom merchandise production.',
+            image: '/dummy-image-square.jpg',
+            features: ['Even Pressure', 'Temperature Control', 'Transfer Ready'],
+            href: '/heatpress',
+            icon: (
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M14 14.76V3.5a2.5 2.5 0 0 0-5 0v11.26a4.5 4.5 0 1 0 5 0z" />
+                </svg>
+            )
+        },
+        {
+            id: 'laminator',
+            name: 'Laminator',
+            description: 'Laminator solutions for finishing, protection, and improved print durability across applications.',
+            image: '/dummy-image-square.jpg',
+            features: ['Hot/Cold Options', 'Smooth Finish', 'Protection Layer'],
             href: '/laminator',
             icon: (
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -53,15 +109,51 @@ export default function Machine() {
             )
         },
         {
-            id: 'heat-press',
-            name: 'Heat Press Machines',
-            description: 'Heat transfer machines for textile printing, sublimation, and promotional product customization.',
-            image: '/se.webp',
-            features: ['Digital Control', 'Even Pressure', 'Multi-Application'],
-            href: '/heat-press',
+            id: 'laser-machine',
+            name: 'Laser Machines',
+            description: 'Laser cutting and engraving systems for precise fabrication and material processing.',
+            image: '/dummy-image-square.jpg',
+            features: ['Precision Laser', 'Fast Processing', 'Multi-Material'],
+            href: '/laser-machine',
             icon: (
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                    <path d="M14 14.76V3.5a2.5 2.5 0 0 0-5 0v11.26a4.5 4.5 0 1 0 5 0z" />
+                    <line x1="12" y1="2" x2="12" y2="8" />
+                    <line x1="8" y1="14" x2="16" y2="14" />
+                    <line x1="10" y1="18" x2="14" y2="18" />
+                    <path d="M5 22h14" />
+                    <path d="M7 10h10v10H7z" />
+                </svg>
+            )
+        },
+        {
+            id: 'embroidery-knitting',
+            name: 'Embroidery and Knitting',
+            description: 'Embroidery and knitting machines for automated textile decoration and garment production.',
+            image: '/dummy-image-square.jpg',
+            features: ['Automated Stitching', 'Textile Ready', 'Production Efficiency'],
+            href: '/embroidery-knitting',
+            icon: (
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M4 7h16" />
+                    <path d="M4 12h16" />
+                    <path d="M4 17h16" />
+                    <circle cx="8" cy="7" r="1" />
+                    <circle cx="12" cy="12" r="1" />
+                    <circle cx="16" cy="17" r="1" />
+                </svg>
+            )
+        },
+        {
+            id: '3d-printer',
+            name: '3D Printer',
+            description: '3D printer solutions for rapid prototyping, custom parts, and creative production workflows.',
+            image: '/dummy-image-square.jpg',
+            features: ['Rapid Prototyping', 'Custom Parts', 'Precision Build'],
+            href: '/3d-printer',
+            icon: (
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <rect x="4" y="4" width="16" height="16" rx="2" />
+                    <path d="M8 8h8v8H8z" />
                 </svg>
             )
         }
@@ -80,7 +172,7 @@ export default function Machine() {
                     </div>
                     <div className="header-stats">
                         <div className="stat">
-                            <span className="stat-number">4</span>
+                            <span className="stat-number">10</span>
                             <span className="stat-label">Machine Types</span>
                         </div>
                         <div className="stat">

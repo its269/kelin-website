@@ -1222,7 +1222,7 @@ export default function Inks() {
               <div className="inks-lightbox-content">
                 <div className="inks-lightbox-image">
                   <Image
-                    src={selectedProduct.image || '/KELIN-LOGO-01.png'}
+                    src="/dummy-image-square.jpg"
                     alt={selectedProduct.name}
                     width={300}
                     height={300}

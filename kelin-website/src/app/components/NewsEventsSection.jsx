@@ -111,7 +111,7 @@ export default function NewsEventsSection() {
                         <div key={event.id} className="news-event-card">
                             <div className="event-image-container">
                                 <Image
-                                    src={event.image}
+                                    src="/dummy-image-square.jpg"
                                     alt={event.title}
                                     width={300}
                                     height={200}
@@ -168,7 +168,7 @@ export default function NewsEventsSection() {
                         <div className="modal-body">
                             <div className="modal-image-container">
                                 <Image
-                                    src={selectedEvent.image}
+                                    src="/dummy-image-square.jpg"
                                     alt={selectedEvent.title}
                                     width={500}
                                     height={300}
@@ -239,7 +239,11 @@ export default function NewsEventsSection() {
                                         <p><strong>Email:</strong> {selectedEvent.contact.email}</p>
                                         <p><strong>Telephone:</strong> {selectedEvent.contact.telephone}</p>
                                         <p><strong>Mobile:</strong> {selectedEvent.contact.mobile}</p>
-                                        <p><strong>Website:</strong> {selectedEvent.contact.website}</p>
+                                        <div className="modal-connect-wrapper">
+                                            <Link href="/contact#inquiry-form" className="modal-connect-button" onClick={closeModal}>
+                                                Connect with Us
+                                            </Link>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

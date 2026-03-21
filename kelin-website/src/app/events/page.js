@@ -316,7 +316,7 @@ Join us at this flagship event to discover cutting-edge solutions and connect wi
                   <div className="events-lightbox-slideshow">
                     <div className="events-slideshow-container">
                       <img
-                        src={selectedItem.images[currentImageIndex]}
+                        src="/dummy-image-square.jpg"
                         alt={selectedItem.title}
                         className="events-slideshow-image"
                       />

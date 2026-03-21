@@ -1117,7 +1117,7 @@ export default function PromotionalDisplayPage() {
               {/* Slideshow Container */}
               <div className="promotional-slideshow-container">
                 <img
-                  src={productData[selectedProduct][currentImageIndex]}
+                  src="/dummy-image-square.jpg"
                   alt={selectedProduct}
                   className="promotional-slideshow-image"
                 />
