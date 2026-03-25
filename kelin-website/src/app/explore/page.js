@@ -44,7 +44,7 @@ export default function Explore() {
       icon: '/inks.png',
       productCount: '12+',
       href: '/inks',
-      image: '/cat_inks.webp',
+      image: '/Inks.webp',
       products: [
         { name: 'Eco-Solvent Inks', desc: 'Environmental-friendly outdoor graphics' },
         { name: 'Latex Inks', desc: 'Water-based indoor/outdoor solutions' },

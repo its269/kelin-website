@@ -1,0 +1,396 @@
+/* Responsive Blog Article Styles for Smart Eco Solvent Printer */
+
+.smart-eco-solvent-printer-page-container {
+    /* background: #f7f8fa; */
+    min-height: 100vh;
+    padding: 0;
+}
+
+.article-content-wrapper {
+    max-width: 900px;
+    margin: 2.5rem auto 3rem auto;
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 4px 32px rgba(0, 0, 0, 0.08);
+    padding: 2.5rem 2.5rem 2rem 2.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+.article-header {
+    border-bottom: 1px solid #e5e7eb;
+    padding-bottom: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.article-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    font-size: 1rem;
+    color: #64748b;
+    margin-bottom: 0.7rem;
+}
+
+.category-tag {
+    background: #e0e7ff;
+    color: #3730a3;
+    font-weight: 600;
+    padding: 0.2em 0.8em;
+    border-radius: 1em;
+    font-size: 0.95em;
+}
+
+.separator {
+    color: #b6bbc7;
+}
+
+.article-main-title {
+    font-family: 'Bison-Bold', Arial, sans-serif;
+    font-size: 2.3rem;
+    font-weight: bold;
+    color: #1a1a1a;
+    margin-bottom: 0.7rem;
+    letter-spacing: -0.02em;
+}
+
+.article-hook {
+    font-size: 1.18rem;
+    color: #374151;
+    margin-bottom: 0.2rem;
+    font-family: 'Inter', Arial, sans-serif;
+}
+
+.main-featured-image {
+    margin: 0 auto 1.5rem auto;
+    text-align: center;
+}
+
+.main-featured-image img {
+    width: 100%;
+    max-width: 700px;
+    border-radius: 10px;
+    /* box-shadow: 0 2px 16px rgba(0, 0, 0, 0.09); */
+}
+
+.main-featured-image figcaption {
+    font-size: 1rem;
+    color: #6b7280;
+    margin-top: 0.5rem;
+}
+
+.article-body {
+    display: flex;
+    flex-direction: column;
+    gap: 2.2rem;
+}
+
+.content-section h2 {
+    font-family: 'Montserrat-Bold', Arial, sans-serif;
+    font-size: 1.45rem;
+    color: #222;
+    margin-bottom: 0.7rem;
+}
+
+.content-section p {
+    font-family: 'Inter', Arial, sans-serif;
+    font-size: 1.08rem;
+    color: #333;
+    line-height: 1.7;
+}
+
+.feature-highlight-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    margin: 1.2rem 0 1.5rem 0;
+}
+
+.feature-item {
+    background: #f1f5f9;
+    border-radius: 10px;
+    padding: 1.1rem 1rem 1rem 1.1rem;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.04);
+}
+
+.feature-item h3 {
+    font-size: 1.08rem;
+    font-family: 'Montserrat-Bold', Arial, sans-serif;
+    color: #1e293b;
+    margin-bottom: 0.4rem;
+}
+
+.feature-item p {
+    font-size: 1rem;
+    color: #374151;
+}
+
+
+/* Reverted Technical Specifications Table Styles */
+.specs-container {
+    margin-top: 1.2rem;
+}
+
+.specs-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 0.7rem;
+    background: #fff;
+    border-radius: 0;
+    overflow: visible;
+}
+
+.specs-table td {
+    padding: 0.7em 1em;
+    border-bottom: 1px solid #e5e7eb;
+    font-size: 1.05rem;
+    color: #222;
+    font-family: inherit;
+}
+
+.spec-label {
+    color: #222;
+    font-weight: 600;
+    width: 40%;
+}
+
+.spec-value {
+    color: #222;
+    font-weight: 400;
+}
+
+.specs-table tr:last-child td {
+    border-bottom: none;
+}
+
+.article-footer {
+    margin-top: 2.5rem;
+    border-top: 1px solid #e5e7eb;
+    padding-top: 1.5rem;
+    text-align: center;
+}
+
+.cta-box {
+    background: linear-gradient(90deg, #e0e7ff 0%, #f1f5f9 100%);
+    border-radius: 10px;
+    padding: 1.5rem 1rem;
+    display: inline-block;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.cta-box h4 {
+    font-size: 1.2rem;
+    color: #3730a3;
+    margin-bottom: 0.5rem;
+    font-family: 'Montserrat-Bold', Arial, sans-serif;
+}
+
+.cta-box p {
+    color: #374151;
+    font-size: 1.05rem;
+    margin-bottom: 1rem;
+}
+
+.inquire-btn {
+    background: #3730a3;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 0.7em 2em;
+    font-size: 1.08rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.inquire-btn:hover {
+    background: #6366f1;
+}
+
+@media (max-width: 900px) {
+    .article-content-wrapper {
+        padding: 1.2rem 0.5rem 1.5rem 0.5rem;
+    }
+
+    .main-featured-image img {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    .article-content-wrapper {
+        margin: 1.2rem 0 2rem 0;
+        border-radius: 0;
+        box-shadow: none;
+        padding: 0.7rem 0.2rem 1rem 0.2rem;
+    }
+
+    .article-main-title {
+        font-size: 1.25rem;
+    }
+
+    .feature-highlight-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .specs-table td {
+        font-size: 0.98rem;
+        padding: 0.5em 0.5em;
+    }
+
+    .cta-box {
+        padding: 1rem 0.5rem;
+    }
+}
+
+/* smart-eco-solvent-printer.css */
+
+.smart-eco-solvent-printer-page-container {
+    /* background-color: #f4f7f9; */
+    color: #2c3e50;
+    font-family: 'Inter', system-ui, sans-serif;
+    line-height: 1.7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.article-meta {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    gap: 50px;
+    padding-bottom: 50px;
+}
+
+.article-content-wrapper {
+    max-width: 900px;
+    margin-top: 170px;
+    margin-bottom: 50px;
+    /* margin: 140px auto 60px; */
+    background: #ffffff;
+    padding: 60px;
+    border-radius: 8px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.04);
+}
+
+.article-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.category-tag {
+    color: #e63946;
+    /* Vibrant red highlight */
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+}
+
+.article-main-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #1a1a1a;
+    margin: 15px 0;
+    line-height: 1.2;
+}
+
+.article-hook {
+    font-size: 1.2rem;
+    color: #555;
+    max-width: 750px;
+    margin: 0 auto;
+}
+
+.main-featured-image {
+    margin: 0 -60px 40px;
+    text-align: center;
+}
+
+.main-featured-image img {
+    width: 100%;
+    height: auto;
+}
+
+/* Feature Grid */
+.feature-highlight-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    margin: 40px 0;
+}
+
+.feature-item {
+    background: #f8fafc;
+    padding: 25px;
+    border-radius: 6px;
+    border-top: 3px solid #e63946;
+}
+
+.feature-item h3 {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    color: #1a1a1a;
+}
+
+/* Specs Table */
+.specs-container {
+    /* background: #1a1a1a; */
+    color: #000000;
+    padding: 35px;
+    border-radius: 8px;
+    margin: 40px 0;
+}
+
+.specs-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.specs-table td {
+    padding: 12px 0;
+    border-bottom: 1px solid #333;
+}
+
+.spec-label {
+    font-weight: 600;
+    color: #999;
+}
+
+.spec-value {
+    text-align: right;
+    font-family: monospace;
+}
+
+.cta-box {
+    text-align: center;
+    padding: 40px;
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    border-radius: 12px;
+}
+
+.inquire-btn {
+    background: #e63946;
+    color: white;
+    border: none;
+    padding: 15px 35px;
+    font-size: 1rem;
+    font-weight: 700;
+    border-radius: 50px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+    .feature-highlight-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .article-content-wrapper {
+        padding: 30px;
+    }
+}
+
+/* sdsfsdff */

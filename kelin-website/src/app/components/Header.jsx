@@ -1,11 +1,12 @@
 "use client";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { useState, useEffect, useRef } from "react";
 import "./header.css"; // import external CSS file
 
 export default function Header() {
     const pathname = usePathname();
+    const router = useRouter(); // Added Next.js router for seamless navigation
     const [open, setOpen] = useState(false);
     const [searchQuery, setSearchQuery] = useState("");
     const [isScrolled, setIsScrolled] = useState(false);
@@ -14,6 +15,7 @@ export default function Header() {
     const [searchResults, setSearchResults] = useState([]);
     const [showSearchResults, setShowSearchResults] = useState(false);
     const [searchExpanded, setSearchExpanded] = useState(false);
+    const [activeResultIndex, setActiveResultIndex] = useState(-1);
     const [showScrollTop, setShowScrollTop] = useState(false);
     const searchRef = useRef(null);
     const searchMobileRef = useRef(null);
@@ -46,9 +48,8 @@ export default function Header() {
         { title: "Sublimation and DTF", path: "/sublimation-dtf", type: "category" },
         { title: "UV Printers", path: "/uv-printers", type: "category" },
         { title: "Heatpress", path: "/heatpress", type: "category" },
-        { title: "Heat Press", path: "/heat-press", type: "category" },
         { title: "Laminator", path: "/laminator", type: "category" },
-        { title: "Laser Machine", path: "/laser-machine", type: "category" },
+        { title: "Laser Machine", path: "/embroidery-knitting", type: "category" },
         { title: "Embroidery and Knitting", path: "/embroidery-knitting", type: "category" },
         { title: "3D Printer", path: "/3d-printer", type: "category" },
 
@@ -227,7 +228,6 @@ export default function Header() {
         { title: "Windproof Banner Stand", path: "/promotional-display", type: "promotional" }
     ];
 
-    // Helper function to check if link is active
     const isActive = (path) => {
         if (path === "/" || path === "/") {
             return pathname === "/" || pathname === "/";
@@ -235,77 +235,158 @@ export default function Header() {
         return pathname.startsWith(path);
     };
 
-    // Search function
     const performSearch = (query) => {
-        if (!query.trim()) {
+        const normalizedQuery = query.trim().toLowerCase();
+
+        if (!normalizedQuery) {
             setSearchResults([]);
             setShowSearchResults(false);
+            setActiveResultIndex(-1);
             return;
         }
 
-        const filtered = searchData.filter(item =>
-            item.title.toLowerCase().includes(query.toLowerCase()) ||
-            item.path.toLowerCase().includes(query.toLowerCase())
-        );
+        const scoredMatches = [];
+        const seen = new Set();
 
-        setSearchResults(filtered.slice(0, 8)); // Limit to 8 results
+        for (const item of searchData) {
+            const title = item.title.toLowerCase();
+            const path = item.path.toLowerCase();
+            const matches = title.includes(normalizedQuery) || path.includes(normalizedQuery);
+
+            if (!matches) continue;
+
+            const dedupeKey = `${item.title.toLowerCase()}|${item.path}`;
+            if (seen.has(dedupeKey)) continue;
+
+            seen.add(dedupeKey);
+
+            let score = 0;
+            if (title.startsWith(normalizedQuery)) score += 5;
+            if (title.includes(normalizedQuery)) score += 3;
+            if (path.startsWith(normalizedQuery)) score += 2;
+            if (path.includes(normalizedQuery)) score += 1;
+
+            scoredMatches.push({ item, score });
+        }
+
+        scoredMatches.sort((left, right) => {
+            if (right.score !== left.score) {
+                return right.score - left.score;
+            }
+            return left.item.title.length - right.item.title.length;
+        });
+
+        const quickSuggestions = scoredMatches.slice(0, 8).map((entry) => entry.item);
+
+        setSearchResults(quickSuggestions);
         setShowSearchResults(true);
+        setActiveResultIndex(quickSuggestions.length > 0 ? 0 : -1);
     };
 
-    // Handle search input change
     const handleSearchChange = (e) => {
         const query = e.target.value;
         setSearchQuery(query);
         performSearch(query);
     };
 
-    // Handle search form submission
     const handleSearch = (e) => {
         e.preventDefault();
         if (searchQuery.trim()) {
-            // If there are results, navigate to the first one
             if (searchResults.length > 0) {
-                window.location.href = searchResults[0].path;
+                const selectedResult = (activeResultIndex >= 0 && activeResultIndex < searchResults.length)
+                    ? searchResults[activeResultIndex]
+                    : searchResults[0];
+
+                router.push(selectedResult.path); // Updated to use Next.js router
             }
-            setShowSearchResults(false);
+            closeSearchModal();
         }
     };
 
-    // Handle result selection
-    const handleResultSelect = (path) => {
+    const closeSearchModal = () => {
+        setSearchExpanded(false);
         setSearchQuery("");
         setSearchResults([]);
         setShowSearchResults(false);
-        setSearchExpanded(false);
-        window.location.href = path;
+        setActiveResultIndex(-1);
     };
 
-    // Handle search toggle
+    const handleResultSelect = (path) => {
+        closeSearchModal();
+        router.push(path); // Updated to use Next.js router
+    };
+
+    const handleSearchInputKeyDown = (event) => {
+        if (!searchResults.length) return;
+
+        if (event.key === 'ArrowDown') {
+            event.preventDefault();
+            setActiveResultIndex((prev) => (prev + 1) % searchResults.length);
+            return;
+        }
+
+        if (event.key === 'ArrowUp') {
+            event.preventDefault();
+            setActiveResultIndex((prev) => (prev <= 0 ? searchResults.length - 1 : prev - 1));
+            return;
+        }
+
+        if (event.key === 'Enter' && activeResultIndex >= 0) {
+            event.preventDefault();
+            handleResultSelect(searchResults[activeResultIndex].path);
+            return;
+        }
+
+        if (event.key === 'Escape') {
+            closeSearchModal();
+        }
+    };
+
+    const renderHighlightedText = (text, query) => {
+        const trimmedQuery = query.trim();
+
+        if (!trimmedQuery) return text;
+
+        const lowerText = text.toLowerCase();
+        const lowerQuery = trimmedQuery.toLowerCase();
+        const matchIndex = lowerText.indexOf(lowerQuery);
+
+        if (matchIndex === -1) return text;
+
+        const beforeMatch = text.slice(0, matchIndex);
+        const matchedText = text.slice(matchIndex, matchIndex + trimmedQuery.length);
+        const afterMatch = text.slice(matchIndex + trimmedQuery.length);
+
+        return (
+            <>
+                {beforeMatch}
+                <mark className="search-highlight">{matchedText}</mark>
+                {afterMatch}
+            </>
+        );
+    };
+
     const toggleSearch = () => {
-        setSearchExpanded(!searchExpanded);
         if (!searchExpanded) {
-            // Focus input when expanding
+            setSearchExpanded(true);
             setTimeout(() => {
                 const input = searchRef.current?.querySelector('.search-input');
                 if (input) input.focus();
             }, 100);
         } else {
-            // Clear search when collapsing
-            setSearchQuery("");
-            setSearchResults([]);
-            setShowSearchResults(false);
+            closeSearchModal();
         }
     };
 
-    // Handle click outside to close search results
     useEffect(() => {
         const handleClickOutside = (event) => {
-            if (searchRef.current && !searchRef.current.contains(event.target) &&
-                searchMobileRef.current && !searchMobileRef.current.contains(event.target)) {
+            const clickedInsideDesktopSearch = searchRef.current?.contains(event.target);
+            const clickedInsideMobileSearch = searchMobileRef.current?.contains(event.target);
+
+            if (!clickedInsideDesktopSearch && !clickedInsideMobileSearch) {
                 setShowSearchResults(false);
-                // Also collapse search if clicked outside and no query
                 if (searchExpanded && !searchQuery.trim()) {
-                    setSearchExpanded(false);
+                    closeSearchModal();
                 }
             }
         };
@@ -316,7 +397,6 @@ export default function Header() {
         };
     }, [searchExpanded, searchQuery]);
 
-    // Handle scroll detection for nav-menu positioning and scroll-to-top button
     useEffect(() => {
         const handleScroll = () => {
             const scrollPosition = window.scrollY;
@@ -325,15 +405,11 @@ export default function Header() {
         };
 
         window.addEventListener('scroll', handleScroll);
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-        };
+        return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
-    // Handle dropdown clicks outside for iOS touch devices
     useEffect(() => {
         const handleDropdownClickOutside = (event) => {
-            // Close dropdowns if clicking outside
             if (!event.target.closest('.dropdown') &&
                 !event.target.closest('.dropdown-nested') &&
                 !event.target.closest('.mobile-dropdown') &&
@@ -352,20 +428,19 @@ export default function Header() {
         };
     }, []);
 
-    // Handle mobile menu overlay click
     const handleMobileMenuOverlayClick = (e) => {
-        if (e.target === e.currentTarget) {
-            setOpen(false);
-        }
+        if (e.target === e.currentTarget) setOpen(false);
     };
 
-    // Scroll to top function
     const scrollToTop = () => {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
+        window.scrollTo({ top: 0, behavior: 'smooth' });
     };
+
+    const hasTypedKeyword = searchQuery.trim().length > 0;
+
+    // BUG FIX: Combined state condition to ensure dropdown disappears when clicking outside
+    const shouldShowDropdownResults = hasTypedKeyword && showSearchResults;
+    const hasFewSearchResults = searchResults.length > 0 && searchResults.length <= 2;
 
     return (
         <header className="header">
@@ -373,115 +448,11 @@ export default function Header() {
                 {/* Logo */}
                 <Link href="/" className="logo">
                     <img src="/KELIN-LOGO-01.png" alt="Kelin Graphics System Logo" width={65} />
-                    {/* <h1 className="company-name">KELIN GRAPHICS SYSTEM</h1> */}
                 </Link>
 
                 {/* Desktop Menu */}
                 <nav className="nav-desktop">
-
-
-                    {/* Desktop Search Bar - Inline */}
-                    <div className="search-wrapper" ref={searchRef}>
-                        {!searchExpanded ? (
-                            // Collapsed state - just icon
-                            <button
-                                type="button"
-                                className="search-icon-btn"
-                                onClick={toggleSearch}
-                                aria-label="Open search"
-                            >
-                                <svg
-                                    width="18"
-                                    height="18"
-                                    viewBox="0 0 24 24"
-                                    fill="none"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                >
-                                    <path
-                                        d="M21 21L15.0001 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z"
-                                        stroke="currentColor"
-                                        strokeWidth="2"
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                    />
-                                </svg>
-                            </button>
-                        ) : (
-                            // Expanded state - full search bar
-                            <form className="search-form-inline" onSubmit={handleSearch}>
-                                <div className="search-container-inline expanded">
-                                    <input
-                                        type="text"
-                                        className="search-input"
-                                        placeholder="Search..."
-                                        value={searchQuery}
-                                        onChange={handleSearchChange}
-                                        onFocus={() => searchQuery.trim() && setShowSearchResults(true)}
-                                    />
-                                    <button type="submit" className="search-btn">
-                                        <svg
-                                            width="16"
-                                            height="16"
-                                            viewBox="0 0 24 24"
-                                            fill="none"
-                                            xmlns="http://www.w3.org/2000/svg"
-                                        >
-                                            <path
-                                                d="M21 21L15.0001 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z"
-                                                stroke="currentColor"
-                                                strokeWidth="2"
-                                                strokeLinecap="round"
-                                                strokeLinejoin="round"
-                                            />
-                                        </svg>
-                                    </button>
-                                    <button
-                                        type="button"
-                                        className="search-close-btn"
-                                        onClick={toggleSearch}
-                                        aria-label="Close search"
-                                    >
-                                        <svg
-                                            width="16"
-                                            height="16"
-                                            viewBox="0 0 24 24"
-                                            fill="none"
-                                            xmlns="http://www.w3.org/2000/svg"
-                                        >
-                                            <path
-                                                d="M18 6L6 18M6 6L18 18"
-                                                stroke="currentColor"
-                                                strokeWidth="2"
-                                                strokeLinecap="round"
-                                                strokeLinejoin="round"
-                                            />
-                                        </svg>
-                                    </button>
-                                </div>
-                            </form>
-                        )}
-
-                        {/* Search Results Dropdown - Desktop */}
-                        {searchExpanded && showSearchResults && searchResults.length > 0 && (
-                            <div className="search-dropdown">
-                                {searchResults.map((result, index) => (
-                                    <div
-                                        key={index}
-                                        className="search-result-item"
-                                        onClick={() => handleResultSelect(result.path)}
-                                    >
-                                        <div className="search-result-title">{result.title}</div>
-                                        <div className="search-result-type">{result.type}</div>
-                                    </div>
-                                ))}
-                                {searchQuery.trim() && searchResults.length === 0 && (
-                                    <div className="search-no-results">
-                                        No results found for "{searchQuery}"
-                                    </div>
-                                )}
-                            </div>
-                        )}
-                    </div>
+                    <Link href="/blogs" className="learn-more-btn-top">Learn More</Link>
                 </nav>
 
                 {/* Mobile Menu Button */}
@@ -489,6 +460,7 @@ export default function Header() {
                     {open ? '✕' : '☰'}
                 </button>
             </div>
+
             <div className={`nav-menu ${isScrolled ? 'scrolled' : ''}`}>
                 <Link href="/" className={`dropdown-toggle ${isActive("/") ? "active" : ""}`}>Home</Link>
                 <Link href="/explore" className={`dropdown-toggle ${isActive("/explore") ? "active" : ""}`}>Explore</Link>
@@ -512,7 +484,6 @@ export default function Header() {
 
                     {productsOpen && (
                         <div className="dropdown-menu">
-                            {/* Machine Nested Dropdown */}
                             <div
                                 className={`dropdown-nested ${machineOpen ? 'active' : ''}`}
                                 onMouseEnter={() => setMachineOpen(true)}
@@ -554,9 +525,86 @@ export default function Header() {
 
                 <Link href="/about" className={`dropdown-toggle ${isActive("/about") ? "active" : ""}`}>About Us</Link>
                 <Link href="/events" className={`dropdown-toggle ${isActive("/events") ? "active" : ""}`}>News and Events</Link>
+
                 <div className="vertical-line"></div>
                 <Link href="/contact" id="connectwithus" className={`dropdown-toggle ${isActive("/contact") ? "" : ""}`}>Connect with Us</Link>
+
+                {/* Desktop Search */}
+                <div className="search-wrapper">
+                    <button
+                        type="button"
+                        className="search-icon-btn"
+                        onClick={toggleSearch}
+                        aria-label="Open search"
+                    >
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M21 21L15.0001 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                        </svg>
+                    </button>
+                </div>
             </div>
+
+            {searchExpanded && (
+                <div className="search-lightbox-overlay" onClick={closeSearchModal}>
+                    <div className="search-lightbox" ref={searchRef} onClick={(e) => e.stopPropagation()}>
+                        <div className="search-lightbox-header">
+                            <h3>Search</h3>
+                            <button
+                                type="button"
+                                className="search-lightbox-close"
+                                onClick={closeSearchModal}
+                                aria-label="Close search"
+                            >
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                                </svg>
+                            </button>
+                        </div>
+
+                        <form className="search-lightbox-form" onSubmit={handleSearch}>
+                            <div className="search-lightbox-input-wrap">
+                                <input
+                                    type="text"
+                                    className="search-input search-lightbox-input"
+                                    placeholder="Search products, pages, machines..."
+                                    value={searchQuery}
+                                    onChange={handleSearchChange}
+                                    onKeyDown={handleSearchInputKeyDown}
+                                    onFocus={() => searchQuery.trim() && setShowSearchResults(true)}
+                                />
+                            </div>
+                        </form>
+
+                        {/* AUTO-SUGGESTION UI DISPLAY */}
+                        {shouldShowDropdownResults && (
+                            <div className="search-dropdown search-lightbox-results">
+                                {searchResults.length > 0 ? (
+                                    <>
+                                        {searchResults.map((result, index) => (
+                                            <div
+                                                key={index}
+                                                className={`search-result-item ${index === activeResultIndex ? 'active' : ''}`}
+                                                onMouseEnter={() => setActiveResultIndex(index)}
+                                                onClick={() => handleResultSelect(result.path)}
+                                            >
+                                                <div className="search-result-title">{renderHighlightedText(result.title, searchQuery)}</div>
+                                                <div className="search-result-type">{result.type}</div>
+                                            </div>
+                                        ))}
+                                        {hasFewSearchResults && (
+                                            <div className="search-results-info">
+                                                Only {searchResults.length} result{searchResults.length > 1 ? 's' : ''} found. Try a broader keyword.
+                                            </div>
+                                        )}
+                                    </>
+                                ) : (
+                                    <div className="search-no-results">No results found for "{searchQuery}"</div>
+                                )}
+                            </div>
+                        )}
+                    </div>
+                </div>
+            )}
 
             {/* Mobile Menu Overlay */}
             {open && (
@@ -575,52 +623,49 @@ export default function Header() {
                                         onFocus={() => searchQuery.trim() && setShowSearchResults(true)}
                                     />
                                     <button type="submit" className="search-btn">
-                                        <svg
-                                            width="16"
-                                            height="16"
-                                            viewBox="0 0 24 24"
-                                            fill="none"
-                                            xmlns="http://www.w3.org/2000/svg"
-                                        >
-                                            <path
-                                                d="M21 21L15.0001 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z"
-                                                stroke="currentColor"
-                                                strokeWidth="2"
-                                                strokeLinecap="round"
-                                                strokeLinejoin="round"
-                                            />
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M21 21L15.0001 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                                         </svg>
                                     </button>
                                 </div>
                             </form>
 
                             {/* Search Results Dropdown - Mobile */}
-                            {showSearchResults && searchResults.length > 0 && (
+                            {shouldShowDropdownResults && (
                                 <div className="search-dropdown-mobile">
-                                    {searchResults.map((result, index) => (
-                                        <div
-                                            key={index}
-                                            className="search-result-item"
-                                            onClick={() => {
-                                                handleResultSelect(result.path);
-                                                setOpen(false);
-                                            }}
-                                        >
-                                            <div className="search-result-title">{result.title}</div>
-                                            <div className="search-result-type">{result.type}</div>
-                                        </div>
-                                    ))}
-                                    {searchQuery.trim() && searchResults.length === 0 && (
-                                        <div className="search-no-results">
-                                            No results found for "{searchQuery}"
-                                        </div>
+                                    {searchResults.length > 0 ? (
+                                        <>
+                                            {searchResults.map((result, index) => (
+                                                <div
+                                                    key={index}
+                                                    className="search-result-item"
+                                                    onClick={() => {
+                                                        handleResultSelect(result.path);
+                                                        setOpen(false);
+                                                    }}
+                                                >
+                                                    <div className="search-result-title">{renderHighlightedText(result.title, searchQuery)}</div>
+                                                    <div className="search-result-type">{result.type}</div>
+                                                </div>
+                                            ))}
+                                            {hasFewSearchResults && (
+                                                <div className="search-results-info">
+                                                    Only {searchResults.length} result{searchResults.length > 1 ? 's' : ''} found. Try a broader keyword.
+                                                </div>
+                                            )}
+                                        </>
+                                    ) : (
+                                        <div className="search-no-results">No results found for "{searchQuery}"</div>
                                     )}
                                 </div>
                             )}
                         </div>
 
+
                         <Link href="/" className={isActive("/") ? "active" : ""} onClick={() => setOpen(false)}>Home</Link>
                         <Link href="/explore" className={isActive("/explore") ? "active" : ""} onClick={() => setOpen(false)}>Explore</Link>
+                        {/* Learn More for Mobile */}
+                        <Link href="/blogs" className="learn-more-btn-mobile" onClick={() => setOpen(false)}>Learn More</Link>
 
                         {/* Mobile Products Dropdown */}
                         <div className="mobile-dropdown">
@@ -629,7 +674,6 @@ export default function Header() {
                                 onClick={() => setProductsOpen(!productsOpen)}
                                 aria-expanded={productsOpen}
                                 aria-controls="mobile-products-submenu"
-                                aria-label="Toggle products menu"
                             >
                                 Products
                                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none">
@@ -638,24 +682,18 @@ export default function Header() {
                             </button>
 
                             {productsOpen && (
-                                <div
-                                    id="mobile-products-submenu"
-                                    className="mobile-dropdown-menu"
-                                    role="menu"
-                                >
+                                <div id="mobile-products-submenu" className="mobile-dropdown-menu" role="menu">
                                     <Link href="/inks" onClick={() => setOpen(false)} role="menuitem">Inks</Link>
                                     <Link href="/materials" onClick={() => setOpen(false)} role="menuitem">Materials</Link>
                                     <Link href="/accessories" onClick={() => setOpen(false)} role="menuitem">Accessories</Link>
                                     <Link href="/promotional-display" onClick={() => setOpen(false)} role="menuitem">Promotional Display</Link>
 
-                                    {/* Mobile Machine Nested Dropdown */}
                                     <div className="mobile-dropdown-nested">
                                         <button
                                             className="mobile-dropdown-toggle-nested"
                                             onClick={() => setMachineOpen(!machineOpen)}
                                             aria-expanded={machineOpen}
                                             aria-controls="mobile-machine-submenu"
-                                            aria-label="Toggle machine categories"
                                         >
                                             Machine
                                             <svg width="10" height="10" viewBox="0 0 24 24" fill="none">
@@ -664,11 +702,7 @@ export default function Header() {
                                         </button>
 
                                         {machineOpen && (
-                                            <div
-                                                id="mobile-machine-submenu"
-                                                className="mobile-dropdown-menu-nested"
-                                                role="menu"
-                                            >
+                                            <div id="mobile-machine-submenu" className="mobile-dropdown-menu-nested" role="menu">
                                                 <Link href="/eco-solvent-printers" onClick={() => setOpen(false)} role="menuitem">Eco - Solvent Printers</Link>
                                                 <Link href="/solvent-printers" onClick={() => setOpen(false)} role="menuitem">Solvent Printers</Link>
                                                 <Link href="/cutting-machine" onClick={() => setOpen(false)} role="menuitem">Cutting Machine</Link>
@@ -693,7 +727,6 @@ export default function Header() {
                 </div>
             )}
 
-            {/* Global Scroll to Top Button */}
             {showScrollTop && (
                 <button
                     className="scroll-to-top-btn"
@@ -706,4 +739,3 @@ export default function Header() {
         </header>
     );
 }
-// ne
