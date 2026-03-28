@@ -1,6 +1,6 @@
 // app/blogs/page.js
 import React from 'react';
-import "./smart-eco-solvent-printer.css";
+import "./blogs-xline-eco-solvent.css";
 import Header from '../components/Header'; // Assuming you have your global header
 
 // SEO Metadata for Next.js App Router
@@ -91,10 +91,10 @@ export default function BlogArticlePage() {
 
                     <figure className="blog-featured-image">
                         <img
-                            src="/eco-solvent-machines/SMART.webp"
-                            alt="Smart Eco-Solvent RJ24-2002 & 2004 6FT Printer showcasing its sleek industrial design"
+                            src="/eco-solvent-machines/Apollo.webp"
+                            alt="XLINE Eco-Solvent Printer showcasing its sleek industrial design"
                         />
-                        <figcaption>The Smart RJ24-2002 & 2004 6ft Eco-Solvent Printer equipped with dual EPSON I3200 Printheads.</figcaption>
+                        <figcaption>The XLINE Eco-Solvent Printer equipped with dual EPSON I3200 Printheads.</figcaption>
                     </figure>
 
                     <div className="blog-content">

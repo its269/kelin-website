@@ -20,7 +20,7 @@ export default function Header() {
     const searchRef = useRef(null);
     const searchMobileRef = useRef(null);
 
-    // Search data - you can expand this or fetch from API
+    // Search data - expanded with Materials products
     const searchData = [
         // Main Pages
         { title: "Home", path: "/", type: "page" },
@@ -225,7 +225,29 @@ export default function Header() {
         { title: "LED Menu Lightbox Double Poles Stand", path: "/promotional-display", type: "promotional" },
         { title: "LED Menu Board", path: "/promotional-display", type: "promotional" },
         { title: "New Windproof Display", path: "/promotional-display", type: "promotional" },
-        { title: "Windproof Banner Stand", path: "/promotional-display", type: "promotional" }
+        { title: "Windproof Banner Stand", path: "/promotional-display", type: "promotional" },
+
+        // Materials
+        { title: "Tickee Vinyl Sticker (TK Series)", path: "/materials", type: "material" },
+        { title: "Sofie Vinyl & Specialty Stickers", path: "/materials", type: "material" },
+        { title: "Sofie Clear Sticker", path: "/materials", type: "material" },
+        { title: "Tickee Cold Laminating Film", path: "/materials", type: "material" },
+        { title: "Sofie PP Film & Sticker", path: "/materials", type: "material" },
+        { title: "Ba-cut Translucent Sticker", path: "/materials", type: "material" },
+        { title: "Specialty & Architectural Films", path: "/materials", type: "material" },
+        { title: "Omega Tarpaulin", path: "/materials", type: "material" },
+        { title: "Beta Tarpaulin", path: "/materials", type: "material" },
+        { title: "Omega Black-Out Tarpaulin", path: "/materials", type: "material" },
+        { title: "Alpha Tarpaulin & Flex", path: "/materials", type: "material" },
+        { title: "Subli-Mate Nova & S100 Paper", path: "/materials", type: "material" },
+        { title: "Smartex & Subli-Mate Fabrics", path: "/materials", type: "material" },
+        { title: "Textile Accessories", path: "/materials", type: "material" },
+        { title: "Backlit Film & Lightbox Fabric", path: "/materials", type: "material" },
+        { title: "Just Cast Acrylic", path: "/materials", type: "material" },
+        { title: "Luminao & Extruded Acrylic", path: "/materials", type: "material" },
+        { title: "Just Sintra Board", path: "/materials", type: "material" },
+        { title: "Just Aluminum Composite Panel", path: "/materials", type: "material" },
+        { title: "Foam Board & High Impact Sheets", path: "/materials", type: "material" }
     ];
 
     const isActive = (path) => {
@@ -287,6 +309,7 @@ export default function Header() {
         const query = e.target.value;
         setSearchQuery(query);
         performSearch(query);
+        if (query.trim()) setShowSearchResults(true);
     };
 
     const handleSearch = (e) => {
@@ -373,6 +396,7 @@ export default function Header() {
                 const input = searchRef.current?.querySelector('.search-input');
                 if (input) input.focus();
             }, 100);
+            if (searchQuery.trim()) setShowSearchResults(true);
         } else {
             closeSearchModal();
         }
@@ -384,7 +408,7 @@ export default function Header() {
             const clickedInsideMobileSearch = searchMobileRef.current?.contains(event.target);
 
             if (!clickedInsideDesktopSearch && !clickedInsideMobileSearch) {
-                setShowSearchResults(false);
+                // Only close modal if no query, otherwise keep suggestions open
                 if (searchExpanded && !searchQuery.trim()) {
                     closeSearchModal();
                 }
@@ -436,10 +460,8 @@ export default function Header() {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     };
 
-    const hasTypedKeyword = searchQuery.trim().length > 0;
-
-    // BUG FIX: Combined state condition to ensure dropdown disappears when clicking outside
-    const shouldShowDropdownResults = hasTypedKeyword && showSearchResults;
+    // Show dropdown for any non-empty input (even a single letter)
+    const shouldShowDropdownResults = searchQuery.trim().length > 0 && showSearchResults;
     const hasFewSearchResults = searchResults.length > 0 && searchResults.length <= 2;
 
     return (
@@ -452,7 +474,7 @@ export default function Header() {
 
                 {/* Desktop Menu */}
                 <nav className="nav-desktop">
-                    <Link href="/blogs" className="learn-more-btn-top">Learn More</Link>
+                    {/* ...existing code... */}
                 </nav>
 
                 {/* Mobile Menu Button */}
@@ -463,7 +485,33 @@ export default function Header() {
 
             <div className={`nav-menu ${isScrolled ? 'scrolled' : ''}`}>
                 <Link href="/" className={`dropdown-toggle ${isActive("/") ? "active" : ""}`}>Home</Link>
-                <Link href="/explore" className={`dropdown-toggle ${isActive("/explore") ? "active" : ""}`}>Explore</Link>
+
+
+
+                {/* Learn More Dropdown in Main Nav */}
+                <div
+                    className={`dropdown`}
+                    style={{ position: 'relative' }}
+                    onMouseEnter={() => setProductsOpen(true)}
+                    onMouseLeave={() => setProductsOpen(false)}
+                >
+                    <span
+                        className="dropdown-toggle"
+                        style={{ cursor: 'pointer' }}
+                        onClick={() => setProductsOpen(!productsOpen)}
+                    >
+                        Learn More
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" style={{ marginLeft: 4 }}>
+                            <path d="M6 9L12 15L18 9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                        </svg>
+                    </span>
+                    {productsOpen && (
+                        <div className="dropdown-menu" style={{ minWidth: 140 }}>
+                            <Link href="/explore">Explore</Link>
+                            <Link href="/blogs">Blog</Link>
+                        </div>
+                    )}
+                </div>
 
                 {/* Products Dropdown */}
                 <div
@@ -663,9 +711,26 @@ export default function Header() {
 
 
                         <Link href="/" className={isActive("/") ? "active" : ""} onClick={() => setOpen(false)}>Home</Link>
-                        <Link href="/explore" className={isActive("/explore") ? "active" : ""} onClick={() => setOpen(false)}>Explore</Link>
-                        {/* Learn More for Mobile */}
-                        <Link href="/blogs" className="learn-more-btn-mobile" onClick={() => setOpen(false)}>Learn More</Link>
+                        {/* Learn More Dropdown for Mobile in Main Nav */}
+                        <div className="mobile-dropdown">
+                            <button
+                                className="mobile-dropdown-toggle"
+                                onClick={() => setProductsOpen(!productsOpen)}
+                                aria-expanded={productsOpen}
+                                aria-controls="mobile-learnmore-submenu"
+                            >
+                                Learn More
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none">
+                                    <path d="M6 9L12 15L18 9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                                </svg>
+                            </button>
+                            {productsOpen && (
+                                <div id="mobile-learnmore-submenu" className="mobile-dropdown-menu" role="menu">
+                                    <Link href="/explore" onClick={() => setOpen(false)} role="menuitem">Explore</Link>
+                                    <Link href="/blogs" onClick={() => setOpen(false)} role="menuitem">Blog</Link>
+                                </div>
+                            )}
+                        </div>
 
                         {/* Mobile Products Dropdown */}
                         <div className="mobile-dropdown">

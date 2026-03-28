@@ -1,181 +1,197 @@
-import Header from '../components/Header';
+"use client";
+import { useState } from 'react';
+import Link from 'next/link';
 import Image from 'next/image';
+import Header from '../components/Header';
 import './accessories.css';
 
-export const metadata = {
-  title: 'Printing Accessories - Kelin Graphics System | Professional Tools & Equipment',
-  description: 'Complete range of printing accessories including cutting tools, application tools, measurement equipment, cleaning supplies, and professional accessories for all printing needs.',
-  keywords: 'printing accessories, cutting tools, squeegees, application tools, measurement tools, cleaning supplies, safety equipment, professional accessories',
-};
+export default function AccessoriesDisplayPage() {
+  const [selectedProduct, setSelectedProduct] = useState(null);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
-export default function Accessories() {
-  const accessoryCategories = [
+  // Comprehensive Product Data extracted from the image
+  const categories = [
     {
-      category: "Application Tools",
+      title: "Cutting & Shaping Tools",
       products: [
         {
-          name: "Professional Squeegees",
-          description: "High-quality squeegees for smooth vinyl and film application",
-          features: ["Multiple hardness levels", "Ergonomic handle", "Scratch-resistant edge", "Chemical resistant"],
-          applications: ["Vinyl installation", "Window films", "Decal application", "Bubble removal"]
+          name: 'Cordless Electric Scissors & Blades',
+          desc: 'Portable electric scissors and replacement cutter blades.',
+          specs: 'Standard cordless unit; replacement blades sold separately.',
+          features: ['Fast and effortless cutting', 'Ergonomic design', 'Easily replaceable blades'],
+          images: ['/dummy-image-square.jpg', '/dummy-image-square.jpg']
         },
         {
-          name: "Heat Guns",
-          description: "Variable temperature heat guns for professional vinyl installation",
-          features: ["Temperature control", "Multiple nozzles", "Lightweight design", "Safety features"],
-          applications: ["Vinyl conforming", "Paint removal", "Shrinking tubing", "Adhesive activation"]
+          name: 'Grid Lines Cutting Mat',
+          desc: 'Self-healing cutting mats with grid lines for precise measuring and cutting.',
+          specs: 'Available sizes: 60cm x 90cm (2ft x 3ft) and 120cm x 180cm (4ft x 6ft).',
+          features: ['Surface protection', 'Measurement grid', 'Self-healing material'],
+          images: ['/dummy-image-square.jpg']
         },
         {
-          name: "Application Fluid",
-          description: "Specialized application solution for easier positioning and installation",
-          features: ["Reduces tack temporarily", "Easy repositioning", "No residue", "Fast evaporation"],
-          applications: ["Large format graphics", "Window films", "Precision placement", "Complex curves"]
-        },
-        {
-          name: "Felt Edge Tools",
-          description: "Soft-edge application tools to prevent scratching on delicate surfaces",
-          features: ["Felt-wrapped edges", "Various sizes", "Flexible design", "Durable construction"],
-          applications: ["Automotive wraps", "Painted surfaces", "Delicate substrates", "Detail work"]
+          name: 'Acrylic Letter Making Bender Machine Tool',
+          desc: 'Specialized tool for shaping and bending acrylic for channel letters.',
+          specs: 'Manual operation tool for acrylic fabrication.',
+          features: ['Precise angle bending', 'Durable construction', 'Essential for signage making'],
+          images: ['/dummy-image-square.jpg']
         }
       ]
     },
     {
-      category: "Cutting Tools",
+      title: "Tapes & Adhesives",
       products: [
         {
-          name: "Precision Craft Knives",
-          description: "Sharp, precise cutting tools for detailed trimming and cutting",
-          features: ["Replaceable blades", "Ergonomic grip", "Multiple blade types", "Safety cap included"],
-          applications: ["Vinyl trimming", "Stencil cutting", "Detail work", "Corner cutting"]
+          name: 'ARKI Cyano Adhesive',
+          desc: 'Fast-acting, strong cyanoacrylate adhesive.',
+          specs: 'Size: 30g bottle.',
+          features: ['Quick drying', 'High bond strength', 'Versatile application'],
+          images: ['/dummy-image-square.jpg']
         },
         {
-          name: "Rotary Cutters",
-          description: "Professional rotary cutters for straight, clean cuts",
-          features: ["Sharp circular blade", "Adjustable depth", "Safety guard", "Comfortable handle"],
-          applications: ["Fabric cutting", "Paper trimming", "Straight cuts", "Production work"]
+          name: 'Double Sided Foam Tape (S333P White)',
+          desc: 'High-tack double-sided foam tape for mounting and cushioning.',
+          specs: 'Size: 20mm x 10m and 20mm x 25m.',
+          features: ['Excellent gap filling', 'Strong adhesion', 'Vibration dampening'],
+          images: ['/dummy-image-square.jpg']
         },
         {
-          name: "Cutting Mats",
-          description: "Self-healing cutting mats to protect work surfaces and extend blade life",
-          features: ["Self-healing surface", "Grid markings", "Multiple sizes", "Non-slip base"],
-          applications: ["Cutting protection", "Measuring guide", "Work surface", "Blade preservation"]
+          name: 'Double Sided PET Tape (S338 Red)',
+          desc: 'Heavy-duty double-sided PET tape for secure bonding.',
+          specs: 'Size: 20mm width. Available in 5m, 10m, and 25m lengths.',
+          features: ['High temperature resistance', 'Strong tensile strength', 'Clear bond line'],
+          images: ['/dummy-image-square.jpg']
         },
         {
-          name: "Blade Sets",
-          description: "Complete sets of replacement blades for various cutting applications",
-          features: ["Multiple blade types", "Sharp edges", "Compatible sizes", "Storage case"],
-          applications: ["General cutting", "Specialized tasks", "Replacement stock", "Maintenance"]
+          name: 'Double Sided Banner Tape (S335)',
+          desc: 'Specialized tape designed for hemming and seaming banners.',
+          specs: 'Size: 20mm x 25m.',
+          features: ['Weather resistant', 'Hemming alternative', 'High initial tack'],
+          images: ['/dummy-image-square.jpg']
+        },
+        {
+          name: 'Reflective Tape',
+          desc: 'High-visibility safety and hazard warning tape.',
+          specs: 'Size: 50mm x 10m. Variants: S501 (Black/Yellow) and S502 (Red/White).',
+          features: ['High retro-reflectivity', 'Self-adhesive', 'Durable outdoor use'],
+          images: ['/dummy-image-square.jpg']
         }
       ]
     },
     {
-      category: "Measurement & Alignment",
+      title: "Finishing & Application Hardware",
       products: [
         {
-          name: "Digital Measuring Tools",
-          description: "Precise digital measuring devices for accurate installations",
-          features: ["LCD display", "Multiple units", "Memory function", "Compact design"],
-          applications: ["Layout planning", "Precise measuring", "Quality control", "Installation verification"]
+          name: 'Eyelet #2 & Punchers',
+          desc: 'Banner finishing hardware and punching machines.',
+          specs: 'Eyelet #2 pack (1880 pcs, 10mm x 19mm x 5.7mm). Machines: Press Puncher, Semi-automatic Puncher, Manual Puncher.',
+          features: ['Rust resistant eyelets', 'Efficient banner finishing', 'Multiple machine options'],
+          images: ['/dummy-image-square.jpg']
         },
         {
-          name: "Alignment Guides",
-          description: "Professional alignment tools for perfect positioning",
-          features: ["Magnetic base", "Clear markings", "Flexible arms", "Durable construction"],
-          applications: ["Sign alignment", "Logo positioning", "Text alignment", "Multi-panel layouts"]
-        },
-        {
-          name: "Measuring Tapes",
-          description: "Heavy-duty measuring tapes designed for professional use",
-          features: ["Standout blade", "Clear markings", "Magnetic tip", "Belt clip"],
-          applications: ["Large format measuring", "Installation layout", "Material sizing", "Distance measuring"]
-        },
-        {
-          name: "Laser Levels",
-          description: "Precision laser levels for perfect horizontal and vertical alignment",
-          features: ["Self-leveling", "Visible laser lines", "Tripod compatible", "Long battery life"],
-          applications: ["Sign installation", "Level alignment", "Layout reference", "Professional mounting"]
+          name: 'Application Squeegees',
+          desc: 'Tools for applying vinyl, stickers, and films smoothly.',
+          specs: 'Variants: 10x7cm No Logo (Velvet/Standard), 10x14cm White, and Cotton Squeegee with handle (14x9cm).',
+          features: ['Smooth application', 'Bubble and wrinkle removal', 'Scratch-free velvet options'],
+          images: ['/dummy-image-square.jpg']
         }
       ]
     },
     {
-      category: "Maintenance & Cleaning",
+      title: "Cleaning & Maintenance Supplies",
       products: [
         {
-          name: "Cleaning Solutions",
-          description: "Specialized cleaning products for equipment and substrate preparation",
-          features: ["Surface preparation", "Equipment cleaning", "Residue removal", "Fast evaporation"],
-          applications: ["Surface prep", "Equipment maintenance", "Adhesive removal", "Final cleaning"]
+          name: 'Swab (Print Head Use)',
+          desc: 'Specialized cleaning swabs for delicate printer components.',
+          specs: 'Lint-free, solvent-compatible swabs.',
+          features: ['Safe for printheads', 'High absorbency', 'Leaves no residue'],
+          images: ['/dummy-image-square.jpg']
         },
         {
-          name: "Microfiber Cloths",
-          description: "High-quality microfiber cloths for streak-free cleaning",
-          features: ["Lint-free", "Absorbent", "Machine washable", "Multiple sizes"],
-          applications: ["Screen cleaning", "Surface preparation", "Equipment wiping", "Final polish"]
+          name: 'Wiper Polyester',
+          desc: 'Cleanroom-grade polyester wipers for general maintenance.',
+          specs: 'Quantity: 150 pcs per pack.',
+          features: ['Lint-free material', 'Durable and tear-resistant', 'Chemical resistant'],
+          images: ['/dummy-image-square.jpg']
         },
         {
-          name: "Maintenance Kits",
-          description: "Complete maintenance kits for printer and equipment care",
-          features: ["All-in-one solution", "Multiple components", "Instructions included", "Storage case"],
-          applications: ["Routine maintenance", "Preventive care", "Equipment longevity", "Performance optimization"]
-        },
-        {
-          name: "Lubricants & Oils",
-          description: "Specialized lubricants for smooth equipment operation",
-          features: ["Equipment specific", "Long-lasting", "Clean application", "Temperature stable"],
-          applications: ["Moving parts", "Maintenance schedules", "Equipment care", "Performance enhancement"]
+          name: 'Glass Wiper Rubber Strip',
+          desc: 'Handheld wiper for cleaning large glass or flat surfaces.',
+          specs: 'Yellow Handle, Size: 11.8cm x 14.5cm.',
+          features: ['Streak-free cleaning', 'Comfortable grip handle', 'Durable rubber edge'],
+          images: ['/dummy-image-square.jpg']
         }
       ]
     }
   ];
 
-  // Placeholder image for all products
-  const placeholderImg = '/display.png';
+  const openLightbox = (product) => {
+    setSelectedProduct(product);
+    setCurrentImageIndex(0);
+  };
+
+  const closeLightbox = () => {
+    setSelectedProduct(null);
+    setCurrentImageIndex(0);
+  };
+
+  const nextImage = () => {
+    if (selectedProduct && selectedProduct.images) {
+      setCurrentImageIndex((prev) =>
+        prev === selectedProduct.images.length - 1 ? 0 : prev + 1
+      );
+    }
+  };
+
+  const prevImage = () => {
+    if (selectedProduct && selectedProduct.images) {
+      setCurrentImageIndex((prev) =>
+        prev === 0 ? selectedProduct.images.length - 1 : prev - 1
+      );
+    }
+  };
+
+  const goToImage = (index) => {
+    setCurrentImageIndex(index);
+  };
 
   return (
     <div>
       <Header />
-      <main className="accessories-container">
+      <div className="accessories-container">
         <div className="accessories-header">
-          <h1 className="accessories-title">Printing Accessories</h1>
+          <h1 className="accessories-title">Premium Accessories & Tools</h1>
           <p className="accessories-description">
-            Professional accessories and tools to enhance your printing workflow and ensure perfect results.
-            From application tools to maintenance supplies, we have everything you need for professional printing operations.
+            High-quality tools, hardware, and maintenance supplies designed for professional signage and printing operations.
           </p>
         </div>
 
-        {accessoryCategories.map((category, categoryIndex) => (
-          <div key={categoryIndex} className="accessory-category">
-            <h2 className="accessory-category-title">{category.category}</h2>
+        {categories.map((category, catIndex) => (
+          <div key={catIndex} className="accessories-category">
+            <h2 className="accessories-category-title">{category.title}</h2>
             <div className="accessories-grid">
-              {category.products.map((product, productIndex) => (
-                <div key={productIndex} className="accessory-card">
-                  <Image
-                    src={placeholderImg}
-                    alt={product.name}
-                    width={180}
-                    height={120}
-                    className="accessory-image"
-                  />
-                  <div className="accessory-info">
-                    <h3 className="accessory-name">{product.name}</h3>
-                    <p className="accessory-description">{product.description}</p>
-
-                    <div className="accessory-features">
-                      <h4>Key Features:</h4>
+              {category.products.map((product, prodIndex) => (
+                <div key={prodIndex} className="accessories-card">
+                  <div className="accessories-image-wrapper" onClick={() => openLightbox(product)}>
+                    <Image src={product.images[0]} alt={product.name} width={180} height={135} className="accessories-image" />
+                    <div className="accessories-image-overlay"><span>Click to view gallery</span></div>
+                  </div>
+                  <div className="accessories-info">
+                    <h3 className="accessories-name">{product.name}</h3>
+                    <p className="accessories-desc">{product.desc}</p>
+                    <div className="accessories-features">
+                      <h4>Specifications:</h4>
+                      <p style={{ fontSize: '0.9rem', color: '#6b7280', marginBottom: '10px' }}>{product.specs}</p>
+                      <h4>Features:</h4>
                       <ul>
-                        {product.features.map((feature, featureIndex) => (
-                          <li key={featureIndex}>{feature}</li>
+                        {product.features.map((f, i) => (
+                          <li key={i}>
+                            <svg className="accessories-check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                              <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                            {f}
+                          </li>
                         ))}
                       </ul>
-                    </div>
-
-                    <div className="accessory-applications">
-                      <h4>Applications:</h4>
-                      <div className="accessory-application-tags">
-                        {product.applications.map((application, appIndex) => (
-                          <span key={appIndex} className="accessory-application-tag">{application}</span>
-                        ))}
-                      </div>
                     </div>
                   </div>
                 </div>
@@ -184,37 +200,59 @@ export default function Accessories() {
           </div>
         ))}
 
-        <div className="accessories-info">
-          <h2>Why Choose Our Accessories?</h2>
-          <div className="accessories-info-grid">
-            <div className="accessories-info-item">
-              <h3>🛠️ Professional Grade</h3>
-              <p>All accessories are selected for professional use with durability and performance in mind.</p>
-            </div>
-            <div className="accessories-info-item">
-              <h3>🎯 Perfect Compatibility</h3>
-              <p>Accessories designed to work seamlessly with our equipment and materials for optimal results.</p>
-            </div>
-            <div className="accessories-info-item">
-              <h3>📦 Complete Solutions</h3>
-              <p>From basic tools to advanced equipment, we provide everything needed for professional installations.</p>
-            </div>
-            <div className="accessories-info-item">
-              <h3>💡 Expert Guidance</h3>
-              <p>Our team provides recommendations and training on proper tool usage and techniques.</p>
-            </div>
-          </div>
-        </div>
+        {/* Lightbox Modal */}
+        {selectedProduct && (
+          <div className="accessories-lightbox-overlay" onClick={closeLightbox}>
+            <div className="accessories-lightbox-content" onClick={(e) => e.stopPropagation()}>
+              <div className="accessories-lightbox-header">
+                <h2 className="accessories-lightbox-title">{selectedProduct.name}</h2>
+                <div className="accessories-lightbox-actions">
+                  <Link href="/contact" className="accessories-inquiry-btn">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                      <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                    Send Inquiry
+                  </Link>
+                  <button className="accessories-lightbox-close" onClick={closeLightbox}>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                      <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                  </button>
+                </div>
+              </div>
 
-        <div className="accessories-contact-section">
-          <h2>Need Help Choosing Accessories?</h2>
-          <p>Our accessories specialists can recommend the right tools and supplies for your specific applications and workflow requirements.</p>
-          <div className="accessories-contact-buttons">
-            <a href="/contact" className="btn-primary-accessories">Contact Our Experts</a>
-            <a href="/services" className="btn-secondary-accessories">Technical Support</a>
+              <div className="accessories-slideshow-container">
+                <img
+                  src="/dummy-image-square.jpg"
+                  alt={selectedProduct.name}
+                  className="accessories-slideshow-image"
+                />
+
+                {selectedProduct.images.length > 1 && (
+                  <>
+                    <button className="accessories-slideshow-btn accessories-prev-btn" onClick={prevImage}>
+                      <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M15 18L9 12L15 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg>
+                    </button>
+                    <button className="accessories-slideshow-btn accessories-next-btn" onClick={nextImage}>
+                      <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M9 18L15 12L9 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg>
+                    </button>
+
+                    <div className="accessories-slideshow-dots">
+                      {selectedProduct.images.map((_, index) => (
+                        <button
+                          key={index}
+                          className={`accessories-dot ${index === currentImageIndex ? 'active' : ''}`}
+                          onClick={() => goToImage(index)}
+                        />
+                      ))}
+                    </div>
+                  </>
+                )}
+              </div>
+            </div>
           </div>
-        </div>
-      </main>
+        )}
+      </div>
     </div>
   );
 }

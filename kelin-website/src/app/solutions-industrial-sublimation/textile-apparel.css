@@ -7,6 +7,7 @@
     font-display: swap;
 }
 
+
 @font-face {
     font-family: 'Montserrat-Bold';
     src: url('/fonts/Montserrat-Bold.otf') format('opentype');
@@ -51,7 +52,7 @@
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
-/* Headings use Montserrat / Bison */
+/* Headings use Montserrat */
 .luxor-header h1,
 .luxor-header h2,
 .luxor-header h3,
@@ -59,8 +60,7 @@
 .luxor-header h5,
 .luxor-header h6,
 .blog-title,
-.blog-card-title,
-.suggested-title {
+.blog-card-title {
     /* font-family: 'Montserrat-Bold', 'Montserrat-Regular', Arial, sans-serif !important; */
     font-family: 'Bison-Bold', Arial, sans-serif;
     font-weight: 700;
@@ -227,32 +227,8 @@
     gap: 5px;
 }
 
-/* --- Suggested Section Styles --- */
-.suggested-section {
-    margin-top: 6rem;
-    padding-top: 3.5rem;
-    border-top: 1px solid var(--border-color);
-}
-
-.suggested-title {
-    font-size: 2.5rem;
-    color: var(--text-primary);
-    margin-bottom: 2.5rem;
-    text-align: center;
-    text-transform: uppercase;
-}
-
 @media (max-width: 768px) {
     .luxor-header {
         margin-top: 3rem;
-    }
-
-    .suggested-section {
-        margin-top: 4rem;
-        padding-top: 2.5rem;
-    }
-
-    .suggested-title {
-        font-size: 2rem;
     }
 }

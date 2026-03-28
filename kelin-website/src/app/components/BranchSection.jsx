@@ -9,7 +9,7 @@ export default function BranchSection() {
         {
             id: 'manila',
             name: 'Manila Branch',
-            address: '2115, 1014 Felix Huertas Rd, Santa Cruz, Manila, 1014 Metro Manila',
+            address: '2115, Felix Huertas Rd, Santa Cruz, Manila, Metro Manila',
             phone: '(02) 8711 1188',
             mobile: '0917 678 0608 | 0908 196 0836',
             hours: 'Mon-Fri, 8 AM - 5 PM',

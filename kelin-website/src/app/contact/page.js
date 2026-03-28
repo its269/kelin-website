@@ -158,8 +158,8 @@ export default function Contact() {
                                         </div>
                                         <div className="contact-text">
                                             <h3>Address</h3>
-                                            <p>3M Compound First Street Warehouse 11</p>
-                                            <p>Santa Rosa II, Marilao, Bulacan</p>
+                                            <p>2115, Felix Huertas Rd,</p>
+                                            <p>Santa Cruz, Manila, Metro Manila</p>
                                             <p>Philippines</p>
                                         </div>
                                     </div>

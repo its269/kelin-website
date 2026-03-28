@@ -8,7 +8,7 @@ export default function BlogsPage() {
     // Map blog post titles to their custom guide URLs
     const guideLinks = {
         "SMART RJ24-2004-i3200": "/blogs-smart-eco-solvent-printer",
-        "XLINE Eco-Solvent": "/xline-eco-solvent",
+        "XLINE Eco-Solvent": "/blogs-xline-eco-solvent",
         "ApolloMax Plus II PZG3208-KV": "/apollomax-plus-ii-pzg3208-kv",
         "iEcho PK": "/iecho-pk",
         "iEcho PK4": "/iecho-pk4",
@@ -52,6 +52,7 @@ export default function BlogsPage() {
         "Smartex Knitting Machine GS-CE152": "/smartex-knitting-machine-gs-ce152",
         "K-Sign Letter Shell 3D Printer": "/k-sign-letter-shell-3d-printer"
     };
+
     const blogPosts = [
         // Eco Solvent Printer Machines
         { id: 1, title: "SMART RJ24-2004-i3200", category: "Eco Solvent", excerpt: "Discover the precision and efficiency of the SMART RJ24-2004-i3200 for high-resolution graphics.", date: "March 2026", image: '/eco-solvent-machines/SMART.webp' },
@@ -116,6 +117,34 @@ export default function BlogsPage() {
         { id: 44, title: "K-Sign Letter Shell 3D Printer", category: "3D Machines", excerpt: "Revolutionizing channel letter fabrication with specialized 3D printing.", date: "January 2025", image: '/3D Printer (1).webp' }
     ];
 
+    // Data for the 'You Might Also Like' section
+    const suggestedPosts = [
+        {
+            id: 's1',
+            title: "Omega Tarpaulin: Maximizing Durability",
+            category: "Materials",
+            excerpt: "Learn the best printing practices and tension techniques to make your Omega Tarpaulin last longer outdoors.",
+            image: "/materials/omega-tarpaulin.webp",
+            link: "/materials"
+        },
+        {
+            id: 's2',
+            title: "Essential Printhead Cleaning Kits",
+            category: "Accessories",
+            excerpt: "Discover the must-have cleaning solutions to extend the lifespan of your i3200 and F1080 printheads.",
+            image: "/accessories/cleaning-kit.webp",
+            link: "/accessories"
+        },
+        {
+            id: 's3',
+            title: "UV vs. Eco-Solvent Comparison",
+            category: "Inks",
+            excerpt: "Which technology suits your business? A comprehensive breakdown of UV and Eco-Solvent inks applications.",
+            image: "/uv-machines/SMART UV Printer.webp",
+            link: "/smart-uv-printer"
+        }
+    ];
+
     const categories = ["All", ...new Set(blogPosts.map(post => post.category))];
     const [activeCategory, setActiveCategory] = useState("All");
 
@@ -160,13 +189,42 @@ export default function BlogsPage() {
                             <p className="post-excerpt">{post.excerpt}</p>
                             <a
                                 href={guideLinks[post.title] || `/blogs/${post.id}`}
-                                className="read-more-link"
+                                className="read-guide-link"
                             >
                                 Read Guide &rarr;
                             </a>
                         </div>
                     </article>
                 ))}
+            </section>
+
+            {/* --- New Suggested Section --- */}
+            <section className="suggested-section">
+                <h2 className="suggested-title">You Might Also Like</h2>
+                <div className="luxor-grid">
+                    {suggestedPosts.map((post) => (
+                        <article key={post.id} className="luxor-card">
+                            <div className="card-image-container">
+                                <img
+                                    src={post.image || '/dummy-image-square.jpg'}
+                                    alt={post.title}
+                                    className="card-img"
+                                />
+                            </div>
+                            <div className="card-content">
+                                <span className="category-pill">{post.category}</span>
+                                <h3>{post.title}</h3>
+                                <p className="post-excerpt">{post.excerpt}</p>
+                                <a
+                                    href={post.link}
+                                    className="read-guide-link"
+                                >
+                                    Read Guide &rarr;
+                                </a>
+                            </div>
+                        </article>
+                    ))}
+                </div>
             </section>
         </main>
     );

@@ -2,6 +2,7 @@
 
 import { useRef, useEffect, useState } from 'react';
 import styles from './FeaturedCarousel.module.css';
+import Link from 'next/link';
 
 const FeaturedCarousel = ({ items = [], title = "Featured Subjects", label, onActiveItemChange }) => {
     const carouselRef = useRef(null);
@@ -86,7 +87,7 @@ const FeaturedCarousel = ({ items = [], title = "Featured Subjects", label, onAc
         }
     };
 
-    // Handle button click
+    // Handle button click (legacy, not used for direct links)
     const handleButtonClick = (item, e) => {
         e.stopPropagation(); // Prevent item click
         if (item.onButtonClick) {
@@ -170,12 +171,23 @@ const FeaturedCarousel = ({ items = [], title = "Featured Subjects", label, onAc
                                 />
                             </div>
                             <div className={styles.itemTitle}>{item.title}</div>
-                            <button
-                                className={styles.btn}
-                                onClick={(e) => handleButtonClick(item, e)}
-                            >
-                                {item.buttonText || 'View More'}
-                            </button>
+                            {item.link ? (
+                                <Link
+                                    href={item.link}
+                                    className={styles.btn}
+                                    onClick={e => e.stopPropagation()}
+                                    passHref
+                                >
+                                    {item.buttonText || 'View More'}
+                                </Link>
+                            ) : (
+                                <button
+                                    className={styles.btn}
+                                    onClick={(e) => handleButtonClick(item, e)}
+                                >
+                                    {item.buttonText || 'View More'}
+                                </button>
+                            )}
                         </div>
                     ))}
                 </div>

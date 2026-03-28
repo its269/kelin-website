@@ -15,8 +15,6 @@ import "./bison-font.css";
 import "./montserrat-font.css";
 import "./arial-bold-font.css";
 
-// 🔧 SSG CODE PATTERN: Default export function component
-// This is the basic pattern for SSG in Next.js App Router
 export default function Home() {
   const [activeSolution, setActiveSolution] = useState(null);
 
@@ -28,7 +26,7 @@ export default function Home() {
       title: "Industrial Sublimation",
       description: "High-volume sublimation printing solutions for textiles, promotional products, and personalized items with vibrant, long-lasting color transfer technology.",
       buttonText: "Learn More",
-      onButtonClick: (item) => console.log(`Button clicked for ${item.title}`)
+      link: "/solutions-industrial-sublimation"
     },
     {
       id: 2,
@@ -36,7 +34,7 @@ export default function Home() {
       title: "Textile and Apparel",
       description: "Complete textile printing solutions for fashion, sportswear, and custom apparel with advanced color management and fabric compatibility for professional results.",
       buttonText: "Learn More",
-      onButtonClick: (item) => console.log(`Button clicked for ${item.title}`)
+      link: "/solutions-textile-apparel"
     },
     {
       id: 3,
@@ -44,7 +42,7 @@ export default function Home() {
       title: "Direct to Film (DTF)",
       description: "Revolutionary DTF printing technology for versatile fabric decoration, enabling full-color transfers on any textile with superior durability and flexibility.",
       buttonText: "Learn More",
-      onButtonClick: (item) => console.log(`Button clicked for ${item.title}`)
+      link: "/solutions-dtf"
     },
     {
       id: 4,
@@ -52,7 +50,7 @@ export default function Home() {
       title: "UV DTF",
       description: "Next-generation UV DTF printing for hard surfaces and specialty applications, delivering vibrant prints with instant curing and exceptional adhesion on diverse materials.",
       buttonText: "Learn More",
-      onButtonClick: (item) => console.log(`Button clicked for ${item.title}`)
+      link: "/solutions-uv-dtf"
     },
     {
       id: 5,
@@ -60,7 +58,7 @@ export default function Home() {
       title: "Threadwork",
       description: "Professional embroidery and knitting solutions for custom logos, designs, and decorative patterns with precision stitching technology for apparel and textiles.",
       buttonText: "Learn More",
-      onButtonClick: (item) => console.log(`Button clicked for ${item.title}`)
+      link: "/solutions-threadwork"
     },
     {
       id: 6,
@@ -68,7 +66,7 @@ export default function Home() {
       title: "Digital Printing Equipment",
       description: "State-of-the-art digital printing machines for large format graphics, banners, and signage with high-speed production and exceptional print quality.",
       buttonText: "Learn More",
-      onButtonClick: (item) => console.log(`Button clicked for ${item.title}`)
+      link: "/solutions-digital-printing-equipment"
     },
     {
       id: 7,
@@ -76,7 +74,7 @@ export default function Home() {
       title: "Signages",
       description: "Comprehensive signage solutions including indoor and outdoor displays, channel letters, LED signs, and custom fabrication for commercial and retail applications.",
       buttonText: "Learn More",
-      onButtonClick: (item) => console.log(`Button clicked for ${item.title}`)
+      link: "/solutions-signages"
     },
     {
       id: 8,
@@ -84,7 +82,7 @@ export default function Home() {
       title: "Industrial Cutter",
       description: "Heavy-duty industrial cutting machines for vinyl, fabric, leather, and specialty materials with precision control and automated workflow integration.",
       buttonText: "Learn More",
-      onButtonClick: (item) => console.log(`Button clicked for ${item.title}`)
+      link: "/solutions-industrial-cutter"
     },
     {
       id: 9,
@@ -92,7 +90,7 @@ export default function Home() {
       title: "Cutting Solution",
       description: "Complete cutting solutions for graphics, packaging, and prototype development with CAM software integration and multi-tool compatibility for diverse materials.",
       buttonText: "Learn More",
-      onButtonClick: (item) => console.log(`Button clicked for ${item.title}`)
+      link: "/solutions-cutting-machines"
     },
     {
       id: 10,
@@ -100,7 +98,7 @@ export default function Home() {
       title: "Laser Machine Solution",
       description: "Advanced laser cutting and engraving systems for acrylic, wood, metal, and fabric with precision control for intricate designs and industrial production.",
       buttonText: "Learn More",
-      onButtonClick: (item) => console.log(`Button clicked for ${item.title}`)
+      link: "/solutions-laser-machines"
     },
     {
       id: 11,
@@ -108,7 +106,7 @@ export default function Home() {
       title: "Personalized Machine Solution",
       description: "Custom-configured printing equipment tailored to your specific business needs, workflow requirements, and production goals with dedicated support and training.",
       buttonText: "Learn More",
-      onButtonClick: (item) => console.log(`Button clicked for ${item.title}`)
+      link: "/solutions-personalize-machines"
     },
     {
       id: 12,
@@ -116,7 +114,7 @@ export default function Home() {
       title: "Exhibition Displays",
       description: "Professional trade show and exhibition display systems including portable booths, banner stands, and promotional structures for impactful brand presentations.",
       buttonText: "Learn More",
-      onButtonClick: (item) => console.log(`Button clicked for ${item.title}`)
+      link: "/solutions-exhibition-display"
     },
     {
       id: 13,
@@ -124,28 +122,19 @@ export default function Home() {
       title: "Substrates and Materials",
       description: "Premium printing substrates, transfer papers, films, and specialty materials optimized for sublimation, DTF, UV, and eco-solvent printing applications.",
       buttonText: "Explore",
-      onButtonClick: (item) => console.log(`Button clicked for ${item.title}`)
+      link: "/solutions-substrates-materials"
     }
   ];
 
-  // 🔧 SSG CODE PATTERN: No async function, no data fetching
-  // - No "async" keyword = no server-side data fetching
-  // - No fetch() calls = no dynamic data at build time
-  // - This tells Next.js to pre-render this as static HTML
   return (
     <div className="main">
-      {/* 🔧 SSG CODE PATTERN: Static component imports */}
-      {/* These components have no props = no dynamic data = SSG friendly */}
       <Header />
       <main className="home-container">
         <div className="marquee-container">
           <section className="hero-section">
             <div className="hero-section2">
-              {/* 🔧 SSG CODE PATTERN: Hardcoded static content */}
-              {/* These strings are known at build time = perfect for SSG */}
               <div className="home-tagline-text">
                 <div className="tagline">
-                  {/* <p className="kgs">KGS</p> */}
                   <h1 className="hero1-title">YOUR TRUSTED<br></br>LONG-TERM PRINTING SOLUTIONS PROVIDER</h1>
                   <div className="button-categories">
                     <a href="/cutting-machine" className="btns">
@@ -166,33 +155,9 @@ export default function Home() {
                   </div>
                 </div>
                 <div className="hero-image">
-                  {/* <img src="/DTF UV Printer SF604-i3200 2ft. - High Res (1).png" alt="Kelin Graphics System Logo" className="kelin-logo-hero" /> */}
-                  {/* <b>Powering high-quality output at any scale.</b><br></br>From your vision to powerful,
-                large-scale prints. */}
                   <Slideshow />
-                  {/* <img src="/liyuxline.png" alt="Kelin Graphics System Logo" className="right-top-image" /> */}
                 </div>
               </div>
-
-              {/* 🔧 SSG CODE PATTERN: Static navigation links */}
-              {/* href values are hardcoded = pre-rendered in static HTML */}
-              {/* <div className="hero-buttons">
-              <a href="/cutting-machine" className="btns">
-                <div className="btns-primary-cat">Cutting Machine</div>
-              </a>
-              <a href="/eco-solvent-printers" className="btns">
-                <div className="btns-secondary-cat">Eco-Solvent<br></br>Printer Machine</div>
-              </a>
-              <a href="/solvent-printers" className="btns">
-                <div className="btns-tertiary-cat">Solvent<br></br>Printer Machine</div>
-              </a>
-              <a href="/sublimation-dtf" className="btns">
-                <div className="btns-quaternary-cat">Sublimation<br></br>Printer Machine</div>
-              </a>
-              <a href="/embroidery-knitting" className="btns">
-                <div className="btns-quinary-cat">Embroidery<br></br>Knitting</div>
-              </a>
-            </div> */}
             </div>
             <img src="/background-elements.svg" alt="Decorative Element" className="decorative-element-home bg-elements-home" />
             <img src="/background-elements(2).svg" alt="Decorative Element 2" className="decorative-element-2-home bg-elements-home" />
@@ -202,8 +167,8 @@ export default function Home() {
             <MarqueeLogo />
           </div>
         </div>
+
         <div className="horizontal-click-scroll">
-          {/* Featured Carousel */}
           <FeaturedCarousel
             items={carouselItems}
             label="SOLUTIONS"
@@ -216,16 +181,14 @@ export default function Home() {
             onActiveItemChange={setActiveSolution}
           />
         </div>
+
         <section className="features-section-landing">
           <div className="luxor-components">
-            {/* 🔧 SSG CODE PATTERN: Static array rendering */}
-            {/* This grid is hardcoded, not from API = SSG compatible */}
             <TextSection
               label="LUXOR"
               title={
                 <>
                   The perfect printing solution, tailored by you.<br className="desktop-break" />
-
                 </>
               }
               description="Whether you need high-quality DTF printing, precise UV printing, or professional direct-to-film solutions, LUXOR delivers exceptional results for your business."
@@ -243,7 +206,6 @@ export default function Home() {
                     priority
                   />
                 </div>
-                {/* <h3>LUXOR SF60-4 | DTF UV PRINTER</h3> */}
                 <h4>ADVANCE W+CMYK+V PRINTING CAPABILITY</h4>
                 <p><b>Import THK Guide Rail</b><br></br>THK mute linear guide - stable, durable, and quiet.<br></br><br></br><b>Double chain Design</b><br></br>Ink Chain and Cable Chain separation, avoid signal disturb, ensure communicate Smoothly</p>
               </Link>
@@ -258,7 +220,6 @@ export default function Home() {
                     priority
                   />
                 </div>
-                {/*  <h3>LUXOR SF30-3 | DTF UV PRINTER </h3> */}
                 <h4>BRILLIANT COLOR PRINTING WITH VARNISH</h4>
                 <p><b>Air-cooled LED UV Lamp</b><br></br>30% Lower Energy Consumption.<br></br><br></br><b>CMYK + W + V Ink Printing</b><br></br>Original ink, printing bright, high degree of color reduction.</p>
               </Link>
@@ -273,8 +234,7 @@ export default function Home() {
                     priority
                   />
                 </div>
-                {/* <h3>LUXOR UV-A3 WITH CYLINDER AND RTR | FLATBED PRINTER</h3> */}
-                <h4>HIGH-FUNCTION DESIGN  SUPPORTING 4 APPLICATIONS</h4>
+                <h4>HIGH-FUNCTION DESIGN SUPPORTING 4 APPLICATIONS</h4>
                 <p><b>High-Quality Printing</b><br></br>Epson i3200(8)-U1 printhead, 1200DPI for high-resolution output.<br></br><br></br><b>Intelligent Ink Supply</b><br></br>New ink tank with auto circulation and low ink alarm.</p>
               </Link>
             </div>
@@ -283,18 +243,12 @@ export default function Home() {
           <img src="/background-elements(2).svg" alt="LUXOR Background" className="luxor-background-elements2 luxor-bg-elements" />
         </section>
 
-        {/* News & Events Section */}
         <NewsEventsSection />
         <div className="horizontally-scroll">
           <HorizontalScrollSection />
         </div>
-        {/* 🔧 SSG CODE PATTERN: Component with no props */}
-        {/* No props passed = no dynamic data = SSG will pre-render this */}
         <BranchSection />
       </main>
     </div>
   );
 }
-
-// 🔧 SSG RESULT: This entire component becomes a static .html file at build time
-// Next.js detects: no async, no fetch(), no dynamic data = perfect for SSG

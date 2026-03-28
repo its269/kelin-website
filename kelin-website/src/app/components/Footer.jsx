@@ -47,7 +47,7 @@ export default function Footer() {
                             <div className="footer-contact">
                                 <p>
                                     <strong>Address:</strong><br />
-                                    2115, 1014 Felix Huertas Rd, Santa Cruz, Manila, 1014 Metro Manila
+                                    2115, Felix Huertas Rd, Santa Cruz, Manila, Metro Manila
                                 </p>
                                 <p>
                                     <strong>Mobile:</strong><br />
