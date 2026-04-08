@@ -49,7 +49,7 @@ export default function Header() {
         { title: "UV Printers", path: "/uv-printers", type: "category" },
         { title: "Heatpress", path: "/heatpress", type: "category" },
         { title: "Laminator", path: "/laminator", type: "category" },
-        { title: "Laser Machine", path: "/embroidery-knitting", type: "category" },
+        { title: "Laser Machine", path: "/laser-machine", type: "category" },
         { title: "Embroidery and Knitting", path: "/embroidery-knitting", type: "category" },
         { title: "3D Printer", path: "/3d-printer", type: "category" },
 
@@ -488,30 +488,8 @@ export default function Header() {
 
 
 
-                {/* Learn More Dropdown in Main Nav */}
-                <div
-                    className={`dropdown`}
-                    style={{ position: 'relative' }}
-                    onMouseEnter={() => setProductsOpen(true)}
-                    onMouseLeave={() => setProductsOpen(false)}
-                >
-                    <span
-                        className="dropdown-toggle"
-                        style={{ cursor: 'pointer' }}
-                        onClick={() => setProductsOpen(!productsOpen)}
-                    >
-                        Learn More
-                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" style={{ marginLeft: 4 }}>
-                            <path d="M6 9L12 15L18 9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                        </svg>
-                    </span>
-                    {productsOpen && (
-                        <div className="dropdown-menu" style={{ minWidth: 140 }}>
-                            <Link href="/explore">Explore</Link>
-                            <Link href="/blogs">Blog</Link>
-                        </div>
-                    )}
-                </div>
+                <Link href="/explore" className={`dropdown-toggle ${isActive("/explore") ? "active" : ""}`}>Explore</Link>
+                <Link href="/blogs" className={`dropdown-toggle ${isActive("/blogs") ? "active" : ""}`}>Blog</Link>
 
                 {/* Products Dropdown */}
                 <div
@@ -711,26 +689,8 @@ export default function Header() {
 
 
                         <Link href="/" className={isActive("/") ? "active" : ""} onClick={() => setOpen(false)}>Home</Link>
-                        {/* Learn More Dropdown for Mobile in Main Nav */}
-                        <div className="mobile-dropdown">
-                            <button
-                                className="mobile-dropdown-toggle"
-                                onClick={() => setProductsOpen(!productsOpen)}
-                                aria-expanded={productsOpen}
-                                aria-controls="mobile-learnmore-submenu"
-                            >
-                                Learn More
-                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none">
-                                    <path d="M6 9L12 15L18 9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                                </svg>
-                            </button>
-                            {productsOpen && (
-                                <div id="mobile-learnmore-submenu" className="mobile-dropdown-menu" role="menu">
-                                    <Link href="/explore" onClick={() => setOpen(false)} role="menuitem">Explore</Link>
-                                    <Link href="/blogs" onClick={() => setOpen(false)} role="menuitem">Blog</Link>
-                                </div>
-                            )}
-                        </div>
+                        <Link href="/explore" className={isActive("/explore") ? "active" : ""} onClick={() => setOpen(false)}>Explore</Link>
+                        <Link href="/blogs" className={isActive("/blogs") ? "active" : ""} onClick={() => setOpen(false)}>Blog</Link>
 
                         {/* Mobile Products Dropdown */}
                         <div className="mobile-dropdown">

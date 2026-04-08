@@ -985,10 +985,14 @@ export default function Inks() {
     email: '',
     company: '',
     phone: '',
+    countryCode: '+63',
     subject: '',
     message: '',
     productName: ''
   });
+  const [submitting, setSubmitting] = useState(false);
+  const [submitSuccess, setSubmitSuccess] = useState(null);
+  const [submitError, setSubmitError] = useState(null);
 
   const openLightbox = (product, categoryName) => {
     setSelectedProduct({ ...product, categoryName });
@@ -1012,10 +1016,14 @@ export default function Inks() {
       email: '',
       company: '',
       phone: '',
+      countryCode: '+63',
       subject: '',
       message: '',
       productName: ''
     });
+    setSubmitting(false);
+    setSubmitSuccess(null);
+    setSubmitError(null);
   };
 
   const handleInquiryInputChange = (e) => {
@@ -1025,10 +1033,52 @@ export default function Inks() {
 
   const handleInquirySubmit = async (e) => {
     e.preventDefault();
-    // Handle form submission here
-    console.log('Inquiry submitted:', inquiryFormData);
-    closeInquiryForm();
-    alert('Thank you for your inquiry! We will contact you soon.');
+    setSubmitting(true);
+    setSubmitSuccess(null);
+    setSubmitError(null);
+    const formData = new FormData();
+    Object.entries(inquiryFormData).forEach(([key, value]) => {
+      formData.append(key, value);
+    });
+    formData.append('_cc', 'info@kelinph.com');
+    formData.append('Page Source', inquiryFormData.productName || 'Inks & Consumables');
+    formData.append('_replyto', inquiryFormData.email || '');
+    formData.append('_subject', `Inquiry: ${inquiryFormData.productName || 'Inks & Consumables'}`);
+    formData.append('Page URL', typeof window !== 'undefined' ? window.location.href : '');
+    formData.append('Submitted At', new Date().toLocaleString('en-US', { timeZone: 'Asia/Manila' }));
+    formData.append('inquiryType', 'product-inquiry');
+    try {
+      const res = await fetch('https://formspree.io/f/mvzwzkkd', {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'Accept': 'application/json',
+        },
+      });
+      const data = await res.json();
+      if (res.ok) {
+        setSubmitSuccess('Inquiry submitted successfully!');
+        setSubmitError(null);
+        setInquiryFormData({
+          name: '',
+          email: '',
+          company: '',
+          phone: '',
+          countryCode: '+63',
+          subject: '',
+          message: '',
+          productName: ''
+        });
+      } else {
+        setSubmitError(data?.errors?.[0]?.message || 'Submission failed. Please try again.');
+        setSubmitSuccess(null);
+      }
+    } catch (err) {
+      setSubmitError('Submission failed. Please try again.');
+      setSubmitSuccess(null);
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -1301,6 +1351,7 @@ export default function Inks() {
                     value={inquiryFormData.name}
                     onChange={handleInquiryInputChange}
                     required
+                    disabled={submitting}
                   />
                 </div>
 
@@ -1316,6 +1367,7 @@ export default function Inks() {
                     title="Please enter a valid email address (e.g., name@domain.com)"
                     placeholder="name@company.com"
                     required
+                    disabled={submitting}
                   />
                 </div>
 
@@ -1328,13 +1380,15 @@ export default function Inks() {
                       name="company"
                       value={inquiryFormData.company}
                       onChange={handleInquiryInputChange}
+                      disabled={submitting}
                     />
                   </div>
 
                   <div className="inks-form-group">
                     <label htmlFor="phone">Phone Number</label>
                     <div className="inks-phone-input">
-                      <select name="countryCode" className="inks-country-select" defaultValue="+63">
+                      <select name="countryCode" className="inks-country-select" value={inquiryFormData.countryCode} onChange={handleInquiryInputChange} disabled={submitting}>
+                        {/* ...existing code for country options... */}
                         <option value="+63">🇵🇭 +63</option>
                         <option value="+1">🇺🇸 +1</option>
                         <option value="+1">🇨🇦 +1</option>
@@ -1477,6 +1531,7 @@ export default function Inks() {
                         placeholder="123 456 7890"
                         pattern="[0-9\s\-\(\)]{7,15}"
                         title="Please enter a valid phone number"
+                        disabled={submitting}
                       />
                     </div>
                   </div>
@@ -1491,6 +1546,7 @@ export default function Inks() {
                     value={inquiryFormData.subject}
                     onChange={handleInquiryInputChange}
                     required
+                    disabled={submitting}
                   />
                 </div>
 
@@ -1504,15 +1560,23 @@ export default function Inks() {
                     onChange={handleInquiryInputChange}
                     placeholder="Please describe your inquiry, requirements, or questions about this product..."
                     required
+                    disabled={submitting}
                   ></textarea>
                 </div>
 
+                {submitSuccess && (
+                  <div className="inks-form-success">{submitSuccess}</div>
+                )}
+                {submitError && (
+                  <div className="inks-form-error">{submitError}</div>
+                )}
+
                 <div className="inks-form-actions">
-                  <button type="button" className="inks-btn-secondary" onClick={closeInquiryForm}>
+                  <button type="button" className="inks-btn-secondary" onClick={closeInquiryForm} disabled={submitting}>
                     Cancel
                   </button>
-                  <button type="submit" className="inks-btn-primary">
-                    Send Inquiry
+                  <button type="submit" className="inks-btn-primary" disabled={submitting}>
+                    {submitting ? 'Sending...' : 'Send Inquiry'}
                   </button>
                 </div>
               </form>

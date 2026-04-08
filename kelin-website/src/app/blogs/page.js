@@ -121,25 +121,25 @@ export default function BlogsPage() {
     const suggestedPosts = [
         {
             id: 's1',
-            title: "Omega Tarpaulin: Maximizing Durability",
+            title: "Omega Tarpaulin: Tips for Maximum Durability and Longevity",
             category: "Materials",
-            excerpt: "Learn the best printing practices and tension techniques to make your Omega Tarpaulin last longer outdoors.",
+            excerpt: "Discover expert tips and techniques to enhance the durability and lifespan of Omega Tarpaulin for outdoor use.",
             image: "/materials/omega-tarpaulin.webp",
             link: "/materials"
         },
         {
             id: 's2',
-            title: "Essential Printhead Cleaning Kits",
+            title: "Essential Printhead Cleaning Kits for Long-Lasting Performance",
             category: "Accessories",
-            excerpt: "Discover the must-have cleaning solutions to extend the lifespan of your i3200 and F1080 printheads.",
+            excerpt: "Learn how to maintain your i3200 and F1080 printheads with these must-have cleaning kits for optimal printing quality.",
             image: "/accessories/cleaning-kit.webp",
             link: "/accessories"
         },
         {
             id: 's3',
-            title: "UV vs. Eco-Solvent Comparison",
+            title: "UV vs. Eco-Solvent Inks: Which is Best for Your Business?",
             category: "Inks",
-            excerpt: "Which technology suits your business? A comprehensive breakdown of UV and Eco-Solvent inks applications.",
+            excerpt: "Compare UV and Eco-Solvent inks to find the perfect solution for your printing needs and business growth.",
             image: "/uv-machines/SMART UV Printer.webp",
             link: "/smart-uv-printer"
         }

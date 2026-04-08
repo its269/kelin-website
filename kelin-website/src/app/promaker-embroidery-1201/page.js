@@ -1,5 +1,6 @@
 ﻿"use client";
 import Header from '../components/Header';
+import VideoPlayer from '../components/VideoPlayer';
 import Link from 'next/link';
 import { useState, useRef, useEffect } from 'react';
 import './promaker-embroidery-1201.css';
@@ -112,10 +113,44 @@ export default function PromakerEmbroidery1201() {
         setInquiryModalOpen(false);
     };
 
-    const handleSubmitInquiry = (e) => {
+    const [inquiryStatus, setInquiryStatus] = useState(null); // null | 'success' | 'error' | 'loading'
+    const handleSubmitInquiry = async (e) => {
         e.preventDefault();
-        alert('Thank you for your inquiry! We will contact you soon.');
-        closeInquiryModal();
+        setInquiryStatus('loading');
+        const form = e.target;
+        const formData = new FormData(form);
+        // Combine country code and phone
+        const countryCode = formData.get('countryCode') || '';
+        const phone = formData.get('phone') || '';
+        formData.set('phone', `${countryCode} ${phone}`);
+        formData.delete('countryCode');
+        formData.append('_cc', 'info@kelinph.com');
+        formData.append('Page Source', 'Promaker Embroidery 1201');
+        formData.append('_replyto', formData.get('email') || '');
+        formData.append('_subject', 'Inquiry: Promaker Embroidery 1201');
+        formData.append('Page URL', typeof window !== 'undefined' ? window.location.href : '');
+        formData.append('Submitted At', new Date().toLocaleString('en-US', { timeZone: 'Asia/Manila' }));
+        formData.append('name', `${formData.get('firstName') || ''} ${formData.get('lastName') || ''}`.trim());
+        formData.append('inquiryType', 'product-inquiry');
+        try {
+            const res = await fetch('https://formspree.io/f/mvzwzkkd', {
+                method: 'POST',
+                headers: { 'Accept': 'application/json' },
+                body: formData,
+            });
+            if (res.ok) {
+                setInquiryStatus('success');
+                form.reset();
+                setTimeout(() => {
+                    setInquiryStatus(null);
+                    closeInquiryModal();
+                }, 2000);
+            } else {
+                setInquiryStatus('error');
+            }
+        } catch (err) {
+            setInquiryStatus('error');
+        }
     };
 
     return (
@@ -182,8 +217,13 @@ export default function PromakerEmbroidery1201() {
                     </div>
                 </section>
 
+                {/* Video Section */}
+                <section className="videoPlayer-section">
+                    <VideoPlayer src="/promaker-embroidery.mp4" poster="" className="" />
+                </section>
+
                 {/* Key Features */}
-                <section className="promaker-embroidery-1201-features-section">
+                <section className="promaker-embroidery-1201-features-section" style={{ marginTop: '100px' }}>
                     <div className="promaker-embroidery-1201-features-container">
                         <div className="promaker-embroidery-1201-features-header">
                             <h2 className="promaker-embroidery-1201-features-title">Key Features</h2>
@@ -509,9 +549,17 @@ export default function PromakerEmbroidery1201() {
                             </div>
 
                             <div className="promaker-embroidery-1201-form-actions">
-                                <button type="submit" className="promaker-embroidery-1201-btn-primary">Send Inquiry</button>
-                                <button type="button" onClick={closeInquiryModal} className="promaker-embroidery-1201-btn-secondary">Cancel</button>
+                                <button type="submit" className="promaker-embroidery-1201-btn-primary" disabled={inquiryStatus === 'loading'}>
+                                    {inquiryStatus === 'loading' ? 'Sending...' : 'Send Inquiry'}
+                                </button>
+                                <button type="button" onClick={closeInquiryModal} className="promaker-embroidery-1201-btn-secondary" disabled={inquiryStatus === 'loading'}>Cancel</button>
                             </div>
+                            {inquiryStatus === 'success' && (
+                                <div style={{ color: 'green', marginTop: 10 }}>Thank you for your inquiry! We will contact you soon.</div>
+                            )}
+                            {inquiryStatus === 'error' && (
+                                <div style={{ color: 'red', marginTop: 10 }}>There was an error sending your inquiry. Please try again later.</div>
+                            )}
                         </form>
                     </div>
                 </div>

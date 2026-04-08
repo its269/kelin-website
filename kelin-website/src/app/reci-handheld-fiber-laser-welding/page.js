@@ -107,17 +107,54 @@ export default function ReciHandheldFiberLaserWelding() {
 
     const openInquiryModal = () => {
         setInquiryModalOpen(true);
+        setSubmitSuccess(null);
+        setSubmitMessage("");
     };
 
     const closeInquiryModal = () => {
         setInquiryModalOpen(false);
     };
 
-    const handleSubmitInquiry = (e) => {
+    const [submitting, setSubmitting] = useState(false);
+    const [submitSuccess, setSubmitSuccess] = useState(null); // null | true | false
+    const [submitMessage, setSubmitMessage] = useState("");
+
+    async function handleSubmitInquiry(e) {
         e.preventDefault();
-        alert('Thank you for your inquiry! We will contact you soon.');
-        closeInquiryModal();
-    };
+        setSubmitting(true);
+        setSubmitSuccess(null);
+        setSubmitMessage("");
+        const form = e.target;
+        const data = new FormData(form);
+        data.append('_cc', 'info@kelinph.com');
+        data.append('Page Source', 'RECI Handheld Fiber Laser Welding');
+        data.append('_replyto', data.get('email') || '');
+        data.append('_subject', 'Inquiry: RECI Handheld Fiber Laser Welding');
+        data.append('Page URL', typeof window !== 'undefined' ? window.location.href : '');
+        data.append('Submitted At', new Date().toLocaleString('en-US', { timeZone: 'Asia/Manila' }));
+        data.append('name', `${data.get('firstName') || ''} ${data.get('lastName') || ''}`.trim());
+        data.append('inquiryType', 'product-inquiry');
+        try {
+            const response = await fetch("https://formspree.io/f/mvzwzkkd", {
+                method: "POST",
+                headers: { Accept: "application/json" },
+                body: data,
+            });
+            if (response.ok) {
+                setSubmitSuccess(true);
+                setSubmitMessage("Thank you! Your inquiry has been sent.");
+                form.reset();
+            } else {
+                setSubmitSuccess(false);
+                setSubmitMessage("Sorry, there was a problem sending your inquiry. Please try again later.");
+            }
+        } catch (error) {
+            setSubmitSuccess(false);
+            setSubmitMessage("Sorry, there was a problem sending your inquiry. Please try again later.");
+        } finally {
+            setSubmitting(false);
+        }
+    }
 
     return (
         <div>
@@ -299,6 +336,12 @@ export default function ReciHandheldFiberLaserWelding() {
                         </div>
 
                         <form onSubmit={handleSubmitInquiry} className="reci-welding-inquiry-form">
+                            {submitSuccess === true && (
+                                <div className="form-success-message" style={{ color: 'green', marginBottom: 12 }}>{submitMessage}</div>
+                            )}
+                            {submitSuccess === false && (
+                                <div className="form-error-message" style={{ color: 'red', marginBottom: 12 }}>{submitMessage}</div>
+                            )}
                             <div className="reci-welding-form-row">
                                 <div className="reci-welding-form-group">
                                     <label htmlFor="firstName">First Name *</label>
@@ -473,8 +516,10 @@ export default function ReciHandheldFiberLaserWelding() {
                             </div>
 
                             <div className="reci-welding-form-actions">
-                                <button type="submit" className="reci-welding-btn-primary">Send Inquiry</button>
-                                <button type="button" onClick={closeInquiryModal} className="reci-welding-btn-secondary">Cancel</button>
+                                <button type="submit" className="reci-welding-btn-primary" disabled={submitting}>
+                                    {submitting ? "Sending..." : "Send Inquiry"}
+                                </button>
+                                <button type="button" onClick={closeInquiryModal} className="reci-welding-btn-secondary" disabled={submitting}>Cancel</button>
                             </div>
                         </form>
                     </div>

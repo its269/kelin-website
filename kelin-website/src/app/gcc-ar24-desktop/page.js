@@ -1,7 +1,7 @@
 "use client";
 import Header from '../components/Header';
 import Link from 'next/link';
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import InquiryStorage from '../utils/InquiryStorage';
 import './gcc-ar24-desktop.css';
 
@@ -9,31 +9,110 @@ export default function GCCAR24Desktop() {
     const [inquiryModalOpen, setInquiryModalOpen] = useState(false);
     const [selectedImage, setSelectedImage] = useState('/cutting-machines/GCC AR-24 Desktop (1).webp');
     const scrollRef = useRef(null);
-    const [isDragging, setIsDragging] = useState(false);
-    const [startX, setStartX] = useState(0);
-    const [scrollLeft, setScrollLeft] = useState(0);
+    const isDraggingRef = useRef(false);
+    const startXRef = useRef(0);
+    const scrollLeftRef = useRef(0);
+    const animationFrameRef = useRef(null);
+    const lastTimestampRef = useRef(0);
+
+    const applicationItems = [
+        { image: '/application/GCC AR-24 DESKTOP/1.webp', label: 'Labels and Decals' },
+        { image: '/application/GCC AR-24 DESKTOP/2.webp', label: 'Custom Stickers' },
+        { image: '/application/GCC AR-24 DESKTOP/3.webp', label: 'Vinyl Graphics' },
+        { image: '/application/GCC AR-24 DESKTOP/4.webp', label: 'Sign Making' },
+        { image: '/application/GCC AR-24 DESKTOP/5.webp', label: 'Vehicle Graphics' },
+    ];
+
+    const loopedApplicationItems = [...applicationItems, ...applicationItems, ...applicationItems];
+
+    const normalizeInfiniteScroll = () => {
+        const scrollElement = scrollRef.current;
+        if (!scrollElement) return;
+        const segmentWidth = scrollElement.scrollWidth / 3;
+        const boundaryOffset = 4;
+        if (scrollElement.scrollLeft <= boundaryOffset) {
+            scrollElement.scrollLeft += segmentWidth;
+        } else if (scrollElement.scrollLeft >= segmentWidth * 2 - boundaryOffset) {
+            scrollElement.scrollLeft -= segmentWidth;
+        }
+    };
+
+    useEffect(() => {
+        const scrollElement = scrollRef.current;
+        if (!scrollElement) return;
+        const initializeLoopPosition = () => {
+            const segmentWidth = scrollElement.scrollWidth / 3;
+            scrollElement.scrollLeft = segmentWidth;
+        };
+        initializeLoopPosition();
+        window.addEventListener('resize', initializeLoopPosition);
+        return () => window.removeEventListener('resize', initializeLoopPosition);
+    }, []);
+
+    useEffect(() => {
+        const scrollElement = scrollRef.current;
+        if (!scrollElement) return;
+        const speedPixelsPerMs = 0.05;
+        const animate = (timestamp) => {
+            if (lastTimestampRef.current === 0) lastTimestampRef.current = timestamp;
+            const delta = timestamp - lastTimestampRef.current;
+            lastTimestampRef.current = timestamp;
+            if (!isDraggingRef.current && scrollRef.current) {
+                scrollRef.current.scrollLeft += delta * speedPixelsPerMs;
+                normalizeInfiniteScroll();
+            }
+            animationFrameRef.current = window.requestAnimationFrame(animate);
+        };
+        animationFrameRef.current = window.requestAnimationFrame(animate);
+        return () => {
+            if (animationFrameRef.current) window.cancelAnimationFrame(animationFrameRef.current);
+            lastTimestampRef.current = 0;
+        };
+    }, []);
 
     const handleMouseDown = (e) => {
-        setIsDragging(true);
-        setStartX(e.pageX - scrollRef.current.offsetLeft);
-        setScrollLeft(scrollRef.current.scrollLeft);
+        const scrollElement = scrollRef.current;
+        if (!scrollElement) return;
+        isDraggingRef.current = true;
+        startXRef.current = e.pageX - scrollElement.offsetLeft;
+        scrollLeftRef.current = scrollElement.scrollLeft;
     };
 
     const handleMouseMove = (e) => {
-        if (!isDragging) return;
+        if (!isDraggingRef.current) return;
+        const scrollElement = scrollRef.current;
+        if (!scrollElement) return;
         e.preventDefault();
-        const x = e.pageX - scrollRef.current.offsetLeft;
-        const walk = (x - startX) * 2;
-        scrollRef.current.scrollLeft = scrollLeft - walk;
+        const x = e.pageX - scrollElement.offsetLeft;
+        const walk = (x - startXRef.current) * 2;
+        scrollElement.scrollLeft = scrollLeftRef.current - walk;
+        normalizeInfiniteScroll();
     };
 
-    const handleMouseUp = () => {
-        setIsDragging(false);
+    const handleMouseUp = () => { isDraggingRef.current = false; };
+    const handleMouseLeave = () => { isDraggingRef.current = false; };
+
+    const handleTouchStart = (e) => {
+        const scrollElement = scrollRef.current;
+        if (!scrollElement) return;
+        const touchX = e.touches[0].pageX;
+        isDraggingRef.current = true;
+        startXRef.current = touchX - scrollElement.offsetLeft;
+        scrollLeftRef.current = scrollElement.scrollLeft;
     };
 
-    const handleMouseLeave = () => {
-        setIsDragging(false);
+    const handleTouchMove = (e) => {
+        if (!isDraggingRef.current) return;
+        const scrollElement = scrollRef.current;
+        if (!scrollElement) return;
+        const touchX = e.touches[0].pageX;
+        const x = touchX - scrollElement.offsetLeft;
+        const walk = (x - startXRef.current) * 2;
+        scrollElement.scrollLeft = scrollLeftRef.current - walk;
+        normalizeInfiniteScroll();
     };
+
+    const handleTouchEnd = () => { isDraggingRef.current = false; };
 
     const machineDetails = {
         name: 'GCC AR-24',
@@ -125,32 +204,53 @@ export default function GCCAR24Desktop() {
         setInquiryModalOpen(false);
     };
 
-    const handleSubmitInquiry = (e) => {
+    const [inquiryStatus, setInquiryStatus] = useState(null);
+    const [inquirySubmitting, setInquirySubmitting] = useState(false);
+
+    const handleSubmitInquiry = async (e) => {
         e.preventDefault();
+        setInquirySubmitting(true);
+        setInquiryStatus(null);
 
-        // Extract form data
-        const formData = new FormData(e.target);
-        const inquiryData = {
-            firstName: formData.get('firstName'),
-            lastName: formData.get('lastName'),
-            email: formData.get('email'),
-            phone: formData.get('phone'),
-            company: formData.get('company') || 'Not specified',
-            machine: machineDetails.name,
-            message: formData.get('message'),
-            countryCode: formData.get('countryCode')
+        const form = e.target;
+        const data = {
+            firstName: form.firstName.value,
+            lastName: form.lastName.value,
+            email: form.email.value,
+            countryCode: form.countryCode.value,
+            phone: form.phone.value,
+            company: form.company.value,
+            message: form.message.value,
+            _subject: `Inquiry: GCC AR-24 Desktop`,
+            'Page Source': 'GCC AR-24 Desktop',
+            'Page URL': typeof window !== 'undefined' ? window.location.href : '',
+            'Submitted At': new Date().toLocaleString('en-US', {
+                timeZone: 'Asia/Manila',
+                dateStyle: 'full',
+                timeStyle: 'long'
+            })
         };
+        data['_cc'] = 'info@kelinph.com';
+        data['_replyto'] = data.email || '';
+        data['name'] = `${data.firstName || ''} ${data.lastName || ''}`.trim();
+        data['inquiryType'] = 'product-inquiry';
 
-        // Save to storage
-        const savedInquiry = InquiryStorage.saveInquiry(inquiryData);
-
-        if (savedInquiry) {
-            alert('Thank you for your inquiry! We will contact you soon.');
-            closeInquiryModal();
-            // Reset form
-            e.target.reset();
-        } else {
-            alert('There was an error submitting your inquiry. Please try again.');
+        try {
+            const response = await fetch('https://formspree.io/f/mvzwzkkd', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data)
+            });
+            if (response.ok) {
+                setInquiryStatus('success');
+                form.reset();
+            } else {
+                setInquiryStatus('error');
+            }
+        } catch (err) {
+            setInquiryStatus('error');
+        } finally {
+            setInquirySubmitting(false);
         }
     };
 
@@ -287,48 +387,18 @@ export default function GCCAR24Desktop() {
                             onMouseMove={handleMouseMove}
                             onMouseUp={handleMouseUp}
                             onMouseLeave={handleMouseLeave}
+                            onTouchStart={handleTouchStart}
+                            onTouchMove={handleTouchMove}
+                            onTouchEnd={handleTouchEnd}
+                            onScroll={normalizeInfiniteScroll}
                         >
                             <div className="gcc-ar24-applications-image-grid">
-                                <div className="gcc-ar24-application-image-item">
-                                    <img src="/application/_0000_6.jpg" alt="Labels and Decals" />
-                                    <p>Labels and Decals</p>
-                                </div>
-                                <div className="gcc-ar24-application-image-item">
-                                    <img src="/application/_0001_5.jpg" alt="Custom Stickers" />
-                                    <p>Custom Stickers</p>
-                                </div>
-                                <div className="gcc-ar24-application-image-item">
-                                    <img src="/application/_0002_4.jpg" alt="Print-and-Cut Jobs" />
-                                    <p>Print-and-Cut Jobs</p>
-                                </div>
-                                <div className="gcc-ar24-application-image-item">
-                                    <img src="/application/_0003_3.jpg" alt="Vinyl Graphics" />
-                                    <p>Vinyl Graphics</p>
-                                </div>
-                                <div className="gcc-ar24-application-image-item">
-                                    <img src="/application/_0004_2.jpg" alt="Sign Making" />
-                                    <p>Sign Making</p>
-                                </div>
-                                <div className="gcc-ar24-application-image-item">
-                                    <img src="/application/_0005_1.jpg" alt="Vehicle Graphics" />
-                                    <p>Vehicle Graphics</p>
-                                </div>
-                                <div className="gcc-ar24-application-image-item">
-                                    <img src="/application/_0000_6.jpg" alt="Promotional Materials" />
-                                    <p>Promotional Materials</p>
-                                </div>
-                                <div className="gcc-ar24-application-image-item">
-                                    <img src="/application/_0001_5.jpg" alt="Craft Projects" />
-                                    <p>Craft Projects</p>
-                                </div>
-                                <div className="gcc-ar24-application-image-item">
-                                    <img src="/application/_0002_4.jpg" alt="Heat Transfer Vinyl" />
-                                    <p>Heat Transfer Vinyl</p>
-                                </div>
-                                <div className="gcc-ar24-application-image-item">
-                                    <img src="/application/_0003_3.jpg" alt="Small Format Cutting" />
-                                    <p>Small Format Cutting</p>
-                                </div>
+                                {loopedApplicationItems.map((item, index) => (
+                                    <div key={`${item.label}-${index}`} className="gcc-ar24-application-image-item">
+                                        <img src={item.image} alt={item.label} />
+                                        <p>{item.label}</p>
+                                    </div>
+                                ))}
                             </div>
                         </div>
                     </div>
@@ -555,13 +625,23 @@ export default function GCCAR24Desktop() {
                             </div>
 
                             <div className="gcc-ar24-form-actions">
-                                <button type="submit" className="gcc-ar24-btn-primary">
-                                    Send Inquiry
+                                <button type="submit" className="gcc-ar24-btn-primary" disabled={inquirySubmitting}>
+                                    {inquirySubmitting ? 'Sending...' : 'Send Inquiry'}
                                 </button>
                                 <button type="button" onClick={closeInquiryModal} className="gcc-ar24-btn-secondary">
                                     Cancel
                                 </button>
                             </div>
+                            {inquiryStatus === 'success' && (
+                                <div className="form-status success" style={{ marginTop: 8 }}>
+                                    <p>Thank you! Your inquiry has been sent. We will contact you soon.</p>
+                                </div>
+                            )}
+                            {inquiryStatus === 'error' && (
+                                <div className="form-status error" style={{ marginTop: 8 }}>
+                                    <p>Sorry, there was an error sending your inquiry. Please try again.</p>
+                                </div>
+                            )}
                         </form>
                     </div>
                 </div>

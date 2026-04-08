@@ -1,4 +1,4 @@
-// app/blogs/page.js
+// app/solutions-uv-dtf/page.js
 "use client";
 import React, { useState } from 'react';
 import "./textile-apparel.css";
@@ -7,18 +7,14 @@ import Header from '../components/Header';
 export default function BlogsPage() {
     // Map blog post titles to their custom guide URLs
     const guideLinks = {
-        "Kirin": "/kirin",
-        "Smart Sublimation 2008": "/smart-sublimation",
-        "Smart RJ 2004": "/smart-rj24-2004-i3200-eco-solvent",
-        "Smart RJ 2002": "/smart-uv-printer",
-        "Manual Heatpress": "/subli-mate-manual-heat-press"
+        "LUXOR UV-A3 DTF Printer": "/luxor-rtr-uv",
+        "LUXOR SF30-3": "/dtf-uv-printer-sf303-f1080",
+        "LUXOR SF60-4": "/dtf-uv-printer-sf604-i3200",
     };
     const blogPosts = [
-        { id: 1, title: "Kirin", category: "Sublimation", excerpt: "High-performance sublimation printer for vibrant textile and apparel applications.", date: "March 2026", image: '/sublimation_dtf/SUBL Kirin DA182T Plus Sublimation Printer (1).webp' },
-        { id: 2, title: "Smart Sublimation 2008", category: "Sublimation", excerpt: "Efficient and reliable Smart Sublimation 2008 for professional textile printing.", date: "March 2026", image: '/sublimation_dtf/SUBL Smart Sublimation (1).webp' },
-        { id: 3, title: "Smart RJ 2004", category: "Sublimation", excerpt: "Smart RJ 2004 delivers consistent quality for all your textile printing needs.", date: "March 2026", image: '/eco-solvent-machines/SMART.webp' },
-        { id: 4, title: "Smart RJ 2002", category: "Sublimation", excerpt: "Smart RJ 2002: Compact and versatile for small to medium apparel production.", date: "March 2026", image: '/uv-machines/SMART UV Printer.webp' },
-        { id: 5, title: "Manual Heatpress", category: "Heatpress", excerpt: "Manual Heatpress for durable and precise heat transfer on garments and fabrics.", date: "March 2026", image: '/heatpress/Subli-Mate Manual Heat Press 80cm x 100cm (1).webp' },
+        { id: 1, title: "LUXOR UV-A3 DTF Printer", category: "UV DTF", excerpt: "All-in-one flatbed, cylinder, roll-to-roll, and UV DTF printing in one compact unit — ideal for high-quality, cost-efficient production across diverse surfaces.", date: "April 2026", image: '/uv-machines/Luxor RTR (1).webp' },
+        { id: 2, title: "LUXOR SF30-3", category: "UV DTF", excerpt: "Compact UV DTF printer with EPSON PRECISION CORE technology delivering vibrant CMYK+W+V prints at 4.5 m²/h — perfect for custom labels, stickers, and promotional items.", date: "April 2026", image: '/uv-machines/DTF UV Printer SF303-i3200 2ft (1).webp' },
+        { id: 3, title: "LUXOR SF60-4", category: "UV DTF", excerpt: "Industrial UV DTF printer with advanced W+CMYK+V printing and optional gold foil stamping, achieving 8 m²/h for premium branding and high-volume production.", date: "April 2026", image: '/uv-machines/DTF UV Printer SF604-i3200 2ft. - High Res (1).webp' },
     ];
 
     const categories = ["All", ...new Set(blogPosts.map(post => post.category))];
@@ -33,8 +29,8 @@ export default function BlogsPage() {
             <Header />
 
             <header className="luxor-header">
-                <h1>Textile and Apparel</h1>
-                <p>Discover solutions, guides, and the latest innovations for textile and apparel production from Kelin Graphics System.</p>
+                <h1>UV DTF Solutions</h1>
+                <p>Explore our complete range of UV DTF printing solutions, machines, and equipment from Kelin Graphics System.</p>
             </header>
 
             <nav className="category-filter">

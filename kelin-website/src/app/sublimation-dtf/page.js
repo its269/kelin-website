@@ -141,10 +141,55 @@ export default function SublimationDTF() {
         setSelectedMachine(null);
     };
 
-    const handleInquirySubmit = (e) => {
+
+    const [inquiryStatus, setInquiryStatus] = useState(null);
+    const [inquirySubmitting, setInquirySubmitting] = useState(false);
+
+    const handleInquirySubmit = async (e) => {
         e.preventDefault();
-        alert('Inquiry submitted successfully!');
-        closeInquiryModal();
+        setInquirySubmitting(true);
+        setInquiryStatus(null);
+
+        const form = e.target;
+        const data = {
+            firstName: form.firstName.value,
+            lastName: form.lastName.value,
+            email: form.email.value,
+            countryCode: form.countryCode ? form.countryCode.value : '',
+            phone: form.phone ? form.phone.value : '',
+            company: form.company ? form.company.value : '',
+            message: form.message.value,
+            _subject: `Inquiry: ${selectedMachine ? selectedMachine.name : 'Sublimation/DTF Machine'}`,
+            'Page Source': selectedMachine ? selectedMachine.name : 'Sublimation/DTF Machine',
+            'Page URL': typeof window !== 'undefined' ? window.location.href : '',
+            'Submitted At': new Date().toLocaleString('en-US', {
+                timeZone: 'Asia/Manila',
+                dateStyle: 'full',
+                timeStyle: 'long'
+            })
+        };
+        data['_cc'] = 'info@kelinph.com';
+        data['_replyto'] = data.email || '';
+        data['name'] = `${data.firstName || ''} ${data.lastName || ''}`.trim();
+        data['inquiryType'] = 'product-inquiry';
+
+        try {
+            const response = await fetch('https://formspree.io/f/mvzwzkkd', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data)
+            });
+            if (response.ok) {
+                setInquiryStatus('success');
+                form.reset();
+            } else {
+                setInquiryStatus('error');
+            }
+        } catch (err) {
+            setInquiryStatus('error');
+        } finally {
+            setInquirySubmitting(false);
+        }
     };
 
     return (
@@ -480,13 +525,23 @@ export default function SublimationDTF() {
                             </div>
 
                             <div className="sublimation-dtf-form-actions">
-                                <button type="submit" className="sublimation-dtf-btn-primary">
-                                    Send Inquiry
+                                <button type="submit" className="sublimation-dtf-btn-primary" disabled={inquirySubmitting}>
+                                    {inquirySubmitting ? 'Sending...' : 'Send Inquiry'}
                                 </button>
                                 <button type="button" onClick={closeInquiryModal} className="sublimation-dtf-btn-secondary">
                                     Cancel
                                 </button>
                             </div>
+                            {inquiryStatus === 'success' && (
+                                <div className="form-status success" style={{ marginTop: 8 }}>
+                                    <p>Thank you! Your inquiry has been sent. We will contact you soon.</p>
+                                </div>
+                            )}
+                            {inquiryStatus === 'error' && (
+                                <div className="form-status error" style={{ marginTop: 8 }}>
+                                    <p>Sorry, there was an error sending your inquiry. Please try again.</p>
+                                </div>
+                            )}
                         </form>
                     </div>
                 </div>

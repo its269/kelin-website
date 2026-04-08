@@ -1,5 +1,6 @@
 "use client";
 import Header from '../components/Header';
+import VideoPlayer from '../components/VideoPlayer';
 import Link from 'next/link';
 import { useState, useRef } from 'react';
 import './luxor-rtr-uv.css';
@@ -131,10 +132,44 @@ export default function LuxorRTRUV() {
         setInquiryModalOpen(false);
     };
 
-    const handleSubmitInquiry = (e) => {
+    const [inquiryStatus, setInquiryStatus] = useState(null); // null | 'success' | 'error' | 'loading'
+    const handleSubmitInquiry = async (e) => {
         e.preventDefault();
-        alert('Thank you for your inquiry! We will contact you soon.');
-        closeInquiryModal();
+        setInquiryStatus('loading');
+        const form = e.target;
+        const formData = new FormData(form);
+        // Combine country code and phone
+        const countryCode = formData.get('countryCode') || '';
+        const phone = formData.get('phone') || '';
+        formData.set('phone', `${countryCode} ${phone}`);
+        formData.delete('countryCode');
+        formData.append('_cc', 'info@kelinph.com');
+        formData.append('Page Source', 'Luxor RTR UV');
+        formData.append('_replyto', formData.get('email') || '');
+        formData.append('_subject', 'Inquiry: Luxor RTR UV');
+        formData.append('Page URL', typeof window !== 'undefined' ? window.location.href : '');
+        formData.append('Submitted At', new Date().toLocaleString('en-US', { timeZone: 'Asia/Manila' }));
+        formData.append('name', `${formData.get('firstName') || ''} ${formData.get('lastName') || ''}`.trim());
+        formData.append('inquiryType', 'product-inquiry');
+        try {
+            const res = await fetch('https://formspree.io/f/mvzwzkkd', {
+                method: 'POST',
+                headers: { 'Accept': 'application/json' },
+                body: formData,
+            });
+            if (res.ok) {
+                setInquiryStatus('success');
+                form.reset();
+                setTimeout(() => {
+                    setInquiryStatus(null);
+                    closeInquiryModal();
+                }, 2000);
+            } else {
+                setInquiryStatus('error');
+            }
+        } catch (err) {
+            setInquiryStatus('error');
+        }
     };
 
     return (
@@ -203,8 +238,13 @@ export default function LuxorRTRUV() {
                     </div>
                 </section>
 
+                {/* Video Section */}
+                <section className="videoPlayer-section">
+                    <VideoPlayer src="/Luxor-RTR.mp4" poster="" className="" />
+                </section>
+
                 {/* Key Features */}
-                <section className="lxr-uv-a3-features-section">
+                <section className="lxr-uv-a3-features-section" style={{ marginTop: '100px' }}>
                     <div className="lxr-uv-a3-features-container">
                         <div className="lxr-uv-a3-features-header">
                             <h2 className="lxr-uv-a3-features-title">Key Features</h2>
@@ -520,9 +560,17 @@ export default function LuxorRTRUV() {
                             </div>
 
                             <div className="lxr-uv-a3-form-actions">
-                                <button type="submit" className="lxr-uv-a3-btn-primary">Send Inquiry</button>
-                                <button type="button" onClick={closeInquiryModal} className="lxr-uv-a3-btn-secondary">Cancel</button>
+                                <button type="submit" className="lxr-uv-a3-btn-primary" disabled={inquiryStatus === 'loading'}>
+                                    {inquiryStatus === 'loading' ? 'Sending...' : 'Send Inquiry'}
+                                </button>
+                                <button type="button" onClick={closeInquiryModal} className="lxr-uv-a3-btn-secondary" disabled={inquiryStatus === 'loading'}>Cancel</button>
                             </div>
+                            {inquiryStatus === 'success' && (
+                                <div style={{ color: 'green', marginTop: 10 }}>Thank you for your inquiry! We will contact you soon.</div>
+                            )}
+                            {inquiryStatus === 'error' && (
+                                <div style={{ color: 'red', marginTop: 10 }}>There was an error sending your inquiry. Please try again later.</div>
+                            )}
                         </form>
                     </div>
                 </div>

@@ -1,4 +1,12 @@
-﻿/* PROMAKER Embroidery 1204 (1804) Unique Styles */
+﻿/* PROMAKER Embroidery 1204 Unique Styles */
+
+.videoPlayer-section {
+    width: 100%;
+    padding: 100px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 /* Font Face Declaration */
 /* @font-face {

@@ -1,11 +1,15 @@
 ﻿"use client";
 import Header from '../components/Header';
+import VideoPlayer from '../components/VideoPlayer';
 import Link from 'next/link';
 import { useState, useRef, useEffect } from 'react';
 import './promaker-embroidery-1202.css';
 
 export default function PromakerEmbroidery1202() {
     const [inquiryModalOpen, setInquiryModalOpen] = useState(false);
+    const [submitting, setSubmitting] = useState(false);
+    const [submitSuccess, setSubmitSuccess] = useState(null); // null | true | false
+    const [submitMessage, setSubmitMessage] = useState("");
     const [selectedImage, setSelectedImage] = useState('/embroidery_knitting/Promaker Embroidery 1202.webp');
     const scrollRef = useRef(null);
     const [isDragging, setIsDragging] = useState(false);
@@ -106,17 +110,50 @@ export default function PromakerEmbroidery1202() {
 
     const openInquiryModal = () => {
         setInquiryModalOpen(true);
+        setSubmitSuccess(null);
+        setSubmitMessage("");
     };
 
     const closeInquiryModal = () => {
         setInquiryModalOpen(false);
     };
 
-    const handleSubmitInquiry = (e) => {
+    async function handleSubmitInquiry(e) {
         e.preventDefault();
-        alert('Thank you for your inquiry! We will contact you soon.');
-        closeInquiryModal();
-    };
+        setSubmitting(true);
+        setSubmitSuccess(null);
+        setSubmitMessage("");
+        const form = e.target;
+        const data = new FormData(form);
+        data.append('_cc', 'info@kelinph.com');
+        data.append('Page Source', 'Promaker Embroidery 1202');
+        data.append('_replyto', data.get('email') || '');
+        data.append('_subject', 'Inquiry: Promaker Embroidery 1202');
+        data.append('Page URL', typeof window !== 'undefined' ? window.location.href : '');
+        data.append('Submitted At', new Date().toLocaleString('en-US', { timeZone: 'Asia/Manila' }));
+        data.append('name', `${data.get('firstName') || ''} ${data.get('lastName') || ''}`.trim());
+        data.append('inquiryType', 'product-inquiry');
+        try {
+            const response = await fetch("https://formspree.io/f/mvzwzkkd", {
+                method: "POST",
+                headers: { Accept: "application/json" },
+                body: data,
+            });
+            if (response.ok) {
+                setSubmitSuccess(true);
+                setSubmitMessage("Thank you! Your inquiry has been sent.");
+                form.reset();
+            } else {
+                setSubmitSuccess(false);
+                setSubmitMessage("Sorry, there was a problem sending your inquiry. Please try again later.");
+            }
+        } catch (error) {
+            setSubmitSuccess(false);
+            setSubmitMessage("Sorry, there was a problem sending your inquiry. Please try again later.");
+        } finally {
+            setSubmitting(false);
+        }
+    }
 
     return (
         <div>
@@ -182,8 +219,13 @@ export default function PromakerEmbroidery1202() {
                     </div>
                 </section>
 
+                {/* Video Section */}
+                <section className="videoPlayer-section">
+                    <VideoPlayer src="/promaker-embroidery.mp4" poster="" className="" />
+                </section>
+
                 {/* Key Features */}
-                <section className="promaker-embroidery-1202-features-section">
+                <section className="promaker-embroidery-1202-features-section" style={{ marginTop: '100px' }}>
                     <div className="promaker-embroidery-1202-features-container">
                         <div className="promaker-embroidery-1202-features-header">
                             <h2 className="promaker-embroidery-1202-features-title">Key Features</h2>
@@ -335,6 +377,12 @@ export default function PromakerEmbroidery1202() {
                         </div>
 
                         <form onSubmit={handleSubmitInquiry} className="promaker-embroidery-1202-inquiry-form">
+                            {submitSuccess === true && (
+                                <div className="form-success-message" style={{ color: 'green', marginBottom: 12 }}>{submitMessage}</div>
+                            )}
+                            {submitSuccess === false && (
+                                <div className="form-error-message" style={{ color: 'red', marginBottom: 12 }}>{submitMessage}</div>
+                            )}
                             <div className="promaker-embroidery-1202-form-row">
                                 <div className="promaker-embroidery-1202-form-group">
                                     <label htmlFor="firstName">First Name *</label>
@@ -509,8 +557,10 @@ export default function PromakerEmbroidery1202() {
                             </div>
 
                             <div className="promaker-embroidery-1202-form-actions">
-                                <button type="submit" className="promaker-embroidery-1202-btn-primary">Send Inquiry</button>
-                                <button type="button" onClick={closeInquiryModal} className="promaker-embroidery-1202-btn-secondary">Cancel</button>
+                                <button type="submit" className="promaker-embroidery-1202-btn-primary" disabled={submitting}>
+                                    {submitting ? "Sending..." : "Send Inquiry"}
+                                </button>
+                                <button type="button" onClick={closeInquiryModal} className="promaker-embroidery-1202-btn-secondary" disabled={submitting}>Cancel</button>
                             </div>
                         </form>
                     </div>

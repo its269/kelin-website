@@ -1,5 +1,13 @@
 ﻿/* Cold Laminator Unique Styles */
 
+.videoPlayer-section {
+    width: 100%;
+    padding: 100px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 /* Font Face Declaration */
 /* @font-face {
     font-family: 'Bison-Bold';
@@ -315,6 +323,7 @@
     background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
     color: white;
     padding: 80px 40px;
+    margin-top: 100px;
 }
 
 .k-sign-3d-printer-features-container {

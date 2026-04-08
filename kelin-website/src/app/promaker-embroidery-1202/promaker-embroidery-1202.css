@@ -1,5 +1,13 @@
 ﻿/* PROMAKER Embroidery 1202 Unique Styles */
 
+.videoPlayer-section {
+    width: 100%;
+    padding: 100px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 /* Font Face Declaration */
 /* @font-face {
     font-family: 'Bison-Bold';

@@ -1,12 +1,16 @@
 "use client";
 import Header from '../components/Header';
 import Link from 'next/link';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import './heatpress.css';
 
 export default function HeatPress() {
     const [inquiryModalOpen, setInquiryModalOpen] = useState(false);
     const [selectedMachine, setSelectedMachine] = useState(null);
+    const [submitting, setSubmitting] = useState(false);
+    const [submitSuccess, setSubmitSuccess] = useState(null);
+    const [submitError, setSubmitError] = useState(null);
+    const formRef = useRef(null);
 
     const heatPressMachines = [
         {
@@ -81,10 +85,50 @@ export default function HeatPress() {
         setSelectedMachine(null);
     };
 
-    const handleInquirySubmit = (e) => {
+    const handleInquirySubmit = async (e) => {
         e.preventDefault();
-        alert('Inquiry submitted successfully!');
-        closeInquiryModal();
+        setSubmitting(true);
+        setSubmitSuccess(null);
+        setSubmitError(null);
+        const form = e.target;
+        const formData = new FormData(form);
+        // Add machine name to the submission
+        if (selectedMachine?.name) {
+            formData.append('machine', selectedMachine.name);
+        }
+        formData.append('_cc', 'info@kelinph.com');
+        formData.append('Page Source', selectedMachine ? selectedMachine.name : 'Heat Press Machines');
+        formData.append('_replyto', formData.get('email') || '');
+        formData.append('_subject', `Inquiry: ${selectedMachine ? selectedMachine.name : 'Heat Press Machines'}`);
+        formData.append('Page URL', typeof window !== 'undefined' ? window.location.href : '');
+        formData.append('Submitted At', new Date().toLocaleString('en-US', { timeZone: 'Asia/Manila' }));
+        formData.append('name', `${formData.get('firstName') || ''} ${formData.get('lastName') || ''}`.trim());
+        formData.append('inquiryType', 'product-inquiry');
+        try {
+            const res = await fetch('https://formspree.io/f/mvzwzkkd', {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json',
+                },
+            });
+            const data = await res.json();
+            if (res.ok) {
+                setSubmitSuccess('Inquiry submitted successfully!');
+                setSubmitError(null);
+                form.reset();
+                // Reset country code to default if present
+                if (form.countryCode) form.countryCode.value = '+63';
+            } else {
+                setSubmitError(data?.errors?.[0]?.message || 'Submission failed. Please try again.');
+                setSubmitSuccess(null);
+            }
+        } catch (err) {
+            setSubmitError('Submission failed. Please try again.');
+            setSubmitSuccess(null);
+        } finally {
+            setSubmitting(false);
+        }
     };
 
     return (
@@ -227,15 +271,15 @@ export default function HeatPress() {
                             </button>
                         </div>
 
-                        <form onSubmit={handleInquirySubmit} className="heatpress-inquiry-form">
+                        <form onSubmit={handleInquirySubmit} className="heatpress-inquiry-form" ref={formRef}>
                             <div className="heatpress-form-row">
                                 <div className="heatpress-form-group">
                                     <label htmlFor="firstName">First Name *</label>
-                                    <input type="text" id="firstName" name="firstName" required />
+                                    <input type="text" id="firstName" name="firstName" required disabled={submitting} />
                                 </div>
                                 <div className="heatpress-form-group">
                                     <label htmlFor="lastName">Last Name *</label>
-                                    <input type="text" id="lastName" name="lastName" required />
+                                    <input type="text" id="lastName" name="lastName" required disabled={submitting} />
                                 </div>
                             </div>
 
@@ -250,12 +294,14 @@ export default function HeatPress() {
                                         title="Please enter a valid email address (e.g., name@domain.com)"
                                         placeholder="name@company.com"
                                         required
+                                        disabled={submitting}
                                     />
                                 </div>
                                 <div className="heatpress-form-group">
                                     <label htmlFor="phone">Phone Number</label>
                                     <div className="heatpress-phone-input">
-                                        <select name="countryCode" className="heatpress-country-select" defaultValue="+63">
+                                        <select name="countryCode" className="heatpress-country-select" defaultValue="+63" disabled={submitting}>
+                                            {/* ...existing code for country options... */}
                                             <option value="+63">🇵🇭 +63</option>
                                             <option value="+1">🇺🇸 +1</option>
                                             <option value="+1">🇨🇦 +1</option>
@@ -396,6 +442,7 @@ export default function HeatPress() {
                                             placeholder="123 456 7890"
                                             pattern="[0-9\\s\\-\\(\\)]{7,15}"
                                             title="Please enter a valid phone number"
+                                            disabled={submitting}
                                         />
                                     </div>
                                 </div>
@@ -403,7 +450,7 @@ export default function HeatPress() {
 
                             <div className="heatpress-form-group">
                                 <label htmlFor="company">Company Name</label>
-                                <input type="text" id="company" name="company" />
+                                <input type="text" id="company" name="company" disabled={submitting} />
                             </div>
 
                             <div className="heatpress-form-group">
@@ -414,14 +461,22 @@ export default function HeatPress() {
                                     rows="4"
                                     placeholder="Please describe your heat press machine requirements and any specific questions about this machine..."
                                     required
+                                    disabled={submitting}
                                 ></textarea>
                             </div>
 
+                            {submitSuccess && (
+                                <div className="heatpress-form-success">{submitSuccess}</div>
+                            )}
+                            {submitError && (
+                                <div className="heatpress-form-error">{submitError}</div>
+                            )}
+
                             <div className="heatpress-form-actions">
-                                <button type="submit" className="heatpress-btn-primary">
-                                    Send Inquiry
+                                <button type="submit" className="heatpress-btn-primary" disabled={submitting}>
+                                    {submitting ? 'Sending...' : 'Send Inquiry'}
                                 </button>
-                                <button type="button" onClick={closeInquiryModal} className="heatpress-btn-secondary">
+                                <button type="button" onClick={closeInquiryModal} className="heatpress-btn-secondary" disabled={submitting}>
                                     Cancel
                                 </button>
                             </div>

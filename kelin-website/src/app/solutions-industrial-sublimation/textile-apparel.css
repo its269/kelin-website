@@ -168,7 +168,7 @@
 }
 
 .card-img {
-    width: 80%;
+    width: 65%;
     /* 100% */
     object-fit: cover;
     /* Maintains aspect ratio without stretching */

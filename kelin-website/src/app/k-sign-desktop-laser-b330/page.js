@@ -121,10 +121,44 @@ export default function KSignDesktopLaserB330() {
         setInquiryModalOpen(false);
     };
 
-    const handleSubmitInquiry = (e) => {
+    const [inquiryStatus, setInquiryStatus] = useState(null); // null | 'success' | 'error' | 'loading'
+    const handleSubmitInquiry = async (e) => {
         e.preventDefault();
-        alert('Thank you for your inquiry! We will contact you soon.');
-        closeInquiryModal();
+        setInquiryStatus('loading');
+        const form = e.target;
+        const formData = new FormData(form);
+        // Combine country code and phone
+        const countryCode = formData.get('countryCode') || '';
+        const phone = formData.get('phone') || '';
+        formData.set('phone', `${countryCode} ${phone}`);
+        formData.delete('countryCode');
+        formData.append('_cc', 'info@kelinph.com');
+        formData.append('Page Source', 'K-Sign Desktop Laser B330');
+        formData.append('_replyto', formData.get('email') || '');
+        formData.append('_subject', 'Inquiry: K-Sign Desktop Laser B330');
+        formData.append('Page URL', typeof window !== 'undefined' ? window.location.href : '');
+        formData.append('Submitted At', new Date().toLocaleString('en-US', { timeZone: 'Asia/Manila' }));
+        formData.append('name', `${formData.get('firstName') || ''} ${formData.get('lastName') || ''}`.trim());
+        formData.append('inquiryType', 'product-inquiry');
+        try {
+            const res = await fetch('https://formspree.io/f/mvzwzkkd', {
+                method: 'POST',
+                headers: { 'Accept': 'application/json' },
+                body: formData,
+            });
+            if (res.ok) {
+                setInquiryStatus('success');
+                form.reset();
+                setTimeout(() => {
+                    setInquiryStatus(null);
+                    closeInquiryModal();
+                }, 2000);
+            } else {
+                setInquiryStatus('error');
+            }
+        } catch (err) {
+            setInquiryStatus('error');
+        }
     };
 
     return (
@@ -483,9 +517,17 @@ export default function KSignDesktopLaserB330() {
                             </div>
 
                             <div className="ksign-b330-form-actions">
-                                <button type="submit" className="ksign-b330-btn-primary">Send Inquiry</button>
-                                <button type="button" onClick={closeInquiryModal} className="ksign-b330-btn-secondary">Cancel</button>
+                                <button type="submit" className="ksign-b330-btn-primary" disabled={inquiryStatus === 'loading'}>
+                                    {inquiryStatus === 'loading' ? 'Sending...' : 'Send Inquiry'}
+                                </button>
+                                <button type="button" onClick={closeInquiryModal} className="ksign-b330-btn-secondary" disabled={inquiryStatus === 'loading'}>Cancel</button>
                             </div>
+                            {inquiryStatus === 'success' && (
+                                <div style={{ color: 'green', marginTop: 10 }}>Thank you for your inquiry! We will contact you soon.</div>
+                            )}
+                            {inquiryStatus === 'error' && (
+                                <div style={{ color: 'red', marginTop: 10 }}>There was an error sending your inquiry. Please try again later.</div>
+                            )}
                         </form>
                     </div>
                 </div>

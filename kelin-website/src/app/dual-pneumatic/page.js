@@ -126,11 +126,50 @@ export default function DualPneumatic() {
         setInquiryModalOpen(false);
     };
 
-    const handleSubmitInquiry = (e) => {
+
+    const [submitting, setSubmitting] = useState(false);
+    const [submitSuccess, setSubmitSuccess] = useState(null); // null | true | false
+
+    const handleSubmitInquiry = async (e) => {
         e.preventDefault();
-        // Handle form submission logic here
-        alert('Thank you for your inquiry! We will contact you soon.');
-        closeInquiryModal();
+        setSubmitting(true);
+        setSubmitSuccess(null);
+        const form = e.target;
+        const formData = new FormData(form);
+        // Combine country code and phone
+        const countryCode = formData.get('countryCode') || '';
+        const phone = formData.get('phone') || '';
+        formData.set('phone', `${countryCode} ${phone}`);
+        formData.delete('countryCode');
+        formData.append('_cc', 'info@kelinph.com');
+        formData.append('Page Source', 'Dual Pneumatic Sublimation Machine');
+        formData.append('_replyto', formData.get('email') || '');
+        formData.append('_subject', 'Inquiry: Dual Pneumatic Sublimation Machine');
+        formData.append('Page URL', typeof window !== 'undefined' ? window.location.href : '');
+        formData.append('Submitted At', new Date().toLocaleString('en-US', { timeZone: 'Asia/Manila' }));
+        formData.append('name', `${formData.get('firstName') || ''} ${formData.get('lastName') || ''}`.trim());
+        formData.append('inquiryType', 'product-inquiry');
+        try {
+            const res = await fetch('https://formspree.io/f/mvzwzkkd', {
+                method: 'POST',
+                headers: { 'Accept': 'application/json' },
+                body: formData,
+            });
+            if (res.ok) {
+                setSubmitSuccess(true);
+                form.reset();
+                setTimeout(() => {
+                    setInquiryModalOpen(false);
+                    setSubmitSuccess(null);
+                }, 2000);
+            } else {
+                setSubmitSuccess(false);
+            }
+        } catch (err) {
+            setSubmitSuccess(false);
+        } finally {
+            setSubmitting(false);
+        }
     };
 
     return (
@@ -348,6 +387,12 @@ export default function DualPneumatic() {
                         </div>
 
                         <form onSubmit={handleSubmitInquiry} className="dual-pneumatic-inquiry-form">
+                            {submitSuccess === true && (
+                                <div className="dual-pneumatic-form-success">Thank you for your inquiry! We will contact you soon.</div>
+                            )}
+                            {submitSuccess === false && (
+                                <div className="dual-pneumatic-form-error">Sorry, there was an error submitting your inquiry. Please try again.</div>
+                            )}
                             <div className="dual-pneumatic-form-row">
                                 <div className="dual-pneumatic-form-group">
                                     <label htmlFor="firstName">First Name *</label>
@@ -538,10 +583,10 @@ export default function DualPneumatic() {
                             </div>
 
                             <div className="dual-pneumatic-form-actions">
-                                <button type="submit" className="dual-pneumatic-btn-primary">
-                                    Send Inquiry
+                                <button type="submit" className="dual-pneumatic-btn-primary" disabled={submitting}>
+                                    {submitting ? 'Sending...' : 'Send Inquiry'}
                                 </button>
-                                <button type="button" onClick={closeInquiryModal} className="dual-pneumatic-btn-secondary">
+                                <button type="button" onClick={closeInquiryModal} className="dual-pneumatic-btn-secondary" disabled={submitting}>
                                     Cancel
                                 </button>
                             </div>

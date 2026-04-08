@@ -7,18 +7,26 @@ import Header from '../components/Header';
 export default function BlogsPage() {
     // Map blog post titles to their custom guide URLs
     const guideLinks = {
-        "Kirin": "/kirin",
-        "Smart Sublimation 2008": "/smart-sublimation",
-        "Smart RJ 2004": "/smart-rj24-2004-i3200-eco-solvent",
-        "Smart RJ 2002": "/smart-uv-printer",
-        "Manual Heatpress": "/subli-mate-manual-heat-press"
+        "Handheld Fiber Laser": "/handheld-fiber-laser",
+        "Hanniu K1390 CO2 Laser 150W with CCD": "/hanniu-k1390-co2-laser-150w-ccd",
+        "Hanniu K1390 CO2 Laser 300W": "/hanniu-k1390-co2-laser-300w",
+        "K-Sign Desktop Laser B330": "/k-sign-desktop-laser-b330",
+        "K-Sign DF-1916 Laser Fabric Cutting": "/k-sign-df-1916-laser-fabric-cutting",
+        "K-Sign Desktop Laser Marking": "/k-sign-desktop-laser-marking",
+        "Reci Handheld Fiber Laser Welding R-A80 800W": "/reci-handheld-fiber-laser-welding",
+        "Yueming Fiber Laser CMA-1325C-G-G 1000W": "/yueming-fiber-laser-cma-1325c-g-g",
+        "Yueming Fiber Laser HL1530C-G-E 1500W IPG": "/yueming-fiber-laser-hl1530c-g-e",
     };
     const blogPosts = [
-        { id: 1, title: "Kirin", category: "Sublimation", excerpt: "High-performance sublimation printer for vibrant textile and apparel applications.", date: "March 2026", image: '/sublimation_dtf/SUBL Kirin DA182T Plus Sublimation Printer (1).webp' },
-        { id: 2, title: "Smart Sublimation 2008", category: "Sublimation", excerpt: "Efficient and reliable Smart Sublimation 2008 for professional textile printing.", date: "March 2026", image: '/sublimation_dtf/SUBL Smart Sublimation (1).webp' },
-        { id: 3, title: "Smart RJ 2004", category: "Sublimation", excerpt: "Smart RJ 2004 delivers consistent quality for all your textile printing needs.", date: "March 2026", image: '/eco-solvent-machines/SMART.webp' },
-        { id: 4, title: "Smart RJ 2002", category: "Sublimation", excerpt: "Smart RJ 2002: Compact and versatile for small to medium apparel production.", date: "March 2026", image: '/uv-machines/SMART UV Printer.webp' },
-        { id: 5, title: "Manual Heatpress", category: "Heatpress", excerpt: "Manual Heatpress for durable and precise heat transfer on garments and fabrics.", date: "March 2026", image: '/heatpress/Subli-Mate Manual Heat Press 80cm x 100cm (1).webp' },
+        { id: 1, title: "Handheld Fiber Laser", category: "Fiber Laser", excerpt: "The TFZ-S 1500W significantly reduces production time with high-speed laser welding, enabling rapid joint formation while maintaining superior accuracy and consistency.", date: "March 2026", image: '/laser-machines/Handheld Fiber Laser.webp' },
+        { id: 2, title: "Hanniu K1390 CO2 Laser 150W with CCD", category: "CO2 Laser", excerpt: "Industrial-grade CO2 laser cutting machine with CCD vision system for precision cutting at 64000 mm/min engraving speed, delivering accurate border detection and contour recognition.", date: "March 2026", image: '/laser-machines/Hanniu K1390 CO2 Laser Cutting Machine 150w with CCD.webp' },
+        { id: 3, title: "Hanniu K1390 CO2 Laser 300W", category: "CO2 Laser", excerpt: "Advanced CO2 laser cutting machine excels at demanding creations, precisely cutting and engraving diverse non-metals (1300×900mm, up to 300W), ensuring stable, accurate results with DSP control.", date: "March 2026", image: '/laser-machines/Hanniu K1390 CO2 Laser Cutting Machine 300w.webp' },
+        { id: 4, title: "K-Sign Desktop Laser B330", category: "Desktop Laser", excerpt: "Ultra-fast 44-seconds engraving desktop laser machine — engrave an 80×90mm design in just 44 seconds with 0.01mm precision, featuring industrial-grade 600mm/s speed and comprehensive safety features.", date: "March 2026", image: '/laser-machines/K-Sign Desktop Laser B330.webp' },
+        { id: 5, title: "K-Sign DF-1916 Laser Fabric Cutting", category: "Fabric Laser", excerpt: "Smart laser precision for fast flexible cutting — 1800×2200mm working area CO2 laser cutter with intelligent vision and automatic identification for ultra-precise shape cutting across textiles and leather.", date: "March 2026", image: '/laser-machines/K-Sign DF-1916 Laser Fabric Cutting.webp' },
+        { id: 6, title: "K-Sign Desktop Laser Marking", category: "Desktop Laser", excerpt: "Instantly increase production with reliable offline engraving function — efficiency by 5-10 times. No professional technician needed, learn within 10 minutes. Available with rotary for cylindrical marking.", date: "March 2026", image: '/laser-machines/K-sign_Desktop Laser Marking.webp' },
+        { id: 7, title: "Reci Handheld Fiber Laser Welding R-A80 800W", category: "Fiber Laser", excerpt: "Air-cooled handheld laser welder — 10X faster than TIG welding. Compact integrated welding and wire feeding system with quiet multi-level speed control. No external chiller required.", date: "March 2026", image: '/laser-machines/Reci Handheld Fiber Laser Welding Machine R-A80 800W 1.webp' },
+        { id: 8, title: "Yueming Fiber Laser CMA-1325C-G-G 1000W", category: "Fiber Laser", excerpt: "Industrial grading speed 60m/min with auto-focus cutting head and Sprint piercing — cuts piercing time by up to 80%, excels at thick and reflective metals with superior optic protection.", date: "March 2026", image: '/laser-machines/Yueming Fiber Laser  CMA-1325C-G-G 1000w.webp' },
+        { id: 9, title: "Yueming Fiber Laser HL1530C-G-E 1500W IPG", category: "Fiber Laser", excerpt: "Industrial grading speed 60m/min with smart leapfrog motion — parabolic frog jump system auto-adjusts height for faster contour switching and improved cutting efficiency.", date: "March 2026", image: '/laser-machines/Yueming Fiber Laser HL1530C-G-E 1500w IPG.webp' },
     ];
 
     const categories = ["All", ...new Set(blogPosts.map(post => post.category))];
@@ -33,8 +41,8 @@ export default function BlogsPage() {
             <Header />
 
             <header className="luxor-header">
-                <h1>Textile and Apparel</h1>
-                <p>Discover solutions, guides, and the latest innovations for textile and apparel production from Kelin Graphics System.</p>
+                <h1>Laser Machine Solutions</h1>
+                <p>Explore our full range of laser machine solutions — from CO2 and fiber lasers to desktop engravers and fabric cutters — engineered for precision, speed, and professional-grade results.</p>
             </header>
 
             <nav className="category-filter">

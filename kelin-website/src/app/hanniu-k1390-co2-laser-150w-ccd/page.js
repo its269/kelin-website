@@ -119,10 +119,50 @@ export default function HanniuK1390CO2Laser150WCCD() {
         setInquiryModalOpen(false);
     };
 
-    const handleSubmitInquiry = (e) => {
+
+    const [submitting, setSubmitting] = useState(false);
+    const [submitSuccess, setSubmitSuccess] = useState(null); // null | true | false
+
+    const handleSubmitInquiry = async (e) => {
         e.preventDefault();
-        alert('Thank you for your inquiry! We will contact you soon.');
-        closeInquiryModal();
+        setSubmitting(true);
+        setSubmitSuccess(null);
+        const form = e.target;
+        const formData = new FormData(form);
+        // Combine country code and phone
+        const countryCode = formData.get('countryCode') || '';
+        const phone = formData.get('phone') || '';
+        formData.set('phone', `${countryCode} ${phone}`);
+        formData.delete('countryCode');
+        formData.append('_cc', 'info@kelinph.com');
+        formData.append('Page Source', 'Hanniu K1390 CO2 Laser 150W CCD');
+        formData.append('_replyto', formData.get('email') || '');
+        formData.append('_subject', 'Inquiry: Hanniu K1390 CO2 Laser 150W CCD');
+        formData.append('Page URL', typeof window !== 'undefined' ? window.location.href : '');
+        formData.append('Submitted At', new Date().toLocaleString('en-US', { timeZone: 'Asia/Manila' }));
+        formData.append('name', `${formData.get('firstName') || ''} ${formData.get('lastName') || ''}`.trim());
+        formData.append('inquiryType', 'product-inquiry');
+        try {
+            const res = await fetch('https://formspree.io/f/mvzwzkkd', {
+                method: 'POST',
+                headers: { 'Accept': 'application/json' },
+                body: formData,
+            });
+            if (res.ok) {
+                setSubmitSuccess(true);
+                form.reset();
+                setTimeout(() => {
+                    setInquiryModalOpen(false);
+                    setSubmitSuccess(null);
+                }, 2000);
+            } else {
+                setSubmitSuccess(false);
+            }
+        } catch (err) {
+            setSubmitSuccess(false);
+        } finally {
+            setSubmitting(false);
+        }
     };
 
     return (
@@ -342,6 +382,12 @@ export default function HanniuK1390CO2Laser150WCCD() {
                         </div>
 
                         <form onSubmit={handleSubmitInquiry} className="hanniu-k1390-inquiry-form">
+                            {submitSuccess === true && (
+                                <div className="hanniu-k1390-form-success">Thank you for your inquiry! We will contact you soon.</div>
+                            )}
+                            {submitSuccess === false && (
+                                <div className="hanniu-k1390-form-error">Sorry, there was an error submitting your inquiry. Please try again.</div>
+                            )}
                             <div className="hanniu-k1390-form-row">
                                 <div className="hanniu-k1390-form-group">
                                     <label htmlFor="firstName">First Name *</label>
@@ -516,8 +562,10 @@ export default function HanniuK1390CO2Laser150WCCD() {
                             </div>
 
                             <div className="hanniu-k1390-form-actions">
-                                <button type="submit" className="hanniu-k1390-btn-primary">Send Inquiry</button>
-                                <button type="button" onClick={closeInquiryModal} className="hanniu-k1390-btn-secondary">Cancel</button>
+                                <button type="submit" className="hanniu-k1390-btn-primary" disabled={submitting}>
+                                    {submitting ? 'Sending...' : 'Send Inquiry'}
+                                </button>
+                                <button type="button" onClick={closeInquiryModal} className="hanniu-k1390-btn-secondary" disabled={submitting}>Cancel</button>
                             </div>
                         </form>
                     </div>

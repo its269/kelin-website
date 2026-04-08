@@ -66,10 +66,44 @@ export default function Laminator() {
         setSelectedMachine(null);
     };
 
-    const handleInquirySubmit = (e) => {
+    const [inquiryStatus, setInquiryStatus] = useState(null); // null | 'success' | 'error' | 'loading'
+    const handleInquirySubmit = async (e) => {
         e.preventDefault();
-        alert('Inquiry submitted successfully!');
-        closeInquiryModal();
+        setInquiryStatus('loading');
+        const form = e.target;
+        const formData = new FormData(form);
+        // Combine country code and phone
+        const countryCode = formData.get('countryCode') || '';
+        const phone = formData.get('phone') || '';
+        formData.set('phone', `${countryCode} ${phone}`);
+        formData.delete('countryCode');
+        formData.append('_cc', 'info@kelinph.com');
+        formData.append('Page Source', selectedMachine ? selectedMachine.name : 'Laminator Machines');
+        formData.append('_replyto', formData.get('email') || '');
+        formData.append('_subject', `Inquiry: ${selectedMachine ? selectedMachine.name : 'Laminator Machines'}`);
+        formData.append('Page URL', typeof window !== 'undefined' ? window.location.href : '');
+        formData.append('Submitted At', new Date().toLocaleString('en-US', { timeZone: 'Asia/Manila' }));
+        formData.append('name', `${formData.get('firstName') || ''} ${formData.get('lastName') || ''}`.trim());
+        formData.append('inquiryType', 'product-inquiry');
+        try {
+            const res = await fetch('https://formspree.io/f/mvzwzkkd', {
+                method: 'POST',
+                headers: { 'Accept': 'application/json' },
+                body: formData,
+            });
+            if (res.ok) {
+                setInquiryStatus('success');
+                form.reset();
+                setTimeout(() => {
+                    setInquiryStatus(null);
+                    closeInquiryModal();
+                }, 2000);
+            } else {
+                setInquiryStatus('error');
+            }
+        } catch (err) {
+            setInquiryStatus('error');
+        }
     };
 
     return (
@@ -403,13 +437,19 @@ export default function Laminator() {
                             </div>
 
                             <div className="laminator-form-actions">
-                                <button type="submit" className="laminator-btn-primary">
-                                    Send Inquiry
+                                <button type="submit" className="laminator-btn-primary" disabled={inquiryStatus === 'loading'}>
+                                    {inquiryStatus === 'loading' ? 'Sending...' : 'Send Inquiry'}
                                 </button>
-                                <button type="button" onClick={closeInquiryModal} className="laminator-btn-secondary">
+                                <button type="button" onClick={closeInquiryModal} className="laminator-btn-secondary" disabled={inquiryStatus === 'loading'}>
                                     Cancel
                                 </button>
                             </div>
+                            {inquiryStatus === 'success' && (
+                                <div style={{ color: 'green', marginTop: 10 }}>Thank you for your inquiry! We will contact you soon.</div>
+                            )}
+                            {inquiryStatus === 'error' && (
+                                <div style={{ color: 'red', marginTop: 10 }}>There was an error sending your inquiry. Please try again later.</div>
+                            )}
                         </form>
                     </div>
                 </div>

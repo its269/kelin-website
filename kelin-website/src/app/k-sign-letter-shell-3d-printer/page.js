@@ -3,6 +3,7 @@ import Header from '../components/Header';
 import Link from 'next/link';
 import { useState, useRef, useEffect } from 'react';
 import './k-sign-letter-shell-3d-printer.css';
+import VideoPlayer from '../components/VideoPlayer';
 
 export default function KSignLetterShell3DPrinter() {
     const [inquiryModalOpen, setInquiryModalOpen] = useState(false);
@@ -117,10 +118,44 @@ export default function KSignLetterShell3DPrinter() {
         setInquiryModalOpen(false);
     };
 
-    const handleSubmitInquiry = (e) => {
+    const [inquiryStatus, setInquiryStatus] = useState(null); // null | 'success' | 'error' | 'loading'
+    const handleSubmitInquiry = async (e) => {
         e.preventDefault();
-        alert('Thank you for your inquiry! We will contact you soon.');
-        closeInquiryModal();
+        setInquiryStatus('loading');
+        const form = e.target;
+        const formData = new FormData(form);
+        // Combine country code and phone
+        const countryCode = formData.get('countryCode') || '';
+        const phone = formData.get('phone') || '';
+        formData.set('phone', `${countryCode} ${phone}`);
+        formData.delete('countryCode');
+        formData.append('_cc', 'info@kelinph.com');
+        formData.append('Page Source', 'K-Sign Letter Shell 3D Printer');
+        formData.append('_replyto', formData.get('email') || '');
+        formData.append('_subject', 'Inquiry: K-Sign Letter Shell 3D Printer');
+        formData.append('Page URL', typeof window !== 'undefined' ? window.location.href : '');
+        formData.append('Submitted At', new Date().toLocaleString('en-US', { timeZone: 'Asia/Manila' }));
+        formData.append('name', `${formData.get('firstName') || ''} ${formData.get('lastName') || ''}`.trim());
+        formData.append('inquiryType', 'product-inquiry');
+        try {
+            const res = await fetch('https://formspree.io/f/mvzwzkkd', {
+                method: 'POST',
+                headers: { 'Accept': 'application/json' },
+                body: formData,
+            });
+            if (res.ok) {
+                setInquiryStatus('success');
+                form.reset();
+                setTimeout(() => {
+                    setInquiryStatus(null);
+                    closeInquiryModal();
+                }, 2000);
+            } else {
+                setInquiryStatus('error');
+            }
+        } catch (err) {
+            setInquiryStatus('error');
+        }
     };
 
     return (
@@ -187,8 +222,13 @@ export default function KSignLetterShell3DPrinter() {
                     </div>
                 </section>
 
+                {/* Video */}
+                <section className="videoPlayer-section">
+                    <VideoPlayer src="/k-sign-letter-shell-3D-Printer.mp4" poster="" alt="K-Sign Letter Shell 3D Printer Video" />
+                </section>
+
                 {/* Key Features */}
-                <section className="k-sign-3d-printer-features-section">
+                <section className="k-sign-3d-printer-features-section" style={{ marginTop: '100px' }}>
                     <div className="k-sign-3d-printer-features-container">
                         <div className="k-sign-3d-printer-features-header">
                             <h2 className="k-sign-3d-printer-features-title">Key Features</h2>
@@ -239,6 +279,8 @@ export default function KSignLetterShell3DPrinter() {
                         </div>
                     </div>
                 </section>
+
+
 
                 {/* Applications */}
                 <section className="k-sign-3d-printer-applications-section">
@@ -514,9 +556,17 @@ export default function KSignLetterShell3DPrinter() {
                             </div>
 
                             <div className="k-sign-3d-printer-form-actions">
-                                <button type="submit" className="k-sign-3d-printer-btn-primary">Send Inquiry</button>
-                                <button type="button" onClick={closeInquiryModal} className="k-sign-3d-printer-btn-secondary">Cancel</button>
+                                <button type="submit" className="k-sign-3d-printer-btn-primary" disabled={inquiryStatus === 'loading'}>
+                                    {inquiryStatus === 'loading' ? 'Sending...' : 'Send Inquiry'}
+                                </button>
+                                <button type="button" onClick={closeInquiryModal} className="k-sign-3d-printer-btn-secondary" disabled={inquiryStatus === 'loading'}>Cancel</button>
                             </div>
+                            {inquiryStatus === 'success' && (
+                                <div style={{ color: 'green', marginTop: 10 }}>Thank you for your inquiry! We will contact you soon.</div>
+                            )}
+                            {inquiryStatus === 'error' && (
+                                <div style={{ color: 'red', marginTop: 10 }}>There was an error sending your inquiry. Please try again later.</div>
+                            )}
                         </form>
                     </div>
                 </div>

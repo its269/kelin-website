@@ -1,7 +1,7 @@
 "use client";
 import Header from '../components/Header';
 import Link from 'next/link';
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import './sublimation-printer-fd6198e.css';
 
 export default function SublimationPrinterFD6198E() {
@@ -9,30 +9,159 @@ export default function SublimationPrinterFD6198E() {
     const [selectedImage, setSelectedImage] = useState('/sublimation_dtf/SUBL Sublimation Printer FD6198E (1).webp');
 
     const scrollRef = useRef(null);
-    const [isDragging, setIsDragging] = useState(false);
-    const [startX, setStartX] = useState(0);
-    const [scrollLeft, setScrollLeft] = useState(0);
+    const isDraggingRef = useRef(false);
+    const startXRef = useRef(0);
+    const scrollLeftRef = useRef(0);
+    const animationFrameRef = useRef(null);
+    const lastTimestampRef = useRef(0);
+
+    const applicationItems = [
+        { image: '/application/eight-head-sublimation-printer/1.webp' },
+        { image: '/application/eight-head-sublimation-printer/2.webp' },
+        { image: '/application/eight-head-sublimation-printer/3.webp' },
+        { image: '/application/eight-head-sublimation-printer/4.webp' },
+        { image: '/application/eight-head-sublimation-printer/5.webp' },
+        { image: '/application/eight-head-sublimation-printer/6.webp' }
+    ];
+
+    const loopedApplicationItems = [...applicationItems, ...applicationItems, ...applicationItems];
+
+    const normalizeInfiniteScroll = () => {
+        const scrollElement = scrollRef.current;
+        if (!scrollElement) {
+            return;
+        }
+
+        const segmentWidth = scrollElement.scrollWidth / 3;
+        const boundaryOffset = 4;
+
+        if (scrollElement.scrollLeft <= boundaryOffset) {
+            scrollElement.scrollLeft += segmentWidth;
+        } else if (scrollElement.scrollLeft >= segmentWidth * 2 - boundaryOffset) {
+            scrollElement.scrollLeft -= segmentWidth;
+        }
+    };
+
+    useEffect(() => {
+        const scrollElement = scrollRef.current;
+        if (!scrollElement) {
+            return;
+        }
+
+        const initializeLoopPosition = () => {
+            const segmentWidth = scrollElement.scrollWidth / 3;
+            scrollElement.scrollLeft = segmentWidth;
+        };
+
+        initializeLoopPosition();
+        window.addEventListener('resize', initializeLoopPosition);
+
+        return () => {
+            window.removeEventListener('resize', initializeLoopPosition);
+        };
+    }, []);
+
+    useEffect(() => {
+        const scrollElement = scrollRef.current;
+        if (!scrollElement) {
+            return;
+        }
+
+        const speedPixelsPerMs = 0.05;
+
+        const animate = (timestamp) => {
+            if (lastTimestampRef.current === 0) {
+                lastTimestampRef.current = timestamp;
+            }
+
+            const delta = timestamp - lastTimestampRef.current;
+            lastTimestampRef.current = timestamp;
+
+            if (!isDraggingRef.current && scrollRef.current) {
+                scrollRef.current.scrollLeft += delta * speedPixelsPerMs;
+                normalizeInfiniteScroll();
+            }
+
+            animationFrameRef.current = window.requestAnimationFrame(animate);
+        };
+
+        animationFrameRef.current = window.requestAnimationFrame(animate);
+
+        return () => {
+            if (animationFrameRef.current) {
+                window.cancelAnimationFrame(animationFrameRef.current);
+            }
+            lastTimestampRef.current = 0;
+        };
+    }, []);
 
     const handleMouseDown = (e) => {
-        setIsDragging(true);
-        setStartX(e.pageX - scrollRef.current.offsetLeft);
-        setScrollLeft(scrollRef.current.scrollLeft);
+        const scrollElement = scrollRef.current;
+        if (!scrollElement) {
+            return;
+        }
+
+        isDraggingRef.current = true;
+        startXRef.current = e.pageX - scrollElement.offsetLeft;
+        scrollLeftRef.current = scrollElement.scrollLeft;
     };
 
     const handleMouseMove = (e) => {
-        if (!isDragging) return;
+        if (!isDraggingRef.current) {
+            return;
+        }
+
+        const scrollElement = scrollRef.current;
+        if (!scrollElement) {
+            return;
+        }
+
         e.preventDefault();
-        const x = e.pageX - scrollRef.current.offsetLeft;
-        const walk = (x - startX) * 2;
-        scrollRef.current.scrollLeft = scrollLeft - walk;
+        const x = e.pageX - scrollElement.offsetLeft;
+        const walk = (x - startXRef.current) * 2;
+        scrollElement.scrollLeft = scrollLeftRef.current - walk;
+        normalizeInfiniteScroll();
     };
 
     const handleMouseUp = () => {
-        setIsDragging(false);
+        isDraggingRef.current = false;
     };
 
     const handleMouseLeave = () => {
-        setIsDragging(false);
+        isDraggingRef.current = false;
+    };
+
+    const handleTouchStart = (e) => {
+        const scrollElement = scrollRef.current;
+        if (!scrollElement) {
+            return;
+        }
+
+        const touchX = e.touches[0].pageX;
+        isDraggingRef.current = true;
+        startXRef.current = touchX - scrollElement.offsetLeft;
+        scrollLeftRef.current = scrollElement.scrollLeft;
+    };
+
+    const handleTouchMove = (e) => {
+        if (!isDraggingRef.current) {
+            return;
+        }
+
+        const scrollElement = scrollRef.current;
+        if (!scrollElement) {
+            return;
+        }
+
+        const touchX = e.touches[0].pageX;
+        const x = touchX - scrollElement.offsetLeft;
+        const walk = (x - startXRef.current) * 2;
+        scrollElement.scrollLeft = scrollLeftRef.current - walk;
+        normalizeInfiniteScroll();
+    };
+
+    const handleTouchEnd = () => {
+        isDraggingRef.current = false;
     };
 
     const machineDetails = {
@@ -115,11 +244,55 @@ export default function SublimationPrinterFD6198E() {
         setInquiryModalOpen(false);
     };
 
-    const handleSubmitInquiry = (e) => {
+
+    const [inquiryStatus, setInquiryStatus] = useState(null);
+    const [inquirySubmitting, setInquirySubmitting] = useState(false);
+
+    const handleSubmitInquiry = async (e) => {
         e.preventDefault();
-        // Handle form submission logic here
-        alert('Thank you for your inquiry! We will contact you soon.');
-        closeInquiryModal();
+        setInquirySubmitting(true);
+        setInquiryStatus(null);
+
+        const form = e.target;
+        const data = {
+            firstName: form.firstName.value,
+            lastName: form.lastName.value,
+            email: form.email.value,
+            countryCode: form.countryCode ? form.countryCode.value : '',
+            phone: form.phone ? form.phone.value : '',
+            company: form.company ? form.company.value : '',
+            message: form.message.value,
+            _subject: `Inquiry: Sublimation Printer FD6198E`,
+            'Page Source': 'Sublimation Printer FD6198E',
+            'Page URL': typeof window !== 'undefined' ? window.location.href : '',
+            'Submitted At': new Date().toLocaleString('en-US', {
+                timeZone: 'Asia/Manila',
+                dateStyle: 'full',
+                timeStyle: 'long'
+            })
+        };
+        data['_cc'] = 'info@kelinph.com';
+        data['_replyto'] = data.email || '';
+        data['name'] = `${data.firstName || ''} ${data.lastName || ''}`.trim();
+        data['inquiryType'] = 'product-inquiry';
+
+        try {
+            const response = await fetch('https://formspree.io/f/mvzwzkkd', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data)
+            });
+            if (response.ok) {
+                setInquiryStatus('success');
+                form.reset();
+            } else {
+                setInquiryStatus('error');
+            }
+        } catch (err) {
+            setInquiryStatus('error');
+        } finally {
+            setInquirySubmitting(false);
+        }
     };
 
     return (
@@ -246,7 +419,7 @@ export default function SublimationPrinterFD6198E() {
                     <div className="fd6198e-printer-applications-container">
                         <h2 className="fd6198e-printer-section-title">Applications</h2>
                         <p className="fd6198e-printer-applications-subtitle">
-                            Versatile cutting solutions for professional applications
+                            Versatile sublimation solutions for professional applications
                         </p>
                         <div
                             ref={scrollRef}
@@ -255,48 +428,18 @@ export default function SublimationPrinterFD6198E() {
                             onMouseMove={handleMouseMove}
                             onMouseUp={handleMouseUp}
                             onMouseLeave={handleMouseLeave}
+                            onTouchStart={handleTouchStart}
+                            onTouchMove={handleTouchMove}
+                            onTouchEnd={handleTouchEnd}
+                            onScroll={normalizeInfiniteScroll}
                         >
                             <div className="fd6198e-printer-applications-image-grid">
-                                <div className="fd6198e-printer-application-image-item">
-                                    <img src="/application/_0000_6.jpg" alt="T-Shirt Printing" />
-                                    <p>T-Shirt Printing</p>
-                                </div>
-                                <div className="fd6198e-printer-application-image-item">
-                                    <img src="/application/_0001_5.jpg" alt="Mug Printing" />
-                                    <p>Mug Printing</p>
-                                </div>
-                                <div className="fd6198e-printer-application-image-item">
-                                    <img src="/application/_0002_4.jpg" alt="Signage & Banners" />
-                                    <p>Signage & Banners</p>
-                                </div>
-                                <div className="fd6198e-printer-application-image-item">
-                                    <img src="/application/_0003_3.jpg" alt="Promotional Products" />
-                                    <p>Promotional Products</p>
-                                </div>
-                                <div className="fd6198e-printer-application-image-item">
-                                    <img src="/application/_0004_2.jpg" alt="Custom Apparel" />
-                                    <p>Custom Apparel</p>
-                                </div>
-                                <div className="fd6198e-printer-application-image-item">
-                                    <img src="/application/_0005_1.jpg" alt="Phone Cases" />
-                                    <p>Phone Cases</p>
-                                </div>
-                                <div className="fd6198e-printer-application-image-item">
-                                    <img src="/application/_0000_6.jpg" alt="Sportswear" />
-                                    <p>Sportswear</p>
-                                </div>
-                                <div className="fd6198e-printer-application-image-item">
-                                    <img src="/application/_0001_5.jpg" alt="Home Decor" />
-                                    <p>Home Decor</p>
-                                </div>
-                                <div className="fd6198e-printer-application-image-item">
-                                    <img src="/application/_0002_4.jpg" alt="Packaging" />
-                                    <p>Packaging</p>
-                                </div>
-                                <div className="fd6198e-printer-application-image-item">
-                                    <img src="/application/_0003_3.jpg" alt="Labels & Stickers" />
-                                    <p>Labels & Stickers</p>
-                                </div>
+                                {loopedApplicationItems.map((item, index) => (
+                                    <div key={`${item.label}-${index}`} className="fd6198e-printer-application-image-item">
+                                        <img src={item.image} alt={item.label} />
+                                        <p>{item.label}</p>
+                                    </div>
+                                ))}
                             </div>
                         </div>
                     </div>
@@ -523,13 +666,23 @@ export default function SublimationPrinterFD6198E() {
                             </div>
 
                             <div className="fd6198e-printer-form-actions">
-                                <button type="submit" className="fd6198e-printer-btn-primary">
-                                    Send Inquiry
+                                <button type="submit" className="fd6198e-printer-btn-primary" disabled={inquirySubmitting}>
+                                    {inquirySubmitting ? 'Sending...' : 'Send Inquiry'}
                                 </button>
                                 <button type="button" onClick={closeInquiryModal} className="fd6198e-printer-btn-secondary">
                                     Cancel
                                 </button>
                             </div>
+                            {inquiryStatus === 'success' && (
+                                <div className="form-status success" style={{ marginTop: 8 }}>
+                                    <p>Thank you! Your inquiry has been sent. We will contact you soon.</p>
+                                </div>
+                            )}
+                            {inquiryStatus === 'error' && (
+                                <div className="form-status error" style={{ marginTop: 8 }}>
+                                    <p>Sorry, there was an error sending your inquiry. Please try again.</p>
+                                </div>
+                            )}
                         </form>
                     </div>
                 </div>

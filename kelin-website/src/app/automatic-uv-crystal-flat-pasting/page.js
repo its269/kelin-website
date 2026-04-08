@@ -113,10 +113,55 @@ export default function AutomaticUVCrystalFlatPasting() {
         setInquiryModalOpen(false);
     };
 
-    const handleSubmitInquiry = (e) => {
+
+    const [inquiryStatus, setInquiryStatus] = useState(null);
+    const [inquirySubmitting, setInquirySubmitting] = useState(false);
+
+    const handleSubmitInquiry = async (e) => {
         e.preventDefault();
-        alert('Thank you for your inquiry! We will contact you soon.');
-        closeInquiryModal();
+        setInquirySubmitting(true);
+        setInquiryStatus(null);
+
+        const form = e.target;
+        const data = {
+            firstName: form.firstName.value,
+            lastName: form.lastName.value,
+            email: form.email.value,
+            countryCode: form.countryCode ? form.countryCode.value : '',
+            phone: form.phone ? form.phone.value : '',
+            company: form.company ? form.company.value : '',
+            message: form.message.value,
+            _subject: `Inquiry: AUTOMATIC UV CRYSTAL FLAT PASTING MACHINE`,
+            'Page Source': 'AUTOMATIC UV CRYSTAL FLAT PASTING MACHINE',
+            'Page URL': typeof window !== 'undefined' ? window.location.href : '',
+            'Submitted At': new Date().toLocaleString('en-US', {
+                timeZone: 'Asia/Manila',
+                dateStyle: 'full',
+                timeStyle: 'long'
+            }),
+            _cc: 'info@kelinph.com',
+            _replyto: form.email.value || '',
+            name: `${form.firstName.value || ''} ${form.lastName.value || ''}`.trim(),
+            inquiryType: 'product-inquiry'
+        };
+
+        try {
+            const response = await fetch('https://formspree.io/f/mvzwzkkd', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data)
+            });
+            if (response.ok) {
+                setInquiryStatus('success');
+                form.reset();
+            } else {
+                setInquiryStatus('error');
+            }
+        } catch (err) {
+            setInquiryStatus('error');
+        } finally {
+            setInquirySubmitting(false);
+        }
     };
 
     return (
@@ -500,9 +545,21 @@ export default function AutomaticUVCrystalFlatPasting() {
                             </div>
 
                             <div className="auto-uv-crystal-form-actions">
-                                <button type="submit" className="auto-uv-crystal-btn-primary">Send Inquiry</button>
+                                <button type="submit" className="auto-uv-crystal-btn-primary" disabled={inquirySubmitting}>
+                                    {inquirySubmitting ? 'Sending...' : 'Send Inquiry'}
+                                </button>
                                 <button type="button" onClick={closeInquiryModal} className="auto-uv-crystal-btn-secondary">Cancel</button>
                             </div>
+                            {inquiryStatus === 'success' && (
+                                <div className="form-status success" style={{ marginTop: 8 }}>
+                                    <p>Thank you! Your inquiry has been sent. We will contact you soon.</p>
+                                </div>
+                            )}
+                            {inquiryStatus === 'error' && (
+                                <div className="form-status error" style={{ marginTop: 8 }}>
+                                    <p>Sorry, there was an error sending your inquiry. Please try again.</p>
+                                </div>
+                            )}
                         </form>
                     </div>
                 </div>

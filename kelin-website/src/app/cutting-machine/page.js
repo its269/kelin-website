@@ -156,10 +156,55 @@ export default function CuttingMachine() {
         setSelectedMachine(null);
     };
 
-    const handleInquirySubmit = (e) => {
+
+    const [inquiryStatus, setInquiryStatus] = useState(null);
+    const [inquirySubmitting, setInquirySubmitting] = useState(false);
+
+    const handleInquirySubmit = async (e) => {
         e.preventDefault();
-        alert('Inquiry submitted successfully!');
-        closeInquiryModal();
+        setInquirySubmitting(true);
+        setInquiryStatus(null);
+
+        const form = e.target;
+        const data = {
+            firstName: form.firstName.value,
+            lastName: form.lastName.value,
+            email: form.email.value,
+            countryCode: form.countryCode.value,
+            phone: form.phone.value,
+            company: form.company.value,
+            message: form.message.value,
+            _subject: `Inquiry: ${selectedMachine ? selectedMachine.name : 'Cutting Machine'}`,
+            'Page Source': 'Cutting Machines',
+            'Page URL': typeof window !== 'undefined' ? window.location.href : '',
+            'Submitted At': new Date().toLocaleString('en-US', {
+                timeZone: 'Asia/Manila',
+                dateStyle: 'full',
+                timeStyle: 'long'
+            }),
+            _cc: 'info@kelinph.com',
+            _replyto: form.email.value || '',
+            name: `${form.firstName.value || ''} ${form.lastName.value || ''}`.trim(),
+            inquiryType: 'product-inquiry'
+        };
+
+        try {
+            const response = await fetch('https://formspree.io/f/mvzwzkkd', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data)
+            });
+            if (response.ok) {
+                setInquiryStatus('success');
+                form.reset();
+            } else {
+                setInquiryStatus('error');
+            }
+        } catch (err) {
+            setInquiryStatus('error');
+        } finally {
+            setInquirySubmitting(false);
+        }
     };
 
     return (
@@ -509,13 +554,23 @@ export default function CuttingMachine() {
                             </div>
 
                             <div className="cutting-form-actions">
-                                <button type="submit" className="cutting-btn-primary">
-                                    Send Inquiry
+                                <button type="submit" className="cutting-btn-primary" disabled={inquirySubmitting}>
+                                    {inquirySubmitting ? 'Sending...' : 'Send Inquiry'}
                                 </button>
                                 <button type="button" onClick={closeInquiryModal} className="cutting-btn-secondary">
                                     Cancel
                                 </button>
                             </div>
+                            {inquiryStatus === 'success' && (
+                                <div className="form-status success" style={{ marginTop: 8 }}>
+                                    <p>Thank you! Your inquiry has been sent. We will contact you soon.</p>
+                                </div>
+                            )}
+                            {inquiryStatus === 'error' && (
+                                <div className="form-status error" style={{ marginTop: 8 }}>
+                                    <p>Sorry, there was an error sending your inquiry. Please try again.</p>
+                                </div>
+                            )}
                         </form>
                     </div>
                 </div>

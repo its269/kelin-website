@@ -9,6 +9,14 @@
     font-display: swap;
 }
 
+.videoPlayer-section {
+    width: 100%;
+    padding: 100px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .dtf-uv-sf604-main {
     min-height: 100vh;
     margin-top: 60px;
@@ -819,6 +827,11 @@
 }
 
 @media (max-width: 768px) {
+    .videoPlayer-section {
+        width: 100%;
+        padding: 100px 30px;
+    }
+
     .dtf-uv-sf604-hero {
         border-radius: 0px 0px 40px 40px;
         padding: 60px 20px 40px;

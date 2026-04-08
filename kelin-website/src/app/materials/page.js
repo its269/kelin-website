@@ -50,18 +50,23 @@ export default function PromotionalDisplayPage() {
           images: ['/dummy-image-square.jpg']
         },
         {
-          name: 'Ba-cut Translucent Sticker',
-          desc: 'Premium colored translucent vinyl for backlit applications.',
-          specs: 'Size: 10m x 1.22m (33ft x 4ft). 19+ colors including Red, Blue, Yellow, Green, Gold.',
-          features: ['Vibrant illumination', 'Uniform color', 'Excellent plotting'],
-          images: ['/dummy-image-square.jpg', '/dummy-image-square.jpg']
-        },
-        {
           name: 'Specialty & Architectural Films',
           desc: 'Window films, Floor lamination, Magnetic sheets, and Rewritable films.',
           specs: 'Includes Anti-Scratching Rainbow, White Dot Gradient, Chalk Board (Green/Black), and Reflective Sheeting.',
           features: ['Anti-slip floor graphics', 'Static cling', 'Hologram/Silver finishes'],
           images: ['/dummy-image-square.jpg']
+        }
+      ]
+    },
+    {
+      title: "Ba-cut Translucent Sticker",
+      products: [
+        {
+          name: 'Ba-cut Translucent Sticker',
+          desc: 'Premium colored translucent vinyl for backlit applications.',
+          specs: 'Size: 10m x 1.22m (33ft x 4ft). 19+ colors including Red, Blue, Yellow, Green, Gold.',
+          features: ['Vibrant illumination', 'Uniform color', 'Excellent plotting'],
+          images: ['/dummy-image-square.jpg', '/dummy-image-square.jpg']
         }
       ]
     },
