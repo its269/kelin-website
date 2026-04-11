@@ -277,6 +277,7 @@ export default function IEchoPK() {
             countryCode: form.countryCode.value,
             phone: form.phone.value,
             company: form.company.value,
+            address: form.address ? form.address.value : '',
             message: form.message.value,
             _subject: `Inquiry: iEcho PK`,
             'Page Source': 'iEcho PK',
@@ -682,9 +683,15 @@ export default function IEchoPK() {
                                 </div>
                             </div>
 
-                            <div className="iecho-pk-form-group">
-                                <label htmlFor="company">Company Name</label>
-                                <input type="text" id="company" name="company" />
+                            <div className="iecho-pk-form-row">
+                                <div className="iecho-pk-form-group">
+                                    <label htmlFor="company">Company Name</label>
+                                    <input type="text" id="company" name="company" />
+                                </div>
+                                <div className="iecho-pk-form-group">
+                                    <label htmlFor="address">Complete Address</label>
+                                    <input type="text" id="address" name="address" placeholder="Street, City, State/Province, Country" />
+                                </div>
                             </div>
 
                             <div className="iecho-pk-form-group">

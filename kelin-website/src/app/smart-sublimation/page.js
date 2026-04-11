@@ -655,9 +655,15 @@ export default function SmartSublimation() {
                                 </div>
                             </div>
 
-                            <div className="smart-sublimation-form-group">
-                                <label htmlFor="company">Company Name</label>
-                                <input type="text" id="company" name="company" />
+                            <div className="smart-sublimation-form-row">
+                                <div className="smart-sublimation-form-group">
+                                    <label htmlFor="company">Company Name</label>
+                                    <input type="text" id="company" name="company" />
+                                </div>
+                                <div className="smart-sublimation-form-group">
+                                    <label htmlFor="address">Complete Address</label>
+                                    <input type="text" id="address" name="address" placeholder="Street, City, State/Province, Country" />
+                                </div>
                             </div>
 
                             <div className="smart-sublimation-form-group">

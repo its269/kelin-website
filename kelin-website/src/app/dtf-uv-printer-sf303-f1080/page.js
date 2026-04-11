@@ -565,9 +565,15 @@ export default function DTFUVPrinterSF303F1080() {
                                 </div>
                             </div>
 
-                            <div className="dtf-uv-sf303-form-group">
-                                <label htmlFor="company">Company Name</label>
-                                <input type="text" id="company" name="company" />
+                            <div className="dtf-uv-sf303-form-row">
+                                <div className="dtf-uv-sf303-form-group">
+                                    <label htmlFor="company">Company Name</label>
+                                    <input type="text" id="company" name="company" />
+                                </div>
+                                <div className="dtf-uv-sf303-form-group">
+                                    <label htmlFor="address">Complete Address</label>
+                                    <input type="text" id="address" name="address" placeholder="Street, City, State/Province, Country" />
+                                </div>
                             </div>
 
                             <div className="dtf-uv-sf303-form-group">

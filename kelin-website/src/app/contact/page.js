@@ -8,6 +8,7 @@ export default function Contact() {
         name: '',
         email: '',
         company: '',
+        address: '',
         countryCode: '+63',
         phone: '',
         subject: '',
@@ -58,6 +59,7 @@ export default function Contact() {
                     name: '',
                     email: '',
                     company: '',
+                    address: '',
                     countryCode: '+63',
                     phone: '',
                     subject: '',
@@ -386,20 +388,34 @@ export default function Contact() {
                                         </div>
                                     </div>
 
-                                    <div className="form-group">
-                                        <label htmlFor="inquiryType">Inquiry Type</label>
-                                        <select
-                                            id="inquiryType"
-                                            name="inquiryType"
-                                            value={formData.inquiryType}
-                                            onChange={handleInputChange}
-                                        >
-                                            <option value="general">General Inquiry</option>
-                                            <option value="sales">Sales & Pricing</option>
-                                            <option value="support">Technical Support</option>
-                                            <option value="partnership">Partnership</option>
-                                            <option value="careers">Careers</option>
-                                        </select>
+                                    <div className="form-row">
+                                        <div className="form-group">
+                                            <label htmlFor="address">Complete Address</label>
+                                            <input
+                                                type="text"
+                                                id="address"
+                                                name="address"
+                                                value={formData.address}
+                                                onChange={handleInputChange}
+                                                placeholder="Street, City, State/Province, Country"
+                                            />
+                                        </div>
+
+                                        <div className="form-group">
+                                            <label htmlFor="inquiryType">Inquiry Type</label>
+                                            <select
+                                                id="inquiryType"
+                                                name="inquiryType"
+                                                value={formData.inquiryType}
+                                                onChange={handleInputChange}
+                                            >
+                                                <option value="general">General Inquiry</option>
+                                                <option value="sales">Sales & Pricing</option>
+                                                <option value="support">Technical Support</option>
+                                                <option value="partnership">Partnership</option>
+                                                <option value="careers">Careers</option>
+                                            </select>
+                                        </div>
                                     </div>
 
                                     <div className="form-group">

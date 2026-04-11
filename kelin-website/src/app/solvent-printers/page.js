@@ -426,6 +426,11 @@ export default function SolventPrinters() {
                             </div>
 
                             <div className="solvent-form-group">
+                                <label htmlFor="address">Complete Address</label>
+                                <input type="text" id="address" name="address" placeholder="Street, City, State/Province, Country" />
+                            </div>
+
+                            <div className="solvent-form-group">
                                 <label htmlFor="message">Message / Requirements *</label>
                                 <textarea
                                     id="message"

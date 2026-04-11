@@ -448,9 +448,15 @@ export default function HeatPress() {
                                 </div>
                             </div>
 
-                            <div className="heatpress-form-group">
-                                <label htmlFor="company">Company Name</label>
-                                <input type="text" id="company" name="company" disabled={submitting} />
+                            <div className="heatpress-form-row">
+                                <div className="heatpress-form-group">
+                                    <label htmlFor="company">Company Name</label>
+                                    <input type="text" id="company" name="company" />
+                                </div>
+                                <div className="heatpress-form-group">
+                                    <label htmlFor="address">Complete Address</label>
+                                    <input type="text" id="address" name="address" placeholder="Street, City, State/Province, Country" />
+                                </div>
                             </div>
 
                             <div className="heatpress-form-group">

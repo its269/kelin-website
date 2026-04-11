@@ -566,9 +566,15 @@ export default function DualPneumatic() {
                                 </div>
                             </div>
 
-                            <div className="dual-pneumatic-form-group">
-                                <label htmlFor="company">Company Name</label>
-                                <input type="text" id="company" name="company" />
+                            <div className="dual-pneumatic-form-row">
+                                <div className="dual-pneumatic-form-group">
+                                    <label htmlFor="company">Company Name</label>
+                                    <input type="text" id="company" name="company" />
+                                </div>
+                                <div className="dual-pneumatic-form-group">
+                                    <label htmlFor="address">Complete Address</label>
+                                    <input type="text" id="address" name="address" placeholder="Street, City, State/Province, Country" />
+                                </div>
                             </div>
 
                             <div className="dual-pneumatic-form-group">

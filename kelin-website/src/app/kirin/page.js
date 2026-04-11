@@ -605,9 +605,15 @@ export default function KirinDA182TPlus() {
                                 </div>
                             </div>
 
-                            <div className="kirin-da182t-form-group">
-                                <label htmlFor="company">Company Name</label>
-                                <input type="text" id="company" name="company" />
+                            <div className="kirin-form-row">
+                                <div className="kirin-da182t-form-group">
+                                    <label htmlFor="company">Company Name</label>
+                                    <input type="text" id="company" name="company" />
+                                </div>
+                                <div className="kirin-da182t-form-group">
+                                    <label htmlFor="address">Complete Address</label>
+                                    <input type="text" id="address" name="address" placeholder="Street, City, State/Province, Country" />
+                                </div>
                             </div>
 
                             <div className="kirin-da182t-form-group">

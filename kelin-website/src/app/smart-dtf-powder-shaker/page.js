@@ -1,7 +1,7 @@
 "use client";
 import Header from '../components/Header';
 import Link from 'next/link';
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import './smart-dtf-powder-shaker-unique.css';
 
 export default function SmartDTFPowderShaker() {
@@ -9,31 +9,115 @@ export default function SmartDTFPowderShaker() {
     const [selectedImage, setSelectedImage] = useState('/sublimation_dtf/Powder shaker D650 Model.webp');
 
     const scrollRef = useRef(null);
-    const [isDragging, setIsDragging] = useState(false);
-    const [startX, setStartX] = useState(0);
-    const [scrollLeft, setScrollLeft] = useState(0);
+    const isDraggingRef = useRef(false);
+    const startXRef = useRef(0);
+    const scrollLeftRef = useRef(0);
+    const animationFrameRef = useRef(null);
+    const lastTimestampRef = useRef(0);
+
+    const applicationItems = [
+        { image: '/application/smart DTF shaker/1.png', label: 'T-Shirt Printing' },
+        { image: '/application/smart DTF shaker/2.png', label: 'Hoodie & Sweatshirt' },
+        { image: '/application/smart DTF shaker/3.png', label: 'Custom Apparel' },
+        { image: '/application/smart DTF shaker/4.png', label: 'Pillow Cover' },
+        { image: '/application/smart DTF shaker/5.png', label: 'Sports Wear' },
+        { image: '/application/smart DTF shaker/6.png', label: 'Tote Bags' },
+        { image: '/application/smart DTF shaker/7.png', label: 'Home Decor' },
+        { image: '/application/smart DTF shaker/8.png', label: 'Jersey' },
+        { image: '/application/smart DTF shaker/9.png', label: 'Tote Bags' },
+    ];
+
+    const loopedApplicationItems = [...applicationItems, ...applicationItems, ...applicationItems];
+
+    const normalizeInfiniteScroll = () => {
+        const scrollElement = scrollRef.current;
+        if (!scrollElement) return;
+        const segmentWidth = scrollElement.scrollWidth / 3;
+        const boundaryOffset = 4;
+        if (scrollElement.scrollLeft <= boundaryOffset) {
+            scrollElement.scrollLeft += segmentWidth;
+        } else if (scrollElement.scrollLeft >= segmentWidth * 2 - boundaryOffset) {
+            scrollElement.scrollLeft -= segmentWidth;
+        }
+    };
+
+    useEffect(() => {
+        const scrollElement = scrollRef.current;
+        if (!scrollElement) return;
+        const initializeLoopPosition = () => {
+            const segmentWidth = scrollElement.scrollWidth / 3;
+            scrollElement.scrollLeft = segmentWidth;
+        };
+        initializeLoopPosition();
+        window.addEventListener('resize', initializeLoopPosition);
+        return () => window.removeEventListener('resize', initializeLoopPosition);
+    }, []);
+
+    useEffect(() => {
+        const scrollElement = scrollRef.current;
+        if (!scrollElement) return;
+        const speedPixelsPerMs = 0.05;
+        const animate = (timestamp) => {
+            if (lastTimestampRef.current === 0) lastTimestampRef.current = timestamp;
+            const delta = timestamp - lastTimestampRef.current;
+            lastTimestampRef.current = timestamp;
+            if (!isDraggingRef.current && scrollRef.current) {
+                scrollRef.current.scrollLeft += delta * speedPixelsPerMs;
+                normalizeInfiniteScroll();
+            }
+            animationFrameRef.current = window.requestAnimationFrame(animate);
+        };
+        animationFrameRef.current = window.requestAnimationFrame(animate);
+        return () => {
+            if (animationFrameRef.current) window.cancelAnimationFrame(animationFrameRef.current);
+            lastTimestampRef.current = 0;
+        };
+    }, []);
 
     const handleMouseDown = (e) => {
-        setIsDragging(true);
-        setStartX(e.pageX - scrollRef.current.offsetLeft);
-        setScrollLeft(scrollRef.current.scrollLeft);
+        const scrollElement = scrollRef.current;
+        if (!scrollElement) return;
+        isDraggingRef.current = true;
+        startXRef.current = e.pageX - scrollElement.offsetLeft;
+        scrollLeftRef.current = scrollElement.scrollLeft;
     };
 
     const handleMouseMove = (e) => {
-        if (!isDragging) return;
+        if (!isDraggingRef.current) return;
+        const scrollElement = scrollRef.current;
+        if (!scrollElement) return;
         e.preventDefault();
-        const x = e.pageX - scrollRef.current.offsetLeft;
-        const walk = (x - startX) * 2;
-        scrollRef.current.scrollLeft = scrollLeft - walk;
+        const x = e.pageX - scrollElement.offsetLeft;
+        const walk = (x - startXRef.current) * 2;
+        scrollElement.scrollLeft = scrollLeftRef.current - walk;
+        normalizeInfiniteScroll();
     };
 
-    const handleMouseUp = () => {
-        setIsDragging(false);
+    const handleMouseUp = () => { isDraggingRef.current = false; };
+
+    const handleMouseLeave = () => { isDraggingRef.current = false; };
+
+    const handleTouchStart = (e) => {
+        const scrollElement = scrollRef.current;
+        if (!scrollElement) return;
+        const touchX = e.touches[0].pageX;
+        isDraggingRef.current = true;
+        startXRef.current = touchX - scrollElement.offsetLeft;
+        scrollLeftRef.current = scrollElement.scrollLeft;
     };
 
-    const handleMouseLeave = () => {
-        setIsDragging(false);
+    const handleTouchMove = (e) => {
+        if (!isDraggingRef.current) return;
+        const scrollElement = scrollRef.current;
+        if (!scrollElement) return;
+        const touchX = e.touches[0].pageX;
+        const x = touchX - scrollElement.offsetLeft;
+        const walk = (x - startXRef.current) * 2;
+        scrollElement.scrollLeft = scrollLeftRef.current - walk;
+        normalizeInfiniteScroll();
     };
+
+    const handleTouchEnd = () => { isDraggingRef.current = false; };
 
     const machineDetails = {
         name: 'SMART DTF POWDER SHAKER',
@@ -142,6 +226,7 @@ export default function SmartDTFPowderShaker() {
             countryCode: form.countryCode ? form.countryCode.value : '',
             phone: form.phone ? form.phone.value : '',
             company: form.company ? form.company.value : '',
+            address: form.address ? form.address.value : '',
             message: form.message.value,
             _subject: `Inquiry: SMART DTF POWDER SHAKER W650-4C`,
             'Page Source': 'SMART DTF POWDER SHAKER W650-4C',
@@ -309,48 +394,18 @@ export default function SmartDTFPowderShaker() {
                             onMouseMove={handleMouseMove}
                             onMouseUp={handleMouseUp}
                             onMouseLeave={handleMouseLeave}
+                            onTouchStart={handleTouchStart}
+                            onTouchMove={handleTouchMove}
+                            onTouchEnd={handleTouchEnd}
+                            onScroll={normalizeInfiniteScroll}
                         >
                             <div className="smart-powder-shaker-applications-image-grid">
-                                <div className="smart-powder-shaker-application-image-item">
-                                    <img src="/application/_0000_6.jpg" alt="T-Shirt Printing" />
-                                    <p>T-Shirt Printing</p>
-                                </div>
-                                <div className="smart-powder-shaker-application-image-item">
-                                    <img src="/application/_0001_5.jpg" alt="Mug Printing" />
-                                    <p>Mug Printing</p>
-                                </div>
-                                <div className="smart-powder-shaker-application-image-item">
-                                    <img src="/application/_0002_4.jpg" alt="Signage & Banners" />
-                                    <p>Signage & Banners</p>
-                                </div>
-                                <div className="smart-powder-shaker-application-image-item">
-                                    <img src="/application/_0003_3.jpg" alt="Promotional Products" />
-                                    <p>Promotional Products</p>
-                                </div>
-                                <div className="smart-powder-shaker-application-image-item">
-                                    <img src="/application/_0004_2.jpg" alt="Custom Apparel" />
-                                    <p>Custom Apparel</p>
-                                </div>
-                                <div className="smart-powder-shaker-application-image-item">
-                                    <img src="/application/_0005_1.jpg" alt="Phone Cases" />
-                                    <p>Phone Cases</p>
-                                </div>
-                                <div className="smart-powder-shaker-application-image-item">
-                                    <img src="/application/_0000_6.jpg" alt="Sportswear" />
-                                    <p>Sportswear</p>
-                                </div>
-                                <div className="smart-powder-shaker-application-image-item">
-                                    <img src="/application/_0001_5.jpg" alt="Home Decor" />
-                                    <p>Home Decor</p>
-                                </div>
-                                <div className="smart-powder-shaker-application-image-item">
-                                    <img src="/application/_0002_4.jpg" alt="Packaging" />
-                                    <p>Packaging</p>
-                                </div>
-                                <div className="smart-powder-shaker-application-image-item">
-                                    <img src="/application/_0003_3.jpg" alt="Labels & Stickers" />
-                                    <p>Labels & Stickers</p>
-                                </div>
+                                {loopedApplicationItems.map((item, index) => (
+                                    <div key={`${item.label}-${index}`} className="smart-powder-shaker-application-image-item">
+                                        <img src={item.image} alt={item.label} />
+                                        <p>{item.label}</p>
+                                    </div>
+                                ))}
                             </div>
                         </div>
                     </div>
@@ -560,9 +615,15 @@ export default function SmartDTFPowderShaker() {
                                 </div>
                             </div>
 
-                            <div className="smart-powder-shaker-form-group">
-                                <label htmlFor="company">Company Name</label>
-                                <input type="text" id="company" name="company" />
+                            <div className="smart-dtf-shaker-form-row">
+                                <div className="smart-powder-shaker-form-group">
+                                    <label htmlFor="company">Company Name</label>
+                                    <input type="text" id="company" name="company" />
+                                </div>
+                                <div className="smart-powder-shaker-form-group">
+                                    <label htmlFor="address">Complete Address</label>
+                                    <input type="text" id="address" name="address" placeholder="Street, City, State/Province, Country" />
+                                </div>
                             </div>
 
                             <div className="smart-powder-shaker-form-group">

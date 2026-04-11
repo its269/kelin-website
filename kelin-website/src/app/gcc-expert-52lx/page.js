@@ -595,9 +595,15 @@ export default function GCCExpert52LX() {
                                 </div>
                             </div>
 
-                            <div className="gcc-expert-52lx-form-group">
-                                <label htmlFor="company">Company Name</label>
-                                <input type="text" id="company" name="company" />
+                            <div className="gcc-expert52lx-form-row">
+                                <div className="gcc-expert-52lx-form-group">
+                                    <label htmlFor="company">Company Name</label>
+                                    <input type="text" id="company" name="company" />
+                                </div>
+                                <div className="gcc-expert-52lx-form-group">
+                                    <label htmlFor="address">Complete Address</label>
+                                    <input type="text" id="address" name="address" placeholder="Street, City, State/Province, Country" />
+                                </div>
                             </div>
 
                             <div className="gcc-expert-52lx-form-group">

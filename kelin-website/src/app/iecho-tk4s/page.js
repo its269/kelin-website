@@ -607,9 +607,15 @@ export default function IEchoTK4S() {
                                 </div>
                             </div>
 
-                            <div className="iecho-tk4s-form-group">
-                                <label htmlFor="company">Company Name</label>
-                                <input type="text" id="company" name="company" />
+                            <div className="iecho-tk4s-form-row">
+                                <div className="iecho-tk4s-form-group">
+                                    <label htmlFor="company">Company Name</label>
+                                    <input type="text" id="company" name="company" />
+                                </div>
+                                <div className="iecho-tk4s-form-group">
+                                    <label htmlFor="address">Complete Address</label>
+                                    <input type="text" id="address" name="address" placeholder="Street, City, State/Province, Country" />
+                                </div>
                             </div>
 
                             <div className="iecho-tk4s-form-group">

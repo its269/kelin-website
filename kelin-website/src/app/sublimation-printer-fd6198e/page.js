@@ -649,9 +649,15 @@ export default function SublimationPrinterFD6198E() {
                                 </div>
                             </div>
 
-                            <div className="fd6198e-printer-form-group">
-                                <label htmlFor="company">Company Name</label>
-                                <input type="text" id="company" name="company" />
+                            <div className="fd6198e-printer-form-row">
+                                <div className="fd6198e-printer-form-group">
+                                    <label htmlFor="company">Company Name</label>
+                                    <input type="text" id="company" name="company" />
+                                </div>
+                                <div className="fd6198e-printer-form-group">
+                                    <label htmlFor="address">Complete Address</label>
+                                    <input type="text" id="address" name="address" placeholder="Street, City, State/Province, Country" />
+                                </div>
                             </div>
 
                             <div className="fd6198e-printer-form-group">

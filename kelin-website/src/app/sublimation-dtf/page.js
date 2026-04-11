@@ -508,9 +508,15 @@ export default function SublimationDTF() {
                                 </div>
                             </div>
 
-                            <div className="sublimation-dtf-form-group">
-                                <label htmlFor="company">Company Name</label>
-                                <input type="text" id="company" name="company" />
+                            <div className="sublimation-dtf-form-row">
+                                <div className="sublimation-dtf-form-group">
+                                    <label htmlFor="company">Company Name</label>
+                                    <input type="text" id="company" name="company" />
+                                </div>
+                                <div className="sublimation-dtf-form-group">
+                                    <label htmlFor="address">Complete Address</label>
+                                    <input type="text" id="address" name="address" placeholder="Street, City, State/Province, Country" />
+                                </div>
                             </div>
 
                             <div className="sublimation-dtf-form-group">

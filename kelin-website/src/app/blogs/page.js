@@ -9,7 +9,7 @@ export default function BlogsPage() {
     const guideLinks = {
         "SMART RJ24-2004-i3200": "/blogs-smart-eco-solvent-printer",
         "XLINE Eco-Solvent": "/blogs-xline-eco-solvent",
-        "ApolloMax Plus II PZG3208-KV": "/apollomax-plus-ii-pzg3208-kv",
+        "ApolloMax Plus II PZG3208-KV": "/blogs-apolloMax-plus-II",
         "iEcho PK": "/iecho-pk",
         "iEcho PK4": "/iecho-pk4",
         "iEcho BK3": "/iecho-bk3",

@@ -984,6 +984,7 @@ export default function Inks() {
     name: '',
     email: '',
     company: '',
+    address: '',
     phone: '',
     countryCode: '+63',
     subject: '',
@@ -1063,6 +1064,7 @@ export default function Inks() {
           name: '',
           email: '',
           company: '',
+          address: '',
           phone: '',
           countryCode: '+63',
           subject: '',
@@ -1537,17 +1539,32 @@ export default function Inks() {
                   </div>
                 </div>
 
-                <div className="inks-form-group">
-                  <label htmlFor="subject">Subject *</label>
-                  <input
-                    type="text"
-                    id="subject"
-                    name="subject"
-                    value={inquiryFormData.subject}
-                    onChange={handleInquiryInputChange}
-                    required
-                    disabled={submitting}
-                  />
+                <div className="inks-form-row">
+                  <div className="inks-form-group">
+                    <label htmlFor="address">Complete Address</label>
+                    <input
+                      type="text"
+                      id="address"
+                      name="address"
+                      value={inquiryFormData.address}
+                      onChange={handleInquiryInputChange}
+                      placeholder="Street, City, State/Province, Country"
+                      disabled={submitting}
+                    />
+                  </div>
+
+                  <div className="inks-form-group">
+                    <label htmlFor="subject">Subject *</label>
+                    <input
+                      type="text"
+                      id="subject"
+                      name="subject"
+                      value={inquiryFormData.subject}
+                      onChange={handleInquiryInputChange}
+                      required
+                      disabled={submitting}
+                    />
+                  </div>
                 </div>
 
                 <div className="inks-form-group">

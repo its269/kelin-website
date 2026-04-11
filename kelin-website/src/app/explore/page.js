@@ -10,15 +10,15 @@ export default function Explore() {
 
   const sliderImages = [
     {
-      src: '/slider/Carousel1.png',
-      alt: 'Printing Solutions',
+      src: '/Explore Banner/Machines.jpg',
+      alt: 'Printing Machines',
       title: 'Built for Every Stage of Printing',
       description: 'Discover an integrated range of professional printing products, featuring premium-grade inks, reliable materials, innovative machinery, and productivity-driven accessories.',
       buttonLink: '/products'
     },
     {
-      src: '/slider/Carousel2.png',
-      alt: 'Materials',
+      src: '/Explore Banner/Inks.jpg',
+      alt: 'Premium Inks',
       title: 'Precision Engineering for Perfect Results',
       description: 'Advanced machinery designed for professional channel letter fabrication, delivering consistent quality and efficiency for your signage business.',
       buttonLink: '/machine'
@@ -44,7 +44,7 @@ export default function Explore() {
       icon: '/inks.png',
       productCount: '12+',
       href: '/inks',
-      image: '/Inks.webp',
+      image: '/Explore Banner/Inks.jpg',
       products: [
         { name: 'Eco-Solvent Inks', desc: 'Environmental-friendly outdoor graphics' },
         { name: 'Latex Inks', desc: 'Water-based indoor/outdoor solutions' },
@@ -58,7 +58,7 @@ export default function Explore() {
       icon: '/materials.png',
       productCount: '8+',
       href: '/materials',
-      image: '/cat_materials.webp',
+      image: '/Explore Banner/Materials.jpg',
       products: [
         { name: 'Vinyl Films', desc: 'Adhesive and non-adhesive options' },
         { name: 'Canvas & Textiles', desc: 'Fabric materials for soft signage' },
@@ -72,7 +72,7 @@ export default function Explore() {
       icon: '/machines.png',
       productCount: '10+',
       href: '/machine',
-      image: '/cat_machine.webp',
+      image: '/Explore Banner/Machines.jpg',
       products: [
         { name: 'Digital Printers', desc: 'Wide format printing solutions' },
         { name: 'Cutting Plotters', desc: 'Precision cutting equipment' },
@@ -86,7 +86,7 @@ export default function Explore() {
       icon: '/accessories.png',
       productCount: '15+',
       href: '/accessories',
-      image: '/cat_accessories.webp',
+      image: '/Explore Banner/Accessories.jpg',
       products: [
         { name: 'Maintenance Kits', desc: 'Keep equipment running smoothly' },
         { name: 'RIP Software', desc: 'Color management solutions' },
@@ -100,7 +100,7 @@ export default function Explore() {
       icon: '/display.png',
       productCount: '6+',
       href: '/promotional-display',
-      image: '/cat_promotional-display.webp',
+      image: '/Explore Banner/Promotional Display.jpg',
       products: [
         { name: 'Banner Stands', desc: 'Portable retractable systems' },
         { name: 'Pop-up Displays', desc: 'Trade show exhibitions' },
