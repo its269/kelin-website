@@ -1,119 +1,37 @@
-// app/blogs/page.js
-"use client";
-import React, { useState } from 'react';
-import "./textile-apparel.css";
-import Header from '../components/Header';
+// =============================================================
+// STATIC SITE GENERATION (SSG)
+// -------------------------------------------------------------
+// This file is a Next.js Server Component (no "use client" at
+// the top). Because next.config.mjs sets output: 'export',
+// Next.js pre-renders this entire page to a static HTML file
+// at build time (next build). No JavaScript server is needed
+// at runtime -- the page is served as plain HTML/CSS/JS from
+// any static host or CDN.
+//
+// Two things make SSG work here:
+//  1. No "use client" directive  -- keeps this a Server Component
+//  2. export const metadata      -- Next.js reads this at build
+//     time to inject <title>, <meta>, and OpenGraph tags into
+//     the static HTML <head> automatically.
+// =============================================================
 
-export default function BlogsPage() {
-    // Map blog post titles to their custom guide URLs
-    const guideLinks = {
-        "Promaker Embroidery 1201": "/promaker-1201",
-        "Promaker Embroidery 1202": "/promaker-1202",
-        "Promaker Embroidery 1804": "/promaker-1804",
-        "Smartex Knitting Machine GS-CE152": "/smartex-gs-ce152"
-    };
+import SolutionsThreadworkClient from "./SolutionsThreadworkClient";
 
-    const blogPosts = [
-        {
-            id: 1,
-            title: "Promaker Embroidery 1201",
-            category: "Embroidery",
-            excerpt: "Single-head high-speed industrial embroidery machine perfect for boutique production and custom apparel.",
-            date: "March 2026",
-            image: '/dummy-image-square.jpg'
-        },
-        {
-            id: 2,
-            title: "Promaker Embroidery 1202",
-            category: "Embroidery",
-            excerpt: "Dual-head embroidery solution designed for doubling your output with precision and ease.",
-            date: "March 2026",
-            image: '/dummy-image-square.jpg'
-        },
-        {
-            id: 3,
-            title: "Promaker Embroidery 1804",
-            category: "Embroidery",
-            excerpt: "Professional 4-head embroidery system for high-volume industrial garment decoration.",
-            date: "March 2026",
-            image: '/dummy-image-square.jpg'
-        },
-        {
-            id: 4,
-            title: "Smartex Knitting Machine GS-CE152",
-            category: "Knitting",
-            excerpt: "Advanced circular knitting technology providing superior fabric quality and production efficiency.",
-            date: "March 2026",
-            image: '/dummy-image-square.jpg'
-        }
-    ];
+export const metadata = {
+    title: "Threadwork & Embroidery Solutions Philippines | Kelin Graphics System",
+    description: "Discover Kelin Philippines' threadwork and embroidery solutions — multi-head embroidery machines and knitting systems for garment and textile production.",
+    keywords: "threadwork solutions Philippines, embroidery machine Philippines, knitting machine, garment embroidery Philippines, Kelin Graphics System threadwork",
+    openGraph: {
+        title: "Threadwork & Embroidery Solutions Philippines | Kelin Graphics System",
+        description: "Discover Kelin Philippines' threadwork and embroidery solutions — multi-head embroidery machines and knitting systems for garment and textile production.",
+        images: [{ url: "/embroidery_knitting/promaker-embroidery.webp", width: 1200, height: 630, alt: "Threadwork & Embroidery Solutions Philippines | Kelin Graphics System" }],
+        type: "website",
+    },
+    alternates: {
+        canonical: "https://kelinph.com/solutions-threadwork",
+    },
+};
 
-    const categories = ["All", ...new Set(blogPosts.map(post => post.category))];
-    const [activeCategory, setActiveCategory] = useState("All");
-
-    const filteredPosts = activeCategory === "All"
-        ? blogPosts
-        : blogPosts.filter(post => post.category === activeCategory);
-
-    return (
-        <main className="luxor-page-container">
-            <Header />
-
-            <header className="luxor-header">
-                <h1>Threadwork Solutions</h1>
-                <p>Explore our high-performance embroidery and knitting solutions designed for professional garment production.</p>
-            </header>
-
-            <nav className="category-filter">
-                {categories.map((category, index) => (
-                    <button
-                        key={index}
-                        className={`filter-btn ${activeCategory === category ? 'active' : ''}`}
-                        onClick={() => setActiveCategory(category)}
-                    >
-                        {category}
-                    </button>
-                ))}
-            </nav>
-
-            <section className="luxor-grid">
-                {filteredPosts.map((post) => (
-                    <article key={post.id} className="luxor-card">
-                        <div className="card-image-container">
-                            <img
-                                src={post.image || '/dummy-image-square.jpg'}
-                                alt={post.title}
-                                className="card-img"
-                            />
-                        </div>
-                        <div className="card-content">
-                            <span className="category-pill">{post.category}</span>
-                            <h3>{post.title}</h3>
-                            <p className="post-excerpt">{post.excerpt}</p>
-                            <a
-                                href={guideLinks[post.title] || `/blogs/${post.id}`}
-                                className="read-more-link"
-                            >
-                                Read Guide
-                                <svg
-                                    width="16"
-                                    height="16"
-                                    viewBox="0 0 24 24"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    strokeWidth="2"
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    style={{ marginLeft: '8px', verticalAlign: 'middle' }}
-                                >
-                                    <line x1="5" y1="12" x2="19" y2="12"></line>
-                                    <polyline points="12 5 19 12 12 19"></polyline>
-                                </svg>
-                            </a>
-                        </div>
-                    </article>
-                ))}
-            </section>
-        </main>
-    );
+export default function Page() {
+    return <SolutionsThreadworkClient />;
 }

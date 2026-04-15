@@ -1,80 +1,37 @@
-// app/blogs/page.js
-"use client";
-import React, { useState } from 'react';
-import "./solutions-dtf.css";
-import Header from '../components/Header';
+// =============================================================
+// STATIC SITE GENERATION (SSG)
+// -------------------------------------------------------------
+// This file is a Next.js Server Component (no "use client" at
+// the top). Because next.config.mjs sets output: 'export',
+// Next.js pre-renders this entire page to a static HTML file
+// at build time (next build). No JavaScript server is needed
+// at runtime -- the page is served as plain HTML/CSS/JS from
+// any static host or CDN.
+//
+// Two things make SSG work here:
+//  1. No "use client" directive  -- keeps this a Server Component
+//  2. export const metadata      -- Next.js reads this at build
+//     time to inject <title>, <meta>, and OpenGraph tags into
+//     the static HTML <head> automatically.
+// =============================================================
 
-export default function BlogsPage() {
-    // Map blog post titles to their custom guide URLs
-    const guideLinks = {
-        "Smart UV DTF Printer Machine | SF30-3 UV DTF": "/dtf-uv-printer-sf303-f1080/",
-        "Smart UV DTF Printer Machine | SF60-4 UV DTF": "/dtf-uv-printer-sf604-i3200/",
-        "Smart DTF Printer Machine": "/smart-dtf-machine/",
-        "Vivid Inks": "/inks/",
-        "Brilliant Inks": "/inks/",
-        "DTF Film": "/materials/"
-    };
-    const blogPosts = [
-        { id: 1, title: "Smart UV DTF Printer Machine | SF30-3 UV DTF", category: "UV DTF", excerpt: "Advanced UV DTF printer for high-quality, durable prints. Model SF30-3.", date: "March 2026", image: '/sublimation_dtf/DTF UV Printer SF303-i3200 2ft (1).webp' },
-        { id: 2, title: "Smart UV DTF Printer Machine | SF60-4 UV DTF", category: "UV DTF", excerpt: "High-capacity UV DTF printer for industrial applications. Model SF60-4.", date: "March 2026", image: '/sublimation_dtf/DTF UV Printer SF604-i3200 2ft. - High Res (1).webp' },
-        { id: 3, title: "Smart DTF Printer Machine", category: "DTF", excerpt: "Reliable DTF printer for vibrant and consistent textile printing.", date: "March 2026", image: '/sublimation_dtf/DTF SMART DTF Machine (1).webp' },
-        { id: 4, title: "Vivid Inks", category: "Inks", excerpt: "Premium Vivid Inks for outstanding color and durability in DTF printing.", date: "March 2026", image: '/inks/VIVID SUBLIMATION 5L INK/Vivid Sublimation 5L All colors (Transparent).png' },
-        { id: 5, title: "Brilliant Inks", category: "Inks", excerpt: "Brilliant Inks engineered for superior print quality and longevity.", date: "March 2026", image: '/inks/BRILLIANT SUBLIMATION INK 1L/Brilliant Sublimation Ink All colors 1L (Transparent).png' },
-        { id: 6, title: "DTF Film", category: "Film", excerpt: "High-quality DTF film for sharp, detailed transfers.", date: "March 2026", image: '/sublimation_dtf/DTF Film.webp' },
-    ];
+import SolutionsDTFClient from "./SolutionsDTFClient";
 
-    const categories = ["All", ...new Set(blogPosts.map(post => post.category))];
-    const [activeCategory, setActiveCategory] = useState("All");
+export const metadata = {
+    title: "DTF Printing Solutions Philippines | Direct to Film Printers | Kelin Graphics System",
+    description: "Explore Kelin Philippines' DTF (Direct to Film) printing solutions — DTF printers, powder shakers, and heat press systems for garment decoration.",
+    keywords: "DTF printing Philippines, direct to film printer, DTF powder shaker, garment printing Philippines, Kelin Philippines DTF",
+    openGraph: {
+        title: "DTF Printing Solutions Philippines | Direct to Film Printers | Kelin Graphics System",
+        description: "Explore Kelin Philippines' DTF (Direct to Film) printing solutions — DTF printers, powder shakers, and heat press systems for garment decoration.",
+        images: [{ url: "/sublimation_dtf/smart-dtf.webp", width: 1200, height: 630, alt: "DTF Printing Solutions Philippines | Direct to Film Printers | Kelin Graphics System" }],
+        type: "website",
+    },
+    alternates: {
+        canonical: "https://kelinph.com/solutions-dtf",
+    },
+};
 
-    const filteredPosts = activeCategory === "All"
-        ? blogPosts
-        : blogPosts.filter(post => post.category === activeCategory);
-
-    return (
-        <main className="luxor-page-container">
-            <Header />
-
-            <header className="luxor-header">
-                <h1>DTF - Direct to Film Solutions</h1>
-                <p>Discover solutions, guides, and the latest innovations for direct-to-film production from Kelin Graphics System.</p>
-            </header>
-
-            <nav className="category-filter">
-                {categories.map((category, index) => (
-                    <button
-                        key={index}
-                        className={`filter-btn ${activeCategory === category ? 'active' : ''}`}
-                        onClick={() => setActiveCategory(category)}
-                    >
-                        {category}
-                    </button>
-                ))}
-            </nav>
-
-            <section className="luxor-grid">
-                {filteredPosts.map((post) => (
-                    <article key={post.id} className="luxor-card">
-                        <div className="card-image-container">
-                            <img
-                                src={post.image || '/dummy-image-square.jpg'}
-                                alt={post.title}
-                                className="card-img"
-                            />
-                        </div>
-                        <div className="card-content">
-                            <span className="category-pill">{post.category}</span>
-                            <h3>{post.title}</h3>
-                            <p className="post-excerpt">{post.excerpt}</p>
-                            <a
-                                href={guideLinks[post.title] || `/blogs/${post.id}`}
-                                className="read-more-link"
-                            >
-                                Read Guide &rarr;
-                            </a>
-                        </div>
-                    </article>
-                ))}
-            </section>
-        </main>
-    );
+export default function Page() {
+    return <SolutionsDTFClient />;
 }

@@ -1,5 +1,5 @@
 ﻿import React from 'react';
-import "./smart-eco-solvent-printer.css";
+import "../styles/blog.css";
 import Header from '../components/Header';
 import Link from 'next/link';
 
@@ -93,7 +93,7 @@ export default function BlogXLineEcoSolvent() {
                         <div className="blog-body" itemProp="articleBody">
 
                             {/* Quick Verdict */}
-                            <div className="verdict-box">
+                            {/* <div className="verdict-box">
                                 <div className="verdict-header">
                                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg>
                                     <span>Quick Verdict</span>
@@ -121,7 +121,7 @@ export default function BlogXLineEcoSolvent() {
                                         <span className="score-num">9.3/10</span>
                                     </div>
                                 </div>
-                            </div>
+                            </div> */}
 
                             {/* Section 1 */}
                             <section className="article-section" id="background">

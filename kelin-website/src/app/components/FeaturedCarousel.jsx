@@ -177,6 +177,7 @@ const FeaturedCarousel = ({ items = [], title = "Featured Subjects", label, onAc
                                     className={styles.btn}
                                     onClick={e => e.stopPropagation()}
                                     passHref
+                                    target="_blank"
                                 >
                                     {item.buttonText || 'View More'}
                                 </Link>

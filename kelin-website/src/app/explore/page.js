@@ -10,14 +10,14 @@ export default function Explore() {
 
   const sliderImages = [
     {
-      src: '/Explore Banner/Machines.jpg',
+      src: '/slider/Carousel1.png',
       alt: 'Printing Machines',
       title: 'Built for Every Stage of Printing',
       description: 'Discover an integrated range of professional printing products, featuring premium-grade inks, reliable materials, innovative machinery, and productivity-driven accessories.',
       buttonLink: '/products'
     },
     {
-      src: '/Explore Banner/Inks.jpg',
+      src: '/slider/Carousel2.png',
       alt: 'Premium Inks',
       title: 'Precision Engineering for Perfect Results',
       description: 'Advanced machinery designed for professional channel letter fabrication, delivering consistent quality and efficiency for your signage business.',
