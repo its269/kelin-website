@@ -7,10 +7,10 @@ import Header from '../components/Header';
 export default function BlogsPage() {
     // Map blog post titles to their custom guide URLs
     const guideLinks = {
-        "Promaker Embroidery 1201": "/promaker-1201",
-        "Promaker Embroidery 1202": "/promaker-1202",
-        "Promaker Embroidery 1804": "/promaker-1804",
-        "Smartex Knitting Machine GS-CE152": "/smartex-gs-ce152"
+        "Promaker Embroidery 1201": "/promaker-embroidery-1201",
+        "Promaker Embroidery 1202": "/promaker-embroidery-1202",
+        "Promaker Embroidery 1804": "/promaker-embroidery-1204",
+        "Smartex Knitting Machine GS-CE152": "/smartex-knitting-gsce-1-52"
     };
 
     const blogPosts = [

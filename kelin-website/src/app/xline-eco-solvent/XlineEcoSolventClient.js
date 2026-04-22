@@ -383,9 +383,63 @@ export default function XlineEcoSolventPage() {
                             {machineDetails.features.map((feature, index) => (
                                 <div key={index} className="xline-feature-card">
                                     <div className="xline-feature-icon">
-                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                                            <path d="M12 2L2 7l10 5 10-5-10-5z" />
-                                        </svg>
+                                        {index === 0 && (
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                {/* Large format: expand arrows */}
+                                                <polyline points="15 3 21 3 21 9" />
+                                                <polyline points="9 21 3 21 3 15" />
+                                                <line x1="21" y1="3" x2="14" y2="10" />
+                                                <line x1="3" y1="21" x2="10" y2="14" />
+                                            </svg>
+                                        )}
+                                        {index === 1 && (
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                {/* Vibrant colors: color palette */}
+                                                <circle cx="12" cy="12" r="10" />
+                                                <circle cx="8" cy="10" r="1.5" fill="currentColor" stroke="none" />
+                                                <circle cx="12" cy="7" r="1.5" fill="currentColor" stroke="none" />
+                                                <circle cx="16" cy="10" r="1.5" fill="currentColor" stroke="none" />
+                                                <circle cx="14" cy="14" r="1.5" fill="currentColor" stroke="none" />
+                                                <circle cx="10" cy="14" r="1.5" fill="currentColor" stroke="none" />
+                                            </svg>
+                                        )}
+                                        {index === 2 && (
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                {/* Versatile media: layers stack */}
+                                                <polygon points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5 12 2" />
+                                                <line x1="12" y1="22" x2="12" y2="15.5" />
+                                                <polyline points="22 8.5 12 15.5 2 8.5" />
+                                            </svg>
+                                        )}
+                                        {index === 3 && (
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                {/* Professional grade: shield with check */}
+                                                <path d="M12 2l7 4v5c0 5-3.5 9.74-7 11-3.5-1.26-7-6-7-11V6z" />
+                                                <polyline points="9 12 11 14 15 10" />
+                                            </svg>
+                                        )}
+                                        {index === 4 && (
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                {/* Advanced tech: circuit/CPU */}
+                                                <rect x="7" y="7" width="10" height="10" rx="1" />
+                                                <line x1="7" y1="10" x2="4" y2="10" />
+                                                <line x1="7" y1="14" x2="4" y2="14" />
+                                                <line x1="17" y1="10" x2="20" y2="10" />
+                                                <line x1="17" y1="14" x2="20" y2="14" />
+                                                <line x1="10" y1="7" x2="10" y2="4" />
+                                                <line x1="14" y1="7" x2="14" y2="4" />
+                                                <line x1="10" y1="17" x2="10" y2="20" />
+                                                <line x1="14" y1="17" x2="14" y2="20" />
+                                            </svg>
+                                        )}
+                                        {index === 5 && (
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                {/* High speed: speedometer gauge */}
+                                                <path d="M12 2a10 10 0 1 0 10 10" />
+                                                <path d="M12 12 L17 7" />
+                                                <circle cx="12" cy="12" r="1.5" fill="currentColor" stroke="none" />
+                                            </svg>
+                                        )}
                                     </div>
                                     <h3 className="xline-feature-title">{feature.title}</h3>
                                     <p className="xline-feature-text">{feature.description}</p>

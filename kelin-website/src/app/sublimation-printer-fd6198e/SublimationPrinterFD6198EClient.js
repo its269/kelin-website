@@ -375,9 +375,37 @@ export default function SublimationPrinterFD6198E() {
                             {machineDetails.features.map((feature, index) => (
                                 <div key={index} className="fd6198e-printer-feature-card">
                                     <div className="fd6198e-printer-feature-icon">
-                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                                            <path d="M12 2L2 7l10 5 10-5-10-5z" />
-                                        </svg>
+                                        {index === 0 && (
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                {/* Industrial motor: gear */}
+                                                <circle cx="12" cy="12" r="4" />
+                                                <path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.93 4.93l2.12 2.12M16.95 16.95l2.12 2.12M4.93 19.07l2.12-2.12M16.95 7.05l2.12-2.12" />
+                                            </svg>
+                                        )}
+                                        {index === 1 && (
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                {/* Ink supply: droplet */}
+                                                <path d="M12 2 C12 2 5 10 5 15 a7 7 0 0 0 14 0 C19 10 12 2 12 2z" />
+                                                <line x1="9" y1="14" x2="15" y2="14" />
+                                            </svg>
+                                        )}
+                                        {index === 2 && (
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                {/* Smart drying: sun/heat waves */}
+                                                <circle cx="12" cy="12" r="4" />
+                                                <path d="M8 12 C8 9 10 7 10 4" />
+                                                <path d="M12 12 C12 9 14 7 14 4" />
+                                                <path d="M16 12 C16 9 18 7 18 4" />
+                                            </svg>
+                                        )}
+                                        {index === 3 && (
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                {/* Anti-collision carriage: shield + printer head */}
+                                                <path d="M12 2l7 4v5c0 5-3.5 9.74-7 11-3.5-1.26-7-6-7-11V6z" />
+                                                <line x1="9" y1="10" x2="15" y2="10" />
+                                                <line x1="12" y1="8" x2="12" y2="14" />
+                                            </svg>
+                                        )}
                                     </div>
                                     <h3 className="fd6198e-printer-feature-title">{feature.title}</h3>
                                     <p className="fd6198e-printer-feature-text">{feature.description}</p>

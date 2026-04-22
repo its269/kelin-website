@@ -1,7 +1,7 @@
 "use client";
 import Header from '../components/Header';
 import Link from 'next/link';
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import './r2000-roller.css';
 
 export default function R2000Roller() {
@@ -9,31 +9,109 @@ export default function R2000Roller() {
     const [selectedImage, setSelectedImage] = useState('/sublimation_dtf/SUBL R2000 Roller Type Sublimation Machine GS 1200 (1).webp');
 
     const scrollRef = useRef(null);
-    const [isDragging, setIsDragging] = useState(false);
-    const [startX, setStartX] = useState(0);
-    const [scrollLeft, setScrollLeft] = useState(0);
+    const isDraggingRef = useRef(false);
+    const startXRef = useRef(0);
+    const scrollLeftRef = useRef(0);
+    const animationFrameRef = useRef(null);
+    const lastTimestampRef = useRef(0);
+
+    const applicationItems = [
+        { image: '/application/R2000-Roller-Type-Sublimation/1.png', label: 'Custom Apparel & Fashion' },
+        { image: '/application/R2000-Roller-Type-Sublimation/2.png', label: 'Custom Flags & Banners' },
+        { image: '/application/R2000-Roller-Type-Sublimation/3.png', label: 'T-Shirts, Hoodies & Sweatshirts' },
+        { image: '/application/R2000-Roller-Type-Sublimation/4.png', label: 'Event Sashes & Armbands' },
+    ];
+
+    const loopedApplicationItems = [...applicationItems, ...applicationItems, ...applicationItems];
+
+    const normalizeInfiniteScroll = () => {
+        const scrollElement = scrollRef.current;
+        if (!scrollElement) return;
+        const segmentWidth = scrollElement.scrollWidth / 3;
+        const boundaryOffset = 4;
+        if (scrollElement.scrollLeft <= boundaryOffset) {
+            scrollElement.scrollLeft += segmentWidth;
+        } else if (scrollElement.scrollLeft >= segmentWidth * 2 - boundaryOffset) {
+            scrollElement.scrollLeft -= segmentWidth;
+        }
+    };
+
+    useEffect(() => {
+        const scrollElement = scrollRef.current;
+        if (!scrollElement) return;
+        const initializeLoopPosition = () => {
+            const segmentWidth = scrollElement.scrollWidth / 3;
+            scrollElement.scrollLeft = segmentWidth;
+        };
+        initializeLoopPosition();
+        window.addEventListener('resize', initializeLoopPosition);
+        return () => window.removeEventListener('resize', initializeLoopPosition);
+    }, []);
+
+    useEffect(() => {
+        const scrollElement = scrollRef.current;
+        if (!scrollElement) return;
+        const speedPixelsPerMs = 0.05;
+        const animate = (timestamp) => {
+            if (lastTimestampRef.current === 0) lastTimestampRef.current = timestamp;
+            const delta = timestamp - lastTimestampRef.current;
+            lastTimestampRef.current = timestamp;
+            if (!isDraggingRef.current && scrollRef.current) {
+                scrollRef.current.scrollLeft += delta * speedPixelsPerMs;
+                normalizeInfiniteScroll();
+            }
+            animationFrameRef.current = window.requestAnimationFrame(animate);
+        };
+        animationFrameRef.current = window.requestAnimationFrame(animate);
+        return () => {
+            if (animationFrameRef.current) window.cancelAnimationFrame(animationFrameRef.current);
+            lastTimestampRef.current = 0;
+        };
+    }, []);
 
     const handleMouseDown = (e) => {
-        setIsDragging(true);
-        setStartX(e.pageX - scrollRef.current.offsetLeft);
-        setScrollLeft(scrollRef.current.scrollLeft);
+        const scrollElement = scrollRef.current;
+        if (!scrollElement) return;
+        isDraggingRef.current = true;
+        startXRef.current = e.pageX - scrollElement.offsetLeft;
+        scrollLeftRef.current = scrollElement.scrollLeft;
     };
 
     const handleMouseMove = (e) => {
-        if (!isDragging) return;
+        if (!isDraggingRef.current) return;
+        const scrollElement = scrollRef.current;
+        if (!scrollElement) return;
         e.preventDefault();
-        const x = e.pageX - scrollRef.current.offsetLeft;
-        const walk = (x - startX) * 2;
-        scrollRef.current.scrollLeft = scrollLeft - walk;
+        const x = e.pageX - scrollElement.offsetLeft;
+        const walk = (x - startXRef.current) * 2;
+        scrollElement.scrollLeft = scrollLeftRef.current - walk;
+        normalizeInfiniteScroll();
     };
 
-    const handleMouseUp = () => {
-        setIsDragging(false);
+    const handleMouseUp = () => { isDraggingRef.current = false; };
+    const handleMouseLeave = () => { isDraggingRef.current = false; };
+
+    const handleTouchStart = (e) => {
+        const scrollElement = scrollRef.current;
+        if (!scrollElement) return;
+        const touchX = e.touches[0].pageX;
+        isDraggingRef.current = true;
+        startXRef.current = touchX - scrollElement.offsetLeft;
+        scrollLeftRef.current = scrollElement.scrollLeft;
     };
 
-    const handleMouseLeave = () => {
-        setIsDragging(false);
+    const handleTouchMove = (e) => {
+        if (!isDraggingRef.current) return;
+        const scrollElement = scrollRef.current;
+        if (!scrollElement) return;
+        const touchX = e.touches[0].pageX;
+        const x = touchX - scrollElement.offsetLeft;
+        const walk = (x - startXRef.current) * 2;
+        scrollElement.scrollLeft = scrollLeftRef.current - walk;
+        normalizeInfiniteScroll();
     };
+
+    const handleTouchEnd = () => { isDraggingRef.current = false; };
 
     const machineDetails = {
         name: 'R2000 Roller',
@@ -239,9 +317,53 @@ export default function R2000Roller() {
                             {machineDetails.features.map((feature, index) => (
                                 <div key={index} className="r2000-roller-feature-card">
                                     <div className="r2000-roller-feature-icon">
-                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                                            <path d="M12 2L2 7l10 5 10-5-10-5z" />
-                                        </svg>
+                                        {index === 0 && (
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                {/* Multi-function: grid of 4 squares */}
+                                                <rect x="3" y="3" width="8" height="8" rx="1" />
+                                                <rect x="13" y="3" width="8" height="8" rx="1" />
+                                                <rect x="3" y="13" width="8" height="8" rx="1" />
+                                                <rect x="13" y="13" width="8" height="8" rx="1" />
+                                            </svg>
+                                        )}
+                                        {index === 1 && (
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                {/* Color vibrancy: palette */}
+                                                <circle cx="12" cy="12" r="10" />
+                                                <circle cx="8" cy="10" r="1.5" fill="currentColor" stroke="none" />
+                                                <circle cx="12" cy="7" r="1.5" fill="currentColor" stroke="none" />
+                                                <circle cx="16" cy="10" r="1.5" fill="currentColor" stroke="none" />
+                                                <circle cx="14" cy="14" r="1.5" fill="currentColor" stroke="none" />
+                                                <circle cx="10" cy="14" r="1.5" fill="currentColor" stroke="none" />
+                                            </svg>
+                                        )}
+                                        {index === 2 && (
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                {/* Manual unwinding: hand rotating roll */}
+                                                <circle cx="12" cy="12" r="5" />
+                                                <circle cx="12" cy="12" r="1.5" fill="currentColor" stroke="none" />
+                                                <path d="M12 2 C16 2 20 6 20 12" />
+                                                <polyline points="17 7 20 12 22 8" />
+                                            </svg>
+                                        )}
+                                        {index === 3 && (
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                {/* Teflon drum: cylinder */}
+                                                <ellipse cx="12" cy="6" rx="10" ry="3" />
+                                                <line x1="2" y1="6" x2="2" y2="18" />
+                                                <line x1="22" y1="6" x2="22" y2="18" />
+                                                <ellipse cx="12" cy="18" rx="10" ry="3" />
+                                            </svg>
+                                        )}
+                                        {index === 4 && (
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                {/* Automatic conveyor: belt with arrows */}
+                                                <rect x="2" y="10" width="20" height="4" rx="1" />
+                                                <circle cx="6" cy="12" r="3" />
+                                                <circle cx="18" cy="12" r="3" />
+                                                <polyline points="14 8 18 12 14 16" />
+                                            </svg>
+                                        )}
                                     </div>
                                     <h3 className="r2000-roller-feature-title">{feature.title}</h3>
                                     <p className="r2000-roller-feature-text">{feature.description}</p>
@@ -296,48 +418,18 @@ export default function R2000Roller() {
                             onMouseMove={handleMouseMove}
                             onMouseUp={handleMouseUp}
                             onMouseLeave={handleMouseLeave}
+                            onTouchStart={handleTouchStart}
+                            onTouchMove={handleTouchMove}
+                            onTouchEnd={handleTouchEnd}
+                            onScroll={normalizeInfiniteScroll}
                         >
                             <div className="r2000-roller-applications-image-grid">
-                                <div className="r2000-roller-application-image-item">
-                                    <img src="/application/_0000_6.jpg" alt="T-Shirt Printing" />
-                                    <p>T-Shirt Printing</p>
-                                </div>
-                                <div className="r2000-roller-application-image-item">
-                                    <img src="/application/_0001_5.jpg" alt="Mug Printing" />
-                                    <p>Mug Printing</p>
-                                </div>
-                                <div className="r2000-roller-application-image-item">
-                                    <img src="/application/_0002_4.jpg" alt="Signage & Banners" />
-                                    <p>Signage & Banners</p>
-                                </div>
-                                <div className="r2000-roller-application-image-item">
-                                    <img src="/application/_0003_3.jpg" alt="Promotional Products" />
-                                    <p>Promotional Products</p>
-                                </div>
-                                <div className="r2000-roller-application-image-item">
-                                    <img src="/application/_0004_2.jpg" alt="Custom Apparel" />
-                                    <p>Custom Apparel</p>
-                                </div>
-                                <div className="r2000-roller-application-image-item">
-                                    <img src="/application/_0005_1.jpg" alt="Phone Cases" />
-                                    <p>Phone Cases</p>
-                                </div>
-                                <div className="r2000-roller-application-image-item">
-                                    <img src="/application/_0000_6.jpg" alt="Sportswear" />
-                                    <p>Sportswear</p>
-                                </div>
-                                <div className="r2000-roller-application-image-item">
-                                    <img src="/application/_0001_5.jpg" alt="Home Decor" />
-                                    <p>Home Decor</p>
-                                </div>
-                                <div className="r2000-roller-application-image-item">
-                                    <img src="/application/_0002_4.jpg" alt="Packaging" />
-                                    <p>Packaging</p>
-                                </div>
-                                <div className="r2000-roller-application-image-item">
-                                    <img src="/application/_0003_3.jpg" alt="Labels & Stickers" />
-                                    <p>Labels & Stickers</p>
-                                </div>
+                                {loopedApplicationItems.map((item, index) => (
+                                    <div key={`${item.label}-${index}`} className="r2000-roller-application-image-item">
+                                        <img src={item.image} alt={item.label} />
+                                        <p>{item.label}</p>
+                                    </div>
+                                ))}
                             </div>
                         </div>
                     </div>

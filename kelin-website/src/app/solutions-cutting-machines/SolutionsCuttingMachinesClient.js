@@ -7,10 +7,10 @@ import Header from '../components/Header';
 export default function CuttingSolutionsPage() {
     // Map product titles to their custom guide or product URLs
     const guideLinks = {
-        "Puma 24": "/puma-24",
-        "Puma 52": "/puma-52",
-        "GCC Cutter Plotter Expert 24": "/gcc-expert-24",
-        "GCC Cutter Plotter Expert 52": "/gcc-expert-52",
+        "Puma 24": "/gcc-puma-iv",
+        "Puma 52": "/gcc-puma-iv",
+        "GCC Cutter Plotter Expert 24": "/gcc-expert-24lx",
+        "GCC Cutter Plotter Expert 52": "/gcc-expert-52lx",
         "iEcho bk3": "/iecho-bk3",
         "iEcho bk4": "/iecho-bk4",
         "iEcho pk": "/iecho-pk",

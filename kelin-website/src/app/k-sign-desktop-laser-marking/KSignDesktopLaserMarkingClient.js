@@ -8,31 +8,106 @@ export default function KSignDesktopLaserMarking() {
     const [inquiryModalOpen, setInquiryModalOpen] = useState(false);
     const [selectedImage, setSelectedImage] = useState('/laser-machines/K-sign_Desktop Laser Marking.webp');
     const scrollRef = useRef(null);
-    const [isDragging, setIsDragging] = useState(false);
-    const [startX, setStartX] = useState(0);
-    const [scrollLeft, setScrollLeft] = useState(0);
+    const isDraggingRef = useRef(false);
+    const startXRef = useRef(0);
+    const scrollLeftRef = useRef(0);
+    const animationFrameRef = useRef(null);
+    const lastTimestampRef = useRef(0);
+
+    const applicationItems = [
+        { image: '/application/k-sign-desktop-laser-marking/branding.png', label: 'Branding & Logos' },
+        { image: '/application/k-sign-desktop-laser-marking/cards.webp', label: 'Business Cards' },
+        { image: '/application/k-sign-desktop-laser-marking/Personalized.webp', label: 'Personalized Items' },
+        { image: '/application/k-sign-desktop-laser-marking/keychain.jpg', label: 'Keychains' },
+        { image: '/application/k-sign-desktop-laser-marking/Customized Designed.webp', label: 'Customized Designs' },
+    ];
+
+    const loopedApplicationItems = [...applicationItems, ...applicationItems, ...applicationItems];
+
+    const normalizeInfiniteScroll = () => {
+        const scrollElement = scrollRef.current;
+        if (!scrollElement) return;
+        const segmentWidth = scrollElement.scrollWidth / 3;
+        const boundaryOffset = 4;
+        if (scrollElement.scrollLeft <= boundaryOffset) {
+            scrollElement.scrollLeft += segmentWidth;
+        } else if (scrollElement.scrollLeft >= segmentWidth * 2 - boundaryOffset) {
+            scrollElement.scrollLeft -= segmentWidth;
+        }
+    };
+
+    useEffect(() => {
+        const scrollElement = scrollRef.current;
+        if (!scrollElement) return;
+        const initializeLoopPosition = () => {
+            const segmentWidth = scrollElement.scrollWidth / 3;
+            scrollElement.scrollLeft = segmentWidth;
+        };
+        initializeLoopPosition();
+        window.addEventListener('resize', initializeLoopPosition);
+        return () => window.removeEventListener('resize', initializeLoopPosition);
+    }, []);
+
+    useEffect(() => {
+        const speedPixelsPerMs = 0.05;
+        const animate = (timestamp) => {
+            if (lastTimestampRef.current === 0) lastTimestampRef.current = timestamp;
+            const delta = timestamp - lastTimestampRef.current;
+            lastTimestampRef.current = timestamp;
+            if (!isDraggingRef.current && scrollRef.current) {
+                scrollRef.current.scrollLeft += delta * speedPixelsPerMs;
+                normalizeInfiniteScroll();
+            }
+            animationFrameRef.current = window.requestAnimationFrame(animate);
+        };
+        animationFrameRef.current = window.requestAnimationFrame(animate);
+        return () => {
+            if (animationFrameRef.current) window.cancelAnimationFrame(animationFrameRef.current);
+            lastTimestampRef.current = 0;
+        };
+    }, []);
 
     const handleMouseDown = (e) => {
-        setIsDragging(true);
-        setStartX(e.pageX - scrollRef.current.offsetLeft);
-        setScrollLeft(scrollRef.current.scrollLeft);
+        const scrollElement = scrollRef.current;
+        if (!scrollElement) return;
+        isDraggingRef.current = true;
+        startXRef.current = e.pageX - scrollElement.offsetLeft;
+        scrollLeftRef.current = scrollElement.scrollLeft;
     };
 
     const handleMouseMove = (e) => {
-        if (!isDragging) return;
+        if (!isDraggingRef.current) return;
+        const scrollElement = scrollRef.current;
+        if (!scrollElement) return;
         e.preventDefault();
-        const x = e.pageX - scrollRef.current.offsetLeft;
-        const walk = (x - startX) * 2;
-        scrollRef.current.scrollLeft = scrollLeft - walk;
+        const x = e.pageX - scrollElement.offsetLeft;
+        const walk = (x - startXRef.current) * 2;
+        scrollElement.scrollLeft = scrollLeftRef.current - walk;
+        normalizeInfiniteScroll();
     };
 
-    const handleMouseUp = () => {
-        setIsDragging(false);
+    const handleMouseUp = () => { isDraggingRef.current = false; };
+    const handleMouseLeave = () => { isDraggingRef.current = false; };
+
+    const handleTouchStart = (e) => {
+        const scrollElement = scrollRef.current;
+        if (!scrollElement) return;
+        isDraggingRef.current = true;
+        startXRef.current = e.touches[0].pageX - scrollElement.offsetLeft;
+        scrollLeftRef.current = scrollElement.scrollLeft;
     };
 
-    const handleMouseLeave = () => {
-        setIsDragging(false);
+    const handleTouchMove = (e) => {
+        if (!isDraggingRef.current) return;
+        const scrollElement = scrollRef.current;
+        if (!scrollElement) return;
+        const x = e.touches[0].pageX - scrollElement.offsetLeft;
+        const walk = (x - startXRef.current) * 2;
+        scrollElement.scrollLeft = scrollLeftRef.current - walk;
+        normalizeInfiniteScroll();
     };
+
+    const handleTouchEnd = () => { isDraggingRef.current = false; };
 
     const machineDetails = {
         name: 'K-Sign Desktop Laser Marking',
@@ -233,9 +308,38 @@ export default function KSignDesktopLaserMarking() {
                             {machineDetails.features.map((feature, index) => (
                                 <div key={index} className="ksign-marking-feature-card">
                                     <div className="ksign-marking-feature-icon">
-                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                                            <path d="M12 2L2 7l10 5 10-5-10-5z" />
-                                        </svg>
+                                        {index === 0 && (
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                {/* Field mirror: lens/hexagon optic */}
+                                                <polygon points="12 2 19 6 19 18 12 22 5 18 5 6 12 2" />
+                                                <circle cx="12" cy="12" r="4" />
+                                            </svg>
+                                        )}
+                                        {index === 1 && (
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                {/* High-speed galvanometer: rotating arrow */}
+                                                <polyline points="23 4 23 10 17 10" />
+                                                <polyline points="1 20 1 14 7 14" />
+                                                <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15" />
+                                            </svg>
+                                        )}
+                                        {index === 2 && (
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                {/* Extended optical path: long beam */}
+                                                <line x1="2" y1="12" x2="22" y2="12" />
+                                                <polyline points="16 6 22 12 16 18" />
+                                                <line x1="2" y1="6" x2="2" y2="18" />
+                                            </svg>
+                                        )}
+                                        {index === 3 && (
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                {/* Beam height adjuster: vertical slider */}
+                                                <line x1="12" y1="2" x2="12" y2="22" />
+                                                <polyline points="8 6 12 2 16 6" />
+                                                <polyline points="8 18 12 22 16 18" />
+                                                <rect x="8" y="10" width="8" height="4" rx="1" />
+                                            </svg>
+                                        )}
                                     </div>
                                     <h3 className="ksign-marking-feature-title">{feature.title}</h3>
                                     <p className="ksign-marking-feature-text">{feature.description}</p>
@@ -286,17 +390,16 @@ export default function KSignDesktopLaserMarking() {
                             onMouseMove={handleMouseMove}
                             onMouseUp={handleMouseUp}
                             onMouseLeave={handleMouseLeave}
+                            onTouchStart={handleTouchStart}
+                            onTouchMove={handleTouchMove}
+                            onTouchEnd={handleTouchEnd}
+                            onScroll={normalizeInfiniteScroll}
                         >
                             <div className="ksign-marking-applications-image-grid">
-                                {machineDetails.applications.map((app, index) => (
-                                    <div key={index} className="ksign-marking-application-image-item">
-                                        <div className="ksign-marking-application-icon">
-                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                                                <rect x="3" y="3" width="18" height="18" rx="2" />
-                                                <path d="m9 11 3 3L22 4" />
-                                            </svg>
-                                        </div>
-                                        <p>{app}</p>
+                                {loopedApplicationItems.map((item, index) => (
+                                    <div key={`${item.label}-${index}`} className="ksign-marking-application-image-item">
+                                        <img src={item.image} alt={item.label} />
+                                        <p>{item.label}</p>
                                     </div>
                                 ))}
                             </div>

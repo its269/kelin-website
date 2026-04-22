@@ -335,9 +335,63 @@ export default function IEchoBK4() {
                             {machineDetails.features.map((feature, index) => (
                                 <div key={index} className="iecho-bk4-feature-card">
                                     <div className="iecho-bk4-feature-icon">
-                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                                            <path d="M12 2L2 7l10 5 10-5-10-5z" />
-                                        </svg>
+                                        {index === 0 && (
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                {/* Ultra-high strength frame: strong structural frame */}
+                                                <rect x="2" y="14" width="20" height="4" rx="1" />
+                                                <line x1="4" y1="14" x2="4" y2="6" />
+                                                <line x1="20" y1="14" x2="20" y2="6" />
+                                                <line x1="4" y1="6" x2="20" y2="6" />
+                                                <line x1="8" y1="10" x2="16" y2="10" />
+                                            </svg>
+                                        )}
+                                        {index === 1 && (
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                {/* Modular cutting options: tool grid */}
+                                                <rect x="3" y="3" width="8" height="8" rx="1" />
+                                                <rect x="13" y="3" width="8" height="8" rx="1" />
+                                                <rect x="3" y="13" width="8" height="8" rx="1" />
+                                                <rect x="13" y="13" width="8" height="8" rx="1" />
+                                            </svg>
+                                        )}
+                                        {index === 2 && (
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                {/* High speed digital cutting: speedometer */}
+                                                <path d="M12 2a10 10 0 1 0 10 10" />
+                                                <path d="M12 12 L17 7" />
+                                                <circle cx="12" cy="12" r="1.5" fill="currentColor" stroke="none" />
+                                            </svg>
+                                        )}
+                                        {index === 3 && (
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                {/* Multi-material unwinder: material roll */}
+                                                <circle cx="12" cy="12" r="5" />
+                                                <circle cx="12" cy="12" r="1.5" fill="currentColor" stroke="none" />
+                                                <path d="M12 2 C16 2 20 6 20 12" />
+                                                <polyline points="17 7 20 12 22 8" />
+                                            </svg>
+                                        )}
+                                        {index === 4 && (
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                {/* Intelligent conveyor: belt with arrow */}
+                                                <rect x="2" y="10" width="20" height="4" rx="1" />
+                                                <circle cx="6" cy="12" r="3" />
+                                                <circle cx="18" cy="12" r="3" />
+                                                <polyline points="14 8 18 12 14 16" />
+                                            </svg>
+                                        )}
+                                        {index === 5 && (
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                {/* Circuit layout upgrade: circuit board */}
+                                                <rect x="7" y="7" width="10" height="10" rx="1" />
+                                                <line x1="7" y1="10" x2="4" y2="10" />
+                                                <line x1="7" y1="14" x2="4" y2="14" />
+                                                <line x1="17" y1="10" x2="20" y2="10" />
+                                                <line x1="17" y1="14" x2="20" y2="14" />
+                                                <polyline points="10 7 10 4 14 4 14 7" />
+                                                <polyline points="10 17 10 20 14 20 14 17" />
+                                            </svg>
+                                        )}
                                     </div>
                                     <h3 className="iecho-bk4-feature-title">{feature.title}</h3>
                                     <p className="iecho-bk4-feature-text">{feature.description}</p>

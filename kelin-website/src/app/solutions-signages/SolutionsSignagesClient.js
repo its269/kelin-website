@@ -7,16 +7,16 @@ import Header from '../components/Header';
 export default function BlogsPage() {
     // Map product titles to their custom guide URLs
     const guideLinks = {
-        "Economical Fiber Laser": "/economical-fiber-laser",
-        "CMA 1325": "/cma-1325",
-        "CMA HQ": "/cma-hq",
-        "Yueming Fabric Laser": "/yueming-fabric-laser",
-        "CMA 1390": "/cma-1390",
+        "Economical Fiber Laser": "/yueming-fiber-laser-cma-1325c-g-g",
+        "CMA 1325": "/yueming-fiber-laser-cma-1325c-g-g",
+        "CMA HQ": "/yueming-fiber-laser-hl1530c-g-e",
+        "Yueming Fabric Laser": "/k-sign-df-1916-laser-fabric-cutting",
+        "CMA 1390": "/hanniu-k1390-co2-laser-150w-ccd",
         "3D Printer": "/3d-printer",
-        "Bending Machine": "/bending-machine",
-        "Mini Handheld Welding Machine": "/mini-handheld-welding",
-        "Aluminum Composite Panel": "/acp-materials",
-        "Clear Acrylic Sheet": "/clear-acrylic-sheet"
+        "Bending Machine": "/k-sign-desktop-laser-b330",
+        "Mini Handheld Welding Machine": "/reci-handheld-fiber-laser-welding",
+        "Aluminum Composite Panel": "/materials",
+        "Clear Acrylic Sheet": "/materials"
     };
 
     const blogPosts = [

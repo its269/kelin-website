@@ -341,9 +341,48 @@ export default function SmartDTFPowderShaker() {
                             {machineDetails.features.map((feature, index) => (
                                 <div key={index} className="smart-powder-shaker-feature-card">
                                     <div className="smart-powder-shaker-feature-icon">
-                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                                            <path d="M12 2L2 7l10 5 10-5-10-5z" />
-                                        </svg>
+                                        {index === 0 && (
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                {/* Wider platform: expand horizontal */}
+                                                <polyline points="15 3 21 3 21 9" />
+                                                <polyline points="9 21 3 21 3 15" />
+                                                <line x1="21" y1="3" x2="14" y2="10" />
+                                                <line x1="3" y1="21" x2="10" y2="14" />
+                                            </svg>
+                                        )}
+                                        {index === 1 && (
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                {/* Pinch roller: two circles with pressure lines */}
+                                                <circle cx="8" cy="12" r="4" />
+                                                <circle cx="16" cy="12" r="4" />
+                                                <line x1="12" y1="4" x2="12" y2="8" />
+                                                <line x1="12" y1="16" x2="12" y2="20" />
+                                            </svg>
+                                        )}
+                                        {index === 2 && (
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                {/* Capping/seal: lock */}
+                                                <rect x="4" y="11" width="16" height="9" rx="2" />
+                                                <path d="M8 11V7a4 4 0 0 1 8 0v4" />
+                                            </svg>
+                                        )}
+                                        {index === 3 && (
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                {/* Damper: spring absorber */}
+                                                <line x1="12" y1="2" x2="12" y2="5" />
+                                                <path d="M12 5 C9 7 15 9 12 11 C9 13 15 15 12 17" />
+                                                <line x1="12" y1="17" x2="12" y2="20" />
+                                                <line x1="8" y1="20" x2="16" y2="20" />
+                                            </svg>
+                                        )}
+                                        {index === 4 && (
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                {/* Industrial speed: speedometer */}
+                                                <path d="M12 2a10 10 0 1 0 10 10" />
+                                                <path d="M12 12 L17 7" />
+                                                <circle cx="12" cy="12" r="1.5" fill="currentColor" stroke="none" />
+                                            </svg>
+                                        )}
                                     </div>
                                     <h3 className="smart-powder-shaker-feature-title">{feature.title}</h3>
                                     <p className="smart-powder-shaker-feature-text">{feature.description}</p>

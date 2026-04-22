@@ -4,7 +4,7 @@ export const revalidate = false;
 
 export default function sitemap() {
     const baseUrl = 'https://www.kelinph.com'
-    const lastMod = new Date('2026-04-11')
+    const lastMod = new Date('2026-04-20')
 
     return [
 
@@ -247,6 +247,216 @@ export default function sitemap() {
         },
         {
             url: `${baseUrl}/blogs-iecho-pk`,
+            lastModified: lastMod,
+            changeFrequency: 'monthly',
+            priority: 0.7,
+        },
+        {
+            url: `${baseUrl}/blogs-iecho-pk4`,
+            lastModified: lastMod,
+            changeFrequency: 'monthly',
+            priority: 0.7,
+        },
+        {
+            url: `${baseUrl}/blogs-iecho-bk3`,
+            lastModified: lastMod,
+            changeFrequency: 'monthly',
+            priority: 0.7,
+        },
+        {
+            url: `${baseUrl}/blogs-iecho-bk4`,
+            lastModified: lastMod,
+            changeFrequency: 'monthly',
+            priority: 0.7,
+        },
+        {
+            url: `${baseUrl}/blogs-iecho-tk4s`,
+            lastModified: lastMod,
+            changeFrequency: 'monthly',
+            priority: 0.7,
+        },
+        {
+            url: `${baseUrl}/blogs-gcc-ar24-desktop`,
+            lastModified: lastMod,
+            changeFrequency: 'monthly',
+            priority: 0.7,
+        },
+        {
+            url: `${baseUrl}/blogs-gcc-puma-IV`,
+            lastModified: lastMod,
+            changeFrequency: 'monthly',
+            priority: 0.7,
+        },
+        {
+            url: `${baseUrl}/blogs-gcc-expert-24lx`,
+            lastModified: lastMod,
+            changeFrequency: 'monthly',
+            priority: 0.7,
+        },
+        {
+            url: `${baseUrl}/blogs-sublimation-printer-FD6198E`,
+            lastModified: lastMod,
+            changeFrequency: 'monthly',
+            priority: 0.7,
+        },
+        {
+            url: `${baseUrl}/blogs-kirin-DA182T-plus`,
+            lastModified: lastMod,
+            changeFrequency: 'monthly',
+            priority: 0.7,
+        },
+        {
+            url: `${baseUrl}/blogs-smart-sublimation`,
+            lastModified: lastMod,
+            changeFrequency: 'monthly',
+            priority: 0.7,
+        },
+        {
+            url: `${baseUrl}/blogs-smart-DTF-powder-shaker-w650-4C`,
+            lastModified: lastMod,
+            changeFrequency: 'monthly',
+            priority: 0.7,
+        },
+        {
+            url: `${baseUrl}/blogs-smart-DTF-machine`,
+            lastModified: lastMod,
+            changeFrequency: 'monthly',
+            priority: 0.7,
+        },
+        {
+            url: `${baseUrl}/blogs-DTF-UV-printer-SF303-i3200`,
+            lastModified: lastMod,
+            changeFrequency: 'monthly',
+            priority: 0.7,
+        },
+        {
+            url: `${baseUrl}/blogs-DTF-UV-printer-SF604-i3200`,
+            lastModified: lastMod,
+            changeFrequency: 'monthly',
+            priority: 0.7,
+        },
+        {
+            url: `${baseUrl}/blogs-luxor-rtr-uv-system`,
+            lastModified: lastMod,
+            changeFrequency: 'monthly',
+            priority: 0.7,
+        },
+        {
+            url: `${baseUrl}/blogs-automatic-UV-crystal-flat-pasting-machine`,
+            lastModified: lastMod,
+            changeFrequency: 'monthly',
+            priority: 0.7,
+        },
+        {
+            url: `${baseUrl}/blogs-liyu-x-line-DQS-UV-hybrid-printer`,
+            lastModified: lastMod,
+            changeFrequency: 'monthly',
+            priority: 0.7,
+        },
+        {
+            url: `${baseUrl}/blogs-smart-uv-printer`,
+            lastModified: lastMod,
+            changeFrequency: 'monthly',
+            priority: 0.7,
+        },
+        {
+            url: `${baseUrl}/blogs-r2000-roller-type-sublimation`,
+            lastModified: lastMod,
+            changeFrequency: 'monthly',
+            priority: 0.7,
+        },
+        {
+            url: `${baseUrl}/blogs-dual-pneumatic-sublimation`,
+            lastModified: lastMod,
+            changeFrequency: 'monthly',
+            priority: 0.7,
+        },
+        {
+            url: `${baseUrl}/blogs-sapphire-heat-press`,
+            lastModified: lastMod,
+            changeFrequency: 'monthly',
+            priority: 0.7,
+        },
+        {
+            url: `${baseUrl}/blogs-subli-mate-manual`,
+            lastModified: lastMod,
+            changeFrequency: 'monthly',
+            priority: 0.7,
+        },
+        {
+            url: `${baseUrl}/blogs-cold-laminator`,
+            lastModified: lastMod,
+            changeFrequency: 'monthly',
+            priority: 0.7,
+        },
+        {
+            url: `${baseUrl}/blogs-flatbed-laminator`,
+            lastModified: lastMod,
+            changeFrequency: 'monthly',
+            priority: 0.7,
+        },
+        {
+            url: `${baseUrl}/blogs-auto-warm-laminator`,
+            lastModified: lastMod,
+            changeFrequency: 'monthly',
+            priority: 0.7,
+        },
+        {
+            url: `${baseUrl}/blogs-handheld-fiber-laser`,
+            lastModified: lastMod,
+            changeFrequency: 'monthly',
+            priority: 0.7,
+        },
+        {
+            url: `${baseUrl}/blogs-hanniu-k1390-CO2laser-150W`,
+            lastModified: lastMod,
+            changeFrequency: 'monthly',
+            priority: 0.7,
+        },
+        {
+            url: `${baseUrl}/blogs-hanniu-k1390-CO2-laser-300W`,
+            lastModified: lastMod,
+            changeFrequency: 'monthly',
+            priority: 0.7,
+        },
+        {
+            url: `${baseUrl}/blogs-k-sign-desktop-laser-b330`,
+            lastModified: lastMod,
+            changeFrequency: 'monthly',
+            priority: 0.7,
+        },
+        {
+            url: `${baseUrl}/blogs-k-sign-df-1916-laser-fabric-cutting`,
+            lastModified: lastMod,
+            changeFrequency: 'monthly',
+            priority: 0.7,
+        },
+        {
+            url: `${baseUrl}/blogs-k-sign-desktop-laser-marking`,
+            lastModified: lastMod,
+            changeFrequency: 'monthly',
+            priority: 0.7,
+        },
+        {
+            url: `${baseUrl}/blogs-reci-handheld-fiber-laser-welding`,
+            lastModified: lastMod,
+            changeFrequency: 'monthly',
+            priority: 0.7,
+        },
+        {
+            url: `${baseUrl}/blogs-yueming-fiber-laser-CMA-1325C-G-G`,
+            lastModified: lastMod,
+            changeFrequency: 'monthly',
+            priority: 0.7,
+        },
+        {
+            url: `${baseUrl}/blogs-yueming-fiber-laser-HL1530C-G-E`,
+            lastModified: lastMod,
+            changeFrequency: 'monthly',
+            priority: 0.7,
+        },
+        {
+            url: `${baseUrl}/blogs-promaker-embroidery-series`,
             lastModified: lastMod,
             changeFrequency: 'monthly',
             priority: 0.7,

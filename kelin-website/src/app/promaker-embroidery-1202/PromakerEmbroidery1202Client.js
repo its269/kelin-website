@@ -12,31 +12,98 @@ export default function PromakerEmbroidery1202() {
     const [submitMessage, setSubmitMessage] = useState("");
     const [selectedImage, setSelectedImage] = useState('/embroidery_knitting/Promaker Embroidery 1202.webp');
     const scrollRef = useRef(null);
-    const [isDragging, setIsDragging] = useState(false);
-    const [startX, setStartX] = useState(0);
-    const [scrollLeft, setScrollLeft] = useState(0);
+    const isDraggingRef = useRef(false);
+    const startXRef = useRef(0);
+    const scrollLeftRef = useRef(0);
+    const animationFrameRef = useRef(null);
+    const lastTimestampRef = useRef(0);
+
+    const applicationItems = [
+        { image: '/application/promaker/garments.png', label: 'Garments' },
+        { image: '/application/promaker/caps.png', label: 'Caps' },
+        { image: '/application/promaker/bags.png', label: 'Bags' },
+        { image: '/application/promaker/patches.png', label: 'Patches' },
+    ];
+
+    const loopedApplicationItems = [...applicationItems, ...applicationItems, ...applicationItems];
+
+    const normalizeInfiniteScroll = () => {
+        const el = scrollRef.current;
+        if (!el) return;
+        const segmentWidth = el.scrollWidth / 3;
+        if (el.scrollLeft <= 0) {
+            el.scrollLeft = segmentWidth;
+        } else if (el.scrollLeft >= segmentWidth * 2) {
+            el.scrollLeft = segmentWidth;
+        }
+    };
 
     const handleMouseDown = (e) => {
-        setIsDragging(true);
-        setStartX(e.pageX - scrollRef.current.offsetLeft);
-        setScrollLeft(scrollRef.current.scrollLeft);
+        isDraggingRef.current = true;
+        startXRef.current = e.pageX - scrollRef.current.offsetLeft;
+        scrollLeftRef.current = scrollRef.current.scrollLeft;
     };
 
     const handleMouseMove = (e) => {
-        if (!isDragging) return;
+        if (!isDraggingRef.current) return;
         e.preventDefault();
         const x = e.pageX - scrollRef.current.offsetLeft;
-        const walk = (x - startX) * 2;
-        scrollRef.current.scrollLeft = scrollLeft - walk;
+        const walk = (x - startXRef.current) * 2;
+        scrollRef.current.scrollLeft = scrollLeftRef.current - walk;
+        normalizeInfiniteScroll();
     };
 
     const handleMouseUp = () => {
-        setIsDragging(false);
+        isDraggingRef.current = false;
     };
 
     const handleMouseLeave = () => {
-        setIsDragging(false);
+        isDraggingRef.current = false;
     };
+
+    const handleTouchStart = (e) => {
+        isDraggingRef.current = true;
+        startXRef.current = e.touches[0].pageX - scrollRef.current.offsetLeft;
+        scrollLeftRef.current = scrollRef.current.scrollLeft;
+    };
+
+    const handleTouchMove = (e) => {
+        if (!isDraggingRef.current) return;
+        const x = e.touches[0].pageX - scrollRef.current.offsetLeft;
+        const walk = (x - startXRef.current) * 2;
+        scrollRef.current.scrollLeft = scrollLeftRef.current - walk;
+        normalizeInfiniteScroll();
+    };
+
+    const handleTouchEnd = () => {
+        isDraggingRef.current = false;
+    };
+
+    useEffect(() => {
+        const el = scrollRef.current;
+        if (!el) return;
+        const setInitialScroll = () => {
+            el.scrollLeft = el.scrollWidth / 3;
+        };
+        setInitialScroll();
+        window.addEventListener('resize', setInitialScroll);
+        return () => window.removeEventListener('resize', setInitialScroll);
+    }, []);
+
+    useEffect(() => {
+        const speed = 0.05;
+        const animate = (timestamp) => {
+            if (!isDraggingRef.current && scrollRef.current) {
+                const elapsed = timestamp - lastTimestampRef.current;
+                scrollRef.current.scrollLeft += speed * elapsed;
+                normalizeInfiniteScroll();
+            }
+            lastTimestampRef.current = timestamp;
+            animationFrameRef.current = requestAnimationFrame(animate);
+        };
+        animationFrameRef.current = requestAnimationFrame(animate);
+        return () => cancelAnimationFrame(animationFrameRef.current);
+    }, []);
 
     const machineDetails = {
         name: 'PROMAKER EMBROIDERY MACHINE 1202',
@@ -238,9 +305,45 @@ export default function PromakerEmbroidery1202() {
                             {machineDetails.features.map((feature, index) => (
                                 <div key={index} className="promaker-embroidery-1202-feature-card">
                                     <div className="promaker-embroidery-1202-feature-icon">
-                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                                            <path d="M12 2L2 7l10 5 10-5-10-5z" />
-                                        </svg>
+                                        {index === 0 && (
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                {/* Advanced control system: CPU chip */}
+                                                <rect x="7" y="7" width="10" height="10" rx="1" />
+                                                <line x1="7" y1="10" x2="4" y2="10" />
+                                                <line x1="7" y1="14" x2="4" y2="14" />
+                                                <line x1="17" y1="10" x2="20" y2="10" />
+                                                <line x1="17" y1="14" x2="20" y2="14" />
+                                                <line x1="10" y1="7" x2="10" y2="4" />
+                                                <line x1="14" y1="7" x2="14" y2="4" />
+                                                <line x1="10" y1="17" x2="10" y2="20" />
+                                                <line x1="14" y1="17" x2="14" y2="20" />
+                                            </svg>
+                                        )}
+                                        {index === 1 && (
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                {/* Thread management: spool of thread */}
+                                                <ellipse cx="12" cy="7" rx="8" ry="3" />
+                                                <line x1="4" y1="7" x2="4" y2="17" />
+                                                <line x1="20" y1="7" x2="20" y2="17" />
+                                                <ellipse cx="12" cy="17" rx="8" ry="3" />
+                                                <line x1="12" y1="4" x2="12" y2="20" />
+                                            </svg>
+                                        )}
+                                        {index === 2 && (
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                {/* Japanese hook: curved needle/hook */}
+                                                <path d="M6 4 C6 4 6 12 12 16 C18 20 20 18 20 14 C20 10 16 10 14 12" />
+                                                <circle cx="14" cy="12" r="1.5" fill="currentColor" stroke="none" />
+                                            </svg>
+                                        )}
+                                        {index === 3 && (
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                {/* Versatile application: layers */}
+                                                <polygon points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5 12 2" />
+                                                <line x1="12" y1="22" x2="12" y2="15.5" />
+                                                <polyline points="22 8.5 12 15.5 2 8.5" />
+                                            </svg>
+                                        )}
                                     </div>
                                     <h3 className="promaker-embroidery-1202-feature-title">{feature.title}</h3>
                                     <p className="promaker-embroidery-1202-feature-text">{feature.description}</p>
@@ -291,56 +394,18 @@ export default function PromakerEmbroidery1202() {
                             onMouseMove={handleMouseMove}
                             onMouseUp={handleMouseUp}
                             onMouseLeave={handleMouseLeave}
+                            onTouchStart={handleTouchStart}
+                            onTouchMove={handleTouchMove}
+                            onTouchEnd={handleTouchEnd}
+                            onScroll={normalizeInfiniteScroll}
                         >
                             <div className="promaker-embroidery-1202-applications-image-grid">
-                                <div className="promaker-embroidery-1202-application-image-item">
-                                    <img src="/application/_0000_6.jpg" alt="Photo Lamination" />
-                                    <p>Photo Lamination</p>
-                                </div>
-                                <div className="promaker-embroidery-1202-application-image-item">
-                                    <img src="/application/_0001_5.jpg" alt="Print Protection" />
-                                    <p>Print Protection</p>
-                                </div>
-                                <div className="promaker-embroidery-1202-application-image-item">
-                                    <img src="/application/_0002_4.jpg" alt="Poster Lamination" />
-                                    <p>Poster Lamination</p>
-                                </div>
-                                <div className="promaker-embroidery-1202-application-image-item">
-                                    <img src="/application/_0003_3.jpg" alt="Document Preservation" />
-                                    <p>Document Preservation</p>
-                                </div>
-                                <div className="promaker-embroidery-1202-application-image-item">
-                                    <img src="/application/_0004_2.jpg" alt="Signage Production" />
-                                    <p>Signage Production</p>
-                                </div>
-                                <div className="promaker-embroidery-1202-application-image-item">
-                                    <img src="/application/_0005_1.jpg" alt="Menu Boards" />
-                                    <p>Menu Boards</p>
-                                </div>
-                                <div className="promaker-embroidery-1202-application-image-item">
-                                    <img src="/application/_0000_6.jpg" alt="Educational Materials" />
-                                    <p>Educational Materials</p>
-                                </div>
-                                <div className="promaker-embroidery-1202-application-image-item">
-                                    <img src="/application/_0001_5.jpg" alt="Point of Sale Displays" />
-                                    <p>Point of Sale Displays</p>
-                                </div>
-                                <div className="promaker-embroidery-1202-application-image-item">
-                                    <img src="/application/_0002_4.jpg" alt="Exhibition Graphics" />
-                                    <p>Exhibition Graphics</p>
-                                </div>
-                                <div className="promaker-embroidery-1202-application-image-item">
-                                    <img src="/application/_0003_3.jpg" alt="Heat-Sensitive Material Protection" />
-                                    <p>Heat-Sensitive Material Protection</p>
-                                </div>
-                                <div className="promaker-embroidery-1202-application-image-item">
-                                    <img src="/application/_0004_2.jpg" alt="Quick Turnaround Projects" />
-                                    <p>Quick Turnaround Projects</p>
-                                </div>
-                                <div className="promaker-embroidery-1202-application-image-item">
-                                    <img src="/application/_0005_1.jpg" alt="Professional Presentation Materials" />
-                                    <p>Professional Presentation Materials</p>
-                                </div>
+                                {loopedApplicationItems.map((item, index) => (
+                                    <div key={`${item.label}-${index}`} className="promaker-embroidery-1202-application-image-item">
+                                        <img src={item.image} alt={item.label} />
+                                        <p>{item.label}</p>
+                                    </div>
+                                ))}
                             </div>
                         </div>
                     </div>

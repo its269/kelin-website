@@ -344,9 +344,54 @@ export default function DTFUVPrinterSF604I3200() {
                             {machineDetails.features.map((feature, index) => (
                                 <div key={index} className="dtf-uv-sf604-feature-card">
                                     <div className="dtf-uv-sf604-feature-icon">
-                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                                            <path d="M12 2L2 7l10 5 10-5-10-5z" />
-                                        </svg>
+                                        {index === 0 && (
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                {/* Guide rail: two parallel rails with slider */}
+                                                <line x1="4" y1="8" x2="20" y2="8" />
+                                                <line x1="4" y1="16" x2="20" y2="16" />
+                                                <rect x="9" y="10" width="6" height="4" rx="1" />
+                                            </svg>
+                                        )}
+                                        {index === 1 && (
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                {/* Electric lift: arrow up with bolt */}
+                                                <line x1="12" y1="19" x2="12" y2="5" />
+                                                <polyline points="7 10 12 5 17 10" />
+                                                <polyline points="10 22 12 18 14 22" />
+                                            </svg>
+                                        )}
+                                        {index === 2 && (
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                {/* Double chain: chain links */}
+                                                <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" />
+                                                <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" />
+                                            </svg>
+                                        )}
+                                        {index === 3 && (
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                {/* Platform heating: heated surface */}
+                                                <rect x="3" y="14" width="18" height="4" rx="1" />
+                                                <path d="M7 14 C7 11 9 9 9 6" />
+                                                <path d="M12 14 C12 11 14 9 14 6" />
+                                                <path d="M17 14 C17 11 19 9 19 6" />
+                                            </svg>
+                                        )}
+                                        {index === 4 && (
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                {/* Printhead: nozzle */}
+                                                <rect x="5" y="2" width="14" height="8" rx="1" />
+                                                <line x1="8" y1="10" x2="8" y2="14" />
+                                                <line x1="12" y1="10" x2="12" y2="16" />
+                                                <line x1="16" y1="10" x2="16" y2="14" />
+                                                <path d="M6 20 Q8 17 10 20 Q12 23 14 20 Q16 17 18 20" />
+                                            </svg>
+                                        )}
+                                        {index === 5 && (
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                {/* Gold foil: star/sparkle */}
+                                                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                                            </svg>
+                                        )}
                                     </div>
                                     <h3 className="dtf-uv-sf604-feature-title">{feature.title}</h3>
                                     <p className="dtf-uv-sf604-feature-text">{feature.description}</p>

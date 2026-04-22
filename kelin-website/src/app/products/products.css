@@ -747,3 +747,29 @@
     justify-content: center;
   }
 }
+
+/* ── Machine page category sections ── */
+.machine-category-section {
+  margin-bottom: 64px;
+}
+
+.machine-category-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 28px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.12);
+  letter-spacing: 0.01em;
+}
+
+@media (max-width: 768px) {
+  .machine-category-title {
+    font-size: 1.25rem;
+    margin-bottom: 18px;
+  }
+
+  .machine-category-section {
+    margin-bottom: 40px;
+  }
+}

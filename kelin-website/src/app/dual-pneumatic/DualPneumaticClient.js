@@ -1,7 +1,7 @@
 "use client";
 import Header from '../components/Header';
 import Link from 'next/link';
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import './dual-pneumatic.css';
 
 export default function DualPneumatic() {
@@ -9,31 +9,108 @@ export default function DualPneumatic() {
     const [selectedImage, setSelectedImage] = useState('/sublimation_dtf/SUBL Dual Pneumatic Sublimation Machine 80cm x 100cm (1).webp');
 
     const scrollRef = useRef(null);
-    const [isDragging, setIsDragging] = useState(false);
-    const [startX, setStartX] = useState(0);
-    const [scrollLeft, setScrollLeft] = useState(0);
+    const isDraggingRef = useRef(false);
+    const startXRef = useRef(0);
+    const scrollLeftRef = useRef(0);
+    const animationFrameRef = useRef(null);
+    const lastTimestampRef = useRef(0);
+
+    const applicationItems = [
+        { image: '/application/pneumatic/1.png', label: 'Full Jersey Sublimation' },
+        { image: '/application/pneumatic/2.png', label: 'Jersey' },
+        { image: '/application/pneumatic/3.png', label: 'T-Shirt Heat Transfer' },
+        { image: '/application/pneumatic/4.png', label: 'Beachwear Sublimation' },
+        { image: '/application/pneumatic/5.png', label: 'Custom Apparel' },
+    ];
+
+    const loopedApplicationItems = [...applicationItems, ...applicationItems, ...applicationItems];
+
+    const normalizeInfiniteScroll = () => {
+        const scrollElement = scrollRef.current;
+        if (!scrollElement) return;
+        const segmentWidth = scrollElement.scrollWidth / 3;
+        const boundaryOffset = 4;
+        if (scrollElement.scrollLeft <= boundaryOffset) {
+            scrollElement.scrollLeft += segmentWidth;
+        } else if (scrollElement.scrollLeft >= segmentWidth * 2 - boundaryOffset) {
+            scrollElement.scrollLeft -= segmentWidth;
+        }
+    };
+
+    useEffect(() => {
+        const scrollElement = scrollRef.current;
+        if (!scrollElement) return;
+        const initializeLoopPosition = () => {
+            const segmentWidth = scrollElement.scrollWidth / 3;
+            scrollElement.scrollLeft = segmentWidth;
+        };
+        initializeLoopPosition();
+        window.addEventListener('resize', initializeLoopPosition);
+        return () => window.removeEventListener('resize', initializeLoopPosition);
+    }, []);
+
+    useEffect(() => {
+        const scrollElement = scrollRef.current;
+        if (!scrollElement) return;
+        const speedPixelsPerMs = 0.05;
+        const animate = (timestamp) => {
+            if (lastTimestampRef.current === 0) lastTimestampRef.current = timestamp;
+            const delta = timestamp - lastTimestampRef.current;
+            lastTimestampRef.current = timestamp;
+            if (!isDraggingRef.current && scrollRef.current) {
+                scrollRef.current.scrollLeft += delta * speedPixelsPerMs;
+                normalizeInfiniteScroll();
+            }
+            animationFrameRef.current = window.requestAnimationFrame(animate);
+        };
+        animationFrameRef.current = window.requestAnimationFrame(animate);
+        return () => {
+            if (animationFrameRef.current) window.cancelAnimationFrame(animationFrameRef.current);
+            lastTimestampRef.current = 0;
+        };
+    }, []);
 
     const handleMouseDown = (e) => {
-        setIsDragging(true);
-        setStartX(e.pageX - scrollRef.current.offsetLeft);
-        setScrollLeft(scrollRef.current.scrollLeft);
+        const scrollElement = scrollRef.current;
+        if (!scrollElement) return;
+        isDraggingRef.current = true;
+        startXRef.current = e.pageX - scrollElement.offsetLeft;
+        scrollLeftRef.current = scrollElement.scrollLeft;
     };
 
     const handleMouseMove = (e) => {
-        if (!isDragging) return;
+        if (!isDraggingRef.current) return;
+        const scrollElement = scrollRef.current;
+        if (!scrollElement) return;
         e.preventDefault();
-        const x = e.pageX - scrollRef.current.offsetLeft;
-        const walk = (x - startX) * 2;
-        scrollRef.current.scrollLeft = scrollLeft - walk;
+        const x = e.pageX - scrollElement.offsetLeft;
+        const walk = (x - startXRef.current) * 2;
+        scrollElement.scrollLeft = scrollLeftRef.current - walk;
+        normalizeInfiniteScroll();
     };
 
-    const handleMouseUp = () => {
-        setIsDragging(false);
+    const handleMouseUp = () => { isDraggingRef.current = false; };
+    const handleMouseLeave = () => { isDraggingRef.current = false; };
+
+    const handleTouchStart = (e) => {
+        const scrollElement = scrollRef.current;
+        if (!scrollElement) return;
+        isDraggingRef.current = true;
+        startXRef.current = e.touches[0].pageX - scrollElement.offsetLeft;
+        scrollLeftRef.current = scrollElement.scrollLeft;
     };
 
-    const handleMouseLeave = () => {
-        setIsDragging(false);
+    const handleTouchMove = (e) => {
+        if (!isDraggingRef.current) return;
+        const scrollElement = scrollRef.current;
+        if (!scrollElement) return;
+        const x = e.touches[0].pageX - scrollElement.offsetLeft;
+        const walk = (x - startXRef.current) * 2;
+        scrollElement.scrollLeft = scrollLeftRef.current - walk;
+        normalizeInfiniteScroll();
     };
+
+    const handleTouchEnd = () => { isDraggingRef.current = false; };
 
     const machineDetails = {
         name: 'Dual Pneumatic Heat Press Machine',
@@ -252,9 +329,54 @@ export default function DualPneumatic() {
                             {machineDetails.features.map((feature, index) => (
                                 <div key={index} className="dual-pneumatic-feature-card">
                                     <div className="dual-pneumatic-feature-icon">
-                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                                            <path d="M12 2L2 7l10 5 10-5-10-5z" />
-                                        </svg>
+                                        {index === 0 && (
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                {/* Uniform heating: even heat waves */}
+                                                <rect x="3" y="13" width="18" height="4" rx="1" />
+                                                <path d="M7 13 C7 10 9 8 9 5" />
+                                                <path d="M12 13 C12 10 14 8 14 5" />
+                                                <path d="M17 13 C17 10 19 8 19 5" />
+                                            </svg>
+                                        )}
+                                        {index === 1 && (
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                {/* Digital microprocessor: chip/CPU */}
+                                                <rect x="7" y="7" width="10" height="10" rx="1" />
+                                                <line x1="7" y1="10" x2="4" y2="10" />
+                                                <line x1="7" y1="14" x2="4" y2="14" />
+                                                <line x1="17" y1="10" x2="20" y2="10" />
+                                                <line x1="17" y1="14" x2="20" y2="14" />
+                                                <line x1="10" y1="7" x2="10" y2="4" />
+                                                <line x1="14" y1="7" x2="14" y2="4" />
+                                                <line x1="10" y1="17" x2="10" y2="20" />
+                                                <line x1="14" y1="17" x2="14" y2="20" />
+                                            </svg>
+                                        )}
+                                        {index === 2 && (
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                {/* Aluminum-cast heater: solid block/plate */}
+                                                <rect x="3" y="8" width="18" height="8" rx="2" />
+                                                <line x1="7" y1="8" x2="7" y2="16" />
+                                                <line x1="12" y1="8" x2="12" y2="16" />
+                                                <line x1="17" y1="8" x2="17" y2="16" />
+                                            </svg>
+                                        )}
+                                        {index === 3 && (
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                {/* Dual manual/automatic: two-way toggle */}
+                                                <line x1="3" y1="12" x2="21" y2="12" />
+                                                <path d="M7 6 L12 12 L7 18" />
+                                                <path d="M17 6 L12 12 L17 18" />
+                                            </svg>
+                                        )}
+                                        {index === 4 && (
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                {/* Pulling-type platform: pull-out drawer */}
+                                                <rect x="2" y="6" width="20" height="12" rx="2" />
+                                                <line x1="8" y1="12" x2="16" y2="12" />
+                                                <polyline points="12 9 16 12 12 15" />
+                                            </svg>
+                                        )}
                                     </div>
                                     <h3 className="dual-pneumatic-feature-title">{feature.title}</h3>
                                     <p className="dual-pneumatic-feature-text">{feature.description}</p>
@@ -309,48 +431,18 @@ export default function DualPneumatic() {
                             onMouseMove={handleMouseMove}
                             onMouseUp={handleMouseUp}
                             onMouseLeave={handleMouseLeave}
+                            onTouchStart={handleTouchStart}
+                            onTouchMove={handleTouchMove}
+                            onTouchEnd={handleTouchEnd}
+                            onScroll={normalizeInfiniteScroll}
                         >
                             <div className="dual-pneumatic-applications-image-grid">
-                                <div className="dual-pneumatic-application-image-item">
-                                    <img src="/application/_0000_6.jpg" alt="T-Shirt Printing" />
-                                    <p>T-Shirt Printing</p>
-                                </div>
-                                <div className="dual-pneumatic-application-image-item">
-                                    <img src="/application/_0001_5.jpg" alt="Mug Printing" />
-                                    <p>Mug Printing</p>
-                                </div>
-                                <div className="dual-pneumatic-application-image-item">
-                                    <img src="/application/_0002_4.jpg" alt="Signage & Banners" />
-                                    <p>Signage & Banners</p>
-                                </div>
-                                <div className="dual-pneumatic-application-image-item">
-                                    <img src="/application/_0003_3.jpg" alt="Promotional Products" />
-                                    <p>Promotional Products</p>
-                                </div>
-                                <div className="dual-pneumatic-application-image-item">
-                                    <img src="/application/_0004_2.jpg" alt="Custom Apparel" />
-                                    <p>Custom Apparel</p>
-                                </div>
-                                <div className="dual-pneumatic-application-image-item">
-                                    <img src="/application/_0005_1.jpg" alt="Phone Cases" />
-                                    <p>Phone Cases</p>
-                                </div>
-                                <div className="dual-pneumatic-application-image-item">
-                                    <img src="/application/_0000_6.jpg" alt="Sportswear" />
-                                    <p>Sportswear</p>
-                                </div>
-                                <div className="dual-pneumatic-application-image-item">
-                                    <img src="/application/_0001_5.jpg" alt="Home Decor" />
-                                    <p>Home Decor</p>
-                                </div>
-                                <div className="dual-pneumatic-application-image-item">
-                                    <img src="/application/_0002_4.jpg" alt="Packaging" />
-                                    <p>Packaging</p>
-                                </div>
-                                <div className="dual-pneumatic-application-image-item">
-                                    <img src="/application/_0003_3.jpg" alt="Labels & Stickers" />
-                                    <p>Labels & Stickers</p>
-                                </div>
+                                {loopedApplicationItems.map((item, index) => (
+                                    <div key={`${item.label}-${index}`} className="dual-pneumatic-application-image-item">
+                                        <img src={item.image} alt={item.label} />
+                                        <p>{item.label}</p>
+                                    </div>
+                                ))}
                             </div>
                         </div>
                     </div>

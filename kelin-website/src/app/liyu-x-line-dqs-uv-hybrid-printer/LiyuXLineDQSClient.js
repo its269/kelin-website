@@ -9,31 +9,109 @@ export default function LiyuXLineDQS() {
     const [inquiryModalOpen, setInquiryModalOpen] = useState(false);
     const [selectedImage, setSelectedImage] = useState('/uv-machines/Photo (3).webp');
     const scrollRef = useRef(null);
-    const [isDragging, setIsDragging] = useState(false);
-    const [startX, setStartX] = useState(0);
-    const [scrollLeft, setScrollLeft] = useState(0);
+    const isDraggingRef = useRef(false);
+    const startXRef = useRef(0);
+    const scrollLeftRef = useRef(0);
+    const animationFrameRef = useRef(null);
+    const lastTimestampRef = useRef(0);
+
+    const applicationItems = [
+        { image: '/application/dqs/1.png', label: 'Signage Production' },
+        { image: '/application/dqs/2.png', label: 'Promotional Displays' },
+        { image: '/application/dqs/3.png', label: 'Exhibition Graphics' },
+        { image: '/application/dqs/4.png', label: 'Commercial Advertising' },
+    ];
+
+    const loopedApplicationItems = [...applicationItems, ...applicationItems, ...applicationItems];
+
+    const normalizeInfiniteScroll = () => {
+        const scrollElement = scrollRef.current;
+        if (!scrollElement) return;
+        const segmentWidth = scrollElement.scrollWidth / 3;
+        const boundaryOffset = 4;
+        if (scrollElement.scrollLeft <= boundaryOffset) {
+            scrollElement.scrollLeft += segmentWidth;
+        } else if (scrollElement.scrollLeft >= segmentWidth * 2 - boundaryOffset) {
+            scrollElement.scrollLeft -= segmentWidth;
+        }
+    };
+
+    useEffect(() => {
+        const scrollElement = scrollRef.current;
+        if (!scrollElement) return;
+        const initializeLoopPosition = () => {
+            const segmentWidth = scrollElement.scrollWidth / 3;
+            scrollElement.scrollLeft = segmentWidth;
+        };
+        initializeLoopPosition();
+        window.addEventListener('resize', initializeLoopPosition);
+        return () => window.removeEventListener('resize', initializeLoopPosition);
+    }, []);
+
+    useEffect(() => {
+        const scrollElement = scrollRef.current;
+        if (!scrollElement) return;
+        const speedPixelsPerMs = 0.05;
+        const animate = (timestamp) => {
+            if (lastTimestampRef.current === 0) lastTimestampRef.current = timestamp;
+            const delta = timestamp - lastTimestampRef.current;
+            lastTimestampRef.current = timestamp;
+            if (!isDraggingRef.current && scrollRef.current) {
+                scrollRef.current.scrollLeft += delta * speedPixelsPerMs;
+                normalizeInfiniteScroll();
+            }
+            animationFrameRef.current = window.requestAnimationFrame(animate);
+        };
+        animationFrameRef.current = window.requestAnimationFrame(animate);
+        return () => {
+            if (animationFrameRef.current) window.cancelAnimationFrame(animationFrameRef.current);
+            lastTimestampRef.current = 0;
+        };
+    }, []);
 
     const handleMouseDown = (e) => {
-        setIsDragging(true);
-        setStartX(e.pageX - scrollRef.current.offsetLeft);
-        setScrollLeft(scrollRef.current.scrollLeft);
+        const scrollElement = scrollRef.current;
+        if (!scrollElement) return;
+        isDraggingRef.current = true;
+        startXRef.current = e.pageX - scrollElement.offsetLeft;
+        scrollLeftRef.current = scrollElement.scrollLeft;
     };
 
     const handleMouseMove = (e) => {
-        if (!isDragging) return;
+        if (!isDraggingRef.current) return;
+        const scrollElement = scrollRef.current;
+        if (!scrollElement) return;
         e.preventDefault();
-        const x = e.pageX - scrollRef.current.offsetLeft;
-        const walk = (x - startX) * 2;
-        scrollRef.current.scrollLeft = scrollLeft - walk;
+        const x = e.pageX - scrollElement.offsetLeft;
+        const walk = (x - startXRef.current) * 2;
+        scrollElement.scrollLeft = scrollLeftRef.current - walk;
+        normalizeInfiniteScroll();
     };
 
-    const handleMouseUp = () => {
-        setIsDragging(false);
+    const handleMouseUp = () => { isDraggingRef.current = false; };
+    const handleMouseLeave = () => { isDraggingRef.current = false; };
+
+    const handleTouchStart = (e) => {
+        const scrollElement = scrollRef.current;
+        if (!scrollElement) return;
+        const touchX = e.touches[0].pageX;
+        isDraggingRef.current = true;
+        startXRef.current = touchX - scrollElement.offsetLeft;
+        scrollLeftRef.current = scrollElement.scrollLeft;
     };
 
-    const handleMouseLeave = () => {
-        setIsDragging(false);
+    const handleTouchMove = (e) => {
+        if (!isDraggingRef.current) return;
+        const scrollElement = scrollRef.current;
+        if (!scrollElement) return;
+        const touchX = e.touches[0].pageX;
+        const x = touchX - scrollElement.offsetLeft;
+        const walk = (x - startXRef.current) * 2;
+        scrollElement.scrollLeft = scrollLeftRef.current - walk;
+        normalizeInfiniteScroll();
     };
+
+    const handleTouchEnd = () => { isDraggingRef.current = false; };
 
     const machineDetails = {
         name: 'LIYU X-LINE DQS',
@@ -239,9 +317,43 @@ export default function LiyuXLineDQS() {
                             {machineDetails.features.map((feature, index) => (
                                 <div key={index} className="liyu-xline-dqs-feature-card">
                                     <div className="liyu-xline-dqs-feature-icon">
-                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                                            <path d="M12 2L2 7l10 5 10-5-10-5z" />
-                                        </svg>
+                                        {index === 0 && (
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                {/* Stylish & agile design: diamond/gem */}
+                                                <polygon points="12 2 22 9 18 20 6 20 2 9 12 2" />
+                                                <line x1="2" y1="9" x2="22" y2="9" />
+                                                <line x1="12" y1="2" x2="6" y2="9" />
+                                                <line x1="12" y1="2" x2="18" y2="9" />
+                                            </svg>
+                                        )}
+                                        {index === 1 && (
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                {/* High-precision grayscale print: printhead nozzle */}
+                                                <rect x="5" y="2" width="14" height="8" rx="1" />
+                                                <line x1="8" y1="10" x2="8" y2="14" />
+                                                <line x1="12" y1="10" x2="12" y2="16" />
+                                                <line x1="16" y1="10" x2="16" y2="14" />
+                                                <path d="M6 20 Q8 17 10 20 Q12 23 14 20 Q16 17 18 20" />
+                                            </svg>
+                                        )}
+                                        {index === 2 && (
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                {/* Hardware upgrade: wrench/upgrade arrow */}
+                                                <polyline points="12 5 12 19" />
+                                                <polyline points="8 9 12 5 16 9" />
+                                                <path d="M19.07 4.93a10 10 0 0 1 0 14.14" />
+                                                <path d="M4.93 4.93a10 10 0 0 0 0 14.14" />
+                                            </svg>
+                                        )}
+                                        {index === 3 && (
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                {/* Grayscale precision output: bar chart/tones */}
+                                                <rect x="2" y="16" width="4" height="6" />
+                                                <rect x="8" y="11" width="4" height="11" />
+                                                <rect x="14" y="7" width="4" height="15" />
+                                                <rect x="20" y="3" width="2" height="19" />
+                                            </svg>
+                                        )}
                                     </div>
                                     <h3 className="liyu-xline-dqs-feature-title">{feature.title}</h3>
                                     <p className="liyu-xline-dqs-feature-text">{feature.description}</p>
@@ -292,56 +404,18 @@ export default function LiyuXLineDQS() {
                             onMouseMove={handleMouseMove}
                             onMouseUp={handleMouseUp}
                             onMouseLeave={handleMouseLeave}
+                            onTouchStart={handleTouchStart}
+                            onTouchMove={handleTouchMove}
+                            onTouchEnd={handleTouchEnd}
+                            onScroll={normalizeInfiniteScroll}
                         >
                             <div className="liyu-xline-dqs-applications-image-grid">
-                                <div className="liyu-xline-dqs-application-image-item">
-                                    <img src="/application/_0000_6.jpg" alt="Back Lit Posters" />
-                                    <p>Back Lit Posters</p>
-                                </div>
-                                <div className="liyu-xline-dqs-application-image-item">
-                                    <img src="/application/_0001_5.jpg" alt="Billboards" />
-                                    <p>Billboards</p>
-                                </div>
-                                <div className="liyu-xline-dqs-application-image-item">
-                                    <img src="/application/_0002_4.jpg" alt="Bus Station Ads" />
-                                    <p>Bus Station Ads</p>
-                                </div>
-                                <div className="liyu-xline-dqs-application-image-item">
-                                    <img src="/application/_0003_3.jpg" alt="Entertainment Hall Display" />
-                                    <p>Entertainment Hall Display</p>
-                                </div>
-                                <div className="liyu-xline-dqs-application-image-item">
-                                    <img src="/application/_0004_2.jpg" alt="Signage Production" />
-                                    <p>Signage Production</p>
-                                </div>
-                                <div className="liyu-xline-dqs-application-image-item">
-                                    <img src="/application/_0005_1.jpg" alt="Promotional Displays" />
-                                    <p>Promotional Displays</p>
-                                </div>
-                                <div className="liyu-xline-dqs-application-image-item">
-                                    <img src="/application/_0000_6.jpg" alt="Exhibition Graphics" />
-                                    <p>Exhibition Graphics</p>
-                                </div>
-                                <div className="liyu-xline-dqs-application-image-item">
-                                    <img src="/application/_0001_5.jpg" alt="Point of Sale Displays" />
-                                    <p>Point of Sale Displays</p>
-                                </div>
-                                <div className="liyu-xline-dqs-application-image-item">
-                                    <img src="/application/_0002_4.jpg" alt="Corrugated Materials" />
-                                    <p>Corrugated Materials</p>
-                                </div>
-                                <div className="liyu-xline-dqs-application-image-item">
-                                    <img src="/application/_0003_3.jpg" alt="Light-Plate Printing" />
-                                    <p>Light-Plate Printing</p>
-                                </div>
-                                <div className="liyu-xline-dqs-application-image-item">
-                                    <img src="/application/_0004_2.jpg" alt="Small-Format Materials" />
-                                    <p>Small-Format Materials</p>
-                                </div>
-                                <div className="liyu-xline-dqs-application-image-item">
-                                    <img src="/application/_0005_1.jpg" alt="Commercial Advertising" />
-                                    <p>Commercial Advertising</p>
-                                </div>
+                                {loopedApplicationItems.map((item, index) => (
+                                    <div key={`${item.label}-${index}`} className="liyu-xline-dqs-application-image-item">
+                                        <img src={item.image} alt={item.label} />
+                                        <p>{item.label}</p>
+                                    </div>
+                                ))}
                             </div>
                         </div>
                     </div>

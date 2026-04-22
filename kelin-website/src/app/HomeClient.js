@@ -137,21 +137,21 @@ export default function Home() {
                 <div className="tagline">
                   <h1 className="hero1-title">YOUR TRUSTED<br></br>LONG-TERM PRINTING SOLUTIONS PROVIDER</h1>
                   <div className="button-categories">
-                    <a href="/cutting-machine" className="btns">
+                    <Link href="/cutting-machine" className="btns">
                       <div className="btns-primary-cat">Cutting Machine</div>
-                    </a>
-                    <a href="/eco-solvent-printers" className="btns">
+                    </Link>
+                    <Link href="/eco-solvent-printers" className="btns">
                       <div className="btns-secondary-cat">Eco-Solvent<br></br>Printer Machine</div>
-                    </a>
-                    <a href="/solvent-printers" className="btns">
+                    </Link>
+                    <Link href="/solvent-printers" className="btns">
                       <div className="btns-tertiary-cat">Solvent<br></br>Printer Machine</div>
-                    </a>
-                    <a href="/sublimation-dtf" className="btns">
+                    </Link>
+                    <Link href="/sublimation-dtf" className="btns">
                       <div className="btns-quaternary-cat">Sublimation<br></br>Printer Machine</div>
-                    </a>
-                    <a href="/embroidery-knitting" className="btns">
+                    </Link>
+                    <Link href="/embroidery-knitting" className="btns">
                       <div className="btns-quinary-cat">Embroidery<br></br>Knitting</div>
-                    </a>
+                    </Link>
                   </div>
                 </div>
                 <div className="hero-image">
@@ -159,8 +159,8 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <img src="/background-elements.svg" alt="Decorative Element" className="decorative-element-home bg-elements-home" />
-            <img src="/background-elements(2).svg" alt="Decorative Element 2" className="decorative-element-2-home bg-elements-home" />
+            <img src="/background-elements.svg" alt="" aria-hidden="true" className="decorative-element-home bg-elements-home" />
+            <img src="/background-elements(2).svg" alt="" aria-hidden="true" className="decorative-element-2-home bg-elements-home" />
           </section>
 
           <div className="marquee-logo">
@@ -239,8 +239,8 @@ export default function Home() {
               </Link>
             </div>
           </div>
-          <img src="/background-elements.svg" alt="LUXOR Background" className="luxor-background-elements luxor-bg-elements" />
-          <img src="/background-elements(2).svg" alt="LUXOR Background" className="luxor-background-elements2 luxor-bg-elements" />
+          <img src="/background-elements.svg" alt="" aria-hidden="true" className="luxor-background-elements luxor-bg-elements" />
+          <img src="/background-elements(2).svg" alt="" aria-hidden="true" className="luxor-background-elements2 luxor-bg-elements" />
         </section>
 
         <NewsEventsSection />

@@ -320,9 +320,40 @@ export default function GCCExpert24LX() {
                             {machineDetails.features.map((feature, index) => (
                                 <div key={index} className="gcc-expert-24lx-feature-card">
                                     <div className="gcc-expert-24lx-feature-icon">
-                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                                            <path d="M12 2L2 7l10 5 10-5-10-5z" />
-                                        </svg>
+                                        {index === 0 && (
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                {/* Robust cutting force: downward press */}
+                                                <line x1="12" y1="2" x2="12" y2="14" />
+                                                <polyline points="8 10 12 14 16 10" />
+                                                <line x1="4" y1="18" x2="20" y2="18" />
+                                                <line x1="4" y1="22" x2="20" y2="22" />
+                                            </svg>
+                                        )}
+                                        {index === 1 && (
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                {/* High-speed performance: speedometer */}
+                                                <path d="M12 2a10 10 0 1 0 10 10" />
+                                                <path d="M12 12 L17 7" />
+                                                <circle cx="12" cy="12" r="1.5" fill="currentColor" stroke="none" />
+                                            </svg>
+                                        )}
+                                        {index === 2 && (
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                {/* Professional-grade: award/medal */}
+                                                <circle cx="12" cy="8" r="6" />
+                                                <polyline points="9 19 12 21 15 19" />
+                                                <line x1="9" y1="12" x2="9" y2="21" />
+                                                <line x1="15" y1="12" x2="15" y2="21" />
+                                            </svg>
+                                        )}
+                                        {index === 3 && (
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                {/* Auto contour cutting: path with target */}
+                                                <path d="M3 17 C5 14 8 10 12 10 C16 10 19 14 21 17" />
+                                                <circle cx="12" cy="10" r="3" />
+                                                <line x1="12" y1="2" x2="12" y2="7" />
+                                            </svg>
+                                        )}
                                     </div>
                                     <h3 className="gcc-expert-24lx-feature-title">{feature.title}</h3>
                                     <p className="gcc-expert-24lx-feature-text">{feature.description}</p>

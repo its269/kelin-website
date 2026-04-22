@@ -339,9 +339,63 @@ export default function IEchoBK3() {
                             {machineDetails.features.map((feature, index) => (
                                 <div key={index} className="iecho-bk3-feature-card">
                                     <div className="iecho-bk3-feature-icon">
-                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                                            <path d="M12 2L2 7l10 5 10-5-10-5z" />
-                                        </svg>
+                                        {index === 0 && (
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                {/* Fully automatic production: robot/auto gears */}
+                                                <polyline points="23 4 23 10 17 10" />
+                                                <polyline points="1 20 1 14 7 14" />
+                                                <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15" />
+                                            </svg>
+                                        )}
+                                        {index === 1 && (
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                {/* Aviation aluminum table: lightweight frame */}
+                                                <rect x="2" y="14" width="20" height="3" rx="1" />
+                                                <line x1="6" y1="14" x2="6" y2="8" />
+                                                <line x1="18" y1="14" x2="18" y2="8" />
+                                                <path d="M4 8 L12 4 L20 8" />
+                                            </svg>
+                                        )}
+                                        {index === 2 && (
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                {/* Efficient cutting heads: precision cutter */}
+                                                <circle cx="12" cy="8" r="3" />
+                                                <line x1="12" y1="11" x2="12" y2="22" />
+                                                <line x1="8" y1="16" x2="16" y2="16" />
+                                                <line x1="6" y1="20" x2="18" y2="20" />
+                                            </svg>
+                                        )}
+                                        {index === 3 && (
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                {/* Vacuum section control: suction/zones */}
+                                                <rect x="2" y="6" width="20" height="12" rx="2" />
+                                                <line x1="8" y1="6" x2="8" y2="18" />
+                                                <line x1="16" y1="6" x2="16" y2="18" />
+                                                <circle cx="5" cy="12" r="1.5" fill="currentColor" stroke="none" />
+                                                <circle cx="12" cy="12" r="1.5" fill="currentColor" stroke="none" />
+                                                <circle cx="19" cy="12" r="1.5" fill="currentColor" stroke="none" />
+                                            </svg>
+                                        )}
+                                        {index === 4 && (
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                {/* Continuous cutting: infinite loop symbol */}
+                                                <path d="M12 5C7.3 5 3.5 8.5 3.5 12.8 C3.5 17.1 7 21 12 21" />
+                                                <path d="M12 5C16.7 5 20.5 8.5 20.5 12.8 C20.5 17.1 17 21 12 21" />
+                                                <polyline points="9 2 12 5 9 8" />
+                                                <polyline points="15 18 12 21 15 24" />
+                                            </svg>
+                                        )}
+                                        {index === 5 && (
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                {/* Precise auto positioning: crosshair */}
+                                                <circle cx="12" cy="12" r="10" />
+                                                <circle cx="12" cy="12" r="3" />
+                                                <line x1="12" y1="2" x2="12" y2="5" />
+                                                <line x1="12" y1="19" x2="12" y2="22" />
+                                                <line x1="2" y1="12" x2="5" y2="12" />
+                                                <line x1="19" y1="12" x2="22" y2="12" />
+                                            </svg>
+                                        )}
                                     </div>
                                     <h3 className="iecho-bk3-feature-title">{feature.title}</h3>
                                     <p className="iecho-bk3-feature-text">{feature.description}</p>

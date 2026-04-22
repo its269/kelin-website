@@ -386,9 +386,60 @@ export default function ApolloMaxPlusII() {
                             {machineDetails.features.map((feature, index) => (
                                 <div key={index} className="apollo-feature-card">
                                     <div className="apollo-feature-icon">
-                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                                            <path d="M12 2L2 7l10 5 10-5-10-5z" />
-                                        </svg>
+                                        {index === 0 && (
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                {/* High-volume high-speed printing: speedometer */}
+                                                <path d="M12 2a10 10 0 1 0 10 10" />
+                                                <path d="M12 12 L17 7" />
+                                                <circle cx="12" cy="12" r="1.5" fill="currentColor" stroke="none" />
+                                            </svg>
+                                        )}
+                                        {index === 1 && (
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                {/* Pinch roller handle: two cylinders pinching */}
+                                                <circle cx="8" cy="12" r="4" />
+                                                <circle cx="16" cy="12" r="4" />
+                                                <line x1="12" y1="4" x2="12" y2="8" />
+                                                <line x1="12" y1="16" x2="12" y2="20" />
+                                            </svg>
+                                        )}
+                                        {index === 2 && (
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                {/* Efficient heat technology: flame */}
+                                                <path d="M12 2 C8 7 6 10 6 14 a6 6 0 0 0 12 0 c0-4-2-7-6-12z" />
+                                                <path d="M12 22 C10 18 11 15 13 14" />
+                                            </svg>
+                                        )}
+                                        {index === 3 && (
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                {/* Silent carriage motion: quiet/wave */}
+                                                <path d="M1 12 Q5 6 9 12 Q13 18 17 12 Q21 6 23 12" />
+                                                <line x1="1" y1="20" x2="5" y2="20" />
+                                                <line x1="8" y1="20" x2="16" y2="20" />
+                                                <line x1="19" y1="20" x2="23" y2="20" />
+                                            </svg>
+                                        )}
+                                        {index === 4 && (
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                {/* Konica Minolta printheads: precision nozzle */}
+                                                <rect x="5" y="2" width="14" height="8" rx="1" />
+                                                <line x1="8" y1="10" x2="8" y2="14" />
+                                                <line x1="12" y1="10" x2="12" y2="16" />
+                                                <line x1="16" y1="10" x2="16" y2="14" />
+                                                <path d="M6 20 Q8 17 10 20 Q12 23 14 20 Q16 17 18 20" />
+                                            </svg>
+                                        )}
+                                        {index === 5 && (
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                {/* Precision printing: crosshair target */}
+                                                <circle cx="12" cy="12" r="10" />
+                                                <circle cx="12" cy="12" r="3" />
+                                                <line x1="12" y1="2" x2="12" y2="5" />
+                                                <line x1="12" y1="19" x2="12" y2="22" />
+                                                <line x1="2" y1="12" x2="5" y2="12" />
+                                                <line x1="19" y1="12" x2="22" y2="12" />
+                                            </svg>
+                                        )}
                                     </div>
                                     <h3 className="apollo-feature-title">{feature.title}</h3>
                                     <p className="apollo-feature-text">{feature.description}</p>

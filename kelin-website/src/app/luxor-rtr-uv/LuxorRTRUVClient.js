@@ -2,7 +2,7 @@
 import Header from '../components/Header';
 import VideoPlayer from '../components/VideoPlayer';
 import Link from 'next/link';
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import './luxor-rtr-uv.css';
 
 export default function LuxorRTRUV() {
@@ -10,31 +10,112 @@ export default function LuxorRTRUV() {
     const [selectedImage, setSelectedImage] = useState('/uv-machines/Luxor RTR (1).webp');
 
     const scrollRef = useRef(null);
-    const [isDragging, setIsDragging] = useState(false);
-    const [startX, setStartX] = useState(0);
-    const [scrollLeft, setScrollLeft] = useState(0);
+    const isDraggingRef = useRef(false);
+    const startXRef = useRef(0);
+    const scrollLeftRef = useRef(0);
+    const animationFrameRef = useRef(null);
+    const lastTimestampRef = useRef(0);
+
+    const applicationItems = [
+        { image: '/application/rtr/1.png', label: 'Phone Case' },
+        { image: '/application/rtr/2.png', label: 'Frames or Panels' },
+        { image: '/application/rtr/3.png', label: 'Decorative Items' },
+        { image: '/application/rtr/4.png', label: 'Tumbler' },
+        { image: '/application/rtr/5.png', label: 'Personalized Gifts' },
+        { image: '/application/rtr/6.png', label: 'Customized Jar' },
+    ];
+
+    const loopedApplicationItems = [...applicationItems, ...applicationItems, ...applicationItems];
+
+    const normalizeInfiniteScroll = () => {
+        const scrollElement = scrollRef.current;
+        if (!scrollElement) return;
+        const segmentWidth = scrollElement.scrollWidth / 3;
+        const boundaryOffset = 4;
+        if (scrollElement.scrollLeft <= boundaryOffset) {
+            scrollElement.scrollLeft += segmentWidth;
+        } else if (scrollElement.scrollLeft >= segmentWidth * 2 - boundaryOffset) {
+            scrollElement.scrollLeft -= segmentWidth;
+        }
+    };
+
+    useEffect(() => {
+        const scrollElement = scrollRef.current;
+        if (!scrollElement) return;
+        const initializeLoopPosition = () => {
+            const segmentWidth = scrollElement.scrollWidth / 3;
+            scrollElement.scrollLeft = segmentWidth;
+        };
+        initializeLoopPosition();
+        window.addEventListener('resize', initializeLoopPosition);
+        return () => window.removeEventListener('resize', initializeLoopPosition);
+    }, []);
+
+    useEffect(() => {
+        const scrollElement = scrollRef.current;
+        if (!scrollElement) return;
+        const speedPixelsPerMs = 0.05;
+        const animate = (timestamp) => {
+            if (lastTimestampRef.current === 0) lastTimestampRef.current = timestamp;
+            const delta = timestamp - lastTimestampRef.current;
+            lastTimestampRef.current = timestamp;
+            if (!isDraggingRef.current && scrollRef.current) {
+                scrollRef.current.scrollLeft += delta * speedPixelsPerMs;
+                normalizeInfiniteScroll();
+            }
+            animationFrameRef.current = window.requestAnimationFrame(animate);
+        };
+        animationFrameRef.current = window.requestAnimationFrame(animate);
+        return () => {
+            if (animationFrameRef.current) window.cancelAnimationFrame(animationFrameRef.current);
+            lastTimestampRef.current = 0;
+        };
+    }, []);
 
     const handleMouseDown = (e) => {
-        setIsDragging(true);
-        setStartX(e.pageX - scrollRef.current.offsetLeft);
-        setScrollLeft(scrollRef.current.scrollLeft);
+        const scrollElement = scrollRef.current;
+        if (!scrollElement) return;
+        isDraggingRef.current = true;
+        startXRef.current = e.pageX - scrollElement.offsetLeft;
+        scrollLeftRef.current = scrollElement.scrollLeft;
     };
 
     const handleMouseMove = (e) => {
-        if (!isDragging) return;
+        if (!isDraggingRef.current) return;
+        const scrollElement = scrollRef.current;
+        if (!scrollElement) return;
         e.preventDefault();
-        const x = e.pageX - scrollRef.current.offsetLeft;
-        const walk = (x - startX) * 2;
-        scrollRef.current.scrollLeft = scrollLeft - walk;
+        const x = e.pageX - scrollElement.offsetLeft;
+        const walk = (x - startXRef.current) * 2;
+        scrollElement.scrollLeft = scrollLeftRef.current - walk;
+        normalizeInfiniteScroll();
     };
 
-    const handleMouseUp = () => {
-        setIsDragging(false);
+    const handleMouseUp = () => { isDraggingRef.current = false; };
+
+    const handleMouseLeave = () => { isDraggingRef.current = false; };
+
+    const handleTouchStart = (e) => {
+        const scrollElement = scrollRef.current;
+        if (!scrollElement) return;
+        const touchX = e.touches[0].pageX;
+        isDraggingRef.current = true;
+        startXRef.current = touchX - scrollElement.offsetLeft;
+        scrollLeftRef.current = scrollElement.scrollLeft;
     };
 
-    const handleMouseLeave = () => {
-        setIsDragging(false);
+    const handleTouchMove = (e) => {
+        if (!isDraggingRef.current) return;
+        const scrollElement = scrollRef.current;
+        if (!scrollElement) return;
+        const touchX = e.touches[0].pageX;
+        const x = touchX - scrollElement.offsetLeft;
+        const walk = (x - startXRef.current) * 2;
+        scrollElement.scrollLeft = scrollLeftRef.current - walk;
+        normalizeInfiniteScroll();
     };
+
+    const handleTouchEnd = () => { isDraggingRef.current = false; };
 
     const machineDetails = {
         name: 'LUXOR UV-A3 DTF PRINTER',
@@ -257,9 +338,54 @@ export default function LuxorRTRUV() {
                             {machineDetails.features.map((feature, index) => (
                                 <div key={index} className="lxr-uv-a3-feature-card">
                                     <div className="lxr-uv-a3-feature-icon">
-                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                                            <path d="M12 2L2 7l10 5 10-5-10-5z" />
-                                        </svg>
+                                        {index === 0 && (
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                {/* Silent ink chain: wave / quiet signal */}
+                                                <path d="M1 12 Q5 6 9 12 Q13 18 17 12 Q21 6 23 12" />
+                                            </svg>
+                                        )}
+                                        {index === 1 && (
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                {/* Ink supply: droplet */}
+                                                <path d="M12 2 C12 2 5 10 5 15 a7 7 0 0 0 14 0 C19 10 12 2 12 2z" />
+                                            </svg>
+                                        )}
+                                        {index === 2 && (
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                {/* HD Touch Screen: monitor with touch */}
+                                                <rect x="2" y="3" width="20" height="14" rx="2" />
+                                                <line x1="8" y1="21" x2="16" y2="21" />
+                                                <line x1="12" y1="17" x2="12" y2="21" />
+                                                <circle cx="12" cy="10" r="2" />
+                                            </svg>
+                                        )}
+                                        {index === 3 && (
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                {/* High quality: badge/shield with check */}
+                                                <path d="M12 2l7 4v5c0 5-3.5 9.74-7 11-3.5-1.26-7-6-7-11V6z" />
+                                                <polyline points="9 12 11 14 15 10" />
+                                            </svg>
+                                        )}
+                                        {index === 4 && (
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                {/* 4-in-1 multi-function: grid of 4 */}
+                                                <rect x="3" y="3" width="8" height="8" rx="1" />
+                                                <rect x="13" y="3" width="8" height="8" rx="1" />
+                                                <rect x="3" y="13" width="8" height="8" rx="1" />
+                                                <rect x="13" y="13" width="8" height="8" rx="1" />
+                                            </svg>
+                                        )}
+                                        {index === 5 && (
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                {/* Variable speed: sliders */}
+                                                <line x1="4" y1="6" x2="20" y2="6" />
+                                                <line x1="4" y1="12" x2="20" y2="12" />
+                                                <line x1="4" y1="18" x2="20" y2="18" />
+                                                <circle cx="8" cy="6" r="2" fill="white" />
+                                                <circle cx="14" cy="12" r="2" fill="white" />
+                                                <circle cx="10" cy="18" r="2" fill="white" />
+                                            </svg>
+                                        )}
                                     </div>
                                     <h3 className="lxr-uv-a3-feature-title">{feature.title}</h3>
                                     <p className="lxr-uv-a3-feature-text">{feature.description}</p>
@@ -310,48 +436,18 @@ export default function LuxorRTRUV() {
                             onMouseMove={handleMouseMove}
                             onMouseUp={handleMouseUp}
                             onMouseLeave={handleMouseLeave}
+                            onTouchStart={handleTouchStart}
+                            onTouchMove={handleTouchMove}
+                            onTouchEnd={handleTouchEnd}
+                            onScroll={normalizeInfiniteScroll}
                         >
                             <div className="lxr-uv-a3-applications-image-grid">
-                                <div className="lxr-uv-a3-application-image-item">
-                                    <img src="/application/_0000_6.jpg" alt="T-Shirt Printing" />
-                                    <p>T-Shirt Printing</p>
-                                </div>
-                                <div className="lxr-uv-a3-application-image-item">
-                                    <img src="/application/_0001_5.jpg" alt="Mug Printing" />
-                                    <p>Mug Printing</p>
-                                </div>
-                                <div className="lxr-uv-a3-application-image-item">
-                                    <img src="/application/_0002_4.jpg" alt="Signage & Banners" />
-                                    <p>Signage & Banners</p>
-                                </div>
-                                <div className="lxr-uv-a3-application-image-item">
-                                    <img src="/application/_0003_3.jpg" alt="Promotional Products" />
-                                    <p>Promotional Products</p>
-                                </div>
-                                <div className="lxr-uv-a3-application-image-item">
-                                    <img src="/application/_0004_2.jpg" alt="Custom Apparel" />
-                                    <p>Custom Apparel</p>
-                                </div>
-                                <div className="lxr-uv-a3-application-image-item">
-                                    <img src="/application/_0005_1.jpg" alt="Phone Cases" />
-                                    <p>Phone Cases</p>
-                                </div>
-                                <div className="lxr-uv-a3-application-image-item">
-                                    <img src="/application/_0000_6.jpg" alt="Sportswear" />
-                                    <p>Sportswear</p>
-                                </div>
-                                <div className="lxr-uv-a3-application-image-item">
-                                    <img src="/application/_0001_5.jpg" alt="Home Decor" />
-                                    <p>Home Decor</p>
-                                </div>
-                                <div className="lxr-uv-a3-application-image-item">
-                                    <img src="/application/_0002_4.jpg" alt="Packaging" />
-                                    <p>Packaging</p>
-                                </div>
-                                <div className="lxr-uv-a3-application-image-item">
-                                    <img src="/application/_0003_3.jpg" alt="Labels & Stickers" />
-                                    <p>Labels & Stickers</p>
-                                </div>
+                                {loopedApplicationItems.map((item, index) => (
+                                    <div key={`${item.label}-${index}`} className="lxr-uv-a3-application-image-item">
+                                        <img src={item.image} alt={item.label} />
+                                        <p>{item.label}</p>
+                                    </div>
+                                ))}
                             </div>
                         </div>
                     </div>

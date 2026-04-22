@@ -397,9 +397,61 @@ export default function IEchoPK() {
                             {machineDetails.features.map((feature, index) => (
                                 <div key={index} className="iecho-pk-feature-card">
                                     <div className="iecho-pk-feature-icon">
-                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                                            <path d="M12 2L2 7l10 5 10-5-10-5z" />
-                                        </svg>
+                                        {index === 0 && (
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                {/* Integrated design: interlocking pieces */}
+                                                <rect x="2" y="2" width="9" height="9" rx="1" />
+                                                <rect x="13" y="2" width="9" height="9" rx="1" />
+                                                <rect x="2" y="13" width="9" height="9" rx="1" />
+                                                <rect x="13" y="13" width="9" height="9" rx="1" />
+                                            </svg>
+                                        )}
+                                        {index === 1 && (
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                {/* Automatic loading: conveyor feeding */}
+                                                <rect x="2" y="10" width="20" height="4" rx="1" />
+                                                <circle cx="6" cy="12" r="3" />
+                                                <circle cx="18" cy="12" r="3" />
+                                                <polyline points="14 7 18 11 14 15" />
+                                            </svg>
+                                        )}
+                                        {index === 2 && (
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                {/* One click start: power button */}
+                                                <path d="M18.36 6.64a9 9 0 1 1-12.73 0" />
+                                                <line x1="12" y1="2" x2="12" y2="12" />
+                                            </svg>
+                                        )}
+                                        {index === 3 && (
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                {/* Built-in computer: monitor with chip */}
+                                                <rect x="2" y="3" width="20" height="14" rx="2" />
+                                                <line x1="8" y1="21" x2="16" y2="21" />
+                                                <line x1="12" y1="17" x2="12" y2="21" />
+                                                <rect x="8" y="8" width="8" height="5" rx="1" />
+                                            </svg>
+                                        )}
+                                        {index === 4 && (
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                {/* CCD vision registration: camera/lens */}
+                                                <path d="M23 7l-7-4-8 4v10l8 4 7-4V7z" />
+                                                <line x1="8" y1="7" x2="8" y2="17" />
+                                                <line x1="16" y1="7" x2="16" y2="17" />
+                                                <line x1="8" y1="12" x2="16" y2="12" />
+                                            </svg>
+                                        )}
+                                        {index === 5 && (
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                {/* QR code scanning: scan/barcode square */}
+                                                <rect x="2" y="2" width="7" height="7" />
+                                                <rect x="15" y="2" width="7" height="7" />
+                                                <rect x="2" y="15" width="7" height="7" />
+                                                <line x1="16" y1="15" x2="16" y2="22" />
+                                                <line x1="16" y1="15" x2="22" y2="15" />
+                                                <line x1="22" y1="19" x2="22" y2="22" />
+                                                <line x1="19" y1="22" x2="22" y2="22" />
+                                            </svg>
+                                        )}
                                     </div>
                                     <h3 className="iecho-pk-feature-title">{feature.title}</h3>
                                     <p className="iecho-pk-feature-text">{feature.description}</p>

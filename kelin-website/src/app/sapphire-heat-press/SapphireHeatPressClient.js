@@ -8,31 +8,105 @@ export default function SapphireHeatPress() {
     const [inquiryModalOpen, setInquiryModalOpen] = useState(false);
     const [selectedImage, setSelectedImage] = useState('/heatpress/Sapphire Heatpress (2).webp');
     const scrollRef = useRef(null);
-    const [isDragging, setIsDragging] = useState(false);
-    const [startX, setStartX] = useState(0);
-    const [scrollLeft, setScrollLeft] = useState(0);
+    const isDraggingRef = useRef(false);
+    const startXRef = useRef(0);
+    const scrollLeftRef = useRef(0);
+    const animationFrameRef = useRef(null);
+    const lastTimestampRef = useRef(0);
+
+    const applicationItems = [
+        { image: '/application/sapphire/1.png', label: 'Full Jersey Sublimation' },
+        { image: '/application/sapphire/2.png', label: 'Tote Bag DTF' },
+        { image: '/application/sapphire/3.png', label: 'T-Shirt Heat Transfer' },
+        { image: '/application/sapphire/4.png', label: 'Custom Apparel' },
+    ];
+
+    const loopedApplicationItems = [...applicationItems, ...applicationItems, ...applicationItems];
+
+    const normalizeInfiniteScroll = () => {
+        const scrollElement = scrollRef.current;
+        if (!scrollElement) return;
+        const segmentWidth = scrollElement.scrollWidth / 3;
+        const boundaryOffset = 4;
+        if (scrollElement.scrollLeft <= boundaryOffset) {
+            scrollElement.scrollLeft += segmentWidth;
+        } else if (scrollElement.scrollLeft >= segmentWidth * 2 - boundaryOffset) {
+            scrollElement.scrollLeft -= segmentWidth;
+        }
+    };
+
+    useEffect(() => {
+        const scrollElement = scrollRef.current;
+        if (!scrollElement) return;
+        const initializeLoopPosition = () => {
+            const segmentWidth = scrollElement.scrollWidth / 3;
+            scrollElement.scrollLeft = segmentWidth;
+        };
+        initializeLoopPosition();
+        window.addEventListener('resize', initializeLoopPosition);
+        return () => window.removeEventListener('resize', initializeLoopPosition);
+    }, []);
+
+    useEffect(() => {
+        const speedPixelsPerMs = 0.05;
+        const animate = (timestamp) => {
+            if (lastTimestampRef.current === 0) lastTimestampRef.current = timestamp;
+            const delta = timestamp - lastTimestampRef.current;
+            lastTimestampRef.current = timestamp;
+            if (!isDraggingRef.current && scrollRef.current) {
+                scrollRef.current.scrollLeft += delta * speedPixelsPerMs;
+                normalizeInfiniteScroll();
+            }
+            animationFrameRef.current = window.requestAnimationFrame(animate);
+        };
+        animationFrameRef.current = window.requestAnimationFrame(animate);
+        return () => {
+            if (animationFrameRef.current) window.cancelAnimationFrame(animationFrameRef.current);
+            lastTimestampRef.current = 0;
+        };
+    }, []);
 
     const handleMouseDown = (e) => {
-        setIsDragging(true);
-        setStartX(e.pageX - scrollRef.current.offsetLeft);
-        setScrollLeft(scrollRef.current.scrollLeft);
+        const scrollElement = scrollRef.current;
+        if (!scrollElement) return;
+        isDraggingRef.current = true;
+        startXRef.current = e.pageX - scrollElement.offsetLeft;
+        scrollLeftRef.current = scrollElement.scrollLeft;
     };
 
     const handleMouseMove = (e) => {
-        if (!isDragging) return;
+        if (!isDraggingRef.current) return;
+        const scrollElement = scrollRef.current;
+        if (!scrollElement) return;
         e.preventDefault();
-        const x = e.pageX - scrollRef.current.offsetLeft;
-        const walk = (x - startX) * 2;
-        scrollRef.current.scrollLeft = scrollLeft - walk;
+        const x = e.pageX - scrollElement.offsetLeft;
+        const walk = (x - startXRef.current) * 2;
+        scrollElement.scrollLeft = scrollLeftRef.current - walk;
+        normalizeInfiniteScroll();
     };
 
-    const handleMouseUp = () => {
-        setIsDragging(false);
+    const handleMouseUp = () => { isDraggingRef.current = false; };
+    const handleMouseLeave = () => { isDraggingRef.current = false; };
+
+    const handleTouchStart = (e) => {
+        const scrollElement = scrollRef.current;
+        if (!scrollElement) return;
+        isDraggingRef.current = true;
+        startXRef.current = e.touches[0].pageX - scrollElement.offsetLeft;
+        scrollLeftRef.current = scrollElement.scrollLeft;
     };
 
-    const handleMouseLeave = () => {
-        setIsDragging(false);
+    const handleTouchMove = (e) => {
+        if (!isDraggingRef.current) return;
+        const scrollElement = scrollRef.current;
+        if (!scrollElement) return;
+        const x = e.touches[0].pageX - scrollElement.offsetLeft;
+        const walk = (x - startXRef.current) * 2;
+        scrollElement.scrollLeft = scrollLeftRef.current - walk;
+        normalizeInfiniteScroll();
     };
+
+    const handleTouchEnd = () => { isDraggingRef.current = false; };
 
     const machineDetails = {
         name: 'SAPPHIRE HD HEAT PRESS',
@@ -230,9 +304,43 @@ export default function SapphireHeatPress() {
                             {machineDetails.features.map((feature, index) => (
                                 <div key={index} className="sapphire-heatpress-feature-card">
                                     <div className="sapphire-heatpress-feature-icon">
-                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                                            <path d="M12 2L2 7l10 5 10-5-10-5z" />
-                                        </svg>
+                                        {index === 0 && (
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                {/* Heating pad: warm rectangle with heat waves */}
+                                                <rect x="3" y="10" width="18" height="8" rx="2" />
+                                                <path d="M7 10 C7 7 9 5 9 2" />
+                                                <path d="M12 10 C12 7 14 5 14 2" />
+                                                <path d="M17 10 C17 7 19 5 19 2" />
+                                            </svg>
+                                        )}
+                                        {index === 1 && (
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                {/* Handle grip: hand holding */}
+                                                <path d="M18 11V6a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v0" />
+                                                <path d="M14 10V4a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v2" />
+                                                <path d="M10 10.5V6a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v8" />
+                                                <path d="M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15" />
+                                            </svg>
+                                        )}
+                                        {index === 2 && (
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                {/* Pressure adjuster: down-force arrow on surface */}
+                                                <line x1="12" y1="2" x2="12" y2="14" />
+                                                <polyline points="8 10 12 14 16 10" />
+                                                <line x1="4" y1="18" x2="20" y2="18" />
+                                            </svg>
+                                        )}
+                                        {index === 3 && (
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                {/* Time/temperature panel: clock + thermometer combo */}
+                                                <circle cx="8" cy="12" r="6" />
+                                                <line x1="8" y1="8" x2="8" y2="12" />
+                                                <line x1="8" y1="12" x2="11" y2="12" />
+                                                <line x1="17" y1="4" x2="17" y2="15" />
+                                                <circle cx="17" cy="17" r="2" />
+                                                <line x1="15" y1="8" x2="19" y2="8" />
+                                            </svg>
+                                        )}
                                     </div>
                                     <h3 className="sapphire-heatpress-feature-title">{feature.title}</h3>
                                     <p className="sapphire-heatpress-feature-text">{feature.description}</p>
@@ -283,56 +391,18 @@ export default function SapphireHeatPress() {
                             onMouseMove={handleMouseMove}
                             onMouseUp={handleMouseUp}
                             onMouseLeave={handleMouseLeave}
+                            onTouchStart={handleTouchStart}
+                            onTouchMove={handleTouchMove}
+                            onTouchEnd={handleTouchEnd}
+                            onScroll={normalizeInfiniteScroll}
                         >
                             <div className="sapphire-heatpress-applications-image-grid">
-                                <div className="sapphire-heatpress-application-image-item">
-                                    <img src="/application/_0000_6.jpg" alt="Full Jersey Sublimation" />
-                                    <p>Full Jersey Sublimation</p>
-                                </div>
-                                <div className="sapphire-heatpress-application-image-item">
-                                    <img src="/application/_0001_5.jpg" alt="Tote Bag DTF" />
-                                    <p>Tote Bag DTF</p>
-                                </div>
-                                <div className="sapphire-heatpress-application-image-item">
-                                    <img src="/application/_0002_4.jpg" alt="T-shirt DTF Application" />
-                                    <p>T-shirt DTF Application</p>
-                                </div>
-                                <div className="sapphire-heatpress-application-image-item">
-                                    <img src="/application/_0003_3.jpg" alt="Face mask sublimation" />
-                                    <p>Face mask sublimation</p>
-                                </div>
-                                <div className="sapphire-heatpress-application-image-item">
-                                    <img src="/application/_0004_2.jpg" alt="Large Format Garment Printing" />
-                                    <p>Large Format Garment Printing</p>
-                                </div>
-                                <div className="sapphire-heatpress-application-image-item">
-                                    <img src="/application/_0005_1.jpg" alt="Custom Apparel Production" />
-                                    <p>Custom Apparel Production</p>
-                                </div>
-                                <div className="sapphire-heatpress-application-image-item">
-                                    <img src="/application/_0000_6.jpg" alt="Promotional Products" />
-                                    <p>Promotional Products</p>
-                                </div>
-                                <div className="sapphire-heatpress-application-image-item">
-                                    <img src="/application/_0001_5.jpg" alt="Team Uniforms" />
-                                    <p>Team Uniforms</p>
-                                </div>
-                                <div className="sapphire-heatpress-application-image-item">
-                                    <img src="/application/_0002_4.jpg" alt="Corporate Branding" />
-                                    <p>Corporate Branding</p>
-                                </div>
-                                <div className="sapphire-heatpress-application-image-item">
-                                    <img src="/application/_0003_3.jpg" alt="Personalized Gifts" />
-                                    <p>Personalized Gifts</p>
-                                </div>
-                                <div className="sapphire-heatpress-application-image-item">
-                                    <img src="/application/_0004_2.jpg" alt="Home Decor Textiles" />
-                                    <p>Home Decor Textiles</p>
-                                </div>
-                                <div className="sapphire-heatpress-application-image-item">
-                                    <img src="/application/_0005_1.jpg" alt="Fashion Design Prototyping" />
-                                    <p>Fashion Design Prototyping</p>
-                                </div>
+                                {loopedApplicationItems.map((item, index) => (
+                                    <div key={`${item.label}-${index}`} className="sapphire-heatpress-application-image-item">
+                                        <img src={item.image} alt={item.label} />
+                                        <p>{item.label}</p>
+                                    </div>
+                                ))}
                             </div>
                         </div>
                     </div>

@@ -321,9 +321,44 @@ export default function KSignLetterShell3DPrinter() {
                             {machineDetails.features.map((feature, index) => (
                                 <div key={index} className="k-sign-3d-printer-feature-card">
                                     <div className="k-sign-3d-printer-feature-icon">
-                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                                            <path d="M12 2L2 7l10 5 10-5-10-5z" />
-                                        </svg>
+                                        {index === 0 && (
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                {/* Z-axis: vertical arrow up-down */}
+                                                <line x1="12" y1="2" x2="12" y2="22" />
+                                                <polyline points="8 6 12 2 16 6" />
+                                                <polyline points="8 18 12 22 16 18" />
+                                                <line x1="4" y1="12" x2="20" y2="12" />
+                                            </svg>
+                                        )}
+                                        {index === 1 && (
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                {/* Filament sensor: coil/spool */}
+                                                <circle cx="12" cy="12" r="4" />
+                                                <path d="M12 2a10 10 0 0 1 10 10" />
+                                                <path d="M12 22a10 10 0 0 1-10-10" />
+                                                <circle cx="12" cy="12" r="1" fill="currentColor" />
+                                            </svg>
+                                        )}
+                                        {index === 2 && (
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                {/* Flat platform: table/bed surface */}
+                                                <rect x="2" y="14" width="20" height="3" rx="1" />
+                                                <line x1="6" y1="14" x2="6" y2="8" />
+                                                <line x1="18" y1="14" x2="18" y2="8" />
+                                                <line x1="4" y1="8" x2="20" y2="8" />
+                                            </svg>
+                                        )}
+                                        {index === 3 && (
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                {/* Auto color change: palette */}
+                                                <circle cx="12" cy="12" r="10" />
+                                                <circle cx="8" cy="10" r="1.5" fill="currentColor" stroke="none" />
+                                                <circle cx="12" cy="7" r="1.5" fill="currentColor" stroke="none" />
+                                                <circle cx="16" cy="10" r="1.5" fill="currentColor" stroke="none" />
+                                                <circle cx="14" cy="14" r="1.5" fill="currentColor" stroke="none" />
+                                                <circle cx="10" cy="14" r="1.5" fill="currentColor" stroke="none" />
+                                            </svg>
+                                        )}
                                     </div>
                                     <h3 className="k-sign-3d-printer-feature-title">{feature.title}</h3>
                                     <p className="k-sign-3d-printer-feature-text">{feature.description}</p>

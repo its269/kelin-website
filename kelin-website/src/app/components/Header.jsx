@@ -166,8 +166,8 @@ export default function Header() {
         { title: "PROMAKER Embroidery Single Head 1201", path: "/promaker-embroidery-1201", type: "machine" },
         { title: "PROMAKER Embroidery 1202", path: "/promaker-embroidery-1202", type: "machine" },
         { title: "PROMAKER Embroidery Dual Head 1202", path: "/promaker-embroidery-1202", type: "machine" },
-        { title: "PROMAKER Embroidery 1204", path: "/promaker-embroidery-1204", type: "machine" },
-        { title: "PROMAKER Embroidery Quad Head 1204", path: "/promaker-embroidery-1204", type: "machine" },
+        { title: "PROMAKER Embroidery 1804", path: "/promaker-embroidery-1804", type: "machine" },
+        { title: "PROMAKER Embroidery Quad Head 1804", path: "/promaker-embroidery-1804", type: "machine" },
         { title: "Smartex Knitting GS-CE152", path: "/smartex-knitting-gsce-1-52", type: "machine" },
         { title: "Smartex Knitting Machine GS-CE152", path: "/smartex-knitting-gsce-1-52", type: "machine" },
 
@@ -250,6 +250,120 @@ export default function Header() {
         { title: "Foam Board & High Impact Sheets", path: "/materials", type: "material" }
     ];
 
+    const pathImageMap = {
+        '/smart-rj24-2004-i3200-eco-solvent': '/eco-solvent-machines/SMART.webp',
+        '/xline-eco-solvent': '/eco-solvent-machines/Apollo.webp',
+        '/liyu-x-line-dqs-uv-hybrid-printer': '/liyuxline.png',
+        '/apollomax-plus-II': '/ApolloMax Plus II PZG3208-KV.webp',
+        '/iecho-bk3': '/cutting-machines/bk3.webp',
+        '/iecho-bk4': '/cutting-machines/BK4 (1).webp',
+        '/iecho-pk': '/cutting-machines/PK1209 (1).webp',
+        '/iecho-pk4': '/cutting-machines/PK4 (2).webp',
+        '/iecho-tk4s': '/cutting-machines/TK4S Large format cutting system.webp',
+        '/gcc-ar24-desktop': '/cutting-machines/GCC AR-24 Desktop (1).webp',
+        '/gcc-expert-24lx': '/cutting-machines/GCC Expert LX  EX-24LX  Without Stand (1).webp',
+        '/gcc-expert-52lx': '/cutting-machines/GCC Expert LX  EX-24LX  Without Stand (1).webp',
+        '/gcc-puma-iv': '/cutting-machines/GCC PUMA IV.webp',
+        '/smart-sublimation': '/sublimation_dtf/SUBL Smart Sublimation (1).webp',
+        '/smart-dtf-machine': '/sublimation_dtf/DTF SMART DTF Machine (1).webp',
+        '/smart-dtf-powder-shaker': '/sublimation_dtf/DTF Smart DTF Powder Shaker W650-4C (1).webp',
+        '/sublimation-printer-fd6198e': '/sublimation_dtf/SUBL Sublimation Printer FD6198E (1).webp',
+        '/kirin': '/sublimation_dtf/SUBL Kirin DA182T Plus Sublimation Printer (1).webp',
+        '/r2000-roller': '/sublimation_dtf/SUBL R2000 Roller Type Sublimation Machine GS 1200 (1).webp',
+        '/dual-pneumatic': '/sublimation_dtf/SUBL Dual Pneumatic Sublimation Machine 80cm x 100cm (1).webp',
+        '/smart-uv-printer': '/uv-machines/SMART UV Printer.webp',
+        '/dtf-uv-printer-sf303-f1080': '/uv-machines/DTF UV Printer SF303-i3200 2ft (1).webp',
+        '/dtf-uv-printer-sf604-i3200': '/uv-machines/DTF UV Printer SF604-i3200 2ft. - High Res (1).webp',
+        '/luxor-rtr-uv': '/uv-machines/Luxor RTR (1).webp',
+        '/automatic-uv-crystal-flat-pasting': '/uv-machines/Automatic UV Crystal Flat Pasting Machine 3.82m x 1.72m (1).webp',
+        '/sapphire-heat-press': '/heatpress/Sapphire Heatpress (2).webp',
+        '/subli-mate-manual-heat-press': '/heatpress/Subli-Mate Manual Heat Press 80cm x 100cm (1).webp',
+        '/cold-laminator': '/laminator/Cold Laminator (1).webp',
+        '/fulei-bu-1425fa-flatbed-laminator': '/laminator/Fulei BU-1425FA Flatbed Laminator (1).webp',
+        '/fulei-bu-1600e-warm-auto-laminator': '/laminator/Fulei BU-1600E Warm Auto Laminator (1).webp',
+        '/handheld-fiber-laser': '/laser-machines/Handheld Fiber Laser.webp',
+        '/reci-handheld-fiber-laser-welding': '/laser-machines/Reci Handheld Fiber Laser Welding Machine R-A80 800W 1.webp',
+        '/hanniu-k1390-co2-laser-150w-ccd': '/laser-machines/Hanniu K1390 CO2 Laser Cutting Machine 150w with CCD.webp',
+        '/hanniu-k1390-co2-laser-300w': '/laser-machines/Hanniu K1390 CO2 Laser Cutting Machine 300w.webp',
+        '/k-sign-desktop-laser-b330': '/laser-machines/K-Sign Desktop Laser B330.webp',
+        '/k-sign-df-1916-laser-fabric-cutting': '/laser-machines/K-Sign DF-1916 Laser Fabric Cutting.webp',
+        '/k-sign-desktop-laser-marking': '/laser-machines/K-sign_Desktop Laser Marking.webp',
+        '/yueming-fiber-laser-cma-1325c-g-g': '/laser-machines/Yueming Fiber Laser  CMA-1325C-G-G 1000w.webp',
+        '/yueming-fiber-laser-hl1530c-g-e': '/laser-machines/Yueming Fiber Laser HL1530C-G-E 1500W IPG.webp',
+        '/promaker-embroidery-1201': '/embroidery_knitting/Promaker Embroidery 1201.webp',
+        '/promaker-embroidery-1202': '/embroidery_knitting/Promaker Embroidery 1202.webp',
+        '/promaker-embroidery-1804': '/embroidery_knitting/Promaker Embroidery 1204.webp',
+        '/smartex-knitting-gsce-1-52': '/embroidery_knitting/Smartex Knitting Machine GSCE-1-52.webp',
+        '/k-sign-letter-shell-3d-printer': '/3D Printer (1).webp',
+    };
+
+    const titleImageMap = {
+        'Brilliant DTF Ink 1L': '/inks/BRILLIANT DTF INK 1L/Brilliant DTF Ink 1L All colors (Transparent).png',
+        'Brilliant Sublimation Ink 1L': '/inks/BRILLIANT SUBLIMATION INK 1L/Brilliant Sublimation Ink All colors 1L (Transparent).png',
+        'Cleaning Solutions': '/inks/CLEANING SOLUTIONS/Cleaning Solution 1L. (Transparent).webp',
+        'DTF Cleaning Solutions': '/inks/DTF CLEANING SOLUTIONS/DTF Cleaning Solution 1L (Transparent).webp',
+        'Eagle V2 1L': '/inks/EAGLE V2 1L/Eagle V2  1L (Transparent).png',
+        'Eagle V2 5L': '/inks/EAGLE V2 5L/Eagle V2 5L 4 Colors (Transparent).png',
+        'Eco M15': '/inks/ECO M15/M15 4 Colors (Transparent).png',
+        'M21 Ink': '/inks/M21/M21 4 Colors (Transparent).png',
+        'Papijet': '/inks/PAPIJET/Papijet LIT 203 Magenta  (Transparent).webp',
+        'Papijet LTI 203': '/inks/PAPIJET/Papijet LIT 203 Magenta  (Transparent).webp',
+        'Phoenix E2 1L': '/inks/PHOENIX E2 1L/PHOENIX E2 1L 4 Colors (Transparent).png',
+        'T14 Eco Plus 2L Inks': '/inks/T14 ECO PLUS 2L INKS/T14 Eco Plus 2L  All colors (Transparent).png',
+        'Vivid DTF Textile 1L': '/inks/VIVID DTF TEXTILE 1L/Brilliant DTF Textile 1L All colors (Transparent).png',
+        'Vivid Sublimation 1L Ink': '/inks/VIVID SUBLIMATION 1L INK/Vivid Sublimation 1L Ink 4 Colors (Transparent).png',
+        'Vivid Sublimation 5L Ink': '/inks/VIVID SUBLIMATION 5L INK/Vivid Sublimation 5L All colors (Transparent).png',
+        // Promotional Display
+        'Roll Up Banner': '/promotional-display/roll-up-banner.webp',
+        // 'Retractable Banner Stand': '/promotional-display/roll-up-banner.webp',
+        'X Banner Stand': '/promotional-display/x-banner-stand.webp',
+        // 'X-Frame Banner': '/promotional-display/x-banner-stand.webp',
+        'Adjustable Banner Stand': '/promotional-display/Adjustable Banner Stand.webp',
+        // 'Telescopic Banner Stand': '/promotional-display/Adjustable Banner Stand.webp',
+        'Feather Wing Banner': '/promotional-display/Feather Wing Banner.webp',
+        // 'Feather Flag': '/promotional-display/Feather Wing Banner.webp',
+        'Teardrop Banner Stand': '/promotional-display/teardrop-banner-stand.webp',
+        // 'Teardrop Flag': '/promotional-display/teardrop-banner-stand.webp',
+        'Single Sided Poster Stand': '/promotional-display/single-sided-poster-stand.webp',
+        // 'Single Side Snap Frame': '/promotional-display/single-sided-poster-stand.webp',
+        'Double Sided Poster Stand': '/promotional-display/double-sided-poster-stand.webp',
+        // 'Double Side A-Frame': '/promotional-display/double-sided-poster-stand.webp',
+        'Iron Poster Stand': '/promotional-display/iron poster stand.webp',
+        // 'Metal Poster Stand': '/promotional-display/iron poster stand.webp',
+        'Round Base Poster Banner': '/promotional-display/round-base-poster-banner.webp',
+        // 'Round Base Banner Stand': '/promotional-display/round-base-poster-banner.webp',
+        'Aluminum Easel Stand': '/promotional-display/Aluminum Easel Stand.webp',
+        // 'Metal Easel Display': '/promotional-display/Aluminum Easel Stand.webp',
+        'Wooden Easel Stand': '/promotional-display/wooden-easel-stand.webp',
+        // 'Wood Easel Display': '/promotional-display/wooden-easel-stand.webp',
+        'Triangle Banner Easel Stand': '/promotional-display/triangle-banner-easel-stand.webp',
+        // 'Triangle Display Stand': '/promotional-display/triangle-banner-easel-stand.webp',
+        'Human Standee': '/promotional-display/human-standee.webp',
+        // 'Life Size Cutout': '/promotional-display/human-standee.webp',
+        'Pop Up Structure': '/promotional-display/pop-up-structure.webp',
+        // 'Pop Up Display': '/promotional-display/pop-up-structure.webp',
+        'Portable Backdrop': '/promotional-display/portable-backdrop.webp',
+        // 'Backdrop Stand': '/promotional-display/portable-backdrop.webp',
+        'Mini Promotional Booth': '/promotional-display/promotional-booth-small.webp',
+        // 'Small Exhibition Booth': '/promotional-display/promotional-booth-small.webp',
+        'Regular Promotional Booth': '/promotional-display/promotional-booth-regular.webp',
+        // 'Standard Exhibition Booth': '/promotional-display/promotional-booth-regular.webp',
+        'Semi Circle Promotional Booth': '/promotional-display/promotional-booth-semi-circle.webp',
+        // 'Curved Exhibition Booth': '/promotional-display/promotional-booth-semi-circle.webp',
+        'Door Frame Banner Stand': '/promotional-display/door-frame-banner-stand.webp',
+        // 'Door Frame Display': '/promotional-display/door-frame-banner-stand.webp',
+        'Aluminum Data Rack': '/promotional-display/data-rack-aluminum.webp',
+        // 'Metal Brochure Stand': '/promotional-display/data-rack-aluminum.webp',
+        'Iron Data Rack': '/promotional-display/data-rack-iron.webp',
+        // 'Iron Brochure Holder': '/promotional-display/data-rack-iron.webp',
+        'New Rotating Lightbox': '/promotional-display/Rotating Lightbox Round 3 (1).webp',
+        // 'Rotating LED Lightbox': '/promotional-display/Rotating Lightbox Round 3 (1).webp',
+        'LED Menu Lightbox Double Poles Stand': '/promotional-display/lead menu lightbox double poles stand.webp',
+        // 'LED Menu Board': '/promotional-display/lead menu lightbox double poles stand.webp',
+        'New Windproof Display': '/promotional-display/Windproof Display  (2).webp',
+        // 'Windproof Banner Stand': '/promotional-display/Windproof Display  (2).webp',
+    };
+
     const isActive = (path) => {
         if (path === "/" || path === "/") {
             return pathname === "/" || pathname === "/";
@@ -277,7 +391,7 @@ export default function Header() {
 
             if (!matches) continue;
 
-            const dedupeKey = `${item.title.toLowerCase()}|${item.path}`;
+            const dedupeKey = item.path;
             if (seen.has(dedupeKey)) continue;
 
             seen.add(dedupeKey);
@@ -613,8 +727,17 @@ export default function Header() {
                                                 onMouseEnter={() => setActiveResultIndex(index)}
                                                 onClick={() => handleResultSelect(result.path)}
                                             >
-                                                <div className="search-result-title">{renderHighlightedText(result.title, searchQuery)}</div>
-                                                <div className="search-result-type">{result.type}</div>
+                                                {(titleImageMap[result.title] || pathImageMap[result.path]) && (
+                                                    <img
+                                                        src={titleImageMap[result.title] || pathImageMap[result.path]}
+                                                        alt={result.title}
+                                                        className="search-result-thumb"
+                                                    />
+                                                )}
+                                                <div className="search-result-text">
+                                                    <div className="search-result-title">{renderHighlightedText(result.title, searchQuery)}</div>
+                                                    <div className="search-result-type">{result.type}</div>
+                                                </div>
                                             </div>
                                         ))}
                                         {hasFewSearchResults && (
@@ -670,8 +793,17 @@ export default function Header() {
                                                         setOpen(false);
                                                     }}
                                                 >
-                                                    <div className="search-result-title">{renderHighlightedText(result.title, searchQuery)}</div>
-                                                    <div className="search-result-type">{result.type}</div>
+                                                    {(titleImageMap[result.title] || pathImageMap[result.path]) && (
+                                                        <img
+                                                            src={titleImageMap[result.title] || pathImageMap[result.path]}
+                                                            alt={result.title}
+                                                            className="search-result-thumb"
+                                                        />
+                                                    )}
+                                                    <div className="search-result-text">
+                                                        <div className="search-result-title">{renderHighlightedText(result.title, searchQuery)}</div>
+                                                        <div className="search-result-type">{result.type}</div>
+                                                    </div>
                                                 </div>
                                             ))}
                                             {hasFewSearchResults && (

@@ -6,14 +6,14 @@ import Header from '../components/Header';
 export default function DigitalPrintingPage() {
     // Map product titles to their custom guide or product URLs
     const guideLinks = {
-        "Smart DTF RJ Series": "/smart-dtf-rj-series",
-        "Smart DTF": "/smart-dtf",
-        "Smart RJ 2002": "/smart-rj-2002",
-        "Smart RJ 2004": "/smart-rj-2004",
-        "Smart Sublimation 2008": "/smart-sublimation-2008",
-        "Apollo Max Plus Solvent Printer": "/apollo-max-plus",
-        "Sofie Sticker Matte": "/sofie-sticker-matte",
-        "Sofie Sticker Glossy": "/sofie-sticker-glossy"
+        "Smart DTF RJ Series": "/smart-dtf-machine",
+        "Smart DTF": "/smart-dtf-machine",
+        "Smart RJ 2002": "/smart-rj24-2004-i3200-eco-solvent",
+        "Smart RJ 2004": "/smart-rj24-2004-i3200-eco-solvent",
+        "Smart Sublimation 2008": "/smart-sublimation",
+        "Apollo Max Plus Solvent Printer": "/apollomax-plus-II",
+        "Sofie Sticker Matte": "/materials",
+        "Sofie Sticker Glossy": "/materials"
     };
 
     const blogPosts = [

@@ -333,9 +333,66 @@ export default function IEchoTK4S() {
                             {machineDetails.features.map((feature, index) => (
                                 <div key={index} className="iecho-tk4s-feature-card">
                                     <div className="iecho-tk4s-feature-icon">
-                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                                            <path d="M12 2L2 7l10 5 10-5-10-5z" />
-                                        </svg>
+                                        {index === 0 && (
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                {/* AKI system: CPU/intelligence chip */}
+                                                <rect x="7" y="7" width="10" height="10" rx="1" />
+                                                <line x1="7" y1="10" x2="4" y2="10" />
+                                                <line x1="7" y1="14" x2="4" y2="14" />
+                                                <line x1="17" y1="10" x2="20" y2="10" />
+                                                <line x1="17" y1="14" x2="20" y2="14" />
+                                                <line x1="10" y1="7" x2="10" y2="4" />
+                                                <line x1="14" y1="7" x2="14" y2="4" />
+                                                <line x1="10" y1="17" x2="10" y2="20" />
+                                                <line x1="14" y1="17" x2="14" y2="20" />
+                                            </svg>
+                                        )}
+                                        {index === 1 && (
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                {/* Flexible working area: resize/expand */}
+                                                <polyline points="15 3 21 3 21 9" />
+                                                <polyline points="9 21 3 21 3 15" />
+                                                <line x1="21" y1="3" x2="14" y2="10" />
+                                                <line x1="3" y1="21" x2="10" y2="14" />
+                                            </svg>
+                                        )}
+                                        {index === 2 && (
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                {/* Precision dual-beam cutting: two parallel cutting lines */}
+                                                <line x1="4" y1="8" x2="20" y2="8" />
+                                                <line x1="4" y1="16" x2="20" y2="16" />
+                                                <circle cx="12" cy="8" r="2" fill="white" />
+                                                <circle cx="12" cy="16" r="2" fill="white" />
+                                            </svg>
+                                        )}
+                                        {index === 3 && (
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                {/* Diversified cutting tools: scissors/multi-tool */}
+                                                <circle cx="6" cy="6" r="3" />
+                                                <circle cx="6" cy="18" r="3" />
+                                                <line x1="20" y1="4" x2="8.12" y2="15.88" />
+                                                <line x1="14.47" y1="14.48" x2="20" y2="20" />
+                                                <line x1="8.12" y1="8.12" x2="12" y2="12" />
+                                            </svg>
+                                        )}
+                                        {index === 4 && (
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                {/* X-axis two motors: two gears on axis */}
+                                                <circle cx="7" cy="12" r="4" />
+                                                <circle cx="17" cy="12" r="4" />
+                                                <line x1="2" y1="12" x2="3" y2="12" />
+                                                <line x1="21" y1="12" x2="22" y2="12" />
+                                            </svg>
+                                        )}
+                                        {index === 5 && (
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                {/* Large format: expand arrows */}
+                                                <polyline points="15 3 21 3 21 9" />
+                                                <polyline points="9 21 3 21 3 15" />
+                                                <line x1="21" y1="3" x2="14" y2="10" />
+                                                <line x1="3" y1="21" x2="10" y2="14" />
+                                            </svg>
+                                        )}
                                     </div>
                                     <h3 className="iecho-tk4s-feature-title">{feature.title}</h3>
                                     <p className="iecho-tk4s-feature-text">{feature.description}</p>

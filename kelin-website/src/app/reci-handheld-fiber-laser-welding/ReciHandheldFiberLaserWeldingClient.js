@@ -8,31 +8,99 @@ export default function ReciHandheldFiberLaserWelding() {
     const [inquiryModalOpen, setInquiryModalOpen] = useState(false);
     const [selectedImage, setSelectedImage] = useState('/laser-machines/Reci Handheld Fiber Laser Welding Machine R-A80 800W 1.webp');
     const scrollRef = useRef(null);
-    const [isDragging, setIsDragging] = useState(false);
-    const [startX, setStartX] = useState(0);
-    const [scrollLeft, setScrollLeft] = useState(0);
+    const isDraggingRef = useRef(false);
+    const startXRef = useRef(0);
+    const scrollLeftRef = useRef(0);
+    const animationFrameRef = useRef(null);
+    const lastTimestampRef = useRef(null);
+
+    const applicationItems = [
+        { image: '/application/reci-handheld-fiber-laser-welding/transportation.png', label: 'Transportation' },
+        { image: '/application/reci-handheld-fiber-laser-welding/mechanical.png', label: 'Mechanical Industry' },
+        { image: '/application/reci-handheld-fiber-laser-welding/hardware-door and window-welding.png', label: 'Door & Window Welding' },
+        { image: '/application/reci-handheld-fiber-laser-welding/hardware-aluminum-alloy.png', label: 'Aluminum Alloy' },
+        { image: '/application/reci-handheld-fiber-laser-welding/advertisement.png', label: 'Advertisement' },
+    ];
+
+    const loopedApplicationItems = [...applicationItems, ...applicationItems, ...applicationItems];
+
+    const normalizeInfiniteScroll = () => {
+        const el = scrollRef.current;
+        if (!el) return;
+        const segmentWidth = el.scrollWidth / 3;
+        if (el.scrollLeft < segmentWidth * 0.5) {
+            el.scrollLeft += segmentWidth;
+        } else if (el.scrollLeft > segmentWidth * 2.5) {
+            el.scrollLeft -= segmentWidth;
+        }
+    };
+
+    useEffect(() => {
+        const el = scrollRef.current;
+        if (!el) return;
+        const segmentWidth = el.scrollWidth / 3;
+        el.scrollLeft = segmentWidth;
+        const handleResize = () => {
+            const seg = el.scrollWidth / 3;
+            el.scrollLeft = seg;
+        };
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
+    useEffect(() => {
+        const speed = 0.05;
+        const animate = (timestamp) => {
+            if (lastTimestampRef.current !== null) {
+                const delta = timestamp - lastTimestampRef.current;
+                if (scrollRef.current && !isDraggingRef.current) {
+                    scrollRef.current.scrollLeft += speed * delta;
+                    normalizeInfiniteScroll();
+                }
+            }
+            lastTimestampRef.current = timestamp;
+            animationFrameRef.current = requestAnimationFrame(animate);
+        };
+        animationFrameRef.current = requestAnimationFrame(animate);
+        return () => cancelAnimationFrame(animationFrameRef.current);
+    }, []);
 
     const handleMouseDown = (e) => {
-        setIsDragging(true);
-        setStartX(e.pageX - scrollRef.current.offsetLeft);
-        setScrollLeft(scrollRef.current.scrollLeft);
+        isDraggingRef.current = true;
+        startXRef.current = e.pageX - scrollRef.current.offsetLeft;
+        scrollLeftRef.current = scrollRef.current.scrollLeft;
     };
 
     const handleMouseMove = (e) => {
-        if (!isDragging) return;
+        if (!isDraggingRef.current) return;
         e.preventDefault();
         const x = e.pageX - scrollRef.current.offsetLeft;
-        const walk = (x - startX) * 2;
-        scrollRef.current.scrollLeft = scrollLeft - walk;
+        const walk = (x - startXRef.current) * 2;
+        scrollRef.current.scrollLeft = scrollLeftRef.current - walk;
     };
 
     const handleMouseUp = () => {
-        setIsDragging(false);
+        isDraggingRef.current = false;
     };
 
     const handleMouseLeave = () => {
-        setIsDragging(false);
+        isDraggingRef.current = false;
     };
+
+    const handleTouchStart = (e) => {
+        isDraggingRef.current = true;
+        startXRef.current = e.touches[0].pageX - scrollRef.current.offsetLeft;
+        scrollLeftRef.current = scrollRef.current.scrollLeft;
+    };
+
+    const handleTouchMove = (e) => {
+        if (!isDraggingRef.current) return;
+        const x = e.touches[0].pageX - scrollRef.current.offsetLeft;
+        const walk = (x - startXRef.current) * 2;
+        scrollRef.current.scrollLeft = scrollLeftRef.current - walk;
+    };
+
+    const handleTouchEnd = () => { isDraggingRef.current = false; };
 
     const machineDetails = {
         name: 'Reci Handheld Fiber Laser Welding R-A80 800W',
@@ -234,9 +302,39 @@ export default function ReciHandheldFiberLaserWelding() {
                             {machineDetails.features.map((feature, index) => (
                                 <div key={index} className="reci-welding-feature-card">
                                     <div className="reci-welding-feature-icon">
-                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                                            <path d="M12 2L2 7l10 5 10-5-10-5z" />
-                                        </svg>
+                                        {index === 0 && (
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                {/* Optimized airflow: wind/air waves */}
+                                                <path d="M9.59 4.59A2 2 0 1 1 11 8H2m10.59 11.41A2 2 0 1 0 14 16H2m15.73-8.27A2.5 2.5 0 1 1 19.5 12H2" />
+                                            </svg>
+                                        )}
+                                        {index === 1 && (
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                {/* Efficiency & precision: target/crosshair */}
+                                                <circle cx="12" cy="12" r="10" />
+                                                <circle cx="12" cy="12" r="6" />
+                                                <circle cx="12" cy="12" r="2" />
+                                                <line x1="12" y1="2" x2="12" y2="6" />
+                                                <line x1="12" y1="18" x2="12" y2="22" />
+                                                <line x1="2" y1="12" x2="6" y2="12" />
+                                                <line x1="18" y1="12" x2="22" y2="12" />
+                                            </svg>
+                                        )}
+                                        {index === 2 && (
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                {/* Silent precision welding: spark/weld point */}
+                                                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+                                            </svg>
+                                        )}
+                                        {index === 3 && (
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                {/* Compact air-cooled: small unit with fan */}
+                                                <rect x="4" y="6" width="16" height="12" rx="2" />
+                                                <circle cx="12" cy="12" r="3" />
+                                                <line x1="12" y1="2" x2="12" y2="6" />
+                                                <line x1="12" y1="18" x2="12" y2="22" />
+                                            </svg>
+                                        )}
                                     </div>
                                     <h3 className="reci-welding-feature-title">{feature.title}</h3>
                                     <p className="reci-welding-feature-text">{feature.description}</p>
@@ -287,17 +385,16 @@ export default function ReciHandheldFiberLaserWelding() {
                             onMouseMove={handleMouseMove}
                             onMouseUp={handleMouseUp}
                             onMouseLeave={handleMouseLeave}
+                            onTouchStart={handleTouchStart}
+                            onTouchMove={handleTouchMove}
+                            onTouchEnd={handleTouchEnd}
+                            onScroll={normalizeInfiniteScroll}
                         >
                             <div className="reci-welding-applications-image-grid">
-                                {machineDetails.applications.map((app, index) => (
-                                    <div key={index} className="reci-welding-application-image-item">
-                                        <div className="reci-welding-application-icon">
-                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                                                <rect x="3" y="3" width="18" height="18" rx="2" />
-                                                <path d="m9 11 3 3L22 4" />
-                                            </svg>
-                                        </div>
-                                        <p>{app}</p>
+                                {loopedApplicationItems.map((item, index) => (
+                                    <div key={`${item.label}-${index}`} className="reci-welding-application-image-item">
+                                        <img src={item.image} alt={item.label} />
+                                        <p>{item.label}</p>
                                     </div>
                                 ))}
                             </div>

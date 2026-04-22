@@ -8,31 +8,109 @@ export default function SmartUVPrinter() {
     const [inquiryModalOpen, setInquiryModalOpen] = useState(false);
     const [selectedImage, setSelectedImage] = useState('/uv-machines/SMART UV Printer.webp');
     const scrollRef = useRef(null);
-    const [isDragging, setIsDragging] = useState(false);
-    const [startX, setStartX] = useState(0);
-    const [scrollLeft, setScrollLeft] = useState(0);
+    const isDraggingRef = useRef(false);
+    const startXRef = useRef(0);
+    const scrollLeftRef = useRef(0);
+    const animationFrameRef = useRef(null);
+    const lastTimestampRef = useRef(0);
+
+    const applicationItems = [
+        { image: '/application/smart-uv-printer/1.png', label: 'UV Display Graphics' },
+        { image: '/application/smart-uv-printer/2.png', label: 'Wall Murals' },
+        { image: '/application/smart-uv-printer/3.png', label: 'Backlit Displays' },
+        { image: '/application/smart-uv-printer/4.png', label: 'Decor Panels' },
+    ];
+
+    const loopedApplicationItems = [...applicationItems, ...applicationItems, ...applicationItems];
+
+    const normalizeInfiniteScroll = () => {
+        const scrollElement = scrollRef.current;
+        if (!scrollElement) return;
+        const segmentWidth = scrollElement.scrollWidth / 3;
+        const boundaryOffset = 4;
+        if (scrollElement.scrollLeft <= boundaryOffset) {
+            scrollElement.scrollLeft += segmentWidth;
+        } else if (scrollElement.scrollLeft >= segmentWidth * 2 - boundaryOffset) {
+            scrollElement.scrollLeft -= segmentWidth;
+        }
+    };
+
+    useEffect(() => {
+        const scrollElement = scrollRef.current;
+        if (!scrollElement) return;
+        const initializeLoopPosition = () => {
+            const segmentWidth = scrollElement.scrollWidth / 3;
+            scrollElement.scrollLeft = segmentWidth;
+        };
+        initializeLoopPosition();
+        window.addEventListener('resize', initializeLoopPosition);
+        return () => window.removeEventListener('resize', initializeLoopPosition);
+    }, []);
+
+    useEffect(() => {
+        const scrollElement = scrollRef.current;
+        if (!scrollElement) return;
+        const speedPixelsPerMs = 0.05;
+        const animate = (timestamp) => {
+            if (lastTimestampRef.current === 0) lastTimestampRef.current = timestamp;
+            const delta = timestamp - lastTimestampRef.current;
+            lastTimestampRef.current = timestamp;
+            if (!isDraggingRef.current && scrollRef.current) {
+                scrollRef.current.scrollLeft += delta * speedPixelsPerMs;
+                normalizeInfiniteScroll();
+            }
+            animationFrameRef.current = window.requestAnimationFrame(animate);
+        };
+        animationFrameRef.current = window.requestAnimationFrame(animate);
+        return () => {
+            if (animationFrameRef.current) window.cancelAnimationFrame(animationFrameRef.current);
+            lastTimestampRef.current = 0;
+        };
+    }, []);
 
     const handleMouseDown = (e) => {
-        setIsDragging(true);
-        setStartX(e.pageX - scrollRef.current.offsetLeft);
-        setScrollLeft(scrollRef.current.scrollLeft);
+        const scrollElement = scrollRef.current;
+        if (!scrollElement) return;
+        isDraggingRef.current = true;
+        startXRef.current = e.pageX - scrollElement.offsetLeft;
+        scrollLeftRef.current = scrollElement.scrollLeft;
     };
 
     const handleMouseMove = (e) => {
-        if (!isDragging) return;
+        if (!isDraggingRef.current) return;
+        const scrollElement = scrollRef.current;
+        if (!scrollElement) return;
         e.preventDefault();
-        const x = e.pageX - scrollRef.current.offsetLeft;
-        const walk = (x - startX) * 2;
-        scrollRef.current.scrollLeft = scrollLeft - walk;
+        const x = e.pageX - scrollElement.offsetLeft;
+        const walk = (x - startXRef.current) * 2;
+        scrollElement.scrollLeft = scrollLeftRef.current - walk;
+        normalizeInfiniteScroll();
     };
 
-    const handleMouseUp = () => {
-        setIsDragging(false);
+    const handleMouseUp = () => { isDraggingRef.current = false; };
+    const handleMouseLeave = () => { isDraggingRef.current = false; };
+
+    const handleTouchStart = (e) => {
+        const scrollElement = scrollRef.current;
+        if (!scrollElement) return;
+        const touchX = e.touches[0].pageX;
+        isDraggingRef.current = true;
+        startXRef.current = touchX - scrollElement.offsetLeft;
+        scrollLeftRef.current = scrollElement.scrollLeft;
     };
 
-    const handleMouseLeave = () => {
-        setIsDragging(false);
+    const handleTouchMove = (e) => {
+        if (!isDraggingRef.current) return;
+        const scrollElement = scrollRef.current;
+        if (!scrollElement) return;
+        const touchX = e.touches[0].pageX;
+        const x = touchX - scrollElement.offsetLeft;
+        const walk = (x - startXRef.current) * 2;
+        scrollElement.scrollLeft = scrollLeftRef.current - walk;
+        normalizeInfiniteScroll();
     };
+
+    const handleTouchEnd = () => { isDraggingRef.current = false; };
 
     const machineDetails = {
         name: 'SMART UV PRINTER',
@@ -235,9 +313,54 @@ export default function SmartUVPrinter() {
                             {machineDetails.features.map((feature, index) => (
                                 <div key={index} className="smart-uv-printer-feature-card">
                                     <div className="smart-uv-printer-feature-icon">
-                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                                            <path d="M12 2L2 7l10 5 10-5-10-5z" />
-                                        </svg>
+                                        {index === 0 && (
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                {/* LED curing lamp: lightbulb with rays */}
+                                                <circle cx="12" cy="10" r="4" />
+                                                <line x1="12" y1="2" x2="12" y2="4" />
+                                                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+                                                <line x1="19.78" y1="4.22" x2="18.36" y2="5.64" />
+                                                <line x1="2" y1="12" x2="4" y2="12" />
+                                                <line x1="20" y1="12" x2="22" y2="12" />
+                                                <path d="M9 14 Q9 17 12 17 Q15 17 15 14" />
+                                                <line x1="10" y1="17" x2="10" y2="20" />
+                                                <line x1="14" y1="17" x2="14" y2="20" />
+                                                <line x1="9" y1="20" x2="15" y2="20" />
+                                            </svg>
+                                        )}
+                                        {index === 1 && (
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                {/* Control system: CPU/chip */}
+                                                <rect x="7" y="7" width="10" height="10" rx="1" />
+                                                <line x1="7" y1="10" x2="4" y2="10" />
+                                                <line x1="7" y1="14" x2="4" y2="14" />
+                                                <line x1="17" y1="10" x2="20" y2="10" />
+                                                <line x1="17" y1="14" x2="20" y2="14" />
+                                                <line x1="10" y1="7" x2="10" y2="4" />
+                                                <line x1="14" y1="7" x2="14" y2="4" />
+                                                <line x1="10" y1="17" x2="10" y2="20" />
+                                                <line x1="14" y1="17" x2="14" y2="20" />
+                                            </svg>
+                                        )}
+                                        {index === 2 && (
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                {/* Aluminium carriage: cart on rail */}
+                                                <line x1="2" y1="8" x2="22" y2="8" />
+                                                <rect x="7" y="10" width="10" height="6" rx="1" />
+                                                <circle cx="9" cy="17" r="1.5" />
+                                                <circle cx="15" cy="17" r="1.5" />
+                                            </svg>
+                                        )}
+                                        {index === 3 && (
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                {/* Infrared heating fan: fan blades with heat */}
+                                                <circle cx="12" cy="12" r="3" />
+                                                <path d="M12 9 C12 6 10 4 8 5 C6 6 6 9 9 9" />
+                                                <path d="M15 12 C18 12 20 10 19 8 C18 6 15 6 15 9" />
+                                                <path d="M12 15 C12 18 14 20 16 19 C18 18 18 15 15 15" />
+                                                <path d="M9 12 C6 12 4 14 5 16 C6 18 9 18 9 15" />
+                                            </svg>
+                                        )}
                                     </div>
                                     <h3 className="smart-uv-printer-feature-title">{feature.title}</h3>
                                     <p className="smart-uv-printer-feature-text">{feature.description}</p>
@@ -288,56 +411,18 @@ export default function SmartUVPrinter() {
                             onMouseMove={handleMouseMove}
                             onMouseUp={handleMouseUp}
                             onMouseLeave={handleMouseLeave}
+                            onTouchStart={handleTouchStart}
+                            onTouchMove={handleTouchMove}
+                            onTouchEnd={handleTouchEnd}
+                            onScroll={normalizeInfiniteScroll}
                         >
                             <div className="smart-uv-printer-applications-image-grid">
-                                <div className="smart-uv-printer-application-image-item">
-                                    <img src="/application/_0000_6.jpg" alt="UV-printed display graphics" />
-                                    <p>UV-printed display graphics</p>
-                                </div>
-                                <div className="smart-uv-printer-application-image-item">
-                                    <img src="/application/_0001_5.jpg" alt="UV-printed wall murals" />
-                                    <p>UV-printed wall murals</p>
-                                </div>
-                                <div className="smart-uv-printer-application-image-item">
-                                    <img src="/application/_0002_4.jpg" alt="UV-printed backlit displays" />
-                                    <p>UV-printed backlit displays</p>
-                                </div>
-                                <div className="smart-uv-printer-application-image-item">
-                                    <img src="/application/_0003_3.jpg" alt="UV-printed decor panels" />
-                                    <p>UV-printed decor panels</p>
-                                </div>
-                                <div className="smart-uv-printer-application-image-item">
-                                    <img src="/application/_0004_2.jpg" alt="Signage Production" />
-                                    <p>Signage Production</p>
-                                </div>
-                                <div className="smart-uv-printer-application-image-item">
-                                    <img src="/application/_0005_1.jpg" alt="Promotional Displays" />
-                                    <p>Promotional Displays</p>
-                                </div>
-                                <div className="smart-uv-printer-application-image-item">
-                                    <img src="/application/_0000_6.jpg" alt="Exhibition Graphics" />
-                                    <p>Exhibition Graphics</p>
-                                </div>
-                                <div className="smart-uv-printer-application-image-item">
-                                    <img src="/application/_0001_5.jpg" alt="Point of Sale Displays" />
-                                    <p>Point of Sale Displays</p>
-                                </div>
-                                <div className="smart-uv-printer-application-image-item">
-                                    <img src="/application/_0002_4.jpg" alt="Retail Graphics" />
-                                    <p>Retail Graphics</p>
-                                </div>
-                                <div className="smart-uv-printer-application-image-item">
-                                    <img src="/application/_0003_3.jpg" alt="Commercial Advertising" />
-                                    <p>Commercial Advertising</p>
-                                </div>
-                                <div className="smart-uv-printer-application-image-item">
-                                    <img src="/application/_0004_2.jpg" alt="Indoor Graphics" />
-                                    <p>Indoor Graphics</p>
-                                </div>
-                                <div className="smart-uv-printer-application-image-item">
-                                    <img src="/application/_0005_1.jpg" alt="Custom Decor Applications" />
-                                    <p>Custom Decor Applications</p>
-                                </div>
+                                {loopedApplicationItems.map((item, index) => (
+                                    <div key={`${item.label}-${index}`} className="smart-uv-printer-application-image-item">
+                                        <img src={item.image} alt={item.label} />
+                                        <p>{item.label}</p>
+                                    </div>
+                                ))}
                             </div>
                         </div>
                     </div>

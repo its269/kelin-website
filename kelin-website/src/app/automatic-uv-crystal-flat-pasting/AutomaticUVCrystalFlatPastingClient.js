@@ -1,7 +1,7 @@
 "use client";
 import Header from '../components/Header';
 import Link from 'next/link';
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import './automatic-uv-crystal-flat-pasting.css';
 
 export default function AutomaticUVCrystalFlatPasting() {
@@ -9,31 +9,111 @@ export default function AutomaticUVCrystalFlatPasting() {
     const [selectedImage, setSelectedImage] = useState('/uv-machines/Automatic UV Crystal Flat Pasting Machine 3.82m x 1.72m (1).webp');
 
     const scrollRef = useRef(null);
-    const [isDragging, setIsDragging] = useState(false);
-    const [startX, setStartX] = useState(0);
-    const [scrollLeft, setScrollLeft] = useState(0);
+    const isDraggingRef = useRef(false);
+    const startXRef = useRef(0);
+    const scrollLeftRef = useRef(0);
+    const animationFrameRef = useRef(null);
+    const lastTimestampRef = useRef(0);
+
+    const applicationItems = [
+        { image: '/application/pasting/1.png', label: 'Custom Stickers' },
+        { image: '/application/pasting/2.png', label: 'Frame or Panel' },
+        { image: '/application/pasting/3.png', label: 'Decorative Items' },
+        { image: '/application/pasting/4.png', label: 'Promotional Products' },
+        { image: '/application/pasting/5.png', label: 'Personalized Gifts' },
+    ];
+
+    const loopedApplicationItems = [...applicationItems, ...applicationItems, ...applicationItems];
+
+    const normalizeInfiniteScroll = () => {
+        const scrollElement = scrollRef.current;
+        if (!scrollElement) return;
+        const segmentWidth = scrollElement.scrollWidth / 3;
+        const boundaryOffset = 4;
+        if (scrollElement.scrollLeft <= boundaryOffset) {
+            scrollElement.scrollLeft += segmentWidth;
+        } else if (scrollElement.scrollLeft >= segmentWidth * 2 - boundaryOffset) {
+            scrollElement.scrollLeft -= segmentWidth;
+        }
+    };
+
+    useEffect(() => {
+        const scrollElement = scrollRef.current;
+        if (!scrollElement) return;
+        const initializeLoopPosition = () => {
+            const segmentWidth = scrollElement.scrollWidth / 3;
+            scrollElement.scrollLeft = segmentWidth;
+        };
+        initializeLoopPosition();
+        window.addEventListener('resize', initializeLoopPosition);
+        return () => window.removeEventListener('resize', initializeLoopPosition);
+    }, []);
+
+    useEffect(() => {
+        const scrollElement = scrollRef.current;
+        if (!scrollElement) return;
+        const speedPixelsPerMs = 0.05;
+        const animate = (timestamp) => {
+            if (lastTimestampRef.current === 0) lastTimestampRef.current = timestamp;
+            const delta = timestamp - lastTimestampRef.current;
+            lastTimestampRef.current = timestamp;
+            if (!isDraggingRef.current && scrollRef.current) {
+                scrollRef.current.scrollLeft += delta * speedPixelsPerMs;
+                normalizeInfiniteScroll();
+            }
+            animationFrameRef.current = window.requestAnimationFrame(animate);
+        };
+        animationFrameRef.current = window.requestAnimationFrame(animate);
+        return () => {
+            if (animationFrameRef.current) window.cancelAnimationFrame(animationFrameRef.current);
+            lastTimestampRef.current = 0;
+        };
+    }, []);
 
     const handleMouseDown = (e) => {
-        setIsDragging(true);
-        setStartX(e.pageX - scrollRef.current.offsetLeft);
-        setScrollLeft(scrollRef.current.scrollLeft);
+        const scrollElement = scrollRef.current;
+        if (!scrollElement) return;
+        isDraggingRef.current = true;
+        startXRef.current = e.pageX - scrollElement.offsetLeft;
+        scrollLeftRef.current = scrollElement.scrollLeft;
     };
 
     const handleMouseMove = (e) => {
-        if (!isDragging) return;
+        if (!isDraggingRef.current) return;
+        const scrollElement = scrollRef.current;
+        if (!scrollElement) return;
         e.preventDefault();
-        const x = e.pageX - scrollRef.current.offsetLeft;
-        const walk = (x - startX) * 2;
-        scrollRef.current.scrollLeft = scrollLeft - walk;
+        const x = e.pageX - scrollElement.offsetLeft;
+        const walk = (x - startXRef.current) * 2;
+        scrollElement.scrollLeft = scrollLeftRef.current - walk;
+        normalizeInfiniteScroll();
     };
 
-    const handleMouseUp = () => {
-        setIsDragging(false);
+    const handleMouseUp = () => { isDraggingRef.current = false; };
+
+    const handleMouseLeave = () => { isDraggingRef.current = false; };
+
+    const handleTouchStart = (e) => {
+        const scrollElement = scrollRef.current;
+        if (!scrollElement) return;
+        const touchX = e.touches[0].pageX;
+        isDraggingRef.current = true;
+        startXRef.current = touchX - scrollElement.offsetLeft;
+        scrollLeftRef.current = scrollElement.scrollLeft;
     };
 
-    const handleMouseLeave = () => {
-        setIsDragging(false);
+    const handleTouchMove = (e) => {
+        if (!isDraggingRef.current) return;
+        const scrollElement = scrollRef.current;
+        if (!scrollElement) return;
+        const touchX = e.touches[0].pageX;
+        const x = touchX - scrollElement.offsetLeft;
+        const walk = (x - startXRef.current) * 2;
+        scrollElement.scrollLeft = scrollLeftRef.current - walk;
+        normalizeInfiniteScroll();
     };
+
+    const handleTouchEnd = () => { isDraggingRef.current = false; };
 
     const machineDetails = {
         name: 'AUTOMATIC UV CRYSTAL FLAT PASTING MACHINE',
@@ -242,9 +322,38 @@ export default function AutomaticUVCrystalFlatPasting() {
                             {machineDetails.features.map((feature, index) => (
                                 <div key={index} className="auto-uv-crystal-feature-card">
                                     <div className="auto-uv-crystal-feature-icon">
-                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                                            <path d="M12 2L2 7l10 5 10-5-10-5z" />
-                                        </svg>
+                                        {index === 0 && (
+                                            /* Smart Touchscreen Control System — touch/display icon */
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
+                                                <line x1="8" y1="21" x2="16" y2="21" />
+                                                <line x1="12" y1="17" x2="12" y2="21" />
+                                                <circle cx="12" cy="10" r="2" />
+                                            </svg>
+                                        )}
+                                        {index === 1 && (
+                                            /* High Temperature-Resistant Silicone Shaft — heat/temperature icon */
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                <path d="M14 14.76V3.5a2.5 2.5 0 0 0-5 0v11.26a4.5 4.5 0 1 0 5 0z" />
+                                            </svg>
+                                        )}
+                                        {index === 2 && (
+                                            /* Versatile Media Compatibility — layers/stack icon */
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                <polygon points="12 2 2 7 12 12 22 7 12 2" />
+                                                <polyline points="2 17 12 22 22 17" />
+                                                <polyline points="2 12 12 17 22 12" />
+                                            </svg>
+                                        )}
+                                        {index === 3 && (
+                                            /* Large Format Capability — expand/maximize icon */
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                <polyline points="15 3 21 3 21 9" />
+                                                <polyline points="9 21 3 21 3 15" />
+                                                <line x1="21" y1="3" x2="14" y2="10" />
+                                                <line x1="3" y1="21" x2="10" y2="14" />
+                                            </svg>
+                                        )}
                                     </div>
                                     <h3 className="auto-uv-crystal-feature-title">{feature.title}</h3>
                                     <p className="auto-uv-crystal-feature-text">{feature.description}</p>
@@ -295,48 +404,18 @@ export default function AutomaticUVCrystalFlatPasting() {
                             onMouseMove={handleMouseMove}
                             onMouseUp={handleMouseUp}
                             onMouseLeave={handleMouseLeave}
+                            onTouchStart={handleTouchStart}
+                            onTouchMove={handleTouchMove}
+                            onTouchEnd={handleTouchEnd}
+                            onScroll={normalizeInfiniteScroll}
                         >
                             <div className="auto-uv-crystal-applications-image-grid">
-                                <div className="auto-uv-crystal-application-image-item">
-                                    <img src="/application/_0000_6.jpg" alt="T-Shirt Printing" />
-                                    <p>T-Shirt Printing</p>
-                                </div>
-                                <div className="auto-uv-crystal-application-image-item">
-                                    <img src="/application/_0001_5.jpg" alt="Mug Printing" />
-                                    <p>Mug Printing</p>
-                                </div>
-                                <div className="auto-uv-crystal-application-image-item">
-                                    <img src="/application/_0002_4.jpg" alt="Signage & Banners" />
-                                    <p>Signage & Banners</p>
-                                </div>
-                                <div className="auto-uv-crystal-application-image-item">
-                                    <img src="/application/_0003_3.jpg" alt="Promotional Products" />
-                                    <p>Promotional Products</p>
-                                </div>
-                                <div className="auto-uv-crystal-application-image-item">
-                                    <img src="/application/_0004_2.jpg" alt="Custom Apparel" />
-                                    <p>Custom Apparel</p>
-                                </div>
-                                <div className="auto-uv-crystal-application-image-item">
-                                    <img src="/application/_0005_1.jpg" alt="Phone Cases" />
-                                    <p>Phone Cases</p>
-                                </div>
-                                <div className="auto-uv-crystal-application-image-item">
-                                    <img src="/application/_0000_6.jpg" alt="Sportswear" />
-                                    <p>Sportswear</p>
-                                </div>
-                                <div className="auto-uv-crystal-application-image-item">
-                                    <img src="/application/_0001_5.jpg" alt="Home Decor" />
-                                    <p>Home Decor</p>
-                                </div>
-                                <div className="auto-uv-crystal-application-image-item">
-                                    <img src="/application/_0002_4.jpg" alt="Packaging" />
-                                    <p>Packaging</p>
-                                </div>
-                                <div className="auto-uv-crystal-application-image-item">
-                                    <img src="/application/_0003_3.jpg" alt="Labels & Stickers" />
-                                    <p>Labels & Stickers</p>
-                                </div>
+                                {loopedApplicationItems.map((item, index) => (
+                                    <div key={`${item.label}-${index}`} className="auto-uv-crystal-application-image-item">
+                                        <img src={item.image} alt={item.label} />
+                                        <p>{item.label}</p>
+                                    </div>
+                                ))}
                             </div>
                         </div>
                     </div>

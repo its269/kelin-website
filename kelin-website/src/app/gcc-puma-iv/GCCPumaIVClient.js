@@ -331,9 +331,66 @@ export default function GCCPumaIV() {
                             {machineDetails.features.map((feature, index) => (
                                 <div key={index} className="gcc-puma-feature-card">
                                     <div className="gcc-puma-feature-icon">
-                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                                            <path d="M12 2L2 7l10 5 10-5-10-5z" />
-                                        </svg>
+                                        {index === 0 && (
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                {/* AAS contour cutting: path with crosshair */}
+                                                <path d="M3 17 C5 14 8 10 12 10 C16 10 19 14 21 17" />
+                                                <circle cx="12" cy="10" r="3" />
+                                                <line x1="12" y1="2" x2="12" y2="7" />
+                                            </svg>
+                                        )}
+                                        {index === 1 && (
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                {/* Segmental positioning: segments/zones */}
+                                                <rect x="2" y="6" width="20" height="12" rx="2" />
+                                                <line x1="8" y1="6" x2="8" y2="18" />
+                                                <line x1="16" y1="6" x2="16" y2="18" />
+                                                <circle cx="5" cy="12" r="1.5" fill="currentColor" stroke="none" />
+                                                <circle cx="12" cy="12" r="1.5" fill="currentColor" stroke="none" />
+                                                <circle cx="19" cy="12" r="1.5" fill="currentColor" stroke="none" />
+                                            </svg>
+                                        )}
+                                        {index === 2 && (
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                {/* Section cutting: scissors with line */}
+                                                <circle cx="6" cy="6" r="3" />
+                                                <circle cx="6" cy="18" r="3" />
+                                                <line x1="20" y1="4" x2="8.12" y2="15.88" />
+                                                <line x1="14.47" y1="14.48" x2="20" y2="20" />
+                                                <line x1="8.12" y1="8.12" x2="12" y2="12" />
+                                            </svg>
+                                        )}
+                                        {index === 3 && (
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                {/* Auto rotation: rotating arrows */}
+                                                <polyline points="23 4 23 10 17 10" />
+                                                <polyline points="1 20 1 14 7 14" />
+                                                <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15" />
+                                            </svg>
+                                        )}
+                                        {index === 4 && (
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                {/* Ethernet connection: network */}
+                                                <rect x="9" y="2" width="6" height="4" rx="1" />
+                                                <rect x="2" y="16" width="6" height="4" rx="1" />
+                                                <rect x="9" y="16" width="6" height="4" rx="1" />
+                                                <rect x="16" y="16" width="6" height="4" rx="1" />
+                                                <line x1="12" y1="6" x2="12" y2="12" />
+                                                <line x1="5" y1="12" x2="19" y2="12" />
+                                                <line x1="5" y1="12" x2="5" y2="16" />
+                                                <line x1="12" y1="12" x2="12" y2="16" />
+                                                <line x1="19" y1="12" x2="19" y2="16" />
+                                            </svg>
+                                        )}
+                                        {index === 5 && (
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                {/* High-performance cutting: blade/diamond */}
+                                                <polygon points="12 2 22 9 18 20 6 20 2 9 12 2" />
+                                                <line x1="2" y1="9" x2="22" y2="9" />
+                                                <line x1="12" y1="2" x2="6" y2="9" />
+                                                <line x1="12" y1="2" x2="18" y2="9" />
+                                            </svg>
+                                        )}
                                     </div>
                                     <h3 className="gcc-puma-feature-title">{feature.title}</h3>
                                     <p className="gcc-puma-feature-text">{feature.description}</p>

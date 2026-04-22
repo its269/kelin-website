@@ -378,9 +378,47 @@ export default function IEchoPK4() {
                             {machineDetails.features.map((feature, index) => (
                                 <div key={index} className="iecho-pk4-feature-card">
                                     <div className="iecho-pk4-feature-icon">
-                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                                            <path d="M12 2L2 7l10 5 10-5-10-5z" />
-                                        </svg>
+                                        {index === 0 && (
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                {/* Oscillating knife: vibrating blade */}
+                                                <line x1="12" y1="2" x2="12" y2="22" />
+                                                <path d="M8 6 C10 8 14 8 16 6" />
+                                                <path d="M8 10 C10 12 14 12 16 10" />
+                                                <path d="M8 14 C10 16 14 16 16 14" />
+                                                <path d="M8 18 C10 20 14 20 16 18" />
+                                            </svg>
+                                        )}
+                                        {index === 1 && (
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                {/* Auto positioning: crosshair target */}
+                                                <circle cx="12" cy="12" r="10" />
+                                                <circle cx="12" cy="12" r="3" />
+                                                <line x1="12" y1="2" x2="12" y2="5" />
+                                                <line x1="12" y1="19" x2="12" y2="22" />
+                                                <line x1="2" y1="12" x2="5" y2="12" />
+                                                <line x1="19" y1="12" x2="22" y2="12" />
+                                            </svg>
+                                        )}
+                                        {index === 2 && (
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                {/* Barcode management: barcode lines */}
+                                                <rect x="2" y="4" width="20" height="16" rx="1" />
+                                                <line x1="6" y1="8" x2="6" y2="16" />
+                                                <line x1="9" y1="8" x2="9" y2="16" />
+                                                <line x1="11" y1="8" x2="11" y2="16" />
+                                                <line x1="14" y1="8" x2="14" y2="16" />
+                                                <line x1="17" y1="8" x2="17" y2="16" />
+                                            </svg>
+                                        )}
+                                        {index === 3 && (
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                {/* Automatic feeding: conveyor belt with arrow */}
+                                                <rect x="2" y="10" width="20" height="4" rx="1" />
+                                                <circle cx="6" cy="12" r="3" />
+                                                <circle cx="18" cy="12" r="3" />
+                                                <polyline points="14 7 18 11 14 15" />
+                                            </svg>
+                                        )}
                                     </div>
                                     <h3 className="iecho-pk4-feature-title">{feature.title}</h3>
                                     <p className="iecho-pk4-feature-text">{feature.description}</p>

@@ -1,38 +1,114 @@
 "use client";
 import Header from '../components/Header';
 import Link from 'next/link';
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import './fulei-bu-1600e.css';
 
 export default function FuleiBU1600EWarmAutoLaminator() {
     const [inquiryModalOpen, setInquiryModalOpen] = useState(false);
     const [selectedImage, setSelectedImage] = useState('/laminator/Fulei BU-1600E Warm Auto Laminator (1).webp');
     const scrollRef = useRef(null);
-    const [isDragging, setIsDragging] = useState(false);
-    const [startX, setStartX] = useState(0);
-    const [scrollLeft, setScrollLeft] = useState(0);
+    const isDraggingRef = useRef(false);
+    const startXRef = useRef(0);
+    const scrollLeftRef = useRef(0);
+    const animationFrameRef = useRef(null);
+    const lastTimestampRef = useRef(0);
+
+    const applicationItems = [
+        { image: '/application/laminator/1.png', label: 'Commercial Print Lamination' },
+        { image: '/application/laminator/2.png', label: 'Document Protection' },
+        { image: '/application/laminator/3.png', label: 'Menu and Card Lamination' },
+        { image: '/application/laminator/4.png', label: 'Photo Lamination Services' },
+        { image: '/application/laminator/5.png', label: 'Poster and Banner Lamination' },
+        { image: '/application/laminator/6.png', label: 'Professional Print Finishing' },
+    ];
+
+    const loopedApplicationItems = [...applicationItems, ...applicationItems, ...applicationItems];
+
+    const normalizeInfiniteScroll = () => {
+        const scrollElement = scrollRef.current;
+        if (!scrollElement) return;
+        const segmentWidth = scrollElement.scrollWidth / 3;
+        const boundaryOffset = 4;
+        if (scrollElement.scrollLeft <= boundaryOffset) {
+            scrollElement.scrollLeft += segmentWidth;
+        } else if (scrollElement.scrollLeft >= segmentWidth * 2 - boundaryOffset) {
+            scrollElement.scrollLeft -= segmentWidth;
+        }
+    };
+
+    useEffect(() => {
+        const scrollElement = scrollRef.current;
+        if (!scrollElement) return;
+        const initializeLoopPosition = () => {
+            const segmentWidth = scrollElement.scrollWidth / 3;
+            scrollElement.scrollLeft = segmentWidth;
+        };
+        initializeLoopPosition();
+        window.addEventListener('resize', initializeLoopPosition);
+        return () => window.removeEventListener('resize', initializeLoopPosition);
+    }, []);
+
+    useEffect(() => {
+        const speedPixelsPerMs = 0.05;
+        const animate = (timestamp) => {
+            if (lastTimestampRef.current === 0) lastTimestampRef.current = timestamp;
+            const delta = timestamp - lastTimestampRef.current;
+            lastTimestampRef.current = timestamp;
+            if (!isDraggingRef.current && scrollRef.current) {
+                scrollRef.current.scrollLeft += delta * speedPixelsPerMs;
+                normalizeInfiniteScroll();
+            }
+            animationFrameRef.current = window.requestAnimationFrame(animate);
+        };
+        animationFrameRef.current = window.requestAnimationFrame(animate);
+        return () => {
+            if (animationFrameRef.current) window.cancelAnimationFrame(animationFrameRef.current);
+            lastTimestampRef.current = 0;
+        };
+    }, []);
 
     const handleMouseDown = (e) => {
-        setIsDragging(true);
-        setStartX(e.pageX - scrollRef.current.offsetLeft);
-        setScrollLeft(scrollRef.current.scrollLeft);
+        const scrollElement = scrollRef.current;
+        if (!scrollElement) return;
+        isDraggingRef.current = true;
+        startXRef.current = e.pageX - scrollElement.offsetLeft;
+        scrollLeftRef.current = scrollElement.scrollLeft;
     };
 
     const handleMouseMove = (e) => {
-        if (!isDragging) return;
+        if (!isDraggingRef.current) return;
+        const scrollElement = scrollRef.current;
+        if (!scrollElement) return;
         e.preventDefault();
-        const x = e.pageX - scrollRef.current.offsetLeft;
-        const walk = (x - startX) * 2;
-        scrollRef.current.scrollLeft = scrollLeft - walk;
+        const x = e.pageX - scrollElement.offsetLeft;
+        const walk = (x - startXRef.current) * 2;
+        scrollElement.scrollLeft = scrollLeftRef.current - walk;
+        normalizeInfiniteScroll();
     };
 
-    const handleMouseUp = () => {
-        setIsDragging(false);
+    const handleMouseUp = () => { isDraggingRef.current = false; };
+    const handleMouseLeave = () => { isDraggingRef.current = false; };
+
+    const handleTouchStart = (e) => {
+        const scrollElement = scrollRef.current;
+        if (!scrollElement) return;
+        isDraggingRef.current = true;
+        startXRef.current = e.touches[0].pageX - scrollElement.offsetLeft;
+        scrollLeftRef.current = scrollElement.scrollLeft;
     };
 
-    const handleMouseLeave = () => {
-        setIsDragging(false);
+    const handleTouchMove = (e) => {
+        if (!isDraggingRef.current) return;
+        const scrollElement = scrollRef.current;
+        if (!scrollElement) return;
+        const x = e.touches[0].pageX - scrollElement.offsetLeft;
+        const walk = (x - startXRef.current) * 2;
+        scrollElement.scrollLeft = scrollLeftRef.current - walk;
+        normalizeInfiniteScroll();
     };
+
+    const handleTouchEnd = () => { isDraggingRef.current = false; };
 
     const machineDetails = {
         name: 'AUTO WARM LAMINATOR',
@@ -241,9 +317,46 @@ export default function FuleiBU1600EWarmAutoLaminator() {
                             {machineDetails.features.map((feature, index) => (
                                 <div key={index} className="fulei-1600e-feature-card">
                                     <div className="fulei-1600e-feature-icon">
-                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                                            <path d="M12 2L2 7l10 5 10-5-10-5z" />
-                                        </svg>
+                                        {index === 0 && (
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                {/* Even heat distribution: radiant heat waves */}
+                                                <rect x="3" y="13" width="18" height="4" rx="1" />
+                                                <path d="M7 13 C7 10 9 8 9 5" />
+                                                <path d="M12 13 C12 10 14 8 14 5" />
+                                                <path d="M17 13 C17 10 19 8 19 5" />
+                                            </svg>
+                                        )}
+                                        {index === 1 && (
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                {/* CNC precision: crosshair/target */}
+                                                <circle cx="12" cy="12" r="10" />
+                                                <circle cx="12" cy="12" r="3" />
+                                                <line x1="12" y1="2" x2="12" y2="5" />
+                                                <line x1="12" y1="19" x2="12" y2="22" />
+                                                <line x1="2" y1="12" x2="5" y2="12" />
+                                                <line x1="19" y1="12" x2="22" y2="12" />
+                                            </svg>
+                                        )}
+                                        {index === 2 && (
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                {/* Versatile speed: sliders */}
+                                                <line x1="4" y1="6" x2="20" y2="6" />
+                                                <line x1="4" y1="12" x2="20" y2="12" />
+                                                <line x1="4" y1="18" x2="20" y2="18" />
+                                                <circle cx="8" cy="6" r="2" fill="white" />
+                                                <circle cx="14" cy="12" r="2" fill="white" />
+                                                <circle cx="10" cy="18" r="2" fill="white" />
+                                            </svg>
+                                        )}
+                                        {index === 3 && (
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                {/* Wide format: expand arrows */}
+                                                <polyline points="15 3 21 3 21 9" />
+                                                <polyline points="9 21 3 21 3 15" />
+                                                <line x1="21" y1="3" x2="14" y2="10" />
+                                                <line x1="3" y1="21" x2="10" y2="14" />
+                                            </svg>
+                                        )}
                                     </div>
                                     <h3 className="fulei-1600e-feature-title">{feature.title}</h3>
                                     <p className="fulei-1600e-feature-text">{feature.description}</p>
@@ -294,56 +407,18 @@ export default function FuleiBU1600EWarmAutoLaminator() {
                             onMouseMove={handleMouseMove}
                             onMouseUp={handleMouseUp}
                             onMouseLeave={handleMouseLeave}
+                            onTouchStart={handleTouchStart}
+                            onTouchMove={handleTouchMove}
+                            onTouchEnd={handleTouchEnd}
+                            onScroll={normalizeInfiniteScroll}
                         >
                             <div className="fulei-1600e-applications-image-grid">
-                                <div className="fulei-1600e-application-image-item">
-                                    <img src="/application/_0000_6.jpg" alt="Commercial Print Lamination" />
-                                    <p>Commercial Print Lamination</p>
-                                </div>
-                                <div className="fulei-1600e-application-image-item">
-                                    <img src="/application/_0001_5.jpg" alt="High-Volume Document Protection" />
-                                    <p>High-Volume Document Protection</p>
-                                </div>
-                                <div className="fulei-1600e-application-image-item">
-                                    <img src="/application/_0002_4.jpg" alt="Menu and Card Lamination" />
-                                    <p>Menu and Card Lamination</p>
-                                </div>
-                                <div className="fulei-1600e-application-image-item">
-                                    <img src="/application/_0003_3.jpg" alt="Photo Lamination Services" />
-                                    <p>Photo Lamination Services</p>
-                                </div>
-                                <div className="fulei-1600e-application-image-item">
-                                    <img src="/application/_0004_2.jpg" alt="Poster and Banner Lamination" />
-                                    <p>Poster and Banner Lamination</p>
-                                </div>
-                                <div className="fulei-1600e-application-image-item">
-                                    <img src="/application/_0005_1.jpg" alt="Educational Material Production" />
-                                    <p>Educational Material Production</p>
-                                </div>
-                                <div className="fulei-1600e-application-image-item">
-                                    <img src="/application/_0000_6.jpg" alt="ID Card and Badge Lamination" />
-                                    <p>ID Card and Badge Lamination</p>
-                                </div>
-                                <div className="fulei-1600e-application-image-item">
-                                    <img src="/application/_0001_5.jpg" alt="Packaging Materials" />
-                                    <p>Packaging Materials</p>
-                                </div>
-                                <div className="fulei-1600e-application-image-item">
-                                    <img src="/application/_0002_4.jpg" alt="Point of Sale Materials" />
-                                    <p>Point of Sale Materials</p>
-                                </div>
-                                <div className="fulei-1600e-application-image-item">
-                                    <img src="/application/_0003_3.jpg" alt="Marketing Collateral Protection" />
-                                    <p>Marketing Collateral Protection</p>
-                                </div>
-                                <div className="fulei-1600e-application-image-item">
-                                    <img src="/application/_0004_2.jpg" alt="Certificate and Award Lamination" />
-                                    <p>Certificate and Award Lamination</p>
-                                </div>
-                                <div className="fulei-1600e-application-image-item">
-                                    <img src="/application/_0005_1.jpg" alt="Professional Print Finishing" />
-                                    <p>Professional Print Finishing</p>
-                                </div>
+                                {loopedApplicationItems.map((item, index) => (
+                                    <div key={`${item.label}-${index}`} className="fulei-1600e-application-image-item">
+                                        <img src={item.image} alt={item.label} />
+                                        <p>{item.label}</p>
+                                    </div>
+                                ))}
                             </div>
                         </div>
                     </div>

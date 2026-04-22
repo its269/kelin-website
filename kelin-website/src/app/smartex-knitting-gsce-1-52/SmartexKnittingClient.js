@@ -8,31 +8,99 @@ export default function SmartexKnittingGSCE152() {
     const [inquiryModalOpen, setInquiryModalOpen] = useState(false);
     const [selectedImage, setSelectedImage] = useState('/embroidery_knitting/Smartex Knitting Machine GSCE-1-52.webp');
     const scrollRef = useRef(null);
-    const [isDragging, setIsDragging] = useState(false);
-    const [startX, setStartX] = useState(0);
-    const [scrollLeft, setScrollLeft] = useState(0);
+    const isDraggingRef = useRef(false);
+    const startXRef = useRef(0);
+    const scrollLeftRef = useRef(0);
+    const animationFrameRef = useRef(null);
+    const lastTimestampRef = useRef(0);
+
+    const applicationItems = [
+        { image: '/application/smartex/1.png', label: 'Sportswear' },
+        { image: '/application/smartex/2.png', label: 'Seamless Underwear' },
+        { image: '/application/smartex/3.png', label: 'Socks' },
+        { image: '/application/smartex/4.png', label: 'Medical Textiles' },
+        { image: '/application/smartex/5.png', label: 'Fashion Knitwear' },
+    ];
+
+    const loopedApplicationItems = [...applicationItems, ...applicationItems, ...applicationItems];
+
+    const normalizeInfiniteScroll = () => {
+        const el = scrollRef.current;
+        if (!el) return;
+        const segmentWidth = el.scrollWidth / 3;
+        if (el.scrollLeft <= 0) {
+            el.scrollLeft = segmentWidth;
+        } else if (el.scrollLeft >= segmentWidth * 2) {
+            el.scrollLeft = segmentWidth;
+        }
+    };
 
     const handleMouseDown = (e) => {
-        setIsDragging(true);
-        setStartX(e.pageX - scrollRef.current.offsetLeft);
-        setScrollLeft(scrollRef.current.scrollLeft);
+        isDraggingRef.current = true;
+        startXRef.current = e.pageX - scrollRef.current.offsetLeft;
+        scrollLeftRef.current = scrollRef.current.scrollLeft;
     };
 
     const handleMouseMove = (e) => {
-        if (!isDragging) return;
+        if (!isDraggingRef.current) return;
         e.preventDefault();
         const x = e.pageX - scrollRef.current.offsetLeft;
-        const walk = (x - startX) * 2;
-        scrollRef.current.scrollLeft = scrollLeft - walk;
+        const walk = (x - startXRef.current) * 2;
+        scrollRef.current.scrollLeft = scrollLeftRef.current - walk;
+        normalizeInfiniteScroll();
     };
 
     const handleMouseUp = () => {
-        setIsDragging(false);
+        isDraggingRef.current = false;
     };
 
     const handleMouseLeave = () => {
-        setIsDragging(false);
+        isDraggingRef.current = false;
     };
+
+    const handleTouchStart = (e) => {
+        isDraggingRef.current = true;
+        startXRef.current = e.touches[0].pageX - scrollRef.current.offsetLeft;
+        scrollLeftRef.current = scrollRef.current.scrollLeft;
+    };
+
+    const handleTouchMove = (e) => {
+        if (!isDraggingRef.current) return;
+        const x = e.touches[0].pageX - scrollRef.current.offsetLeft;
+        const walk = (x - startXRef.current) * 2;
+        scrollRef.current.scrollLeft = scrollLeftRef.current - walk;
+        normalizeInfiniteScroll();
+    };
+
+    const handleTouchEnd = () => {
+        isDraggingRef.current = false;
+    };
+
+    useEffect(() => {
+        const el = scrollRef.current;
+        if (!el) return;
+        const setInitialScroll = () => {
+            el.scrollLeft = el.scrollWidth / 3;
+        };
+        setInitialScroll();
+        window.addEventListener('resize', setInitialScroll);
+        return () => window.removeEventListener('resize', setInitialScroll);
+    }, []);
+
+    useEffect(() => {
+        const speed = 0.05;
+        const animate = (timestamp) => {
+            if (!isDraggingRef.current && scrollRef.current) {
+                const elapsed = timestamp - lastTimestampRef.current;
+                scrollRef.current.scrollLeft += speed * elapsed;
+                normalizeInfiniteScroll();
+            }
+            lastTimestampRef.current = timestamp;
+            animationFrameRef.current = requestAnimationFrame(animate);
+        };
+        animationFrameRef.current = requestAnimationFrame(animate);
+        return () => cancelAnimationFrame(animationFrameRef.current);
+    }, []);
 
     const machineDetails = {
         name: 'SMARTEX GS-CE152 KNITTING MACHINE',
@@ -238,9 +306,43 @@ export default function SmartexKnittingGSCE152() {
                             {machineDetails.features.map((feature, index) => (
                                 <div key={index} className="smartex-knitting-gsce-feature-card">
                                     <div className="smartex-knitting-gsce-feature-icon">
-                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                                            <path d="M12 2L2 7l10 5 10-5-10-5z" />
-                                        </svg>
+                                        {index === 0 && (
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                {/* Single system/carriage: one cart/slider on rail */}
+                                                <line x1="2" y1="8" x2="22" y2="8" />
+                                                <rect x="8" y="10" width="8" height="6" rx="1" />
+                                                <circle cx="10" cy="16" r="1.5" />
+                                                <circle cx="14" cy="16" r="1.5" />
+                                            </svg>
+                                        )}
+                                        {index === 1 && (
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                {/* LCD interface: monitor/screen */}
+                                                <rect x="2" y="3" width="20" height="14" rx="2" />
+                                                <line x1="8" y1="21" x2="16" y2="21" />
+                                                <line x1="12" y1="17" x2="12" y2="21" />
+                                                <line x1="6" y1="8" x2="18" y2="8" />
+                                                <line x1="6" y1="12" x2="14" y2="12" />
+                                            </svg>
+                                        )}
+                                        {index === 2 && (
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                {/* Dual-sided yarn carrier: two-sided spool */}
+                                                <ellipse cx="12" cy="12" rx="6" ry="4" />
+                                                <line x1="2" y1="8" x2="6" y2="10" />
+                                                <line x1="22" y1="8" x2="18" y2="10" />
+                                                <line x1="2" y1="16" x2="6" y2="14" />
+                                                <line x1="22" y1="16" x2="18" y2="14" />
+                                            </svg>
+                                        )}
+                                        {index === 3 && (
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                {/* Auto error detection: alert/bell */}
+                                                <path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9" />
+                                                <path d="M13.73 21a2 2 0 0 1-3.46 0" />
+                                                <circle cx="12" cy="7" r="1" fill="currentColor" stroke="none" />
+                                            </svg>
+                                        )}
                                     </div>
                                     <h3 className="smartex-knitting-gsce-feature-title">{feature.title}</h3>
                                     <p className="smartex-knitting-gsce-feature-text">{feature.description}</p>
@@ -291,56 +393,18 @@ export default function SmartexKnittingGSCE152() {
                             onMouseMove={handleMouseMove}
                             onMouseUp={handleMouseUp}
                             onMouseLeave={handleMouseLeave}
+                            onTouchStart={handleTouchStart}
+                            onTouchMove={handleTouchMove}
+                            onTouchEnd={handleTouchEnd}
+                            onScroll={normalizeInfiniteScroll}
                         >
                             <div className="smartex-knitting-gsce-applications-image-grid">
-                                <div className="smartex-knitting-gsce-application-image-item">
-                                    <img src="/application/_0000_6.jpg" alt="Photo Lamination" />
-                                    <p>Photo Lamination</p>
-                                </div>
-                                <div className="smartex-knitting-gsce-application-image-item">
-                                    <img src="/application/_0001_5.jpg" alt="Print Protection" />
-                                    <p>Print Protection</p>
-                                </div>
-                                <div className="smartex-knitting-gsce-application-image-item">
-                                    <img src="/application/_0002_4.jpg" alt="Poster Lamination" />
-                                    <p>Poster Lamination</p>
-                                </div>
-                                <div className="smartex-knitting-gsce-application-image-item">
-                                    <img src="/application/_0003_3.jpg" alt="Document Preservation" />
-                                    <p>Document Preservation</p>
-                                </div>
-                                <div className="smartex-knitting-gsce-application-image-item">
-                                    <img src="/application/_0004_2.jpg" alt="Signage Production" />
-                                    <p>Signage Production</p>
-                                </div>
-                                <div className="smartex-knitting-gsce-application-image-item">
-                                    <img src="/application/_0005_1.jpg" alt="Menu Boards" />
-                                    <p>Menu Boards</p>
-                                </div>
-                                <div className="smartex-knitting-gsce-application-image-item">
-                                    <img src="/application/_0000_6.jpg" alt="Educational Materials" />
-                                    <p>Educational Materials</p>
-                                </div>
-                                <div className="smartex-knitting-gsce-application-image-item">
-                                    <img src="/application/_0001_5.jpg" alt="Point of Sale Displays" />
-                                    <p>Point of Sale Displays</p>
-                                </div>
-                                <div className="smartex-knitting-gsce-application-image-item">
-                                    <img src="/application/_0002_4.jpg" alt="Exhibition Graphics" />
-                                    <p>Exhibition Graphics</p>
-                                </div>
-                                <div className="smartex-knitting-gsce-application-image-item">
-                                    <img src="/application/_0003_3.jpg" alt="Heat-Sensitive Material Protection" />
-                                    <p>Heat-Sensitive Material Protection</p>
-                                </div>
-                                <div className="smartex-knitting-gsce-application-image-item">
-                                    <img src="/application/_0004_2.jpg" alt="Quick Turnaround Projects" />
-                                    <p>Quick Turnaround Projects</p>
-                                </div>
-                                <div className="smartex-knitting-gsce-application-image-item">
-                                    <img src="/application/_0005_1.jpg" alt="Professional Presentation Materials" />
-                                    <p>Professional Presentation Materials</p>
-                                </div>
+                                {loopedApplicationItems.map((item, index) => (
+                                    <div key={`${item.label}-${index}`} className="smartex-knitting-gsce-application-image-item">
+                                        <img src={item.image} alt={item.label} />
+                                        <p>{item.label}</p>
+                                    </div>
+                                ))}
                             </div>
                         </div>
                     </div>

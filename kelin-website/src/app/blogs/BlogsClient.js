@@ -1,6 +1,7 @@
 // app/blogs/page.js
 "use client";
 import React, { useState } from 'react';
+import Link from 'next/link';
 import "./blogs.css";
 import Header from '../components/Header';
 
@@ -22,34 +23,32 @@ export default function BlogsPage() {
         "Kirin DA182T Plus": "/blogs-kirin-DA182T-plus",
         "Smart Sublimation": "/blogs-smart-sublimation",
         "Smart DTF Powder Shaker W650-4C": "/blogs-smart-DTF-powder-shaker-w650-4C",
-        "SMART DTF Machine": "/smart-dtf-machine",
-        "DTF UV Printer SF303-i3200 2ft": "/dtf-uv-printer-sf303-i3200-2ft",
-        "DTF UV Printer SF604-i3200 2ft - High Res": "/dtf-uv-printer-sf604-i3200-2ft-high-res",
-        "Luxor RTR UV System": "/luxor-rtr-uv-system",
-        "Automatic UV Crystal Flat Pasting Machine": "/automatic-uv-crystal-flat-pasting-machine",
-        "Liyu X-Line DQS UV Hybrid Printer": "/liyu-x-line-dqs-uv-hybrid-printer",
-        "SMART UV Printer": "/smart-uv-printer",
-        "R2000 Roller Type Sublimation GS 1200": "/r2000-roller-type-sublimation-gs-1200",
-        "Dual Pneumatic Sublimation 80cm x 100cm": "/dual-pneumatic-sublimation-80x100",
-        "Sapphire Heat Press": "/sapphire-heat-press",
-        "Subli-Mate Manual 80cm x 100cm": "/subli-mate-manual-80x100",
-        "Cold Laminator": "/cold-laminator",
-        "Fulei BU-1425FA Flatbed Laminator": "/fulei-bu-1425fa-flatbed-laminator",
-        "Fulei BU-1600E Warm Auto Laminator": "/fulei-bu-1600e-warm-auto-laminator",
-        "Handheld Fiber Laser": "/handheld-fiber-laser",
-        "Hanniu K1390 CO2 Laser 150W with CCD": "/hanniu-k1390-co2-laser-150w-ccd",
-        "Hanniu K1390 CO2 Laser 300W": "/hanniu-k1390-co2-laser-300w",
-        "K-Sign Desktop Laser B330": "/k-sign-desktop-laser-b330",
-        "K-Sign DF-1916 Laser Fabric Cutting": "/k-sign-df-1916-laser-fabric-cutting",
-        "K-Sign Desktop Laser Marking": "/k-sign-desktop-laser-marking",
-        "Reci Handheld Fiber Laser Welding R-A80 800W": "/reci-handheld-fiber-laser-welding-ra80-800w",
-        "Yueming Fiber Laser CMA-1325C-G-G 1000W": "/yueming-fiber-laser-cma-1325c-g-g-1000w",
-        "Yueming Fiber Laser HL1530C-G-E 1500W IPG": "/yueming-fiber-laser-hl1530c-g-e-1500w-ipg",
-        "Promaker Embroidery 1201": "/promaker-embroidery-1201",
-        "Promaker Embroidery 1202": "/promaker-embroidery-1202",
-        "Promaker Embroidery 1804": "/promaker-embroidery-1804",
-        "Smartex Knitting Machine GS-CE152": "/smartex-knitting-machine-gs-ce152",
-        "K-Sign Letter Shell 3D Printer": "/k-sign-letter-shell-3d-printer"
+        "SMART DTF Machine": "/blogs-smart-DTF-machine/",
+        "DTF UV Printer SF303-i3200 2ft": "/blogs-DTF-UV-printer-SF303-i3200",
+        "DTF UV Printer SF604-i3200 2ft - High Res": "/blogs-DTF-UV-printer-SF604-i3200",
+        "Luxor RTR UV System": "/blogs-luxor-rtr-uv-system",
+        "Automatic UV Crystal Flat Pasting Machine": "/blogs-automatic-UV-crystal-flat-pasting-machine",
+        "Liyu X-Line DQS UV Hybrid Printer": "/blogs-liyu-x-line-DQS-UV-hybrid-printer",
+        "SMART UV Printer": "/blogs-smart-uv-printer",
+        "R2000 Roller Type Sublimation GS 1200": "/blogs-r2000-roller-type-sublimation/",
+        "Dual Pneumatic Sublimation 80cm x 100cm": "/blogs-dual-pneumatic-sublimation",
+        "Sapphire Heat Press": "/blogs-sapphire-heat-press",
+        "Subli-Mate Manual 80cm x 100cm": "/blogs-subli-mate-manual",
+        "Cold Laminator": "/blogs-cold-laminator",
+        "Fulei BU-1425FA Flatbed Laminator": "/blogs-flatbed-laminator",
+        "Fulei BU-1600E Warm Auto Laminator": "/blogs-auto-warm-laminator",
+        "Handheld Fiber Laser": "/blogs-handheld-fiber-laser",
+        "Hanniu K1390 CO2 Laser 150W with CCD": "/blogs-hanniu-k1390-CO2laser-150W",
+        "Hanniu K1390 CO2 Laser 300W": "/blogs-hanniu-k1390-CO2-laser-300W",
+        "K-Sign Desktop Laser B330": "/blogs-k-sign-desktop-laser-b330",
+        "K-Sign DF-1916 Laser Fabric Cutting": "/blogs-k-sign-df-1916-laser-fabric-cutting",
+        "K-Sign Desktop Laser Marking": "/blogs-k-sign-desktop-laser-marking",
+        "Reci Handheld Fiber Laser Welding R-A80 800W": "/blogs-reci-handheld-fiber-laser-welding",
+        "Yueming Fiber Laser CMA-1325C-G-G 1000W": "/blogs-yueming-fiber-laser-CMA-1325C-G-G",
+        "Yueming Fiber Laser HL1530C-G-E 1500W IPG": "/blogs-yueming-fiber-laser-HL1530C-G-E",
+        "Promaker Embroidery Series (1201 / 1202 / 1804)": "/blogs-promaker-embroidery-series",
+        "Smartex Knitting Machine GS-CE152": "/blogs-smartex-knitting-machine-GS-CE152",
+        "K-Sign Letter Shell 3D Printer": "/blogs-k-sign-letter-shell-3D-printer"
     };
 
     const blogPosts = [
@@ -107,9 +106,7 @@ export default function BlogsPage() {
         { id: 39, title: "Yueming Fiber Laser HL1530C-G-E 1500W IPG", category: "Laser Machines", excerpt: "Maximizing throughput with IPG power sources in heavy metal fabrication.", date: "February 2025", image: '/laser-machines/Yueming Fiber Laser HL1530C-G-E 1500W IPG.webp' },
 
         // Embroidery and Knitting Machines
-        { id: 40, title: "Promaker Embroidery 1201", category: "Embroidery", excerpt: "Single-head industrial embroidery setup and tension calibration.", date: "February 2025", image: '/embroidery_knitting/Promaker Embroidery 1201.webp' },
-        { id: 41, title: "Promaker Embroidery 1202", category: "Embroidery", excerpt: "Scaling your custom apparel business with multi-head embroidery systems.", date: "February 2025", image: '/embroidery_knitting/Promaker Embroidery 1202.webp' },
-        { id: 42, title: "Promaker Embroidery 1804", category: "Embroidery", excerpt: "High-volume corporate branding with the 1804 multi-needle system.", date: "January 2025", image: '/embroidery_knitting/Promaker Embroidery 1204.webp' },
+        { id: 40, title: "Promaker Embroidery Series (1201 / 1202 / 1804)", category: "Embroidery", excerpt: "Industrial computerized embroidery machines in 1-head, 2-head, and 4-head configurations — up to 1200 RPM with Japanese hook technology.", date: "February 2025", image: '/embroidery_knitting/Promaker Embroidery 1201.webp' },
         { id: 43, title: "Smartex Knitting Machine GS-CE152", category: "Embroidery", excerpt: "Automating complex knit patterns for modern garment manufacturing.", date: "January 2025", image: '/embroidery_knitting/Smartex Knitting Machine GSCE-1-52.webp' },
 
         // 3D Machines
@@ -186,12 +183,12 @@ export default function BlogsPage() {
                             <span className="category-pill">{post.category}</span>
                             <h3>{post.title}</h3>
                             <p className="post-excerpt">{post.excerpt}</p>
-                            <a
+                            <Link
                                 href={guideLinks[post.title] || `/blogs/${post.id}`}
                                 className="read-guide-link"
                             >
-                                Read Guide &rarr;
-                            </a>
+                                Read More &rarr;
+                            </Link>
                         </div>
                     </article>
                 ))}
@@ -214,12 +211,12 @@ export default function BlogsPage() {
                                 <span className="category-pill">{post.category}</span>
                                 <h3>{post.title}</h3>
                                 <p className="post-excerpt">{post.excerpt}</p>
-                                <a
+                                <Link
                                     href={post.link}
                                     className="read-guide-link"
                                 >
-                                    Explore &rarr;
-                                </a>
+                                    Read More &rarr;
+                                </Link>
                             </div>
                         </article>
                     ))}

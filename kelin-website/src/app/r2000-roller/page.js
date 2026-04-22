@@ -24,7 +24,7 @@ export const metadata = {
     openGraph: {
         title: "R2000 Roller Heat Press Machine | Kelin Graphics System Philippines",
         description: "The R2000 Roller Heat Press is a continuous roller-style heat transfer machine for high-volume sublimation and garment printing. Available at Kelin Philippines.",
-        images: [{ url: "/heatpress/dual-pneumatic.webp", width: 1200, height: 630, alt: "R2000 Roller Heat Press Machine | Kelin Graphics System Philippines" }],
+        images: [{ url: "/sublimation_dtf/SUBL R2000 Roller Type Sublimation Machine GS 1200 (1).webp", width: 1200, height: 630, alt: "R2000 Roller Sublimation Machine GS1200 / GS1900 | Kelin Graphics System Philippines" }],
         type: "website",
     },
     alternates: {

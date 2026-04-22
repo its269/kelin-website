@@ -334,9 +334,58 @@ export default function GCCAR24Desktop() {
                             {machineDetails.features.map((feature, index) => (
                                 <div key={index} className="gcc-ar24-feature-card">
                                     <div className="gcc-ar24-feature-icon">
-                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                                            <path d="M12 2L2 7l10 5 10-5-10-5z" />
-                                        </svg>
+                                        {index === 0 && (
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                {/* Superior functionality: star/award */}
+                                                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                                            </svg>
+                                        )}
+                                        {index === 1 && (
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                {/* Dual port connectivity: two plugs/ports */}
+                                                <rect x="9" y="2" width="6" height="4" rx="1" />
+                                                <rect x="2" y="16" width="6" height="4" rx="1" />
+                                                <rect x="16" y="16" width="6" height="4" rx="1" />
+                                                <line x1="12" y1="6" x2="12" y2="12" />
+                                                <line x1="5" y1="12" x2="19" y2="12" />
+                                                <line x1="5" y1="12" x2="5" y2="16" />
+                                                <line x1="19" y1="12" x2="19" y2="16" />
+                                            </svg>
+                                        )}
+                                        {index === 2 && (
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                {/* Grooved cut-off tool: scissors/groove */}
+                                                <circle cx="6" cy="6" r="3" />
+                                                <circle cx="6" cy="18" r="3" />
+                                                <line x1="20" y1="4" x2="8.12" y2="15.88" />
+                                                <line x1="14.47" y1="14.48" x2="20" y2="20" />
+                                                <line x1="8.12" y1="8.12" x2="12" y2="12" />
+                                            </svg>
+                                        )}
+                                        {index === 3 && (
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                {/* User-friendly interface: touch screen */}
+                                                <rect x="2" y="3" width="20" height="14" rx="2" />
+                                                <line x1="8" y1="21" x2="16" y2="21" />
+                                                <line x1="12" y1="17" x2="12" y2="21" />
+                                                <circle cx="12" cy="10" r="2" />
+                                            </svg>
+                                        )}
+                                        {index === 4 && (
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                {/* AAS contour cutting: path with dot */}
+                                                <path d="M3 17 C5 14 8 10 12 10 C16 10 19 14 21 17" />
+                                                <circle cx="12" cy="10" r="3" />
+                                                <line x1="12" y1="2" x2="12" y2="7" />
+                                            </svg>
+                                        )}
+                                        {index === 5 && (
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                {/* Industrial grade: gear/cog */}
+                                                <circle cx="12" cy="12" r="4" />
+                                                <path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.93 4.93l2.12 2.12M16.95 16.95l2.12 2.12M4.93 19.07l2.12-2.12M16.95 7.05l2.12-2.12" />
+                                            </svg>
+                                        )}
                                     </div>
                                     <h3 className="gcc-ar24-feature-title">{feature.title}</h3>
                                     <p className="gcc-ar24-feature-text">{feature.description}</p>

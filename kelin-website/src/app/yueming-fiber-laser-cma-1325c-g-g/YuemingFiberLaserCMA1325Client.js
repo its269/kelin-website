@@ -8,31 +8,100 @@ export default function YuemingFiberLaser() {
     const [inquiryModalOpen, setInquiryModalOpen] = useState(false);
     const [selectedImage, setSelectedImage] = useState('/laser-machines/Yueming Fiber Laser  CMA-1325C-G-G 1000w.webp');
     const scrollRef = useRef(null);
-    const [isDragging, setIsDragging] = useState(false);
-    const [startX, setStartX] = useState(0);
-    const [scrollLeft, setScrollLeft] = useState(0);
+    const isDraggingRef = useRef(false);
+    const startXRef = useRef(0);
+    const scrollLeftRef = useRef(0);
+    const animationFrameRef = useRef(null);
+    const lastTimestampRef = useRef(0);
+
+    const applicationItems = [
+        { image: '/application/yueming-fiber-laser-cma-1325c-g-g/1.png', label: 'Metal Sheet Cutting' },
+        { image: '/application/yueming-fiber-laser-cma-1325c-g-g/2.png', label: 'Stainless Steel' },
+        { image: '/application/yueming-fiber-laser-cma-1325c-g-g/3.png', label: 'Carbon Steel' },
+        { image: '/application/yueming-fiber-laser-cma-1325c-g-g/4.png', label: 'Aluminum Cutting' },
+        { image: '/application/yueming-fiber-laser-cma-1325c-g-g/5.png', label: 'Industrial Parts' },
+        { image: '/application/yueming-fiber-laser-cma-1325c-g-g/6.png', label: 'Precision Fabrication' },
+    ];
+
+    const loopedApplicationItems = [...applicationItems, ...applicationItems, ...applicationItems];
+
+    const normalizeInfiniteScroll = () => {
+        const el = scrollRef.current;
+        if (!el) return;
+        const segmentWidth = el.scrollWidth / 3;
+        if (el.scrollLeft <= 0) {
+            el.scrollLeft = segmentWidth;
+        } else if (el.scrollLeft >= segmentWidth * 2) {
+            el.scrollLeft = segmentWidth;
+        }
+    };
 
     const handleMouseDown = (e) => {
-        setIsDragging(true);
-        setStartX(e.pageX - scrollRef.current.offsetLeft);
-        setScrollLeft(scrollRef.current.scrollLeft);
+        isDraggingRef.current = true;
+        startXRef.current = e.pageX - scrollRef.current.offsetLeft;
+        scrollLeftRef.current = scrollRef.current.scrollLeft;
     };
 
     const handleMouseMove = (e) => {
-        if (!isDragging) return;
+        if (!isDraggingRef.current) return;
         e.preventDefault();
         const x = e.pageX - scrollRef.current.offsetLeft;
-        const walk = (x - startX) * 2;
-        scrollRef.current.scrollLeft = scrollLeft - walk;
+        const walk = (x - startXRef.current) * 2;
+        scrollRef.current.scrollLeft = scrollLeftRef.current - walk;
+        normalizeInfiniteScroll();
     };
 
     const handleMouseUp = () => {
-        setIsDragging(false);
+        isDraggingRef.current = false;
     };
 
     const handleMouseLeave = () => {
-        setIsDragging(false);
+        isDraggingRef.current = false;
     };
+
+    const handleTouchStart = (e) => {
+        isDraggingRef.current = true;
+        startXRef.current = e.touches[0].pageX - scrollRef.current.offsetLeft;
+        scrollLeftRef.current = scrollRef.current.scrollLeft;
+    };
+
+    const handleTouchMove = (e) => {
+        if (!isDraggingRef.current) return;
+        const x = e.touches[0].pageX - scrollRef.current.offsetLeft;
+        const walk = (x - startXRef.current) * 2;
+        scrollRef.current.scrollLeft = scrollLeftRef.current - walk;
+        normalizeInfiniteScroll();
+    };
+
+    const handleTouchEnd = () => {
+        isDraggingRef.current = false;
+    };
+
+    useEffect(() => {
+        const el = scrollRef.current;
+        if (!el) return;
+        const setInitialScroll = () => {
+            el.scrollLeft = el.scrollWidth / 3;
+        };
+        setInitialScroll();
+        window.addEventListener('resize', setInitialScroll);
+        return () => window.removeEventListener('resize', setInitialScroll);
+    }, []);
+
+    useEffect(() => {
+        const speed = 0.05;
+        const animate = (timestamp) => {
+            if (!isDraggingRef.current && scrollRef.current) {
+                const elapsed = timestamp - lastTimestampRef.current;
+                scrollRef.current.scrollLeft += speed * elapsed;
+                normalizeInfiniteScroll();
+            }
+            lastTimestampRef.current = timestamp;
+            animationFrameRef.current = requestAnimationFrame(animate);
+        };
+        animationFrameRef.current = requestAnimationFrame(animate);
+        return () => cancelAnimationFrame(animationFrameRef.current);
+    }, []);
 
     const machineDetails = {
         name: 'Yueming Fiber Laser CMA-1325C-G-G 1000W',
@@ -242,9 +311,44 @@ export default function YuemingFiberLaser() {
                             {machineDetails.features.map((feature, index) => (
                                 <div key={index} className="yueming-laser-feature-card">
                                     <div className="yueming-laser-feature-icon">
-                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                                            <path d="M12 2L2 7l10 5 10-5-10-5z" />
-                                        </svg>
+                                        {index === 0 && (
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                {/* Reinforced welding bed: strong table/frame */}
+                                                <rect x="2" y="14" width="20" height="4" rx="1" />
+                                                <line x1="5" y1="18" x2="5" y2="22" />
+                                                <line x1="19" y1="18" x2="19" y2="22" />
+                                                <line x1="2" y1="14" x2="2" y2="10" />
+                                                <line x1="22" y1="14" x2="22" y2="10" />
+                                                <line x1="2" y1="10" x2="22" y2="10" />
+                                            </svg>
+                                        )}
+                                        {index === 1 && (
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                {/* Trusted global components: globe */}
+                                                <circle cx="12" cy="12" r="10" />
+                                                <line x1="2" y1="12" x2="22" y2="12" />
+                                                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+                                            </svg>
+                                        )}
+                                        {index === 2 && (
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                {/* IPG laser/cabling: fiber optic beam */}
+                                                <circle cx="6" cy="12" r="3" />
+                                                <circle cx="18" cy="12" r="3" />
+                                                <path d="M9 12 Q12 6 15 12" />
+                                                <path d="M9 12 Q12 18 15 12" />
+                                            </svg>
+                                        )}
+                                        {index === 3 && (
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                {/* Lightweight crossbeam: bridge/beam */}
+                                                <line x1="2" y1="12" x2="22" y2="12" />
+                                                <line x1="6" y1="12" x2="6" y2="16" />
+                                                <line x1="12" y1="12" x2="12" y2="18" />
+                                                <line x1="18" y1="12" x2="18" y2="16" />
+                                                <path d="M2 12 L12 6 L22 12" />
+                                            </svg>
+                                        )}
                                     </div>
                                     <h3 className="yueming-laser-feature-title">{feature.title}</h3>
                                     <p className="yueming-laser-feature-text">{feature.description}</p>
@@ -295,56 +399,18 @@ export default function YuemingFiberLaser() {
                             onMouseMove={handleMouseMove}
                             onMouseUp={handleMouseUp}
                             onMouseLeave={handleMouseLeave}
+                            onTouchStart={handleTouchStart}
+                            onTouchMove={handleTouchMove}
+                            onTouchEnd={handleTouchEnd}
+                            onScroll={normalizeInfiniteScroll}
                         >
                             <div className="yueming-laser-applications-image-grid">
-                                <div className="yueming-laser-application-image-item">
-                                    <img src="/application/_0000_6.jpg" alt="Back Lit Posters" />
-                                    <p>Back Lit Posters</p>
-                                </div>
-                                <div className="yueming-laser-application-image-item">
-                                    <img src="/application/_0001_5.jpg" alt="Billboards" />
-                                    <p>Billboards</p>
-                                </div>
-                                <div className="yueming-laser-application-image-item">
-                                    <img src="/application/_0002_4.jpg" alt="Bus Station Ads" />
-                                    <p>Bus Station Ads</p>
-                                </div>
-                                <div className="yueming-laser-application-image-item">
-                                    <img src="/application/_0003_3.jpg" alt="Entertainment Hall Display" />
-                                    <p>Entertainment Hall Display</p>
-                                </div>
-                                <div className="yueming-laser-application-image-item">
-                                    <img src="/application/_0004_2.jpg" alt="Signage Production" />
-                                    <p>Signage Production</p>
-                                </div>
-                                <div className="yueming-laser-application-image-item">
-                                    <img src="/application/_0005_1.jpg" alt="Promotional Displays" />
-                                    <p>Promotional Displays</p>
-                                </div>
-                                <div className="yueming-laser-application-image-item">
-                                    <img src="/application/_0000_6.jpg" alt="Exhibition Graphics" />
-                                    <p>Exhibition Graphics</p>
-                                </div>
-                                <div className="yueming-laser-application-image-item">
-                                    <img src="/application/_0001_5.jpg" alt="Point of Sale Displays" />
-                                    <p>Point of Sale Displays</p>
-                                </div>
-                                <div className="yueming-laser-application-image-item">
-                                    <img src="/application/_0002_4.jpg" alt="Corrugated Materials" />
-                                    <p>Corrugated Materials</p>
-                                </div>
-                                <div className="yueming-laser-application-image-item">
-                                    <img src="/application/_0003_3.jpg" alt="Light-Plate Printing" />
-                                    <p>Light-Plate Printing</p>
-                                </div>
-                                <div className="yueming-laser-application-image-item">
-                                    <img src="/application/_0004_2.jpg" alt="Small-Format Materials" />
-                                    <p>Small-Format Materials</p>
-                                </div>
-                                <div className="yueming-laser-application-image-item">
-                                    <img src="/application/_0005_1.jpg" alt="Commercial Advertising" />
-                                    <p>Commercial Advertising</p>
-                                </div>
+                                {loopedApplicationItems.map((item, index) => (
+                                    <div key={`${item.label}-${index}`} className="yueming-laser-application-image-item">
+                                        <img src={item.image} alt={item.label} />
+                                        <p>{item.label}</p>
+                                    </div>
+                                ))}
                             </div>
                         </div>
                     </div>

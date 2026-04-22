@@ -377,9 +377,55 @@ export default function SmartSublimation() {
                             {machineDetails.features.map((feature, index) => (
                                 <div key={index} className="smart-sublimation-feature-card">
                                     <div className="smart-sublimation-feature-icon">
-                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                                            <path d="M12 2L2 7l10 5 10-5-10-5z" />
-                                        </svg>
+                                        {index === 0 && (
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                {/* THK Guide Rail: two rails with slider */}
+                                                <line x1="4" y1="8" x2="20" y2="8" />
+                                                <line x1="4" y1="16" x2="20" y2="16" />
+                                                <rect x="9" y="10" width="6" height="4" rx="1" />
+                                            </svg>
+                                        )}
+                                        {index === 1 && (
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                {/* Control system: CPU chip */}
+                                                <rect x="7" y="7" width="10" height="10" rx="1" />
+                                                <line x1="7" y1="10" x2="4" y2="10" />
+                                                <line x1="7" y1="14" x2="4" y2="14" />
+                                                <line x1="17" y1="10" x2="20" y2="10" />
+                                                <line x1="17" y1="14" x2="20" y2="14" />
+                                                <line x1="10" y1="7" x2="10" y2="4" />
+                                                <line x1="14" y1="7" x2="14" y2="4" />
+                                                <line x1="10" y1="17" x2="10" y2="20" />
+                                                <line x1="14" y1="17" x2="14" y2="20" />
+                                            </svg>
+                                        )}
+                                        {index === 2 && (
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                {/* Aluminium carriage: cart on rail */}
+                                                <line x1="2" y1="8" x2="22" y2="8" />
+                                                <rect x="7" y="10" width="10" height="6" rx="1" />
+                                                <circle cx="9" cy="17" r="1.5" />
+                                                <circle cx="15" cy="17" r="1.5" />
+                                            </svg>
+                                        )}
+                                        {index === 3 && (
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                {/* Infrared heating fan: fan blades */}
+                                                <circle cx="12" cy="12" r="3" />
+                                                <path d="M12 9 C12 6 10 4 8 5 C6 6 6 9 9 9" />
+                                                <path d="M15 12 C18 12 20 10 19 8 C18 6 15 6 15 9" />
+                                                <path d="M12 15 C12 18 14 20 16 19 C18 18 18 15 15 15" />
+                                                <path d="M9 12 C6 12 4 14 5 16 C6 18 9 18 9 15" />
+                                            </svg>
+                                        )}
+                                        {index === 4 && (
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                {/* Industrial speed: speedometer */}
+                                                <path d="M12 2a10 10 0 1 0 10 10" />
+                                                <path d="M12 12 L17 7" />
+                                                <circle cx="12" cy="12" r="1.5" fill="currentColor" stroke="none" />
+                                            </svg>
+                                        )}
                                     </div>
                                     <h3 className="smart-sublimation-feature-title">{feature.title}</h3>
                                     <p className="smart-sublimation-feature-text">{feature.description}</p>

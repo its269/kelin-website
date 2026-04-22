@@ -327,9 +327,41 @@ export default function KirinDA182TPlus() {
                             {machineDetails.features.map((feature, index) => (
                                 <div key={index} className="kirin-da182t-feature-card">
                                     <div className="kirin-da182t-feature-icon">
-                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                                            <path d="M12 2L2 7l10 5 10-5-10-5z" />
-                                        </svg>
+                                        {index === 0 && (
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                {/* Superior print head: nozzle array */}
+                                                <rect x="5" y="2" width="14" height="8" rx="1" />
+                                                <line x1="8" y1="10" x2="8" y2="14" />
+                                                <line x1="12" y1="10" x2="12" y2="16" />
+                                                <line x1="16" y1="10" x2="16" y2="14" />
+                                                <path d="M6 20 Q8 17 10 20 Q12 23 14 20 Q16 17 18 20" />
+                                            </svg>
+                                        )}
+                                        {index === 1 && (
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                {/* High-speed HD output: speedometer */}
+                                                <path d="M12 2a10 10 0 1 0 10 10" />
+                                                <path d="M12 12 L17 7" />
+                                                <circle cx="12" cy="12" r="1.5" fill="currentColor" stroke="none" />
+                                            </svg>
+                                        )}
+                                        {index === 2 && (
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                {/* Auto cleaning: rotating arrows cycle */}
+                                                <polyline points="23 4 23 10 17 10" />
+                                                <polyline points="1 20 1 14 7 14" />
+                                                <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15" />
+                                            </svg>
+                                        )}
+                                        {index === 3 && (
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                {/* Reduce printing cost: piggy bank / cost down arrow */}
+                                                <line x1="12" y1="2" x2="12" y2="14" />
+                                                <polyline points="8 10 12 14 16 10" />
+                                                <line x1="4" y1="18" x2="20" y2="18" />
+                                                <line x1="4" y1="22" x2="20" y2="22" />
+                                            </svg>
+                                        )}
                                     </div>
                                     <h3 className="kirin-da182t-feature-title">{feature.title}</h3>
                                     <p className="kirin-da182t-feature-text">{feature.description}</p>

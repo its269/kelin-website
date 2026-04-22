@@ -1,38 +1,114 @@
 "use client";
 import Header from '../components/Header';
 import Link from 'next/link';
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import './fulei-bu-1425fa.css';
 
 export default function FuleiBU1425FAFlatbedLaminator() {
     const [inquiryModalOpen, setInquiryModalOpen] = useState(false);
     const [selectedImage, setSelectedImage] = useState('/laminator/Fulei BU-1425FA Flatbed Laminator (1).webp');
     const scrollRef = useRef(null);
-    const [isDragging, setIsDragging] = useState(false);
-    const [startX, setStartX] = useState(0);
-    const [scrollLeft, setScrollLeft] = useState(0);
+    const isDraggingRef = useRef(false);
+    const startXRef = useRef(0);
+    const scrollLeftRef = useRef(0);
+    const animationFrameRef = useRef(null);
+    const lastTimestampRef = useRef(0);
+
+    const applicationItems = [
+        { image: '/application/laminator/1.png', label: 'Signage Production' },
+        { image: '/application/laminator/2.png', label: 'Display Graphics Mounting' },
+        { image: '/application/laminator/3.png', label: 'Photo Mounting' },
+        { image: '/application/laminator/4.png', label: 'Exhibition Graphics' },
+        { image: '/application/laminator/5.png', label: 'POP Display Manufacturing' },
+        { image: '/application/laminator/6.png', label: 'Professional Print Finishing' },
+    ];
+
+    const loopedApplicationItems = [...applicationItems, ...applicationItems, ...applicationItems];
+
+    const normalizeInfiniteScroll = () => {
+        const scrollElement = scrollRef.current;
+        if (!scrollElement) return;
+        const segmentWidth = scrollElement.scrollWidth / 3;
+        const boundaryOffset = 4;
+        if (scrollElement.scrollLeft <= boundaryOffset) {
+            scrollElement.scrollLeft += segmentWidth;
+        } else if (scrollElement.scrollLeft >= segmentWidth * 2 - boundaryOffset) {
+            scrollElement.scrollLeft -= segmentWidth;
+        }
+    };
+
+    useEffect(() => {
+        const scrollElement = scrollRef.current;
+        if (!scrollElement) return;
+        const initializeLoopPosition = () => {
+            const segmentWidth = scrollElement.scrollWidth / 3;
+            scrollElement.scrollLeft = segmentWidth;
+        };
+        initializeLoopPosition();
+        window.addEventListener('resize', initializeLoopPosition);
+        return () => window.removeEventListener('resize', initializeLoopPosition);
+    }, []);
+
+    useEffect(() => {
+        const speedPixelsPerMs = 0.05;
+        const animate = (timestamp) => {
+            if (lastTimestampRef.current === 0) lastTimestampRef.current = timestamp;
+            const delta = timestamp - lastTimestampRef.current;
+            lastTimestampRef.current = timestamp;
+            if (!isDraggingRef.current && scrollRef.current) {
+                scrollRef.current.scrollLeft += delta * speedPixelsPerMs;
+                normalizeInfiniteScroll();
+            }
+            animationFrameRef.current = window.requestAnimationFrame(animate);
+        };
+        animationFrameRef.current = window.requestAnimationFrame(animate);
+        return () => {
+            if (animationFrameRef.current) window.cancelAnimationFrame(animationFrameRef.current);
+            lastTimestampRef.current = 0;
+        };
+    }, []);
 
     const handleMouseDown = (e) => {
-        setIsDragging(true);
-        setStartX(e.pageX - scrollRef.current.offsetLeft);
-        setScrollLeft(scrollRef.current.scrollLeft);
+        const scrollElement = scrollRef.current;
+        if (!scrollElement) return;
+        isDraggingRef.current = true;
+        startXRef.current = e.pageX - scrollElement.offsetLeft;
+        scrollLeftRef.current = scrollElement.scrollLeft;
     };
 
     const handleMouseMove = (e) => {
-        if (!isDragging) return;
+        if (!isDraggingRef.current) return;
+        const scrollElement = scrollRef.current;
+        if (!scrollElement) return;
         e.preventDefault();
-        const x = e.pageX - scrollRef.current.offsetLeft;
-        const walk = (x - startX) * 2;
-        scrollRef.current.scrollLeft = scrollLeft - walk;
+        const x = e.pageX - scrollElement.offsetLeft;
+        const walk = (x - startXRef.current) * 2;
+        scrollElement.scrollLeft = scrollLeftRef.current - walk;
+        normalizeInfiniteScroll();
     };
 
-    const handleMouseUp = () => {
-        setIsDragging(false);
+    const handleMouseUp = () => { isDraggingRef.current = false; };
+    const handleMouseLeave = () => { isDraggingRef.current = false; };
+
+    const handleTouchStart = (e) => {
+        const scrollElement = scrollRef.current;
+        if (!scrollElement) return;
+        isDraggingRef.current = true;
+        startXRef.current = e.touches[0].pageX - scrollElement.offsetLeft;
+        scrollLeftRef.current = scrollElement.scrollLeft;
     };
 
-    const handleMouseLeave = () => {
-        setIsDragging(false);
+    const handleTouchMove = (e) => {
+        if (!isDraggingRef.current) return;
+        const scrollElement = scrollRef.current;
+        if (!scrollElement) return;
+        const x = e.touches[0].pageX - scrollElement.offsetLeft;
+        const walk = (x - startXRef.current) * 2;
+        scrollElement.scrollLeft = scrollLeftRef.current - walk;
+        normalizeInfiniteScroll();
     };
+
+    const handleTouchEnd = () => { isDraggingRef.current = false; };
 
     const machineDetails = {
         name: 'FLATBED LAMINATOR',
@@ -239,9 +315,39 @@ export default function FuleiBU1425FAFlatbedLaminator() {
                             {machineDetails.features.map((feature, index) => (
                                 <div key={index} className="fulei-1425fa-feature-card">
                                     <div className="fulei-1425fa-feature-icon">
-                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                                            <path d="M12 2L2 7l10 5 10-5-10-5z" />
-                                        </svg>
+                                        {index === 0 && (
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                {/* Versatile flatbed media: flat platform */}
+                                                <rect x="2" y="14" width="20" height="4" rx="1" />
+                                                <line x1="6" y1="14" x2="6" y2="8" />
+                                                <line x1="18" y1="14" x2="18" y2="8" />
+                                                <line x1="4" y1="8" x2="20" y2="8" />
+                                            </svg>
+                                        )}
+                                        {index === 1 && (
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                {/* Wide format: expand arrows */}
+                                                <polyline points="15 3 21 3 21 9" />
+                                                <polyline points="9 21 3 21 3 15" />
+                                                <line x1="21" y1="3" x2="14" y2="10" />
+                                                <line x1="3" y1="21" x2="10" y2="14" />
+                                            </svg>
+                                        )}
+                                        {index === 2 && (
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                {/* Single person operation: person/user */}
+                                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                                                <circle cx="12" cy="7" r="4" />
+                                            </svg>
+                                        )}
+                                        {index === 3 && (
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                                {/* Multiple substrate support: layers stack */}
+                                                <polygon points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5 12 2" />
+                                                <line x1="12" y1="22" x2="12" y2="15.5" />
+                                                <polyline points="22 8.5 12 15.5 2 8.5" />
+                                            </svg>
+                                        )}
                                     </div>
                                     <h3 className="fulei-1425fa-feature-title">{feature.title}</h3>
                                     <p className="fulei-1425fa-feature-text">{feature.description}</p>
@@ -292,56 +398,18 @@ export default function FuleiBU1425FAFlatbedLaminator() {
                             onMouseMove={handleMouseMove}
                             onMouseUp={handleMouseUp}
                             onMouseLeave={handleMouseLeave}
+                            onTouchStart={handleTouchStart}
+                            onTouchMove={handleTouchMove}
+                            onTouchEnd={handleTouchEnd}
+                            onScroll={normalizeInfiniteScroll}
                         >
                             <div className="fulei-1425fa-applications-image-grid">
-                                <div className="fulei-1425fa-application-image-item">
-                                    <img src="/application/_0000_6.jpg" alt="Signage Production" />
-                                    <p>Signage Production</p>
-                                </div>
-                                <div className="fulei-1425fa-application-image-item">
-                                    <img src="/application/_0001_5.jpg" alt="Display Graphics Mounting" />
-                                    <p>Display Graphics Mounting</p>
-                                </div>
-                                <div className="fulei-1425fa-application-image-item">
-                                    <img src="/application/_0002_4.jpg" alt="Photo Mounting to Rigid Boards" />
-                                    <p>Photo Mounting to Rigid Boards</p>
-                                </div>
-                                <div className="fulei-1425fa-application-image-item">
-                                    <img src="/application/_0003_3.jpg" alt="Exhibition Graphics" />
-                                    <p>Exhibition Graphics</p>
-                                </div>
-                                <div className="fulei-1425fa-application-image-item">
-                                    <img src="/application/_0004_2.jpg" alt="POP Display Manufacturing" />
-                                    <p>POP Display Manufacturing</p>
-                                </div>
-                                <div className="fulei-1425fa-application-image-item">
-                                    <img src="/application/_0005_1.jpg" alt="Museum Quality Mounting" />
-                                    <p>Museum Quality Mounting</p>
-                                </div>
-                                <div className="fulei-1425fa-application-image-item">
-                                    <img src="/application/_0000_6.jpg" alt="Architectural Graphics" />
-                                    <p>Architectural Graphics</p>
-                                </div>
-                                <div className="fulei-1425fa-application-image-item">
-                                    <img src="/application/_0001_5.jpg" alt="Trade Show Graphics" />
-                                    <p>Trade Show Graphics</p>
-                                </div>
-                                <div className="fulei-1425fa-application-image-item">
-                                    <img src="/application/_0002_4.jpg" alt="Retail Displays" />
-                                    <p>Retail Displays</p>
-                                </div>
-                                <div className="fulei-1425fa-application-image-item">
-                                    <img src="/application/_0003_3.jpg" alt="Foam Board Mounting" />
-                                    <p>Foam Board Mounting</p>
-                                </div>
-                                <div className="fulei-1425fa-application-image-item">
-                                    <img src="/application/_0004_2.jpg" alt="Acrylic Mounting" />
-                                    <p>Acrylic Mounting</p>
-                                </div>
-                                <div className="fulei-1425fa-application-image-item">
-                                    <img src="/application/_0005_1.jpg" alt="Professional Print Finishing" />
-                                    <p>Professional Print Finishing</p>
-                                </div>
+                                {loopedApplicationItems.map((item, index) => (
+                                    <div key={`${item.label}-${index}`} className="fulei-1425fa-application-image-item">
+                                        <img src={item.image} alt={item.label} />
+                                        <p>{item.label}</p>
+                                    </div>
+                                ))}
                             </div>
                         </div>
                     </div>

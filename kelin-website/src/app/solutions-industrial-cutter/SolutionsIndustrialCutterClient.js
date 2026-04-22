@@ -6,8 +6,8 @@ import Header from '../components/Header';
 export default function IndustrialCutterPage() {
     // Map product titles to their custom guide or product URLs
     const guideLinks = {
-        "Economical Fiber Laser": "/economical-fiber-laser",
-        "CMA 1325": "/cma-1325",
+        "Economical Fiber Laser": "/yueming-fiber-laser-cma-1325c-g-g",
+        "CMA 1325": "/yueming-fiber-laser-cma-1325c-g-g",
         "iEcho BK3": "/iecho-bk3",
         "iEcho BK4": "/iecho-bk4",
         "iEcho PK": "/iecho-pk",
