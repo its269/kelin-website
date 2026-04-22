@@ -330,7 +330,7 @@
 .item:not(.active)::after {
     content: 'Click to view';
     position: absolute;
-    bottom: 120px;
+    bottom: 70px;
     left: 50%;
     transform: translateX(-50%);
     font-size: 11px;
