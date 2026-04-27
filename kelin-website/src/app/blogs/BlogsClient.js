@@ -120,24 +120,32 @@ export default function BlogsPage() {
             title: "Omega Tarpaulin: Tips for Maximum Durability and Longevity",
             category: "Materials",
             excerpt: "Discover expert tips and techniques to enhance the durability and lifespan of Omega Tarpaulin for outdoor use.",
-            image: "/materials/omega-tarpaulin.webp",
-            link: "/materials"
+            image: "/materials.png",
+            link: "/blogs-1-materials"
         },
         {
             id: 's2',
             title: "Essential Printhead Cleaning Kits for Long-Lasting Performance",
             category: "Accessories",
             excerpt: "Learn how to maintain your i3200 and F1080 printheads with these must-have cleaning kits for optimal printing quality.",
-            image: "/accessories/cleaning-kit.webp",
-            link: "/accessories"
+            image: "/accessories.png",
+            link: "/blogs-2-accessories"
         },
         {
             id: 's3',
             title: "UV vs. Eco-Solvent Inks: Which is Best for Your Business?",
             category: "Inks",
             excerpt: "Compare UV and Eco-Solvent inks to find the perfect solution for your printing needs and business growth.",
-            image: "/uv-machines/SMART UV Printer.webp",
-            link: "/smart-uv-printer"
+            image: "/inks.png",
+            link: "/blogs-3-inks"
+        },
+        {
+            id: 's4',
+            title: "Promotional Display Solutions for Events & Trade Shows",
+            category: "Promotional Display",
+            excerpt: "Explore roll-up banners, pop-up booths, feather banners, and more to make your brand stand out at any event.",
+            image: "/display.png",
+            link: "/blogs-4-promotional-display"
         }
     ];
 
@@ -153,9 +161,36 @@ export default function BlogsPage() {
             <Header />
 
             <header className="luxor-header">
-                <h1>Blogs</h1>
-                <p>Technical insights, machine operational guides, and industry updates from Kelin Graphics System.</p>
+                <h1>Machines</h1>
+                <p>Technical insights, operational guides, and industry updates for all Kelin printing machines, cutters, and laser systems.</p>
             </header>
+
+            {/* --- Suggested Section (top) --- */}
+            <section className="suggested-section">
+                <div className="suggested-header">
+                    <div className="suggested-header-left">
+                        <span className="suggested-eyebrow">EXPLORE</span>
+                        <h2 className="suggested-title">You Might Also Like</h2>
+                    </div>
+                    <p className="suggested-subtitle">Discover related guides on materials, accessories, and inks to get the most from your machines.</p>
+                </div>
+                <div className="suggested-cards">
+                    {suggestedPosts.map((post, i) => (
+                        <Link key={post.id} href={post.link} className={`suggested-card suggested-card--${i}`}>
+                            <div className="suggested-card-img-wrap">
+                                <img src={post.image || '/dummy-image-square.jpg'} alt={post.title} className="suggested-card-img" loading="lazy" />
+                                <div className="suggested-card-overlay" />
+                            </div>
+                            <div className="suggested-card-body">
+                                <span className="suggested-card-pill">{post.category}</span>
+                                <h3 className="suggested-card-title">{post.title}</h3>
+                                <p className="suggested-card-excerpt">{post.excerpt}</p>
+                                <span className="suggested-card-cta">Read More <span aria-hidden="true">→</span></span>
+                            </div>
+                        </Link>
+                    ))}
+                </div>
+            </section>
 
             <nav className="category-filter">
                 {categories.map((category, index) => (
@@ -192,35 +227,6 @@ export default function BlogsPage() {
                         </div>
                     </article>
                 ))}
-            </section>
-
-            {/* --- New Suggested Section --- */}
-            <section className="suggested-section">
-                <h2 className="suggested-title">You Might Also Like</h2>
-                <div className="luxor-grid">
-                    {suggestedPosts.map((post) => (
-                        <article key={post.id} className="luxor-card">
-                            <div className="card-image-container">
-                                <img
-                                    src={post.image || '/dummy-image-square.jpg'}
-                                    alt={post.title}
-                                    className="card-img"
-                                />
-                            </div>
-                            <div className="card-content">
-                                <span className="category-pill">{post.category}</span>
-                                <h3>{post.title}</h3>
-                                <p className="post-excerpt">{post.excerpt}</p>
-                                <Link
-                                    href={post.link}
-                                    className="read-guide-link"
-                                >
-                                    Read More &rarr;
-                                </Link>
-                            </div>
-                        </article>
-                    ))}
-                </div>
             </section>
         </main>
     );

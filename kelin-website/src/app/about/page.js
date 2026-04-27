@@ -194,9 +194,10 @@ export default function AboutUs() {
                             </div>
                         </div>
 
-                        <div className="story-visual">
-                            <img src="/se.webp" alt="Kelin Graphics System Journey" />
-                        </div>
+                        {/* Story Visual */}
+                        {/* <div className="story-visual">
+                            <img src="/office-building.png" alt="Kelin Graphics System Office" />
+                        </div> */}
                     </div>
                 </section>
             </main>

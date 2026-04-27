@@ -18,7 +18,6 @@ const FeaturedCarousel = ({ items = [], title = "Featured Subjects", label, onAc
         const center = carousel.scrollLeft + carousel.clientWidth / 2;
         const itemElements = carousel.querySelectorAll(`.${styles.item}`);
 
-        let closestItem = null;
         let closestDistance = Infinity;
         let closestIndex = -1;
 
@@ -26,20 +25,15 @@ const FeaturedCarousel = ({ items = [], title = "Featured Subjects", label, onAc
             const itemCenter = item.offsetLeft + item.offsetWidth / 2;
             const distance = Math.abs(center - itemCenter);
 
-            // Remove active class from all items first
-            item.classList.remove(styles.active);
-
             // Find the closest item to center
             if (distance < closestDistance) {
                 closestDistance = distance;
-                closestItem = item;
                 closestIndex = index;
             }
         });
 
         // Only the center-most item becomes active
-        if (closestItem) {
-            closestItem.classList.add(styles.active);
+        if (closestIndex !== -1) {
             setActiveItemIndex(closestIndex);
             if (onActiveItemChange && items[closestIndex]) {
                 onActiveItemChange(items[closestIndex]);
@@ -143,12 +137,13 @@ const FeaturedCarousel = ({ items = [], title = "Featured Subjects", label, onAc
                     {label && <div className={styles.label}>{label}</div>}
                     <h2 className={styles.title}>{title}</h2>
                 </div>
-                {activeItemIndex !== null && items[activeItemIndex]?.description && (
-                    <div className={styles.descriptionBox}>
-                        <h3 className={styles.descriptionTitle}>{items[activeItemIndex].title}</h3>
-                        <p className={styles.descriptionText}>{items[activeItemIndex].description}</p>
-                    </div>
-                )}
+                <div
+                    className={styles.descriptionBox}
+                    style={{ visibility: activeItemIndex !== null && items[activeItemIndex]?.description ? 'visible' : 'hidden' }}
+                >
+                    <h3 className={styles.descriptionTitle}>{items[activeItemIndex]?.title ?? ''}</h3>
+                    <p className={styles.descriptionText}>{items[activeItemIndex]?.description ?? ''}</p>
+                </div>
             </div>
             <div className={styles.carouselWrapper}>
 
@@ -160,7 +155,7 @@ const FeaturedCarousel = ({ items = [], title = "Featured Subjects", label, onAc
                     {items.map((item, index) => (
                         <div
                             key={item.id || index}
-                            className={styles.item}
+                            className={`${styles.item} ${index === activeItemIndex ? styles.active : ''}`}
                             onClick={() => handleItemClick(index)}
                         >
                             <div className={styles.imageWrapper}>

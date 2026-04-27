@@ -3,6 +3,7 @@ import Header from '../components/Header';
 import Link from 'next/link';
 import { useState, useRef, useEffect } from 'react';
 import InquiryStorage from '../utils/InquiryStorage';
+import VideoPlayer from '../components/VideoPlayer';
 import './iecho-bk4.css';
 
 export default function IEchoBK4() {
@@ -319,6 +320,10 @@ export default function IEchoBK4() {
                             {machineDetails.detailedDescription}
                         </p>
                     </div>
+                </section>
+
+                <section className="videoPlayer-section">
+                    <VideoPlayer src="/iecho-bk4.mp4" poster="" alt="iECHO BK4 Video" />
                 </section>
 
                 {/* Key Features */}

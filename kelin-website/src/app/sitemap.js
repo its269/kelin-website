@@ -4,7 +4,7 @@ export const revalidate = false;
 
 export default function sitemap() {
     const baseUrl = 'https://www.kelinph.com'
-    const lastMod = new Date('2026-04-20')
+    const lastMod = new Date('2026-04-25')
 
     return [
 
@@ -76,6 +76,30 @@ export default function sitemap() {
             lastModified: lastMod,
             changeFrequency: 'monthly',
             priority: 0.8,
+        },
+        {
+            url: `${baseUrl}/printers`,
+            lastModified: lastMod,
+            changeFrequency: 'monthly',
+            priority: 0.8,
+        },
+        {
+            url: `${baseUrl}/materials-or`,
+            lastModified: lastMod,
+            changeFrequency: 'monthly',
+            priority: 0.7,
+        },
+        {
+            url: `${baseUrl}/machine`,
+            lastModified: lastMod,
+            changeFrequency: 'monthly',
+            priority: 0.7,
+        },
+        {
+            url: `${baseUrl}/cutters`,
+            lastModified: lastMod,
+            changeFrequency: 'monthly',
+            priority: 0.7,
         },
 
         // ─── Machine Category Pages ───────────────────────────────
@@ -223,6 +247,30 @@ export default function sitemap() {
         // ─── Blog Pages ───────────────────────────────────────────
         {
             url: `${baseUrl}/blogs`,
+            lastModified: lastMod,
+            changeFrequency: 'weekly',
+            priority: 0.8,
+        },
+        {
+            url: `${baseUrl}/blogs-1-materials`,
+            lastModified: lastMod,
+            changeFrequency: 'weekly',
+            priority: 0.8,
+        },
+        {
+            url: `${baseUrl}/blogs-2-accessories`,
+            lastModified: lastMod,
+            changeFrequency: 'weekly',
+            priority: 0.8,
+        },
+        {
+            url: `${baseUrl}/blogs-3-inks`,
+            lastModified: lastMod,
+            changeFrequency: 'weekly',
+            priority: 0.8,
+        },
+        {
+            url: `${baseUrl}/blogs-4-promotional-display`,
             lastModified: lastMod,
             changeFrequency: 'weekly',
             priority: 0.8,
@@ -438,6 +486,12 @@ export default function sitemap() {
             priority: 0.7,
         },
         {
+            url: `${baseUrl}/blogs-k-sign-letter-shell-3D-printer`,
+            lastModified: lastMod,
+            changeFrequency: 'monthly',
+            priority: 0.7,
+        },
+        {
             url: `${baseUrl}/blogs-reci-handheld-fiber-laser-welding`,
             lastModified: lastMod,
             changeFrequency: 'monthly',
@@ -457,6 +511,316 @@ export default function sitemap() {
         },
         {
             url: `${baseUrl}/blogs-promaker-embroidery-series`,
+            lastModified: lastMod,
+            changeFrequency: 'monthly',
+            priority: 0.7,
+        },
+        {
+            url: `${baseUrl}/blogs-smartex-knitting-machine-GS-CE152`,
+            lastModified: lastMod,
+            changeFrequency: 'monthly',
+            priority: 0.7,
+        },
+
+        // ─── Blog Pages — Materials Articles ─────────────────────
+        {
+            url: `${baseUrl}/blogs-material-alpha-tarpaulin-flex`,
+            lastModified: lastMod,
+            changeFrequency: 'monthly',
+            priority: 0.7,
+        },
+        {
+            url: `${baseUrl}/blogs-material-beta-tarpaulin`,
+            lastModified: lastMod,
+            changeFrequency: 'monthly',
+            priority: 0.7,
+        },
+        {
+            url: `${baseUrl}/blogs-material-omega-tarpaulin`,
+            lastModified: lastMod,
+            changeFrequency: 'monthly',
+            priority: 0.7,
+        },
+        {
+            url: `${baseUrl}/blogs-material-omega-blackout-tarpaulin`,
+            lastModified: lastMod,
+            changeFrequency: 'monthly',
+            priority: 0.7,
+        },
+        {
+            url: `${baseUrl}/blogs-material-backlit-film-lightbox`,
+            lastModified: lastMod,
+            changeFrequency: 'monthly',
+            priority: 0.7,
+        },
+        {
+            url: `${baseUrl}/blogs-material-bacut-translucent-sticker`,
+            lastModified: lastMod,
+            changeFrequency: 'monthly',
+            priority: 0.7,
+        },
+        {
+            url: `${baseUrl}/blogs-material-tickee-vinyl-sticker`,
+            lastModified: lastMod,
+            changeFrequency: 'monthly',
+            priority: 0.7,
+        },
+        {
+            url: `${baseUrl}/blogs-material-tickee-cold-laminating-film`,
+            lastModified: lastMod,
+            changeFrequency: 'monthly',
+            priority: 0.7,
+        },
+        {
+            url: `${baseUrl}/blogs-material-sofie-vinyl-stickers`,
+            lastModified: lastMod,
+            changeFrequency: 'monthly',
+            priority: 0.7,
+        },
+        {
+            url: `${baseUrl}/blogs-material-sofie-clear-sticker`,
+            lastModified: lastMod,
+            changeFrequency: 'monthly',
+            priority: 0.7,
+        },
+        {
+            url: `${baseUrl}/blogs-material-sofie-pp-film`,
+            lastModified: lastMod,
+            changeFrequency: 'monthly',
+            priority: 0.7,
+        },
+        {
+            url: `${baseUrl}/blogs-material-just-cast-acrylic`,
+            lastModified: lastMod,
+            changeFrequency: 'monthly',
+            priority: 0.7,
+        },
+        {
+            url: `${baseUrl}/blogs-material-just-sintra-board`,
+            lastModified: lastMod,
+            changeFrequency: 'monthly',
+            priority: 0.7,
+        },
+        {
+            url: `${baseUrl}/blogs-material-just-aluminum-composite`,
+            lastModified: lastMod,
+            changeFrequency: 'monthly',
+            priority: 0.7,
+        },
+        {
+            url: `${baseUrl}/blogs-material-luminao-extruded-acrylic`,
+            lastModified: lastMod,
+            changeFrequency: 'monthly',
+            priority: 0.7,
+        },
+        {
+            url: `${baseUrl}/blogs-material-foam-board-high-impact`,
+            lastModified: lastMod,
+            changeFrequency: 'monthly',
+            priority: 0.7,
+        },
+        {
+            url: `${baseUrl}/blogs-material-sublimation-paper`,
+            lastModified: lastMod,
+            changeFrequency: 'monthly',
+            priority: 0.7,
+        },
+        {
+            url: `${baseUrl}/blogs-material-smartex-sublimate-fabrics`,
+            lastModified: lastMod,
+            changeFrequency: 'monthly',
+            priority: 0.7,
+        },
+        {
+            url: `${baseUrl}/blogs-material-textile-accessories`,
+            lastModified: lastMod,
+            changeFrequency: 'monthly',
+            priority: 0.7,
+        },
+        {
+            url: `${baseUrl}/blogs-material-specialty-architectural-films`,
+            lastModified: lastMod,
+            changeFrequency: 'monthly',
+            priority: 0.7,
+        },
+
+        // ─── Blog Pages — Ink Articles ────────────────────────────
+        {
+            url: `${baseUrl}/blogs-ink-brilliant-dtf`,
+            lastModified: lastMod,
+            changeFrequency: 'monthly',
+            priority: 0.7,
+        },
+        {
+            url: `${baseUrl}/blogs-ink-brilliant-sub`,
+            lastModified: lastMod,
+            changeFrequency: 'monthly',
+            priority: 0.7,
+        },
+        {
+            url: `${baseUrl}/blogs-ink-cleaning-solutions`,
+            lastModified: lastMod,
+            changeFrequency: 'monthly',
+            priority: 0.7,
+        },
+        {
+            url: `${baseUrl}/blogs-ink-dtf-cleaning`,
+            lastModified: lastMod,
+            changeFrequency: 'monthly',
+            priority: 0.7,
+        },
+        {
+            url: `${baseUrl}/blogs-ink-eagle-v2-1l`,
+            lastModified: lastMod,
+            changeFrequency: 'monthly',
+            priority: 0.7,
+        },
+        {
+            url: `${baseUrl}/blogs-ink-eagle-v2-5l`,
+            lastModified: lastMod,
+            changeFrequency: 'monthly',
+            priority: 0.7,
+        },
+        {
+            url: `${baseUrl}/blogs-ink-eco-m15`,
+            lastModified: lastMod,
+            changeFrequency: 'monthly',
+            priority: 0.7,
+        },
+        {
+            url: `${baseUrl}/blogs-ink-m21-i3200`,
+            lastModified: lastMod,
+            changeFrequency: 'monthly',
+            priority: 0.7,
+        },
+        {
+            url: `${baseUrl}/blogs-ink-papijet-fluorescent`,
+            lastModified: lastMod,
+            changeFrequency: 'monthly',
+            priority: 0.7,
+        },
+        {
+            url: `${baseUrl}/blogs-ink-papijet-lti-203`,
+            lastModified: lastMod,
+            changeFrequency: 'monthly',
+            priority: 0.7,
+        },
+        {
+            url: `${baseUrl}/blogs-ink-papijet-ltip`,
+            lastModified: lastMod,
+            changeFrequency: 'monthly',
+            priority: 0.7,
+        },
+        {
+            url: `${baseUrl}/blogs-ink-phoenix-e2`,
+            lastModified: lastMod,
+            changeFrequency: 'monthly',
+            priority: 0.7,
+        },
+        {
+            url: `${baseUrl}/blogs-ink-t14-1l`,
+            lastModified: lastMod,
+            changeFrequency: 'monthly',
+            priority: 0.7,
+        },
+        {
+            url: `${baseUrl}/blogs-ink-t14-eco-plus`,
+            lastModified: lastMod,
+            changeFrequency: 'monthly',
+            priority: 0.7,
+        },
+        {
+            url: `${baseUrl}/blogs-ink-vivid-dtf`,
+            lastModified: lastMod,
+            changeFrequency: 'monthly',
+            priority: 0.7,
+        },
+        {
+            url: `${baseUrl}/blogs-ink-vivid-sub-1l`,
+            lastModified: lastMod,
+            changeFrequency: 'monthly',
+            priority: 0.7,
+        },
+        {
+            url: `${baseUrl}/blogs-ink-vivid-sub-5l`,
+            lastModified: lastMod,
+            changeFrequency: 'monthly',
+            priority: 0.7,
+        },
+        {
+            url: `${baseUrl}/blogs-acc-electric-scissors`,
+            lastModified: lastMod,
+            changeFrequency: 'monthly',
+            priority: 0.7,
+        },
+        {
+            url: `${baseUrl}/blogs-acc-cutting-mat`,
+            lastModified: lastMod,
+            changeFrequency: 'monthly',
+            priority: 0.7,
+        },
+        {
+            url: `${baseUrl}/blogs-acc-acrylic-bender`,
+            lastModified: lastMod,
+            changeFrequency: 'monthly',
+            priority: 0.7,
+        },
+        {
+            url: `${baseUrl}/blogs-acc-cyano-adhesive`,
+            lastModified: lastMod,
+            changeFrequency: 'monthly',
+            priority: 0.7,
+        },
+        {
+            url: `${baseUrl}/blogs-acc-foam-tape`,
+            lastModified: lastMod,
+            changeFrequency: 'monthly',
+            priority: 0.7,
+        },
+        {
+            url: `${baseUrl}/blogs-acc-pet-tape`,
+            lastModified: lastMod,
+            changeFrequency: 'monthly',
+            priority: 0.7,
+        },
+        {
+            url: `${baseUrl}/blogs-acc-banner-tape`,
+            lastModified: lastMod,
+            changeFrequency: 'monthly',
+            priority: 0.7,
+        },
+        {
+            url: `${baseUrl}/blogs-acc-reflective-tape`,
+            lastModified: lastMod,
+            changeFrequency: 'monthly',
+            priority: 0.7,
+        },
+        {
+            url: `${baseUrl}/blogs-acc-eyelet-puncher`,
+            lastModified: lastMod,
+            changeFrequency: 'monthly',
+            priority: 0.7,
+        },
+        {
+            url: `${baseUrl}/blogs-acc-squeegees`,
+            lastModified: lastMod,
+            changeFrequency: 'monthly',
+            priority: 0.7,
+        },
+        {
+            url: `${baseUrl}/blogs-acc-printhead-swab`,
+            lastModified: lastMod,
+            changeFrequency: 'monthly',
+            priority: 0.7,
+        },
+        {
+            url: `${baseUrl}/blogs-acc-wiper-polyester`,
+            lastModified: lastMod,
+            changeFrequency: 'monthly',
+            priority: 0.7,
+        },
+        {
+            url: `${baseUrl}/blogs-acc-glass-wiper`,
             lastModified: lastMod,
             changeFrequency: 'monthly',
             priority: 0.7,

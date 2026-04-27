@@ -2,6 +2,7 @@
 import Header from '../components/Header';
 import Link from 'next/link';
 import { useState, useRef, useEffect } from 'react';
+import VideoPlayer from '../components/VideoPlayer';
 import './handheld-fiber-laser.css';
 
 export default function HandheldFiberLaser() {
@@ -301,6 +302,10 @@ export default function HandheldFiberLaser() {
                             {machineDetails.detailedDescription}
                         </p>
                     </div>
+                </section>
+
+                <section className="videoPlayer-section">
+                    <VideoPlayer src="/mini-handheld-fiber-laser.mp4" poster="" alt="Mini Handheld Fiber Laser Video" />
                 </section>
 
                 {/* Key Features */}

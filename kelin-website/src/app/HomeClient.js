@@ -8,6 +8,7 @@ import FeaturedCarousel from "./components/FeaturedCarousel";
 import TextSection from "./components/TextSection";
 import NewsEventsSection from "./components/NewsEventsSection";
 import Slideshow from "./components/Slideshow";
+import AboutSection from "./components/AboutSection";
 import Image from "next/image";
 import Link from "next/link";
 import "./home.css";
@@ -243,6 +244,7 @@ export default function Home() {
           <img src="/background-elements(2).svg" alt="" aria-hidden="true" className="luxor-background-elements2 luxor-bg-elements" />
         </section>
 
+        <AboutSection />
         <NewsEventsSection />
         <div className="horizontally-scroll">
           <HorizontalScrollSection />

@@ -191,6 +191,12 @@
     background: rgba(255, 255, 255, 0.25);
 }
 
+@media (max-width: 768px) {
+    .videoContainer {
+        border-radius: 0%;
+    }
+}
+
 /* Animations */
 @keyframes fadeIn {
     from {

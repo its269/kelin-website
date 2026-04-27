@@ -7,24 +7,26 @@
 .carouselTextContainer {
     text-align: left;
     width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
+    display: block;
     padding: 0 5% 40px 5%;
     position: relative;
     z-index: 2;
     max-width: 1400px;
     margin: 0 auto;
+    height: 160px;
 }
 
 .carouselChildTextContainer {
-    width: 100%;
+    display: inline-block;
+    max-width: 42%;
 }
 
 .descriptionBox {
-    padding: 36px 0;
+    position: absolute;
+    top: 0;
+    left: calc(42% + 5%);
+    right: 5%;
     animation: fadeInSlide 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-    position: relative;
 }
 
 @keyframes fadeInSlide {
@@ -94,12 +96,13 @@
     }
 
     .carouselChildTextContainer {
-        width: 100%;
+        display: inline-block;
+        max-width: 45%;
     }
 
     .descriptionBox {
-        width: 100%;
-        padding: 28px;
+        left: calc(45% + 2.5%);
+        right: 2.5%;
     }
 
     .descriptionTitle {

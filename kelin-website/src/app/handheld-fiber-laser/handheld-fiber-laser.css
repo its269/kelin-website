@@ -9,6 +9,10 @@
     font-display: swap;
 }
 
+.videoPlayer-section {
+    margin-bottom: 100px;
+}
+
 .handheld-laser-main {
     min-height: 100vh;
     margin-top: 60px;

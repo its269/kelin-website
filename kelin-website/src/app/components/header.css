@@ -932,28 +932,41 @@
 
 /* Active link styles */
 .nav-desktop a.active,
-.dropdown-toggle.active,
-.nav-mobile a.active {
-    color: #ffae44 !important;
-    font-weight: 600;
+.dropdown-toggle.active {
+    color: #ffffff !important;
+    font-weight: 700;
     position: relative;
+    background: rgba(255, 255, 255, 0.15);
+    padding: 6px 14px;
+    border-radius: 20px;
+    backdrop-filter: blur(4px);
 }
 
 .nav-desktop a.active::after,
 .dropdown-toggle.active::after {
-    width: 100% !important;
+    width: 0 !important;
+}
+
+.nav-mobile a.active {
+    color: #e05555 !important;
+    font-weight: 700;
 }
 
 .mobile-dropdown-toggle.active {
-    color: #1f2937 !important;
-    font-weight: 600;
+    color: #e05555 !important;
+    font-weight: 700;
 }
 
 /* Active hover states */
 .nav-desktop a.active:hover,
-.dropdown-toggle.active:hover,
+.dropdown-toggle.active:hover {
+    color: #ffffff !important;
+    background: rgba(255, 255, 255, 0.22);
+    transform: translateY(-1px);
+}
+
 .nav-mobile a.active:hover {
-    color: #111827 !important;
+    color: #e05555 !important;
     transform: translateY(-1px);
 }
 
