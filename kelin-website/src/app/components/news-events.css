@@ -65,14 +65,16 @@
 .event-image-container {
     position: relative;
     overflow: hidden;
-    height: 300px;
-    /* original height 200px */
+    aspect-ratio: 1 / 1;
+    width: 100%;
+    border-radius: 16px 16px 0 0;
 }
 
 .event-image {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    display: block;
     transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 

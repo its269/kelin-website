@@ -14,7 +14,8 @@ export default function NewsEventsSection() {
             title: "Graphic Expo",
             date: "July 16-18, 2026",
             category: "Exhibition",
-            image: "/News Landing Page/Graphic Expo.jpg",
+            image: "/News Landing Page/Graphic Expo.webp",
+            coverImage: "/News Landing Page/Graphic Expo - Cover.webp",
             description: "Join us at SMX Manila (MOA) for the premier graphics and printing exhibition showcasing the latest in digital printing technology.",
             fullDescription: "Join us at SMX Manila (MOA) for the premier graphics and printing exhibition showcasing the latest in digital printing technology. This three-day event brings together industry leaders, innovative technologies, and cutting-edge solutions in the graphics and printing sector.",
             location: "SMX Manila (MOA), Pasay City, Philippines",
@@ -39,7 +40,8 @@ export default function NewsEventsSection() {
             title: "Print Philippines (PrintCon)",
             date: "July 2-4, 2026",
             category: "Exhibition",
-            image: "/News Landing Page/PrintCon.jpg",
+            image: "/News Landing Page/Print Philippines 2026.webp",
+            coverImage: "/News Landing Page/Print Philippines 2026 - Cover.webp",
             description: "Visit our booth at SMX Manila (MOA) during the Philippines' leading print technology exhibition and conference.",
             fullDescription: "Visit our booth at SMX Manila (MOA) during the Philippines' leading print technology exhibition and conference. PrintCon Philippines is the country's premier event for printing professionals, featuring the latest innovations in printing technology and solutions.",
             location: "SMX Manila (MOA), Pasay City, Philippines",
@@ -64,7 +66,8 @@ export default function NewsEventsSection() {
             title: "Pack Print Plas (Manila)",
             date: "October 8-10, 2026",
             category: "Exhibition",
-            image: "/News Landing Page/Pack Prin Plas.jpg",
+            image: "/News Landing Page/PPP Expo.webp",
+            coverImage: "/News Landing Page/PPP Expo - Cover.webp",
             description: "Don't miss our participation at SMX Manila (MOA) for the main packaging, printing, and plastics exhibition in the Philippines.",
             fullDescription: "Don't miss our participation at SMX Manila (MOA) for the main packaging, printing, and plastics exhibition in the Philippines. This comprehensive trade show covers the entire spectrum of packaging, printing, and plastics industries with innovative solutions and technologies.",
             location: "SMX Manila (MOA), Pasay City, Philippines",
@@ -168,7 +171,7 @@ export default function NewsEventsSection() {
                         <div className="modal-body">
                             <div className="modal-image-container">
                                 <Image
-                                    src={selectedEvent.image}
+                                    src={selectedEvent.coverImage || selectedEvent.image}
                                     alt={selectedEvent.title}
                                     width={500}
                                     height={300}

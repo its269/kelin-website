@@ -80,6 +80,7 @@ The collaboration will also focus on joint research and development initiatives,
       category: 'Exhibition',
       date: 'July 16-18, 2026',
       title: 'Graphic Expo',
+      cardImage: '/News Landing Page/Graphic Expo.webp',
       shortDescription: 'Join us at SMX Manila (MOA) for the premier graphics and printing exhibition showcasing the latest in digital printing technology.',
       fullContent: `Join us at Graphic Expo, the Philippines' premier graphics and printing exhibition, taking place at SMX Manila (MOA) from July 16-18, 2026. This three-day event brings together industry professionals, suppliers, and technology providers from across the region.
 
@@ -122,6 +123,7 @@ This event provides an excellent opportunity to connect with industry profession
       category: 'Exhibition',
       date: 'July 2-4, 2026',
       title: 'Print Philippines (PrintCon)',
+      cardImage: '/News Landing Page/Print Philippines 2026.webp',
       shortDescription: 'Visit our booth at SMX Manila (MOA) during the Philippines\' leading print technology exhibition and conference.',
       fullContent: `Print Philippines (PrintCon) is the country's leading print technology exhibition and conference, taking place at SMX Manila (MOA) from July 2-4, 2026. This premier event showcases the latest innovations in printing technology and brings together industry leaders from across the Philippines.
 
@@ -164,6 +166,7 @@ This event represents our commitment to serving diverse industries across all re
       category: 'Exhibition',
       date: 'October 8-10, 2026',
       title: 'Pack Print Plas (Manila)',
+      cardImage: '/News Landing Page/PPP Expo.webp',
       shortDescription: 'Don\'t miss our participation at SMX Manila (MOA) for the main packaging, printing, and plastics exhibition in the Philippines.',
       fullContent: `Pack Print Plas Manila is the Philippines' flagship packaging, printing, and plastics exhibition, taking place at SMX Manila (MOA) from October 8-10, 2026. This is the premier trade show for the packaging and printing industry in the country.
 
@@ -316,7 +319,7 @@ Join us at this flagship event to discover cutting-edge solutions and connect wi
                   <div className="events-lightbox-slideshow">
                     <div className="events-slideshow-container">
                       <img
-                        src="/dummy-image-square.jpg"
+                        src={selectedItem.cardImage || selectedItem.images[currentImageIndex]}
                         alt={selectedItem.title}
                         className="events-slideshow-image"
                       />

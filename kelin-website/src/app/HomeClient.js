@@ -245,6 +245,9 @@ export default function Home() {
         </section>
 
         <AboutSection />
+        <div style={{ width: '100%', display: 'flex', justifyContent: 'center', padding: '0 24px' }}>
+          <hr style={{ width: '100%', maxWidth: '1200px', border: 'none', borderTop: '1.5px solid rgba(0,0,0,0.1)', margin: '0' }} />
+        </div>
         <NewsEventsSection />
         <div className="horizontally-scroll">
           <HorizontalScrollSection />
