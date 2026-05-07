@@ -120,7 +120,7 @@ export default function BlogIEchoPK() {
                                     <strong>Quick Summary</strong>
                                     <ul style={{ margin: '8px 0 0', paddingLeft: '18px', lineHeight: '1.8' }}>
                                         <li>1000 mm/s maximum cutting speed with high-frequency electronic oscillating knife for industrial sign, print, and packaging production</li>
-                                        <li>Barcode management system eliminates manual job selection — scan and cut, ideal for short-run on-demand workflows</li>
+                                        <li>Barcode management system eliminates manual job selection â€” scan and cut, ideal for short-run on-demand workflows</li>
                                         <li>High-definition CCD camera enables precise automatic contour cut registration on printed sheets and roll materials</li>
                                         <li>Fully automatic feeding, cutting, and collection system minimizes operator intervention throughout production shifts</li>
                                     </ul>
@@ -150,13 +150,13 @@ export default function BlogIEchoPK() {
                             <section className="article-section" id="background">
                                 <h2>Why We Put the IECHO PK Under the Microscope</h2>
                                 <p>
-                                    Sign shops and print-and-cut operations in the Philippines face a constant bottleneck: the cutting station. Digital printing has become faster and more affordable, but finishing — precision cutting, weeding, and sorting — still demands significant labor. When Kelin Philippines brought in the IECHO PK Automatic Intelligent Cutting System, we committed to a full hands-on evaluation before recommending it to any client.
+                                    Sign shops and print-and-cut operations in the Philippines face a constant bottleneck: the cutting station. Digital printing has become faster and more affordable, but finishing â€” precision cutting, weeding, and sorting â€” still demands significant labor. When Kelin Philippines brought in the IECHO PK Automatic Intelligent Cutting System, we committed to a full hands-on evaluation before recommending it to any client.
                                 </p>
                                 <p>
-                                    The IECHO PK is positioned as a smart cutting system with auto-feeding — designed to perform automatic sheet feeding, precision cutting, and collection. The headline claim is an industrial-grade maximum cutting speed of <strong>1000 mm/s</strong>, backed by a high-frequency electronic oscillating knife, a high-definition CCD camera for precise automatic positioning, and a barcode management system for rapid job loading. That combination on paper is built for short-run, on-demand production with minimal labor and maximum efficiency.
+                                    The IECHO PK is positioned as a smart cutting system with auto-feeding â€” designed to perform automatic sheet feeding, precision cutting, and collection. The headline claim is an industrial-grade maximum cutting speed of <strong>1000 mm/s</strong>, backed by a high-frequency electronic oscillating knife, a high-definition CCD camera for precise automatic positioning, and a barcode management system for rapid job loading. That combination on paper is built for short-run, on-demand production with minimal labor and maximum efficiency.
                                 </p>
                                 <p>
-                                    We ran the PK and PK Plus configurations through real production workloads — car stickers, PP paper, KT board, foam board, reflective material, card board, magnetic sticker, and corrugated plastic — over an extended testing period. Here is what we found.
+                                    We ran the PK and PK Plus configurations through real production workloads â€” car stickers, PP paper, KT board, foam board, reflective material, card board, magnetic sticker, and corrugated plastic â€” over an extended testing period. Here is what we found.
                                 </p>
                             </section>
 
@@ -209,17 +209,17 @@ export default function BlogIEchoPK() {
                             <section className="article-section" id="performance">
                                 <h2>Real-World Cutting Performance: Our Honest Numbers</h2>
                                 <p>
-                                    Speed figures on a spec sheet are always optimistic. During our extended test period, we pushed both the PK and PK Plus configurations through continuous production runs and measured actual sustained throughput across different material types — not peak numbers under ideal lab conditions.
+                                    Speed figures on a spec sheet are always optimistic. During our extended test period, we pushed both the PK and PK Plus configurations through continuous production runs and measured actual sustained throughput across different material types â€” not peak numbers under ideal lab conditions.
                                 </p>
 
                                 <h3>Sticker Vinyl and Car Stickers</h3>
                                 <p>
-                                    On standard car sticker vinyl with the PK0604, the machine delivered sustained cutting at <strong>920 mm/s</strong> over a 4-hour continuous auto-feed run — comfortably close to the 1000 mm/s maximum spec under real production conditions. Kiss-cut registration was consistently accurate to within +/- 0.1mm, and the CCD camera handled print-to-cut alignment automatically without manual intervention between sheets.
+                                    On standard car sticker vinyl with the PK0604, the machine delivered sustained cutting at <strong>920 mm/s</strong> over a 4-hour continuous auto-feed run â€” comfortably close to the 1000 mm/s maximum spec under real production conditions. Kiss-cut registration was consistently accurate to within +/- 0.1mm, and the CCD camera handled print-to-cut alignment automatically without manual intervention between sheets.
                                 </p>
 
                                 <h3>KT Board and Foam Board (PK Plus)</h3>
                                 <p>
-                                    On 5mm KT board with the PK Plus oscillating knife configuration, the machine averaged steady feed-cut-collect cycles with clean edge quality throughout. The high-frequency oscillating knife produced minimal fraying on foam board edges — a consistent failure point on lower-end drag-knife cutters working with the same material. No recutting was required across a 200-piece test run.
+                                    On 5mm KT board with the PK Plus oscillating knife configuration, the machine averaged steady feed-cut-collect cycles with clean edge quality throughout. The high-frequency oscillating knife produced minimal fraying on foam board edges â€” a consistent failure point on lower-end drag-knife cutters working with the same material. No recutting was required across a 200-piece test run.
                                 </p>
 
                                 <h3>Reflective Material and Card Paper</h3>
@@ -424,7 +424,7 @@ export default function BlogIEchoPK() {
                         <div className="sidebar-widget product-widget">
                             <img src="/cutting-machines/PK1209 (1).webp" alt="IECHO PK Automatic Intelligent Cutting System" className="product-widget-img" />
                             <h4>IECHO PK Plus</h4>
-                            <p>1000 mm/s · CCD Auto-Positioning · Auto-Feed · Oscillating Knife</p>
+                            <p>1000 mm/s Â· CCD Auto-Positioning Â· Auto-Feed Â· Oscillating Knife</p>
                             <Link href="/iecho-pk" className="product-widget-btn">
                                 See Full Details
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m9 18 6-6-6-6" /></svg>

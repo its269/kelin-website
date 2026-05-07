@@ -10,7 +10,7 @@ import Link from 'next/link';
  * This file is a Next.js Server Component (no "use client").
  * "export const metadata" is picked up at BUILD TIME by Next.js
  * to pre-render the <head> with unique title, description,
- * Open Graph tags, and canonical URL — all without JavaScript
+ * Open Graph tags, and canonical URL â€” all without JavaScript
  * in the browser, giving search engines clean static HTML.
  * ============================================================
  */
@@ -40,7 +40,7 @@ export default function BlogKSignDesktopLaserB330() {
             {
                 "@type": "Article",
                 "headline": "K-Sign Desktop Laser Engraving Machine B330 Review: Ultra-Fast 44-Second Engraving at 600 mm/s with 0.01mm Precision",
-                "description": "An in-depth review of the K-Sign Desktop Laser Engraving Machine B330. We cover the 600 mm/s maximum engraving speed, ultra-fast 44-second engraving of an 80×90mm design, 0.01mm precision, tilt protection safety system, adjustable air assist, honeycomb table, desktop protection tray, 300×300mm work area, 120W machine power, and full specifications for wood, leather, acrylic, and non-metallic material engraving applications.",
+                "description": "An in-depth review of the K-Sign Desktop Laser Engraving Machine B330. We cover the 600 mm/s maximum engraving speed, ultra-fast 44-second engraving of an 80Ã—90mm design, 0.01mm precision, tilt protection safety system, adjustable air assist, honeycomb table, desktop protection tray, 300Ã—300mm work area, 120W machine power, and full specifications for wood, leather, acrylic, and non-metallic material engraving applications.",
                 "image": "https://kelinph.com/laser-machines/K-Sign Desktop Laser B330.webp",
                 "author": { "@type": "Organization", "name": "Kelin Graphics System", "url": "https://kelinph.com/about" },
                 "publisher": { "@type": "Organization", "name": "Kelin Graphics System", "logo": { "@type": "ImageObject", "url": "https://kelinph.com/marquee-logo/inks/kelin-logo.png" } },
@@ -51,7 +51,7 @@ export default function BlogKSignDesktopLaserB330() {
             {
                 "@type": "FAQPage",
                 "mainEntity": [
-                    { "@type": "Question", "name": "How fast does the K-Sign B330 Desktop Laser Engraver engrave?", "acceptedAnswer": { "@type": "Answer", "text": "The K-Sign B330 reaches a maximum engraving speed of 600 mm/s and can engrave an 80×90mm design in just 44 seconds, making it one of the fastest desktop laser engravers available for small business use." } },
+                    { "@type": "Question", "name": "How fast does the K-Sign B330 Desktop Laser Engraver engrave?", "acceptedAnswer": { "@type": "Answer", "text": "The K-Sign B330 reaches a maximum engraving speed of 600 mm/s and can engrave an 80Ã—90mm design in just 44 seconds, making it one of the fastest desktop laser engravers available for small business use." } },
                     { "@type": "Question", "name": "What materials can the K-Sign B330 engrave and cut?", "acceptedAnswer": { "@type": "Answer", "text": "The K-Sign B330 is compatible with wood, leather, acrylic, bamboo, rubber, fabric, and most non-metallic materials. It is not designed for engraving bare metals without a marking coating." } },
                     { "@type": "Question", "name": "What software is compatible with the K-Sign B330 Desktop Laser Engraver?", "acceptedAnswer": { "@type": "Answer", "text": "The K-Sign B330 is compatible with LaserGRBL, Lightburn, and Craft Express software. It connects via USB or WiFi, and supports both Windows and Mac platforms depending on the software chosen." } }
                 ]
@@ -114,10 +114,10 @@ export default function BlogKSignDesktopLaserB330() {
                                 <div>
                                     <strong>Quick Summary</strong>
                                     <ul style={{ margin: '8px 0 0', paddingLeft: '18px', lineHeight: '1.8' }}>
-                                        <li>Engraves an 80×90mm design in just 44 seconds at 600 mm/s — one of the fastest desktop laser engravers available</li>
+                                        <li>Engraves an 80Ã—90mm design in just 44 seconds at 600 mm/s â€” one of the fastest desktop laser engravers available</li>
                                         <li>0.01mm precision and 1000DPI resolution deliver fine detail on wood, leather, acrylic, and most non-metallic materials</li>
                                         <li>Built-in tilt protection, adjustable air assist, honeycomb table, and desktop protection tray for safer and cleaner results</li>
-                                        <li>Connects via USB or WiFi; compatible with LaserGRBL, Lightburn, and Craft Express on a compact 300×300mm work area</li>
+                                        <li>Connects via USB or WiFi; compatible with LaserGRBL, Lightburn, and Craft Express on a compact 300Ã—300mm work area</li>
                                     </ul>
                                 </div>
                             </div>

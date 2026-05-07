@@ -53,7 +53,7 @@ export default function BlogUVCrystalFlatPasting() {
             {
                 "@type": "FAQPage",
                 "mainEntity": [
-                    { "@type": "Question", "name": "What does 3-in-1 mean on the Automatic UV Crystal Flat Pasting Machine?", "acceptedAnswer": { "@type": "Answer", "text": "The machine combines lamination, UV glue dispensing, and LED UV curing in a single automated pass — eliminating the need for separate laminating and curing equipment and speeding up the advertising and decorative print finishing workflow." } },
+                    { "@type": "Question", "name": "What does 3-in-1 mean on the Automatic UV Crystal Flat Pasting Machine?", "acceptedAnswer": { "@type": "Answer", "text": "The machine combines lamination, UV glue dispensing, and LED UV curing in a single automated pass â€” eliminating the need for separate laminating and curing equipment and speeding up the advertising and decorative print finishing workflow." } },
                     { "@type": "Question", "name": "What is the maximum lamination width of the UV Crystal Flat Pasting Machine?", "acceptedAnswer": { "@type": "Answer", "text": "The machine supports lamination widths up to 1260mm and can process media lengths up to 3820mm, making it suitable for large-format billboard prints, background walls, wallpaper, and oil painting reproductions." } },
                     { "@type": "Question", "name": "What types of media are compatible with the UV Crystal Flat Pasting Machine?", "acceptedAnswer": { "@type": "Answer", "text": "Compatible media includes advertising billboards, background walls, oil painting cloth, wallpaper, PET film, and other decorative large-format substrates that require UV glue lamination and crystal film finishing." } }
                 ]
@@ -294,7 +294,7 @@ export default function BlogUVCrystalFlatPasting() {
                                         </div>
                                         <div className="app-text">
                                             <strong>Art Reproduction &amp; Fine Print Finishers</strong>
-                                            <p>Print finishing businesses producing high-quality art reproductions on oil painting canvas, giclée prints, and premium photographic enlargements benefit from the machine&rsquo;s high-detail lamination capability enabled by the High Temperature-Resistant Silicone Shaft. UV crystal lamination preserves fine detail and color accuracy in art reproductions while adding the tactile and visual premium finish that art buyers and gallery clients expect from professionally finished fine art prints.</p>
+                                            <p>Print finishing businesses producing high-quality art reproductions on oil painting canvas, giclÃ©e prints, and premium photographic enlargements benefit from the machine&rsquo;s high-detail lamination capability enabled by the High Temperature-Resistant Silicone Shaft. UV crystal lamination preserves fine detail and color accuracy in art reproductions while adding the tactile and visual premium finish that art buyers and gallery clients expect from professionally finished fine art prints.</p>
                                         </div>
                                     </div>
                                     <div className="application-item">

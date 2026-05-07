@@ -10,18 +10,18 @@ import Link from 'next/link';
  * This file is a Next.js Server Component (no "use client").
  * "export const metadata" is picked up at BUILD TIME by Next.js
  * to pre-render the <head> with unique title, description,
- * Open Graph tags, and canonical URL — all without JavaScript
+ * Open Graph tags, and canonical URL â€” all without JavaScript
  * in the browser, giving search engines clean static HTML.
  * ============================================================
  */
 
 export const metadata = {
-    title: 'K-Sign DF-1916 Laser Fabric Cutting Machine Review: Smart Laser Precision for Fast Flexible Cutting at 0–6000 mm/s',
-    description: 'An in-depth review of the K-Sign DF-1916 Laser Fabric Cutting Machine. We cover the 0–6000 mm/s maximum cutting speed, intelligent vision with auto-identification, ultra-high precision arc-shape cutting, 1900\u00d71600mm working size, 150–180W laser power, Canon camera brand, Stepper/Servo Motor transmission, water cooling, and wide application compatibility for carpet, handbag, T-shirt, throw pillow, and swimwear fabric cutting.',
+    title: 'K-Sign DF-1916 Laser Fabric Cutting Machine Review: Smart Laser Precision for Fast Flexible Cutting at 0â€“6000 mm/s',
+    description: 'An in-depth review of the K-Sign DF-1916 Laser Fabric Cutting Machine. We cover the 0â€“6000 mm/s maximum cutting speed, intelligent vision with auto-identification, ultra-high precision arc-shape cutting, 1900\u00d71600mm working size, 150â€“180W laser power, Canon camera brand, Stepper/Servo Motor transmission, water cooling, and wide application compatibility for carpet, handbag, T-shirt, throw pillow, and swimwear fabric cutting.',
     keywords: 'K-Sign DF-1916 laser fabric cutting machine review, DF-1916 laser cutter Philippines, 6000mm/s laser fabric cutter, intelligent vision auto-ID laser cutter, arc-shape laser cutting machine Philippines, CO2 laser fabric cutting machine Philippines, large-scale high-speed fabric cutting Philippines, Kelin laser fabric cutting machine Philippines',
     authors: [{ name: 'Kelin Graphics System', url: 'https://kelinph.com/about' }],
     openGraph: {
-        title: 'K-Sign DF-1916 Laser Fabric Cutting Machine Review: Smart Laser Precision for Fast Flexible Cutting at 0–6000 mm/s',
+        title: 'K-Sign DF-1916 Laser Fabric Cutting Machine Review: Smart Laser Precision for Fast Flexible Cutting at 0â€“6000 mm/s',
         description: 'Real-world analysis of the K-Sign DF-1916 Laser Fabric Cutting Machine \u2014 0\u20136000 mm/s maximum cutting speed, intelligent vision with automatic material and pattern identification for flawless autonomous cutting, ultra-high precision arc-shape cutting for complex curved designs, 1900\u00d71600mm large working area, 150\u2013180W CO2 laser power, Canon camera, Stepper/Servo Motor transmission, water cooling, and broad material versatility across textiles and leather goods.',
         images: [{ url: '/laser-machines/K-Sign DF-1916 Laser Fabric Cutting.webp', width: 1200, height: 630, alt: 'K-Sign DF-1916 Laser Fabric Cutting Machine' }],
         type: 'article',
@@ -117,7 +117,7 @@ export default function BlogKSignDF1916LaserFabricCutting() {
                                         <li>Up to 6000 mm/s cutting speed for high-volume textile production</li>
                                         <li>Intelligent vision with Canon camera for automatic material and pattern identification</li>
                                         <li>Ultra-high precision arc-shape cutting for complex curved fabric designs</li>
-                                        <li>1900×1600mm working area with 150–180W CO2 laser power</li>
+                                        <li>1900Ã—1600mm working area with 150â€“180W CO2 laser power</li>
                                     </ul>
                                 </div>
                             </div>

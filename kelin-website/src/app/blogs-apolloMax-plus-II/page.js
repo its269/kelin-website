@@ -27,7 +27,7 @@ export default function BlogPZGHighSpeedPrinter() {
         "@graph": [
             {
                 "@type": "Article",
-                "headline": "PZG High-Speed Inkjet Series Review: Grand Format Printing at 230 m²/h",
+                "headline": "PZG High-Speed Inkjet Series Review: Grand Format Printing at 230 mÂ²/h",
                 "description": "An in-depth review of the PZG High-Speed Printing Inkjet Series (PZG3204-KV / PZG3208-KV). Real-world print speeds, Konica Minolta KM512iLNB printhead performance, advanced features, and who should invest in this grand format inkjet machine.",
                 "image": "https://kelinph.com/ApolloMax Plus II PZG3208-KV.webp",
                 "author": { "@type": "Organization", "name": "Kelin Graphics System", "url": "https://kelinph.com/about" },
@@ -39,7 +39,7 @@ export default function BlogPZGHighSpeedPrinter() {
             {
                 "@type": "FAQPage",
                 "mainEntity": [
-                    { "@type": "Question", "name": "What is the print speed of the PZG3208-KV grand format inkjet printer?", "acceptedAnswer": { "@type": "Answer", "text": "The PZG3208-KV achieves up to 230 m²/h in production mode using 8 Konica Minolta KM512iLNB printheads, making it suitable for high-volume outdoor billboard, banner, and vehicle wrap production." } },
+                    { "@type": "Question", "name": "What is the print speed of the PZG3208-KV grand format inkjet printer?", "acceptedAnswer": { "@type": "Answer", "text": "The PZG3208-KV achieves up to 230 mÂ²/h in production mode using 8 Konica Minolta KM512iLNB printheads, making it suitable for high-volume outdoor billboard, banner, and vehicle wrap production." } },
                     { "@type": "Question", "name": "What printhead does the PZG High-Speed Inkjet series use?", "acceptedAnswer": { "@type": "Answer", "text": "Both the PZG3204-KV and PZG3208-KV use Konica Minolta KM512iLNB industrial printheads, known for their long service life, consistent drop formation, and reliable performance in high-speed grand format production environments." } },
                     { "@type": "Question", "name": "What applications is the PZG High-Speed Inkjet series best suited for?", "acceptedAnswer": { "@type": "Answer", "text": "The PZG series is ideal for outdoor billboards, vehicle advertising wraps, backlit displays, trade show graphics, and high-volume banner production where speed and consistent output quality are the top priorities." } }
                 ]
@@ -102,7 +102,7 @@ export default function BlogPZGHighSpeedPrinter() {
                                 <div>
                                     <strong>Quick Summary</strong>
                                     <ul style={{ margin: '8px 0 0', paddingLeft: '18px', lineHeight: '1.8' }}>
-                                        <li>PZG3208-KV reaches up to 230 m²/h with 8 Konica Minolta KM512iLNB industrial printheads</li>
+                                        <li>PZG3208-KV reaches up to 230 mÂ²/h with 8 Konica Minolta KM512iLNB industrial printheads</li>
                                         <li>PZG3204-KV offers a more affordable entry point with 4 heads for mid-volume grand format production</li>
                                         <li>Pantone action heaters and infrared drying system ensure output is job-ready throughout production shifts</li>
                                         <li>Engineered for outdoor billboards, vehicle wraps, backlit displays, and high-volume banner runs</li>
@@ -115,7 +115,7 @@ export default function BlogPZGHighSpeedPrinter() {
                         <figure className="blog-featured-image" itemProp="image">
                             <img
                                 src="/ApolloMax Plus II PZG3208-KV.webp"
-                                alt="PZG3208-KV grand format high-speed inkjet printer with Konica Minolta KM512iLNB printhead running billboard production at 230 m²/h"
+                                alt="PZG3208-KV grand format high-speed inkjet printer with Konica Minolta KM512iLNB printhead running billboard production at 230 mÂ²/h"
                                 width="840"
                                 height="473"
                                 loading="eager"

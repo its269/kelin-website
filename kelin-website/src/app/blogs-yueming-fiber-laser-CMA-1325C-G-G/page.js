@@ -70,7 +70,7 @@ export default function BlogYuemingCMA1325CGG() {
                         <header className="blog-article-header">
                             <span className="article-category-tag">Laser Machines</span>
                             <h1 className="blog-article-title">
-                                YueMing CMA1325C-G-G Fiber Laser — Auto-Focus Cutting Head with Sprint Piercing
+                                YueMing CMA1325C-G-G Fiber Laser â€” Auto-Focus Cutting Head with Sprint Piercing
                             </h1>
                             <p className="blog-article-subtitle">
                                 Industrial-speed fiber laser cutting at up to 60 m/min positioning speed, powered by imported IPG laser source, dual-servo motor gantry, and an auto-focus sprint piercing head that slashes piercing time by up to 80%.
@@ -79,7 +79,7 @@ export default function BlogYuemingCMA1325CGG() {
                                 <div className="article-meta-details">
                                     <span className="meta-item">By Kelin Philippines</span>
                                     <span className="meta-item">April 18, 2026</span>
-                                    <span className="meta-item">Fiber Laser · Metal Cutting</span>
+                                    <span className="meta-item">Fiber Laser Â· Metal Cutting</span>
                                 </div>
                             </div>
                             <div className="callout-box callout-summary">
@@ -88,7 +88,7 @@ export default function BlogYuemingCMA1325CGG() {
                                     <strong>Quick Summary</strong>
                                     <ul style={{ margin: '8px 0 0', paddingLeft: '18px', lineHeight: '1.8' }}>
                                         <li>Auto-focus sprint piercing head reduces piercing time by up to 80%</li>
-                                        <li>2500×1300mm working area with dual-servo motor gantry</li>
+                                        <li>2500Ã—1300mm working area with dual-servo motor gantry</li>
                                         <li>Available in 500W, 700W, and 1000W IPG laser power options</li>
                                         <li>Reinforced welded machine bed minimizes vibration for precision cuts</li>
                                     </ul>
@@ -114,7 +114,7 @@ export default function BlogYuemingCMA1325CGG() {
                                     The <strong>YueMing CMA1325C-G-G</strong> is a full-format fiber laser cutting machine built for industrial production environments. With a 2500x1300mm working area, optional 500W / 700W / 1000W laser power, and a positioning speed of up to <strong>60 m/min</strong>, this machine is engineered to handle thick and reflective metals at throughput levels that smaller desktop lasers simply cannot match.
                                 </p>
                                 <p>
-                                    At the heart of its performance advantage is the <strong>auto-focus cutting head with Sprint Piercing</strong> — a Z-axis controlled piercing system that reduces piercing time by up to 80% compared to conventional methods. For shops doing high-volume signage letters, brackets, gears, kitchen equipment parts, or structural components, that translates directly into faster job completion and lower per-part cost.
+                                    At the heart of its performance advantage is the <strong>auto-focus cutting head with Sprint Piercing</strong> â€” a Z-axis controlled piercing system that reduces piercing time by up to 80% compared to conventional methods. For shops doing high-volume signage letters, brackets, gears, kitchen equipment parts, or structural components, that translates directly into faster job completion and lower per-part cost.
                                 </p>
                             </section>
 
@@ -128,28 +128,28 @@ export default function BlogYuemingCMA1325CGG() {
                                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" width="32" height="32"><rect x="2" y="7" width="20" height="14" rx="2" /><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2" /><line x1="12" y1="12" x2="12" y2="16" /><line x1="10" y1="14" x2="14" y2="14" /></svg>
                                         </div>
                                         <h3>Reinforced Welding Bed</h3>
-                                        <p>Milled and processed by a large gantry with tempered treatment and vibration aging — stress is eliminated for a flat, stable cutting surface throughout the machine's service life.</p>
+                                        <p>Milled and processed by a large gantry with tempered treatment and vibration aging â€” stress is eliminated for a flat, stable cutting surface throughout the machine's service life.</p>
                                     </div>
                                     <div className="feature-card">
                                         <div className="feature-card-icon">
                                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" width="32" height="32"><circle cx="12" cy="12" r="3" /><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z" /></svg>
                                         </div>
                                         <h3>Trusted Global Components</h3>
-                                        <p>Main components are Siemens, Delta, SMC, and other imported globally recognized brands — ensuring long-term reliability and easy spare-part sourcing.</p>
+                                        <p>Main components are Siemens, Delta, SMC, and other imported globally recognized brands â€” ensuring long-term reliability and easy spare-part sourcing.</p>
                                     </div>
                                     <div className="feature-card">
                                         <div className="feature-card-icon">
                                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" width="32" height="32"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" /></svg>
                                         </div>
                                         <h3>IPG Laser &amp; iGUS Cabling</h3>
-                                        <p>Imported IPG fiber laser generator combined with German iGUS cable throughout the entire machine — reliable, stable, and built to last under continuous production loads.</p>
+                                        <p>Imported IPG fiber laser generator combined with German iGUS cable throughout the entire machine â€” reliable, stable, and built to last under continuous production loads.</p>
                                     </div>
                                     <div className="feature-card">
                                         <div className="feature-card-icon">
                                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" width="32" height="32"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12" /></svg>
                                         </div>
                                         <h3>Lightweight High-Performance Crossbeam</h3>
-                                        <p>Crafted through drawing and finishing processes for reduced weight and superior dynamic motion — enabling the 0.6G max acceleration speed that keeps positioning sharp at 60 m/min.</p>
+                                        <p>Crafted through drawing and finishing processes for reduced weight and superior dynamic motion â€” enabling the 0.6G max acceleration speed that keeps positioning sharp at 60 m/min.</p>
                                     </div>
                                 </div>
                             </section>
@@ -162,14 +162,14 @@ export default function BlogYuemingCMA1325CGG() {
                                     Traditional laser piercing on thick or reflective materials is slow and risks lens contamination from spatter. The CMA1325C-G-G's <strong>auto-focus head with Sprint Piercing</strong> solves both problems simultaneously:
                                 </p>
                                 <ul>
-                                    <li><strong>Z-axis dynamic control</strong> — The focus point is automatically adjusted during piercing for optimal energy concentration at each depth.</li>
-                                    <li><strong>Up to 80% faster piercing</strong> — Sprint Piercing dramatically cuts the time needed to initiate each cut, boosting throughput especially on jobs with many pierce points.</li>
-                                    <li><strong>Optics protection</strong> — The controlled piercing sequence minimizes spatter blowback, protecting the focusing lens and extending service intervals.</li>
-                                    <li><strong>Reflective metal capability</strong> — Excels at cutting copper, brass, and aluminum alloys where conventional lasers struggle with back-reflection damage.</li>
+                                    <li><strong>Z-axis dynamic control</strong> â€” The focus point is automatically adjusted during piercing for optimal energy concentration at each depth.</li>
+                                    <li><strong>Up to 80% faster piercing</strong> â€” Sprint Piercing dramatically cuts the time needed to initiate each cut, boosting throughput especially on jobs with many pierce points.</li>
+                                    <li><strong>Optics protection</strong> â€” The controlled piercing sequence minimizes spatter blowback, protecting the focusing lens and extending service intervals.</li>
+                                    <li><strong>Reflective metal capability</strong> â€” Excels at cutting copper, brass, and aluminum alloys where conventional lasers struggle with back-reflection damage.</li>
                                 </ul>
 
                                 <div className="callout-box callout-info">
-                                    <strong>Industrial Grading Speed:</strong> Positioning speed up to <strong>60 m/min</strong> with 0.6G max acceleration — competitive with the fastest industrial fiber lasers in its class.
+                                    <strong>Industrial Grading Speed:</strong> Positioning speed up to <strong>60 m/min</strong> with 0.6G max acceleration â€” competitive with the fastest industrial fiber lasers in its class.
                                 </div>
                             </section>
 
@@ -207,12 +207,12 @@ export default function BlogYuemingCMA1325CGG() {
                                 <h2>Application Areas</h2>
                                 <p>The CMA1325C-G-G is a versatile industrial fiber laser suitable for a wide range of metal cutting and fabrication applications:</p>
                                 <ul>
-                                    <li><strong>Signage &amp; Channel Letters</strong> — Cut stainless steel, aluminum, and brass letter blanks for illuminated signage at high speed.</li>
-                                    <li><strong>Sheet Metal Fabrication</strong> — Brackets, panels, enclosures, and structural components with precise, burr-free edges.</li>
-                                    <li><strong>Industrial Gears &amp; Parts</strong> — Complex profile cutting from carbon steel and alloy steel sheets with tight tolerances.</li>
-                                    <li><strong>Kitchen &amp; Food Equipment</strong> — Stainless steel table frames, sink cutouts, and equipment panels.</li>
-                                    <li><strong>Advertising &amp; Display</strong> — Decorative metal panels, logo backplates, and display stands.</li>
-                                    <li><strong>Automotive &amp; Transportation Parts</strong> — Lightweight aluminum alloy and stainless components for vehicle bodywork and frames.</li>
+                                    <li><strong>Signage &amp; Channel Letters</strong> â€” Cut stainless steel, aluminum, and brass letter blanks for illuminated signage at high speed.</li>
+                                    <li><strong>Sheet Metal Fabrication</strong> â€” Brackets, panels, enclosures, and structural components with precise, burr-free edges.</li>
+                                    <li><strong>Industrial Gears &amp; Parts</strong> â€” Complex profile cutting from carbon steel and alloy steel sheets with tight tolerances.</li>
+                                    <li><strong>Kitchen &amp; Food Equipment</strong> â€” Stainless steel table frames, sink cutouts, and equipment panels.</li>
+                                    <li><strong>Advertising &amp; Display</strong> â€” Decorative metal panels, logo backplates, and display stands.</li>
+                                    <li><strong>Automotive &amp; Transportation Parts</strong> â€” Lightweight aluminum alloy and stainless components for vehicle bodywork and frames.</li>
                                 </ul>
 
                                 <div className="callout-box callout-tip">
@@ -235,7 +235,7 @@ export default function BlogYuemingCMA1325CGG() {
                                             <li>60 m/min industrial-grade positioning speed</li>
                                             <li>Optional IPG or Chinese laser source for flexibility</li>
                                             <li>Dual-servo motor gantry for consistent high-speed accuracy</li>
-                                            <li>Reinforced welding bed — stress-relieved for long-term flatness</li>
+                                            <li>Reinforced welding bed â€” stress-relieved for long-term flatness</li>
                                             <li>Trusted global components: Siemens, Delta, SMC, iGUS</li>
                                             <li>Large 2500x1300mm working area for full sheet processing</li>
                                             <li>+/-0.03mm repeat positioning accuracy for production consistency</li>
@@ -248,9 +248,9 @@ export default function BlogYuemingCMA1325CGG() {
                                         </h3>
                                         <ul>
                                             <li>Large footprint (4520x2030x1750mm) requires dedicated floor space</li>
-                                            <li>2300 kg — requires proper flooring load rating and forklift for installation</li>
+                                            <li>2300 kg â€” requires proper flooring load rating and forklift for installation</li>
                                             <li>Industrial power supply required (220V single phase, 4KW)</li>
-                                            <li>Best suited for metal cutting — not for non-metal materials</li>
+                                            <li>Best suited for metal cutting â€” not for non-metal materials</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -261,13 +261,13 @@ export default function BlogYuemingCMA1325CGG() {
                             <section className="article-section">
                                 <h2>Final Verdict</h2>
                                 <p>
-                                    The <strong>YueMing CMA1325C-G-G</strong> is an industrial-grade fiber laser cutting machine that delivers on both speed and precision. The auto-focus sprint piercing head is the standout feature — slashing piercing time by up to 80% while protecting optics for longer service intervals. Combined with the dual-servo motor gantry, reinforced welding bed, and imported IPG laser source, this is a machine built to run production shifts day after day.
+                                    The <strong>YueMing CMA1325C-G-G</strong> is an industrial-grade fiber laser cutting machine that delivers on both speed and precision. The auto-focus sprint piercing head is the standout feature â€” slashing piercing time by up to 80% while protecting optics for longer service intervals. Combined with the dual-servo motor gantry, reinforced welding bed, and imported IPG laser source, this is a machine built to run production shifts day after day.
                                 </p>
                                 <p>
                                     For Philippine fabrication shops, sign manufacturers, and industrial parts suppliers looking to upgrade from plasma or CO2 cutting to modern fiber laser technology, the CMA1325C-G-G offers a compelling combination of German/Japanese component quality, flexible power options, and a work area large enough to process full standard metal sheets.
                                 </p>
                                 <div className="callout-box callout-info">
-                                    <strong>Available at Kelin Philippines</strong> — Contact us for pricing, financing options, and live demonstration. Our technicians provide on-site installation, training, and after-sales support across the Philippines.
+                                    <strong>Available at Kelin Philippines</strong> â€” Contact us for pricing, financing options, and live demonstration. Our technicians provide on-site installation, training, and after-sales support across the Philippines.
                                 </div>
                             </section>
 
