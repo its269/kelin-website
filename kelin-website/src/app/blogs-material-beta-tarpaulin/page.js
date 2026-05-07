@@ -10,16 +10,41 @@ export const metadata = {
     openGraph: {
         title: "Beta Tarpaulin Guide: Economy Frontlit Tarpaulin for Everyday Outdoor Banners & Event Signage",
         description: "Complete guide to Beta Tarpaulin — economy 320gsm frontlit tarpaulin for everyday outdoor banners and short-term advertising campaigns.",
-        images: [{ url: '/cat_materials.webp', width: 1200, height: 630, alt: 'Beta Tarpaulin rolls for economy outdoor advertising banners' }],
+        images: [{ url: '/assets/Materials/ALPHA.webp', width: 1200, height: 630, alt: 'Beta Tarpaulin rolls for economy outdoor advertising banners' }],
         type: 'article'
     },
     alternates: { canonical: 'https://kelinph.com/blogs-material-beta-tarpaulin' }
 };
 
 export default function BlogBetaTarpaulin() {
+    const jsonLd = {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "Article",
+                "headline": "Beta Tarpaulin Guide: Economy Frontlit Tarpaulin for Everyday Outdoor Banners & Event Signage",
+                "description": "Complete guide to Beta Tarpaulin — economy 320gsm frontlit tarpaulin for everyday outdoor banners, promotional events, and short-term advertising campaigns in the Philippines.",
+                "image": "https://kelinph.com/assets/Materials/ALPHA.webp",
+                "author": { "@type": "Organization", "name": "Kelin Graphics System", "url": "https://kelinph.com/about" },
+                "publisher": { "@type": "Organization", "name": "Kelin Graphics System", "logo": { "@type": "ImageObject", "url": "https://kelinph.com/marquee-logo/inks/kelin-logo.png" } },
+                "datePublished": "2026-04-01T08:00:00.000Z",
+                "dateModified": "2026-05-06T08:00:00.000Z",
+                "mainEntityOfPage": "https://kelinph.com/blogs-material-beta-tarpaulin"
+            },
+            {
+                "@type": "FAQPage",
+                "mainEntity": [
+                    { "@type": "Question", "name": "How long does Beta Tarpaulin last outdoors in Philippine weather conditions?", "acceptedAnswer": { "@type": "Answer", "text": "Beta Tarpaulin is designed for short-to-medium-term outdoor use, typically lasting 3–6 months when exposed to Philippine weather conditions including rain and direct sunlight. For applications requiring 6–12 months or longer outdoor durability, Omega Tarpaulin at 440gsm is the recommended upgrade." } },
+                    { "@type": "Question", "name": "Is Beta Tarpaulin suitable for election campaign banners and political signage?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Beta Tarpaulin is one of the most commonly used materials for election campaign banners in the Philippines due to its low cost per square meter. The typical campaign lifecycle of 3–6 months aligns well with Beta's outdoor durability rating, and the economy price point makes high-volume banner production financially viable." } },
+                    { "@type": "Question", "name": "What is the difference between Beta Tarpaulin and Omega Tarpaulin?", "acceptedAnswer": { "@type": "Answer", "text": "Beta Tarpaulin is 320gsm — lighter and more economical than Omega Tarpaulin at 440gsm. Omega provides greater tear resistance, longer outdoor lifespan, and heavier-duty construction for permanent or semi-permanent installations. Beta is the choice when cost is the primary driver and the banner has a defined short-term lifecycle." } }
+                ]
+            }
+        ]
+    };
     return (
         <div className="blog-page-layout material-blog-page">
             <Header />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
             <div className="blog-breadcrumb-bar">
                 <div className="blog-breadcrumb-inner">
                     <Link href="/" className="breadcrumb-link">Home</Link>
@@ -51,9 +76,21 @@ export default function BlogBetaTarpaulin() {
                                     </span>
                                 </div>
                             </div>
+                            <div className="callout-box callout-summary">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 11 12 14 22 4" /><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" /></svg>
+                                <div>
+                                    <strong>Quick Summary</strong>
+                                    <ul style={{ margin: '8px 0 0', paddingLeft: '18px', lineHeight: '1.8' }}>
+                                        <li>Economy 320gsm frontlit tarpaulin — lowest cost-per-square-meter in the Kelin tarpaulin range</li>
+                                        <li>Designed for short-term outdoor use: 3–6 month lifespan ideal for promotions, events, and campaigns</li>
+                                        <li>Compatible with eco-solvent and UV inks; accepts standard hemming and eyelet finishing</li>
+                                        <li>Best choice for high-volume election banners, barangay fiesta tarpaulins, and seasonal retail promotions</li>
+                                    </ul>
+                                </div>
+                            </div>
                         </header>
                         <figure className="blog-featured-image" itemProp="image">
-                            <img src="/cat_materials.webp" alt="Beta Tarpaulin rolls for economy outdoor advertising banners" width="840" height="473" loading="eager" />
+                            <img src="/assets/Materials/ALPHA.webp" alt="Beta Tarpaulin rolls for economy outdoor advertising banners" width="840" height="473" loading="eager" />
                             <figcaption>
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2" /><circle cx="8.5" cy="8.5" r="1.5" /><polyline points="21 15 16 10 5 21" /></svg>
                                 Beta Tarpaulin — 320gsm economy frontlit tarpaulin for short-term outdoor advertising banners and promotional event signage
@@ -232,7 +269,7 @@ export default function BlogBetaTarpaulin() {
                             </ol>
                         </div>
                         <div className="sidebar-widget product-widget">
-                            <img src="/cat_materials.webp" alt="Beta Tarpaulin rolls" className="product-widget-img" />
+                            <img src="/assets/Materials/ALPHA.webp" alt="Beta Tarpaulin rolls" className="product-widget-img" />
                             <h4>Beta Tarpaulin</h4>
                             <p>Economy 320gsm frontlit PVC tarpaulin for short-term outdoor banners. Available 3.2ft–10ft widths, 164ft rolls. Eco-solvent and UV compatible.</p>
                             <Link href="/materials" className="product-widget-btn">See Full Details <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m9 18 6-6-6-6" /></svg></Link>

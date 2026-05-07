@@ -11,7 +11,7 @@ export const metadata = {
     openGraph: {
         title: 'Eyelet #2 & Punchers Guide: Banner Finishing Hardware for Professional Outdoor Sign Installation',
         description: 'Everything you need to know about eyelet #2 and press, semi-automatic, and manual punchers for professional banner finishing and outdoor sign installation.',
-        images: [{ url: '/dummy-image-square.jpg', width: 1200, height: 630, alt: 'Eyelet #2 and Punchers for Banner Finishing' }],
+        images: [{ url: '/cat_accessories.webp', width: 1200, height: 630, alt: 'Eyelet #2 and Punchers for Banner Finishing' }],
         type: 'article',
         publishedTime: '2026-04-25T08:00:00.000Z',
         authors: ['Kelin Graphics System'],
@@ -20,9 +20,34 @@ export const metadata = {
 };
 
 export default function BlogAccEyeletPuncher() {
+    const jsonLd = {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "Article",
+                "headline": "Eyelet #2 & Punchers Guide: Banner Finishing Hardware for Professional Outdoor Sign Installation",
+                "description": "Everything you need to know about eyelet #2 (10mm x 19mm, 1880 pcs pack) and press, semi-automatic, and manual punchers for professional banner finishing and outdoor sign installation.",
+                "image": "https://kelinph.com/cat_accessories.webp",
+                "author": { "@type": "Organization", "name": "Kelin Graphics System", "url": "https://kelinph.com/about" },
+                "publisher": { "@type": "Organization", "name": "Kelin Graphics System", "logo": { "@type": "ImageObject", "url": "https://kelinph.com/marquee-logo/inks/kelin-logo.png" } },
+                "datePublished": "2026-04-25T08:00:00.000Z",
+                "dateModified": "2026-05-06T08:00:00.000Z",
+                "mainEntityOfPage": "https://kelinph.com/blogs-acc-eyelet-puncher"
+            },
+            {
+                "@type": "FAQPage",
+                "mainEntity": [
+                    { "@type": "Question", "name": "What size is Eyelet #2 and why is it the most common size for banners?", "acceptedAnswer": { "@type": "Answer", "text": "Eyelet #2 has a 10mm hole diameter and 19mm flange. It is the standard banner eyelet in the Philippine sign industry because it provides a strong grip on banner material without creating unnecessarily large holes, and it accommodates standard cable ties, rope, and bungee cord installation methods." } },
+                    { "@type": "Question", "name": "What is the difference between press, semi-automatic, and manual eyelet punchers?", "acceptedAnswer": { "@type": "Answer", "text": "Press punchers offer the highest consistency and speed for high-volume banner finishing. Semi-auto punchers balance speed with portability for medium-volume shops. Manual punchers are affordable and sufficient for low-to-moderate production or field use." } },
+                    { "@type": "Question", "name": "How many eyelets come in one pack of Eyelet #2?", "acceptedAnswer": { "@type": "Answer", "text": "Each pack contains 1,880 pieces, designed for high-volume production shops that finish dozens of banners weekly." } }
+                ]
+            }
+        ]
+    };
     return (
-        <div className="blog-page-layout">
+        <div className="blog-page-layout acc-blog-page">
             <Header />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
             <div className="blog-breadcrumb-bar">
                 <div className="blog-breadcrumb-inner">
                     <Link href="/" className="breadcrumb-link">Home</Link>
@@ -54,9 +79,21 @@ export default function BlogAccEyeletPuncher() {
                                     </span>
                                 </div>
                             </div>
+                            <div className="callout-box callout-summary">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 11 12 14 22 4" /><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" /></svg>
+                                <div>
+                                    <strong>Quick Summary</strong>
+                                    <ul style={{ margin: '8px 0 0', paddingLeft: '18px', lineHeight: '1.8' }}>
+                                        <li>Eyelet #2 — 10mm hole x 19mm flange, the standard banner eyelet size in the Philippines</li>
+                                        <li>Available in packs of 1,880 pieces for high-volume production shops</li>
+                                        <li>Three puncher types: press (high-speed), semi-automatic (portable), and manual (budget-friendly)</li>
+                                        <li>Properly set eyelets distribute installation forces and withstand months of outdoor exposure</li>
+                                    </ul>
+                                </div>
+                            </div>
                         </header>
                         <figure className="blog-featured-image" itemProp="image">
-                            <img src="/dummy-image-square.jpg" alt="Eyelet #2 Hardware and Punchers for Banner Finishing" width="840" height="473" loading="eager" />
+                            <img src="/cat_accessories.webp" alt="Eyelet #2 Hardware and Punchers for Banner Finishing" width="840" height="473" loading="eager" />
                             <figcaption>Eyelet #2 hardware (1880 pcs) with press, semi-auto, and manual punchers — essential banner finishing tools for professional sign installation.</figcaption>
                         </figure>
                         <div className="blog-body" itemProp="articleBody">
@@ -141,7 +178,7 @@ export default function BlogAccEyeletPuncher() {
                 <aside className="blog-sidebar">
                     <div className="sidebar-sticky">
                         <div className="sidebar-widget toc-widget">
-                            <h3 className="widget-title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="8" y1="6" x2="21" y2="6" /><line x1="8" y1="12" x2="21" y2="12" /><line x1="8" y1="18" x2="21" y2="18" /><line x1="3" y1="6" x2="3.01" y2="6" /><line x1="3" y1="12" x2="3.01" y2="12" /><line x1="3" y1="18" x2="3.01" y2="18" /></svg>In This Article</h3>
+                            <h3 className="widget-title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="8" y1="6" x2="21" y2="6" /><line x1="8" y1="12" x2="21" y2="12" /><line x1="8" y1="18" x2="21" y2="18" /><line x1="3" y1="6" x2="3.01" y2="6" /><line x1="3" y1="12" x2="3.01" y2="12" /><line x1="3" y1="18" x2="3.01" y2="18" /></svg>In This Guide</h3>
                             <ol className="toc-list">
                                 <li><a href="#overview">Overview</a></li>
                                 <li><a href="#specs">Specifications</a></li>

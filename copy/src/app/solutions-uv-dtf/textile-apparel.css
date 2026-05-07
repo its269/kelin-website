@@ -1,0 +1,234 @@
+/* blogs.css */
+@font-face {
+    font-family: 'Bison-Bold';
+    src: url('/fonts/Bison-Bold(PersonalUse).ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+@font-face {
+    font-family: 'Montserrat-Bold';
+    src: url('/fonts/Montserrat-Bold.otf') format('opentype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Montserrat-Regular';
+    src: url('/fonts/Montserrat-Regular.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('https://fonts.gstatic.com/s/inter/v12/UcCO3FwrK3iLTcviYw.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+:root {
+    --bg-main: #ffffff;
+    --bg-secondary: #f8f9fa;
+    --bg-tertiary: #f1f3f5;
+    --text-primary: #1a1a1a;
+    --text-secondary: #5a6270;
+    --border-color: #e2e8f0;
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
+    --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.08);
+    --transition-standard: all 0.3s ease;
+}
+
+.luxor-page-container {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 6rem;
+    background: var(--bg-main);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* Headings use Montserrat */
+.luxor-header h1,
+.luxor-header h2,
+.luxor-header h3,
+.luxor-header h4,
+.luxor-header h5,
+.luxor-header h6,
+.blog-title,
+.blog-card-title {
+    /* font-family: 'Montserrat-Bold', 'Montserrat-Regular', Arial, sans-serif !important; */
+    font-family: 'Bison-Bold', Arial, sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+/* Body text uses Inter */
+.luxor-page-container,
+.luxor-header p,
+.blog-card-content,
+.blog-meta,
+.blog-content {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 400;
+}
+
+/* --- Header Styles --- */
+.luxor-header {
+    text-align: center;
+    margin-top: 9rem;
+    margin-bottom: 3rem;
+}
+
+.luxor-header h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+    text-transform: uppercase;
+}
+
+.luxor-header p {
+    color: var(--text-secondary);
+    font-size: 1.15rem;
+    max-width: 650px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* --- Category Filter Styles --- */
+.category-filter {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-bottom: 4rem;
+}
+
+.filter-btn {
+    background: var(--bg-main);
+    color: var(--text-secondary);
+    border: 1px solid var(--border-color);
+    padding: 0.5rem 1.2rem;
+    border-radius: 30px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition-standard);
+}
+
+.filter-btn:hover {
+    background: var(--bg-tertiary);
+}
+
+.filter-btn.active {
+    background: var(--text-primary);
+    color: var(--bg-main);
+    border-color: var(--text-primary);
+}
+
+/* --- Card Styles --- */
+.luxor-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.luxor-card {
+    display: flex;
+    flex-direction: column;
+    background: var(--bg-main);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: var(--transition-standard);
+}
+
+.luxor-card:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-4px);
+    border-color: #d0d7de;
+}
+
+.card-image-container {
+    width: 100%;
+    height: 280px;
+    /* 200px */
+    background: var(--bg-tertiary);
+    overflow: hidden;
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-img {
+    width: 80%;
+    /* 100% */
+    object-fit: cover;
+    /* Maintains aspect ratio without stretching */
+    display: block;
+}
+
+.card-content {
+    padding: 1.8rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.category-pill {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 0.3rem 0.6rem;
+    background-color: var(--bg-secondary);
+    color: var(--text-secondary);
+    border-radius: 4px;
+    margin-bottom: 1rem;
+    border: 1px solid var(--border-color);
+}
+
+.card-content h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 0.75rem;
+    line-height: 1.3;
+}
+
+.post-excerpt {
+    color: var(--text-secondary);
+    line-height: 1.5;
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+}
+
+.read-more-link {
+    margin-top: auto;
+    font-weight: 600;
+    color: var(--text-primary);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: var(--transition-standard);
+    display: inline-flex;
+    align-items: center;
+}
+
+.read-more-link:hover {
+    color: #5a6270;
+    gap: 5px;
+}
+
+@media (max-width: 768px) {
+    .luxor-header {
+        margin-top: 3rem;
+    }
+}

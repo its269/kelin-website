@@ -11,7 +11,7 @@ export const metadata = {
     openGraph: {
         title: 'Reflective Tape Guide: High-Visibility Safety Tape for Hazard Marking & Outdoor Signage',
         description: 'Learn how reflective safety tape in Black/Yellow (S501) and Red/White (S502) variants delivers high-visibility hazard marking and outdoor safety signage.',
-        images: [{ url: '/dummy-image-square.jpg', width: 1200, height: 630, alt: 'Reflective Safety Tape S501 S502 for Hazard Marking' }],
+        images: [{ url: '/assets/Accessories/Reflective tape.webp', width: 1200, height: 630, alt: 'Reflective Safety Tape S501 S502 for Hazard Marking' }],
         type: 'article',
         publishedTime: '2026-04-25T08:00:00.000Z',
         authors: ['Kelin Graphics System'],
@@ -20,9 +20,34 @@ export const metadata = {
 };
 
 export default function BlogAccReflectiveTape() {
+    const jsonLd = {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "Article",
+                "headline": "Reflective Tape Guide: High-Visibility Safety Tape for Hazard Marking & Outdoor Signage",
+                "description": "Learn how reflective safety tape in Black/Yellow (S501) and Red/White (S502) variants delivers high-visibility hazard marking and outdoor safety signage for industrial and commercial environments.",
+                "image": "https://kelinph.com/assets/Accessories/Reflective tape.webp",
+                "author": { "@type": "Organization", "name": "Kelin Graphics System", "url": "https://kelinph.com/about" },
+                "publisher": { "@type": "Organization", "name": "Kelin Graphics System", "logo": { "@type": "ImageObject", "url": "https://kelinph.com/marquee-logo/inks/kelin-logo.png" } },
+                "datePublished": "2026-04-25T08:00:00.000Z",
+                "dateModified": "2026-05-06T08:00:00.000Z",
+                "mainEntityOfPage": "https://kelinph.com/blogs-acc-reflective-tape"
+            },
+            {
+                "@type": "FAQPage",
+                "mainEntity": [
+                    { "@type": "Question", "name": "What is the difference between S501 and S502 reflective tape?", "acceptedAnswer": { "@type": "Answer", "text": "S501 is Black/Yellow — the universal caution and warning pattern used for hazard marking, machinery edges, and step edges. S502 is Red/White — typically used for fire safety marking, emergency exits, and prohibition signage." } },
+                    { "@type": "Question", "name": "Does reflective tape work in complete darkness without a light source?", "acceptedAnswer": { "@type": "Answer", "text": "Reflective tape is retroreflective, meaning it requires a light source such as headlights, flashlights, or overhead lighting to become visible. It does not glow on its own but bounces light back toward the observer with high intensity." } },
+                    { "@type": "Question", "name": "What surfaces can reflective safety tape be applied to?", "acceptedAnswer": { "@type": "Answer", "text": "Reflective tape can be applied to any clean, smooth surface including metal machinery, concrete floors, painted walls, glass, and PVC surfaces. Surface preparation with IPA cleaning is recommended for maximum adhesion." } }
+                ]
+            }
+        ]
+    };
     return (
-        <div className="blog-page-layout">
+        <div className="blog-page-layout acc-blog-page">
             <Header />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
             <div className="blog-breadcrumb-bar">
                 <div className="blog-breadcrumb-inner">
                     <Link href="/" className="breadcrumb-link">Home</Link>
@@ -54,9 +79,21 @@ export default function BlogAccReflectiveTape() {
                                     </span>
                                 </div>
                             </div>
+                            <div className="callout-box callout-summary">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 11 12 14 22 4" /><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" /></svg>
+                                <div>
+                                    <strong>Quick Summary</strong>
+                                    <ul style={{ margin: '8px 0 0', paddingLeft: '18px', lineHeight: '1.8' }}>
+                                        <li>Available in S501 Black/Yellow (caution/warning) and S502 Red/White (fire safety/prohibition)</li>
+                                        <li>Retroreflective surface provides high visibility in low-light and night conditions</li>
+                                        <li>50mm x 10m rolls for comprehensive facility hazard marking projects</li>
+                                        <li>No power required — passive safety layer that works 24/7</li>
+                                    </ul>
+                                </div>
+                            </div>
                         </header>
                         <figure className="blog-featured-image" itemProp="image">
-                            <img src="/dummy-image-square.jpg" alt="Reflective Safety Tape S501 Black Yellow and S502 Red White" width="840" height="473" loading="eager" />
+                            <img src="/assets/Accessories/Reflective tape.webp" alt="Reflective Safety Tape S501 Black Yellow and S502 Red White" width="840" height="473" loading="eager" />
                             <figcaption>Reflective safety tape S501 (Black/Yellow) and S502 (Red/White) — 50mm x 10m rolls for high-visibility safety and hazard marking applications.</figcaption>
                         </figure>
                         <div className="blog-body" itemProp="articleBody">
@@ -142,7 +179,7 @@ export default function BlogAccReflectiveTape() {
                 <aside className="blog-sidebar">
                     <div className="sidebar-sticky">
                         <div className="sidebar-widget toc-widget">
-                            <h3 className="widget-title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="8" y1="6" x2="21" y2="6" /><line x1="8" y1="12" x2="21" y2="12" /><line x1="8" y1="18" x2="21" y2="18" /><line x1="3" y1="6" x2="3.01" y2="6" /><line x1="3" y1="12" x2="3.01" y2="12" /><line x1="3" y1="18" x2="3.01" y2="18" /></svg>In This Article</h3>
+                            <h3 className="widget-title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="8" y1="6" x2="21" y2="6" /><line x1="8" y1="12" x2="21" y2="12" /><line x1="8" y1="18" x2="21" y2="18" /><line x1="3" y1="6" x2="3.01" y2="6" /><line x1="3" y1="12" x2="3.01" y2="12" /><line x1="3" y1="18" x2="3.01" y2="18" /></svg>In This Guide</h3>
                             <ol className="toc-list">
                                 <li><a href="#overview">Overview</a></li>
                                 <li><a href="#specs">Specifications</a></li>

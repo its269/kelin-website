@@ -10,16 +10,41 @@ export const metadata = {
     openGraph: {
         title: "Alpha Tarpaulin & Flex Guide: Premium Flex Banner & Backlit Frontlit Tarpaulin for Professional Signage",
         description: "Complete guide to Alpha Tarpaulin & Flex Banner — premium material for trade shows, outdoor billboards, and backlit displays.",
-        images: [{ url: '/cat_materials.webp', width: 1200, height: 630, alt: 'Alpha Tarpaulin and Flex Banner rolls for professional signage and exhibitions' }],
+        images: [{ url: '/assets/Materials/ALPHA.webp', width: 1200, height: 630, alt: 'Alpha Tarpaulin and Flex Banner rolls for professional signage and exhibitions' }],
         type: 'article'
     },
     alternates: { canonical: 'https://kelinph.com/blogs-material-alpha-tarpaulin-flex' }
 };
 
 export default function BlogAlphaTarpaulinFlex() {
+    const jsonLd = {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "Article",
+                "headline": "Alpha Tarpaulin & Flex Guide: Premium Flex Banner & Backlit Frontlit Tarpaulin for Professional Signage",
+                "description": "Complete guide to Alpha Tarpaulin & Flex Banner — premium PVC coated woven scrim material for trade shows, outdoor billboards, backlit displays, and stadium advertising in the Philippines.",
+                "image": "https://kelinph.com/assets/Materials/ALPHA.webp",
+                "author": { "@type": "Organization", "name": "Kelin Graphics System", "url": "https://kelinph.com/about" },
+                "publisher": { "@type": "Organization", "name": "Kelin Graphics System", "logo": { "@type": "ImageObject", "url": "https://kelinph.com/marquee-logo/inks/kelin-logo.png" } },
+                "datePublished": "2026-04-01T08:00:00.000Z",
+                "dateModified": "2026-05-06T08:00:00.000Z",
+                "mainEntityOfPage": "https://kelinph.com/blogs-material-alpha-tarpaulin-flex"
+            },
+            {
+                "@type": "FAQPage",
+                "mainEntity": [
+                    { "@type": "Question", "name": "What is the difference between Alpha Flex Banner and Alpha Tarpaulin?", "acceptedAnswer": { "@type": "Answer", "text": "Alpha Flex Banner is a thinner, more pliable material designed for tension frame systems — it achieves flatness by being stretched across an aluminum or steel frame. Alpha Tarpaulin is a heavier construction designed for free-hanging or frame-mounted banner applications. Both are available in frontlit and backlit variants for illuminated or non-illuminated display systems." } },
+                    { "@type": "Question", "name": "Why choose Alpha grade over Omega or Beta for professional advertising?", "acceptedAnswer": { "@type": "Answer", "text": "Alpha grade features a higher-quality PVC coating formulation that provides superior ink absorption and color reproduction accuracy compared to Omega and Beta grades. This makes Alpha the preferred choice for corporate advertising, stadium signage, and trade show displays where brand color standards must be met precisely and visual impact is critical." } },
+                    { "@type": "Question", "name": "What maximum width is available for Alpha Tarpaulin and Flex Banner?", "acceptedAnswer": { "@type": "Answer", "text": "Alpha Tarpaulin and Flex Banner are available in widths up to 13ft (approximately 4 meters), enabling single-piece production of large exhibition back walls, full-width shopping mall corridor banners, and stadium perimeter advertising boards without seams." } }
+                ]
+            }
+        ]
+    };
     return (
         <div className="blog-page-layout material-blog-page">
             <Header />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
             <div className="blog-breadcrumb-bar">
                 <div className="blog-breadcrumb-inner">
                     <Link href="/" className="breadcrumb-link">Home</Link>
@@ -51,9 +76,21 @@ export default function BlogAlphaTarpaulinFlex() {
                                     </span>
                                 </div>
                             </div>
+                            <div className="callout-box callout-summary">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 11 12 14 22 4" /><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" /></svg>
+                                <div>
+                                    <strong>Quick Summary</strong>
+                                    <ul style={{ margin: '8px 0 0', paddingLeft: '18px', lineHeight: '1.8' }}>
+                                        <li>Premium-grade material with superior PVC coating for accurate color reproduction — designed for trade shows, stadium, and corporate advertising</li>
+                                        <li>Two product types: Flex Banner (for tension frame systems) and Tarpaulin (for free-hanging and frame-mounted applications)</li>
+                                        <li>Both available in frontlit and backlit variants for illuminated and non-illuminated display systems</li>
+                                        <li>Available up to 13ft wide — enables seamless single-piece prints for large exhibition walls and stadium perimeter boards</li>
+                                    </ul>
+                                </div>
+                            </div>
                         </header>
                         <figure className="blog-featured-image" itemProp="image">
-                            <img src="/cat_materials.webp" alt="Alpha Tarpaulin and Flex Banner rolls for professional signage and exhibitions" width="840" height="473" loading="eager" />
+                            <img src="/assets/Materials/ALPHA.webp" alt="Alpha Tarpaulin and Flex Banner rolls for professional signage and exhibitions" width="840" height="473" loading="eager" />
                             <figcaption>
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2" /><circle cx="8.5" cy="8.5" r="1.5" /><polyline points="21 15 16 10 5 21" /></svg>
                                 Alpha Tarpaulin and Flex Banner — premium PVC coated woven scrim for professional outdoor advertising, trade show displays, and backlit exhibition systems
@@ -233,7 +270,7 @@ export default function BlogAlphaTarpaulinFlex() {
                             </ol>
                         </div>
                         <div className="sidebar-widget product-widget">
-                            <img src="/cat_materials.webp" alt="Alpha Tarpaulin and Flex Banner rolls" className="product-widget-img" />
+                            <img src="/assets/Materials/ALPHA.webp" alt="Alpha Tarpaulin and Flex Banner rolls" className="product-widget-img" />
                             <h4>Alpha Tarpaulin &amp; Flex Banner</h4>
                             <p>Premium PVC coated woven scrim in frontlit and backlit grades. Available up to 13ft width x 164ft rolls for large-format professional displays.</p>
                             <Link href="/materials" className="product-widget-btn">See Full Details <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m9 18 6-6-6-6" /></svg></Link>

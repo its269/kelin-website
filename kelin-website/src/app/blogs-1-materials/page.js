@@ -33,5 +33,30 @@ export const metadata = {
 };
 
 export default function Page() {
-    return <BlogsClient />;
+    const jsonLd = {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "CollectionPage",
+                "headline": "Printing Materials Blog | Vinyl, Tarpaulin, Canvas & Substrates | Kelin Graphics System",
+                "description": "Explore guides and reviews on wide format printing materials including vinyl, tarpaulin, canvas, backlit film, one-way vision, and specialty substrates from Kelin Philippines.",
+                "url": "https://kelinph.com/blogs-1-materials",
+                "publisher": { "@type": "Organization", "name": "Kelin Graphics System", "logo": { "@type": "ImageObject", "url": "https://kelinph.com/marquee-logo/inks/kelin-logo.png" } }
+            },
+            {
+                "@type": "FAQPage",
+                "mainEntity": [
+                    { "@type": "Question", "name": "What printing materials does Kelin supply for wide format printing?", "acceptedAnswer": { "@type": "Answer", "text": "Kelin supplies a comprehensive range of wide format printing materials including vinyl banners, self-adhesive vinyl, backlit film, tarpaulin, canvas, one-way vision film, mesh banner, and specialty substrates suitable for eco-solvent, UV, sublimation, and DTF printing." } },
+                    { "@type": "Question", "name": "What is the difference between frontlit and backlit tarpaulin?", "acceptedAnswer": { "@type": "Answer", "text": "Frontlit tarpaulin is designed to be illuminated from the front and is ideal for outdoor banners and billboards. Backlit tarpaulin is translucent, designed to be lit from behind in lightboxes and illuminated signage for vibrant, glowing display output." } },
+                    { "@type": "Question", "name": "How do I choose the right printing substrate for outdoor signage?", "acceptedAnswer": { "@type": "Answer", "text": "For outdoor signage, consider UV and weather resistance, substrate weight, and intended lifespan. PVC vinyl and mesh banners are popular for outdoor use. For long-term outdoor applications, UV-laminated or solvent-printed vinyl with reinforced hems is recommended." } }
+                ]
+            }
+        ]
+    };
+    return (
+        <>
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+            <BlogsClient />
+        </>
+    );
 }

@@ -160,8 +160,8 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <img src="/background-elements.svg" alt="" aria-hidden="true" className="decorative-element-home bg-elements-home" />
-            <img src="/background-elements(2).svg" alt="" aria-hidden="true" className="decorative-element-2-home bg-elements-home" />
+            <img src="/background-elements.svg" alt="" aria-hidden="true" className="decorative-element-home bg-elements-home" loading="lazy" fetchPriority="low" />
+            <img src="/background-elements(2).svg" alt="" aria-hidden="true" className="decorative-element-2-home bg-elements-home" loading="lazy" fetchPriority="low" />
           </section>
 
           <div className="marquee-logo">
@@ -205,6 +205,7 @@ export default function Home() {
                     height={200}
                     className="product-card-image"
                     priority
+                    sizes="(max-width: 768px) 90vw, 250px"
                   />
                 </div>
                 <h4>ADVANCE W+CMYK+V PRINTING CAPABILITY</h4>
@@ -219,6 +220,7 @@ export default function Home() {
                     height={200}
                     className="product-card-image"
                     priority
+                    sizes="(max-width: 768px) 90vw, 250px"
                   />
                 </div>
                 <h4>BRILLIANT COLOR PRINTING WITH VARNISH</h4>
@@ -233,6 +235,7 @@ export default function Home() {
                     height={200}
                     className="product-card-image"
                     priority
+                    sizes="(max-width: 768px) 90vw, 250px"
                   />
                 </div>
                 <h4>HIGH-FUNCTION DESIGN SUPPORTING 4 APPLICATIONS</h4>
@@ -240,8 +243,8 @@ export default function Home() {
               </Link>
             </div>
           </div>
-          <img src="/background-elements.svg" alt="" aria-hidden="true" className="luxor-background-elements luxor-bg-elements" />
-          <img src="/background-elements(2).svg" alt="" aria-hidden="true" className="luxor-background-elements2 luxor-bg-elements" />
+          <img src="/background-elements.svg" alt="" aria-hidden="true" className="luxor-background-elements luxor-bg-elements" loading="lazy" fetchPriority="low" />
+          <img src="/background-elements(2).svg" alt="" aria-hidden="true" className="luxor-background-elements2 luxor-bg-elements" loading="lazy" fetchPriority="low" />
         </section>
 
         <AboutSection />

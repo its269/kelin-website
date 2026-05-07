@@ -1,0 +1,883 @@
+/* Sapphire Heat Press Unique Styles */
+
+/* Font Face Declaration */
+
+.sapphire-heatpress-main {
+    min-height: 100vh;
+    margin-top: 60px;
+}
+
+/* Breadcrumb Section */
+.sapphire-heatpress-breadcrumb-section {
+    background: #f8fafc;
+    padding: 16px 0;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.sapphire-heatpress-breadcrumb-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+.sapphire-heatpress-breadcrumb-nav {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+}
+
+.sapphire-heatpress-breadcrumb-link {
+    color: #64748b;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.sapphire-heatpress-breadcrumb-link:hover {
+    color: #334155;
+}
+
+.sapphire-heatpress-breadcrumb-separator {
+    color: #94a3b8;
+    font-weight: 300;
+}
+
+.sapphire-heatpress-breadcrumb-current {
+    color: #1e293b;
+    font-weight: 600;
+}
+
+/* Product Hero Section */
+.sapphire-heatpress-hero {
+    padding: 100px 40px 80px;
+    margin: 0 auto;
+    text-align: center;
+    background: linear-gradient(135deg, rgba(71, 85, 105, 0.05) 0%, rgba(51, 65, 85, 0.08) 100%);
+    border-radius: 80px;
+    margin-bottom: 60px;
+    position: relative;
+    overflow: hidden;
+}
+
+.sapphire-heatpress-hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(71, 85, 105, 0.1) 0%, transparent 50%);
+    animation: sapphire-heatpress-float 20s ease-in-out infinite;
+    pointer-events: none;
+}
+
+@keyframes sapphire-heatpress-float {
+
+    0%,
+    100% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+
+    50% {
+        transform: translate(-20px, -20px) rotate(180deg);
+    }
+}
+
+.sapphire-heatpress-hero.product-hero {
+    text-align: left;
+    padding: 80px 40px;
+}
+
+.sapphire-heatpress-hero-layout {
+    max-width: 1400px;
+    margin: 0 auto;
+    gap: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 2;
+}
+
+.sapphire-heatpress-hero-left {
+    text-align: left;
+}
+
+.sapphire-heatpress-hero-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    font-family: 'Bison-Bold', Arial, sans-serif;
+    background: linear-gradient(135deg, #1e293b 0%, #334155 50%, #475569 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-top: 130px;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+}
+
+.sapphire-heatpress-hero-title.product-title {
+    font-size: 2.8rem;
+    margin-bottom: 20px;
+}
+
+.sapphire-heatpress-hero-subtitle {
+    font-size: 1.3rem;
+    color: #64748b;
+    line-height: 1.6;
+    margin: 0 0 40px 0;
+    max-width: 600px;
+}
+
+.sapphire-heatpress-hero-subtitle.product-subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    max-width: 500px;
+}
+
+.sapphire-heatpress-button-group {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.sapphire-heatpress-view-btn {
+    background: linear-gradient(135deg, #334155, #475569);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.sapphire-heatpress-view-btn.large {
+    padding: 15px 30px;
+    font-size: 1rem;
+}
+
+.sapphire-heatpress-view-btn:hover {
+    background: linear-gradient(135deg, #1e293b, #334155);
+    transform: translateX(4px);
+}
+
+.sapphire-heatpress-view-btn svg {
+    width: 16px;
+    height: 16px;
+    transition: transform 0.3s ease;
+}
+
+.sapphire-heatpress-view-btn:hover svg {
+    transform: translateX(4px);
+}
+
+.sapphire-heatpress-btn-secondary {
+    background: #f7fafc;
+    color: #4a5568;
+    border: 2px solid #e2e8f0;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.sapphire-heatpress-btn-secondary.large {
+    padding: 15px 30px;
+    font-size: 1rem;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+}
+
+.sapphire-heatpress-btn-secondary:hover {
+    background: #edf2f7;
+    border-color: #cbd5e0;
+}
+
+.sapphire-heatpress-hero-stats {
+    display: flex;
+    justify-content: flex-start;
+    gap: 40px;
+    margin-top: 40px;
+    flex-wrap: wrap;
+}
+
+.sapphire-heatpress-hero-stats.product-stats {
+    justify-content: flex-start;
+}
+
+.sapphire-heatpress-stat {
+    text-align: center;
+    padding: 20px 30px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 16px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(71, 85, 105, 0.1);
+}
+
+.sapphire-heatpress-stat-number {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #334155;
+    display: block;
+    line-height: 1.2;
+}
+
+.sapphire-heatpress-stat-label {
+    font-size: 0.9rem;
+    color: #64748b;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-top: 4px;
+}
+
+.sapphire-heatpress-hero-right {
+    text-align: center;
+}
+
+.sapphire-heatpress-hero-image {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    border-radius: 16px;
+}
+
+/* Overview Section */
+.sapphire-heatpress-overview-section {
+    padding: 80px 40px;
+    background: white;
+}
+
+.sapphire-heatpress-overview-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.sapphire-heatpress-section-title {
+    font-size: 2.8rem;
+    font-weight: 800;
+    font-family: 'Bison-Bold', Arial, sans-serif;
+    color: #1e293b;
+    margin: 0 0 16px 0;
+    background: linear-gradient(135deg, #1e293b 0%, #475569 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+}
+
+.sapphire-heatpress-country-select {
+    border-radius: 10px;
+    border-color: #94a3b8;
+}
+
+.sapphire-heatpress-section-subtitle {
+    font-size: 1.2rem;
+    color: #64748b;
+    text-align: center;
+    margin-bottom: 60px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.sapphire-heatpress-overview-text {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #475569;
+    margin: 0;
+}
+
+/* Features Section */
+.sapphire-heatpress-features-section {
+    background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+    color: white;
+    padding: 80px 40px;
+}
+
+.sapphire-heatpress-features-container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.sapphire-heatpress-features-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.sapphire-heatpress-features-title {
+    font-family: 'Bison-Bold', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin: 0 0 16px 0;
+    background: linear-gradient(135deg, #64748b, #94a3b8);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.sapphire-heatpress-features-subtitle {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+.sapphire-heatpress-features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+}
+
+.sapphire-heatpress-feature-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 40px 30px;
+    text-align: center;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.sapphire-heatpress-feature-card:hover {
+    transform: translateY(-8px);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.sapphire-heatpress-feature-icon {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 24px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #64748b, #94a3b8);
+    border-radius: 50%;
+    padding: 16px;
+    box-shadow: 0 8px 25px rgba(71, 85, 105, 0.25);
+    color: white;
+}
+
+.sapphire-heatpress-feature-icon svg {
+    width: 28px;
+    height: 28px;
+    color: white;
+}
+
+.sapphire-heatpress-feature-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin: 0 0 16px 0;
+}
+
+.sapphire-heatpress-feature-text {
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Specifications Section */
+.sapphire-heatpress-specs-section {
+    padding: 80px 40px;
+    background: #f8fafc;
+}
+
+.sapphire-heatpress-specs-container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.sapphire-heatpress-specs-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+    margin-top: 60px;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.sapphire-heatpress-spec-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 24px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.sapphire-heatpress-spec-card-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #1e293b;
+    margin: 0 0 24px 0;
+    text-align: center;
+}
+
+.sapphire-heatpress-spec-card-body {
+    display: grid;
+    gap: 1px;
+}
+
+.sapphire-heatpress-spec-item {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 16px;
+    padding: 12px 16px;
+    background: #f8fafc;
+    border: none;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.sapphire-heatpress-spec-item:nth-child(even) {
+    background: #ffffff;
+}
+
+.sapphire-heatpress-spec-item:last-child {
+    border-bottom: none;
+}
+
+.sapphire-heatpress-spec-label {
+    font-weight: 600;
+    color: #475569;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+}
+
+.sapphire-heatpress-spec-value {
+    color: #1e293b;
+    font-weight: 500;
+    font-size: 0.9rem;
+    text-align: right;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+/* Applications Section */
+.sapphire-heatpress-applications-section {
+    padding: 80px 40px;
+    background: white;
+}
+
+.sapphire-heatpress-applications-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.sapphire-heatpress-applications-subtitle {
+    font-size: 1.1rem;
+    color: #64748b;
+    margin-bottom: 40px;
+    line-height: 1.6;
+}
+
+.sapphire-heatpress-applications-scroll {
+    overflow-x: auto;
+    overflow-y: hidden;
+    margin-top: 40px;
+    padding-bottom: 20px;
+    -webkit-overflow-scrolling: touch;
+    cursor: grab;
+    user-select: none;
+    scrollbar-width: none;
+    /* Firefox */
+    -ms-overflow-style: none;
+    /* IE and Edge */
+}
+
+.sapphire-heatpress-applications-scroll::-webkit-scrollbar {
+    display: none;
+    /* Chrome, Safari, Opera */
+}
+
+.sapphire-heatpress-applications-scroll:active {
+    cursor: grabbing;
+}
+
+.sapphire-heatpress-applications-image-grid {
+    display: flex;
+    gap: 24px;
+    width: max-content;
+}
+
+.sapphire-heatpress-application-image-item {
+    flex: 0 0 280px;
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.sapphire-heatpress-application-image-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    border-color: #3b82f6;
+}
+
+.sapphire-heatpress-application-image-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
+
+.sapphire-heatpress-application-image-item p {
+    padding: 16px;
+    margin: 0;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #334155;
+    text-align: center;
+}
+
+/* Advantages Section */
+.sapphire-heatpress-advantages-section {
+    padding: 80px 40px;
+    background: #f8fafc;
+}
+
+.sapphire-heatpress-advantages-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.sapphire-heatpress-advantages-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    margin-top: 60px;
+}
+
+.sapphire-heatpress-advantage-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 24px;
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    transition: all 0.3s ease;
+    text-align: left;
+}
+
+.sapphire-heatpress-advantage-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.sapphire-heatpress-advantage-icon {
+    width: 24px;
+    height: 24px;
+    color: #10b981;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.sapphire-heatpress-advantage-text {
+    color: #475569;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Modal Styles */
+.sapphire-heatpress-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    padding: 20px;
+}
+
+.sapphire-heatpress-inquiry-modal {
+    background: white;
+    border-radius: 20px;
+    max-width: 600px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+}
+
+.sapphire-heatpress-inquiry-header {
+    padding: 32px 32px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #e2e8f0;
+    margin-bottom: 32px;
+    padding-bottom: 24px;
+}
+
+.sapphire-heatpress-inquiry-header h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #1e293b;
+    margin: 0;
+}
+
+.sapphire-heatpress-close-btn {
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    color: #64748b;
+    cursor: pointer;
+    padding: 4px;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+}
+
+.sapphire-heatpress-close-btn:hover {
+    background: #f1f5f9;
+    color: #334155;
+}
+
+.sapphire-heatpress-inquiry-form {
+    padding: 0 32px 32px;
+}
+
+.sapphire-heatpress-form-row {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 24px;
+}
+
+.sapphire-heatpress-form-group {
+    flex: 1;
+    margin-bottom: 24px;
+}
+
+.sapphire-heatpress-form-group label {
+    display: block;
+    font-weight: 500;
+    color: #334155;
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+}
+
+.sapphire-heatpress-form-group input,
+.sapphire-heatpress-form-group textarea {
+    width: 100%;
+    padding: 12px 16px;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.2s ease;
+    background: white;
+}
+
+.sapphire-heatpress-form-group input:focus,
+.sapphire-heatpress-form-group textarea:focus {
+    outline: none;
+    border-color: #334155;
+}
+
+.sapphire-heatpress-phone-input {
+    display: flex;
+    gap: 8px;
+}
+
+.sapphire-heatpress-form-actions {
+    display: flex;
+    gap: 16px;
+    justify-content: flex-end;
+    margin-top: 32px;
+}
+
+.sapphire-heatpress-btn-primary {
+    background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+    color: white;
+    border: none;
+    padding: 14px 28px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.sapphire-heatpress-btn-primary:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 20px rgba(30, 41, 59, 0.3);
+}
+
+.sapphire-heatpress-btn-secondary {
+    background: transparent;
+    color: #64748b;
+    border: 2px solid #e2e8f0;
+    padding: 14px 28px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.sapphire-heatpress-btn-secondary:hover {
+    background: #f8fafc;
+    border-color: #cbd5e1;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .sapphire-heatpress-hero-layout {
+        gap: 40px;
+    }
+
+    .sapphire-heatpress-hero.product-hero {
+        border-radius: 0px 0px 50px 50px;
+    }
+
+    .sapphire-heatpress-specs-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 900px) {
+    .sapphire-heatpress-hero-stats {
+        gap: 25px;
+        justify-content: center;
+    }
+
+    .sapphire-heatpress-stat {
+        padding: 18px 25px;
+        min-width: 140px;
+    }
+
+    .sapphire-heatpress-hero-title.product-title {
+        font-size: 2.4rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .sapphire-heatpress-hero {
+        border-radius: 0px 0px 40px 40px;
+        padding: 60px 20px 40px;
+    }
+
+    .sapphire-heatpress-hero.product-hero {
+        padding: 50px 20px;
+        text-align: center;
+    }
+
+    .sapphire-heatpress-hero-title.product-title {
+        font-size: 2.2rem;
+        text-align: center;
+    }
+
+    .sapphire-heatpress-hero-subtitle.product-subtitle {
+        text-align: center;
+        max-width: 100%;
+        font-size: 1rem;
+        margin-bottom: 25px;
+    }
+
+    .sapphire-heatpress-button-group {
+        justify-content: center;
+        gap: 15px;
+        margin-bottom: 25px;
+    }
+
+    .sapphire-heatpress-hero-image {
+        max-width: 350px;
+        width: 90%;
+        height: auto;
+        margin: 0 auto;
+    }
+
+    .sapphire-heatpress-hero-stats {
+        justify-content: center;
+        gap: 15px;
+        margin-top: 30px;
+        display: grid;
+        grid-template-columns: 1fr;
+        max-width: 280px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .sapphire-heatpress-stat {
+        padding: 16px 20px;
+        margin: 0;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .sapphire-heatpress-stat-number {
+        font-size: 1.5rem;
+    }
+
+    .sapphire-heatpress-stat-label {
+        font-size: 0.8rem;
+    }
+
+    .sapphire-heatpress-form-row {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .sapphire-heatpress-form-actions {
+        flex-direction: column;
+    }
+
+    .sapphire-heatpress-applications-list {
+        grid-template-columns: 1fr;
+    }
+
+    .sapphire-heatpress-advantages-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Mobile Specifications Table Styles */
+    .sapphire-heatpress-spec-card {
+        padding: 16px;
+    }
+
+    .sapphire-heatpress-spec-card-title {
+        font-size: 1.3rem;
+        margin-bottom: 16px;
+    }
+
+    .sapphire-heatpress-spec-item {
+        grid-template-columns: 1fr;
+        gap: 4px;
+        padding: 10px 12px;
+    }
+
+    .sapphire-heatpress-spec-label {
+        font-size: 0.85rem;
+        margin-bottom: 2px;
+    }
+
+    .sapphire-heatpress-spec-value {
+        font-size: 0.8rem;
+        text-align: left;
+        justify-content: flex-start;
+        color: #64748b;
+        font-weight: 400;
+    }
+}

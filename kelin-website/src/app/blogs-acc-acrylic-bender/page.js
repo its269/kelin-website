@@ -11,7 +11,7 @@ export const metadata = {
     openGraph: {
         title: 'Acrylic Letter Making Bender Machine Tool Guide: Manual Bending for Channel Letters & Signage',
         description: 'Explore how a manual acrylic bender tool enables sign fabricators to create precise channel letters and custom signage shapes from acrylic sheets.',
-        images: [{ url: '/dummy-image-square.jpg', width: 1200, height: 630, alt: 'Manual Acrylic Bender Tool for Channel Letters' }],
+        images: [{ url: '/assets/Accessories/Acrylic bender 1.webp', width: 1200, height: 630, alt: 'Manual Acrylic Bender Tool for Channel Letters' }],
         type: 'article',
         publishedTime: '2026-04-25T08:00:00.000Z',
         authors: ['Kelin Graphics System'],
@@ -20,9 +20,34 @@ export const metadata = {
 };
 
 export default function BlogAccAcrylicBender() {
+    const jsonLd = {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "Article",
+                "headline": "Acrylic Letter Making Bender Machine Tool Guide: Manual Bending for Channel Letters & Signage",
+                "description": "Explore how a manual acrylic bender tool enables sign fabricators to create precise channel letters and custom signage shapes from acrylic sheets with accuracy and ease.",
+                "image": "https://kelinph.com/assets/Accessories/Acrylic bender 1.webp",
+                "author": { "@type": "Organization", "name": "Kelin Graphics System", "url": "https://kelinph.com/about" },
+                "publisher": { "@type": "Organization", "name": "Kelin Graphics System", "logo": { "@type": "ImageObject", "url": "https://kelinph.com/marquee-logo/inks/kelin-logo.png" } },
+                "datePublished": "2026-04-25T08:00:00.000Z",
+                "dateModified": "2026-05-06T08:00:00.000Z",
+                "mainEntityOfPage": "https://kelinph.com/blogs-acc-acrylic-bender"
+            },
+            {
+                "@type": "FAQPage",
+                "mainEntity": [
+                    { "@type": "Question", "name": "How does a manual acrylic bender work?", "acceptedAnswer": { "@type": "Answer", "text": "A manual acrylic bender works by heating acrylic sheet along a precise line using a focused heating element. This softens the material along that line, allowing the fabricator to fold it to the desired angle. Once cooled, the bend is permanent and holds its shape." } },
+                    { "@type": "Question", "name": "What thickness of acrylic sheet can a manual bender handle?", "acceptedAnswer": { "@type": "Answer", "text": "Manual acrylic benders are typically compatible with acrylic sheets of various thicknesses used in channel letter fabrication. The exact range depends on the heating element wattage and the acrylic formulation, but most sign-grade acrylic sheets commonly used for channel letters are within the tool's capability." } },
+                    { "@type": "Question", "name": "Is special training required to use an acrylic bender?", "acceptedAnswer": { "@type": "Answer", "text": "No formal training is required, but practice is important. Proper technique — knowing the right heating time and applying consistent pressure — is developed with experience. Overheating can bubble or cloud the acrylic, while underheating can crack it when bent." } }
+                ]
+            }
+        ]
+    };
     return (
-        <div className="blog-page-layout">
+        <div className="blog-page-layout acc-blog-page">
             <Header />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
             <div className="blog-breadcrumb-bar">
                 <div className="blog-breadcrumb-inner">
                     <Link href="/" className="breadcrumb-link">Home</Link>
@@ -54,9 +79,21 @@ export default function BlogAccAcrylicBender() {
                                     </span>
                                 </div>
                             </div>
+                            <div className="callout-box callout-summary">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 11 12 14 22 4" /><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" /></svg>
+                                <div>
+                                    <strong>Quick Summary</strong>
+                                    <ul style={{ margin: '8px 0 0', paddingLeft: '18px', lineHeight: '1.8' }}>
+                                        <li>Heats acrylic along a focused line for clean, precise bends without cracking</li>
+                                        <li>Essential tool for in-house channel letter and custom signage fabrication</li>
+                                        <li>Manual operation provides tactile control over bend angle and timing</li>
+                                        <li>Reduces outsourcing costs for sign shops that produce channel letters regularly</li>
+                                    </ul>
+                                </div>
+                            </div>
                         </header>
                         <figure className="blog-featured-image" itemProp="image">
-                            <img src="/dummy-image-square.jpg" alt="Manual Acrylic Bender Tool for Channel Letters and Signage" width="840" height="473" loading="eager" />
+                            <img src="/assets/Accessories/Acrylic bender 1.webp" alt="Manual Acrylic Bender Tool for Channel Letters and Signage" width="840" height="473" loading="eager" />
                             <figcaption>Manual acrylic bender tool — the precision fabrication instrument for channel letter making and custom signage production.</figcaption>
                         </figure>
                         <div className="blog-body" itemProp="articleBody">
@@ -141,7 +178,7 @@ export default function BlogAccAcrylicBender() {
                 <aside className="blog-sidebar">
                     <div className="sidebar-sticky">
                         <div className="sidebar-widget toc-widget">
-                            <h3 className="widget-title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="8" y1="6" x2="21" y2="6" /><line x1="8" y1="12" x2="21" y2="12" /><line x1="8" y1="18" x2="21" y2="18" /><line x1="3" y1="6" x2="3.01" y2="6" /><line x1="3" y1="12" x2="3.01" y2="12" /><line x1="3" y1="18" x2="3.01" y2="18" /></svg>In This Article</h3>
+                            <h3 className="widget-title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="8" y1="6" x2="21" y2="6" /><line x1="8" y1="12" x2="21" y2="12" /><line x1="8" y1="18" x2="21" y2="18" /><line x1="3" y1="6" x2="3.01" y2="6" /><line x1="3" y1="12" x2="3.01" y2="12" /><line x1="3" y1="18" x2="3.01" y2="18" /></svg>In This Guide</h3>
                             <ol className="toc-list">
                                 <li><a href="#overview">Overview</a></li>
                                 <li><a href="#specs">Specifications</a></li>

@@ -11,7 +11,7 @@ export const metadata = {
     openGraph: {
         title: 'Glass Wiper Rubber Strip Guide: Streak-Free Cleaning Tool for Flat Surfaces & Printer Platens',
         description: 'Discover how a handheld glass wiper with rubber strip delivers streak-free cleaning for glass surfaces, flat printer platens, and production workstations.',
-        images: [{ url: '/dummy-image-square.jpg', width: 1200, height: 630, alt: 'Glass Wiper Rubber Strip for Flat Surfaces and Printer Platens' }],
+        images: [{ url: '/cat_accessories.webp', width: 1200, height: 630, alt: 'Glass Wiper Rubber Strip for Flat Surfaces and Printer Platens' }],
         type: 'article',
         publishedTime: '2026-04-25T08:00:00.000Z',
         authors: ['Kelin Graphics System'],
@@ -20,9 +20,34 @@ export const metadata = {
 };
 
 export default function BlogAccGlassWiper() {
+    const jsonLd = {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "Article",
+                "headline": "Glass Wiper Rubber Strip Guide: Streak-Free Cleaning Tool for Flat Surfaces & Printer Platens",
+                "description": "Discover how a handheld glass wiper with rubber strip (11.8cm x 14.5cm, yellow handle) delivers streak-free cleaning for glass surfaces, flat printer platens, and production workstations.",
+                "image": "https://kelinph.com/cat_accessories.webp",
+                "author": { "@type": "Organization", "name": "Kelin Graphics System", "url": "https://kelinph.com/about" },
+                "publisher": { "@type": "Organization", "name": "Kelin Graphics System", "logo": { "@type": "ImageObject", "url": "https://kelinph.com/marquee-logo/inks/kelin-logo.png" } },
+                "datePublished": "2026-04-25T08:00:00.000Z",
+                "dateModified": "2026-05-06T08:00:00.000Z",
+                "mainEntityOfPage": "https://kelinph.com/blogs-acc-glass-wiper"
+            },
+            {
+                "@type": "FAQPage",
+                "mainEntity": [
+                    { "@type": "Question", "name": "Can the glass wiper with rubber strip be used on UV flatbed printer platens?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. The rubber strip wiper is safe and effective for cleaning UV flatbed printer platens, laminator tables, and other flat production surfaces. Its streak-free cleaning action removes water, cleaning solution, and ink residue in a single pass." } },
+                    { "@type": "Question", "name": "Does the rubber strip on the glass wiper need to be replaced?", "acceptedAnswer": { "@type": "Answer", "text": "The rubber strip will wear over time with regular use. When the strip becomes deformed, torn, or no longer maintains flat contact with the surface, it should be replaced. The simple construction of the wiper makes strip replacement straightforward." } },
+                    { "@type": "Question", "name": "What size is the glass wiper and what surfaces is it best suited for?", "acceptedAnswer": { "@type": "Answer", "text": "The wiper measures 11.8cm x 14.5cm with a yellow handle, sized for one-handed use. It is best suited for glass panels, UV flatbed platens, laminator entry tables, and flat workstation surfaces." } }
+                ]
+            }
+        ]
+    };
     return (
-        <div className="blog-page-layout">
+        <div className="blog-page-layout acc-blog-page">
             <Header />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
             <div className="blog-breadcrumb-bar">
                 <div className="blog-breadcrumb-inner">
                     <Link href="/" className="breadcrumb-link">Home</Link>
@@ -54,9 +79,21 @@ export default function BlogAccGlassWiper() {
                                     </span>
                                 </div>
                             </div>
+                            <div className="callout-box callout-summary">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 11 12 14 22 4" /><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" /></svg>
+                                <div>
+                                    <strong>Quick Summary</strong>
+                                    <ul style={{ margin: '8px 0 0', paddingLeft: '18px', lineHeight: '1.8' }}>
+                                        <li>Rubber strip provides streak-free cleaning of glass, flat surfaces, and UV printer platens</li>
+                                        <li>11.8cm x 14.5cm size with yellow handle — ergonomic one-handed use</li>
+                                        <li>Moves liquids off the surface rather than absorbing and re-depositing them</li>
+                                        <li>Replaceable rubber strip extends the tool's service life</li>
+                                    </ul>
+                                </div>
+                            </div>
                         </header>
                         <figure className="blog-featured-image" itemProp="image">
-                            <img src="/dummy-image-square.jpg" alt="Glass Wiper Rubber Strip Yellow Handle for Flat Surfaces and Printer Platens" width="840" height="473" loading="eager" />
+                            <img src="/cat_accessories.webp" alt="Glass Wiper Rubber Strip Yellow Handle for Flat Surfaces and Printer Platens" width="840" height="473" loading="eager" />
                             <figcaption>Handheld glass wiper with rubber strip, yellow handle — 11.8cm x 14.5cm for streak-free cleaning of glass, flat surfaces, and UV printer platens.</figcaption>
                         </figure>
                         <div className="blog-body" itemProp="articleBody">
@@ -142,7 +179,7 @@ export default function BlogAccGlassWiper() {
                 <aside className="blog-sidebar">
                     <div className="sidebar-sticky">
                         <div className="sidebar-widget toc-widget">
-                            <h3 className="widget-title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="8" y1="6" x2="21" y2="6" /><line x1="8" y1="12" x2="21" y2="12" /><line x1="8" y1="18" x2="21" y2="18" /><line x1="3" y1="6" x2="3.01" y2="6" /><line x1="3" y1="12" x2="3.01" y2="12" /><line x1="3" y1="18" x2="3.01" y2="18" /></svg>In This Article</h3>
+                            <h3 className="widget-title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="8" y1="6" x2="21" y2="6" /><line x1="8" y1="12" x2="21" y2="12" /><line x1="8" y1="18" x2="21" y2="18" /><line x1="3" y1="6" x2="3.01" y2="6" /><line x1="3" y1="12" x2="3.01" y2="12" /><line x1="3" y1="18" x2="3.01" y2="18" /></svg>In This Guide</h3>
                             <ol className="toc-list">
                                 <li><a href="#overview">Overview</a></li>
                                 <li><a href="#specs">Specifications</a></li>

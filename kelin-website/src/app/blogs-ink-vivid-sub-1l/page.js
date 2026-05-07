@@ -17,9 +17,34 @@ export const metadata = {
 };
 
 export default function BlogInkVividSub1L() {
+    const jsonLd = {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "Article",
+                "headline": "Vivid Sublimation 1L Ink Review: Vibrant CMYK Sublimation Ink for Polyester & Hard Substrates",
+                "description": "Review of Vivid Sublimation 1L — vibrant, high-temperature-stable sublimation ink for dye-sub printing on polyester fabrics, mugs, plates, and other sublimation substrates.",
+                "image": "https://kelinph.com/inks/VIVID SUBLIMATION 1L INK/Vivid Sublimation Ink Cyan 1L (Transparent).webp",
+                "author": { "@type": "Organization", "name": "Kelin Graphics System", "url": "https://kelinph.com/about" },
+                "publisher": { "@type": "Organization", "name": "Kelin Graphics System", "logo": { "@type": "ImageObject", "url": "https://kelinph.com/marquee-logo/inks/kelin-logo.png" } },
+                "datePublished": "2025-10-01T08:00:00.000Z",
+                "dateModified": "2026-05-06T08:00:00.000Z",
+                "mainEntityOfPage": "https://kelinph.com/blogs-ink-vivid-sub-1l"
+            },
+            {
+                "@type": "FAQPage",
+                "mainEntity": [
+                    { "@type": "Question", "name": "What heat transfer temperature does Vivid Sublimation 1L require?", "acceptedAnswer": { "@type": "Answer", "text": "It requires 180–200°C depending on the substrate — ceramic mugs typically need a slightly higher temperature than polyester fabric." } },
+                    { "@type": "Question", "name": "Can Vivid Sublimation 1L be used on cotton?", "acceptedAnswer": { "@type": "Answer", "text": "No — sublimation inks only bond with polyester fibers or polyester-coated surfaces. Cotton fabric requires at least 65% polyester content for viable sublimation results." } },
+                    { "@type": "Question", "name": "How wash-resistant are prints made with Vivid Sublimation 1L?", "acceptedAnswer": { "@type": "Answer", "text": "Sublimation dye becomes permanently embedded in the substrate during heat transfer, making prints wash-permanent and resistant to fading over time." } }
+                ]
+            }
+        ]
+    };
     return (
         <div className="blog-page-layout ink-blog-page">
             <Header />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
             <div className="blog-breadcrumb-bar">
                 <div className="blog-breadcrumb-inner">
                     <Link href="/" className="breadcrumb-link">Home</Link>
@@ -41,6 +66,18 @@ export default function BlogInkVividSub1L() {
                                 <time className="meta-item" dateTime="2025-10-01" itemProp="datePublished"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2" /><line x1="16" y1="2" x2="16" y2="6" /><line x1="8" y1="2" x2="8" y2="6" /><line x1="3" y1="10" x2="21" y2="10" /></svg>October 2025</time>
                                 <span className="meta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" /></svg>5 min read</span>
                             </div></div>
+                            <div className="callout-box callout-summary">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 11 12 14 22 4" /><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" /></svg>
+                                <div>
+                                    <strong>Quick Summary</strong>
+                                    <ul style={{ margin: '8px 0 0', paddingLeft: '18px', lineHeight: '1.8' }}>
+                                        <li>Available in CMYK in convenient 1-liter bottles for small to mid-volume sublimation shops</li>
+                                        <li>Heat-stable formula for sublimation at 180–200°C on polyester fabric and hard substrates</li>
+                                        <li>Vibrant color output that is wash-permanent — dye embeds into fabric fibers</li>
+                                        <li>Well-suited for mugs, plates, polyester apparel, and personalized promotional products</li>
+                                    </ul>
+                                </div>
+                            </div>
                         </header>
 
                         <figure className="blog-featured-image" itemProp="image">
@@ -110,7 +147,7 @@ export default function BlogInkVividSub1L() {
 
                 <aside className="blog-sidebar"><div className="sidebar-sticky">
                     <div className="sidebar-widget toc-widget">
-                        <h3 className="widget-title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="8" y1="6" x2="21" y2="6" /><line x1="8" y1="12" x2="21" y2="12" /><line x1="8" y1="18" x2="21" y2="18" /><line x1="3" y1="6" x2="3.01" y2="6" /><line x1="3" y1="12" x2="3.01" y2="12" /><line x1="3" y1="18" x2="3.01" y2="18" /></svg>In This Article</h3>
+                        <h3 className="widget-title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="8" y1="6" x2="21" y2="6" /><line x1="8" y1="12" x2="21" y2="12" /><line x1="8" y1="18" x2="21" y2="18" /><line x1="3" y1="6" x2="3.01" y2="6" /><line x1="3" y1="12" x2="3.01" y2="12" /><line x1="3" y1="18" x2="3.01" y2="18" /></svg>In This Guide</h3>
                         <ol className="toc-list"><li><a href="#overview">Dye-Sub Printing</a></li><li><a href="#specs">Specifications</a></li><li><a href="#features">Key Features</a></li><li><a href="#verdict">Verdict</a></li></ol>
                     </div>
                     <div className="sidebar-widget product-widget">

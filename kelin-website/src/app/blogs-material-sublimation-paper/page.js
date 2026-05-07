@@ -10,16 +10,41 @@ export const metadata = {
     openGraph: {
         title: "Subli-Mate Nova & S100 Sublimation Paper Guide: Transfer Paper for Fabric, Ceramic & Hard Substrate Printing",
         description: "Complete guide to Subli-Mate Nova and S100 sublimation paper for textile and hard substrate printing in the Philippines.",
-        images: [{ url: '/cat_materials.webp', width: 1200, height: 630, alt: 'Subli-Mate Nova and S100 sublimation transfer paper rolls and sheets' }],
+        images: [{ url: '/assets/Materials/SOFIE/Photo paper.webp', width: 1200, height: 630, alt: 'Subli-Mate Nova and S100 sublimation transfer paper rolls and sheets' }],
         type: 'article'
     },
     alternates: { canonical: 'https://kelinph.com/blogs-material-sublimation-paper' }
 };
 
 export default function BlogSublimationPaper() {
+    const jsonLd = {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "Article",
+                "headline": "Subli-Mate Nova & S100 Sublimation Paper Guide: Transfer Paper for Fabric, Ceramic & Hard Substrate Printing",
+                "description": "Complete guide to Subli-Mate Nova and S100 sublimation transfer paper — high-speed textile sublimation paper and precision hard substrate transfer paper for fabric, ceramic, aluminum, and polyester printing in the Philippines.",
+                "image": "https://kelinph.com/assets/Materials/SOFIE/Photo paper.webp",
+                "author": { "@type": "Organization", "name": "Kelin Graphics System", "url": "https://kelinph.com/about" },
+                "publisher": { "@type": "Organization", "name": "Kelin Graphics System", "logo": { "@type": "ImageObject", "url": "https://kelinph.com/marquee-logo/inks/kelin-logo.png" } },
+                "datePublished": "2026-04-01T08:00:00.000Z",
+                "dateModified": "2026-05-06T08:00:00.000Z",
+                "mainEntityOfPage": "https://kelinph.com/blogs-material-sublimation-paper"
+            },
+            {
+                "@type": "FAQPage",
+                "mainEntity": [
+                    { "@type": "Question", "name": "What is the difference between Subli-Mate Nova and S100 sublimation paper?", "acceptedAnswer": { "@type": "Answer", "text": "Subli-Mate Nova is optimized for high-volume textile sublimation — featuring fast drying and high ink hold capacity ideal for continuous roll-to-roll calender pressing. S100 is precision-formulated for hard substrates such as ceramic mugs, aluminum photo panels, and rigid polyester-coated items where sharper ink transfer and slower release is preferred." } },
+                    { "@type": "Question", "name": "Can sublimation paper be used with any inkjet printer?", "acceptedAnswer": { "@type": "Answer", "text": "Sublimation paper requires a printer loaded with dye-sublimation inks — standard dye or pigment inkjet inks will not sublimate. Compatible printers include Epson, Ricoh, and Sawgrass models equipped with sublimation ink cartridges. The paper must be printed on the coated side only." } },
+                    { "@type": "Question", "name": "What substrates are compatible with sublimation transfer paper?", "acceptedAnswer": { "@type": "Answer", "text": "Sublimation transfer only bonds permanently to substrates with 65% or higher polyester content in textiles, or hard substrates pre-coated with a polyester-receptive layer. Cotton, untreated metal, glass, and wood cannot accept sublimation ink without specialized poly-coating pretreatment." } }
+                ]
+            }
+        ]
+    };
     return (
         <div className="blog-page-layout material-blog-page">
             <Header />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
             <div className="blog-breadcrumb-bar">
                 <div className="blog-breadcrumb-inner">
                     <Link href="/" className="breadcrumb-link">Home</Link>
@@ -51,9 +76,21 @@ export default function BlogSublimationPaper() {
                                     </span>
                                 </div>
                             </div>
+                            <div className="callout-box callout-summary">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 11 12 14 22 4" /><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" /></svg>
+                                <div>
+                                    <strong>Quick Summary</strong>
+                                    <ul style={{ margin: '8px 0 0', paddingLeft: '18px', lineHeight: '1.8' }}>
+                                        <li>Two grades: Subli-Mate Nova (high-volume textile/roll calender) and S100 (hard substrates: ceramic, aluminum, rigid panels)</li>
+                                        <li>Ink transfers permanently under heat and pressure at 180°C–210°C via dye-sublimation phase change</li>
+                                        <li>Requires 65%+ polyester content in textiles or poly-coated hard substrates for permanent color bonding</li>
+                                        <li>Nova suited for continuous roll production; S100 ideal for mug presses and flat heat presses</li>
+                                    </ul>
+                                </div>
+                            </div>
                         </header>
                         <figure className="blog-featured-image" itemProp="image">
-                            <img src="/cat_materials.webp" alt="Subli-Mate Nova and S100 sublimation transfer paper rolls and sheets" width="840" height="473" loading="eager" />
+                            <img src="/assets/Materials/SOFIE/Photo paper.webp" alt="Subli-Mate Nova and S100 sublimation transfer paper rolls and sheets" width="840" height="473" loading="eager" />
                             <figcaption>
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2" /><circle cx="8.5" cy="8.5" r="1.5" /><polyline points="21 15 16 10 5 21" /></svg>
                                 Subli-Mate Nova and S100 sublimation transfer paper — engineered for high-volume textile production and precision hard substrate sublimation printing
@@ -234,7 +271,7 @@ export default function BlogSublimationPaper() {
                             </ol>
                         </div>
                         <div className="sidebar-widget product-widget">
-                            <img src="/cat_materials.webp" alt="Subli-Mate Nova and S100 Sublimation Paper" className="product-widget-img" />
+                            <img src="/assets/Materials/SOFIE/Photo paper.webp" alt="Subli-Mate Nova and S100 Sublimation Paper" className="product-widget-img" />
                             <h4>Subli-Mate Nova &amp; S100 Sublimation Paper</h4>
                             <p>Two specialized sublimation transfer paper grades — Nova for high-speed textile production, S100 for precision hard substrate transfer. Available in rolls and cut sheets.</p>
                             <Link href="/materials" className="product-widget-btn">See Full Details <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m9 18 6-6-6-6" /></svg></Link>
@@ -246,14 +283,14 @@ export default function BlogSublimationPaper() {
                             </h3>
                             <div className="related-article-list">
                                 <Link href="/blogs-material-smartex-sublimate-fabrics" className="related-article-item">
-                                    <img src="/cat_materials.webp" alt="Smartex Sublimation Fabrics" className="related-article-img" />
+                                    <img src="/assets/Materials/SOFIE/Pure Cotton Canvas.webp" alt="Smartex Sublimation Fabrics" className="related-article-img" />
                                     <div className="related-article-info">
                                         <span className="related-article-category">Sublimation Materials</span>
                                         <span className="related-article-title">Smartex Sublimate Fabrics Guide</span>
                                     </div>
                                 </Link>
                                 <Link href="/blogs-material-textile-accessories" className="related-article-item">
-                                    <img src="/cat_materials.webp" alt="Textile Accessories" className="related-article-img" />
+                                    <img src="/assets/Materials/SOFIE/Pure Cotton Canvas.webp" alt="Textile Accessories" className="related-article-img" />
                                     <div className="related-article-info">
                                         <span className="related-article-category">Sublimation Materials</span>
                                         <span className="related-article-title">Textile Accessories Guide</span>

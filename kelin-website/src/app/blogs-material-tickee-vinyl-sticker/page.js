@@ -10,16 +10,41 @@ export const metadata = {
     openGraph: {
         title: 'Tickee Vinyl Sticker (TK Series) Guide: TK50, TK80, TK85, TK100 & TK105',
         description: 'Everything you need to know about the Tickee TK Series vinyl stickers — grades, finishes, sizes, and applications for wide-format printing.',
-        images: [{ url: '/cat_materials.webp', width: 1200, height: 630, alt: 'Tickee Vinyl Sticker TK Series' }],
+        images: [{ url: '/assets/Materials/TK50.webp', width: 1200, height: 630, alt: 'Tickee Vinyl Sticker TK Series' }],
         type: 'article',
     },
     alternates: { canonical: 'https://kelinph.com/blogs-material-tickee-vinyl-sticker' },
 };
 
 export default function BlogTickeeVinylSticker() {
+    const jsonLd = {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "Article",
+                "headline": "Tickee Vinyl Sticker (TK Series) Guide: TK50, TK80, TK85, TK100 & TK105 for Wide-Format Printing",
+                "description": "Complete guide to the Tickee Vinyl Sticker TK Series — TK50, TK80, TK85 Gray Back, TK100, and TK105 Gray Permanent. Matte and Glossy finishes, widths from 3.0ft to 5.0ft x 164ft, for indoor and outdoor applications.",
+                "image": "https://kelinph.com/assets/Materials/TK50.webp",
+                "author": { "@type": "Organization", "name": "Kelin Graphics System", "url": "https://kelinph.com/about" },
+                "publisher": { "@type": "Organization", "name": "Kelin Graphics System", "logo": { "@type": "ImageObject", "url": "https://kelinph.com/marquee-logo/inks/kelin-logo.png" } },
+                "datePublished": "2026-04-01T08:00:00.000Z",
+                "dateModified": "2026-05-06T08:00:00.000Z",
+                "mainEntityOfPage": "https://kelinph.com/blogs-material-tickee-vinyl-sticker"
+            },
+            {
+                "@type": "FAQPage",
+                "mainEntity": [
+                    { "@type": "Question", "name": "What is the difference between TK80 and TK85 Gray Back vinyl sticker?", "acceptedAnswer": { "@type": "Answer", "text": "TK80 is a standard white-face vinyl suitable for general indoor and outdoor applications, while TK85 features a gray backing layer that blocks light penetration — making it ideal for backlit signage and situations where opacity is critical to prevent show-through." } },
+                    { "@type": "Question", "name": "Is the Tickee TK Series vinyl sticker compatible with eco-solvent printers?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, all TK Series vinyl stickers are designed for eco-solvent, solvent, and UV inkjet printing. They accept ink evenly across matte and gloss surfaces and are compatible with most commercial wide-format printer brands." } },
+                    { "@type": "Question", "name": "What does Gray Permanent mean in the TK105 grade?", "acceptedAnswer": { "@type": "Answer", "text": "TK105 Gray Permanent combines a gray-back opaque layer with a permanent-strength adhesive formulation. This makes it suited for long-term outdoor applications on smooth surfaces where the sticker is not intended to be removed, such as vehicle fleet markings or outdoor building identification signage." } }
+                ]
+            }
+        ]
+    };
     return (
         <div className="blog-page-layout material-blog-page">
             <Header />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
             <div className="blog-breadcrumb-bar">
                 <div className="blog-breadcrumb-inner">
                     <Link href="/" className="breadcrumb-link">Home</Link>
@@ -56,10 +81,22 @@ export default function BlogTickeeVinylSticker() {
                                     </span>
                                 </div>
                             </div>
+                            <div className="callout-box callout-summary">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 11 12 14 22 4" /><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" /></svg>
+                                <div>
+                                    <strong>Quick Summary</strong>
+                                    <ul style={{ margin: '8px 0 0', paddingLeft: '18px', lineHeight: '1.8' }}>
+                                        <li>Five TK Series grades: TK50 (economy), TK80 (standard), TK85 Gray Back, TK100, and TK105 Gray Permanent</li>
+                                        <li>Available in matte and gloss finishes; roll widths from 3.0ft to 5.0ft × 164ft</li>
+                                        <li>Compatible with eco-solvent, solvent, and UV wide-format inkjet printers</li>
+                                        <li>Gray-back options (TK85 and TK105) provide opacity for backlit and long-term outdoor applications</li>
+                                    </ul>
+                                </div>
+                            </div>
                         </header>
 
                         <figure className="blog-featured-image" itemProp="image">
-                            <img src="/cat_materials.webp" alt="Tickee Vinyl Sticker TK Series" width="840" height="473" loading="eager" />
+                            <img src="/assets/Materials/TK50.webp" alt="Tickee Vinyl Sticker TK Series" width="840" height="473" loading="eager" />
                             <figcaption>
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2" /><circle cx="8.5" cy="8.5" r="1.5" /><polyline points="21 15 16 10 5 21" /></svg>
                                 The Tickee TK Series vinyl sticker lineup — five grades covering economy to permanent applications in matte and glossy finishes, available in widths from 3.0ft to 5.0ft &times; 164ft rolls.
@@ -227,7 +264,7 @@ export default function BlogTickeeVinylSticker() {
                             </ol>
                         </div>
                         <div className="sidebar-widget product-widget">
-                            <img src="/cat_materials.webp" alt="Tickee TK Series Vinyl" className="product-widget-img" />
+                            <img src="/assets/Materials/TK50.webp" alt="Tickee TK Series Vinyl" className="product-widget-img" />
                             <h4>Tickee TK Series Vinyl Sticker</h4>
                             <p>5 grades &middot; Matte &amp; Glossy &middot; 3.0ft–5.0ft &times; 164ft</p>
                             <Link href="/materials" className="product-widget-btn">See Full Details <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m9 18 6-6-6-6" /></svg></Link>

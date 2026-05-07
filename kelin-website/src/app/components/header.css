@@ -832,6 +832,10 @@
         display: none;
     }
 
+    .nav-menu {
+        display: none;
+    }
+
     .menu-btn {
         display: block;
     }
@@ -910,6 +914,11 @@
 @supports (-webkit-touch-callout: none) {
     .header {
         position: fixed;
+        /* Removing backdrop-filter on iOS: a fixed element with backdrop-filter
+           causes all absolutely-positioned children with their own backdrop-filter
+           (like .nav-menu) to not render on iOS Safari */
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
     }
 
     .nav-mobile {

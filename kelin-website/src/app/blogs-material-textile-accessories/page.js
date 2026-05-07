@@ -10,16 +10,41 @@ export const metadata = {
     openGraph: {
         title: 'Textile Accessories Guide: HTV, Flock HTV, Sublimation Blanks & DTF Film',
         description: 'Explore heat transfer vinyl (HTV), flock HTV, sublimation blank garments, and DTF transfer film for custom apparel decoration in the Philippines.',
-        images: [{ url: '/cat_materials.webp', width: 1200, height: 630, alt: 'Textile accessories including HTV, flock, sublimation blanks and DTF film' }],
+        images: [{ url: '/assets/Materials/SOFIE/Pure Cotton Canvas.webp', width: 1200, height: 630, alt: 'Textile accessories including HTV, flock, sublimation blanks and DTF film' }],
         type: 'article'
     },
     alternates: { canonical: 'https://kelinph.com/blogs-material-textile-accessories' }
 };
 
 export default function BlogTextileAccessories() {
+    const jsonLd = {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "Article",
+                "headline": "Textile Accessories Guide: HTV, Flock HTV, Sublimation Blanks & DTF Film | Kelin",
+                "description": "Explore heat transfer vinyl (HTV), flock HTV, sublimation blank garments, and DTF transfer film for custom apparel decoration in the Philippines.",
+                "image": "https://kelinph.com/assets/Materials/SOFIE/Pure Cotton Canvas.webp",
+                "author": { "@type": "Organization", "name": "Kelin Graphics System", "url": "https://kelinph.com/about" },
+                "publisher": { "@type": "Organization", "name": "Kelin Graphics System", "logo": { "@type": "ImageObject", "url": "https://kelinph.com/marquee-logo/inks/kelin-logo.png" } },
+                "datePublished": "2026-04-01T08:00:00.000Z",
+                "dateModified": "2026-05-06T08:00:00.000Z",
+                "mainEntityOfPage": "https://kelinph.com/blogs-material-textile-accessories"
+            },
+            {
+                "@type": "FAQPage",
+                "mainEntity": [
+                    { "@type": "Question", "name": "What types of fabric can DTF transfer film be applied to?", "acceptedAnswer": { "@type": "Answer", "text": "DTF (Direct to Film) transfer film can be applied to virtually any fabric type — including 100% cotton, polyester, denim, canvas, and blended fabrics. Unlike sublimation which requires polyester, DTF is fabric-agnostic and works on both light and dark-colored garments." } },
+                    { "@type": "Question", "name": "What is flock HTV and how does it differ from standard heat transfer vinyl?", "acceptedAnswer": { "@type": "Answer", "text": "Flock HTV has a velvet-textured surface layer that creates a soft, tactile feel on finished garments — as opposed to standard HTV's smooth polyurethane finish. Flock is popular for premium brand logos, embroidery-look designs, and team apparel where a raised, tactile effect is desired." } },
+                    { "@type": "Question", "name": "What sublimation blank garments are compatible with dye-sublimation printing?", "acceptedAnswer": { "@type": "Answer", "text": "Sublimation blanks must be made of 100% polyester or polyester-coated materials to permanently accept sublimation inks. Pre-treated polyester t-shirts, polo shirts, hoodies, and accessories such as mugs and mousepads are the most common sublimation blank formats available." } }
+                ]
+            }
+        ]
+    };
     return (
         <div className="blog-page-layout material-blog-page">
             <Header />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
             <div className="blog-breadcrumb-bar">
                 <div className="blog-breadcrumb-inner">
                     <Link href="/" className="breadcrumb-link">Home</Link>
@@ -51,9 +76,21 @@ export default function BlogTextileAccessories() {
                                     </span>
                                 </div>
                             </div>
+                            <div className="callout-box callout-summary">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 11 12 14 22 4" /><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" /></svg>
+                                <div>
+                                    <strong>Quick Summary</strong>
+                                    <ul style={{ margin: '8px 0 0', paddingLeft: '18px', lineHeight: '1.8' }}>
+                                        <li>Covers four accessory types: HTV rolls, Flock HTV, sublimation blank garments, and DTF transfer film</li>
+                                        <li>DTF film works on cotton, polyester, denim, and blended fabrics — no polyester content requirement</li>
+                                        <li>Flock HTV delivers a premium velvet texture ideal for logos on polo shirts and sportswear</li>
+                                        <li>Sublimation blanks require 100% polyester or poly-coated substrates for permanent ink bonding</li>
+                                    </ul>
+                                </div>
+                            </div>
                         </header>
                         <figure className="blog-featured-image" itemProp="image">
-                            <img src="/cat_materials.webp" alt="Textile accessories including HTV, flock HTV, sublimation blanks and DTF transfer film" width="840" height="473" loading="eager" />
+                            <img src="/assets/Materials/SOFIE/Pure Cotton Canvas.webp" alt="Textile accessories including HTV, flock HTV, sublimation blanks and DTF transfer film" width="840" height="473" loading="eager" />
                             <figcaption>
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2" /><circle cx="8.5" cy="8.5" r="1.5" /><polyline points="21 15 16 10 5 21" /></svg>
                                 The complete textile accessories toolkit — HTV rolls, flock velvet vinyl, sublimation blanks, and DTF cold-peel film for professional apparel decoration
@@ -235,7 +272,7 @@ export default function BlogTextileAccessories() {
                             </ol>
                         </div>
                         <div className="sidebar-widget product-widget">
-                            <img src="/cat_materials.webp" alt="HTV and DTF Textile Accessories" className="product-widget-img" />
+                            <img src="/assets/Materials/SOFIE/Pure Cotton Canvas.webp" alt="HTV and DTF Textile Accessories" className="product-widget-img" />
                             <h4>Textile Decoration Accessories</h4>
                             <p>HTV rolls, flock HTV, sublimation blanks, and DTF transfer film for custom apparel decoration and promotional merchandise.</p>
                             <Link href="/materials" className="product-widget-btn">See Full Details <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m9 18 6-6-6-6" /></svg></Link>
@@ -247,14 +284,14 @@ export default function BlogTextileAccessories() {
                             </h3>
                             <div className="related-article-list">
                                 <Link href="/blogs-material-smartex-sublimate-fabrics" className="related-article-item">
-                                    <img src="/cat_materials.webp" alt="Smartex and Subli-Mate sublimation fabrics" className="related-article-img" />
+                                    <img src="/assets/Materials/SOFIE/Pure Cotton Canvas.webp" alt="Smartex and Subli-Mate sublimation fabrics" className="related-article-img" />
                                     <div>
                                         <span className="related-article-category">Sublimation Fabric Series</span>
                                         <p className="related-article-title">Smartex &amp; Subli-Mate Fabrics: Guide to Sublimation-Ready Polyester for Soft Signage</p>
                                     </div>
                                 </Link>
                                 <Link href="/blogs-material-sublimation-paper" className="related-article-item">
-                                    <img src="/cat_materials.webp" alt="Sublimation paper guide" className="related-article-img" />
+                                    <img src="/assets/Materials/SOFIE/Photo paper.webp" alt="Sublimation paper guide" className="related-article-img" />
                                     <div>
                                         <span className="related-article-category">Sublimation Materials</span>
                                         <p className="related-article-title">Sublimation Paper: Complete Buyer&apos;s Guide for Philippine Print Shops</p>

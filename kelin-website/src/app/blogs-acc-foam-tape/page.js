@@ -11,7 +11,7 @@ export const metadata = {
     openGraph: {
         title: 'Double Sided Foam Tape S333P White Guide: High-Tack Mounting Tape for Signage & Display',
         description: 'Discover how Double Sided Foam Tape S333P White delivers high-tack, cushioned mounting for signage, display panels, and print applications.',
-        images: [{ url: '/dummy-image-square.jpg', width: 1200, height: 630, alt: 'Double Sided Foam Tape S333P White for Signage Mounting' }],
+        images: [{ url: '/assets/Accessories/Foam tape.webp', width: 1200, height: 630, alt: 'Double Sided Foam Tape S333P White for Signage Mounting' }],
         type: 'article',
         publishedTime: '2026-04-25T08:00:00.000Z',
         authors: ['Kelin Graphics System'],
@@ -20,9 +20,34 @@ export const metadata = {
 };
 
 export default function BlogAccFoamTape() {
+    const jsonLd = {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "Article",
+                "headline": "Double Sided Foam Tape S333P White Guide: High-Tack Mounting Tape for Signage & Display",
+                "description": "Discover how Double Sided Foam Tape S333P White in 20mm x 10m and 20mm x 25m delivers high-tack, cushioned mounting for signage, display panels, and print applications.",
+                "image": "https://kelinph.com/assets/Accessories/Foam tape.webp",
+                "author": { "@type": "Organization", "name": "Kelin Graphics System", "url": "https://kelinph.com/about" },
+                "publisher": { "@type": "Organization", "name": "Kelin Graphics System", "logo": { "@type": "ImageObject", "url": "https://kelinph.com/marquee-logo/inks/kelin-logo.png" } },
+                "datePublished": "2026-04-25T08:00:00.000Z",
+                "dateModified": "2026-05-06T08:00:00.000Z",
+                "mainEntityOfPage": "https://kelinph.com/blogs-acc-foam-tape"
+            },
+            {
+                "@type": "FAQPage",
+                "mainEntity": [
+                    { "@type": "Question", "name": "What surfaces does S333P White foam tape bond well to?", "acceptedAnswer": { "@type": "Answer", "text": "S333P bonds effectively to smooth and semi-smooth surfaces including painted walls, glass, acrylic panels, aluminum composite panels, and foam boards — surfaces commonly used in signage and display applications." } },
+                    { "@type": "Question", "name": "What is the difference between the 10m and 25m roll lengths?", "acceptedAnswer": { "@type": "Answer", "text": "Both rolls are the same 20mm width and S333P tape. The 10m roll suits smaller projects and installations, while the 25m roll is more economical for shops that regularly undertake large signage installations." } },
+                    { "@type": "Question", "name": "Why use double-sided foam tape instead of liquid adhesive for mounting signage panels?", "acceptedAnswer": { "@type": "Answer", "text": "Double-sided foam tape provides instant, clean mounting without the curing time required by liquid adhesives. The foam core compensates for surface irregularities, dampens vibration, and allows panels to be positioned before full adhesion." } }
+                ]
+            }
+        ]
+    };
     return (
-        <div className="blog-page-layout">
+        <div className="blog-page-layout acc-blog-page">
             <Header />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
             <div className="blog-breadcrumb-bar">
                 <div className="blog-breadcrumb-inner">
                     <Link href="/" className="breadcrumb-link">Home</Link>
@@ -54,9 +79,21 @@ export default function BlogAccFoamTape() {
                                     </span>
                                 </div>
                             </div>
+                            <div className="callout-box callout-summary">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 11 12 14 22 4" /><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" /></svg>
+                                <div>
+                                    <strong>Quick Summary</strong>
+                                    <ul style={{ margin: '8px 0 0', paddingLeft: '18px', lineHeight: '1.8' }}>
+                                        <li>High-tack adhesive on both faces bonds aggressively to glass, acrylic, painted walls, and ACM panels</li>
+                                        <li>Foam core provides cushioning and compensates for minor surface irregularities</li>
+                                        <li>Available in 20mm x 10m and 20mm x 25m roll lengths</li>
+                                        <li>Model S333P — professional grade for signage and display mounting applications</li>
+                                    </ul>
+                                </div>
+                            </div>
                         </header>
                         <figure className="blog-featured-image" itemProp="image">
-                            <img src="/dummy-image-square.jpg" alt="Double Sided Foam Tape S333P White for Signage Mounting" width="840" height="473" loading="eager" />
+                            <img src="/assets/Accessories/Foam tape.webp" alt="Double Sided Foam Tape S333P White for Signage Mounting" width="840" height="473" loading="eager" />
                             <figcaption>Double Sided Foam Tape S333P White — available in 20mm x 10m and 20mm x 25m for professional signage and display mounting.</figcaption>
                         </figure>
                         <div className="blog-body" itemProp="articleBody">
@@ -143,7 +180,7 @@ export default function BlogAccFoamTape() {
                 <aside className="blog-sidebar">
                     <div className="sidebar-sticky">
                         <div className="sidebar-widget toc-widget">
-                            <h3 className="widget-title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="8" y1="6" x2="21" y2="6" /><line x1="8" y1="12" x2="21" y2="12" /><line x1="8" y1="18" x2="21" y2="18" /><line x1="3" y1="6" x2="3.01" y2="6" /><line x1="3" y1="12" x2="3.01" y2="12" /><line x1="3" y1="18" x2="3.01" y2="18" /></svg>In This Article</h3>
+                            <h3 className="widget-title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="8" y1="6" x2="21" y2="6" /><line x1="8" y1="12" x2="21" y2="12" /><line x1="8" y1="18" x2="21" y2="18" /><line x1="3" y1="6" x2="3.01" y2="6" /><line x1="3" y1="12" x2="3.01" y2="12" /><line x1="3" y1="18" x2="3.01" y2="18" /></svg>In This Guide</h3>
                             <ol className="toc-list">
                                 <li><a href="#overview">Overview</a></li>
                                 <li><a href="#specs">Specifications</a></li>

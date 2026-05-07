@@ -34,9 +34,34 @@ export const metadata = {
 };
 
 export default function BlogHanniuK1390CO2LaserCCD() {
+    const jsonLd = {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "Article",
+                "headline": "Hanniu K1390 CO2 Laser Cutting Machine with CCD Review: 64,000 mm/min CCD Vision System for Precision Cutting",
+                "description": "An in-depth review of the Hanniu K1390 CO2 Laser Cutting Machine with CCD (Model AK-1390N). We cover the 64,000 mm/min engraving speed, CCD automatic positioning system, ultra high-definition camera with auto border detection, 80W/100W/120W/150W laser power options, 1300×900mm engraving area, and full specifications for fabric, leather, acrylic, wood, and non-metallic material cutting.",
+                "image": "https://kelinph.com/laser-machines/Hanniu K1390 CO2 Laser Cutting Machine 150w with CCD.webp",
+                "author": { "@type": "Organization", "name": "Kelin Graphics System", "url": "https://kelinph.com/about" },
+                "publisher": { "@type": "Organization", "name": "Kelin Graphics System", "logo": { "@type": "ImageObject", "url": "https://kelinph.com/marquee-logo/inks/kelin-logo.png" } },
+                "datePublished": "2026-04-18T08:00:00.000Z",
+                "dateModified": "2026-05-06T08:00:00.000Z",
+                "mainEntityOfPage": "https://kelinph.com/blogs-hanniu-k1390-CO2laser-150W"
+            },
+            {
+                "@type": "FAQPage",
+                "mainEntity": [
+                    { "@type": "Question", "name": "How does the CCD system on the Hanniu K1390 AK-1390N work?", "acceptedAnswer": { "@type": "Answer", "text": "The Hanniu K1390 CCD uses an ultra high-definition camera with automatic border detection and contour recognition to identify the printed or embroidered edges of the material. It then calculates the precise cut path and executes the cut automatically, eliminating manual alignment for every piece and enabling accurate contour cutting on printed fabrics, sublimated textiles, and laser-printed leather." } },
+                    { "@type": "Question", "name": "What laser power options are available for the Hanniu K1390 CCD CO2 laser?", "acceptedAnswer": { "@type": "Answer", "text": "The Hanniu K1390 CCD (Model AK-1390N) is available with 80W, 100W, 120W, and 150W laser power options, allowing buyers to select the right power level for their specific material cutting and engraving requirements." } },
+                    { "@type": "Question", "name": "What materials can the Hanniu K1390 CCD laser cut and engrave?", "acceptedAnswer": { "@type": "Answer", "text": "The Hanniu K1390 CCD is compatible with fabric, leather, plexiglass, acrylic, plastic, rubber, tile, wood products, bamboo, wool paper, ceramic sand, and other non-metallic materials. It is not designed for cutting metals." } }
+                ]
+            }
+        ]
+    };
     return (
         <div className="blog-page-layout">
             <Header />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
             {/* Breadcrumb */}
             <div className="blog-breadcrumb-bar">
@@ -82,6 +107,18 @@ export default function BlogHanniuK1390CO2LaserCCD() {
                                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" /><circle cx="12" cy="12" r="3" /></svg>
                                         5,200 views
                                     </span>
+                                </div>
+                            </div>
+                            <div className="callout-box callout-summary">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 11 12 14 22 4" /><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" /></svg>
+                                <div>
+                                    <strong>Quick Summary</strong>
+                                    <ul style={{ margin: '8px 0 0', paddingLeft: '18px', lineHeight: '1.8' }}>
+                                        <li>Ultra HD CCD automatic border detection eliminates manual alignment on printed fabrics, sublimated textiles, and laser-printed leather</li>
+                                        <li>64,000 mm/min industrial engraving speed across a 1300×900mm work area with 0.025mm resolution</li>
+                                        <li>Available in 80W, 100W, 120W, and 150W laser power options to match specific cutting and engraving material requirements</li>
+                                        <li>All-in-one standalone operation with enhanced precision large-view camera for wide non-metallic material compatibility</li>
+                                    </ul>
                                 </div>
                             </div>
                         </header>
@@ -356,7 +393,7 @@ export default function BlogHanniuK1390CO2LaserCCD() {
                         <div className="sidebar-widget toc-widget">
                             <h3 className="widget-title">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="8" y1="6" x2="21" y2="6" /><line x1="8" y1="12" x2="21" y2="12" /><line x1="8" y1="18" x2="21" y2="18" /><line x1="3" y1="6" x2="3.01" y2="6" /><line x1="3" y1="12" x2="3.01" y2="12" /><line x1="3" y1="18" x2="3.01" y2="18" /></svg>
-                                In This Review
+                                In This Guide
                             </h3>
                             <ol className="toc-list">
                                 <li><a href="#background">CCD Precision Cutting Advantage</a></li>

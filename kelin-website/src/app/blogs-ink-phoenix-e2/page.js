@@ -20,9 +20,34 @@ export const metadata = {
 };
 
 export default function BlogInkPhoenixE2() {
+    const jsonLd = {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "Article",
+                "headline": "Phoenix E2 1L Eco-Solvent Ink Review: Premium Scratch-Resistant CMYK Ink for Professional Sign Production",
+                "description": "A detailed review of the Phoenix E2 eco-solvent ink — premium adhesion, scratch-resistant finish, and superior color reproduction for demanding outdoor and vehicle graphic applications.",
+                "image": "https://kelinph.com/inks/PHOENIX E2 1L/PHOENIX E2 1L Cyan (Transparent).webp",
+                "author": { "@type": "Organization", "name": "Kelin Graphics System", "url": "https://kelinph.com/about" },
+                "publisher": { "@type": "Organization", "name": "Kelin Graphics System", "logo": { "@type": "ImageObject", "url": "https://kelinph.com/marquee-logo/inks/kelin-logo.png" } },
+                "datePublished": "2026-02-15T08:00:00.000Z",
+                "dateModified": "2026-05-06T08:00:00.000Z",
+                "mainEntityOfPage": "https://kelinph.com/blogs-ink-phoenix-e2"
+            },
+            {
+                "@type": "FAQPage",
+                "mainEntity": [
+                    { "@type": "Question", "name": "What makes Phoenix E2 a premium eco-solvent ink compared to standard options?", "acceptedAnswer": { "@type": "Answer", "text": "Phoenix E2 features enhanced adhesion chemistry and a scratch-resistant ink film — properties critical for vehicle wraps, floor graphics, and high-traffic POS displays where abrasion resistance is required." } },
+                    { "@type": "Question", "name": "What applications benefit most from Phoenix E2 ink?", "acceptedAnswer": { "@type": "Answer", "text": "Phoenix E2 excels in vehicle wrap graphics, floor graphics, high-traffic point-of-sale displays, and any outdoor application where superior adhesion and scratch resistance are priorities." } },
+                    { "@type": "Question", "name": "Is Phoenix E2 compatible with standard wide-format eco-solvent printers?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — Phoenix E2 is designed as a complete CMYK system for printers requiring a premium ink upgrade, compatible with standard eco-solvent wide-format printer hardware." } }
+                ]
+            }
+        ]
+    };
     return (
         <div className="blog-page-layout ink-blog-page">
             <Header />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
             <div className="blog-breadcrumb-bar">
                 <div className="blog-breadcrumb-inner">
                     <Link href="/" className="breadcrumb-link">Home</Link>
@@ -57,6 +82,18 @@ export default function BlogInkPhoenixE2() {
                                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" /></svg>
                                         6 min read
                                     </span>
+                                </div>
+                            </div>
+                            <div className="callout-box callout-summary">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 11 12 14 22 4" /><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" /></svg>
+                                <div>
+                                    <strong>Quick Summary</strong>
+                                    <ul style={{ margin: '8px 0 0', paddingLeft: '18px', lineHeight: '1.8' }}>
+                                        <li>Premium eco-solvent ink with scratch-resistant finish and superior adhesion chemistry</li>
+                                        <li>Ideal for vehicle wraps, floor graphics, and high-traffic POS displays requiring abrasion resistance</li>
+                                        <li>Available in CMYK 1-liter bottles — drop-in upgrade for existing eco-solvent printer setups</li>
+                                        <li>Consistent color reproduction and outdoor durability for demanding professional applications</li>
+                                    </ul>
                                 </div>
                             </div>
                         </header>
@@ -199,7 +236,7 @@ export default function BlogInkPhoenixE2() {
                 <aside className="blog-sidebar">
                     <div className="sidebar-sticky">
                         <div className="sidebar-widget toc-widget">
-                            <h3 className="widget-title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="8" y1="6" x2="21" y2="6" /><line x1="8" y1="12" x2="21" y2="12" /><line x1="8" y1="18" x2="21" y2="18" /><line x1="3" y1="6" x2="3.01" y2="6" /><line x1="3" y1="12" x2="3.01" y2="12" /><line x1="3" y1="18" x2="3.01" y2="18" /></svg>In This Article</h3>
+                            <h3 className="widget-title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="8" y1="6" x2="21" y2="6" /><line x1="8" y1="12" x2="21" y2="12" /><line x1="8" y1="18" x2="21" y2="18" /><line x1="3" y1="6" x2="3.01" y2="6" /><line x1="3" y1="12" x2="3.01" y2="12" /><line x1="3" y1="18" x2="3.01" y2="18" /></svg>In This Guide</h3>
                             <ol className="toc-list">
                                 <li><a href="#overview">Premium-Tier Performance</a></li>
                                 <li><a href="#specs">Specifications</a></li>

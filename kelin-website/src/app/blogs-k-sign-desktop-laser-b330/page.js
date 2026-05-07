@@ -1,4 +1,4 @@
-ï»¿import React from 'react';
+import React from 'react';
 import "../styles/blog.css";
 import Header from '../components/Header';
 import Link from 'next/link';
@@ -10,7 +10,7 @@ import Link from 'next/link';
  * This file is a Next.js Server Component (no "use client").
  * "export const metadata" is picked up at BUILD TIME by Next.js
  * to pre-render the <head> with unique title, description,
- * Open Graph tags, and canonical URL â€” all without JavaScript
+ * Open Graph tags, and canonical URL — all without JavaScript
  * in the browser, giving search engines clean static HTML.
  * ============================================================
  */
@@ -34,9 +34,34 @@ export const metadata = {
 };
 
 export default function BlogKSignDesktopLaserB330() {
+    const jsonLd = {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "Article",
+                "headline": "K-Sign Desktop Laser Engraving Machine B330 Review: Ultra-Fast 44-Second Engraving at 600 mm/s with 0.01mm Precision",
+                "description": "An in-depth review of the K-Sign Desktop Laser Engraving Machine B330. We cover the 600 mm/s maximum engraving speed, ultra-fast 44-second engraving of an 80×90mm design, 0.01mm precision, tilt protection safety system, adjustable air assist, honeycomb table, desktop protection tray, 300×300mm work area, 120W machine power, and full specifications for wood, leather, acrylic, and non-metallic material engraving applications.",
+                "image": "https://kelinph.com/laser-machines/K-Sign Desktop Laser B330.webp",
+                "author": { "@type": "Organization", "name": "Kelin Graphics System", "url": "https://kelinph.com/about" },
+                "publisher": { "@type": "Organization", "name": "Kelin Graphics System", "logo": { "@type": "ImageObject", "url": "https://kelinph.com/marquee-logo/inks/kelin-logo.png" } },
+                "datePublished": "2026-04-18T08:00:00.000Z",
+                "dateModified": "2026-05-06T08:00:00.000Z",
+                "mainEntityOfPage": "https://kelinph.com/blogs-k-sign-desktop-laser-b330"
+            },
+            {
+                "@type": "FAQPage",
+                "mainEntity": [
+                    { "@type": "Question", "name": "How fast does the K-Sign B330 Desktop Laser Engraver engrave?", "acceptedAnswer": { "@type": "Answer", "text": "The K-Sign B330 reaches a maximum engraving speed of 600 mm/s and can engrave an 80×90mm design in just 44 seconds, making it one of the fastest desktop laser engravers available for small business use." } },
+                    { "@type": "Question", "name": "What materials can the K-Sign B330 engrave and cut?", "acceptedAnswer": { "@type": "Answer", "text": "The K-Sign B330 is compatible with wood, leather, acrylic, bamboo, rubber, fabric, and most non-metallic materials. It is not designed for engraving bare metals without a marking coating." } },
+                    { "@type": "Question", "name": "What software is compatible with the K-Sign B330 Desktop Laser Engraver?", "acceptedAnswer": { "@type": "Answer", "text": "The K-Sign B330 is compatible with LaserGRBL, Lightburn, and Craft Express software. It connects via USB or WiFi, and supports both Windows and Mac platforms depending on the software chosen." } }
+                ]
+            }
+        ]
+    };
     return (
         <div className="blog-page-layout">
             <Header />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
             {/* Breadcrumb */}
             <div className="blog-breadcrumb-bar">
@@ -82,6 +107,18 @@ export default function BlogKSignDesktopLaserB330() {
                                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" /><circle cx="12" cy="12" r="3" /></svg>
                                         4,200 views
                                     </span>
+                                </div>
+                            </div>
+                            <div className="callout-box callout-summary">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 11 12 14 22 4" /><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" /></svg>
+                                <div>
+                                    <strong>Quick Summary</strong>
+                                    <ul style={{ margin: '8px 0 0', paddingLeft: '18px', lineHeight: '1.8' }}>
+                                        <li>Engraves an 80×90mm design in just 44 seconds at 600 mm/s — one of the fastest desktop laser engravers available</li>
+                                        <li>0.01mm precision and 1000DPI resolution deliver fine detail on wood, leather, acrylic, and most non-metallic materials</li>
+                                        <li>Built-in tilt protection, adjustable air assist, honeycomb table, and desktop protection tray for safer and cleaner results</li>
+                                        <li>Connects via USB or WiFi; compatible with LaserGRBL, Lightburn, and Craft Express on a compact 300×300mm work area</li>
+                                    </ul>
                                 </div>
                             </div>
                         </header>
@@ -358,7 +395,7 @@ export default function BlogKSignDesktopLaserB330() {
                         <div className="sidebar-widget toc-widget">
                             <h3 className="widget-title">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="8" y1="6" x2="21" y2="6" /><line x1="8" y1="12" x2="21" y2="12" /><line x1="8" y1="18" x2="21" y2="18" /><line x1="3" y1="6" x2="3.01" y2="6" /><line x1="3" y1="12" x2="3.01" y2="12" /><line x1="3" y1="18" x2="3.01" y2="18" /></svg>
-                                In This Review
+                                In This Guide
                             </h3>
                             <ol className="toc-list">
                                 <li><a href="#background">Why the B330 Stands Out</a></li>

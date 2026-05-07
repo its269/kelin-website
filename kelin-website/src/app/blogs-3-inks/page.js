@@ -33,5 +33,30 @@ export const metadata = {
 };
 
 export default function Page() {
-    return <BlogsClient />;
+    const jsonLd = {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "CollectionPage",
+                "headline": "Blog | Printer & Cutter Reviews, Buying Guides | Kelin Graphics System",
+                "description": "Read in-depth reviews, buying guides, and product comparisons for wide-format printers, cutters, and finishing equipment from Kelin Philippines.",
+                "url": "https://kelinph.com/blogs-3-inks",
+                "publisher": { "@type": "Organization", "name": "Kelin Graphics System", "logo": { "@type": "ImageObject", "url": "https://kelinph.com/marquee-logo/inks/kelin-logo.png" } }
+            },
+            {
+                "@type": "FAQPage",
+                "mainEntity": [
+                    { "@type": "Question", "name": "What types of printing inks does Kelin carry?", "acceptedAnswer": { "@type": "Answer", "text": "Kelin carries a wide range of printing inks including sublimation inks, DTF inks, eco-solvent inks, UV inks, and cleaning solutions from brands like Vivid, Eagle V2, Phoenix, Brilliant, and Papijet — compatible with major wide format printer brands." } },
+                    { "@type": "Question", "name": "What is the difference between sublimation ink and DTF ink?", "acceptedAnswer": { "@type": "Answer", "text": "Sublimation ink is used for dye-sublimation printing on polyester fabrics and coated hard surfaces, bonding through heat and pressure. DTF (Direct to Film) ink is printed on PET film and transferred to garments via adhesive powder and a heat press, enabling vibrant prints on cotton and mixed fabrics." } },
+                    { "@type": "Question", "name": "How do I choose the right ink for my wide format printer?", "acceptedAnswer": { "@type": "Answer", "text": "Choosing the right ink depends on your printer model, printhead type, and application. Kelin\'s team can recommend compatible inks for eco-solvent, sublimation, UV, and DTF printers to ensure optimal print quality, color gamut, and printhead longevity." } }
+                ]
+            }
+        ]
+    };
+    return (
+        <>
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+            <BlogsClient />
+        </>
+    );
 }

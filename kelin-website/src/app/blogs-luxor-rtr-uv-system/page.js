@@ -1,4 +1,4 @@
-﻿import React from 'react';
+import React from 'react';
 import "../styles/blog.css";
 import Header from '../components/Header';
 import Link from 'next/link';
@@ -10,19 +10,19 @@ import Link from 'next/link';
  * This file is a Next.js Server Component (no "use client").
  * "export const metadata" is picked up at BUILD TIME by Next.js
  * to pre-render the <head> with unique title, description,
- * Open Graph tags, and canonical URL â€” all without JavaScript
+ * Open Graph tags, and canonical URL — all without JavaScript
  * in the browser, giving search engines clean static HTML.
  * ============================================================
  */
 
 export const metadata = {
     title: 'Luxor UV-A3 DTF Printer Review: 4-in-1 Flatbed, Cylinder, Roll-to-Roll & UV DTF All-in-One Machine',
-    description: 'An in-depth review of the Luxor UV-A3 DTF Printer. We cover the 0.28â€“3 mÂ²/h production speed, EPSON i3200(8)-U1 HD printhead, Silent Ink Chain, Intelligent Ink Supply, HD Touch Screen Design, LED-UV Curing Ink, and 4-in-1 multi-function printing capability â€” and who should invest in this compact, cost-efficient UV DTF printer.',
+    description: 'An in-depth review of the Luxor UV-A3 DTF Printer. We cover the 0.28–3 m²/h production speed, EPSON i3200(8)-U1 HD printhead, Silent Ink Chain, Intelligent Ink Supply, HD Touch Screen Design, LED-UV Curing Ink, and 4-in-1 multi-function printing capability — and who should invest in this compact, cost-efficient UV DTF printer.',
     keywords: 'Luxor UV-A3 review, Luxor UV DTF printer Philippines, UV-A3 DTF printer, UV DTF flatbed cylinder roll-to-roll, EPSON i3200 UV printer, Silent Ink Chain printer, LED-UV curing ink printer, UV DTF transfer printer Philippines, Kelin UV printer',
     authors: [{ name: 'Kelin Graphics System', url: 'https://kelinph.com/about' }],
     openGraph: {
         title: 'Luxor UV-A3 DTF Printer Review: 4-in-1 Flatbed, Cylinder, Roll-to-Roll & UV DTF All-in-One Machine',
-        description: 'Real-world analysis of the Luxor UV-A3 DTF Printer â€” EPSON i3200(8)-U1 HD printhead, 0.28â€“3 mÂ²/h production speed, Silent Ink Chain, Intelligent Ink Supply, HD Touch Screen, High-Quality 1200 DPI printing, and 4-in-1 multi-function support for flatbed, cylinder, RTR, and UV DTF applications.',
+        description: 'Real-world analysis of the Luxor UV-A3 DTF Printer — EPSON i3200(8)-U1 HD printhead, 0.28–3 m²/h production speed, Silent Ink Chain, Intelligent Ink Supply, HD Touch Screen, High-Quality 1200 DPI printing, and 4-in-1 multi-function support for flatbed, cylinder, RTR, and UV DTF applications.',
         images: [{ url: '/uv-machines/Luxor RTR (1).webp', width: 1200, height: 630, alt: 'Luxor UV-A3 DTF Printer' }],
         type: 'article',
         publishedTime: '2026-04-15T08:00:00.000Z',
@@ -34,9 +34,34 @@ export const metadata = {
 };
 
 export default function BlogLuxorUVA3() {
+    const jsonLd = {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "Article",
+                "headline": "Luxor UV-A3 DTF Printer Review: 4-in-1 Flatbed, Cylinder, Roll-to-Roll & UV DTF All-in-One Machine",
+                "description": "An in-depth review of the Luxor UV-A3 DTF Printer. We cover the 0.28\u20133 m\u00b2/h production speed, EPSON i3200(8)-U1 HD printhead, Silent Ink Chain, Intelligent Ink Supply, HD Touch Screen Design, LED-UV Curing Ink, and 4-in-1 multi-function printing capability.",
+                "image": "https://kelinph.com/uv-machines/Luxor RTR (1).webp",
+                "author": { "@type": "Organization", "name": "Kelin Graphics System", "url": "https://kelinph.com/about" },
+                "publisher": { "@type": "Organization", "name": "Kelin Graphics System", "logo": { "@type": "ImageObject", "url": "https://kelinph.com/marquee-logo/inks/kelin-logo.png" } },
+                "datePublished": "2026-04-15T08:00:00.000Z",
+                "dateModified": "2026-05-06T08:00:00.000Z",
+                "mainEntityOfPage": "https://kelinph.com/blogs-luxor-rtr-uv-system"
+            },
+            {
+                "@type": "FAQPage",
+                "mainEntity": [
+                    { "@type": "Question", "name": "What printing modes does the Luxor UV-A3 DTF Printer support?", "acceptedAnswer": { "@type": "Answer", "text": "The Luxor UV-A3 is a 4-in-1 machine supporting flatbed, cylinder, roll-to-roll (RTR), and UV DTF printing \u2014 all in one compact platform, eliminating the need for separate machines for each application." } },
+                    { "@type": "Question", "name": "What printhead does the Luxor UV-A3 use?", "acceptedAnswer": { "@type": "Answer", "text": "It uses the EPSON i3200(8)-U1 HD printhead delivering 1200 DPI print quality with LED-UV curing ink at production speeds of 0.28\u20133 m\u00b2/h." } },
+                    { "@type": "Question", "name": "What are the Silent Ink Chain and Intelligent Ink Supply features on the Luxor UV-A3?", "acceptedAnswer": { "@type": "Answer", "text": "The Silent Ink Chain reduces mechanical noise during printing operations, while the Intelligent Ink Supply automatically monitors and manages ink flow to prevent empty-ink clogging and maintain stable, consistent print output." } }
+                ]
+            }
+        ]
+    };
     return (
         <div className="blog-page-layout">
             <Header />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
             {/* Breadcrumb */}
             <div className="blog-breadcrumb-bar">
@@ -65,7 +90,7 @@ export default function BlogLuxorUVA3() {
                             </h1>
 
                             <p className="blog-article-subtitle">
-                                After a thorough evaluation of the Luxor UV-A3&rsquo;s Silent Ink Chain, Intelligent Ink Supply system, HD Touch Screen Design, High-Quality 1200 DPI output, EPSON i3200(8)-U1 printhead, and 4-in-1 multi-function capability supporting flatbed, cylinder, roll-to-roll, and UV DTF â€” here is everything you need to know before investing in this compact UV DTF printer.
+                                After a thorough evaluation of the Luxor UV-A3&rsquo;s Silent Ink Chain, Intelligent Ink Supply system, HD Touch Screen Design, High-Quality 1200 DPI output, EPSON i3200(8)-U1 printhead, and 4-in-1 multi-function capability supporting flatbed, cylinder, roll-to-roll, and UV DTF — here is everything you need to know before investing in this compact UV DTF printer.
                             </p>
 
                             <div className="article-meta-row">
@@ -84,13 +109,25 @@ export default function BlogLuxorUVA3() {
                                     </span>
                                 </div>
                             </div>
+                            <div className="callout-box callout-summary">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 11 12 14 22 4" /><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" /></svg>
+                                <div>
+                                    <strong>Quick Summary</strong>
+                                    <ul style={{ margin: '8px 0 0', paddingLeft: '18px', lineHeight: '1.8' }}>
+                                        <li>4-in-1 printing: flatbed, cylinder, roll-to-roll, and UV DTF in one machine</li>
+                                        <li>EPSON i3200(8)-U1 HD printhead with 1200 DPI and LED-UV curing ink</li>
+                                        <li>Silent Ink Chain and Intelligent Ink Supply for smooth, stable production</li>
+                                        <li>Compact design ideal for small studios and multi-application print services</li>
+                                    </ul>
+                                </div>
+                            </div>
                         </header>
 
                         {/* Featured Image */}
                         <figure className="blog-featured-image" itemProp="image">
                             <img
                                 src="/uv-machines/Luxor RTR (1).webp"
-                                alt="Luxor UV-A3 DTF Printer â€” 4-in-1 flatbed, cylinder, roll-to-roll, and UV DTF all-in-one machine with EPSON i3200(8)-U1 HD printhead"
+                                alt="Luxor UV-A3 DTF Printer — 4-in-1 flatbed, cylinder, roll-to-roll, and UV DTF all-in-one machine with EPSON i3200(8)-U1 HD printhead"
                                 width="840"
                                 height="473"
                                 loading="eager"
@@ -374,7 +411,7 @@ export default function BlogLuxorUVA3() {
                         <div className="sidebar-widget toc-widget">
                             <h3 className="widget-title">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="8" y1="6" x2="21" y2="6" /><line x1="8" y1="12" x2="21" y2="12" /><line x1="8" y1="18" x2="21" y2="18" /><line x1="3" y1="6" x2="3.01" y2="6" /><line x1="3" y1="12" x2="3.01" y2="12" /><line x1="3" y1="18" x2="3.01" y2="18" /></svg>
-                                In This Review
+                                In This Guide
                             </h3>
                             <ol className="toc-list">
                                 <li><a href="#background">Why the UV-A3 Is Built for Versatile UV Printing</a></li>
@@ -415,7 +452,7 @@ export default function BlogLuxorUVA3() {
                                     <img src="/uv-machines/SMART UV Printer.webp" alt="Smart UV Printer Review" className="related-article-img" />
                                     <div>
                                         <span className="related-article-category">UV Printer Reviews</span>
-                                        <p className="related-article-title">Smart UV Printer RJ24U: Dual EPSON i3200 12 mÂ²/h Industrial UV Eco Solvent Review</p>
+                                        <p className="related-article-title">Smart UV Printer RJ24U: Dual EPSON i3200 12 m²/h Industrial UV Eco Solvent Review</p>
                                     </div>
                                 </Link>
                             </div>

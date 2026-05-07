@@ -34,9 +34,34 @@ export const metadata = {
 };
 
 export default function BlogTFZSHandheldLaserWelder() {
+    const jsonLd = {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "Article",
+                "headline": "TFZ-S Mini Handheld Laser Welding Machine Review: 5–10× Faster Than Traditional Welding at 120 mm/s",
+                "description": "An in-depth review of the TFZ-S Mini Handheld Laser Welding Machine by Hanniu Laser. We cover the 120 mm/s welding speed, 1000W/1500W/2000W laser power options, fiber laser system, continuous/modulated pulse working modes, beginner-friendly operation, and full specifications for elevator manufacturing, metal processing, machinery manufacturing, household appliances, and aerospace industry.",
+                "image": "https://kelinph.com/laser-machines/Handheld Fiber Laser.webp",
+                "author": { "@type": "Organization", "name": "Kelin Graphics System", "url": "https://kelinph.com/about" },
+                "publisher": { "@type": "Organization", "name": "Kelin Graphics System", "logo": { "@type": "ImageObject", "url": "https://kelinph.com/marquee-logo/inks/kelin-logo.png" } },
+                "datePublished": "2026-04-18T08:00:00.000Z",
+                "dateModified": "2026-05-06T08:00:00.000Z",
+                "mainEntityOfPage": "https://kelinph.com/blogs-handheld-fiber-laser"
+            },
+            {
+                "@type": "FAQPage",
+                "mainEntity": [
+                    { "@type": "Question", "name": "How much faster is the TFZ-S handheld laser welder compared to traditional welding?", "acceptedAnswer": { "@type": "Answer", "text": "The TFZ-S Mini Handheld Laser Welding Machine welds at up to 120 mm/s, which is 5 to 10 times faster than traditional welding methods such as TIG or MIG. This speed advantage dramatically reduces production time on high-volume metal fabrication jobs while maintaining superior weld accuracy and surface finish quality." } },
+                    { "@type": "Question", "name": "What laser power options are available for the TFZ-S and which is best for most users?", "acceptedAnswer": { "@type": "Answer", "text": "The TFZ-S is available in 1000W, 1500W, and 2000W configurations. The 1500W model is the most popular choice for general metal fabrication, elevator manufacturing, and machinery production, offering a strong balance of welding speed, penetration depth, and power consumption. The 2000W variant is suited for thicker metal sections and demanding aerospace or heavy industrial applications." } },
+                    { "@type": "Question", "name": "What welding joint types and working modes does the TFZ-S support?", "acceptedAnswer": { "@type": "Answer", "text": "The TFZ-S supports butt, fillet, lap, and stitch welding joint types. It operates in both continuous and modulated pulse working modes, with 98% power stability, making it versatile for a wide range of joint configurations and metal thicknesses encountered in elevator manufacturing, metal processing, and household appliance fabrication." } }
+                ]
+            }
+        ]
+    };
     return (
         <div className="blog-page-layout">
             <Header />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
             {/* Breadcrumb */}
             <div className="blog-breadcrumb-bar">
@@ -82,6 +107,18 @@ export default function BlogTFZSHandheldLaserWelder() {
                                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" /><circle cx="12" cy="12" r="3" /></svg>
                                         4,500 views
                                     </span>
+                                </div>
+                            </div>
+                            <div className="callout-box callout-summary">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 11 12 14 22 4" /><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" /></svg>
+                                <div>
+                                    <strong>Quick Summary</strong>
+                                    <ul style={{ margin: '8px 0 0', paddingLeft: '18px', lineHeight: '1.8' }}>
+                                        <li>Welds at up to 120 mm/s — 5 to 10 times faster than traditional TIG or MIG welding — with 98% power stability throughout production</li>
+                                        <li>Available in 1000W, 1500W, and 2000W fiber laser power options to match metal thickness and production volume requirements</li>
+                                        <li>Supports butt, fillet, lap, and stitch welding joint types in both continuous and modulated pulse working modes</li>
+                                        <li>Beginner-friendly 10-minute setup with wire feeder system; suited for elevator manufacturing, metal processing, and aerospace industry applications</li>
+                                    </ul>
                                 </div>
                             </div>
                         </header>
@@ -359,7 +396,7 @@ export default function BlogTFZSHandheldLaserWelder() {
                         <div className="sidebar-widget toc-widget">
                             <h3 className="widget-title">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="8" y1="6" x2="21" y2="6" /><line x1="8" y1="12" x2="21" y2="12" /><line x1="8" y1="18" x2="21" y2="18" /><line x1="3" y1="6" x2="3.01" y2="6" /><line x1="3" y1="12" x2="3.01" y2="12" /><line x1="3" y1="18" x2="3.01" y2="18" /></svg>
-                                In This Review
+                                In This Guide
                             </h3>
                             <ol className="toc-list">
                                 <li><a href="#background">5&ndash;10&times; Faster Than Traditional Welding</a></li>

@@ -10,16 +10,41 @@ export const metadata = {
     openGraph: {
         title: "Specialty & Architectural Films Guide: Frosted, Sandblasted, One-Way Vision & Decorative Window Films",
         description: "Complete guide to specialty and architectural window films for offices, retail spaces, and commercial interiors in the Philippines.",
-        images: [{ url: '/cat_materials.webp', width: 1200, height: 630, alt: 'Specialty and architectural window films for office and retail applications' }],
+        images: [{ url: '/assets/Materials/Clear Frosted Sticker.webp', width: 1200, height: 630, alt: 'Specialty and architectural window films for office and retail applications' }],
         type: 'article'
     },
     alternates: { canonical: 'https://kelinph.com/blogs-material-specialty-architectural-films' }
 };
 
 export default function BlogSpecialtyArchitecturalFilms() {
+    const jsonLd = {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "Article",
+                "headline": "Specialty & Architectural Films Guide: Frosted, Sandblasted, One-Way Vision & Decorative Window Films",
+                "description": "Complete guide to specialty and architectural window films — frosted glass film, sandblasted effect film, one-way vision film, and decorative window film for offices, retail spaces, and commercial interiors.",
+                "image": "https://kelinph.com/assets/Materials/Clear Frosted Sticker.webp",
+                "author": { "@type": "Organization", "name": "Kelin Graphics System", "url": "https://kelinph.com/about" },
+                "publisher": { "@type": "Organization", "name": "Kelin Graphics System", "logo": { "@type": "ImageObject", "url": "https://kelinph.com/marquee-logo/inks/kelin-logo.png" } },
+                "datePublished": "2026-04-01T08:00:00.000Z",
+                "dateModified": "2026-05-06T08:00:00.000Z",
+                "mainEntityOfPage": "https://kelinph.com/blogs-material-specialty-architectural-films"
+            },
+            {
+                "@type": "FAQPage",
+                "mainEntity": [
+                    { "@type": "Question", "name": "Can frosted window film be removed without damaging the glass?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, pressure-sensitive frosted window film is fully removable from clean glass surfaces without adhesive residue when removed carefully. This makes it ideal for commercial leasing environments where tenants need to leave the space in original condition upon vacating." } },
+                    { "@type": "Question", "name": "How does one-way vision film work?", "acceptedAnswer": { "@type": "Answer", "text": "One-way vision film uses a micro-perforated structure — typically 50% perforation — that allows full-color graphics to be applied to the exterior surface while maintaining outward visibility from inside the building. The perforations create a visual blending effect that makes the film appear transparent from the inside but opaque from outside in daylight conditions." } },
+                    { "@type": "Question", "name": "What is the difference between frosted film and sandblasted effect film?", "acceptedAnswer": { "@type": "Answer", "text": "Frosted film provides a uniform translucent diffusion across the entire glass surface. Sandblasted effect film adds textured patterns — cross-hatch, gradient, or custom designs — that replicate the appearance of mechanically sandblasted glass with visual depth and decorative detail, without the permanence or cost of actual sandblasting." } }
+                ]
+            }
+        ]
+    };
     return (
         <div className="blog-page-layout material-blog-page">
             <Header />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
             <div className="blog-breadcrumb-bar">
                 <div className="blog-breadcrumb-inner">
                     <Link href="/" className="breadcrumb-link">Home</Link>
@@ -51,9 +76,21 @@ export default function BlogSpecialtyArchitecturalFilms() {
                                     </span>
                                 </div>
                             </div>
+                            <div className="callout-box callout-summary">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 11 12 14 22 4" /><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" /></svg>
+                                <div>
+                                    <strong>Quick Summary</strong>
+                                    <ul style={{ margin: '8px 0 0', paddingLeft: '18px', lineHeight: '1.8' }}>
+                                        <li>Four film types: Frosted Glass, Sandblasted Effect, One-Way Vision, and Decorative Window Film</li>
+                                        <li>Frosted and sandblasted films diffuse light for privacy while still allowing natural light flow</li>
+                                        <li>One-way vision film enables full-color exterior graphics while maintaining interior outward visibility</li>
+                                        <li>All films are pressure-sensitive, fully removable, and suited for commercial glass surfaces</li>
+                                    </ul>
+                                </div>
+                            </div>
                         </header>
                         <figure className="blog-featured-image" itemProp="image">
-                            <img src="/cat_materials.webp" alt="Specialty and architectural window films for office and retail applications" width="840" height="473" loading="eager" />
+                            <img src="/assets/Materials/Clear Frosted Sticker.webp" alt="Specialty and architectural window films for office and retail applications" width="840" height="473" loading="eager" />
                             <figcaption>
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2" /><circle cx="8.5" cy="8.5" r="1.5" /><polyline points="21 15 16 10 5 21" /></svg>
                                 Specialty architectural window films — frosted, sandblasted, one-way vision, and decorative options for commercial interiors
@@ -231,7 +268,7 @@ export default function BlogSpecialtyArchitecturalFilms() {
                             </ol>
                         </div>
                         <div className="sidebar-widget product-widget">
-                            <img src="/cat_materials.webp" alt="Specialty Architectural Window Films" className="product-widget-img" />
+                            <img src="/assets/Materials/Clear Frosted Sticker.webp" alt="Specialty Architectural Window Films" className="product-widget-img" />
                             <h4>Specialty &amp; Architectural Films</h4>
                             <p>Frosted, sandblasted effect, one-way vision, and decorative window films for offices, retail, hotels, and commercial interiors.</p>
                             <Link href="/materials" className="product-widget-btn">See Full Details <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m9 18 6-6-6-6" /></svg></Link>

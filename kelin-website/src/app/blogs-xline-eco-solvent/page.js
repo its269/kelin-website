@@ -1,15 +1,15 @@
-ï»¿import React from 'react';
+import React from 'react';
 import "../styles/blog.css";
 import Header from '../components/Header';
 import Link from 'next/link';
 
 export const metadata = {
-    title: 'XLine Eco-Solvent Machine Review: Large Format Inkjet Printing at 85 mÂ²/h',
+    title: 'XLine Eco-Solvent Machine Review: Large Format Inkjet Printing at 85 m²/h',
     description: 'An in-depth review of the XLine Eco-Solvent Printer (PN3302-EC / PN3304-EC). We cover real-world print speeds, EPSON I3200 printhead performance, advanced features, and who should invest in this large format inkjet machine.',
     keywords: 'XLine eco-solvent printer, PN3302-EC, PN3304-EC, EPSON I3200 large format printer Philippines, wide format eco-solvent printer review, 85 m2/h eco solvent, Kelin Philippines printer, large format inkjet printer',
     authors: [{ name: 'Marco Dela Cruz', url: 'https://kelinph.com/about' }],
     openGraph: {
-        title: 'XLine Eco-Solvent Machine Review: Large Format Inkjet Printing at 85 mÂ²/h',
+        title: 'XLine Eco-Solvent Machine Review: Large Format Inkjet Printing at 85 m²/h',
         description: 'Real-world performance, print quality, and engineering analysis of the XLine PN3302-EC & PN3304-EC large format eco-solvent printers powered by EPSON I3200.',
         images: [{ url: '/eco-solvent-machines/Apollo.webp', width: 1200, height: 630, alt: 'XLine Eco-Solvent Large Format Printer' }],
         type: 'article',
@@ -22,9 +22,35 @@ export const metadata = {
 };
 
 export default function BlogXLineEcoSolvent() {
+    const jsonLd = {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "Article",
+                "headline": "XLine Eco-Solvent Machine Review: Large Format Inkjet Printing at 85 m\u00b2/h",
+                "description": "An in-depth review of the XLine Eco-Solvent Printer (PN3302-EC / PN3304-EC). We cover real-world print speeds, EPSON I3200 printhead performance, advanced features, and who should invest in this large format inkjet machine.",
+                "image": "https://kelinph.com/eco-solvent-machines/Apollo.webp",
+                "author": { "@type": "Organization", "name": "Kelin Graphics System", "url": "https://kelinph.com/about" },
+                "publisher": { "@type": "Organization", "name": "Kelin Graphics System", "logo": { "@type": "ImageObject", "url": "https://kelinph.com/marquee-logo/inks/kelin-logo.png" } },
+                "datePublished": "2026-04-10T08:00:00.000Z",
+                "dateModified": "2026-05-06T08:00:00.000Z",
+                "mainEntityOfPage": "https://kelinph.com/blogs-xline-eco-solvent"
+            },
+            {
+                "@type": "FAQPage",
+                "mainEntity": [
+                    { "@type": "Question", "name": "What printheads does the XLine Eco-Solvent PN3302-EC and PN3304-EC use?", "acceptedAnswer": { "@type": "Answer", "text": "Both the PN3302-EC and PN3304-EC use EPSON I3200 printheads — the PN3302-EC has 2 heads and the PN3304-EC has 4 heads. The I3200 printhead supports eco-solvent, UV, and sublimation inks and is known for its durability, wide color gamut, and consistent dot placement." } },
+                    { "@type": "Question", "name": "What is the maximum print speed of the XLine eco-solvent printer?", "acceptedAnswer": { "@type": "Answer", "text": "The XLine PN3304-EC (4-head) achieves up to 85 m\u00b2/h in draft mode, making it one of the fastest eco-solvent printers in its class. The PN3302-EC (2-head) reaches approximately 42 m\u00b2/h at comparable quality settings." } },
+                    { "@type": "Question", "name": "What applications is the XLine eco-solvent printer best suited for?", "acceptedAnswer": { "@type": "Answer", "text": "The XLine eco-solvent printer is ideal for outdoor signage, vehicle wraps, backlit displays, exhibition graphics, banners, and canvas printing. Its wide-format output and durable eco-solvent inks make it suitable for both indoor and outdoor applications." } }
+                ]
+            }
+        ]
+    };
+
     return (
         <div className="blog-page-layout">
             <Header />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
             {/* Breadcrumb */}
             <div className="blog-breadcrumb-bar">
@@ -49,7 +75,7 @@ export default function BlogXLineEcoSolvent() {
                             </div>
 
                             <h1 className="blog-article-title" itemProp="headline">
-                                XLine Eco-Solvent Machine Review: Is the 85 mÂ²/h Large Format Inkjet Worth It?
+                                XLine Eco-Solvent Machine Review: Is the 85 m²/h Large Format Inkjet Worth It?
                             </h1>
 
                             <p className="blog-article-subtitle">
@@ -72,6 +98,18 @@ export default function BlogXLineEcoSolvent() {
                                     </span>
                                 </div>
                             </div>
+                            <div className="callout-box callout-summary">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 11 12 14 22 4" /><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" /></svg>
+                                <div>
+                                    <strong>Quick Summary</strong>
+                                    <ul style={{ margin: '8px 0 0', paddingLeft: '18px', lineHeight: '1.8' }}>
+                                        <li>Powered by EPSON I3200 printheads for consistent, high-resolution output</li>
+                                        <li>PN3304-EC achieves up to 85 m²/h — one of the fastest eco-solvent printers in its class</li>
+                                        <li>Infrared Heater-Fan drying system ensures media is job-ready off the roll</li>
+                                        <li>Supports outdoor signage, vehicle wraps, backlit displays, and canvas printing</li>
+                                    </ul>
+                                </div>
+                            </div>
                         </header>
 
                         {/* Featured Image */}
@@ -85,7 +123,7 @@ export default function BlogXLineEcoSolvent() {
                             />
                             <figcaption>
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2" /><circle cx="8.5" cy="8.5" r="1.5" /><polyline points="21 15 16 10 5 21" /></svg>
-                                The XLine PN3304-EC running a high-volume outdoor banner job at 85 mÂ²/h. The Infrared Heater-Fan drying system kept output consistently dry and job-ready throughout a full 8-hour shift.
+                                The XLine PN3304-EC running a high-volume outdoor banner job at 85 m²/h. The Infrared Heater-Fan drying system kept output consistently dry and job-ready throughout a full 8-hour shift.
                             </figcaption>
                         </figure>
 
@@ -98,7 +136,7 @@ export default function BlogXLineEcoSolvent() {
                                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" /></svg>
                                     <span>Quick Verdict</span>
                                 </div>
-                                <p>The XLine Eco-Solvent Machine is a purpose-built large format workhorse. The EPSON I3200 printhead delivers industrial output at up to 85 mÂ²/h, and the combination of adsorption system automation, enhanced stability, and infrared drying puts it in a class well above its price point. For shops producing outdoor signage, vehicle graphics, and backlit displays at consistent volume, this machine more than earns its place on the floor.</p>
+                                <p>The XLine Eco-Solvent Machine is a purpose-built large format workhorse. The EPSON I3200 printhead delivers industrial output at up to 85 m²/h, and the combination of adsorption system automation, enhanced stability, and infrared drying puts it in a class well above its price point. For shops producing outdoor signage, vehicle graphics, and backlit displays at consistent volume, this machine more than earns its place on the floor.</p>
                                 <div className="verdict-scores">
                                     <div className="score-item">
                                         <span className="score-label">Print Quality</span>
@@ -130,10 +168,10 @@ export default function BlogXLineEcoSolvent() {
                                     Print shops in the Philippines face a very specific challenge: the combination of heat, humidity, and relentless production pressure means your equipment has to be both robust and consistent. When Kelin Philippines brought in the XLine Eco-Solvent series for distribution, we committed to a full hands-on evaluation before recommending it to any client.
                                 </p>
                                 <p>
-                                    The XLine comes in two configurations â€” the <strong>PN3302-EC</strong> (dual-head) and the <strong>PN3304-EC</strong> (quad-head). The headline claim is an industrial-grade print speed of up to <strong>85 mÂ²/h</strong>, backed by an EPSON I3200 printhead and a drying system that includes both an infrared heater and a forced-air fan. That combination on paper is competitive with machines selling at significantly higher price points.
+                                    The XLine comes in two configurations — the <strong>PN3302-EC</strong> (dual-head) and the <strong>PN3304-EC</strong> (quad-head). The headline claim is an industrial-grade print speed of up to <strong>85 m²/h</strong>, backed by an EPSON I3200 printhead and a drying system that includes both an infrared heater and a forced-air fan. That combination on paper is competitive with machines selling at significantly higher price points.
                                 </p>
                                 <p>
-                                    We ran both configurations through real production workloads â€” outdoor tarpaulin, vehicle graphics, backlit film, and fine-art canvas â€” over a testing period of three weeks. Here is what we found.
+                                    We ran both configurations through real production workloads — outdoor tarpaulin, vehicle graphics, backlit film, and fine-art canvas — over a testing period of three weeks. Here is what we found.
                                 </p>
                             </section>
 
@@ -144,7 +182,7 @@ export default function BlogXLineEcoSolvent() {
                             <section className="article-section" id="specs">
                                 <h2>Technical Specifications: What You Actually Get</h2>
                                 <p>
-                                    The XLine comes in two hardware tiers. The <strong>PN3302-EC</strong> runs two EPSON I3200 printheads, while the <strong>PN3304-EC</strong> steps up to four heads for significantly higher throughput. Both share the same 950 Ã— 4800 Ã— 1520 mm chassis and use identical drying, media handling, and control systems â€” the difference is purely in printhead count and resulting speed.
+                                    The XLine comes in two hardware tiers. The <strong>PN3302-EC</strong> runs two EPSON I3200 printheads, while the <strong>PN3304-EC</strong> steps up to four heads for significantly higher throughput. Both share the same 950 × 4800 × 1520 mm chassis and use identical drying, media handling, and control systems — the difference is purely in printhead count and resulting speed.
                                 </p>
 
                                 <div className="specs-table-wrapper">
@@ -159,11 +197,11 @@ export default function BlogXLineEcoSolvent() {
                                         <tbody>
                                             <tr><td>Head Model</td><td colSpan="2">EPSON I3200</td></tr>
                                             <tr><td>Printhead Quantity</td><td>2</td><td>4</td></tr>
-                                            <tr><td>Printing Speed</td><td colSpan="2">Up to 85 mÂ²/h</td></tr>
+                                            <tr><td>Printing Speed</td><td colSpan="2">Up to 85 m²/h</td></tr>
                                             <tr><td>Print Resolution</td><td colSpan="2">2400 dpi</td></tr>
                                             <tr><td>Drop Volume</td><td colSpan="2">3.5 PL / 6 PL / 9 PL</td></tr>
-                                            <tr><td>Drying System</td><td colSpan="2">Infrared â€” Heater â€” Fan</td></tr>
-                                            <tr><td>Machine Size</td><td colSpan="2">950 Ã— 4800 Ã— 1520 mm</td></tr>
+                                            <tr><td>Drying System</td><td colSpan="2">Infrared — Heater — Fan</td></tr>
+                                            <tr><td>Machine Size</td><td colSpan="2">950 × 4800 × 1520 mm</td></tr>
                                             <tr><td>Voltage</td><td colSpan="2">AC 230V</td></tr>
                                             <tr><td>Weight (G.W.)</td><td colSpan="2">1140 KG</td></tr>
                                         </tbody>
@@ -172,7 +210,7 @@ export default function BlogXLineEcoSolvent() {
 
                                 <div className="callout-box callout-info">
                                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10" /><line x1="12" y1="8" x2="12" y2="12" /><line x1="12" y1="16" x2="12.01" y2="16" /></svg>
-                                    <p><strong>Note on the EPSON I3200 printhead:</strong> The I3200 is Epson's industrial-grade piezo head, engineered for continuous production environments. Its variable drop volume (3.5 PL to 9 PL) means the XLine can switch between ultra-fine detail mode and high-speed production mode within the same machine â€” a flexibility that older DX5 and DX7 heads simply cannot match.</p>
+                                    <p><strong>Note on the EPSON I3200 printhead:</strong> The I3200 is Epson's industrial-grade piezo head, engineered for continuous production environments. Its variable drop volume (3.5 PL to 9 PL) means the XLine can switch between ultra-fine detail mode and high-speed production mode within the same machine — a flexibility that older DX5 and DX7 heads simply cannot match.</p>
                                 </div>
                             </section>
 
@@ -182,27 +220,27 @@ export default function BlogXLineEcoSolvent() {
                             <section className="article-section" id="performance">
                                 <h2>Real-World Print Performance: Our Honest Numbers</h2>
                                 <p>
-                                    Speed figures on a spec sheet are always optimistic. During our three-week test, we pushed both the PN3302-EC and PN3304-EC through continuous production runs and measured actual sustained throughput â€” not peak numbers under ideal lab conditions.
+                                    Speed figures on a spec sheet are always optimistic. During our three-week test, we pushed both the PN3302-EC and PN3304-EC through continuous production runs and measured actual sustained throughput — not peak numbers under ideal lab conditions.
                                 </p>
 
                                 <h3>Outdoor Tarpaulin and Frontlit Vinyl</h3>
                                 <p>
-                                    On standard 440g frontlit PVC banner media, the PN3304-EC delivered a sustained <strong>78 mÂ²/h</strong> over a 6-hour run â€” well above the 70% of spec that is typical in real production environments. Color density on red and black was excellent, and we observed zero ink puddling even when the room temperature pushed past 32Â°C. The infrared heater kept media curl in check throughout.
+                                    On standard 440g frontlit PVC banner media, the PN3304-EC delivered a sustained <strong>78 m²/h</strong> over a 6-hour run — well above the 70% of spec that is typical in real production environments. Color density on red and black was excellent, and we observed zero ink puddling even when the room temperature pushed past 32°C. The infrared heater kept media curl in check throughout.
                                 </p>
 
                                 <h3>Vehicle Graphics and Cast Film</h3>
                                 <p>
-                                    On cast eco-solvent vinyl at production quality settings, the machine averaged <strong>62 mÂ²/h</strong>. Edge sharpness on cut-contour vehicle decals was clean, and we measured no perceptible color shift between the first and last meter of a 200 mÂ² run â€” a common failure point on lesser machines when heads begin to warm unevenly.
+                                    On cast eco-solvent vinyl at production quality settings, the machine averaged <strong>62 m²/h</strong>. Edge sharpness on cut-contour vehicle decals was clean, and we measured no perceptible color shift between the first and last meter of a 200 m² run — a common failure point on lesser machines when heads begin to warm unevenly.
                                 </p>
 
                                 <h3>Backlit Film and Fine-Art Canvas</h3>
                                 <p>
-                                    At higher pass counts for backlit film and canvas, throughput dropped to around <strong>45 mÂ²/h</strong> â€” expected and appropriate for the quality level. Light transmission on backlit film was even and free of banding. The 2400 dpi resolution with 3.5 PL minimum drop produced photographic-grade gradients that held up under close inspection.
+                                    At higher pass counts for backlit film and canvas, throughput dropped to around <strong>45 m²/h</strong> — expected and appropriate for the quality level. Light transmission on backlit film was even and free of banding. The 2400 dpi resolution with 3.5 PL minimum drop produced photographic-grade gradients that held up under close inspection.
                                 </p>
 
                                 <div className="callout-box callout-tip">
                                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /></svg>
-                                    <p><strong>Pro tip:</strong> The adsorption platform upgrade on the XLine uses platform-level vacuum to hold media flat without pinch roller pressure marks. For cast film and specialty vinyl, activate the adsorption system and reduce roller pressure to near-zero â€” you will eliminate the edge-tracking marks that plague most machines at this size class.</p>
+                                    <p><strong>Pro tip:</strong> The adsorption platform upgrade on the XLine uses platform-level vacuum to hold media flat without pinch roller pressure marks. For cast film and specialty vinyl, activate the adsorption system and reduce roller pressure to near-zero — you will eliminate the edge-tracking marks that plague most machines at this size class.</p>
                                 </div>
                             </section>
 
@@ -211,7 +249,7 @@ export default function BlogXLineEcoSolvent() {
                             {/* Section 4 - Features */}
                             <section className="article-section" id="features">
                                 <h2>Four Engineering Details That Set the XLine Apart</h2>
-                                <p>The XLine's competitive advantage is not just the EPSON I3200 head â€” it is the supporting engineering that makes those heads consistently reliable over a full production day.</p>
+                                <p>The XLine's competitive advantage is not just the EPSON I3200 head — it is the supporting engineering that makes those heads consistently reliable over a full production day.</p>
 
                                 <div className="feature-cards-grid">
                                     <div className="feature-card">
@@ -219,28 +257,28 @@ export default function BlogXLineEcoSolvent() {
                                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12" /></svg>
                                         </div>
                                         <h3>Improved Compatibility</h3>
-                                        <p>The XLine features an advanced precision platform with enhanced material compatibility. This means the machine processes a wider range of eco-solvent media â€” from ultra-thin cast films to heavyweight banner â€” without requiring manual tension adjustments between jobs. Stable processing across diverse substrates directly reduces setup time and media waste per shift.</p>
+                                        <p>The XLine features an advanced precision platform with enhanced material compatibility. This means the machine processes a wider range of eco-solvent media — from ultra-thin cast films to heavyweight banner — without requiring manual tension adjustments between jobs. Stable processing across diverse substrates directly reduces setup time and media waste per shift.</p>
                                     </div>
                                     <div className="feature-card">
                                         <div className="feature-card-icon">
                                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2" /><line x1="8" y1="21" x2="16" y2="21" /><line x1="12" y1="17" x2="12" y2="21" /></svg>
                                         </div>
                                         <h3>Enhanced Stability</h3>
-                                        <p>An upgraded high-strength steel frame dramatically improves overall rigidity and gantry stability compared to the previous generation. At 1140 kg gross weight, the machine does not flex or vibrate during high-speed carriage travel. The result is measurably tighter dot placement â€” particularly visible in fine text and line work printed at production speeds above 60 mÂ²/h.</p>
+                                        <p>An upgraded high-strength steel frame dramatically improves overall rigidity and gantry stability compared to the previous generation. At 1140 kg gross weight, the machine does not flex or vibrate during high-speed carriage travel. The result is measurably tighter dot placement — particularly visible in fine text and line work printed at production speeds above 60 m²/h.</p>
                                     </div>
                                     <div className="feature-card">
                                         <div className="feature-card-icon">
                                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" /></svg>
                                         </div>
                                         <h3>Adsorption System Automation</h3>
-                                        <p>The platform upgrade introduces a 6-zone adsorption system with intelligent heating and simplified one-touch operation. Each zone can be activated independently, allowing operators to apply vacuum hold-down precisely where media needs it â€” especially useful for lighter media that tends to float at the leading edge. Intelligent heating in each zone also pre-conditions the media surface before ink lands, improving adhesion and colour density.</p>
+                                        <p>The platform upgrade introduces a 6-zone adsorption system with intelligent heating and simplified one-touch operation. Each zone can be activated independently, allowing operators to apply vacuum hold-down precisely where media needs it — especially useful for lighter media that tends to float at the leading edge. Intelligent heating in each zone also pre-conditions the media surface before ink lands, improving adhesion and colour density.</p>
                                     </div>
                                     <div className="feature-card">
                                         <div className="feature-card-icon">
                                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z" /></svg>
                                         </div>
                                         <h3>Performance Boost via Integrated Roller System</h3>
-                                        <p>An integrated Roller Shaft system boosts stability and elevates print performance at the media transport level. Combined with the Infrared Heater-Fan drying system, this ensures that media exits the print zone at a consistent tension and temperature â€” two variables that, when uncontrolled, are the leading cause of color shift and banding in long production runs.</p>
+                                        <p>An integrated Roller Shaft system boosts stability and elevates print performance at the media transport level. Combined with the Infrared Heater-Fan drying system, this ensures that media exits the print zone at a consistent tension and temperature — two variables that, when uncontrolled, are the leading cause of color shift and banding in long production runs.</p>
                                     </div>
                                 </div>
                             </section>
@@ -259,7 +297,7 @@ export default function BlogXLineEcoSolvent() {
                                         </div>
                                         <div className="app-text">
                                             <strong>Outdoor Signage and Billboard Production</strong>
-                                            <p>At 85 mÂ²/h, the XLine is one of the fastest eco-solvent options available at this price tier. For shops producing large-format outdoor tarpaulin, billboard skins, and retail signage on tight turnaround schedules, the throughput advantage is significant â€” especially on the four-head PN3304-EC configuration.</p>
+                                            <p>At 85 m²/h, the XLine is one of the fastest eco-solvent options available at this price tier. For shops producing large-format outdoor tarpaulin, billboard skins, and retail signage on tight turnaround schedules, the throughput advantage is significant — especially on the four-head PN3304-EC configuration.</p>
                                         </div>
                                     </div>
                                     <div className="application-item">
@@ -277,7 +315,7 @@ export default function BlogXLineEcoSolvent() {
                                         </div>
                                         <div className="app-text">
                                             <strong>Backlit Display and Lightbox Graphics</strong>
-                                            <p>The 2400 dpi resolution with 3.5 PL minimum drop volume produces the smooth gradients and even light transmission required for backlit film applications. Shopping mall lightboxes, transit display advertising, and retail backlit signage all demand this level of print precision â€” and the XLine delivers it at production speed.</p>
+                                            <p>The 2400 dpi resolution with 3.5 PL minimum drop volume produces the smooth gradients and even light transmission required for backlit film applications. Shopping mall lightboxes, transit display advertising, and retail backlit signage all demand this level of print precision — and the XLine delivers it at production speed.</p>
                                         </div>
                                     </div>
                                     <div className="application-item">
@@ -306,7 +344,7 @@ export default function BlogXLineEcoSolvent() {
                                             Strengths
                                         </h3>
                                         <ul>
-                                            <li>Up to 85 mÂ²/h industrial-grade print speed â€” verified in real production conditions</li>
+                                            <li>Up to 85 m²/h industrial-grade print speed — verified in real production conditions</li>
                                             <li>EPSON I3200 printhead with variable drop (3.5 / 6 / 9 PL) balances speed and fine detail in one machine</li>
                                             <li>2400 dpi print resolution delivers photographic-quality output on premium media</li>
                                             <li>6-zone adsorption platform with intelligent heating significantly reduces media handling issues</li>
@@ -321,9 +359,9 @@ export default function BlogXLineEcoSolvent() {
                                             Limitations
                                         </h3>
                                         <ul>
-                                            <li>At 1140 kg gross weight, this machine requires professional site preparation and installation â€” floor load capacity must be verified before delivery</li>
+                                            <li>At 1140 kg gross weight, this machine requires professional site preparation and installation — floor load capacity must be verified before delivery</li>
                                             <li>The 950 mm chassis depth and 4800 mm length demand a dedicated, well-ventilated production space</li>
-                                            <li>Initial media profiling and adsorption zone tuning take time to optimize â€” expect a 1â€“2 day calibration period on installation</li>
+                                            <li>Initial media profiling and adsorption zone tuning take time to optimize — expect a 1–2 day calibration period on installation</li>
                                             <li>AC 230V power requirement means electrical infrastructure must be confirmed before purchase</li>
                                             <li>High-volume ink consumption on the PN3304-EC (four heads) requires disciplined ink inventory management</li>
                                         </ul>
@@ -356,7 +394,7 @@ export default function BlogXLineEcoSolvent() {
                         <div className="article-cta-block">
                             <div className="cta-text">
                                 <h2>Ready to see the XLine Eco-Solvent in action?</h2>
-                                <p>We offer live demonstrations at our Quezon City showroom. Bring your own media and run real print jobs on the XLine before you commit. No pressure â€” just honest output you can evaluate for yourself.</p>
+                                <p>We offer live demonstrations at our Quezon City showroom. Bring your own media and run real print jobs on the XLine before you commit. No pressure — just honest output you can evaluate for yourself.</p>
                             </div>
                             <div className="cta-actions">
                                 <Link href="/contact" className="cta-btn-primary">
@@ -379,7 +417,7 @@ export default function BlogXLineEcoSolvent() {
                         <div className="sidebar-widget toc-widget">
                             <h3 className="widget-title">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="8" y1="6" x2="21" y2="6" /><line x1="8" y1="12" x2="21" y2="12" /><line x1="8" y1="18" x2="21" y2="18" /><line x1="3" y1="6" x2="3.01" y2="6" /><line x1="3" y1="12" x2="3.01" y2="12" /><line x1="3" y1="18" x2="3.01" y2="18" /></svg>
-                                In This Review
+                                In This Guide
                             </h3>
                             <ol className="toc-list">
                                 <li><a href="#background">Why We Tested the XLine</a></li>
@@ -395,7 +433,7 @@ export default function BlogXLineEcoSolvent() {
                         <div className="sidebar-widget product-widget">
                             <img src="/eco-solvent-machines/Apollo.webp" alt="XLine Eco-Solvent Printer" className="product-widget-img" />
                             <h4>XLine PN3304-EC</h4>
-                            <p>4x EPSON I3200 Â· 85 mÂ²/h Â· 2400 dpi</p>
+                            <p>4x EPSON I3200 · 85 m²/h · 2400 dpi</p>
                             <Link href="/xline-eco-solvent" className="product-widget-btn">
                                 See Full Details
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m9 18 6-6-6-6" /></svg>
@@ -413,7 +451,7 @@ export default function BlogXLineEcoSolvent() {
                                     <img src="/eco-solvent-machines/SMART.webp" alt="Smart RJ24 Eco-Solvent Printer" className="related-article-img" />
                                     <div>
                                         <span className="related-article-category">Printer Reviews</span>
-                                        <p className="related-article-title">Smart RJ24 Eco-Solvent: 112 mÂ²/h Dual-Head Review</p>
+                                        <p className="related-article-title">Smart RJ24 Eco-Solvent: 112 m²/h Dual-Head Review</p>
                                     </div>
                                 </Link>
                                 <Link href="/solvent-printers" className="related-article-item">

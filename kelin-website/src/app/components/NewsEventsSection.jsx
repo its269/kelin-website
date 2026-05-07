@@ -19,7 +19,7 @@ export default function NewsEventsSection() {
             description: "Join us at SMX Manila (MOA) for the premier graphics and printing exhibition showcasing the latest in digital printing technology.",
             fullDescription: "Join us at SMX Manila (MOA) for the premier graphics and printing exhibition showcasing the latest in digital printing technology. This three-day event brings together industry leaders, innovative technologies, and cutting-edge solutions in the graphics and printing sector.",
             location: "SMX Manila (MOA), Pasay City, Philippines",
-            time: "9:00 AM - 6:00 PM daily",
+            time: "8:30 AM - 5:30 PM daily",
             highlights: [
                 "Latest Digital Printing Technology Showcase",
                 "Live Product Demonstrations",

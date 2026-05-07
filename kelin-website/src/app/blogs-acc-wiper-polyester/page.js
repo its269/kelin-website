@@ -11,7 +11,7 @@ export const metadata = {
     openGraph: {
         title: 'Wiper Polyester Guide: Cleanroom-Grade Polyester Wipers for Printer Maintenance & General Cleaning',
         description: 'Learn how cleanroom-grade polyester wipers deliver lint-free, chemical-resistant cleaning for wide-format printer maintenance and general sign shop tasks.',
-        images: [{ url: '/dummy-image-square.jpg', width: 1200, height: 630, alt: 'Cleanroom-Grade Polyester Wipers for Printer Maintenance' }],
+        images: [{ url: '/cat_accessories.webp', width: 1200, height: 630, alt: 'Cleanroom-Grade Polyester Wipers for Printer Maintenance' }],
         type: 'article',
         publishedTime: '2026-04-25T08:00:00.000Z',
         authors: ['Kelin Graphics System'],
@@ -20,9 +20,34 @@ export const metadata = {
 };
 
 export default function BlogAccWiperPolyester() {
+    const jsonLd = {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "Article",
+                "headline": "Wiper Polyester Guide: Cleanroom-Grade Polyester Wipers for Printer Maintenance & General Cleaning",
+                "description": "Learn how cleanroom-grade polyester wipers (150 pcs/pack) deliver lint-free, chemical-resistant cleaning for wide-format printer maintenance and general sign shop cleaning tasks.",
+                "image": "https://kelinph.com/cat_accessories.webp",
+                "author": { "@type": "Organization", "name": "Kelin Graphics System", "url": "https://kelinph.com/about" },
+                "publisher": { "@type": "Organization", "name": "Kelin Graphics System", "logo": { "@type": "ImageObject", "url": "https://kelinph.com/marquee-logo/inks/kelin-logo.png" } },
+                "datePublished": "2026-04-25T08:00:00.000Z",
+                "dateModified": "2026-05-06T08:00:00.000Z",
+                "mainEntityOfPage": "https://kelinph.com/blogs-acc-wiper-polyester"
+            },
+            {
+                "@type": "FAQPage",
+                "mainEntity": [
+                    { "@type": "Question", "name": "Why should I use cleanroom-grade polyester wipers instead of regular cloths for printer maintenance?", "acceptedAnswer": { "@type": "Answer", "text": "Cleanroom-grade polyester wipers are lint-free and do not shed fibers, preventing particle contamination of sensitive printer components. Regular cloths and paper towels shed fibers that can clog nozzles, contaminate capping stations, and cause print quality issues." } },
+                    { "@type": "Question", "name": "Are polyester wipers compatible with eco-solvent and UV cleaning solutions?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. The chemical-resistant polyester construction allows these wipers to be used with a wide range of cleaning solvents found in print shops, including IPA, eco-solvent cleaners, and UV printer maintenance solutions without degrading." } },
+                    { "@type": "Question", "name": "How many polyester wipers come in one pack?", "acceptedAnswer": { "@type": "Answer", "text": "Each pack contains 150 pieces, providing a generous supply for regular daily or weekly machine maintenance in high-volume print shop environments." } }
+                ]
+            }
+        ]
+    };
     return (
-        <div className="blog-page-layout">
+        <div className="blog-page-layout acc-blog-page">
             <Header />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
             <div className="blog-breadcrumb-bar">
                 <div className="blog-breadcrumb-inner">
                     <Link href="/" className="breadcrumb-link">Home</Link>
@@ -54,9 +79,21 @@ export default function BlogAccWiperPolyester() {
                                     </span>
                                 </div>
                             </div>
+                            <div className="callout-box callout-summary">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 11 12 14 22 4" /><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" /></svg>
+                                <div>
+                                    <strong>Quick Summary</strong>
+                                    <ul style={{ margin: '8px 0 0', paddingLeft: '18px', lineHeight: '1.8' }}>
+                                        <li>Cleanroom-grade polyester construction — lint-free, no fiber shedding on sensitive components</li>
+                                        <li>Chemical-resistant — compatible with IPA, eco-solvent, and UV cleaning solutions</li>
+                                        <li>150 pcs per pack for economical high-volume maintenance supply</li>
+                                        <li>Suitable for platens, media guides, feed rollers, and optical surfaces</li>
+                                    </ul>
+                                </div>
+                            </div>
                         </header>
                         <figure className="blog-featured-image" itemProp="image">
-                            <img src="/dummy-image-square.jpg" alt="Cleanroom-Grade Polyester Wipers for Printer and Machine Maintenance" width="840" height="473" loading="eager" />
+                            <img src="/cat_accessories.webp" alt="Cleanroom-Grade Polyester Wipers for Printer and Machine Maintenance" width="840" height="473" loading="eager" />
                             <figcaption>Cleanroom-grade polyester wipers — 150 pcs per pack, lint-free and chemical-resistant for professional printer maintenance and general shop cleaning.</figcaption>
                         </figure>
                         <div className="blog-body" itemProp="articleBody">
@@ -142,7 +179,7 @@ export default function BlogAccWiperPolyester() {
                 <aside className="blog-sidebar">
                     <div className="sidebar-sticky">
                         <div className="sidebar-widget toc-widget">
-                            <h3 className="widget-title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="8" y1="6" x2="21" y2="6" /><line x1="8" y1="12" x2="21" y2="12" /><line x1="8" y1="18" x2="21" y2="18" /><line x1="3" y1="6" x2="3.01" y2="6" /><line x1="3" y1="12" x2="3.01" y2="12" /><line x1="3" y1="18" x2="3.01" y2="18" /></svg>In This Article</h3>
+                            <h3 className="widget-title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="8" y1="6" x2="21" y2="6" /><line x1="8" y1="12" x2="21" y2="12" /><line x1="8" y1="18" x2="21" y2="18" /><line x1="3" y1="6" x2="3.01" y2="6" /><line x1="3" y1="12" x2="3.01" y2="12" /><line x1="3" y1="18" x2="3.01" y2="18" /></svg>In This Guide</h3>
                             <ol className="toc-list">
                                 <li><a href="#overview">Overview</a></li>
                                 <li><a href="#specs">Specifications</a></li>

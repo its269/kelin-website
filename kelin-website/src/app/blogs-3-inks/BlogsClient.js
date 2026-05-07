@@ -2,6 +2,7 @@
 "use client";
 import React, { useState } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import "./blogs.css";
 import Header from '../components/Header';
 
@@ -58,14 +59,6 @@ export default function BlogsPage() {
     const suggestedPosts = [
         {
             id: 's1',
-            title: "Machine Guides & Operational Tips",
-            category: "Machines",
-            excerpt: "Browse technical guides and operational insights for all Kelin printing machines, cutters, laser systems, and more.",
-            image: "/machines.png",
-            link: "/blogs"
-        },
-        {
-            id: 's2',
             title: "Printable Media & Substrates Guide",
             category: "Materials",
             excerpt: "Explore guides on vinyl stickers, tarpaulins, sublimation papers, and specialty films for your printing projects.",
@@ -73,12 +66,20 @@ export default function BlogsPage() {
             link: "/blogs-1-materials"
         },
         {
-            id: 's3',
+            id: 's2',
             title: "Accessories & Maintenance Kits",
             category: "Accessories",
             excerpt: "Find the right cleaning kits, spare parts, and accessories to keep your machines running at peak performance.",
             image: "/accessories.png",
             link: "/blogs-2-accessories"
+        },
+        {
+            id: 's3',
+            title: "Ink Guides: Eco-Solvent, UV, Sublimation & DTF",
+            category: "Inks",
+            excerpt: "Compare ink types, understand compatibility, and choose the right ink solution for your printing business.",
+            image: "/inks.png",
+            link: "/blogs-3-inks"
         },
         {
             id: 's4',
@@ -87,10 +88,19 @@ export default function BlogsPage() {
             excerpt: "Explore roll-up banners, pop-up booths, feather banners, and more to make your brand stand out at any event.",
             image: "/display.png",
             link: "/blogs-4-promotional-display"
+        },
+        {
+            id: 's5',
+            title: "Machine Guides & Operational Tips",
+            category: "Machines",
+            excerpt: "Browse technical guides and operational insights for all Kelin printing machines, cutters, laser systems, and more.",
+            image: "/machines.png",
+            link: "/blogs"
         }
     ];
 
     const categories = ["All", ...new Set(blogPosts.map(post => post.category))];
+    const pathname = usePathname();
     const [activeCategory, setActiveCategory] = useState("All");
 
     const filteredPosts = activeCategory === "All"
@@ -117,7 +127,7 @@ export default function BlogsPage() {
                 </div>
                 <div className="suggested-cards">
                     {suggestedPosts.map((post, i) => (
-                        <Link key={post.id} href={post.link} className={`suggested-card suggested-card--${i}`}>
+                        <Link key={post.id} href={post.link} className={`suggested-card${post.link === pathname ? ' suggested-card--active' : ''}`}>
                             <div className="suggested-card-img-wrap">
                                 <img src={post.image || '/dummy-image-square.jpg'} alt={post.title} className="suggested-card-img" loading="lazy" />
                                 <div className="suggested-card-overlay" />

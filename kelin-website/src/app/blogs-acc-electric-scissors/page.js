@@ -11,7 +11,7 @@ export const metadata = {
     openGraph: {
         title: 'Cordless Electric Scissors & Blades Guide: Fast, Effortless Cutting for Vinyl, Fabric & Print Media',
         description: 'Discover how cordless electric scissors with replacement cutter blades can speed up your cutting workflow for vinyl, fabric, and print media.',
-        images: [{ url: '/dummy-image-square.jpg', width: 1200, height: 630, alt: 'Cordless Electric Scissors for Vinyl and Fabric Cutting' }],
+        images: [{ url: '/assets/Accessories/Electric Scissor.webp', width: 1200, height: 630, alt: 'Cordless Electric Scissors for Vinyl and Fabric Cutting' }],
         type: 'article',
         publishedTime: '2026-04-25T08:00:00.000Z',
         authors: ['Kelin Graphics System'],
@@ -20,9 +20,34 @@ export const metadata = {
 };
 
 export default function BlogAccElectricScissors() {
+    const jsonLd = {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "Article",
+                "headline": "Cordless Electric Scissors & Blades Guide: Fast, Effortless Cutting for Vinyl, Fabric & Print Media",
+                "description": "Discover how cordless electric scissors with replacement cutter blades can speed up your cutting workflow for vinyl, fabric, and print media in sign shops and print businesses.",
+                "image": "https://kelinph.com/assets/Accessories/Electric Scissor.webp",
+                "author": { "@type": "Organization", "name": "Kelin Graphics System", "url": "https://kelinph.com/about" },
+                "publisher": { "@type": "Organization", "name": "Kelin Graphics System", "logo": { "@type": "ImageObject", "url": "https://kelinph.com/marquee-logo/inks/kelin-logo.png" } },
+                "datePublished": "2026-04-25T08:00:00.000Z",
+                "dateModified": "2026-05-06T08:00:00.000Z",
+                "mainEntityOfPage": "https://kelinph.com/blogs-acc-electric-scissors"
+            },
+            {
+                "@type": "FAQPage",
+                "mainEntity": [
+                    { "@type": "Question", "name": "What materials can cordless electric scissors cut?", "acceptedAnswer": { "@type": "Answer", "text": "Cordless electric scissors are designed to cut vinyl, fabric, paper, and other print media. They are especially effective for high-volume repetitive cutting tasks in sign shops and print production environments." } },
+                    { "@type": "Question", "name": "How long does the battery last on a single charge?", "acceptedAnswer": { "@type": "Answer", "text": "Battery life varies by model, but cordless electric scissors are designed for all-day use in busy production environments. They are rechargeable, making them easy to keep powered up between production runs." } },
+                    { "@type": "Question", "name": "When should replacement cutter blades be used?", "acceptedAnswer": { "@type": "Answer", "text": "Replacement blades should be installed when cuts become noticeably less clean, the blades feel like they are tearing rather than slicing, or the motor has to work harder than usual. Regular blade replacement maintains cut quality and reduces motor strain." } }
+                ]
+            }
+        ]
+    };
     return (
-        <div className="blog-page-layout">
+        <div className="blog-page-layout acc-blog-page">
             <Header />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
             <div className="blog-breadcrumb-bar">
                 <div className="blog-breadcrumb-inner">
                     <Link href="/" className="breadcrumb-link">Home</Link>
@@ -54,9 +79,21 @@ export default function BlogAccElectricScissors() {
                                     </span>
                                 </div>
                             </div>
+                            <div className="callout-box callout-summary">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 11 12 14 22 4" /><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" /></svg>
+                                <div>
+                                    <strong>Quick Summary</strong>
+                                    <ul style={{ margin: '8px 0 0', paddingLeft: '18px', lineHeight: '1.8' }}>
+                                        <li>Battery-powered motor eliminates hand fatigue from repetitive cutting tasks</li>
+                                        <li>Cuts vinyl, fabric, paper, and print media cleanly and consistently</li>
+                                        <li>Replacement cutter blades available for extended service life</li>
+                                        <li>Lightweight, ergonomic design suitable for all-day production use</li>
+                                    </ul>
+                                </div>
+                            </div>
                         </header>
                         <figure className="blog-featured-image" itemProp="image">
-                            <img src="/dummy-image-square.jpg" alt="Cordless Electric Scissors for Vinyl and Fabric Cutting" width="840" height="473" loading="eager" />
+                            <img src="/assets/Accessories/Electric Scissor.webp" alt="Cordless Electric Scissors for Vinyl and Fabric Cutting" width="840" height="473" loading="eager" />
                             <figcaption>Cordless electric scissors with replacement cutter blades — a must-have tool for busy sign and print shops.</figcaption>
                         </figure>
                         <div className="blog-body" itemProp="articleBody">
@@ -142,7 +179,7 @@ export default function BlogAccElectricScissors() {
                 <aside className="blog-sidebar">
                     <div className="sidebar-sticky">
                         <div className="sidebar-widget toc-widget">
-                            <h3 className="widget-title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="8" y1="6" x2="21" y2="6" /><line x1="8" y1="12" x2="21" y2="12" /><line x1="8" y1="18" x2="21" y2="18" /><line x1="3" y1="6" x2="3.01" y2="6" /><line x1="3" y1="12" x2="3.01" y2="12" /><line x1="3" y1="18" x2="3.01" y2="18" /></svg>In This Article</h3>
+                            <h3 className="widget-title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="8" y1="6" x2="21" y2="6" /><line x1="8" y1="12" x2="21" y2="12" /><line x1="8" y1="18" x2="21" y2="18" /><line x1="3" y1="6" x2="3.01" y2="6" /><line x1="3" y1="12" x2="3.01" y2="12" /><line x1="3" y1="18" x2="3.01" y2="18" /></svg>In This Guide</h3>
                             <ol className="toc-list">
                                 <li><a href="#overview">Overview</a></li>
                                 <li><a href="#specs">Specifications</a></li>

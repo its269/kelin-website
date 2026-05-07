@@ -10,16 +10,41 @@ export const metadata = {
     openGraph: {
         title: 'Just Cast Acrylic Guide: Clear, Diffuser White, Colors & Mirror Sheets',
         description: 'Everything you need to know about Just Cast Acrylic — grades, thickness options, sizes, and applications for signage and fabrication.',
-        images: [{ url: '/cat_materials.webp', width: 1200, height: 630, alt: 'Just Cast Acrylic Sheets' }],
+        images: [{ url: '/assets/Materials/Colored Acrylic.webp', width: 1200, height: 630, alt: 'Just Cast Acrylic Sheets' }],
         type: 'article',
     },
     alternates: { canonical: 'https://kelinph.com/blogs-material-just-cast-acrylic' },
 };
 
 export default function BlogJustCastAcrylic() {
+    const jsonLd = {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "Article",
+                "headline": "Just Cast Acrylic Guide: Clear, Diffuser White, Colors & Mirror Sheets for Signage & Fabrication",
+                "description": "Complete guide to Just Cast Acrylic sheets — Clear, Diffuser White, Colors, and Mirror finishes in 1.5mm–12.0mm thickness, 4x6ft and 4x8ft sizes. UV stable, thermoformable, and ideal for channel letters, lightboxes, and display fabrication.",
+                "image": "https://kelinph.com/assets/Materials/Colored Acrylic.webp",
+                "author": { "@type": "Organization", "name": "Kelin Graphics System", "url": "https://kelinph.com/about" },
+                "publisher": { "@type": "Organization", "name": "Kelin Graphics System", "logo": { "@type": "ImageObject", "url": "https://kelinph.com/marquee-logo/inks/kelin-logo.png" } },
+                "datePublished": "2026-11-01T08:00:00.000Z",
+                "dateModified": "2026-05-06T08:00:00.000Z",
+                "mainEntityOfPage": "https://kelinph.com/blogs-material-just-cast-acrylic"
+            },
+            {
+                "@type": "FAQPage",
+                "mainEntity": [
+                    { "@type": "Question", "name": "What makes cast acrylic better than extruded acrylic for premium signage applications?", "acceptedAnswer": { "@type": "Answer", "text": "Cast acrylic is produced using a cell-cast process that results in superior optical clarity, higher molecular weight, and better chemical resistance compared to extruded acrylic. It also has a higher heat resistance, making it more suitable for thermoforming channel letter faces and for outdoor installations subject to direct sunlight heat loading." } },
+                    { "@type": "Question", "name": "What finishes are available in Just Cast Acrylic?", "acceptedAnswer": { "@type": "Answer", "text": "Just Cast Acrylic is available in four finish categories: Clear (high optical clarity for display and glazing), Diffuser White (light-diffusing face for LED lightboxes and channel letters), Colors (a range of solid and transparent colors), and Mirror (reflective chrome-like finish for decorative and retail display applications)." } },
+                    { "@type": "Question", "name": "Can Just Cast Acrylic be thermoformed into curved shapes for channel letters?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Just Cast Acrylic is thermoformable at temperatures around 160–180°C. It is commonly heated and bent to form the curved front faces of channel letters and dimensional signage elements. Cast acrylic retains its shape well after forming and does not develop stress cracks as readily as extruded acrylic under heat forming." } }
+                ]
+            }
+        ]
+    };
     return (
         <div className="blog-page-layout material-blog-page">
             <Header />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
             <div className="blog-breadcrumb-bar">
                 <div className="blog-breadcrumb-inner">
                     <Link href="/" className="breadcrumb-link">Home</Link>
@@ -56,10 +81,22 @@ export default function BlogJustCastAcrylic() {
                                     </span>
                                 </div>
                             </div>
+                            <div className="callout-box callout-summary">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 11 12 14 22 4" /><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" /></svg>
+                                <div>
+                                    <strong>Quick Summary</strong>
+                                    <ul style={{ margin: '8px 0 0', paddingLeft: '18px', lineHeight: '1.8' }}>
+                                        <li>Four finishes: Clear, Diffuser White, Colors, and Mirror — covering all commercial signage and display needs</li>
+                                        <li>Cell-cast process delivers superior optical clarity and higher heat resistance versus extruded acrylic</li>
+                                        <li>Thermoformable at 160–180°C — ideal for curved channel letter faces and dimensional display elements</li>
+                                        <li>UV stable for outdoor use; available 1.5mm–12.0mm in 4×6ft and 4×8ft sheet sizes</li>
+                                    </ul>
+                                </div>
+                            </div>
                         </header>
 
                         <figure className="blog-featured-image" itemProp="image">
-                            <img src="/cat_materials.webp" alt="Just Cast Acrylic Sheets" width="840" height="473" loading="eager" />
+                            <img src="/assets/Materials/Colored Acrylic.webp" alt="Just Cast Acrylic Sheets" width="840" height="473" loading="eager" />
                             <figcaption>
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2" /><circle cx="8.5" cy="8.5" r="1.5" /><polyline points="21 15 16 10 5 21" /></svg>
                                 Just Cast Acrylic is available in Clear, Diffuser White, Colors, and Mirror finishes — 1.5mm to 12.0mm thickness in 4&times;6ft and 4&times;8ft sheet sizes.
@@ -169,7 +206,7 @@ export default function BlogJustCastAcrylic() {
                             </ol>
                         </div>
                         <div className="sidebar-widget product-widget">
-                            <img src="/cat_materials.webp" alt="Just Cast Acrylic" className="product-widget-img" />
+                            <img src="/assets/Materials/Colored Acrylic.webp" alt="Just Cast Acrylic" className="product-widget-img" />
                             <h4>Just Cast Acrylic</h4>
                             <p>Clear, Diffuser, Colors &amp; Mirror &middot; 1.5mm–12.0mm &middot; 4&times;6ft &amp; 4&times;8ft</p>
                             <Link href="/materials" className="product-widget-btn">See Full Details <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m9 18 6-6-6-6" /></svg></Link>

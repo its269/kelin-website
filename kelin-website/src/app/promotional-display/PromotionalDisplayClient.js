@@ -1116,11 +1116,16 @@ export default function PromotionalDisplayPage() {
 
               {/* Slideshow Container */}
               <div className="promotional-slideshow-container">
-                <img
-                  src="/dummy-image-square.jpg"
-                  alt={selectedProduct}
-                  className="promotional-slideshow-image"
-                />
+                <div className="promotional-slideshow-image-wrapper">
+                  <img
+                    src={productData[selectedProduct][currentImageIndex]}
+                    alt={selectedProduct}
+                    className="promotional-slideshow-image"
+                  />
+                  <div className="promotional-slideshow-label">
+                    {selectedProduct}
+                  </div>
+                </div>
 
                 {productData[selectedProduct].length > 1 && (
                   <>

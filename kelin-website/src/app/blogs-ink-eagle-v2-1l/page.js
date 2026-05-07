@@ -20,9 +20,34 @@ export const metadata = {
 };
 
 export default function BlogInkEagleV2_1L() {
+    const jsonLd = {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "Article",
+                "headline": "Eagle V2 1L Solvent Ink Review: Weather-Resistant CMYK Ink for Outdoor Banners and Vehicle Wraps",
+                "description": "In-depth review of the Eagle V2 1L solvent ink — professional-grade weather resistance, vibrant CMYK color, and strong adhesion for outdoor signage, PVC banners, and vehicle wrap applications.",
+                "image": "https://kelinph.com/inks/EAGLE V2 1L/Eagle V2 1L Cyan (Transparent1).webp",
+                "author": { "@type": "Organization", "name": "Kelin Graphics System", "url": "https://kelinph.com/about" },
+                "publisher": { "@type": "Organization", "name": "Kelin Graphics System", "logo": { "@type": "ImageObject", "url": "https://kelinph.com/marquee-logo/inks/kelin-logo.png" } },
+                "datePublished": "2026-02-01T08:00:00.000Z",
+                "dateModified": "2026-05-06T08:00:00.000Z",
+                "mainEntityOfPage": "https://kelinph.com/blogs-ink-eagle-v2-1l"
+            },
+            {
+                "@type": "FAQPage",
+                "mainEntity": [
+                    { "@type": "Question", "name": "How well does Eagle V2 1L hold up in the Philippine outdoor environment?", "acceptedAnswer": { "@type": "Answer", "text": "Eagle V2 is formulated with UV-resistant pigments and weather-resistant ink film designed to withstand intense UV exposure, high humidity, rain, and salt air typical of the Philippine outdoor environment." } },
+                    { "@type": "Question", "name": "What media types is Eagle V2 1L compatible with?", "acceptedAnswer": { "@type": "Answer", "text": "Eagle V2 is compatible with outdoor vinyl, PVC flex banners, vehicle wrap films, and other wide-format substrates used in professional outdoor and commercial signage production." } },
+                    { "@type": "Question", "name": "Is there a bulk format of Eagle V2 for high-volume shops?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — Eagle V2 is also available in a 5-Liter bulk format that significantly lowers the cost per liter for shops running high-volume outdoor banner and PVC production." } }
+                ]
+            }
+        ]
+    };
     return (
         <div className="blog-page-layout ink-blog-page">
             <Header />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
             <div className="blog-breadcrumb-bar">
                 <div className="blog-breadcrumb-inner">
                     <Link href="/" className="breadcrumb-link">Home</Link>
@@ -54,6 +79,18 @@ export default function BlogInkEagleV2_1L() {
                                         February 2026
                                     </time>
                                     <span className="meta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" /></svg>6 min read</span>
+                                </div>
+                            </div>
+                            <div className="callout-box callout-summary">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 11 12 14 22 4" /><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" /></svg>
+                                <div>
+                                    <strong>Quick Summary</strong>
+                                    <ul style={{ margin: '8px 0 0', paddingLeft: '18px', lineHeight: '1.8' }}>
+                                        <li>Professional solvent ink with UV-resistant pigments built for Philippine outdoor conditions</li>
+                                        <li>Strong adhesion to outdoor vinyl, PVC flex banners, and vehicle wrap films</li>
+                                        <li>Available in CMYK 1-liter bottles — ideal entry format before committing to bulk 5L</li>
+                                        <li>Also available in Eagle V2 5L for high-output shops needing lower cost per liter</li>
+                                    </ul>
                                 </div>
                             </div>
                         </header>
@@ -146,7 +183,7 @@ export default function BlogInkEagleV2_1L() {
                 <aside className="blog-sidebar">
                     <div className="sidebar-sticky">
                         <div className="sidebar-widget toc-widget">
-                            <h3 className="widget-title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="8" y1="6" x2="21" y2="6" /><line x1="8" y1="12" x2="21" y2="12" /><line x1="8" y1="18" x2="21" y2="18" /><line x1="3" y1="6" x2="3.01" y2="6" /><line x1="3" y1="12" x2="3.01" y2="12" /><line x1="3" y1="18" x2="3.01" y2="18" /></svg>In This Article</h3>
+                            <h3 className="widget-title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="8" y1="6" x2="21" y2="6" /><line x1="8" y1="12" x2="21" y2="12" /><line x1="8" y1="18" x2="21" y2="18" /><line x1="3" y1="6" x2="3.01" y2="6" /><line x1="3" y1="12" x2="3.01" y2="12" /><line x1="3" y1="18" x2="3.01" y2="18" /></svg>In This Guide</h3>
                             <ol className="toc-list">
                                 <li><a href="#overview">Built for Outdoor Environments</a></li>
                                 <li><a href="#specs">Specifications</a></li>

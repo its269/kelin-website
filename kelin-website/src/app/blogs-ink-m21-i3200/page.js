@@ -20,9 +20,34 @@ export const metadata = {
 };
 
 export default function BlogInkM21() {
+    const jsonLd = {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "Article",
+                "headline": "M21 i3200 Eco-Solvent Ink Review: Printhead-Optimized CMYK Ink for Epson i3200 Wide-Format Printers",
+                "description": "An in-depth review of the M21 eco-solvent ink series — engineered specifically for Epson i3200 printheads. Covers color consistency, printhead longevity, drying time, and outdoor performance.",
+                "image": "https://kelinph.com/inks/M21/M21 Cyan (Transparent).webp",
+                "author": { "@type": "Organization", "name": "Kelin Graphics System", "url": "https://kelinph.com/about" },
+                "publisher": { "@type": "Organization", "name": "Kelin Graphics System", "logo": { "@type": "ImageObject", "url": "https://kelinph.com/marquee-logo/inks/kelin-logo.png" } },
+                "datePublished": "2026-03-15T08:00:00.000Z",
+                "dateModified": "2026-05-06T08:00:00.000Z",
+                "mainEntityOfPage": "https://kelinph.com/blogs-ink-m21-i3200"
+            },
+            {
+                "@type": "FAQPage",
+                "mainEntity": [
+                    { "@type": "Question", "name": "Why is M21 formulated specifically for the Epson i3200 printhead?", "acceptedAnswer": { "@type": "Answer", "text": "The i3200 has smaller nozzle diameter and higher nozzle count than older printhead generations, requiring ink with precisely tuned viscosity, surface tension, and solvent balance to prevent clogging and ensure consistent droplet formation." } },
+                    { "@type": "Question", "name": "Can M21 ink be used in printers with older Epson printheads?", "acceptedAnswer": { "@type": "Answer", "text": "M21 is optimized for i3200-based printers. For printers using DX5, DX7, or other printhead platforms, a different compatible eco-solvent ink formulation should be used for best results." } },
+                    { "@type": "Question", "name": "What outdoor durability does M21 eco-solvent ink provide?", "acceptedAnswer": { "@type": "Answer", "text": "M21 delivers professional outdoor durability with UV resistance and weather resistance suitable for outdoor banners, vehicle graphics, and commercial signage applications." } }
+                ]
+            }
+        ]
+    };
     return (
         <div className="blog-page-layout ink-blog-page">
             <Header />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
             <div className="blog-breadcrumb-bar">
                 <div className="blog-breadcrumb-inner">
                     <Link href="/" className="breadcrumb-link">Home</Link>
@@ -57,6 +82,18 @@ export default function BlogInkM21() {
                                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" /></svg>
                                         6 min read
                                     </span>
+                                </div>
+                            </div>
+                            <div className="callout-box callout-summary">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 11 12 14 22 4" /><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" /></svg>
+                                <div>
+                                    <strong>Quick Summary</strong>
+                                    <ul style={{ margin: '8px 0 0', paddingLeft: '18px', lineHeight: '1.8' }}>
+                                        <li>Eco-solvent ink specifically engineered for Epson i3200 printhead-based wide-format printers</li>
+                                        <li>Precisely tuned viscosity and solvent balance to prevent nozzle clogging in i3200 systems</li>
+                                        <li>Sharp color density and consistent CMYK output for outdoor sign production</li>
+                                        <li>UV and weather resistant — suitable for outdoor banners, vehicle graphics, and commercial signage</li>
+                                    </ul>
                                 </div>
                             </div>
                         </header>
@@ -199,7 +236,7 @@ export default function BlogInkM21() {
                 <aside className="blog-sidebar">
                     <div className="sidebar-sticky">
                         <div className="sidebar-widget toc-widget">
-                            <h3 className="widget-title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="8" y1="6" x2="21" y2="6" /><line x1="8" y1="12" x2="21" y2="12" /><line x1="8" y1="18" x2="21" y2="18" /><line x1="3" y1="6" x2="3.01" y2="6" /><line x1="3" y1="12" x2="3.01" y2="12" /><line x1="3" y1="18" x2="3.01" y2="18" /></svg>In This Article</h3>
+                            <h3 className="widget-title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="8" y1="6" x2="21" y2="6" /><line x1="8" y1="12" x2="21" y2="12" /><line x1="8" y1="18" x2="21" y2="18" /><line x1="3" y1="6" x2="3.01" y2="6" /><line x1="3" y1="12" x2="3.01" y2="12" /><line x1="3" y1="18" x2="3.01" y2="18" /></svg>In This Guide</h3>
                             <ol className="toc-list">
                                 <li><a href="#overview">Why the M21 Exists</a></li>
                                 <li><a href="#specs">Specifications</a></li>

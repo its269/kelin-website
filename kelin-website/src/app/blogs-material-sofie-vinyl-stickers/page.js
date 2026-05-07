@@ -10,16 +10,41 @@ export const metadata = {
     openGraph: {
         title: 'Sofie Vinyl & Specialty Stickers: SK4100, Bubble Free, Blockout & Car Wrap Guide',
         description: 'Comprehensive guide to the Sofie vinyl sticker lineup — specialty grades for window films, blockout signage, and cast car wrap films.',
-        images: [{ url: '/cat_materials.webp', width: 1200, height: 630, alt: 'Sofie Vinyl and Specialty Stickers' }],
+        images: [{ url: '/assets/Materials/SK4100 Vinyl Sticker _Glossy (Transparent).webp', width: 1200, height: 630, alt: 'Sofie Vinyl and Specialty Stickers' }],
         type: 'article',
     },
     alternates: { canonical: 'https://kelinph.com/blogs-material-sofie-vinyl-stickers' },
 };
 
 export default function BlogSofieVinylStickers() {
+    const jsonLd = {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "Article",
+                "headline": "Sofie Vinyl & Specialty Stickers Guide: SK4100, Bubble Free, Blockout & Car Wrap Vinyl",
+                "description": "Complete guide to Sofie Vinyl and Specialty Sticker series — SK4100 Gloss, Bubble Free Window Film, Blockout Vinyl, and Car Wrap Cast Film. Learn finishes, sizes, adhesive types, and best applications for Philippine print shops.",
+                "image": "https://kelinph.com/assets/Materials/SK4100 Vinyl Sticker _Glossy (Transparent).webp",
+                "author": { "@type": "Organization", "name": "Kelin Graphics System", "url": "https://kelinph.com/about" },
+                "publisher": { "@type": "Organization", "name": "Kelin Graphics System", "logo": { "@type": "ImageObject", "url": "https://kelinph.com/marquee-logo/inks/kelin-logo.png" } },
+                "datePublished": "2026-04-01T08:00:00.000Z",
+                "dateModified": "2026-05-06T08:00:00.000Z",
+                "mainEntityOfPage": "https://kelinph.com/blogs-material-sofie-vinyl-stickers"
+            },
+            {
+                "@type": "FAQPage",
+                "mainEntity": [
+                    { "@type": "Question", "name": "What is SK4100 Gloss vinyl best used for?", "acceptedAnswer": { "@type": "Answer", "text": "SK4100 Gloss vinyl is a high-gloss white-face vinyl ideal for applications that demand maximum color vibrancy — promotional stickers, retail packaging labels, and indoor signage where a reflective high-impact surface enhances visual prominence." } },
+                    { "@type": "Question", "name": "How does Sofie Bubble Free window film differ from standard vinyl for glass installation?", "acceptedAnswer": { "@type": "Answer", "text": "Bubble-free window film features a micro-channel adhesive layer that allows air to escape during application, eliminating the air bubble trapping common with standard vinyl on large smooth glass surfaces. This significantly reduces installation time and skill requirements." } },
+                    { "@type": "Question", "name": "Is Sofie Car Wrap Cast Film different from calendered vinyl for vehicle wraps?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — cast vinyl is manufactured through a casting process that produces a thinner, more dimensionally stable, and highly conformable film that stretches and adheres around complex curves, rivets, and body lines without lifting or wrinkling. Calendered vinyl is stiffer and better suited to flat or simple curved surfaces, making cast film the professional choice for full vehicle wraps." } }
+                ]
+            }
+        ]
+    };
     return (
         <div className="blog-page-layout material-blog-page">
             <Header />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
             <div className="blog-breadcrumb-bar">
                 <div className="blog-breadcrumb-inner">
                     <Link href="/" className="breadcrumb-link">Home</Link>
@@ -56,10 +81,22 @@ export default function BlogSofieVinylStickers() {
                                     </span>
                                 </div>
                             </div>
+                            <div className="callout-box callout-summary">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 11 12 14 22 4" /><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" /></svg>
+                                <div>
+                                    <strong>Quick Summary</strong>
+                                    <ul style={{ margin: '8px 0 0', paddingLeft: '18px', lineHeight: '1.8' }}>
+                                        <li>Four specialty grades: SK4100 Gloss, Bubble Free Window Film, Blockout Vinyl, and Car Wrap Cast Film</li>
+                                        <li>Bubble-free micro-channel adhesive technology simplifies large glass surface installations</li>
+                                        <li>Car Wrap Cast Film conforms to complex curves and body lines — the professional choice for full vehicle wraps</li>
+                                        <li>Blockout vinyl provides light-blocking opacity for double-sided signage and backlit applications</li>
+                                    </ul>
+                                </div>
+                            </div>
                         </header>
 
                         <figure className="blog-featured-image" itemProp="image">
-                            <img src="/cat_materials.webp" alt="Sofie Vinyl and Specialty Stickers" width="840" height="473" loading="eager" />
+                            <img src="/assets/Materials/SK4100 Vinyl Sticker _Glossy (Transparent).webp" alt="Sofie Vinyl and Specialty Stickers" width="840" height="473" loading="eager" />
                             <figcaption>
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2" /><circle cx="8.5" cy="8.5" r="1.5" /><polyline points="21 15 16 10 5 21" /></svg>
                                 Sofie Specialty Vinyl lineup — SK4100 Gloss, Bubble Free Window Film, Blockout Vinyl, and Car Wrap Cast Film for professional wide-format printing applications.
@@ -210,7 +247,7 @@ export default function BlogSofieVinylStickers() {
                             </ol>
                         </div>
                         <div className="sidebar-widget product-widget">
-                            <img src="/cat_materials.webp" alt="Sofie Specialty Vinyl" className="product-widget-img" />
+                            <img src="/assets/Materials/SK4100 Vinyl Sticker _Glossy (Transparent).webp" alt="Sofie Specialty Vinyl" className="product-widget-img" />
                             <h4>Sofie Vinyl &amp; Specialty Stickers</h4>
                             <p>SK4100 &middot; Bubble Free &middot; Blockout &middot; Car Wrap Cast</p>
                             <Link href="/materials" className="product-widget-btn">See Full Details <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m9 18 6-6-6-6" /></svg></Link>

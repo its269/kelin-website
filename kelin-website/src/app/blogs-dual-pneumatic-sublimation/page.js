@@ -34,9 +34,34 @@ export const metadata = {
 };
 
 export default function BlogDualPneumaticHeatpress() {
+    const jsonLd = {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "Article",
+                "headline": "Dual Pneumatic Heatpress Machine 80cm x 100cm / 100cm x 120cm Review: Advanced Pulling-Type Platform Design at 0–399°C",
+                "description": "An in-depth review of the Dual Pneumatic Heatpress Machine in 80cm x 100cm and 100cm x 120cm configurations. Advanced pulling-type platform design, uniform heating technology, digital microprocessor control, and dual manual/automatic modes for professional sublimation.",
+                "image": "https://kelinph.com/sublimation_dtf/SUBL Dual Pneumatic Sublimation Machine 80cm x 100cm (1).webp",
+                "author": { "@type": "Organization", "name": "Kelin Graphics System", "url": "https://kelinph.com/about" },
+                "publisher": { "@type": "Organization", "name": "Kelin Graphics System", "logo": { "@type": "ImageObject", "url": "https://kelinph.com/marquee-logo/inks/kelin-logo.png" } },
+                "datePublished": "2026-04-17T08:00:00.000Z",
+                "dateModified": "2026-05-06T08:00:00.000Z",
+                "mainEntityOfPage": "https://kelinph.com/blogs-dual-pneumatic-sublimation"
+            },
+            {
+                "@type": "FAQPage",
+                "mainEntity": [
+                    { "@type": "Question", "name": "What is the advantage of the pulling-type platform design on the Dual Pneumatic Heatpress?", "acceptedAnswer": { "@type": "Answer", "text": "The pulling-type platform slides away from the operator during pressing, preventing accidental burns from steam or heat exposure and improving workflow ergonomics during high-volume sublimation production." } },
+                    { "@type": "Question", "name": "What temperature range does the Dual Pneumatic Heatpress support?", "acceptedAnswer": { "@type": "Answer", "text": "The machine supports a temperature range of 0–399°C with digital microprocessor control for precise, consistent temperature management across the aluminum-cast heater surface." } },
+                    { "@type": "Question", "name": "What is the maximum working pressure of the Dual Pneumatic Heatpress Machine?", "acceptedAnswer": { "@type": "Answer", "text": "The Dual Pneumatic Heatpress delivers up to 8 kg/cm² working pressure via dual pneumatic cylinders, ensuring even, consistent press force across the full platen area for professional sublimation output." } }
+                ]
+            }
+        ]
+    };
     return (
         <div className="blog-page-layout">
             <Header />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
             {/* Breadcrumb */}
             <div className="blog-breadcrumb-bar">
@@ -82,6 +107,18 @@ export default function BlogDualPneumaticHeatpress() {
                                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" /><circle cx="12" cy="12" r="3" /></svg>
                                         3,500 views
                                     </span>
+                                </div>
+                            </div>
+                            <div className="callout-box callout-summary">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 11 12 14 22 4" /><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" /></svg>
+                                <div>
+                                    <strong>Quick Summary</strong>
+                                    <ul style={{ margin: '8px 0 0', paddingLeft: '18px', lineHeight: '1.8' }}>
+                                        <li>Pulling-type platform slides away during pressing, keeping operators safe from steam and heat</li>
+                                        <li>Uniform heating aluminum-cast platen ensures even temperature across the full 80×100 cm or 100×120 cm surface</li>
+                                        <li>Digital microprocessor controls temperature (0–399°C) and time with dual manual/automatic press modes</li>
+                                        <li>Dual pneumatic cylinders deliver up to 8 kg/cm² working pressure for consistent professional sublimation results</li>
+                                    </ul>
                                 </div>
                             </div>
                         </header>
@@ -367,7 +404,7 @@ export default function BlogDualPneumaticHeatpress() {
                         <div className="sidebar-widget toc-widget">
                             <h3 className="widget-title">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="8" y1="6" x2="21" y2="6" /><line x1="8" y1="12" x2="21" y2="12" /><line x1="8" y1="18" x2="21" y2="18" /><line x1="3" y1="6" x2="3.01" y2="6" /><line x1="3" y1="12" x2="3.01" y2="12" /><line x1="3" y1="18" x2="3.01" y2="18" /></svg>
-                                In This Review
+                                In This Guide
                             </h3>
                             <ol className="toc-list">
                                 <li><a href="#background">Advanced Platform Design for Quality</a></li>

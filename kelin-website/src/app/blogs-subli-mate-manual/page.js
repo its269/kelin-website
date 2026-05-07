@@ -40,9 +40,35 @@ export const metadata = {
 };
 
 export default function BlogSubliMateManual() {
+    const jsonLd = {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "Article",
+                "headline": "Subli-Mate Manual Heatpress 80cm\u00d7100cm \u2013 Drawer-Type: Effortless Loading, Safer Operation | Kelin",
+                "description": "Discover the Subli-Mate Manual Heatpress 80cm\u00d7100cm \u2014 a drawer-type heat press with integrated roller, burn prevention design, and angled movement for Full Jersey Sublimation, DTF, and more.",
+                "image": "https://kelinph.com/heatpress/Subli-Mate%20Manual%20Heat%20Press%2080cm%20x%20100cm%20(1).webp",
+                "author": { "@type": "Organization", "name": "Kelin Graphics System", "url": "https://kelinph.com/about" },
+                "publisher": { "@type": "Organization", "name": "Kelin Graphics System", "logo": { "@type": "ImageObject", "url": "https://kelinph.com/marquee-logo/inks/kelin-logo.png" } },
+                "datePublished": "2026-04-17T08:00:00.000Z",
+                "dateModified": "2026-05-06T08:00:00.000Z",
+                "mainEntityOfPage": "https://kelinph.com/blogs-subli-mate-manual"
+            },
+            {
+                "@type": "FAQPage",
+                "mainEntity": [
+                    { "@type": "Question", "name": "What makes the Subli-Mate drawer-type design safer than a standard swing-away heat press?", "acceptedAnswer": { "@type": "Answer", "text": "The Subli-Mate's drawer-type platform slides outward at an angle using an integrated roller, allowing operators to load garments and transfer paper without reaching over a hot platen. This eliminates the burn risk present in clam-shell and swing-away designs where the heated upper platen is directly above the loading zone." } },
+                    { "@type": "Question", "name": "What garments and products can be pressed with the Subli-Mate 80cm\u00d7100cm heat press?", "acceptedAnswer": { "@type": "Answer", "text": "The 80cm\u00d7100cm platen accommodates full jerseys, T-shirts, hoodies, tote bags, face masks, and large sublimation transfer panels. The large format is especially suited for full-sublimation jersey production and DTF transfers that require a single press without repositioning." } },
+                    { "@type": "Question", "name": "Is the Subli-Mate compatible with both sublimation and DTF transfers?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. The Subli-Mate manual heat press works with both dye sublimation transfer paper and DTF (Direct-to-Film) heat transfers. The adjustable temperature and pressure controls let operators fine-tune settings for the specific ink system and fabric type being used." } }
+                ]
+            }
+        ]
+    };
+
     return (
         <div className="blog-page-layout">
             <Header />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
             {/* Breadcrumb */}
             <div className="blog-breadcrumb-bar">
@@ -74,6 +100,18 @@ export default function BlogSubliMateManual() {
                                     <span className="meta-item">By Kelin Team</span>
                                     <span className="meta-item">Heat Press Guide</span>
                                     <span className="meta-item">5 min read</span>
+                                </div>
+                            </div>
+                            <div className="callout-box callout-summary">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 11 12 14 22 4" /><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" /></svg>
+                                <div>
+                                    <strong>Quick Summary</strong>
+                                    <ul style={{ margin: '8px 0 0', paddingLeft: '18px', lineHeight: '1.8' }}>
+                                        <li>80cm×100cm drawer-type platen fits full jerseys in a single press</li>
+                                        <li>Integrated roller enables angled, burn-safe loading without reaching over the heat</li>
+                                        <li>Compatible with both sublimation transfer paper and DTF heat transfers</li>
+                                        <li>Adjustable temperature and pressure for precise control across garment types</li>
+                                    </ul>
                                 </div>
                             </div>
                         </header>
@@ -315,15 +353,15 @@ export default function BlogSubliMateManual() {
 
                         {/* Table of Contents */}
                         <div className="sidebar-widget toc-widget">
-                            <h3 className="widget-title">Table of Contents</h3>
-                            <ul className="toc-list">
+                            <h3 className="widget-title">In This Guide</h3>
+                            <ol className="toc-list">
                                 <li><a href="#overview">Overview</a></li>
                                 <li><a href="#specifications">Technical Specifications</a></li>
                                 <li><a href="#features">Key Features</a></li>
                                 <li><a href="#applications">Applications</a></li>
                                 <li><a href="#pros-cons">Pros &amp; Considerations</a></li>
                                 <li><a href="#conclusion">Conclusion</a></li>
-                            </ul>
+                            </ol>
                         </div>
 
                         {/* Product Widget */}

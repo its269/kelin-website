@@ -11,7 +11,7 @@ export const metadata = {
     openGraph: {
         title: 'Grid Lines Cutting Mat Guide: Self-Healing Precision Cutting Surface for Print & Sign Shops',
         description: 'Learn how self-healing grid line cutting mats protect your work surfaces and deliver precise, accurate cuts for vinyl, paper, and print media.',
-        images: [{ url: '/dummy-image-square.jpg', width: 1200, height: 630, alt: 'Self-Healing Grid Lines Cutting Mat for Sign Shops' }],
+        images: [{ url: '/assets/Accessories/Cutting Mat.webp', width: 1200, height: 630, alt: 'Self-Healing Grid Lines Cutting Mat for Sign Shops' }],
         type: 'article',
         publishedTime: '2026-04-25T08:00:00.000Z',
         authors: ['Kelin Graphics System'],
@@ -20,9 +20,34 @@ export const metadata = {
 };
 
 export default function BlogAccCuttingMat() {
+    const jsonLd = {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "Article",
+                "headline": "Grid Lines Cutting Mat Guide: Self-Healing Precision Cutting Surface for Print & Sign Shops",
+                "description": "Learn how self-healing grid line cutting mats in 2ft x 3ft and 4ft x 6ft sizes protect your work surfaces and deliver precise, accurate cuts for vinyl, paper, and print media.",
+                "image": "https://kelinph.com/assets/Accessories/Cutting Mat.webp",
+                "author": { "@type": "Organization", "name": "Kelin Graphics System", "url": "https://kelinph.com/about" },
+                "publisher": { "@type": "Organization", "name": "Kelin Graphics System", "logo": { "@type": "ImageObject", "url": "https://kelinph.com/marquee-logo/inks/kelin-logo.png" } },
+                "datePublished": "2026-04-25T08:00:00.000Z",
+                "dateModified": "2026-05-06T08:00:00.000Z",
+                "mainEntityOfPage": "https://kelinph.com/blogs-acc-cutting-mat"
+            },
+            {
+                "@type": "FAQPage",
+                "mainEntity": [
+                    { "@type": "Question", "name": "What does \"self-healing\" mean for a cutting mat?", "acceptedAnswer": { "@type": "Answer", "text": "A self-healing cutting mat is made from layered PVC material that closes and conceals cut marks after the blade passes through. This prevents grooves from accumulating on the surface, which would guide future cuts off-line and compromise accuracy over time." } },
+                    { "@type": "Question", "name": "What sizes are available for the grid lines cutting mat?", "acceptedAnswer": { "@type": "Answer", "text": "The cutting mat is available in 2ft x 3ft for smaller workstations and 4ft x 6ft for larger production tables in sign shops and print businesses." } },
+                    { "@type": "Question", "name": "Can these cutting mats be used with rotary cutters and craft knives?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. The mats are compatible with craft knives, rotary cutters, and scalpels. The self-healing surface protects the mat and maintains a clean cutting surface regardless of tool type." } }
+                ]
+            }
+        ]
+    };
     return (
-        <div className="blog-page-layout">
+        <div className="blog-page-layout acc-blog-page">
             <Header />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
             <div className="blog-breadcrumb-bar">
                 <div className="blog-breadcrumb-inner">
                     <Link href="/" className="breadcrumb-link">Home</Link>
@@ -54,9 +79,21 @@ export default function BlogAccCuttingMat() {
                                     </span>
                                 </div>
                             </div>
+                            <div className="callout-box callout-summary">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 11 12 14 22 4" /><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" /></svg>
+                                <div>
+                                    <strong>Quick Summary</strong>
+                                    <ul style={{ margin: '8px 0 0', paddingLeft: '18px', lineHeight: '1.8' }}>
+                                        <li>Self-healing PVC surface closes cut marks and extends mat lifespan</li>
+                                        <li>Precision grid lines provide built-in measurement and alignment guides</li>
+                                        <li>Available in 2ft x 3ft and 4ft x 6ft sizes for different workstation needs</li>
+                                        <li>Non-slip backing prevents material shift during cutting for accurate results</li>
+                                    </ul>
+                                </div>
+                            </div>
                         </header>
                         <figure className="blog-featured-image" itemProp="image">
-                            <img src="/dummy-image-square.jpg" alt="Self-Healing Grid Lines Cutting Mat for Sign Shops" width="840" height="473" loading="eager" />
+                            <img src="/assets/Accessories/Cutting Mat.webp" alt="Self-Healing Grid Lines Cutting Mat for Sign Shops" width="840" height="473" loading="eager" />
                             <figcaption>Self-healing cutting mats with precision grid lines — an essential workstation accessory for any sign or print shop.</figcaption>
                         </figure>
                         <div className="blog-body" itemProp="articleBody">
@@ -141,7 +178,7 @@ export default function BlogAccCuttingMat() {
                 <aside className="blog-sidebar">
                     <div className="sidebar-sticky">
                         <div className="sidebar-widget toc-widget">
-                            <h3 className="widget-title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="8" y1="6" x2="21" y2="6" /><line x1="8" y1="12" x2="21" y2="12" /><line x1="8" y1="18" x2="21" y2="18" /><line x1="3" y1="6" x2="3.01" y2="6" /><line x1="3" y1="12" x2="3.01" y2="12" /><line x1="3" y1="18" x2="3.01" y2="18" /></svg>In This Article</h3>
+                            <h3 className="widget-title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="8" y1="6" x2="21" y2="6" /><line x1="8" y1="12" x2="21" y2="12" /><line x1="8" y1="18" x2="21" y2="18" /><line x1="3" y1="6" x2="3.01" y2="6" /><line x1="3" y1="12" x2="3.01" y2="12" /><line x1="3" y1="18" x2="3.01" y2="18" /></svg>In This Guide</h3>
                             <ol className="toc-list">
                                 <li><a href="#overview">Overview</a></li>
                                 <li><a href="#specs">Specifications</a></li>

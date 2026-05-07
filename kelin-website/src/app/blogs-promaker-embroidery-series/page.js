@@ -1,17 +1,17 @@
-﻿import React from 'react';
+import React from 'react';
 import "../styles/blog.css";
 import Header from '../components/Header';
 import Link from 'next/link';
 
 export const metadata = {
-    title: 'Promaker Embroidery Series Review: 1201 / 1202 / 1804 — Precision Stitched, Possibilities Unlimited',
-    description: 'An in-depth review of the Promaker Embroidery Machine Series — 1-head 1201, 2-head 1202, and 4-head 1804. We cover industrial max speed up to 1200 RPM, Japanese hook technology, advanced CNC control, thread management, and who should invest in each model.',
+    title: 'Promaker Embroidery Series Review: 1201 / 1202 / 1804 � Precision Stitched, Possibilities Unlimited',
+    description: 'An in-depth review of the Promaker Embroidery Machine Series � 1-head 1201, 2-head 1202, and 4-head 1804. We cover industrial max speed up to 1200 RPM, Japanese hook technology, advanced CNC control, thread management, and who should invest in each model.',
     keywords: 'Promaker embroidery machine Philippines, Promaker 1201, Promaker 1202, Promaker 1804, single head embroidery machine, dual head embroidery, 4 head embroidery machine, Japanese hook embroidery, Kelin Philippines embroidery, industrial embroidery machine',
     authors: [{ name: 'Kelin Philippines', url: 'https://kelinph.com/about' }],
     openGraph: {
-        title: 'Promaker Embroidery Series Review: 1201 / 1202 / 1804 — Precision Stitched, Possibilities Unlimited',
-        description: 'Real-world performance and engineering analysis of the Promaker Embroidery Machine Series — 1-head, 2-head, and 4-head configurations at up to 1200 RPM with Japanese hook technology.',
-        images: [{ url: '/embroidery_knitting/Promaker Embroidery 1201.webp', width: 1200, height: 630, alt: 'Promaker Embroidery Series 1201 1202 1804' }],
+        title: 'Promaker Embroidery Series Review: 1201 / 1202 / 1804 � Precision Stitched, Possibilities Unlimited',
+        description: 'Real-world performance and engineering analysis of the Promaker Embroidery Machine Series � 1-head, 2-head, and 4-head configurations at up to 1200 RPM with Japanese hook technology.',
+        images: [{ url: '/sublimation_dtf/Promaker Embroidery 1201.webp', width: 1200, height: 630, alt: 'Promaker Embroidery Series 1201 1202 1804' }],
         type: 'article',
         publishedTime: '2026-04-18T08:00:00.000Z',
         authors: ['Kelin Philippines'],
@@ -22,9 +22,34 @@ export const metadata = {
 };
 
 export default function BlogPromakerEmbroiderySeries() {
+    const jsonLd = {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "Article",
+                "headline": "Promaker Embroidery Series Review: 1201 / 1202 / 1804 \u2014 Precision Stitched, Possibilities Unlimited",
+                "description": "An in-depth review of the Promaker Embroidery Machine Series \u2014 1-head 1201, 2-head 1202, and 4-head 1804. We cover industrial max speed up to 1200 RPM, Japanese hook technology, advanced CNC control, thread management, and who should invest in each model.",
+                "image": "https://kelinph.com/sublimation_dtf/Promaker Embroidery 1201.webp",
+                "author": { "@type": "Organization", "name": "Kelin Graphics System", "url": "https://kelinph.com/about" },
+                "publisher": { "@type": "Organization", "name": "Kelin Graphics System", "logo": { "@type": "ImageObject", "url": "https://kelinph.com/marquee-logo/inks/kelin-logo.png" } },
+                "datePublished": "2026-04-18T08:00:00.000Z",
+                "dateModified": "2026-05-06T08:00:00.000Z",
+                "mainEntityOfPage": "https://kelinph.com/blogs-promaker-embroidery-series"
+            },
+            {
+                "@type": "FAQPage",
+                "mainEntity": [
+                    { "@type": "Question", "name": "What is the maximum stitching speed of the Promaker embroidery machines?", "acceptedAnswer": { "@type": "Answer", "text": "The Promaker series achieves up to 1200 RPM maximum industrial stitching speed across the 1201 (1-head), 1202 (2-head), and 1804 (4-head) models." } },
+                    { "@type": "Question", "name": "What is the difference between the Promaker 1201, 1202, and 1804?", "acceptedAnswer": { "@type": "Answer", "text": "The 1201 is a single-head model ideal for startups and custom embroidery; the 1202 doubles throughput with 2 heads; and the 1804 is a 4-head industrial model built for high-volume garment and cap production." } },
+                    { "@type": "Question", "name": "What type of hook system does the Promaker embroidery series use?", "acceptedAnswer": { "@type": "Answer", "text": "All Promaker models use Japanese hook technology, renowned for smoother thread feed, reduced thread breakage, and consistent high-speed stitch quality across dense and detailed embroidery designs." } }
+                ]
+            }
+        ]
+    };
     return (
         <div className="blog-page-layout">
             <Header />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
             {/* Breadcrumb */}
             <div className="blog-breadcrumb-bar">
@@ -44,16 +69,28 @@ export default function BlogPromakerEmbroiderySeries() {
                         <header className="blog-article-header">
                             <span className="article-category-tag">Embroidery</span>
                             <h1 className="blog-article-title">
-                                Promaker Embroidery Series — Precision Stitched. Possibilities Unlimited.
+                                Promaker Embroidery Series � Precision Stitched. Possibilities Unlimited.
                             </h1>
                             <p className="blog-article-subtitle">
-                                Industrial computerized embroidery machines in 1-head (1201), 2-head (1202), and 4-head (1804) configurations — up to 1200 RPM with Japanese hook technology, advanced CNC touch control, and versatile application across caps, garments, bags, and patches.
+                                Industrial computerized embroidery machines in 1-head (1201), 2-head (1202), and 4-head (1804) configurations � up to 1200 RPM with Japanese hook technology, advanced CNC touch control, and versatile application across caps, garments, bags, and patches.
                             </p>
                             <div className="article-meta-row">
                                 <div className="article-meta-details">
                                     <span className="meta-item">By Kelin Philippines</span>
                                     <span className="meta-item">April 18, 2026</span>
-                                    <span className="meta-item">Embroidery · Textile</span>
+                                    <span className="meta-item">Embroidery � Textile</span>
+                                </div>
+                            </div>
+                            <div className="callout-box callout-summary">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 11 12 14 22 4" /><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" /></svg>
+                                <div>
+                                    <strong>Quick Summary</strong>
+                                    <ul style={{ margin: '8px 0 0', paddingLeft: '18px', lineHeight: '1.8' }}>
+                                        <li>Available in 1-head (1201), 2-head (1202), and 4-head (1804) configurations</li>
+                                        <li>Up to 1200 RPM industrial stitching speed with Japanese hook technology</li>
+                                        <li>Advanced CNC touch control for precise stitch programming and design management</li>
+                                        <li>Versatile for caps, garments, bags, patches, and custom embroidery applications</li>
+                                    </ul>
                                 </div>
                             </div>
                         </header>
@@ -61,8 +98,8 @@ export default function BlogPromakerEmbroiderySeries() {
                         {/* Featured Image */}
                         <div className="blog-featured-image">
                             <img
-                                src="/embroidery_knitting/Promaker Embroidery 1201.webp"
-                                alt="Promaker Embroidery Series — 1201, 1202, 1804"
+                                src="/sublimation_dtf/Promaker Embroidery 1201.webp"
+                                alt="Promaker Embroidery Series � 1201, 1202, 1804"
                                 width={900}
                                 height={550}
                                 style={{ width: '100%', height: 'auto', borderRadius: '12px', objectFit: 'cover' }}
@@ -74,32 +111,32 @@ export default function BlogPromakerEmbroiderySeries() {
                             <div style={{ textAlign: 'center' }}>
                                 <img
                                     src="/embroidery_knitting/Promaker Embroidery 1201.webp"
-                                    alt="Promaker Embroidery 1201 — 1 Head"
+                                    alt="Promaker Embroidery 1201 � 1 Head"
                                     width={400}
                                     height={300}
                                     style={{ width: '100%', height: 'auto', borderRadius: '10px', objectFit: 'cover' }}
                                 />
-                                <p style={{ marginTop: '8px', fontWeight: '600', fontSize: '0.9rem', color: '#374151' }}>1201 — 1 Head</p>
+                                <p style={{ marginTop: '8px', fontWeight: '600', fontSize: '0.9rem', color: '#374151' }}>1201 � 1 Head</p>
                             </div>
                             <div style={{ textAlign: 'center' }}>
                                 <img
                                     src="/embroidery_knitting/Promaker Embroidery 1202.webp"
-                                    alt="Promaker Embroidery 1202 — 2 Heads"
+                                    alt="Promaker Embroidery 1202 � 2 Heads"
                                     width={400}
                                     height={300}
                                     style={{ width: '100%', height: 'auto', borderRadius: '10px', objectFit: 'cover' }}
                                 />
-                                <p style={{ marginTop: '8px', fontWeight: '600', fontSize: '0.9rem', color: '#374151' }}>1202 — 2 Heads</p>
+                                <p style={{ marginTop: '8px', fontWeight: '600', fontSize: '0.9rem', color: '#374151' }}>1202 � 2 Heads</p>
                             </div>
                             <div style={{ textAlign: 'center' }}>
                                 <img
                                     src="/embroidery_knitting/Promaker Embroidery 1204.webp"
-                                    alt="Promaker Embroidery 1204 — 4 Heads"
+                                    alt="Promaker Embroidery 1204 � 4 Heads"
                                     width={400}
                                     height={300}
                                     style={{ width: '100%', height: 'auto', borderRadius: '10px', objectFit: 'cover' }}
                                 />
-                                <p style={{ marginTop: '8px', fontWeight: '600', fontSize: '0.9rem', color: '#374151' }}>1204 — 4 Heads</p>
+                                <p style={{ marginTop: '8px', fontWeight: '600', fontSize: '0.9rem', color: '#374151' }}>1204 � 4 Heads</p>
                             </div>
                         </div>
 
@@ -109,14 +146,14 @@ export default function BlogPromakerEmbroiderySeries() {
                             <section className="article-section">
                                 <h2>What Is the Promaker Embroidery Series?</h2>
                                 <p>
-                                    The <strong>Promaker Embroidery Machine Series</strong> is a family of industrial computerized embroidery systems available in three head configurations — the <strong>1201 (1 head)</strong>, <strong>1202 (2 heads)</strong>, and <strong>1804 (4 heads)</strong>. All three models share the same core platform: advanced CNC touch control, Japanese hook technology, efficient thread management, and an industrial max speed of up to <strong>1200 RPM with motor jump</strong>.
+                                    The <strong>Promaker Embroidery Machine Series</strong> is a family of industrial computerized embroidery systems available in three head configurations � the <strong>1201 (1 head)</strong>, <strong>1202 (2 heads)</strong>, and <strong>1804 (4 heads)</strong>. All three models share the same core platform: advanced CNC touch control, Japanese hook technology, efficient thread management, and an industrial max speed of up to <strong>1200 RPM with motor jump</strong>.
                                 </p>
                                 <p>
-                                    Designed for precision, efficiency, and versatility, the Promaker series is engineered to meet the demands of both custom designs and high-volume production — whether you're embroidering caps, garments, patches, or bags. The right model depends on your production volume: the 1201 suits boutique custom shops, the 1202 bridges custom and volume work, and the 1804 powers full commercial output.
+                                    Designed for precision, efficiency, and versatility, the Promaker series is engineered to meet the demands of both custom designs and high-volume production � whether you're embroidering caps, garments, patches, or bags. The right model depends on your production volume: the 1201 suits boutique custom shops, the 1202 bridges custom and volume work, and the 1804 powers full commercial output.
                                 </p>
 
                                 <div className="callout-box callout-info">
-                                    <strong>Available Models:</strong> 1 HEAD: 1201 &nbsp;|&nbsp; 2 HEADS: 1202 &nbsp;|&nbsp; 4 HEADS: 1204 — all at up to <strong>1200 RPM</strong> with motor jump.
+                                    <strong>Available Models:</strong> 1 HEAD: 1201 &nbsp;|&nbsp; 2 HEADS: 1202 &nbsp;|&nbsp; 4 HEADS: 1204 � all at up to <strong>1200 RPM</strong> with motor jump.
                                 </div>
                             </section>
 
@@ -137,7 +174,7 @@ export default function BlogPromakerEmbroiderySeries() {
                                             </svg>
                                         </div>
                                         <h3>Advanced Control System</h3>
-                                        <p>Features a high-definition 12-inch touch screen computer for intuitive operation and real-time stitching display — with CNC control for precise pattern execution.</p>
+                                        <p>Features a high-definition 12-inch touch screen computer for intuitive operation and real-time stitching display � with CNC control for precise pattern execution.</p>
                                     </div>
                                     <div className="feature-card">
                                         <div className="feature-card-icon">
@@ -150,7 +187,7 @@ export default function BlogPromakerEmbroiderySeries() {
                                             </svg>
                                         </div>
                                         <h3>Efficient Thread Management</h3>
-                                        <p>Includes thread break detection and an automatic thread trimmer to minimize downtime and ensure continuous operation — with up to 15 needle colors per head.</p>
+                                        <p>Includes thread break detection and an automatic thread trimmer to minimize downtime and ensure continuous operation � with up to 15 needle colors per head.</p>
                                     </div>
                                     <div className="feature-card">
                                         <div className="feature-card-icon">
@@ -160,7 +197,7 @@ export default function BlogPromakerEmbroiderySeries() {
                                             </svg>
                                         </div>
                                         <h3>Japanese Hook</h3>
-                                        <p>Integrates a precision-engineered Japanese hook — a key component that contributes to the machine's superior stitch quality and durability in high-speed embroidery.</p>
+                                        <p>Integrates a precision-engineered Japanese hook � a key component that contributes to the machine's superior stitch quality and durability in high-speed embroidery.</p>
                                     </div>
                                     <div className="feature-card">
                                         <div className="feature-card-icon">
@@ -171,7 +208,7 @@ export default function BlogPromakerEmbroiderySeries() {
                                             </svg>
                                         </div>
                                         <h3>Versatile Application</h3>
-                                        <p>Equipped with a 270-degree wide cap system — ideal for embroidering on various items including caps, garments, patches, and bags for diverse production needs.</p>
+                                        <p>Equipped with a 270-degree wide cap system � ideal for embroidering on various items including caps, garments, patches, and bags for diverse production needs.</p>
                                     </div>
                                 </div>
                             </section>
@@ -182,23 +219,23 @@ export default function BlogPromakerEmbroiderySeries() {
                             <section className="article-section">
                                 <h2>Choosing the Right Model: 1201 vs 1202 vs 1804</h2>
 
-                                <h3>Promaker 1201 — Single Head</h3>
+                                <h3>Promaker 1201 � Single Head</h3>
                                 <p>
-                                    The <strong>1201</strong> is the entry point into the Promaker series — a single-head machine with a 360mm x 200mm embroidery area. It's the ideal choice for boutique shops, startup custom apparel businesses, and operators who need precise control over individual pieces. The single-head configuration allows the operator to focus on one high-quality embroidery run at a time with maximum stitch accuracy.
+                                    The <strong>1201</strong> is the entry point into the Promaker series � a single-head machine with a 360mm x 200mm embroidery area. It's the ideal choice for boutique shops, startup custom apparel businesses, and operators who need precise control over individual pieces. The single-head configuration allows the operator to focus on one high-quality embroidery run at a time with maximum stitch accuracy.
                                 </p>
 
-                                <h3>Promaker 1202 — Dual Head</h3>
+                                <h3>Promaker 1202 � Dual Head</h3>
                                 <p>
-                                    The <strong>1202</strong> doubles production capacity with two independent heads, each operating simultaneously on the same design. With a larger 1430mm x 620mm embroidery area, the 1202 suits shops scaling up from custom work into medium-volume production — garment decorators, team uniform shops, and corporate merchandise producers who need higher throughput without sacrificing per-piece quality.
+                                    The <strong>1202</strong> doubles production capacity with two independent heads, each operating simultaneously on the same design. With a larger 1430mm x 620mm embroidery area, the 1202 suits shops scaling up from custom work into medium-volume production � garment decorators, team uniform shops, and corporate merchandise producers who need higher throughput without sacrificing per-piece quality.
                                 </p>
 
-                                <h3>Promaker 1804 — Quad Head</h3>
+                                <h3>Promaker 1804 � Quad Head</h3>
                                 <p>
-                                    The <strong>1804</strong> is the commercial powerhouse of the series — four heads operating together across a 1400mm x 2400mm embroidery area. This machine is built for high-volume commercial production: large batch uniforms, cap branding campaigns, patch production at scale, and any operation where output per hour is the primary driver of profitability.
+                                    The <strong>1804</strong> is the commercial powerhouse of the series � four heads operating together across a 1400mm x 2400mm embroidery area. This machine is built for high-volume commercial production: large batch uniforms, cap branding campaigns, patch production at scale, and any operation where output per hour is the primary driver of profitability.
                                 </p>
 
                                 <div className="callout-box callout-tip">
-                                    <strong>Production Tip:</strong> All three models run at the same 1200 RPM max speed. The difference is throughput — the 1804 produces 4x the output of the 1201 per shift, making it the most cost-efficient per-piece for high-volume orders.
+                                    <strong>Production Tip:</strong> All three models run at the same 1200 RPM max speed. The difference is throughput � the 1804 produces 4x the output of the 1201 per shift, making it the most cost-efficient per-piece for high-volume orders.
                                 </div>
                             </section>
 
@@ -229,12 +266,12 @@ export default function BlogPromakerEmbroiderySeries() {
                                 <h2>Application Areas</h2>
                                 <p>The Promaker Embroidery Series handles a wide range of textile decoration applications:</p>
                                 <ul>
-                                    <li><strong>Caps &amp; Headwear</strong> — The 270-degree wide cap system enables precise embroidery on structured and unstructured caps, beanies, and visors.</li>
-                                    <li><strong>Garments</strong> — Polo shirts, jackets, uniforms, workwear, and sportswear with logos, names, and decorative designs.</li>
-                                    <li><strong>Patches</strong> — Woven and embroidered patches for military, police, sports teams, and fashion brands.</li>
-                                    <li><strong>Bags &amp; Accessories</strong> — Tote bags, backpacks, pouches, and accessories with custom embroidery branding.</li>
-                                    <li><strong>Corporate Branding</strong> — Bulk uniform decoration, co-branded apparel, and promotional merchandise at scale.</li>
-                                    <li><strong>Custom &amp; Personalized Items</strong> — One-off and small-batch personalized gifts, awards, and commemorative textile pieces.</li>
+                                    <li><strong>Caps &amp; Headwear</strong> � The 270-degree wide cap system enables precise embroidery on structured and unstructured caps, beanies, and visors.</li>
+                                    <li><strong>Garments</strong> � Polo shirts, jackets, uniforms, workwear, and sportswear with logos, names, and decorative designs.</li>
+                                    <li><strong>Patches</strong> � Woven and embroidered patches for military, police, sports teams, and fashion brands.</li>
+                                    <li><strong>Bags &amp; Accessories</strong> � Tote bags, backpacks, pouches, and accessories with custom embroidery branding.</li>
+                                    <li><strong>Corporate Branding</strong> � Bulk uniform decoration, co-branded apparel, and promotional merchandise at scale.</li>
+                                    <li><strong>Custom &amp; Personalized Items</strong> � One-off and small-batch personalized gifts, awards, and commemorative textile pieces.</li>
                                 </ul>
                             </section>
 
@@ -252,12 +289,12 @@ export default function BlogPromakerEmbroiderySeries() {
                                         <ul>
                                             <li>Industrial max speed up to 1200 RPM with motor jump</li>
                                             <li>Japanese hook for superior stitch quality and durability</li>
-                                            <li>12-inch HD touch screen CNC control — intuitive operation</li>
+                                            <li>12-inch HD touch screen CNC control � intuitive operation</li>
                                             <li>Automatic thread break detection and thread trimmer</li>
                                             <li>Up to 15 needle colors per head for multi-color designs</li>
                                             <li>270-degree wide cap system for headwear embroidery</li>
                                             <li>8-language support for international operator teams</li>
-                                            <li>200M stitch memory — stores about 200 designs on-board</li>
+                                            <li>200M stitch memory � stores about 200 designs on-board</li>
                                             <li>AC110V / 220V compatibility for global use</li>
                                             <li>Three head configurations to match any production volume</li>
                                         </ul>
@@ -286,10 +323,10 @@ export default function BlogPromakerEmbroiderySeries() {
                                     The <strong>Promaker Embroidery Series</strong> delivers industrial-grade embroidery capability at every scale. Whether you're running a small custom shop with the 1201, scaling operations with the 1202, or driving commercial volume with the 1804, all three machines share the same Japanese hook quality, advanced CNC touch control, and 1200 RPM industrial speed that the Promaker platform is built on.
                                 </p>
                                 <p>
-                                    For Philippine apparel decorators, uniform suppliers, cap branders, and patch producers looking for a reliable industrial embroidery system with multi-language support and proven components, the Promaker series offers a clear upgrade path from entry to commercial scale — all within a single product family.
+                                    For Philippine apparel decorators, uniform suppliers, cap branders, and patch producers looking for a reliable industrial embroidery system with multi-language support and proven components, the Promaker series offers a clear upgrade path from entry to commercial scale � all within a single product family.
                                 </p>
                                 <div className="callout-box callout-info">
-                                    <strong>Available at Kelin Philippines</strong> — Contact us for pricing on the 1201, 1202, and 1804 models, financing options, and machine demonstrations. Our team provides on-site installation and training across the Philippines.
+                                    <strong>Available at Kelin Philippines</strong> � Contact us for pricing on the 1201, 1202, and 1804 models, financing options, and machine demonstrations. Our team provides on-site installation and training across the Philippines.
                                 </div>
                             </section>
 
@@ -322,8 +359,8 @@ export default function BlogPromakerEmbroiderySeries() {
                     <div className="sidebar-sticky">
 
                         <div className="sidebar-widget toc-widget">
-                            <h3 className="widget-title">In This Article</h3>
-                            <ul className="toc-list">
+                            <h3 className="widget-title">In This Guide</h3>
+                            <ol className="toc-list">
                                 <li><a href="#what-is-promaker-series">What Is the Promaker Series?</a></li>
                                 <li><a href="#key-features">Key Features</a></li>
                                 <li><a href="#choosing-the-right-model">1201 vs 1202 vs 1804</a></li>
@@ -331,7 +368,7 @@ export default function BlogPromakerEmbroiderySeries() {
                                 <li><a href="#application-areas">Application Areas</a></li>
                                 <li><a href="#pros-cons">Pros &amp; Cons</a></li>
                                 <li><a href="#final-verdict">Final Verdict</a></li>
-                            </ul>
+                            </ol>
                         </div>
 
                         <div className="sidebar-widget product-widget">

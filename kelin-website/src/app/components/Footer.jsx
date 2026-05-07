@@ -59,7 +59,7 @@ export default function Footer() {
                                 </p>
                                 <p>
                                     <strong>Hours:</strong><br />
-                                    Mon-Sat: 9:00 am–6:00 pm
+                                    Mon-Sat: 8:30 AM–5:30 PM
                                 </p>
                                 <p>
                                     <strong>Email:</strong><br />

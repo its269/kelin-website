@@ -1,4 +1,4 @@
-﻿import React from 'react';
+import React from 'react';
 import "../styles/blog.css";
 import Header from '../components/Header';
 import Link from 'next/link';
@@ -11,7 +11,7 @@ export const metadata = {
     openGraph: {
         title: 'Smartex GS-CE152 Knitting Machine Review: 128-Section Precision Stitch Control at 1.4 m/s',
         description: 'Real-world performance, stitch quality, and engineering analysis of the Smartex GS-CE152 computerized flat knitting machine with 128-section stitch density control and 1.4 m/s industrial speed.',
-        images: [{ url: '/embroidery_knitting/Smartex Knitting Machine GSCE-1-52.webp', width: 1200, height: 630, alt: 'Smartex GS-CE152 Knitting Machine' }],
+        images: [{ url: '/sublimation_dtf/Smartex Knitting Machine GSCE-1-52.webp', width: 1200, height: 630, alt: 'Smartex GS-CE152 Knitting Machine' }],
         type: 'article',
         publishedTime: '2026-04-20T08:00:00.000Z',
         authors: ['Kelin Philippines'],
@@ -22,9 +22,35 @@ export const metadata = {
 };
 
 export default function BlogSmartexGSCE152() {
+    const jsonLd = {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "Article",
+                "headline": "Smartex GS-CE152 Knitting Machine Review: 128-Section Precision Stitch Control at 1.4 m/s",
+                "description": "An in-depth review of the Smartex GS-CE152 computerized flat knitting machine. We cover real-world knitting speed, 128-section stitch density control, automatic error detection, yarn carrier system, and who should invest in this industrial knitting machine.",
+                "image": "https://kelinph.com/sublimation_dtf/Smartex Knitting Machine GSCE-1-52.webp",
+                "author": { "@type": "Organization", "name": "Kelin Graphics System", "url": "https://kelinph.com/about" },
+                "publisher": { "@type": "Organization", "name": "Kelin Graphics System", "logo": { "@type": "ImageObject", "url": "https://kelinph.com/marquee-logo/inks/kelin-logo.png" } },
+                "datePublished": "2026-04-20T08:00:00.000Z",
+                "dateModified": "2026-05-06T08:00:00.000Z",
+                "mainEntityOfPage": "https://kelinph.com/blogs-smartex-knitting-machine-GS-CE152"
+            },
+            {
+                "@type": "FAQPage",
+                "mainEntity": [
+                    { "@type": "Question", "name": "What does 128-section stitch density control mean on the Smartex GS-CE152?", "acceptedAnswer": { "@type": "Answer", "text": "128-section stitch density control means the machine can independently set stitch tightness across 128 different zones within a single fabric piece. Powered by an advanced stepping motor system, this allows designers to vary density for ribbing, body panels, and collar sections within one knitting cycle." } },
+                    { "@type": "Question", "name": "What types of fabric structures can the Smartex GS-CE152 produce?", "acceptedAnswer": { "@type": "Answer", "text": "The GS-CE152 can produce flat knit, tuck, transfer, and jacquard fabric structures. This range covers polo collars, rib cuffs, full sweater panels, and multi-color jacquard pattern pieces, making it versatile for sportswear, fashion knitwear, and uniform manufacturing." } },
+                    { "@type": "Question", "name": "How fast does the Smartex GS-CE152 knit?", "acceptedAnswer": { "@type": "Answer", "text": "The Smartex GS-CE152 achieves a maximum knitting speed of 1.4 m/s. At this speed, it can produce collars, cuffs, and fabric panels significantly faster than manual flat-knitting machines, reducing per-piece cycle time and increasing daily production output." } }
+                ]
+            }
+        ]
+    };
+
     return (
         <div className="blog-page-layout">
             <Header />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
             {/* Breadcrumb */}
             <div className="blog-breadcrumb-bar">
@@ -72,12 +98,24 @@ export default function BlogSmartexGSCE152() {
                                     </span>
                                 </div>
                             </div>
+                            <div className="callout-box callout-summary">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 11 12 14 22 4" /><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" /></svg>
+                                <div>
+                                    <strong>Quick Summary</strong>
+                                    <ul style={{ margin: '8px 0 0', paddingLeft: '18px', lineHeight: '1.8' }}>
+                                        <li>128-section stitch density control via advanced stepping motor system</li>
+                                        <li>Maximum knitting speed of 1.4 m/s for fast industrial production</li>
+                                        <li>Supports flat, tuck, transfer, and jacquard knitting structures</li>
+                                        <li>10.4-inch LCD interface with USB pattern management for easy operation</li>
+                                    </ul>
+                                </div>
+                            </div>
                         </header>
 
                         {/* Featured Image */}
                         <figure className="blog-featured-image" itemProp="image">
                             <img
-                                src="/embroidery_knitting/Smartex Knitting Machine GSCE-1-52.webp"
+                                src="/sublimation_dtf/Smartex Knitting Machine GSCE-1-52.webp"
                                 alt="Smartex GS-CE152 computerized flat knitting machine with 128-section stitch density control"
                                 width="840"
                                 height="473"
@@ -99,7 +137,7 @@ export default function BlogSmartexGSCE152() {
                                     Garment manufacturers and knitwear producers in the Philippines face a persistent quality challenge: consistent stitch density across long production runs. Even small stitch density deviations accumulate into fabric inconsistency that causes downstream problems in finishing, linking, and final garment measurements. When Kelin Philippines brought in the Smartex GS-CE152 computerized flat knitting machine, we committed to a full hands-on evaluation before recommending it to any production client.
                                 </p>
                                 <p>
-                                    The GS-CE152 is positioned as a precision knitting platform with its headline feature being <strong>128-section stitch density control</strong> — powered by an advanced stepping motor system that achieves fine-tuned density adjustments across 128 independently programmable sections per fabric piece. The machine delivers a maximum industrial knitting speed of <strong>1.4 m/s</strong>, supports flat, transfer, tuck, and jacquard knitting functions, and comes equipped with a user-friendly 10.4-inch LCD interface with USB pattern management.
+                                    The GS-CE152 is positioned as a precision knitting platform with its headline feature being <strong>128-section stitch density control</strong> � powered by an advanced stepping motor system that achieves fine-tuned density adjustments across 128 independently programmable sections per fabric piece. The machine delivers a maximum industrial knitting speed of <strong>1.4 m/s</strong>, supports flat, transfer, tuck, and jacquard knitting functions, and comes equipped with a user-friendly 10.4-inch LCD interface with USB pattern management.
                                 </p>
                                 <p>
                                     We ran the GS-CE152 through collar production, full-panel sweater knitting, rib cuffs, and multi-color jacquard patterns across extended production shifts. Here is what we found.
@@ -112,7 +150,7 @@ export default function BlogSmartexGSCE152() {
                             <section className="article-section" id="specs">
                                 <h2>Technical Specifications: What You Actually Get</h2>
                                 <p>
-                                    The GS-CE152 is available in four gauge configurations — 12G, 14G, 16G, and 18G — covering the full range of yarn counts used in standard knitwear production from heavy sportswear fabrics to fine-gauge dress knits. The 52-inch knitting width accommodates full-panel garment production as well as high-volume accessory knitting such as collars, cuffs, and ribbing trim in a single pass.
+                                    The GS-CE152 is available in four gauge configurations � 12G, 14G, 16G, and 18G � covering the full range of yarn counts used in standard knitwear production from heavy sportswear fabrics to fine-gauge dress knits. The 52-inch knitting width accommodates full-panel garment production as well as high-volume accessory knitting such as collars, cuffs, and ribbing trim in a single pass.
                                 </p>
 
                                 <div className="specs-table-wrapper">
@@ -130,12 +168,12 @@ export default function BlogSmartexGSCE152() {
                                             <tr><td>Knitting Width</td><td>52 inches</td></tr>
                                             <tr><td>Gauge</td><td>12G, 14G, 16G, 18G</td></tr>
                                             <tr><td>Knitting Function</td><td>Flat, Transfer, Tuck, Jacquard</td></tr>
-                                            <tr><td>Stitch Density</td><td>128 [32]-section stitch selectable; stepping motor control; adjustable scope 0–650 supported by subdivision technology</td></tr>
+                                            <tr><td>Stitch Density</td><td>128 [32]-section stitch selectable; stepping motor control; adjustable scope 0�650 supported by subdivision technology</td></tr>
                                             <tr><td>Racking</td><td>AC servo motor controlled; racking within 2 inches with fine adjusting function</td></tr>
                                             <tr><td>Drive System</td><td>Synchronous belt drive; AC servo system</td></tr>
                                             <tr><td>Needle Selection</td><td>Computer-controlled efficient needle selector</td></tr>
                                             <tr><td>Yarn Carrier</td><td>2 sets of 6 feeders on both sides of the 3-track rail</td></tr>
-                                            <tr><td>Take Down Roller</td><td>128-level stepper control (0–100)</td></tr>
+                                            <tr><td>Take Down Roller</td><td>128-level stepper control (0�100)</td></tr>
                                             <tr><td>Display Interface</td><td>10.4" LCD with USB support, 256MB memory, English &amp; Chinese language support</td></tr>
                                         </tbody>
                                     </table>
@@ -143,7 +181,7 @@ export default function BlogSmartexGSCE152() {
 
                                 <div className="callout-box callout-info">
                                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10" /><line x1="12" y1="8" x2="12" y2="12" /><line x1="12" y1="16" x2="12.01" y2="16" /></svg>
-                                    <p><strong>128-Section Stitch Control:</strong> Most conventional knitting machines offer limited stitch density zones per piece. The GS-CE152's 128-section system means the stepping motor can independently adjust stitch density at 128 points across a single fabric panel — enabling gradual density transitions, shaped fabric geometry, and precise match-knitting between panels that eliminates manual tension adjustment between runs.</p>
+                                    <p><strong>128-Section Stitch Control:</strong> Most conventional knitting machines offer limited stitch density zones per piece. The GS-CE152's 128-section system means the stepping motor can independently adjust stitch density at 128 points across a single fabric panel � enabling gradual density transitions, shaped fabric geometry, and precise match-knitting between panels that eliminates manual tension adjustment between runs.</p>
                                 </div>
                             </section>
 
@@ -153,7 +191,7 @@ export default function BlogSmartexGSCE152() {
                             <section className="article-section" id="performance">
                                 <h2>Real-World Knitting Performance: Our Honest Numbers</h2>
                                 <p>
-                                    Speed figures on a spec sheet are always optimistic. During our extended evaluation, we ran the GS-CE152 through continuous production shifts across collar knitting, full-panel sweater production, and multi-color jacquard work — measuring actual sustained throughput rather than peak figures under ideal conditions.
+                                    Speed figures on a spec sheet are always optimistic. During our extended evaluation, we ran the GS-CE152 through continuous production shifts across collar knitting, full-panel sweater production, and multi-color jacquard work � measuring actual sustained throughput rather than peak figures under ideal conditions.
                                 </p>
 
                                 <h3>Collar and Rib Trim Production</h3>
@@ -163,7 +201,7 @@ export default function BlogSmartexGSCE152() {
 
                                 <h3>Full-Panel Sweater Knitting</h3>
                                 <p>
-                                    On full-panel sweater production across the 52-inch width in 12G, the 128-section stitch density control proved its value: shaped panels with graduated density from body to ribbing were knitted in a single pass without re-tensioning. The stepping motor system maintained consistent density throughout the density transition zones — eliminating the manual adjustment cycles that consume significant time on conventional machines.
+                                    On full-panel sweater production across the 52-inch width in 12G, the 128-section stitch density control proved its value: shaped panels with graduated density from body to ribbing were knitted in a single pass without re-tensioning. The stepping motor system maintained consistent density throughout the density transition zones � eliminating the manual adjustment cycles that consume significant time on conventional machines.
                                 </p>
 
                                 <h3>Multi-Color Jacquard Patterns</h3>
@@ -182,7 +220,7 @@ export default function BlogSmartexGSCE152() {
                             {/* Section 4 - Features */}
                             <section className="article-section" id="features">
                                 <h2>Four Engineering Details That Set the GS-CE152 Apart</h2>
-                                <p>The GS-CE152's competitive advantage is not just its speed — it is the precision control architecture that makes that speed produce consistent, repeatable fabric quality across every shift.</p>
+                                <p>The GS-CE152's competitive advantage is not just its speed � it is the precision control architecture that makes that speed produce consistent, repeatable fabric quality across every shift.</p>
 
                                 <div className="feature-cards-grid">
                                     <div className="feature-card">
@@ -190,7 +228,7 @@ export default function BlogSmartexGSCE152() {
                                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12" /></svg>
                                         </div>
                                         <h3>Single System, Single Carriage</h3>
-                                        <p>The single system, single carriage setup makes the GS-CE152 simpler and more reliable than multi-system machines for its target application range. It is designed to knit collars and fabric panels efficiently using flat, tuck, transfer, and jacquard stitches — covering the full stitch range required for most knitwear production without the mechanical complexity of dual-carriage systems that increases maintenance demand and failure points. For collar-focused operations especially, this architecture maximises uptime and simplifies operator training.</p>
+                                        <p>The single system, single carriage setup makes the GS-CE152 simpler and more reliable than multi-system machines for its target application range. It is designed to knit collars and fabric panels efficiently using flat, tuck, transfer, and jacquard stitches � covering the full stitch range required for most knitwear production without the mechanical complexity of dual-carriage systems that increases maintenance demand and failure points. For collar-focused operations especially, this architecture maximises uptime and simplifies operator training.</p>
                                     </div>
                                     <div className="feature-card">
                                         <div className="feature-card-icon">
@@ -204,14 +242,14 @@ export default function BlogSmartexGSCE152() {
                                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z" /></svg>
                                         </div>
                                         <h3>Dual-Sided 6-Feeder Yarn Carrier</h3>
-                                        <p>The GS-CE152 is equipped with 2 sets of 6 feeders on both sides of the 3-track rail — providing flexible yarn feed configurations for multi-color or pattern knitting. The dual-sided arrangement ensures yarn tension is managed evenly across the full knitting width, and the 6-feeder capacity per side supports complex multi-yarn jacquard structures without yarn carrier congestion. For operations running striped or color-block knitwear alongside single-color production, the feeder system handles both without mechanical reconfiguration between jobs.</p>
+                                        <p>The GS-CE152 is equipped with 2 sets of 6 feeders on both sides of the 3-track rail � providing flexible yarn feed configurations for multi-color or pattern knitting. The dual-sided arrangement ensures yarn tension is managed evenly across the full knitting width, and the 6-feeder capacity per side supports complex multi-yarn jacquard structures without yarn carrier congestion. For operations running striped or color-block knitwear alongside single-color production, the feeder system handles both without mechanical reconfiguration between jobs.</p>
                                     </div>
                                     <div className="feature-card">
                                         <div className="feature-card-icon">
                                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" /><line x1="12" y1="9" x2="12" y2="13" /><line x1="12" y1="17" x2="12.01" y2="17" /></svg>
                                         </div>
                                         <h3>Automatic Error Detection</h3>
-                                        <p>The GS-CE152 automatically detects yarn breaks, float yarn, rewind errors, needle breakage, and programming faults — stopping the machine and alerting the operator before defective fabric continues into the production run. This error detection capability is critical for maintaining first-pass fabric quality in high-volume production environments where a single undetected yarn break can ruin an entire panel or collar batch before an operator notices. Automatic fault detection minimizes downtime caused by lengthy fabric inspection and rework cycles at the end of a run.</p>
+                                        <p>The GS-CE152 automatically detects yarn breaks, float yarn, rewind errors, needle breakage, and programming faults � stopping the machine and alerting the operator before defective fabric continues into the production run. This error detection capability is critical for maintaining first-pass fabric quality in high-volume production environments where a single undetected yarn break can ruin an entire panel or collar batch before an operator notices. Automatic fault detection minimizes downtime caused by lengthy fabric inspection and rework cycles at the end of a run.</p>
                                     </div>
                                 </div>
                             </section>
@@ -239,7 +277,7 @@ export default function BlogSmartexGSCE152() {
                                         </div>
                                         <div className="app-text">
                                             <strong>Full-Panel Sweater and Knitwear Production</strong>
-                                            <p>Across the 52-inch knitting width, the GS-CE152 handles full garment panel production for sweaters, hoodies, and knitwear tops with shaped density transitions programmed across 128 sections. Manufacturers producing shaped-knit panels benefit directly from the stepping motor density control — eliminating the manual re-tensioning between body and ribbing zones that conventional machines require and reducing the per-panel knitting time for shaped garments.</p>
+                                            <p>Across the 52-inch knitting width, the GS-CE152 handles full garment panel production for sweaters, hoodies, and knitwear tops with shaped density transitions programmed across 128 sections. Manufacturers producing shaped-knit panels benefit directly from the stepping motor density control � eliminating the manual re-tensioning between body and ribbing zones that conventional machines require and reducing the per-panel knitting time for shaped garments.</p>
                                         </div>
                                     </div>
                                     <div className="application-item">
@@ -248,7 +286,7 @@ export default function BlogSmartexGSCE152() {
                                         </div>
                                         <div className="app-text">
                                             <strong>Multi-Color and Jacquard Pattern Knitwear</strong>
-                                            <p>The dual-sided 6-feeder yarn carrier and computer-controlled needle selector support complex jacquard and multi-color knitting structures in a single pass. Fashion knitwear producers running striped sweaters, color-block designs, or logo-integrated jacquard panels will find the GS-CE152's yarn management system handles multi-yarn configurations without carrier congestion or color bleeding — maintaining clean pattern definition across the full 52-inch fabric width.</p>
+                                            <p>The dual-sided 6-feeder yarn carrier and computer-controlled needle selector support complex jacquard and multi-color knitting structures in a single pass. Fashion knitwear producers running striped sweaters, color-block designs, or logo-integrated jacquard panels will find the GS-CE152's yarn management system handles multi-yarn configurations without carrier congestion or color bleeding � maintaining clean pattern definition across the full 52-inch fabric width.</p>
                                         </div>
                                     </div>
                                     <div className="application-item">
@@ -277,7 +315,7 @@ export default function BlogSmartexGSCE152() {
                                             Strengths
                                         </h3>
                                         <ul>
-                                            <li>128-section stitch density control via stepping motor — enabling shaped fabric and graduated density transitions in a single pass</li>
+                                            <li>128-section stitch density control via stepping motor � enabling shaped fabric and graduated density transitions in a single pass</li>
                                             <li>Max knitting speed of 1.4 m/s with industrial-grade synchronous belt drive and AC servo system</li>
                                             <li>Single system, single carriage design maximises mechanical reliability and reduces maintenance complexity</li>
                                             <li>Dual-sided 6-feeder yarn carrier supports multi-color and jacquard knitting without reconfiguration</li>
@@ -295,9 +333,9 @@ export default function BlogSmartexGSCE152() {
                                         </h3>
                                         <ul>
                                             <li>Single system, single carriage configuration means lower throughput than multi-system machines for high-volume plain panel production</li>
-                                            <li>Pattern design requires pre-programming via USB or the LCD interface — complex jacquard designs need preparation time before production can begin</li>
-                                            <li>Gauge selection must be specified at purchase — changing gauge requires needle bed changes, which is a workshop-level maintenance task</li>
-                                            <li>Optimal performance requires proper yarn tensioner setup per yarn count and fiber type — initial calibration investment is needed for each new yarn</li>
+                                            <li>Pattern design requires pre-programming via USB or the LCD interface � complex jacquard designs need preparation time before production can begin</li>
+                                            <li>Gauge selection must be specified at purchase � changing gauge requires needle bed changes, which is a workshop-level maintenance task</li>
+                                            <li>Optimal performance requires proper yarn tensioner setup per yarn count and fiber type � initial calibration investment is needed for each new yarn</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -328,7 +366,7 @@ export default function BlogSmartexGSCE152() {
                         <div className="article-cta-block">
                             <div className="cta-text">
                                 <h2>Ready to see the Smartex GS-CE152 in action?</h2>
-                                <p>We offer live demonstrations at our Quezon City showroom. Bring your yarn and run real knitting jobs on the GS-CE152 before you commit. No pressure — just honest output you can evaluate for yourself.</p>
+                                <p>We offer live demonstrations at our Quezon City showroom. Bring your yarn and run real knitting jobs on the GS-CE152 before you commit. No pressure � just honest output you can evaluate for yourself.</p>
                             </div>
                             <div className="cta-actions">
                                 <Link href="/contact" className="cta-btn-primary">
@@ -351,7 +389,7 @@ export default function BlogSmartexGSCE152() {
                         <div className="sidebar-widget toc-widget">
                             <h3 className="widget-title">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="8" y1="6" x2="21" y2="6" /><line x1="8" y1="12" x2="21" y2="12" /><line x1="8" y1="18" x2="21" y2="18" /><line x1="3" y1="6" x2="3.01" y2="6" /><line x1="3" y1="12" x2="3.01" y2="12" /><line x1="3" y1="18" x2="3.01" y2="18" /></svg>
-                                In This Review
+                                In This Guide
                             </h3>
                             <ol className="toc-list">
                                 <li><a href="#background">Why We Evaluated the GS-CE152</a></li>
@@ -365,9 +403,9 @@ export default function BlogSmartexGSCE152() {
 
                         {/* Product Card */}
                         <div className="sidebar-widget product-widget">
-                            <img src="/embroidery_knitting/Smartex Knitting Machine GSCE-1-52.webp" alt="Smartex GS-CE152 Computerized Flat Knitting Machine" className="product-widget-img" />
+                            <img src="/sublimation_dtf/Smartex Knitting Machine GSCE-1-52.webp" alt="Smartex GS-CE152 Computerized Flat Knitting Machine" className="product-widget-img" />
                             <h4>Smartex GS-CE152</h4>
-                            <p>1.4 m/s · 128-Section Stitch Control · Jacquard · 52" Width</p>
+                            <p>1.4 m/s � 128-Section Stitch Control � Jacquard � 52" Width</p>
                             <Link href="/smartex-knitting-gsce-1-52" className="product-widget-btn">
                                 See Full Details
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m9 18 6-6-6-6" /></svg>

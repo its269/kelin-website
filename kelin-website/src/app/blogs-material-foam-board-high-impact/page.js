@@ -10,16 +10,41 @@ export const metadata = {
     openGraph: {
         title: 'Foam Board & High Impact Sheets: Just Foam Board, Rigid PVC & More',
         description: 'Guide to Just Foam Board, High Impact Sheet Bluish White, and Rigid PVC Clear — specifications, uses, and when to choose each substrate for your signage and print projects.',
-        images: [{ url: '/cat_materials.webp', width: 1200, height: 630, alt: 'Foam Board and High Impact Sheets' }],
+        images: [{ url: '/assets/Materials/Foam Board.webp', width: 1200, height: 630, alt: 'Foam Board and High Impact Sheets' }],
         type: 'article',
     },
     alternates: { canonical: 'https://kelinph.com/blogs-material-foam-board-high-impact' },
 };
 
 export default function BlogFoamBoardHighImpact() {
+    const jsonLd = {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "Article",
+                "headline": "Foam Board & High Impact Sheets Guide: Just Foam Board, High Impact Bluish White & Rigid PVC Clear",
+                "description": "Complete guide to Just Foam Board (5mm 4x8ft), High Impact Sheet Bluish White, and Rigid PVC Clear (0.5mm–1.0mm). Lightweight display boards, durable impact-resistant panels, and flexible rigid PVC for signage and print applications.",
+                "image": "https://kelinph.com/assets/Materials/Foam Board.webp",
+                "author": { "@type": "Organization", "name": "Kelin Graphics System", "url": "https://kelinph.com/about" },
+                "publisher": { "@type": "Organization", "name": "Kelin Graphics System", "logo": { "@type": "ImageObject", "url": "https://kelinph.com/marquee-logo/inks/kelin-logo.png" } },
+                "datePublished": "2026-11-01T08:00:00.000Z",
+                "dateModified": "2026-05-06T08:00:00.000Z",
+                "mainEntityOfPage": "https://kelinph.com/blogs-material-foam-board-high-impact"
+            },
+            {
+                "@type": "FAQPage",
+                "mainEntity": [
+                    { "@type": "Question", "name": "What is Just Foam Board best used for in signage?", "acceptedAnswer": { "@type": "Answer", "text": "Just Foam Board is best suited for temporary indoor displays, presentation boards, and lightweight prop signage. Its polystyrene foam core makes it the lightest substrate in the Kelin range — easy to cut with a utility knife and mount on walls or stands. It is not intended for outdoor use or high-humidity environments." } },
+                    { "@type": "Question", "name": "How does High Impact Sheet Bluish White differ from standard Sintra Board?", "acceptedAnswer": { "@type": "Answer", "text": "High Impact Sheet Bluish White is a solid (non-foam) PVC or ABS-type rigid sheet with greater impact resistance than expanded PVC foam board. It is heavier and harder than Sintra Board, making it the preferred choice for applications where panels may be subject to physical impact, such as wall-mounted menu boards, POP display components, and machine guards." } },
+                    { "@type": "Question", "name": "What applications use Rigid PVC Clear sheet?", "acceptedAnswer": { "@type": "Answer", "text": "Rigid PVC Clear (0.5mm–1.0mm) is used for applications requiring a thin, clear, semi-flexible panel — such as document holders, menu insert covers, product display windows, POP display windows, and protective clear overlays. It is not a structural board but rather a thin clear sheet used to protect printed graphics or create transparent display elements." } }
+                ]
+            }
+        ]
+    };
     return (
         <div className="blog-page-layout material-blog-page">
             <Header />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
             <div className="blog-breadcrumb-bar">
                 <div className="blog-breadcrumb-inner">
                     <Link href="/" className="breadcrumb-link">Home</Link>
@@ -56,10 +81,22 @@ export default function BlogFoamBoardHighImpact() {
                                     </span>
                                 </div>
                             </div>
+                            <div className="callout-box callout-summary">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 11 12 14 22 4" /><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" /></svg>
+                                <div>
+                                    <strong>Quick Summary</strong>
+                                    <ul style={{ margin: '8px 0 0', paddingLeft: '18px', lineHeight: '1.8' }}>
+                                        <li>Three distinct substrates: Foam Board (ultra-light indoor displays), High Impact Bluish White (durable panels), and Rigid PVC Clear (thin transparent overlays)</li>
+                                        <li>Just Foam Board is the lightest substrate in the range — 5mm, 4×8ft, cuts with a utility knife</li>
+                                        <li>High Impact Sheet offers greater physical impact resistance than expanded PVC foam for demanding environments</li>
+                                        <li>Rigid PVC Clear (0.5mm–1.0mm) is used for document holders, POP display windows, and protective print overlays</li>
+                                    </ul>
+                                </div>
+                            </div>
                         </header>
 
                         <figure className="blog-featured-image" itemProp="image">
-                            <img src="/cat_materials.webp" alt="Foam Board and High Impact Sheets" width="840" height="473" loading="eager" />
+                            <img src="/assets/Materials/Foam Board.webp" alt="Foam Board and High Impact Sheets" width="840" height="473" loading="eager" />
                             <figcaption>
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2" /><circle cx="8.5" cy="8.5" r="1.5" /><polyline points="21 15 16 10 5 21" /></svg>
                                 Just Foam Board, High Impact Sheet Bluish White, and Rigid PVC Clear — three distinct substrates for lightweight displays, durable panels, and flexible rigid sheets.
@@ -171,7 +208,7 @@ export default function BlogFoamBoardHighImpact() {
                             </ol>
                         </div>
                         <div className="sidebar-widget product-widget">
-                            <img src="/cat_materials.webp" alt="Foam Board and High Impact Sheets" className="product-widget-img" />
+                            <img src="/assets/Materials/Foam Board.webp" alt="Foam Board and High Impact Sheets" className="product-widget-img" />
                             <h4>Foam Board &amp; High Impact Sheets</h4>
                             <p>Just Foam Board 5mm &middot; High Impact Bluish White &middot; Rigid PVC Clear 0.5–1mm</p>
                             <Link href="/materials" className="product-widget-btn">See Full Details <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m9 18 6-6-6-6" /></svg></Link>

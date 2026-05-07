@@ -17,9 +17,34 @@ export const metadata = {
 };
 
 export default function BlogInkBrilliantDTF() {
+    const jsonLd = {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "Article",
+                "headline": "Brilliant DTF Textile 1L Ink Review: High-Stretch CMYK DTF Ink for Fabric Transfers",
+                "description": "Review of Brilliant DTF Textile 1L — vibrant, high-stretch DTF ink for direct-to-film printing on cotton, polyester, and blended fabrics. CMYK available in 1-liter bottles.",
+                "image": "https://kelinph.com/inks/BRILLIANT DTF INK 1L/Brilliant DTF Ink 1L Cyan (Transparent).webp",
+                "author": { "@type": "Organization", "name": "Kelin Graphics System", "url": "https://kelinph.com/about" },
+                "publisher": { "@type": "Organization", "name": "Kelin Graphics System", "logo": { "@type": "ImageObject", "url": "https://kelinph.com/marquee-logo/inks/kelin-logo.png" } },
+                "datePublished": "2025-10-01T08:00:00.000Z",
+                "dateModified": "2026-05-06T08:00:00.000Z",
+                "mainEntityOfPage": "https://kelinph.com/blogs-ink-brilliant-dtf"
+            },
+            {
+                "@type": "FAQPage",
+                "mainEntity": [
+                    { "@type": "Question", "name": "What fabric types work with Brilliant DTF Textile ink?", "acceptedAnswer": { "@type": "Answer", "text": "Brilliant DTF Textile ink works on cotton, polyester, and poly-cotton blended fabrics — making it more versatile than sublimation ink, which requires polyester or polyester-coated substrates." } },
+                    { "@type": "Question", "name": "How stretchy are DTF transfers printed with Brilliant DTF ink?", "acceptedAnswer": { "@type": "Answer", "text": "Brilliant DTF Textile ink is formulated for high elasticity after heat transfer, allowing prints to stretch with the garment without cracking or peeling — suitable for activewear and fitted apparel." } },
+                    { "@type": "Question", "name": "Does Brilliant DTF ink require a white ink base for dark garments?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — like all DTF inks, a white ink under-layer is printed first to provide opacity, enabling vibrant CMYK colors to show clearly on both light and dark-colored fabrics." } }
+                ]
+            }
+        ]
+    };
     return (
         <div className="blog-page-layout ink-blog-page">
             <Header />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
             <div className="blog-breadcrumb-bar">
                 <div className="blog-breadcrumb-inner">
                     <Link href="/" className="breadcrumb-link">Home</Link>
@@ -41,6 +66,18 @@ export default function BlogInkBrilliantDTF() {
                                 <time className="meta-item" dateTime="2025-10-01" itemProp="datePublished"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2" /><line x1="16" y1="2" x2="16" y2="6" /><line x1="8" y1="2" x2="8" y2="6" /><line x1="3" y1="10" x2="21" y2="10" /></svg>October 2025</time>
                                 <span className="meta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" /></svg>5 min read</span>
                             </div></div>
+                            <div className="callout-box callout-summary">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 11 12 14 22 4" /><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" /></svg>
+                                <div>
+                                    <strong>Quick Summary</strong>
+                                    <ul style={{ margin: '8px 0 0', paddingLeft: '18px', lineHeight: '1.8' }}>
+                                        <li>Vibrant CMYK DTF ink with high elasticity — prints stretch without cracking on fitted garments</li>
+                                        <li>Works on cotton, polyester, and poly-cotton blends in 1-liter bottles</li>
+                                        <li>High wash resistance — maintains color vibrancy through repeated laundering</li>
+                                        <li>Suitable for small to mid-volume custom apparel and garment decoration shops</li>
+                                    </ul>
+                                </div>
+                            </div>
                         </header>
 
                         <figure className="blog-featured-image" itemProp="image">
@@ -110,7 +147,7 @@ export default function BlogInkBrilliantDTF() {
 
                 <aside className="blog-sidebar"><div className="sidebar-sticky">
                     <div className="sidebar-widget toc-widget">
-                        <h3 className="widget-title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="8" y1="6" x2="21" y2="6" /><line x1="8" y1="12" x2="21" y2="12" /><line x1="8" y1="18" x2="21" y2="18" /><line x1="3" y1="6" x2="3.01" y2="6" /><line x1="3" y1="12" x2="3.01" y2="12" /><line x1="3" y1="18" x2="3.01" y2="18" /></svg>In This Article</h3>
+                        <h3 className="widget-title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="8" y1="6" x2="21" y2="6" /><line x1="8" y1="12" x2="21" y2="12" /><line x1="8" y1="18" x2="21" y2="18" /><line x1="3" y1="6" x2="3.01" y2="6" /><line x1="3" y1="12" x2="3.01" y2="12" /><line x1="3" y1="18" x2="3.01" y2="18" /></svg>In This Guide</h3>
                         <ol className="toc-list"><li><a href="#overview">DTF Color Performance</a></li><li><a href="#specs">Specifications</a></li><li><a href="#features">Key Features</a></li><li><a href="#verdict">Verdict</a></li></ol>
                     </div>
                     <div className="sidebar-widget product-widget">

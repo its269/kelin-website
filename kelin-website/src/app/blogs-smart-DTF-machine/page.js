@@ -1,9 +1,9 @@
-﻿import React from 'react';
+import React from 'react';
 import "../styles/blog.css";
 import Header from '../components/Header';
 import Link from 'next/link';
 
-// Updated: Smart DTF Machine â€” RJ-0602 / RJ-0604
+// Updated: Smart DTF Machine — RJ-0602 / RJ-0604
 
 /*
  * ============================================================
@@ -12,19 +12,19 @@ import Link from 'next/link';
  * This file is a Next.js Server Component (no "use client").
  * "export const metadata" is picked up at BUILD TIME by Next.js
  * to pre-render the <head> with unique title, description,
- * Open Graph tags, and canonical URL â€” all without JavaScript
+ * Open Graph tags, and canonical URL — all without JavaScript
  * in the browser, giving search engines clean static HTML.
  * ============================================================
  */
 
 export const metadata = {
-    title: 'Smart DTF Machine Review: 28 mÂ²/h Industrial DTF Printer Supporting Up to 8 Colors for Custom Garment Printing',
-    description: 'An in-depth review of the Smart DTF Machine (RJ-0602 / RJ-0604). We cover the 28 mÂ²/h industrial grade speed, i3200 printhead configurations, 8-color support, Wider Platform, Adjustable Pinch Roller, Improved Capping Station, and Newly Improved Damper â€” and who should invest in this professional Direct-to-Film printer.',
+    title: 'Smart DTF Machine Review: 28 m²/h Industrial DTF Printer Supporting Up to 8 Colors for Custom Garment Printing',
+    description: 'An in-depth review of the Smart DTF Machine (RJ-0602 / RJ-0604). We cover the 28 m²/h industrial grade speed, i3200 printhead configurations, 8-color support, Wider Platform, Adjustable Pinch Roller, Improved Capping Station, and Newly Improved Damper — and who should invest in this professional Direct-to-Film printer.',
     keywords: 'Smart DTF Machine review, Smart DTF printer Philippines, RJ-0602 RJ-0604 DTF printer, i3200 DTF printer, 8 color DTF printer, Direct to Film printer Philippines, 28m2/h DTF printer, custom garment DTF printer, Kelin DTF machine',
     authors: [{ name: 'Kelin Graphics System', url: 'https://kelinph.com/about' }],
     openGraph: {
-        title: 'Smart DTF Machine Review: 28 mÂ²/h Industrial DTF Printer Supporting Up to 8 Colors for Custom Garment Printing',
-        description: 'Real-world analysis of the Smart DTF Machine â€” i3200*2 / i3200*4 printheads, 28 mÂ²/h industrial speed, 8-color CMYK+W support, Wider Platform, Adjustable Pinch Roller, Improved Capping, and Newly Improved Damper for ultra-rich tones and precise color layering on PET film.',
+        title: 'Smart DTF Machine Review: 28 m²/h Industrial DTF Printer Supporting Up to 8 Colors for Custom Garment Printing',
+        description: 'Real-world analysis of the Smart DTF Machine — i3200*2 / i3200*4 printheads, 28 m²/h industrial speed, 8-color CMYK+W support, Wider Platform, Adjustable Pinch Roller, Improved Capping, and Newly Improved Damper for ultra-rich tones and precise color layering on PET film.',
         images: [{ url: '/sublimation_dtf/DTF SMART DTF Machine (1).webp', width: 1200, height: 630, alt: 'Smart DTF Machine RJ-0602 RJ-0604' }],
         type: 'article',
         publishedTime: '2026-04-16T08:00:00.000Z',
@@ -36,9 +36,35 @@ export const metadata = {
 };
 
 export default function BlogSmartDTFMachine() {
+    const jsonLd = {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "Article",
+                "headline": "Smart DTF Machine Review: 28 m\u00b2/h Industrial DTF Printer Supporting Up to 8 Colors for Custom Garment Printing",
+                "description": "An in-depth review of the Smart DTF Machine (RJ-0602 / RJ-0604). We cover the 28 m\u00b2/h industrial grade speed, i3200 printhead configurations, 8-color support, Wider Platform, Adjustable Pinch Roller, Improved Capping Station, and Newly Improved Damper.",
+                "image": "https://kelinph.com/sublimation_dtf/DTF SMART DTF Machine (1).webp",
+                "author": { "@type": "Organization", "name": "Kelin Graphics System", "url": "https://kelinph.com/about" },
+                "publisher": { "@type": "Organization", "name": "Kelin Graphics System", "logo": { "@type": "ImageObject", "url": "https://kelinph.com/marquee-logo/inks/kelin-logo.png" } },
+                "datePublished": "2026-04-16T08:00:00.000Z",
+                "dateModified": "2026-05-06T08:00:00.000Z",
+                "mainEntityOfPage": "https://kelinph.com/blogs-smart-DTF-machine"
+            },
+            {
+                "@type": "FAQPage",
+                "mainEntity": [
+                    { "@type": "Question", "name": "What printhead configurations does the Smart DTF Machine support?", "acceptedAnswer": { "@type": "Answer", "text": "The Smart DTF Machine is available in two configurations: the RJ-0602 with 2\u00d7i3200 printheads and the RJ-0604 with 4\u00d7i3200 printheads. The 4-head RJ-0604 delivers up to 28 m\u00b2/h and is recommended for high-volume print-on-demand and batch production environments." } },
+                    { "@type": "Question", "name": "What colors does the Smart DTF Machine support?", "acceptedAnswer": { "@type": "Answer", "text": "The Smart DTF Machine supports up to 8 colors including CMYK, White, and specialty channels. The expanded color support enables ultra-rich tones, smoother gradients, and precise color layering on PET film, resulting in transfers with significantly wider gamut than standard 4-color DTF printers." } },
+                    { "@type": "Question", "name": "What improvements does the Smart DTF Machine have over previous DTF printers?", "acceptedAnswer": { "@type": "Answer", "text": "The Smart DTF Machine features a Wider Platform for better film handling, an Adjustable Pinch Roller for improved media tension control, an Improved Capping Station that extends printhead life, and a Newly Improved Damper system that reduces ink pressure fluctuations for more consistent dot formation during high-speed printing." } }
+                ]
+            }
+        ]
+    };
+
     return (
         <div className="blog-page-layout">
             <Header />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
             {/* Breadcrumb */}
             <div className="blog-breadcrumb-bar">
@@ -86,13 +112,25 @@ export default function BlogSmartDTFMachine() {
                                     </span>
                                 </div>
                             </div>
+                            <div className="callout-box callout-summary">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 11 12 14 22 4" /><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" /></svg>
+                                <div>
+                                    <strong>Quick Summary</strong>
+                                    <ul style={{ margin: '8px 0 0', paddingLeft: '18px', lineHeight: '1.8' }}>
+                                        <li>Available as RJ-0602 (2�i3200) or RJ-0604 (4�i3200) with up to 28 m�/h</li>
+                                        <li>Up to 8-color CMYK+W support for vibrant prints on dark and light garments</li>
+                                        <li>Wider Platform and Adjustable Pinch Roller improve film handling and tension</li>
+                                        <li>Improved Capping Station and Damper extend printhead life and dot consistency</li>
+                                    </ul>
+                                </div>
+                            </div>
                         </header>
 
                         {/* Featured Image */}
                         <figure className="blog-featured-image" itemProp="image">
                             <img
                                 src="/sublimation_dtf/DTF SMART DTF Machine (1).webp"
-                                alt="Smart DTF Machine RJ-0602 RJ-0604 â€” industrial-grade Direct-to-Film printer with i3200 printheads supporting up to 8 colors at 28 mÂ²/h"
+                                alt="Smart DTF Machine RJ-0602 RJ-0604 — industrial-grade Direct-to-Film printer with i3200 printheads supporting up to 8 colors at 28 m²/h"
                                 width="840"
                                 height="473"
                                 loading="eager"
@@ -364,7 +402,7 @@ export default function BlogSmartDTFMachine() {
                         <div className="sidebar-widget toc-widget">
                             <h3 className="widget-title">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="8" y1="6" x2="21" y2="6" /><line x1="8" y1="12" x2="21" y2="12" /><line x1="8" y1="18" x2="21" y2="18" /><line x1="3" y1="6" x2="3.01" y2="6" /><line x1="3" y1="12" x2="3.01" y2="12" /><line x1="3" y1="18" x2="3.01" y2="18" /></svg>
-                                In This Review
+                                In This Guide
                             </h3>
                             <ol className="toc-list">
                                 <li><a href="#background">Why the Smart DTF Is Built for Garment Production</a></li>

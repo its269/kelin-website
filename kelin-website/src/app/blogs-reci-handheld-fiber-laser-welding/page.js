@@ -34,9 +34,34 @@ export const metadata = {
 };
 
 export default function BlogRECIHandheldFiberLaserWelding() {
+    const jsonLd = {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "Article",
+                "headline": "RECI Air-Cooled Handheld Fiber Laser Welding Machine Review: 10x Faster Than TIG \u2014 R-A80 800W | R-A150 1500W | R-A200 2000W",
+                "description": "An in-depth review of the RECI Handheld Fiber Laser Welding Machine (R-A80 800W | R-A150 1500W | R-A200 2000W). We cover the 10x faster than TIG welding claim, air-cooled system with no external chiller required, optimized airflow with high-efficiency turbofan, ultimate efficiency and precision with integrated wire feeding, silent precision welding with embedded turbofan, compact 37\u201345kg integrated design, and applications in hardware, transportation, advertisement, mechanical, and aluminum alloy industries.",
+                "image": "https://kelinph.com/laser-machines/Reci Handheld Fiber Laser Welding Machine R-A80 800W 1.webp",
+                "author": { "@type": "Organization", "name": "Kelin Graphics System", "url": "https://kelinph.com/about" },
+                "publisher": { "@type": "Organization", "name": "Kelin Graphics System", "logo": { "@type": "ImageObject", "url": "https://kelinph.com/marquee-logo/inks/kelin-logo.png" } },
+                "datePublished": "2026-04-18T08:00:00.000Z",
+                "dateModified": "2026-05-06T08:00:00.000Z",
+                "mainEntityOfPage": "https://kelinph.com/blogs-reci-handheld-fiber-laser-welding"
+            },
+            {
+                "@type": "FAQPage",
+                "mainEntity": [
+                    { "@type": "Question", "name": "How does RECI's handheld fiber laser welder compare to TIG welding speed?", "acceptedAnswer": { "@type": "Answer", "text": "The RECI handheld fiber laser welder is 10x faster than TIG type welding, significantly increasing production throughput without sacrificing weld quality on metals including stainless steel, aluminum, and copper." } },
+                    { "@type": "Question", "name": "Does the RECI fiber laser welder require an external chiller?", "acceptedAnswer": { "@type": "Answer", "text": "No. The RECI R-A80/R-A150/R-A200 series uses an integrated air-cooled system with a high-efficiency turbofan, completely eliminating the need for an external water chiller and reducing installation complexity." } },
+                    { "@type": "Question", "name": "What materials and industries is the RECI handheld laser welder suited for?", "acceptedAnswer": { "@type": "Answer", "text": "It is suited for hardware manufacturing, door and window fabrication, transportation equipment, advertisement signage structures, mechanical assembly, and aluminum alloy welding applications." } }
+                ]
+            }
+        ]
+    };
     return (
         <div className="blog-page-layout">
             <Header />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
             {/* Breadcrumb */}
             <div className="blog-breadcrumb-bar">
@@ -82,6 +107,18 @@ export default function BlogRECIHandheldFiberLaserWelding() {
                                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" /><circle cx="12" cy="12" r="3" /></svg>
                                         5,300 views
                                     </span>
+                                </div>
+                            </div>
+                            <div className="callout-box callout-summary">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 11 12 14 22 4" /><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" /></svg>
+                                <div>
+                                    <strong>Quick Summary</strong>
+                                    <ul style={{ margin: '8px 0 0', paddingLeft: '18px', lineHeight: '1.8' }}>
+                                        <li>10x faster welding efficiency compared to traditional TIG welding</li>
+                                        <li>Air-cooled with high-efficiency turbofan — no external chiller required</li>
+                                        <li>Available in 800W (R-A80), 1500W (R-A150), and 2000W (R-A200) models</li>
+                                        <li>Compact 37–45kg integrated design with built-in wire feeding system</li>
+                                    </ul>
                                 </div>
                             </div>
                         </header>
@@ -356,7 +393,7 @@ export default function BlogRECIHandheldFiberLaserWelding() {
                         <div className="sidebar-widget toc-widget">
                             <h3 className="widget-title">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="8" y1="6" x2="21" y2="6" /><line x1="8" y1="12" x2="21" y2="12" /><line x1="8" y1="18" x2="21" y2="18" /><line x1="3" y1="6" x2="3.01" y2="6" /><line x1="3" y1="12" x2="3.01" y2="12" /><line x1="3" y1="18" x2="3.01" y2="18" /></svg>
-                                In This Review
+                                In This Guide
                             </h3>
                             <ol className="toc-list">
                                 <li><a href="#background">10x TIG Efficiency Advantage</a></li>

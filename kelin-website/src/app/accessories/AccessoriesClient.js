@@ -19,21 +19,27 @@ export default function AccessoriesDisplayPage() {
           desc: 'Portable electric scissors and replacement cutter blades.',
           specs: 'Standard cordless unit; replacement blades sold separately.',
           features: ['Fast and effortless cutting', 'Ergonomic design', 'Easily replaceable blades'],
-          images: ['/dummy-image-square.jpg', '/dummy-image-square.jpg']
+          images: [
+            { src: '/assets/Accessories/Electric Scissor.webp', label: 'Electric Scissors' },
+            { src: '/assets/Accessories/Electric Scissor - Balde.webp', label: 'Replacement Blade' },
+          ]
         },
         {
           name: 'Grid Lines Cutting Mat',
           desc: 'Self-healing cutting mats with grid lines for precise measuring and cutting.',
           specs: 'Available sizes: 60cm x 90cm (2ft x 3ft) and 120cm x 180cm (4ft x 6ft).',
           features: ['Surface protection', 'Measurement grid', 'Self-healing material'],
-          images: ['/dummy-image-square.jpg']
+          images: [{ src: '/assets/Accessories/Cutting Mat.webp', label: 'Grid Lines Cutting Mat' }]
         },
         {
           name: 'Acrylic Letter Making Bender Machine Tool',
           desc: 'Specialized tool for shaping and bending acrylic for channel letters.',
           specs: 'Manual operation tool for acrylic fabrication.',
           features: ['Precise angle bending', 'Durable construction', 'Essential for signage making'],
-          images: ['/dummy-image-square.jpg']
+          images: [
+            { src: '/assets/Accessories/Acrylic bender 1.webp', label: 'Acrylic Bender' },
+            { src: '/assets/Accessories/Acrylic bender 2.webp', label: 'Acrylic Bender (Detail)' },
+          ]
         }
       ]
     },
@@ -45,35 +51,35 @@ export default function AccessoriesDisplayPage() {
           desc: 'Fast-acting, strong cyanoacrylate adhesive.',
           specs: 'Size: 30g bottle.',
           features: ['Quick drying', 'High bond strength', 'Versatile application'],
-          images: ['/dummy-image-square.jpg']
+          images: [{ src: '/assets/Accessories/Arki.webp', label: 'ARKI Cyano Adhesive' }]
         },
         {
           name: 'Double Sided Foam Tape (S333P White)',
           desc: 'High-tack double-sided foam tape for mounting and cushioning.',
           specs: 'Size: 20mm x 10m and 20mm x 25m.',
           features: ['Excellent gap filling', 'Strong adhesion', 'Vibration dampening'],
-          images: ['/dummy-image-square.jpg']
+          images: [{ src: '/assets/Accessories/Foam tape.webp', label: 'Double Sided Foam Tape (S333P)' }]
         },
         {
           name: 'Double Sided PET Tape (S338 Red)',
           desc: 'Heavy-duty double-sided PET tape for secure bonding.',
           specs: 'Size: 20mm width. Available in 5m, 10m, and 25m lengths.',
           features: ['High temperature resistance', 'Strong tensile strength', 'Clear bond line'],
-          images: ['/dummy-image-square.jpg']
+          images: [{ src: '/assets/Accessories/Red Banner Tape.webp', label: 'Double Sided PET Tape (S338)' }]
         },
         {
           name: 'Double Sided Banner Tape (S335)',
           desc: 'Specialized tape designed for hemming and seaming banners.',
           specs: 'Size: 20mm x 25m.',
           features: ['Weather resistant', 'Hemming alternative', 'High initial tack'],
-          images: ['/dummy-image-square.jpg']
+          images: [{ src: '/assets/Accessories/Yellow tape.webp', label: 'Double Sided Banner Tape (S335)' }]
         },
         {
           name: 'Reflective Tape',
           desc: 'High-visibility safety and hazard warning tape.',
           specs: 'Size: 50mm x 10m. Variants: S501 (Black/Yellow) and S502 (Red/White).',
           features: ['High retro-reflectivity', 'Self-adhesive', 'Durable outdoor use'],
-          images: ['/dummy-image-square.jpg']
+          images: [{ src: '/assets/Accessories/Reflective tape.webp', label: 'Reflective Tape' }]
         }
       ]
     },
@@ -85,14 +91,14 @@ export default function AccessoriesDisplayPage() {
           desc: 'Banner finishing hardware and punching machines.',
           specs: 'Eyelet #2 pack (1880 pcs, 10mm x 19mm x 5.7mm). Machines: Press Puncher, Semi-automatic Puncher, Manual Puncher.',
           features: ['Rust resistant eyelets', 'Efficient banner finishing', 'Multiple machine options'],
-          images: ['/dummy-image-square.jpg']
+          images: [{ src: '/dummy-image-square.jpg', label: 'Eyelet #2 & Punchers' }]
         },
         {
           name: 'Application Squeegees',
           desc: 'Tools for applying vinyl, stickers, and films smoothly.',
           specs: 'Variants: 10x7cm No Logo (Velvet/Standard), 10x14cm White, and Cotton Squeegee with handle (14x9cm).',
           features: ['Smooth application', 'Bubble and wrinkle removal', 'Scratch-free velvet options'],
-          images: ['/dummy-image-square.jpg']
+          images: [{ src: '/dummy-image-square.jpg', label: 'Application Squeegees' }]
         }
       ]
     },
@@ -104,21 +110,21 @@ export default function AccessoriesDisplayPage() {
           desc: 'Specialized cleaning swabs for delicate printer components.',
           specs: 'Lint-free, solvent-compatible swabs.',
           features: ['Safe for printheads', 'High absorbency', 'Leaves no residue'],
-          images: ['/dummy-image-square.jpg']
+          images: [{ src: '/dummy-image-square.jpg', label: 'Swab (Print Head Use)' }]
         },
         {
           name: 'Wiper Polyester',
           desc: 'Cleanroom-grade polyester wipers for general maintenance.',
           specs: 'Quantity: 150 pcs per pack.',
           features: ['Lint-free material', 'Durable and tear-resistant', 'Chemical resistant'],
-          images: ['/dummy-image-square.jpg']
+          images: [{ src: '/dummy-image-square.jpg', label: 'Wiper Polyester' }]
         },
         {
           name: 'Glass Wiper Rubber Strip',
           desc: 'Handheld wiper for cleaning large glass or flat surfaces.',
           specs: 'Yellow Handle, Size: 11.8cm x 14.5cm.',
           features: ['Streak-free cleaning', 'Comfortable grip handle', 'Durable rubber edge'],
-          images: ['/dummy-image-square.jpg']
+          images: [{ src: '/dummy-image-square.jpg', label: 'Glass Wiper Rubber Strip' }]
         }
       ]
     }
@@ -172,7 +178,7 @@ export default function AccessoriesDisplayPage() {
               {category.products.map((product, prodIndex) => (
                 <div key={prodIndex} className="accessories-card">
                   <div className="accessories-image-wrapper" onClick={() => openLightbox(product)}>
-                    <Image src={product.images[0]} alt={product.name} width={180} height={135} className="accessories-image" />
+                    <Image src={product.images[0].src} alt={product.name} fill sizes="(max-width: 768px) 100vw, 350px" className="accessories-image" priority={catIndex === 0 && prodIndex === 0} />
                     <div className="accessories-image-overlay"><span>Click to view gallery</span></div>
                   </div>
                   <div className="accessories-info">
@@ -222,11 +228,16 @@ export default function AccessoriesDisplayPage() {
               </div>
 
               <div className="accessories-slideshow-container">
-                <img
-                  src="/dummy-image-square.jpg"
-                  alt={selectedProduct.name}
-                  className="accessories-slideshow-image"
-                />
+                <div className="accessories-slideshow-image-wrapper">
+                  <img
+                    src={selectedProduct.images[currentImageIndex].src}
+                    alt={selectedProduct.images[currentImageIndex].label}
+                    className="accessories-slideshow-image"
+                  />
+                  <div className="accessories-slideshow-label">
+                    {selectedProduct.images[currentImageIndex].label}
+                  </div>
+                </div>
 
                 {selectedProduct.images.length > 1 && (
                   <>

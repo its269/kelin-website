@@ -11,7 +11,7 @@ export const metadata = {
     openGraph: {
         title: 'Printhead Cleaning Swabs Guide: Lint-Free Maintenance Swabs for Inkjet & Wide-Format Printers',
         description: 'Discover how lint-free printhead cleaning swabs help maintain inkjet and wide-format printer performance by safely cleaning printheads and capping stations.',
-        images: [{ url: '/dummy-image-square.jpg', width: 1200, height: 630, alt: 'Lint-Free Printhead Cleaning Swabs for Inkjet Printers' }],
+        images: [{ url: '/cat_accessories.webp', width: 1200, height: 630, alt: 'Lint-Free Printhead Cleaning Swabs for Inkjet Printers' }],
         type: 'article',
         publishedTime: '2026-04-25T08:00:00.000Z',
         authors: ['Kelin Graphics System'],
@@ -20,9 +20,34 @@ export const metadata = {
 };
 
 export default function BlogAccPrintheadSwab() {
+    const jsonLd = {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "Article",
+                "headline": "Printhead Cleaning Swabs Guide: Lint-Free Maintenance Swabs for Inkjet & Wide-Format Printers",
+                "description": "Discover how lint-free printhead cleaning swabs help maintain inkjet and wide-format printer performance by safely cleaning printheads, encoder strips, and capping stations without residue.",
+                "image": "https://kelinph.com/cat_accessories.webp",
+                "author": { "@type": "Organization", "name": "Kelin Graphics System", "url": "https://kelinph.com/about" },
+                "publisher": { "@type": "Organization", "name": "Kelin Graphics System", "logo": { "@type": "ImageObject", "url": "https://kelinph.com/marquee-logo/inks/kelin-logo.png" } },
+                "datePublished": "2026-04-25T08:00:00.000Z",
+                "dateModified": "2026-05-06T08:00:00.000Z",
+                "mainEntityOfPage": "https://kelinph.com/blogs-acc-printhead-swab"
+            },
+            {
+                "@type": "FAQPage",
+                "mainEntity": [
+                    { "@type": "Question", "name": "Why should lint-free swabs be used instead of cotton swabs for printhead cleaning?", "acceptedAnswer": { "@type": "Answer", "text": "Cotton swabs shed fibers that can clog inkjet nozzles and contaminate capping stations. Lint-free printhead swabs are made from non-woven polyester that leaves no residue, ensuring safe cleaning of sensitive printer components." } },
+                    { "@type": "Question", "name": "Can printhead cleaning swabs be used with solvent-based cleaning solutions?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Lint-free printhead cleaning swabs are solvent-compatible and can be used with cleaning solutions for eco-solvent, UV, sublimation, and DTF printers without degrading or releasing contaminants." } },
+                    { "@type": "Question", "name": "What parts of a wide-format printer can these swabs clean?", "acceptedAnswer": { "@type": "Answer", "text": "These swabs are suitable for cleaning the printhead nozzle plate, encoder strip, capping station, wiper blade, and other precision areas around the printhead carriage where larger wipes cannot reach." } }
+                ]
+            }
+        ]
+    };
     return (
-        <div className="blog-page-layout">
+        <div className="blog-page-layout acc-blog-page">
             <Header />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
             <div className="blog-breadcrumb-bar">
                 <div className="blog-breadcrumb-inner">
                     <Link href="/" className="breadcrumb-link">Home</Link>
@@ -54,9 +79,21 @@ export default function BlogAccPrintheadSwab() {
                                     </span>
                                 </div>
                             </div>
+                            <div className="callout-box callout-summary">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 11 12 14 22 4" /><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" /></svg>
+                                <div>
+                                    <strong>Quick Summary</strong>
+                                    <ul style={{ margin: '8px 0 0', paddingLeft: '18px', lineHeight: '1.8' }}>
+                                        <li>Lint-free non-woven construction — no fiber residue on printhead nozzles or capping stations</li>
+                                        <li>Solvent-compatible — safe for use with eco-solvent, UV, sublimation, and DTF cleaning solutions</li>
+                                        <li>High absorbency picks up ink in fewer strokes, reducing contamination risk</li>
+                                        <li>Compact profile reaches tight spaces around printhead carriage and capping station</li>
+                                    </ul>
+                                </div>
+                            </div>
                         </header>
                         <figure className="blog-featured-image" itemProp="image">
-                            <img src="/dummy-image-square.jpg" alt="Lint-Free Printhead Cleaning Swabs for Wide-Format Inkjet Printers" width="840" height="473" loading="eager" />
+                            <img src="/cat_accessories.webp" alt="Lint-Free Printhead Cleaning Swabs for Wide-Format Inkjet Printers" width="840" height="473" loading="eager" />
                             <figcaption>Lint-free printhead cleaning swabs — solvent-compatible, high-absorbency maintenance tools for all wide-format and inkjet printer types.</figcaption>
                         </figure>
                         <div className="blog-body" itemProp="articleBody">
@@ -142,7 +179,7 @@ export default function BlogAccPrintheadSwab() {
                 <aside className="blog-sidebar">
                     <div className="sidebar-sticky">
                         <div className="sidebar-widget toc-widget">
-                            <h3 className="widget-title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="8" y1="6" x2="21" y2="6" /><line x1="8" y1="12" x2="21" y2="12" /><line x1="8" y1="18" x2="21" y2="18" /><line x1="3" y1="6" x2="3.01" y2="6" /><line x1="3" y1="12" x2="3.01" y2="12" /><line x1="3" y1="18" x2="3.01" y2="18" /></svg>In This Article</h3>
+                            <h3 className="widget-title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="8" y1="6" x2="21" y2="6" /><line x1="8" y1="12" x2="21" y2="12" /><line x1="8" y1="18" x2="21" y2="18" /><line x1="3" y1="6" x2="3.01" y2="6" /><line x1="3" y1="12" x2="3.01" y2="12" /><line x1="3" y1="18" x2="3.01" y2="18" /></svg>In This Guide</h3>
                             <ol className="toc-list">
                                 <li><a href="#overview">Overview</a></li>
                                 <li><a href="#specs">Specifications</a></li>

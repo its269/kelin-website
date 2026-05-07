@@ -10,16 +10,41 @@ export const metadata = {
     openGraph: {
         title: 'Just Aluminum Composite Panel (ACP): Weatherproof Outdoor Signage Guide',
         description: 'Everything you need to know about Just ACP — colors, specifications, and applications for outdoor fascia signs, building cladding, and durable directional signage.',
-        images: [{ url: '/cat_materials.webp', width: 1200, height: 630, alt: 'Just Aluminum Composite Panel' }],
+        images: [{ url: '/assets/Materials/ACP.webp', width: 1200, height: 630, alt: 'Just Aluminum Composite Panel' }],
         type: 'article',
     },
     alternates: { canonical: 'https://kelinph.com/blogs-material-just-aluminum-composite' },
 };
 
 export default function BlogJustAluminumComposite() {
+    const jsonLd = {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "Article",
+                "headline": "Just Aluminum Composite Panel (ACP) Guide: Weatherproof Panels for Outdoor Signage & Cladding",
+                "description": "Complete guide to Just Aluminum Composite Panel — 3mm thickness, 4x8ft sheets, in Glossy White, Champagne, Navy Blue, Mouse Gray, Coffee, and Brush Silver. Weatherproof, UV stable, and ideal for outdoor fascia signs, building cladding, and directional signage.",
+                "image": "https://kelinph.com/assets/Materials/ACP.webp",
+                "author": { "@type": "Organization", "name": "Kelin Graphics System", "url": "https://kelinph.com/about" },
+                "publisher": { "@type": "Organization", "name": "Kelin Graphics System", "logo": { "@type": "ImageObject", "url": "https://kelinph.com/marquee-logo/inks/kelin-logo.png" } },
+                "datePublished": "2026-11-01T08:00:00.000Z",
+                "dateModified": "2026-05-06T08:00:00.000Z",
+                "mainEntityOfPage": "https://kelinph.com/blogs-material-just-aluminum-composite"
+            },
+            {
+                "@type": "FAQPage",
+                "mainEntity": [
+                    { "@type": "Question", "name": "How long does Just Aluminum Composite Panel last outdoors in the Philippines?", "acceptedAnswer": { "@type": "Answer", "text": "Just ACP is designed for long-term outdoor use and can last 10 years or more when properly installed. The aluminum face sheets are UV-resistant and weatherproof, making ACP one of the most durable signage substrates available for outdoor fascia signs, building identification panels, and directional signage exposed to Philippine tropical weather." } },
+                    { "@type": "Question", "name": "Can Just ACP panels be cut and fabricated on-site?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Just ACP can be cut using a circular saw with a fine-tooth aluminum blade, a table saw, or a CNC router. The PE core allows the panel to be easily routed for folding/bending into box signs. Standard woodworking and metalworking tools are compatible with ACP fabrication." } },
+                    { "@type": "Question", "name": "What colors are available in Just Aluminum Composite Panel?", "acceptedAnswer": { "@type": "Answer", "text": "Just ACP is available in six finish colors: Glossy White, Champagne, Navy Blue, Mouse Gray, Coffee, and Brush Silver. All are 3mm thick in standard 4×8ft (1220×2440mm) sheets. The Brush Silver finish has a brushed metallic appearance suitable for premium architectural and retail signage applications." } }
+                ]
+            }
+        ]
+    };
     return (
         <div className="blog-page-layout material-blog-page">
             <Header />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
             <div className="blog-breadcrumb-bar">
                 <div className="blog-breadcrumb-inner">
                     <Link href="/" className="breadcrumb-link">Home</Link>
@@ -56,10 +81,22 @@ export default function BlogJustAluminumComposite() {
                                     </span>
                                 </div>
                             </div>
+                            <div className="callout-box callout-summary">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 11 12 14 22 4" /><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" /></svg>
+                                <div>
+                                    <strong>Quick Summary</strong>
+                                    <ul style={{ margin: '8px 0 0', paddingLeft: '18px', lineHeight: '1.8' }}>
+                                        <li>Two aluminum face sheets bonded to a PE core — rigid, lightweight, and weatherproof for long-term outdoor use</li>
+                                        <li>Available in 6 colors: Glossy White, Champagne, Navy Blue, Mouse Gray, Coffee, and Brush Silver — all 3mm, 4×8ft</li>
+                                        <li>10+ year outdoor lifespan; UV-resistant face coating withstands Philippine tropical weather</li>
+                                        <li>Fabricated with standard woodworking/metalworking tools; PE core allows routing and bending for box sign construction</li>
+                                    </ul>
+                                </div>
+                            </div>
                         </header>
 
                         <figure className="blog-featured-image" itemProp="image">
-                            <img src="/cat_materials.webp" alt="Just Aluminum Composite Panel" width="840" height="473" loading="eager" />
+                            <img src="/assets/Materials/ACP.webp" alt="Just Aluminum Composite Panel" width="840" height="473" loading="eager" />
                             <figcaption>
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2" /><circle cx="8.5" cy="8.5" r="1.5" /><polyline points="21 15 16 10 5 21" /></svg>
                                 Just ACP — available in Glossy White, Champagne, Navy Blue, Mouse Gray, Coffee, and Brush Silver &middot; 3mm &middot; 4&times;8ft sheets.
@@ -163,7 +200,7 @@ export default function BlogJustAluminumComposite() {
                             </ol>
                         </div>
                         <div className="sidebar-widget product-widget">
-                            <img src="/cat_materials.webp" alt="Just Aluminum Composite Panel" className="product-widget-img" />
+                            <img src="/assets/Materials/ACP.webp" alt="Just Aluminum Composite Panel" className="product-widget-img" />
                             <h4>Just Aluminum Composite Panel</h4>
                             <p>6 colors &middot; 3mm &middot; 4&times;8ft &middot; Weatherproof</p>
                             <Link href="/materials" className="product-widget-btn">See Full Details <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m9 18 6-6-6-6" /></svg></Link>

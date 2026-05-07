@@ -1,5 +1,6 @@
 import Header from '../components/Header';
 import './about.css';
+import MilestoneSlider from './MilestoneSlider';
 
 export const metadata = {
     title: 'About Us - Kelin Graphics System | Our Story & Values',
@@ -69,7 +70,7 @@ export default function AboutUs() {
                                 <p className="vm-desc">
                                     To be an enduring and trusted business partner, providing competitive, reliable and cost efficient products and services, guided by our high and uncompromising principles.
                                 </p>
-                                <img src="/about-vm-bg-pattern.png" alt="" aria-hidden="true" className="vm-bg-pattern" />
+                                <img src="/Hexagon Pattern BG.png" alt="" aria-hidden="true" className="vm-bg-pattern" />
                             </div>
                             {/* Mission Card */}
                             <div className="vm-box">
@@ -85,7 +86,7 @@ export default function AboutUs() {
                                 <p className="vm-desc" style={{ marginTop: '12px' }}>
                                     We commit to this through empowerment of our people, and continuous improvement of our technology and processes to meet the ever changing demands and needs of the times.
                                 </p>
-                                <img src="/about-vm-bg-pattern.png" alt="" aria-hidden="true" className="vm-bg-pattern" />
+                                <img src="/Hexagon Pattern BG.png" alt="" aria-hidden="true" className="vm-bg-pattern" />
                             </div>
                         </div>
                     </section>
@@ -202,6 +203,9 @@ export default function AboutUs() {
                             </div>
                         </section>
                     </div>
+
+                    {/* Milestone Section */}
+                    <MilestoneSlider />
 
                 </div>
             </main>

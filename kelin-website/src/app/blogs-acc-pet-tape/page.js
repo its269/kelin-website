@@ -11,7 +11,7 @@ export const metadata = {
     openGraph: {
         title: 'Double Sided PET Tape S338 Red Guide: Heavy-Duty High-Temperature Bonding for Industrial Applications',
         description: 'Learn how Double Sided PET Tape S338 Red withstands high temperatures while delivering strong, reliable bonding for industrial signage and print applications.',
-        images: [{ url: '/dummy-image-square.jpg', width: 1200, height: 630, alt: 'Double Sided PET Tape S338 Red for Industrial Bonding' }],
+        images: [{ url: '/assets/Accessories/Yellow tape.webp', width: 1200, height: 630, alt: 'Double Sided PET Tape S338 Red for Industrial Bonding' }],
         type: 'article',
         publishedTime: '2026-04-25T08:00:00.000Z',
         authors: ['Kelin Graphics System'],
@@ -20,9 +20,34 @@ export const metadata = {
 };
 
 export default function BlogAccPetTape() {
+    const jsonLd = {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "Article",
+                "headline": "Double Sided PET Tape S338 Red Guide: Heavy-Duty High-Temperature Bonding for Industrial Applications",
+                "description": "Learn how Double Sided PET Tape S338 Red withstands high temperatures while delivering strong, reliable bonding for industrial signage, print, and assembly applications.",
+                "image": "https://kelinph.com/assets/Accessories/Yellow tape.webp",
+                "author": { "@type": "Organization", "name": "Kelin Graphics System", "url": "https://kelinph.com/about" },
+                "publisher": { "@type": "Organization", "name": "Kelin Graphics System", "logo": { "@type": "ImageObject", "url": "https://kelinph.com/marquee-logo/inks/kelin-logo.png" } },
+                "datePublished": "2026-04-25T08:00:00.000Z",
+                "dateModified": "2026-05-06T08:00:00.000Z",
+                "mainEntityOfPage": "https://kelinph.com/blogs-acc-pet-tape"
+            },
+            {
+                "@type": "FAQPage",
+                "mainEntity": [
+                    { "@type": "Question", "name": "What makes Double Sided PET Tape S338 Red different from standard foam tape?", "acceptedAnswer": { "@type": "Answer", "text": "The S338 uses a thin PET (polyethylene terephthalate) film carrier instead of foam, providing a negligible bond line and significantly higher temperature resistance. It is ideal for applications where foam tape would be too thick or would fail under heat exposure." } },
+                    { "@type": "Question", "name": "What temperature range can the S338 Red PET tape withstand?", "acceptedAnswer": { "@type": "Answer", "text": "The S338 is rated for high-temperature industrial environments, making it suitable for LED signage cabinets, heat press platens, laminator components, and outdoor signage exposed to direct sun in tropical climates." } },
+                    { "@type": "Question", "name": "What roll lengths are available for the S338 tape?", "acceptedAnswer": { "@type": "Answer", "text": "The S338 is available in 5m, 10m, and 25m roll lengths at 20mm width, giving shops the flexibility to choose the right quantity for their production volume." } }
+                ]
+            }
+        ]
+    };
     return (
-        <div className="blog-page-layout">
+        <div className="blog-page-layout acc-blog-page">
             <Header />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
             <div className="blog-breadcrumb-bar">
                 <div className="blog-breadcrumb-inner">
                     <Link href="/" className="breadcrumb-link">Home</Link>
@@ -54,9 +79,21 @@ export default function BlogAccPetTape() {
                                     </span>
                                 </div>
                             </div>
+                            <div className="callout-box callout-summary">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 11 12 14 22 4" /><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" /></svg>
+                                <div>
+                                    <strong>Quick Summary</strong>
+                                    <ul style={{ margin: '8px 0 0', paddingLeft: '18px', lineHeight: '1.8' }}>
+                                        <li>High-temperature resistant PET film carrier — outperforms standard foam tape in heat environments</li>
+                                        <li>Thin 20mm profile provides a negligible bond line for precision applications</li>
+                                        <li>Available in 5m, 10m, and 25m rolls for flexible stock management</li>
+                                        <li>Characteristic red release liner for easy identification in production environments</li>
+                                    </ul>
+                                </div>
+                            </div>
                         </header>
                         <figure className="blog-featured-image" itemProp="image">
-                            <img src="/dummy-image-square.jpg" alt="Double Sided PET Tape S338 Red for Industrial and Signage Bonding" width="840" height="473" loading="eager" />
+                            <img src="/assets/Accessories/Yellow tape.webp" alt="Double Sided PET Tape S338 Red for Industrial and Signage Bonding" width="840" height="473" loading="eager" />
                             <figcaption>Double Sided PET Tape S338 Red — high-temperature industrial bonding tape available in 5m, 10m, and 25m rolls.</figcaption>
                         </figure>
                         <div className="blog-body" itemProp="articleBody">
@@ -143,7 +180,7 @@ export default function BlogAccPetTape() {
                 <aside className="blog-sidebar">
                     <div className="sidebar-sticky">
                         <div className="sidebar-widget toc-widget">
-                            <h3 className="widget-title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="8" y1="6" x2="21" y2="6" /><line x1="8" y1="12" x2="21" y2="12" /><line x1="8" y1="18" x2="21" y2="18" /><line x1="3" y1="6" x2="3.01" y2="6" /><line x1="3" y1="12" x2="3.01" y2="12" /><line x1="3" y1="18" x2="3.01" y2="18" /></svg>In This Article</h3>
+                            <h3 className="widget-title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="8" y1="6" x2="21" y2="6" /><line x1="8" y1="12" x2="21" y2="12" /><line x1="8" y1="18" x2="21" y2="18" /><line x1="3" y1="6" x2="3.01" y2="6" /><line x1="3" y1="12" x2="3.01" y2="12" /><line x1="3" y1="18" x2="3.01" y2="18" /></svg>In This Guide</h3>
                             <ol className="toc-list">
                                 <li><a href="#overview">Overview</a></li>
                                 <li><a href="#specs">Specifications</a></li>

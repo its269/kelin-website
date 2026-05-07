@@ -11,7 +11,7 @@ export const metadata = {
     openGraph: {
         title: 'Application Squeegees Guide: Vinyl & Film Application Tools for Bubble-Free Installation',
         description: 'Learn how velvet and standard application squeegees help sign installers apply vinyl, stickers, and window films smoothly and bubble-free.',
-        images: [{ url: '/dummy-image-square.jpg', width: 1200, height: 630, alt: 'Application Squeegees for Vinyl and Film Installation' }],
+        images: [{ url: '/cat_accessories.webp', width: 1200, height: 630, alt: 'Application Squeegees for Vinyl and Film Installation' }],
         type: 'article',
         publishedTime: '2026-04-25T08:00:00.000Z',
         authors: ['Kelin Graphics System'],
@@ -20,9 +20,34 @@ export const metadata = {
 };
 
 export default function BlogAccSqueegees() {
+    const jsonLd = {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "Article",
+                "headline": "Application Squeegees Guide: Vinyl & Film Application Tools for Bubble-Free Installation",
+                "description": "Learn how velvet and standard application squeegees help sign installers apply vinyl, stickers, and window films smoothly and bubble-free for professional results.",
+                "image": "https://kelinph.com/cat_accessories.webp",
+                "author": { "@type": "Organization", "name": "Kelin Graphics System", "url": "https://kelinph.com/about" },
+                "publisher": { "@type": "Organization", "name": "Kelin Graphics System", "logo": { "@type": "ImageObject", "url": "https://kelinph.com/marquee-logo/inks/kelin-logo.png" } },
+                "datePublished": "2026-04-25T08:00:00.000Z",
+                "dateModified": "2026-05-06T08:00:00.000Z",
+                "mainEntityOfPage": "https://kelinph.com/blogs-acc-squeegees"
+            },
+            {
+                "@type": "FAQPage",
+                "mainEntity": [
+                    { "@type": "Question", "name": "What is the difference between a velvet squeegee and a standard squeegee?", "acceptedAnswer": { "@type": "Answer", "text": "A velvet squeegee has a soft felt-covered edge that protects delicate surfaces and pre-masked films from scratching during installation, while a standard squeegee uses a firm rubber or plastic edge for general vinyl and sticker applications." } },
+                    { "@type": "Question", "name": "Can application squeegees be used for window tinting?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Both velvet and standard squeegees are suitable for window tinting and window film application. The velvet variant is especially recommended for tinted films where the surface must remain scratch-free." } },
+                    { "@type": "Question", "name": "How do I choose the right squeegee hardness for my project?", "acceptedAnswer": { "@type": "Answer", "text": "Choose a softer velvet squeegee for delicate or pre-masked materials to avoid scratching, and a firm standard squeegee for general vinyl and sticker applications where more pressure is needed to activate the adhesive." } }
+                ]
+            }
+        ]
+    };
     return (
-        <div className="blog-page-layout">
+        <div className="blog-page-layout acc-blog-page">
             <Header />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
             <div className="blog-breadcrumb-bar">
                 <div className="blog-breadcrumb-inner">
                     <Link href="/" className="breadcrumb-link">Home</Link>
@@ -54,9 +79,21 @@ export default function BlogAccSqueegees() {
                                     </span>
                                 </div>
                             </div>
+                            <div className="callout-box callout-summary">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 11 12 14 22 4" /><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" /></svg>
+                                <div>
+                                    <strong>Quick Summary</strong>
+                                    <ul style={{ margin: '8px 0 0', paddingLeft: '18px', lineHeight: '1.8' }}>
+                                        <li>Available in two variants: velvet (soft felt edge) and standard (firm rubber/plastic edge) for different media types</li>
+                                        <li>Designed for bubble-free vinyl, sticker, and window film installation</li>
+                                        <li>Ergonomic one-handed design for professional sign installers</li>
+                                        <li>Velvet variant protects delicate surfaces from scratching during application</li>
+                                    </ul>
+                                </div>
+                            </div>
                         </header>
                         <figure className="blog-featured-image" itemProp="image">
-                            <img src="/dummy-image-square.jpg" alt="Application Squeegees for Vinyl and Film Installation" width="840" height="473" loading="eager" />
+                            <img src="/cat_accessories.webp" alt="Application Squeegees for Vinyl and Film Installation" width="840" height="473" loading="eager" />
                             <figcaption>Velvet and standard application squeegees — essential tools for professional bubble-free vinyl, sticker, and film installations.</figcaption>
                         </figure>
                         <div className="blog-body" itemProp="articleBody">
@@ -142,7 +179,7 @@ export default function BlogAccSqueegees() {
                 <aside className="blog-sidebar">
                     <div className="sidebar-sticky">
                         <div className="sidebar-widget toc-widget">
-                            <h3 className="widget-title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="8" y1="6" x2="21" y2="6" /><line x1="8" y1="12" x2="21" y2="12" /><line x1="8" y1="18" x2="21" y2="18" /><line x1="3" y1="6" x2="3.01" y2="6" /><line x1="3" y1="12" x2="3.01" y2="12" /><line x1="3" y1="18" x2="3.01" y2="18" /></svg>In This Article</h3>
+                            <h3 className="widget-title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="8" y1="6" x2="21" y2="6" /><line x1="8" y1="12" x2="21" y2="12" /><line x1="8" y1="18" x2="21" y2="18" /><line x1="3" y1="6" x2="3.01" y2="6" /><line x1="3" y1="12" x2="3.01" y2="12" /><line x1="3" y1="18" x2="3.01" y2="18" /></svg>In This Guide</h3>
                             <ol className="toc-list">
                                 <li><a href="#overview">Overview</a></li>
                                 <li><a href="#specs">Specifications</a></li>

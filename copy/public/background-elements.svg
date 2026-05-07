@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 24.3.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 1440 1440" style="enable-background:new 0 0 1440 1440;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#BCBEC0;}
+	.st1{fill:#E6E7E8;}
+	.st2{fill:#A7A9AC;}
+	.st3{fill:url(#SVGID_1_);}
+	.st4{fill:#D1D3D4;}
+	.st5{fill:#F1F2F2;}
+	.st6{fill:url(#SVGID_2_);}
+</style>
+<polygon class="st0" points="1438.25,536.83 1439.92,772.46 567.48,0 804.94,0 "/>
+<polygon class="st1" points="1440,98.42 1440,374.42 1013.67,0 1323.96,0 "/>
+<polygon class="st2" points="1438.25,357.58 1440,604.6 788.34,0 1013.67,0 "/>
+<polygon class="st1" points="1440,523.34 1440,763.73 693.52,114.98 561.22,0 822.61,0 "/>
+<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="667.0162" y1="232.1986" x2="753.7202" y2="-63.4041">
+	<stop  offset="0.4784" style="stop-color:#E6E7E8"/>
+	<stop  offset="0.5791" style="stop-color:#DFE0E1"/>
+	<stop  offset="0.7376" style="stop-color:#D4D5D6"/>
+	<stop  offset="0.9332" style="stop-color:#BFC1C3"/>
+	<stop  offset="1" style="stop-color:#B8BABC"/>
+</linearGradient>
+<polygon class="st3" points="869.28,135.52 711.9,130.95 561.22,0 705.67,0 "/>
+<polygon class="st4" points="1440,358.61 1440,523.34 915.89,78.79 823,0 1006.53,0 "/>
+<polygon class="st1" points="1440,0 1440,98.42 1323.96,0 "/>
+<polygon class="st5" points="1440,291.22 1440,448.17 1287.92,319.18 1195.03,240.39 1378.56,240.39 "/>
+<linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="924.728" y1="219.4028" x2="1006.5951" y2="-59.7097">
+	<stop  offset="0.4784" style="stop-color:#D1D3D4"/>
+	<stop  offset="0.5748" style="stop-color:#CACCCE"/>
+	<stop  offset="0.7266" style="stop-color:#B8B9BC"/>
+	<stop  offset="0.9138" style="stop-color:#9A9C9F"/>
+	<stop  offset="1" style="stop-color:#8C8E90"/>
+</linearGradient>
+<polygon class="st6" points="1118.41,130.64 971.15,124.99 821.44,0 960.69,0 "/>
+<polygon class="st4" points="1440,0 1440,98.42 1323.96,0 "/>
+</svg>

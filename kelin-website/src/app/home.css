@@ -379,6 +379,7 @@
     border-radius: 80px;
     position: relative;
     overflow: hidden;
+    contain: layout style;
 }
 
 .features-grid {
@@ -396,7 +397,6 @@
     text-align: left;
     border-radius: 20px;
     background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
     box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
     transition: box-shadow 0.3s, transform 0.3s;
     border: 1.5px solid rgba(255, 255, 255, 0.2);
@@ -410,6 +410,7 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    contain: layout style;
 }
 
 .feature-card::before {
@@ -419,7 +420,7 @@
     left: 0;
     right: 0;
     height: 5px;
-    background: linear-gradient(90deg, #f0f0f0, #ffffff, #e0e0e0);
+    /* background: linear-gradient(90deg, #f0f0f0, #ffffff, #e0e0e0); */
     border-radius: 0 0 8px 8px;
     opacity: 0.7;
     transform: scaleX(0);
@@ -429,6 +430,8 @@
 .feature-card:hover {
     box-shadow: 0 8px 32px rgba(255, 255, 255, 0.4);
     transform: translateY(-4px) scale(1.025);
+    will-change: transform;
+    backdrop-filter: blur(10px);
 }
 
 .feature-card:hover::before {

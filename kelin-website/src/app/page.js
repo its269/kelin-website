@@ -72,6 +72,10 @@ const jsonLd = {
 export default function Page() {
     return (
         <>
+            <link rel="preload" href="/luxor-background-machine.png" as="image" />
+            <link rel="preload" href="/Luxor-sf60-4.webp" as="image" type="image/webp" />
+            <link rel="preload" href="/Luxor-UV.webp" as="image" type="image/webp" />
+            <link rel="preload" href="/Luxor-sf30-3.webp" as="image" type="image/webp" />
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

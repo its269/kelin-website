@@ -2,6 +2,7 @@
 "use client";
 import React, { useState } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import "./blogs.css";
 import Header from '../components/Header';
 
@@ -25,16 +26,16 @@ export default function BlogsPage() {
 
     const blogPosts = [
         // Cutting & Shaping Tools
-        { id: 1, title: "Cordless Electric Scissors & Blades", category: "Cutting & Shaping Tools", excerpt: "Portable electric scissors and replacement cutter blades for fast and effortless cutting with ergonomic design.", date: "April 2026", image: '/dummy-image-square.jpg' },
-        { id: 2, title: "Grid Lines Cutting Mat", category: "Cutting & Shaping Tools", excerpt: "Self-healing cutting mats with grid lines for precise measuring and cutting. Available in 2ft x 3ft and 4ft x 6ft.", date: "April 2026", image: '/dummy-image-square.jpg' },
-        { id: 3, title: "Acrylic Letter Making Bender Machine Tool", category: "Cutting & Shaping Tools", excerpt: "Specialized manual tool for shaping and bending acrylic for channel letters and signage fabrication.", date: "March 2026", image: '/dummy-image-square.jpg' },
+        { id: 1, title: "Cordless Electric Scissors & Blades", category: "Cutting & Shaping Tools", excerpt: "Portable electric scissors and replacement cutter blades for fast and effortless cutting with ergonomic design.", date: "April 2026", image: '/assets/Accessories/Electric Scissor.webp' },
+        { id: 2, title: "Grid Lines Cutting Mat", category: "Cutting & Shaping Tools", excerpt: "Self-healing cutting mats with grid lines for precise measuring and cutting. Available in 2ft x 3ft and 4ft x 6ft.", date: "April 2026", image: '/assets/Accessories/Cutting Mat.webp' },
+        { id: 3, title: "Acrylic Letter Making Bender Machine Tool", category: "Cutting & Shaping Tools", excerpt: "Specialized manual tool for shaping and bending acrylic for channel letters and signage fabrication.", date: "March 2026", image: '/assets/Accessories/Acrylic bender 1.webp' },
 
         // Tapes & Adhesives
-        { id: 4, title: "ARKI Cyano Adhesive", category: "Tapes & Adhesives", excerpt: "Fast-acting cyanoacrylate adhesive in a 30g bottle. Quick drying with high bond strength for versatile applications.", date: "March 2026", image: '/dummy-image-square.jpg' },
-        { id: 5, title: "Double Sided Foam Tape (S333P White)", category: "Tapes & Adhesives", excerpt: "High-tack double-sided foam tape for mounting and cushioning. Available in 20mm x 10m and 20mm x 25m.", date: "March 2026", image: '/dummy-image-square.jpg' },
-        { id: 6, title: "Double Sided PET Tape (S338 Red)", category: "Tapes & Adhesives", excerpt: "Heavy-duty double-sided PET tape for secure bonding with high temperature resistance. Available in 5m, 10m, and 25m.", date: "February 2026", image: '/dummy-image-square.jpg' },
-        { id: 7, title: "Double Sided Banner Tape (S335)", category: "Tapes & Adhesives", excerpt: "Specialized tape for hemming and seaming banners. Weather resistant with high initial tack. Size: 20mm x 25m.", date: "February 2026", image: '/dummy-image-square.jpg' },
-        { id: 8, title: "Reflective Tape", category: "Tapes & Adhesives", excerpt: "High-visibility safety and hazard warning tape. Available in Black/Yellow (S501) and Red/White (S502), 50mm x 10m.", date: "February 2026", image: '/dummy-image-square.jpg' },
+        { id: 4, title: "ARKI Cyano Adhesive", category: "Tapes & Adhesives", excerpt: "Fast-acting cyanoacrylate adhesive in a 30g bottle. Quick drying with high bond strength for versatile applications.", date: "March 2026", image: '/assets/Accessories/Arki.webp' },
+        { id: 5, title: "Double Sided Foam Tape (S333P White)", category: "Tapes & Adhesives", excerpt: "High-tack double-sided foam tape for mounting and cushioning. Available in 20mm x 10m and 20mm x 25m.", date: "March 2026", image: '/assets/Accessories/Foam tape.webp' },
+        { id: 6, title: "Double Sided PET Tape (S338 Red)", category: "Tapes & Adhesives", excerpt: "Heavy-duty double-sided PET tape for secure bonding with high temperature resistance. Available in 5m, 10m, and 25m.", date: "February 2026", image: '/assets/Accessories/Red Banner Tape.webp' },
+        { id: 7, title: "Double Sided Banner Tape (S335)", category: "Tapes & Adhesives", excerpt: "Specialized tape for hemming and seaming banners. Weather resistant with high initial tack. Size: 20mm x 25m.", date: "February 2026", image: '/assets/Accessories/Yellow tape.webp' },
+        { id: 8, title: "Reflective Tape", category: "Tapes & Adhesives", excerpt: "High-visibility safety and hazard warning tape. Available in Black/Yellow (S501) and Red/White (S502), 50mm x 10m.", date: "February 2026", image: '/assets/Accessories/Reflective tape.webp' },
 
         // Finishing & Application Hardware
         { id: 9, title: "Eyelet #2 & Punchers", category: "Finishing & Application Hardware", excerpt: "Banner finishing hardware and punching machines. Eyelet pack: 1880 pcs (10mm x 19mm). Available as press, semi-auto, and manual punchers.", date: "January 2026", image: '/dummy-image-square.jpg' },
@@ -50,19 +51,19 @@ export default function BlogsPage() {
     const suggestedPosts = [
         {
             id: 's1',
-            title: "Machine Guides & Operational Tips",
-            category: "Machines",
-            excerpt: "Browse technical guides and operational insights for all Kelin printing machines, cutters, laser systems, and more.",
-            image: "/machines.png",
-            link: "/blogs"
-        },
-        {
-            id: 's2',
             title: "Printable Media & Substrates Guide",
             category: "Materials",
             excerpt: "Explore guides on vinyl stickers, tarpaulins, sublimation papers, and specialty films for your printing projects.",
             image: "/materials.png",
             link: "/blogs-1-materials"
+        },
+        {
+            id: 's2',
+            title: "Accessories & Maintenance Kits",
+            category: "Accessories",
+            excerpt: "Find the right cleaning kits, spare parts, and accessories to keep your machines running at peak performance.",
+            image: "/accessories.png",
+            link: "/blogs-2-accessories"
         },
         {
             id: 's3',
@@ -79,10 +80,19 @@ export default function BlogsPage() {
             excerpt: "Explore roll-up banners, pop-up booths, feather banners, and more to make your brand stand out at any event.",
             image: "/display.png",
             link: "/blogs-4-promotional-display"
+        },
+        {
+            id: 's5',
+            title: "Machine Guides & Operational Tips",
+            category: "Machines",
+            excerpt: "Browse technical guides and operational insights for all Kelin printing machines, cutters, laser systems, and more.",
+            image: "/machines.png",
+            link: "/blogs"
         }
     ];
 
     const categories = ["All", ...new Set(blogPosts.map(post => post.category))];
+    const pathname = usePathname();
     const [activeCategory, setActiveCategory] = useState("All");
 
     const filteredPosts = activeCategory === "All"
@@ -109,7 +119,7 @@ export default function BlogsPage() {
                 </div>
                 <div className="suggested-cards">
                     {suggestedPosts.map((post, i) => (
-                        <Link key={post.id} href={post.link} className={`suggested-card suggested-card--${i}`}>
+                        <Link key={post.id} href={post.link} className={`suggested-card${post.link === pathname ? ' suggested-card--active' : ''}`}>
                             <div className="suggested-card-img-wrap">
                                 <img src={post.image || '/dummy-image-square.jpg'} alt={post.title} className="suggested-card-img" loading="lazy" />
                                 <div className="suggested-card-overlay" />

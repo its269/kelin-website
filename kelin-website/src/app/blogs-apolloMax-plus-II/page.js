@@ -1,4 +1,4 @@
-ï»¿import React from 'react';
+import React from 'react';
 import "../styles/blog.css";
 import Header from '../components/Header';
 import Link from 'next/link';
@@ -22,9 +22,34 @@ export const metadata = {
 };
 
 export default function BlogPZGHighSpeedPrinter() {
+    const jsonLd = {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "Article",
+                "headline": "PZG High-Speed Inkjet Series Review: Grand Format Printing at 230 m²/h",
+                "description": "An in-depth review of the PZG High-Speed Printing Inkjet Series (PZG3204-KV / PZG3208-KV). Real-world print speeds, Konica Minolta KM512iLNB printhead performance, advanced features, and who should invest in this grand format inkjet machine.",
+                "image": "https://kelinph.com/ApolloMax Plus II PZG3208-KV.webp",
+                "author": { "@type": "Organization", "name": "Kelin Graphics System", "url": "https://kelinph.com/about" },
+                "publisher": { "@type": "Organization", "name": "Kelin Graphics System", "logo": { "@type": "ImageObject", "url": "https://kelinph.com/marquee-logo/inks/kelin-logo.png" } },
+                "datePublished": "2026-05-05T08:00:00.000Z",
+                "dateModified": "2026-05-06T08:00:00.000Z",
+                "mainEntityOfPage": "https://kelinph.com/blogs-apolloMax-plus-II"
+            },
+            {
+                "@type": "FAQPage",
+                "mainEntity": [
+                    { "@type": "Question", "name": "What is the print speed of the PZG3208-KV grand format inkjet printer?", "acceptedAnswer": { "@type": "Answer", "text": "The PZG3208-KV achieves up to 230 m²/h in production mode using 8 Konica Minolta KM512iLNB printheads, making it suitable for high-volume outdoor billboard, banner, and vehicle wrap production." } },
+                    { "@type": "Question", "name": "What printhead does the PZG High-Speed Inkjet series use?", "acceptedAnswer": { "@type": "Answer", "text": "Both the PZG3204-KV and PZG3208-KV use Konica Minolta KM512iLNB industrial printheads, known for their long service life, consistent drop formation, and reliable performance in high-speed grand format production environments." } },
+                    { "@type": "Question", "name": "What applications is the PZG High-Speed Inkjet series best suited for?", "acceptedAnswer": { "@type": "Answer", "text": "The PZG series is ideal for outdoor billboards, vehicle advertising wraps, backlit displays, trade show graphics, and high-volume banner production where speed and consistent output quality are the top priorities." } }
+                ]
+            }
+        ]
+    };
     return (
         <div className="blog-page-layout">
             <Header />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
             {/* Breadcrumb */}
             <div className="blog-breadcrumb-bar">
@@ -72,13 +97,25 @@ export default function BlogPZGHighSpeedPrinter() {
                                     </span>
                                 </div>
                             </div>
+                            <div className="callout-box callout-summary">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 11 12 14 22 4" /><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" /></svg>
+                                <div>
+                                    <strong>Quick Summary</strong>
+                                    <ul style={{ margin: '8px 0 0', paddingLeft: '18px', lineHeight: '1.8' }}>
+                                        <li>PZG3208-KV reaches up to 230 m²/h with 8 Konica Minolta KM512iLNB industrial printheads</li>
+                                        <li>PZG3204-KV offers a more affordable entry point with 4 heads for mid-volume grand format production</li>
+                                        <li>Pantone action heaters and infrared drying system ensure output is job-ready throughout production shifts</li>
+                                        <li>Engineered for outdoor billboards, vehicle wraps, backlit displays, and high-volume banner runs</li>
+                                    </ul>
+                                </div>
+                            </div>
                         </header>
 
                         {/* Featured Image */}
                         <figure className="blog-featured-image" itemProp="image">
                             <img
                                 src="/ApolloMax Plus II PZG3208-KV.webp"
-                                alt="PZG3208-KV grand format high-speed inkjet printer with Konica Minolta KM512iLNB printhead running billboard production at 230 mÂ²/h"
+                                alt="PZG3208-KV grand format high-speed inkjet printer with Konica Minolta KM512iLNB printhead running billboard production at 230 m²/h"
                                 width="840"
                                 height="473"
                                 loading="eager"
@@ -380,7 +417,7 @@ export default function BlogPZGHighSpeedPrinter() {
                         <div className="sidebar-widget toc-widget">
                             <h3 className="widget-title">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="8" y1="6" x2="21" y2="6" /><line x1="8" y1="12" x2="21" y2="12" /><line x1="8" y1="18" x2="21" y2="18" /><line x1="3" y1="6" x2="3.01" y2="6" /><line x1="3" y1="12" x2="3.01" y2="12" /><line x1="3" y1="18" x2="3.01" y2="18" /></svg>
-                                In This Review
+                                In This Guide
                             </h3>
                             <ol className="toc-list">
                                 <li><a href="#background">Why We Tested the PZG</a></li>

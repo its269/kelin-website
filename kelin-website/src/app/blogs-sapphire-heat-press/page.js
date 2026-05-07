@@ -1,11 +1,11 @@
-﻿import "../styles/blog.css";
+import "../styles/blog.css";
 import Header from '../components/Header';
 import Link from 'next/link';
 
 export const metadata = {
-    title: "Subli-Mate Manual Heatpress 80cm×100cm – Drawer-Type, Effortless Loading & Safer Operation | Kelin",
+    title: "Subli-Mate Manual Heatpress 80cm�100cm � Drawer-Type, Effortless Loading & Safer Operation | Kelin",
     description:
-        "Discover the Subli-Mate Manual Heatpress 80cm×100cm — a drawer-type heat press with integrated roller, burn prevention design, and angled movement for Full Jersey Sublimation, DTF, and more.",
+        "Discover the Subli-Mate Manual Heatpress 80cm�100cm � a drawer-type heat press with integrated roller, burn prevention design, and angled movement for Full Jersey Sublimation, DTF, and more.",
     keywords: [
         "Subli-Mate heatpress",
         "manual heat press 80x100",
@@ -19,9 +19,9 @@ export const metadata = {
         canonical: "https://kelinph.com/blogs-sapphire-heat-press",
     },
     openGraph: {
-        title: "Subli-Mate Manual Heatpress 80cm×100cm – Drawer-Type, Effortless Loading & Safer Operation",
+        title: "Subli-Mate Manual Heatpress 80cm�100cm � Drawer-Type, Effortless Loading & Safer Operation",
         description:
-            "The Subli-Mate Manual Heatpress features a unique drawer-like design, integrated roller for angled movement, and burn-prevention loading — ideal for jerseys, tote bags, T-shirts, and face masks.",
+            "The Subli-Mate Manual Heatpress features a unique drawer-like design, integrated roller for angled movement, and burn-prevention loading � ideal for jerseys, tote bags, T-shirts, and face masks.",
         url: "https://kelinph.com/blogs-sapphire-heat-press",
         siteName: "Kelin",
         images: [
@@ -29,7 +29,7 @@ export const metadata = {
                 url: "https://kelinph.com/heatpress/Subli-Mate%20Manual%20Heat%20Press%2080cm%20x%20100cm%20(1).webp",
                 width: 1200,
                 height: 630,
-                alt: "Subli-Mate Manual Heatpress 80cm×100cm",
+                alt: "Subli-Mate Manual Heatpress 80cm�100cm",
             },
         ],
         type: "article",
@@ -37,9 +37,34 @@ export const metadata = {
 };
 
 export default function BlogSapphireHeatpress() {
+    const jsonLd = {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "Article",
+                "headline": "Subli-Mate Manual Heatpress 80cm\u00d7100cm \u2013 Drawer-Type, Effortless Loading & Safer Operation | Kelin",
+                "description": "Discover the Subli-Mate Manual Heatpress 80cm\u00d7100cm \u2014 a drawer-type heat press with integrated roller, burn prevention design, and angled movement for Full Jersey Sublimation, DTF, and more.",
+                "image": "https://kelinph.com/heatpress/Subli-Mate%20Manual%20Heat%20Press%2080cm%20x%20100cm%20(1).webp",
+                "author": { "@type": "Organization", "name": "Kelin Graphics System", "url": "https://kelinph.com/about" },
+                "publisher": { "@type": "Organization", "name": "Kelin Graphics System", "logo": { "@type": "ImageObject", "url": "https://kelinph.com/marquee-logo/inks/kelin-logo.png" } },
+                "datePublished": "2026-04-01T08:00:00.000Z",
+                "dateModified": "2026-05-06T08:00:00.000Z",
+                "mainEntityOfPage": "https://kelinph.com/blogs-sapphire-heat-press"
+            },
+            {
+                "@type": "FAQPage",
+                "mainEntity": [
+                    { "@type": "Question", "name": "What is the platen size of the Subli-Mate Manual Heatpress?", "acceptedAnswer": { "@type": "Answer", "text": "The Subli-Mate offers an 80\u00d7100 cm platen, making it one of the largest manual heat press platforms available for full-garment sublimation, DTF, and heat transfer workflows." } },
+                    { "@type": "Question", "name": "How does the drawer-type design of the Subli-Mate prevent burns?", "acceptedAnswer": { "@type": "Answer", "text": "The drawer-like platform slides the material away from the heated upper platen during loading and unloading, keeping operators\u2019 hands clear of the hot surface at all times and greatly reducing the risk of accidental burns." } },
+                    { "@type": "Question", "name": "What power does the Subli-Mate Manual Heatpress consume?", "acceptedAnswer": { "@type": "Answer", "text": "The Subli-Mate operates on 220V / 7.1kW with a maximum temperature of 250\u00b0C, delivering powerful and consistent heat across its large 80\u00d7100 cm platen." } }
+                ]
+            }
+        ]
+    };
     return (
         <div className="blog-page-layout">
             <Header />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
             {/* Breadcrumb */}
             <div className="blog-breadcrumb-bar">
@@ -48,7 +73,7 @@ export default function BlogSapphireHeatpress() {
                     <svg className="breadcrumb-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m9 18 6-6-6-6" /></svg>
                     <Link href="/blogs" className="breadcrumb-link">Blog</Link>
                     <svg className="breadcrumb-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m9 18 6-6-6-6" /></svg>
-                    <span className="breadcrumb-current">Subli-Mate Manual Heatpress 80cm×100cm</span>
+                    <span className="breadcrumb-current">Subli-Mate Manual Heatpress 80cm�100cm</span>
                 </div>
             </div>
 
@@ -60,7 +85,7 @@ export default function BlogSapphireHeatpress() {
                         <header className="blog-article-header">
                             <span className="article-category-tag">Heat Press</span>
                             <h1 className="blog-article-title">
-                                Subli-Mate Manual Heatpress 80cm×100cm — Drawer-Type: Effortless Loading, Safer Operation
+                                Subli-Mate Manual Heatpress 80cm�100cm � Drawer-Type: Effortless Loading, Safer Operation
                             </h1>
                             <p className="blog-article-subtitle">
                                 A unique drawer-like platform, integrated roller for angled positioning, and a burn-prevention design make the Subli-Mate the safest and most ergonomic large-format manual heat press for sublimation and DTF workflows.
@@ -72,52 +97,64 @@ export default function BlogSapphireHeatpress() {
                                     <span className="meta-item">5 min read</span>
                                 </div>
                             </div>
+                            <div className="callout-box callout-summary">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 11 12 14 22 4" /><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" /></svg>
+                                <div>
+                                    <strong>Quick Summary</strong>
+                                    <ul style={{ margin: '8px 0 0', paddingLeft: '18px', lineHeight: '1.8' }}>
+                                        <li>Extra-large 80�100 cm platen for full jerseys, hoodies, and tote bags</li>
+                                        <li>Drawer-type design prevents accidental burns during material loading</li>
+                                        <li>Integrated roller enables angled, multidirectional platform positioning</li>
+                                        <li>Supports sublimation, DTF, and other heat transfer applications up to 250�C</li>
+                                    </ul>
+                                </div>
+                            </div>
                         </header>
 
                         {/* Featured Image */}
                         <figure className="blog-featured-image">
                             <img
-                                src="/heatpress/Subli-Mate Manual Heat Press 80cm x 100cm (1).webp"
-                                alt="Subli-Mate Manual Heatpress 80cm×100cm"
+                                src="/heatpress/Sapphire Heatpress (2).webp"
+                                alt="Subli-Mate Manual Heatpress 80cm�100cm"
                                 width={900}
                                 height={500}
                                 style={{ width: "100%", height: "auto", borderRadius: "12px" }}
                             />
-                            <figcaption>Subli-Mate Manual Heatpress — 80cm×100cm drawer-type platform with integrated roller</figcaption>
+                            <figcaption>Subli-Mate Manual Heatpress � 80cm�100cm drawer-type platform with integrated roller</figcaption>
                         </figure>
 
                         {/* Body */}
                         <div className="blog-body">
 
-                            {/* Section 1 — Overview */}
+                            {/* Section 1 � Overview */}
                             <section className="article-section" id="overview">
                                 <h2>Overview</h2>
                                 <p>
-                                    The <strong>Subli-Mate® Manual Heatpress 80cm×100cm</strong> is a specialized heat press engineered for ease of use and operator safety. Its innovative <strong>drawer-like design</strong> simplifies material placement while preventing accidental burns — a critical advantage in high-volume production environments where operators are pressing garments repeatedly throughout the day.
+                                    The <strong>Subli-Mate� Manual Heatpress 80cm�100cm</strong> is a specialized heat press engineered for ease of use and operator safety. Its innovative <strong>drawer-like design</strong> simplifies material placement while preventing accidental burns � a critical advantage in high-volume production environments where operators are pressing garments repeatedly throughout the day.
                                 </p>
                                 <p>
-                                    Running on <strong>220V / 7.1kW</strong> with a maximum temperature of <strong>250°C</strong>, the Subli-Mate delivers powerful, consistent heat across an expansive 80×100 cm platen. The integrated roller further enhances the machine by enabling precise multidirectional movement and angular positioning, offering operational flexibility to suit various workspace configurations and application needs.
+                                    Running on <strong>220V / 7.1kW</strong> with a maximum temperature of <strong>250�C</strong>, the Subli-Mate delivers powerful, consistent heat across an expansive 80�100 cm platen. The integrated roller further enhances the machine by enabling precise multidirectional movement and angular positioning, offering operational flexibility to suit various workspace configurations and application needs.
                                 </p>
                                 <div className="callout-box callout-info">
-                                    <strong>Key Highlight:</strong> The drawer-type platform lets operators load and unload materials away from the heated upper platen — greatly minimizing the risk of accidental burns during production.
+                                    <strong>Key Highlight:</strong> The drawer-type platform lets operators load and unload materials away from the heated upper platen � greatly minimizing the risk of accidental burns during production.
                                 </div>
                             </section>
 
                             <hr className="section-divider" />
 
-                            {/* Section 2 — Specs */}
+                            {/* Section 2 � Specs */}
                             <section className="article-section" id="specifications">
                                 <h2>Technical Specifications</h2>
                                 <div className="specs-table-wrapper">
                                     <table className="specs-table">
                                         <tbody>
                                             <tr><th>Machine Model</th><td>Manual Heatpress</td></tr>
-                                            <tr><th>Specifications</th><td>80cm × 100cm</td></tr>
+                                            <tr><th>Specifications</th><td>80cm � 100cm</td></tr>
                                             <tr><th>Power</th><td>7.1 kW</td></tr>
-                                            <tr><th>Max Temperature</th><td>0 – 250°C</td></tr>
+                                            <tr><th>Max Temperature</th><td>0 � 250�C</td></tr>
                                             <tr><th>Electricity</th><td>3.1 AMP</td></tr>
                                             <tr><th>Voltage</th><td>220V</td></tr>
-                                            <tr><th>Package Size</th><td>120cm × 100cm × 120cm</td></tr>
+                                            <tr><th>Package Size</th><td>120cm � 100cm � 120cm</td></tr>
                                             <tr><th>G.W / N.W</th><td>180 KG</td></tr>
                                         </tbody>
                                     </table>
@@ -126,7 +163,7 @@ export default function BlogSapphireHeatpress() {
 
                             <hr className="section-divider" />
 
-                            {/* Section 3 — Key Features */}
+                            {/* Section 3 � Key Features */}
                             <section className="article-section" id="features">
                                 <h2>Key Features</h2>
                                 <div className="feature-cards-grid">
@@ -171,11 +208,11 @@ export default function BlogSapphireHeatpress() {
 
                             <hr className="section-divider" />
 
-                            {/* Section 4 — Applications */}
+                            {/* Section 4 � Applications */}
                             <section className="article-section" id="applications">
                                 <h2>Applications</h2>
                                 <p>
-                                    The Subli-Mate's expansive 80×100 cm platen and precision controls make it suitable for a wide range of heat transfer applications:
+                                    The Subli-Mate's expansive 80�100 cm platen and precision controls make it suitable for a wide range of heat transfer applications:
                                 </p>
                                 <div className="feature-cards-grid">
                                     <div className="feature-card">
@@ -183,7 +220,7 @@ export default function BlogSapphireHeatpress() {
                                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M20.38 3.46L16 2a4 4 0 0 1-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.57a1 1 0 0 0 .99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.57a2 2 0 0 0-1.34-2.23z" /></svg>
                                         </div>
                                         <h3>Full Jersey Sublimation</h3>
-                                        <p>Press full-size sports jerseys in a single operation with even heat coverage across the entire garment surface — no repositioning needed.</p>
+                                        <p>Press full-size sports jerseys in a single operation with even heat coverage across the entire garment surface � no repositioning needed.</p>
                                     </div>
                                     <div className="feature-card">
                                         <div className="feature-card-icon">
@@ -211,7 +248,7 @@ export default function BlogSapphireHeatpress() {
 
                             <hr className="section-divider" />
 
-                            {/* Section 5 — Pros & Cons */}
+                            {/* Section 5 � Pros & Cons */}
                             <section className="article-section" id="pros-cons">
                                 <h2>Pros &amp; Considerations</h2>
                                 <div className="pros-cons-grid">
@@ -221,12 +258,12 @@ export default function BlogSapphireHeatpress() {
                                             Pros
                                         </h3>
                                         <ul>
-                                            <li>Large 80×100 cm platen for full-size garments</li>
+                                            <li>Large 80�100 cm platen for full-size garments</li>
                                             <li>Drawer-type design prevents accidental burns</li>
                                             <li>Integrated roller for angled &amp; multidirectional movement</li>
-                                            <li>Precise temperature control up to 250°C</li>
+                                            <li>Precise temperature control up to 250�C</li>
                                             <li>Supports sublimation, DTF, and heat transfer</li>
-                                            <li>Ergonomic loading — no reaching over heated platen</li>
+                                            <li>Ergonomic loading � no reaching over heated platen</li>
                                         </ul>
                                     </div>
                                     <div className="cons-box">
@@ -235,7 +272,7 @@ export default function BlogSapphireHeatpress() {
                                             Considerations
                                         </h3>
                                         <ul>
-                                            <li>Manual operation — not suited for fully automated lines</li>
+                                            <li>Manual operation � not suited for fully automated lines</li>
                                             <li>Requires 220V dedicated power outlet</li>
                                             <li>At 180 KG, requires adequate floor space &amp; support</li>
                                         </ul>
@@ -245,14 +282,14 @@ export default function BlogSapphireHeatpress() {
 
                             <hr className="section-divider" />
 
-                            {/* Section 6 — Conclusion */}
+                            {/* Section 6 � Conclusion */}
                             <section className="article-section" id="conclusion">
                                 <h2>Conclusion</h2>
                                 <p>
-                                    The <strong>Subli-Mate® Manual Heatpress 80cm×100cm</strong> redefines what a large-format manual heat press should be. Its drawer-type platform eliminates the most common safety hazard in heat press operation — accidental contact with the heated upper platen — while its integrated roller gives operators the flexibility to orient and position the machine exactly as needed for their workspace.
+                                    The <strong>Subli-Mate� Manual Heatpress 80cm�100cm</strong> redefines what a large-format manual heat press should be. Its drawer-type platform eliminates the most common safety hazard in heat press operation � accidental contact with the heated upper platen � while its integrated roller gives operators the flexibility to orient and position the machine exactly as needed for their workspace.
                                 </p>
                                 <p>
-                                    Whether you're pressing full jerseys for sports teams, applying DTF transfers to tote bags and T-shirts, or sublimating face masks — the Subli-Mate handles it all safely and efficiently with 7.1kW of consistent heating power.
+                                    Whether you're pressing full jerseys for sports teams, applying DTF transfers to tote bags and T-shirts, or sublimating face masks � the Subli-Mate handles it all safely and efficiently with 7.1kW of consistent heating power.
                                 </p>
                                 <div className="callout-box callout-tip">
                                     <strong>Pro Tip:</strong> Use a Teflon sheet over your transfers when pressing to protect both the heating pad and the transfer film, ensuring cleaner releases and longer pad life.
@@ -272,7 +309,7 @@ export default function BlogSapphireHeatpress() {
                                         Facebook
                                     </a>
                                     <a
-                                        href="https://twitter.com/intent/tweet?url=https://kelinph.com/blogs-sapphire-heat-press&text=Subli-Mate Manual Heatpress 80x100cm – Drawer-Type Effortless Loading"
+                                        href="https://twitter.com/intent/tweet?url=https://kelinph.com/blogs-sapphire-heat-press&text=Subli-Mate Manual Heatpress 80x100cm � Drawer-Type Effortless Loading"
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         className="share-btn share-twitter"
@@ -311,26 +348,26 @@ export default function BlogSapphireHeatpress() {
 
                         {/* Table of Contents */}
                         <div className="sidebar-widget toc-widget">
-                            <h3 className="widget-title">Table of Contents</h3>
-                            <ul className="toc-list">
+                            <h3 className="widget-title">In This Guide</h3>
+                            <ol className="toc-list">
                                 <li><a href="#overview">Overview</a></li>
                                 <li><a href="#specifications">Technical Specifications</a></li>
                                 <li><a href="#features">Key Features</a></li>
                                 <li><a href="#applications">Applications</a></li>
                                 <li><a href="#pros-cons">Pros &amp; Considerations</a></li>
                                 <li><a href="#conclusion">Conclusion</a></li>
-                            </ul>
+                            </ol>
                         </div>
 
                         {/* Product Widget */}
                         <div className="sidebar-widget product-widget">
                             <img
                                 src="/heatpress/Subli-Mate Manual Heat Press 80cm x 100cm (1).webp"
-                                alt="Subli-Mate Manual Heatpress 80cm×100cm"
+                                alt="Subli-Mate Manual Heatpress 80cm�100cm"
                                 className="product-widget-img"
                             />
                             <h4>Subli-Mate Manual Heatpress</h4>
-                            <p>80cm×100cm · 7.1kW · 220V · Drawer-Type Platform</p>
+                            <p>80cm�100cm � 7.1kW � 220V � Drawer-Type Platform</p>
                             <Link href="/heatpress" className="product-widget-btn">View Product</Link>
                         </div>
 
@@ -347,7 +384,7 @@ export default function BlogSapphireHeatpress() {
                                     <div>
                                         <span className="related-article-category">Heat Press</span>
                                         <Link href="/blogs-dual-pneumatic-sublimation" className="related-article-title">
-                                            Dual Pneumatic Heatpress Machine 80cm×100cm
+                                            Dual Pneumatic Heatpress Machine 80cm�100cm
                                         </Link>
                                     </div>
                                 </li>

@@ -20,10 +20,34 @@ export const metadata = {
 };
 
 export default function BlogInkEcoM15() {
+    const jsonLd = {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "Article",
+                "headline": "Eco M15 1L Eco-Solvent Ink Review: Low-Odor CMYK Ink for Wide-Format Outdoor Printing",
+                "description": "A detailed look at the Eco M15 1L eco-solvent ink — covering color gamut, odor levels, printhead compatibility, outdoor durability, and who should use it for their wide-format printing business.",
+                "image": "https://kelinph.com/inks/ECO M15/M15 Cyan (Transparent).webp",
+                "author": { "@type": "Organization", "name": "Kelin Graphics System", "url": "https://kelinph.com/about" },
+                "publisher": { "@type": "Organization", "name": "Kelin Graphics System", "logo": { "@type": "ImageObject", "url": "https://kelinph.com/marquee-logo/inks/kelin-logo.png" } },
+                "datePublished": "2026-04-01T08:00:00.000Z",
+                "dateModified": "2026-05-06T08:00:00.000Z",
+                "mainEntityOfPage": "https://kelinph.com/blogs-ink-eco-m15"
+            },
+            {
+                "@type": "FAQPage",
+                "mainEntity": [
+                    { "@type": "Question", "name": "What makes Eco M15 a low-odor eco-solvent ink?", "acceptedAnswer": { "@type": "Answer", "text": "Eco M15 uses a low-VOC solvent base that significantly reduces fumes compared to traditional solvent inks, making it more suitable for indoor or semi-enclosed work environments without sacrificing outdoor print durability." } },
+                    { "@type": "Question", "name": "Is Eco M15 compatible with standard eco-solvent wide-format printers?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — Eco M15 is formulated for use with standard eco-solvent wide-format printers and is available in CMYK for complete color production." } },
+                    { "@type": "Question", "name": "How does Eco M15 perform for outdoor signage applications?", "acceptedAnswer": { "@type": "Answer", "text": "Eco M15 delivers reliable outdoor durability with UV resistance and weather resistance, making it suitable for outdoor banners, vehicle wraps, and general commercial signage production." } }
+                ]
+            }
+        ]
+    };
     return (
         <div className="blog-page-layout ink-blog-page">
             <Header />
-
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
             <div className="blog-breadcrumb-bar">
                 <div className="blog-breadcrumb-inner">
                     <Link href="/" className="breadcrumb-link">Home</Link>
@@ -59,6 +83,18 @@ export default function BlogInkEcoM15() {
                                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" /></svg>
                                         6 min read
                                     </span>
+                                </div>
+                            </div>
+                            <div className="callout-box callout-summary">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 11 12 14 22 4" /><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" /></svg>
+                                <div>
+                                    <strong>Quick Summary</strong>
+                                    <ul style={{ margin: '8px 0 0', paddingLeft: '18px', lineHeight: '1.8' }}>
+                                        <li>Low-odor, low-VOC eco-solvent ink — more suitable for indoor and semi-enclosed print environments</li>
+                                        <li>Available in CMYK 1-liter bottles for complete wide-format color production</li>
+                                        <li>Excellent outdoor durability with UV and weather resistance for signage and vehicle wraps</li>
+                                        <li>A practical daily-use eco-solvent ink for sign shops prioritizing both performance and air quality</li>
+                                    </ul>
                                 </div>
                             </div>
                         </header>
@@ -275,7 +311,7 @@ export default function BlogInkEcoM15() {
                         <div className="sidebar-widget toc-widget">
                             <h3 className="widget-title">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="8" y1="6" x2="21" y2="6" /><line x1="8" y1="12" x2="21" y2="12" /><line x1="8" y1="18" x2="21" y2="18" /><line x1="3" y1="6" x2="3.01" y2="6" /><line x1="3" y1="12" x2="3.01" y2="12" /><line x1="3" y1="18" x2="3.01" y2="18" /></svg>
-                                In This Article
+                                In This Guide
                             </h3>
                             <ol className="toc-list">
                                 <li><a href="#overview">What Is the Eco M15?</a></li>

@@ -10,16 +10,41 @@ export const metadata = {
     openGraph: {
         title: "Sofie PP Film & Sticker Guide: Polypropylene Film for Indoor Signage, Labels & Display",
         description: "Complete guide to Sofie PP Film — lightweight polypropylene sticker film for indoor retail labels, POP displays, and promotional graphics.",
-        images: [{ url: '/cat_materials.webp', width: 1200, height: 630, alt: 'Sofie PP Film rolls for indoor label and display printing' }],
+        images: [{ url: '/assets/Materials/PP Film (Transparent).webp', width: 1200, height: 630, alt: 'Sofie PP Film rolls for indoor label and display printing' }],
         type: 'article'
     },
     alternates: { canonical: 'https://kelinph.com/blogs-material-sofie-pp-film' }
 };
 
 export default function BlogSofiePPFilm() {
+    const jsonLd = {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "Article",
+                "headline": "Sofie PP Film & Sticker Guide: Polypropylene Film for Indoor Signage, Labels & Display",
+                "description": "Complete guide to Sofie PP Film — lightweight polypropylene sticker film for indoor retail labels, POP displays, and promotional graphics. Available in matte and gloss finish.",
+                "image": "https://kelinph.com/assets/Materials/PP Film (Transparent).webp",
+                "author": { "@type": "Organization", "name": "Kelin Graphics System", "url": "https://kelinph.com/about" },
+                "publisher": { "@type": "Organization", "name": "Kelin Graphics System", "logo": { "@type": "ImageObject", "url": "https://kelinph.com/marquee-logo/inks/kelin-logo.png" } },
+                "datePublished": "2026-04-01T08:00:00.000Z",
+                "dateModified": "2026-05-06T08:00:00.000Z",
+                "mainEntityOfPage": "https://kelinph.com/blogs-material-sofie-pp-film"
+            },
+            {
+                "@type": "FAQPage",
+                "mainEntity": [
+                    { "@type": "Question", "name": "Is Sofie PP Film suitable for outdoor use?", "acceptedAnswer": { "@type": "Answer", "text": "Sofie PP Film is primarily designed for indoor applications — retail labels, POP displays, and promotional graphics. It lacks the UV resistance and moisture tolerance of PVC vinyl for long-term outdoor exposure. For outdoor applications, PVC vinyl or cast vinyl is recommended." } },
+                    { "@type": "Question", "name": "What is the advantage of PP film over PVC vinyl for label printing?", "acceptedAnswer": { "@type": "Answer", "text": "PP (polypropylene) film is significantly lighter than PVC vinyl, making it easier to handle in high-volume label production. It produces less waste during trimming and reduces shipping costs. PP is also more environmentally friendly than PVC, making it attractive for brands with sustainability requirements." } },
+                    { "@type": "Question", "name": "Can Sofie PP Film be used with eco-solvent printers?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, Sofie PP Film is compatible with eco-solvent and UV-curable wide-format inkjet printers. The coated surface accepts eco-solvent inks with good adhesion and color fidelity. It is not recommended for aqueous dye inks without proper coating compatibility testing." } }
+                ]
+            }
+        ]
+    };
     return (
         <div className="blog-page-layout material-blog-page">
             <Header />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
             <div className="blog-breadcrumb-bar">
                 <div className="blog-breadcrumb-inner">
                     <Link href="/" className="breadcrumb-link">Home</Link>
@@ -51,9 +76,21 @@ export default function BlogSofiePPFilm() {
                                     </span>
                                 </div>
                             </div>
+                            <div className="callout-box callout-summary">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 11 12 14 22 4" /><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" /></svg>
+                                <div>
+                                    <strong>Quick Summary</strong>
+                                    <ul style={{ margin: '8px 0 0', paddingLeft: '18px', lineHeight: '1.8' }}>
+                                        <li>Lightweight polypropylene (PP) sticker film — lighter and more eco-friendly than PVC vinyl</li>
+                                        <li>Available in matte and gloss finishes for indoor retail labels and POP display graphics</li>
+                                        <li>Compatible with eco-solvent and UV inkjet wide-format printers</li>
+                                        <li>Best suited for indoor use — not recommended for prolonged outdoor or high-UV exposure</li>
+                                    </ul>
+                                </div>
+                            </div>
                         </header>
                         <figure className="blog-featured-image" itemProp="image">
-                            <img src="/cat_materials.webp" alt="Sofie PP Film rolls for indoor label and display printing" width="840" height="473" loading="eager" />
+                            <img src="/assets/Materials/PP Film (Transparent).webp" alt="Sofie PP Film rolls for indoor label and display printing" width="840" height="473" loading="eager" />
                             <figcaption>
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2" /><circle cx="8.5" cy="8.5" r="1.5" /><polyline points="21 15 16 10 5 21" /></svg>
                                 Sofie PP Film — polypropylene sticker material available in matte and gloss finish for indoor labels and display graphics
@@ -235,7 +272,7 @@ export default function BlogSofiePPFilm() {
                             </ol>
                         </div>
                         <div className="sidebar-widget product-widget">
-                            <img src="/cat_materials.webp" alt="Sofie PP Film rolls" className="product-widget-img" />
+                            <img src="/assets/Materials/PP Film (Transparent).webp" alt="Sofie PP Film rolls" className="product-widget-img" />
                             <h4>Sofie PP Film &amp; Sticker</h4>
                             <p>Lightweight polypropylene sticker film in matte and gloss finish. Available in 3ft–5ft widths x 164ft rolls. Eco-solvent and UV compatible.</p>
                             <Link href="/materials" className="product-widget-btn">See Full Details <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m9 18 6-6-6-6" /></svg></Link>

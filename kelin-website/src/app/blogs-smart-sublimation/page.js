@@ -34,9 +34,35 @@ export const metadata = {
 };
 
 export default function BlogSmartSublimation() {
+    const jsonLd = {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "Article",
+                "headline": "Smart Sublimation RJ24-2002 & 2004 Review: Dual Epson I3200 Precision High-Speed Sublimation Printer at 56 m\u00b2/h",
+                "description": "An in-depth review of the Smart Sublimation RJ24-2002 and RJ24-2004 6FT sublimation printers. We cover the 56 m\u00b2/h printing speed, dual Epson I3200-A1/E1 printheads, 1.9m print width, THK mute guide rail, aluminium alloy carriage station, high-performance control system, external infrared heating fan, pre/post infrared drying, and full specifications.",
+                "image": "https://kelinph.com/sublimation_dtf/SUBL Smart Sublimation (1).webp",
+                "author": { "@type": "Organization", "name": "Kelin Graphics System", "url": "https://kelinph.com/about" },
+                "publisher": { "@type": "Organization", "name": "Kelin Graphics System", "logo": { "@type": "ImageObject", "url": "https://kelinph.com/marquee-logo/inks/kelin-logo.png" } },
+                "datePublished": "2026-04-14T08:00:00.000Z",
+                "dateModified": "2026-05-06T08:00:00.000Z",
+                "mainEntityOfPage": "https://kelinph.com/blogs-smart-sublimation"
+            },
+            {
+                "@type": "FAQPage",
+                "mainEntity": [
+                    { "@type": "Question", "name": "What is the THK mute guide rail on the Smart Sublimation printer?", "acceptedAnswer": { "@type": "Answer", "text": "The THK mute guide rail is a Japanese-engineered linear rail system known for ultra-low noise, minimal vibration, and long-term dimensional accuracy. On the Smart Sublimation RJ24 series, it ensures the print carriage travels in a perfectly straight, repeatable path at high speed, directly improving dot placement accuracy and color registration on vehicle wraps and wall graphics." } },
+                    { "@type": "Question", "name": "What is the difference between the RJ24-2002 and RJ24-2004 Smart Sublimation models?", "acceptedAnswer": { "@type": "Answer", "text": "The RJ24-2002 uses 2 Epson I3200 printheads while the RJ24-2004 uses 4 heads. The 4-head RJ24-2004 delivers higher print speeds up to 56 m\u00b2/h and is suited for high-volume production. Both models share the same 1.9m print width, THK guide rail, aluminium alloy carriage, and infrared drying system." } },
+                    { "@type": "Question", "name": "What applications is the Smart Sublimation RJ24 series best suited for?", "acceptedAnswer": { "@type": "Answer", "text": "The Smart Sublimation RJ24 series is designed for vehicle wrap sublimation, wall d\u00e9cor, interior decoration, exhibition and trade show graphics, and large-format soft signage. The pre/post infrared drying system and 1.9m print width allow long, continuous-run production with minimal media handling." } }
+                ]
+            }
+        ]
+    };
+
     return (
         <div className="blog-page-layout">
             <Header />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
             {/* Breadcrumb */}
             <div className="blog-breadcrumb-bar">
@@ -82,6 +108,18 @@ export default function BlogSmartSublimation() {
                                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" /><circle cx="12" cy="12" r="3" /></svg>
                                         3,800 views
                                     </span>
+                                </div>
+                            </div>
+                            <div className="callout-box callout-summary">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 11 12 14 22 4" /><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" /></svg>
+                                <div>
+                                    <strong>Quick Summary</strong>
+                                    <ul style={{ margin: '8px 0 0', paddingLeft: '18px', lineHeight: '1.8' }}>
+                                        <li>Dual Epson I3200-A1/E1 heads with up to 56 m²/h at 3PASS</li>
+                                        <li>1.9m print width and THK mute guide rail for precision high-speed printing</li>
+                                        <li>Pre/post infrared drying system ensures consistent output on long production runs</li>
+                                        <li>Available in RJ24-2002 (2-head) and RJ24-2004 (4-head) configurations</li>
+                                    </ul>
                                 </div>
                             </div>
                         </header>
@@ -364,7 +402,7 @@ export default function BlogSmartSublimation() {
                         <div className="sidebar-widget toc-widget">
                             <h3 className="widget-title">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="8" y1="6" x2="21" y2="6" /><line x1="8" y1="12" x2="21" y2="12" /><line x1="8" y1="18" x2="21" y2="18" /><line x1="3" y1="6" x2="3.01" y2="6" /><line x1="3" y1="12" x2="3.01" y2="12" /><line x1="3" y1="18" x2="3.01" y2="18" /></svg>
-                                In This Review
+                                In This Guide
                             </h3>
                             <ol className="toc-list">
                                 <li><a href="#background">Why a Precision Production Platform</a></li>

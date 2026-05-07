@@ -34,9 +34,34 @@ export const metadata = {
 };
 
 export default function BlogKirinDA182TPlus() {
+    const jsonLd = {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "Article",
+                "headline": "Kirin DA182T Plus Review: 650 m\u00b2/h High-Speed Roll-to-Roll Dye Sublimation Digital Textile Printer with 8 Kyocera Heads",
+                "description": "An in-depth review of the Kirin DA182T Plus high-speed roll-to-roll dye sublimation digital textile printer. We cover the 650 m\u00b2/h industrial speed, 8 Kyocera industrial print heads, 1850mm print width, large-capacity ink supply, infrared light-tube drying, automatic cleaning system, and full specifications.",
+                "image": "https://kelinph.com/sublimation_dtf/SUBL Kirin DA182T Plus Sublimation Printer (1).webp",
+                "author": { "@type": "Organization", "name": "Kelin Graphics System", "url": "https://kelinph.com/about" },
+                "publisher": { "@type": "Organization", "name": "Kelin Graphics System", "logo": { "@type": "ImageObject", "url": "https://kelinph.com/marquee-logo/inks/kelin-logo.png" } },
+                "datePublished": "2026-04-14T08:00:00.000Z",
+                "dateModified": "2026-05-06T08:00:00.000Z",
+                "mainEntityOfPage": "https://kelinph.com/blogs-kirin-DA182T-plus"
+            },
+            {
+                "@type": "FAQPage",
+                "mainEntity": [
+                    { "@type": "Question", "name": "What print speed does the Kirin DA182T Plus achieve?", "acceptedAnswer": { "@type": "Answer", "text": "The Kirin DA182T Plus reaches 650 m\u00b2/h at 400\u00d7600 dpi in 1PASS mode \u2014 one of the fastest dye sublimation textile printing speeds available for roll-to-roll fabric production." } },
+                    { "@type": "Question", "name": "How many print heads does the Kirin DA182T Plus use?", "acceptedAnswer": { "@type": "Answer", "text": "It uses 8 Kyocera industrial print heads delivering consistent color reproduction and high-volume output across its 1850mm print width with 1900mm paper width support." } },
+                    { "@type": "Question", "name": "What drying and maintenance systems does the Kirin DA182T Plus include?", "acceptedAnswer": { "@type": "Answer", "text": "The DA182T Plus features an infrared light-tube drying system for rapid ink curing and an automatic cleaning and moisturizing system to maintain printhead health during long production runs." } }
+                ]
+            }
+        ]
+    };
     return (
         <div className="blog-page-layout">
             <Header />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
             {/* Breadcrumb */}
             <div className="blog-breadcrumb-bar">
@@ -82,6 +107,18 @@ export default function BlogKirinDA182TPlus() {
                                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" /><circle cx="12" cy="12" r="3" /></svg>
                                         4,700 views
                                     </span>
+                                </div>
+                            </div>
+                            <div className="callout-box callout-summary">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 11 12 14 22 4" /><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" /></svg>
+                                <div>
+                                    <strong>Quick Summary</strong>
+                                    <ul style={{ margin: '8px 0 0', paddingLeft: '18px', lineHeight: '1.8' }}>
+                                        <li>650 m²/h maximum speed with 8 Kyocera industrial print heads</li>
+                                        <li>1850mm print width for full-range textile roll coverage in a single pass</li>
+                                        <li>Infrared light-tube drying with automatic cleaning and moisturizing system</li>
+                                        <li>Built for high-volume garment, home textile, and fabric printing operations</li>
+                                    </ul>
                                 </div>
                             </div>
                         </header>
@@ -389,7 +426,7 @@ export default function BlogKirinDA182TPlus() {
                         <div className="sidebar-widget toc-widget">
                             <h3 className="widget-title">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="8" y1="6" x2="21" y2="6" /><line x1="8" y1="12" x2="21" y2="12" /><line x1="8" y1="18" x2="21" y2="18" /><line x1="3" y1="6" x2="3.01" y2="6" /><line x1="3" y1="12" x2="3.01" y2="12" /><line x1="3" y1="18" x2="3.01" y2="18" /></svg>
-                                In This Review
+                                In This Guide
                             </h3>
                             <ol className="toc-list">
                                 <li><a href="#background">Why Built for Large-Scale Demands</a></li>

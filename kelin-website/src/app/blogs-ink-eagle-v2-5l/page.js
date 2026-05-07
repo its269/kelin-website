@@ -17,9 +17,34 @@ export const metadata = {
 };
 
 export default function BlogInkEagleV2_5L() {
+    const jsonLd = {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "Article",
+                "headline": "Eagle V2 5L Solvent Ink Review: High-Volume Outdoor Printing Ink for Banner & Signage Production",
+                "description": "Review of the Eagle V2 5L solvent ink — the bulk-volume format for high-output sign shops producing outdoor banners, vehicle graphics, and PVC signage at scale.",
+                "image": "https://kelinph.com/inks/EAGLE V2 5L/Eagle V2 5L Cyan (Transparent1).webp",
+                "author": { "@type": "Organization", "name": "Kelin Graphics System", "url": "https://kelinph.com/about" },
+                "publisher": { "@type": "Organization", "name": "Kelin Graphics System", "logo": { "@type": "ImageObject", "url": "https://kelinph.com/marquee-logo/inks/kelin-logo.png" } },
+                "datePublished": "2026-01-15T08:00:00.000Z",
+                "dateModified": "2026-05-06T08:00:00.000Z",
+                "mainEntityOfPage": "https://kelinph.com/blogs-ink-eagle-v2-5l"
+            },
+            {
+                "@type": "FAQPage",
+                "mainEntity": [
+                    { "@type": "Question", "name": "Why choose Eagle V2 5L over the 1L format for sign production?", "acceptedAnswer": { "@type": "Answer", "text": "The 5L format significantly lowers the cost per liter and reduces the frequency of refills, which is critical for high-output shops running continuous outdoor banner and PVC print production." } },
+                    { "@type": "Question", "name": "Is the ink quality of Eagle V2 5L the same as the 1L version?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — the 5L container uses the same professional-grade Eagle V2 formulation with the same UV-resistant pigments, weather-resistant ink film, and adhesion to vinyl and PVC." } },
+                    { "@type": "Question", "name": "What types of media does Eagle V2 5L ink adhere to?", "acceptedAnswer": { "@type": "Answer", "text": "Eagle V2 5L is formulated for outdoor vinyl, PVC flex banners, vehicle wrap films, and other wide-format sign media used in professional outdoor signage production." } }
+                ]
+            }
+        ]
+    };
     return (
         <div className="blog-page-layout ink-blog-page">
             <Header />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
             <div className="blog-breadcrumb-bar">
                 <div className="blog-breadcrumb-inner">
                     <Link href="/" className="breadcrumb-link">Home</Link>
@@ -44,6 +69,18 @@ export default function BlogInkEagleV2_5L() {
                                 <time className="meta-item" dateTime="2026-01-15" itemProp="datePublished"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2" /><line x1="16" y1="2" x2="16" y2="6" /><line x1="8" y1="2" x2="8" y2="6" /><line x1="3" y1="10" x2="21" y2="10" /></svg>January 2026</time>
                                 <span className="meta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" /></svg>5 min read</span>
                             </div></div>
+                            <div className="callout-box callout-summary">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 11 12 14 22 4" /><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" /></svg>
+                                <div>
+                                    <strong>Quick Summary</strong>
+                                    <ul style={{ margin: '8px 0 0', paddingLeft: '18px', lineHeight: '1.8' }}>
+                                        <li>Bulk 5-liter format of the Eagle V2 — lower cost-per-liter for high-output sign shops</li>
+                                        <li>Same professional-grade UV-resistant and weather-resistant formulation as the 1L version</li>
+                                        <li>Strong adhesion to outdoor vinyl, PVC flex banners, and vehicle wrap films</li>
+                                        <li>Reduces refill frequency for shops running continuous large-format print production</li>
+                                    </ul>
+                                </div>
+                            </div>
                         </header>
 
                         <figure className="blog-featured-image" itemProp="image">
@@ -113,7 +150,7 @@ export default function BlogInkEagleV2_5L() {
 
                 <aside className="blog-sidebar"><div className="sidebar-sticky">
                     <div className="sidebar-widget toc-widget">
-                        <h3 className="widget-title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="8" y1="6" x2="21" y2="6" /><line x1="8" y1="12" x2="21" y2="12" /><line x1="8" y1="18" x2="21" y2="18" /><line x1="3" y1="6" x2="3.01" y2="6" /><line x1="3" y1="12" x2="3.01" y2="12" /><line x1="3" y1="18" x2="3.01" y2="18" /></svg>In This Article</h3>
+                        <h3 className="widget-title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="8" y1="6" x2="21" y2="6" /><line x1="8" y1="12" x2="21" y2="12" /><line x1="8" y1="18" x2="21" y2="18" /><line x1="3" y1="6" x2="3.01" y2="6" /><line x1="3" y1="12" x2="3.01" y2="12" /><line x1="3" y1="18" x2="3.01" y2="18" /></svg>In This Guide</h3>
                         <ol className="toc-list"><li><a href="#overview">Why High-Volume Shops Choose 5L</a></li><li><a href="#specs">Specifications</a></li><li><a href="#features">Key Features</a></li><li><a href="#verdict">Verdict</a></li></ol>
                     </div>
                     <div className="sidebar-widget product-widget">

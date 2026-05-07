@@ -33,5 +33,30 @@ export const metadata = {
 };
 
 export default function Page() {
-    return <BlogsClient />;
+    const jsonLd = {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "CollectionPage",
+                "headline": "Printing Accessories Blog | Cutting Mats, Blades, Tapes & Tools | Kelin Graphics System",
+                "description": "Browse guides and reviews on wide format printing accessories including cutting mats, blades, banner tapes, acrylic benders, and finishing tools from Kelin Philippines.",
+                "url": "https://kelinph.com/blogs-2-accessories",
+                "publisher": { "@type": "Organization", "name": "Kelin Graphics System", "logo": { "@type": "ImageObject", "url": "https://kelinph.com/marquee-logo/inks/kelin-logo.png" } }
+            },
+            {
+                "@type": "FAQPage",
+                "mainEntity": [
+                    { "@type": "Question", "name": "What printing accessories does Kelin carry?", "acceptedAnswer": { "@type": "Answer", "text": "Kelin carries a wide selection of printing accessories including cutting mats, vinyl cutter blades, banner tapes, squeegees, acrylic benders, heat guns, grommets, banner poles, and maintenance tools for wide format printers and cutters." } },
+                    { "@type": "Question", "name": "What is a cutting mat used for in a print shop?", "acceptedAnswer": { "@type": "Answer", "text": "Cutting mats protect work surfaces and extend blade life when trimming vinyl, paper, and film by hand. Self-healing cutting mats are essential tools in any print finishing and sign-making workshop." } },
+                    { "@type": "Question", "name": "What type of banner tape is best for outdoor signage?", "acceptedAnswer": { "@type": "Answer", "text": "For outdoor signage, heavy-duty double-sided banner tape or reinforcing mesh tape with strong UV-resistant adhesive is recommended. These ensure banners remain securely mounted even in wind, rain, and prolonged sun exposure." } }
+                ]
+            }
+        ]
+    };
+    return (
+        <>
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+            <BlogsClient />
+        </>
+    );
 }

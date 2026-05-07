@@ -1,0 +1,25 @@
+@font-face {
+    font-family: 'Bison-Bold';
+    src: url('/fonts/Bison-Bold(PersonalUse).ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+.bison-heading,
+h1.bison-heading,
+h2.bison-heading,
+h3.bison-heading,
+h4.bison-heading,
+h5.bison-heading,
+h6.bison-heading,
+.hero-page-title,
+.values-header h2,
+.story-text h2,
+.events-hero-title,
+.events-section-header h2 {
+    font-family: 'Bison-Bold', Arial, sans-serif !important;
+}
+
+.bison-subtitle {
+    font-family: 'Bison-Bold', Arial, sans-serif !important;
+}

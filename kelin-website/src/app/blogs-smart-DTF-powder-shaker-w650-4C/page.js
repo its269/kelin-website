@@ -34,9 +34,35 @@ export const metadata = {
 };
 
 export default function BlogSmartDTFPowderShaker() {
+    const jsonLd = {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "Article",
+                "headline": "Smart DTF Powder J650-2 Shaker Review: 4KW Compact DTF Powder Shaker & Dryer for Print-on-Demand Garment Production",
+                "description": "An in-depth review of the Smart DTF Powder J650-2 Shaker. We cover the 4KW power, 1700\u00d7830\u00d71100mm compact footprint, space-saving design, integration with the Smart DTF RJ-0602/RJ-0604 printer system, 28 m\u00b2/h DTF output, up to 8-color CMYK+W support, wider platform, adjustable pinch roller, improved capping station, and newly improved dumper.",
+                "image": "https://kelinph.com/sublimation_dtf/DTF Smart DTF Powder Shaker W650-4C (1).webp",
+                "author": { "@type": "Organization", "name": "Kelin Graphics System", "url": "https://kelinph.com/about" },
+                "publisher": { "@type": "Organization", "name": "Kelin Graphics System", "logo": { "@type": "ImageObject", "url": "https://kelinph.com/marquee-logo/inks/kelin-logo.png" } },
+                "datePublished": "2026-04-14T08:00:00.000Z",
+                "dateModified": "2026-05-06T08:00:00.000Z",
+                "mainEntityOfPage": "https://kelinph.com/blogs-smart-DTF-powder-shaker-w650-4C"
+            },
+            {
+                "@type": "FAQPage",
+                "mainEntity": [
+                    { "@type": "Question", "name": "What does the Smart DTF Powder J650-2 Shaker do in the DTF workflow?", "acceptedAnswer": { "@type": "Answer", "text": "The J650-2 Shaker automatically applies hot-melt adhesive powder to freshly printed DTF film, shakes off the excess, and passes the film through a curing oven to melt and fix the powder. This produces a ready-to-press DTF transfer that can be heat-applied to any fabric without additional powder handling or separate drying equipment." } },
+                    { "@type": "Question", "name": "How compact is the Smart DTF Powder J650-2 Shaker?", "acceptedAnswer": { "@type": "Answer", "text": "The J650-2 Shaker measures 1700\u00d7830\u00d71100mm and draws 4KW of power. Its compact footprint allows it to be paired with the Smart DTF Machine in studios and print shops where floor space is limited, making it a practical space-saving solution for print-on-demand garment operations." } },
+                    { "@type": "Question", "name": "Can the Smart DTF system print on dark fabrics?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. The Smart DTF Machine (RJ-0602/RJ-0604) supports CMYK+White ink configurations with up to 8 color channels. The white ink layer is printed underneath the CMYK colors to create an opaque base that allows vibrant, full-color prints on dark, black, and heavily saturated garments." } }
+                ]
+            }
+        ]
+    };
+
     return (
         <div className="blog-page-layout">
             <Header />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
             {/* Breadcrumb */}
             <div className="blog-breadcrumb-bar">
@@ -82,6 +108,18 @@ export default function BlogSmartDTFPowderShaker() {
                                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" /><circle cx="12" cy="12" r="3" /></svg>
                                         3,600 views
                                     </span>
+                                </div>
+                            </div>
+                            <div className="callout-box callout-summary">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 11 12 14 22 4" /><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" /></svg>
+                                <div>
+                                    <strong>Quick Summary</strong>
+                                    <ul style={{ margin: '8px 0 0', paddingLeft: '18px', lineHeight: '1.8' }}>
+                                        <li>Compact 1700×830×1100mm footprint pairs with Smart DTF printer in tight spaces</li>
+                                        <li>4KW curing oven automatically applies, shakes, and melts adhesive powder</li>
+                                        <li>Full system supports up to 8-color CMYK+W DTF output at 28 m²/h</li>
+                                        <li>Wider platform, adjustable pinch roller, and improved capping included</li>
+                                    </ul>
                                 </div>
                             </div>
                         </header>
@@ -382,7 +420,7 @@ export default function BlogSmartDTFPowderShaker() {
                         <div className="sidebar-widget toc-widget">
                             <h3 className="widget-title">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="8" y1="6" x2="21" y2="6" /><line x1="8" y1="12" x2="21" y2="12" /><line x1="8" y1="18" x2="21" y2="18" /><line x1="3" y1="6" x2="3.01" y2="6" /><line x1="3" y1="12" x2="3.01" y2="12" /><line x1="3" y1="18" x2="3.01" y2="18" /></svg>
-                                In This Review
+                                In This Guide
                             </h3>
                             <ol className="toc-list">
                                 <li><a href="#background">Why a Space-Saving DTF Setup</a></li>

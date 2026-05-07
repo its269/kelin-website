@@ -1,4 +1,4 @@
-﻿import React from 'react';
+import React from 'react';
 import "../styles/blog.css";
 import Header from '../components/Header';
 import Link from 'next/link';
@@ -36,9 +36,34 @@ export const metadata = {
 };
 
 export default function BlogLuxorSF604() {
+    const jsonLd = {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "Article",
+                "headline": "Luxor SF60-4 DTF UV Printer Review: 8 m2/h W+CMYK+V with Optional Gold Foil Stamping for Premium Hard-Surface Transfers",
+                "description": "An in-depth review of the Luxor SF60-4 DTF UV Printer. 8 m2/h industrial speed, Epson PrecisionCore i3200-U1 printheads, W+CMYK+V advanced printing, Import THK Guide Rail, and optional built-in gold foil stamping module.",
+                "image": "https://kelinph.com/uv-machines/DTF UV Printer SF604-i3200 2ft. - High Res (1).webp",
+                "author": { "@type": "Organization", "name": "Kelin Graphics System", "url": "https://kelinph.com/about" },
+                "publisher": { "@type": "Organization", "name": "Kelin Graphics System", "logo": { "@type": "ImageObject", "url": "https://kelinph.com/marquee-logo/inks/kelin-logo.png" } },
+                "datePublished": "2026-04-16T08:00:00.000Z",
+                "dateModified": "2026-05-06T08:00:00.000Z",
+                "mainEntityOfPage": "https://kelinph.com/blogs-DTF-UV-printer-SF604-i3200"
+            },
+            {
+                "@type": "FAQPage",
+                "mainEntity": [
+                    { "@type": "Question", "name": "How fast does the Luxor SF60-4 UV DTF Printer print?", "acceptedAnswer": { "@type": "Answer", "text": "The Luxor SF60-4 prints at up to 8 m²/h using 3–4 Epson PrecisionCore i3200-U1 printheads on a 600mm print width, making it one of the fastest UV DTF printers in its class for high-volume production." } },
+                    { "@type": "Question", "name": "What is the optional gold foil stamping module on the SF60-4?", "acceptedAnswer": { "@type": "Answer", "text": "The SF60-4 can be equipped with an optional built-in gold foil stamping module that adds a metallic gold finish to UV DTF transfers in the same pass, enabling premium decoration on tumblers, mugs, phone cases, and branded merchandise without a separate foiling machine." } },
+                    { "@type": "Question", "name": "What does W+CMYK+V ink mean on the Luxor SF60-4?", "acceptedAnswer": { "@type": "Answer", "text": "W+CMYK+V means White is printed first as an underbase, followed by CMYK color layers, and finished with a Varnish topcoat — producing vibrant, opaque prints with a protective gloss layer suitable for any hard surface." } }
+                ]
+            }
+        ]
+    };
     return (
         <div className="blog-page-layout">
             <Header />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
             {/* Breadcrumb */}
             <div className="blog-breadcrumb-bar">
@@ -84,6 +109,18 @@ export default function BlogLuxorSF604() {
                                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" /><circle cx="12" cy="12" r="3" /></svg>
                                         4,500 views
                                     </span>
+                                </div>
+                            </div>
+                            <div className="callout-box callout-summary">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 11 12 14 22 4" /><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" /></svg>
+                                <div>
+                                    <strong>Quick Summary</strong>
+                                    <ul style={{ margin: '8px 0 0', paddingLeft: '18px', lineHeight: '1.8' }}>
+                                        <li>Up to 8 m²/h with 3–4 Epson i3200-U1 PrecisionCore heads on a 600mm print width</li>
+                                        <li>W+CMYK+V ink system delivers opaque, vibrant color with a protective varnish topcoat</li>
+                                        <li>Import THK Guide Rail and Double Chain Design ensure precise media transport and print registration</li>
+                                        <li>Optional built-in gold foil stamping module adds premium metallic finishes in a single pass</li>
+                                    </ul>
                                 </div>
                             </div>
                         </header>
@@ -369,7 +406,7 @@ export default function BlogLuxorSF604() {
                         <div className="sidebar-widget toc-widget">
                             <h3 className="widget-title">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="8" y1="6" x2="21" y2="6" /><line x1="8" y1="12" x2="21" y2="12" /><line x1="8" y1="18" x2="21" y2="18" /><line x1="3" y1="6" x2="3.01" y2="6" /><line x1="3" y1="12" x2="3.01" y2="12" /><line x1="3" y1="18" x2="3.01" y2="18" /></svg>
-                                In This Review
+                                In This Guide
                             </h3>
                             <ol className="toc-list">
                                 <li><a href="#background">Why the SF60-4 Is Built for Premium UV DTF</a></li>

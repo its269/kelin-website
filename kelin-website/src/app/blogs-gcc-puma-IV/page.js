@@ -34,9 +34,34 @@ export const metadata = {
 };
 
 export default function BlogGCCPumaIV() {
+    const jsonLd = {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "Article",
+                "headline": "GCC Puma IV Cutting Plotter Review: 1020 mm/s DC Servo Contour Cutter for Sign Makers",
+                "description": "An in-depth review of the GCC Puma IV high-performance cutting plotter. We cover the 1020 mm/s DC servo cutting speed, Enhanced AAS II contour cutting system, Segmental Positioning, Auto Rotation, Section Cutting, Ethernet connectivity, full specifications, and real-world applications for car decals, vinyl signs, food labels, and custom stickers.",
+                "image": "https://kelinph.com/cutting-machines/GCC PUMA IV.webp",
+                "author": { "@type": "Organization", "name": "Kelin Graphics System", "url": "https://kelinph.com/about" },
+                "publisher": { "@type": "Organization", "name": "Kelin Graphics System", "logo": { "@type": "ImageObject", "url": "https://kelinph.com/marquee-logo/inks/kelin-logo.png" } },
+                "datePublished": "2026-04-13T08:00:00.000Z",
+                "dateModified": "2026-05-06T08:00:00.000Z",
+                "mainEntityOfPage": "https://kelinph.com/blogs-gcc-puma-IV"
+            },
+            {
+                "@type": "FAQPage",
+                "mainEntity": [
+                    { "@type": "Question", "name": "What makes the GCC Puma IV faster and more accurate than a standard vinyl cutter?", "acceptedAnswer": { "@type": "Answer", "text": "The GCC Puma IV uses a DC Servo Control drive motor that delivers 1020 mm/s (40 ips) maximum cutting speed — more than 2.5 times faster than typical 400 mm/s desktop cutters. The servo motor provides significantly more consistent speed and torque control throughout the cut path compared to stepper motor alternatives, resulting in more accurate cuts on vinyl, heat transfer materials, and signage substrates." } },
+                    { "@type": "Question", "name": "How does the Enhanced AAS II contour cutting system on the GCC Puma IV work?", "acceptedAnswer": { "@type": "Answer", "text": "The Enhanced AAS II (Automatic Alignment System) on the GCC Puma IV uses optical sensors to automatically detect registration marks printed on the media. It then aligns the cutting path precisely to the printed design, enabling accurate contour cutting on digitally printed stickers, decals, labels, and heat transfer vinyl without manual repositioning." } },
+                    { "@type": "Question", "name": "What are the two available models of the GCC Puma IV and what cutting widths do they support?", "acceptedAnswer": { "@type": "Answer", "text": "The GCC Puma IV is available in two models: the P4-60LX with a 23.6 inch (600mm) cutting width for desktop sign work and short rolls, and the P4-132LX with a 51.18 inch (1300mm) cutting width for large-format vinyl graphics and high-volume sign production." } }
+                ]
+            }
+        ]
+    };
     return (
         <div className="blog-page-layout">
             <Header />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
             {/* Breadcrumb */}
             <div className="blog-breadcrumb-bar">
@@ -82,6 +107,18 @@ export default function BlogGCCPumaIV() {
                                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" /><circle cx="12" cy="12" r="3" /></svg>
                                         4,200 views
                                     </span>
+                                </div>
+                            </div>
+                            <div className="callout-box callout-summary">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 11 12 14 22 4" /><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" /></svg>
+                                <div>
+                                    <strong>Quick Summary</strong>
+                                    <ul style={{ margin: '8px 0 0', paddingLeft: '18px', lineHeight: '1.8' }}>
+                                        <li>1020 mm/s DC Servo Control — over 2.5× faster than typical 400 mm/s desktop cutters — with 500g maximum cutting force for demanding vinyl work</li>
+                                        <li>Enhanced AAS II Contour Cutting System automatically detects registration marks for precise print-and-cut on stickers, decals, and labels</li>
+                                        <li>Segmental Positioning, Auto Rotation, and Section Cutting features dramatically reduce media waste on long-roll and large-format jobs</li>
+                                        <li>Available in P4-60LX (600mm) and P4-132LX (1300mm) cutting widths with Ethernet connectivity for network-based production workflows</li>
+                                    </ul>
                                 </div>
                             </div>
                         </header>
@@ -378,7 +415,7 @@ export default function BlogGCCPumaIV() {
                         <div className="sidebar-widget toc-widget">
                             <h3 className="widget-title">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="8" y1="6" x2="21" y2="6" /><line x1="8" y1="12" x2="21" y2="12" /><line x1="8" y1="18" x2="21" y2="18" /><line x1="3" y1="6" x2="3.01" y2="6" /><line x1="3" y1="12" x2="3.01" y2="12" /><line x1="3" y1="18" x2="3.01" y2="18" /></svg>
-                                In This Review
+                                In This Guide
                             </h3>
                             <ol className="toc-list">
                                 <li><a href="#background">Why the Puma IV Is Built for Sign Makers</a></li>

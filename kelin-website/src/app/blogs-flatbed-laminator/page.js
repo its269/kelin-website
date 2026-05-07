@@ -40,9 +40,34 @@ export const metadata = {
 };
 
 export default function BlogFlatbedLaminator() {
+    const jsonLd = {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "Article",
+                "headline": "Fulei BU-1425FA Flatbed Laminator – Versatile Flatbed Mounting for Rigid & Soft Substrates",
+                "description": "Discover the Fulei BU-1425FA Flatbed Laminator — a versatile wide format flatbed laminator ideal for laminating on paper, rigid boards, acrylic, aluminium composite panels, and wooden boards with cold-only precision.",
+                "image": "https://kelinph.com/laminator/Fulei%20BU-1425FA%20Flatbed%20Laminator%20(1).webp",
+                "author": { "@type": "Organization", "name": "Kelin Graphics System", "url": "https://kelinph.com/about" },
+                "publisher": { "@type": "Organization", "name": "Kelin Graphics System", "logo": { "@type": "ImageObject", "url": "https://kelinph.com/marquee-logo/inks/kelin-logo.png" } },
+                "datePublished": "2026-04-17T08:00:00.000Z",
+                "dateModified": "2026-05-06T08:00:00.000Z",
+                "mainEntityOfPage": "https://kelinph.com/blogs-flatbed-laminator"
+            },
+            {
+                "@type": "FAQPage",
+                "mainEntity": [
+                    { "@type": "Question", "name": "What substrates can the Fulei BU-1425FA flatbed laminator handle?", "acceptedAnswer": { "@type": "Answer", "text": "The Fulei BU-1425FA can laminate on a wide range of substrates including paper sheets, KT board, acrylic sheets, aluminium composite panels (ACP), and wooden boards — making it ideal for signage, advertising, and display mounting." } },
+                    { "@type": "Question", "name": "Does the Fulei BU-1425FA use heat during lamination?", "acceptedAnswer": { "@type": "Answer", "text": "No. The BU-1425FA is a cold-only flatbed laminator that uses natural rubber rollers and pressure to apply self-adhesive lamination films — no heat is involved, which protects heat-sensitive prints and rigid substrates." } },
+                    { "@type": "Question", "name": "How wide is the working area of the Fulei BU-1425FA?", "acceptedAnswer": { "@type": "Answer", "text": "The Fulei BU-1425FA has a maximum working width of 140 cm × 250 cm (length) and a table height of 850 mm, allowing comfortable single-operator use without needing an assistant." } }
+                ]
+            }
+        ]
+    };
     return (
         <div className="blog-page-layout">
             <Header />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
             {/* Breadcrumb */}
             <div className="blog-breadcrumb-bar">
@@ -74,6 +99,18 @@ export default function BlogFlatbedLaminator() {
                                     <span className="meta-item">By Kelin Team</span>
                                     <span className="meta-item">Laminator Guide</span>
                                     <span className="meta-item">5 min read</span>
+                                </div>
+                            </div>
+                            <div className="callout-box callout-summary">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 11 12 14 22 4" /><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" /></svg>
+                                <div>
+                                    <strong>Quick Summary</strong>
+                                    <ul style={{ margin: '8px 0 0', paddingLeft: '18px', lineHeight: '1.8' }}>
+                                        <li>Cold-only operation using natural rubber rollers — safe for heat-sensitive prints and rigid substrates</li>
+                                        <li>Handles KT board, acrylic, aluminium composite panels, wooden boards, and paper sheets</li>
+                                        <li>Generous 140×250 cm working area at 850 mm table height supports one-person operation</li>
+                                        <li>120 mm roller diameter with 65 mm max nip opening accommodates thick rigid media</li>
+                                    </ul>
                                 </div>
                             </div>
                         </header>
@@ -317,15 +354,15 @@ export default function BlogFlatbedLaminator() {
 
                         {/* Table of Contents */}
                         <div className="sidebar-widget toc-widget">
-                            <h3 className="widget-title">Table of Contents</h3>
-                            <ul className="toc-list">
+                            <h3 className="widget-title">In This Guide</h3>
+                            <ol className="toc-list">
                                 <li><a href="#overview">Overview</a></li>
                                 <li><a href="#specifications">Technical Specifications</a></li>
                                 <li><a href="#features">Key Features</a></li>
                                 <li><a href="#applications">Applications</a></li>
                                 <li><a href="#pros-cons">Pros &amp; Considerations</a></li>
                                 <li><a href="#conclusion">Conclusion</a></li>
-                            </ul>
+                            </ol>
                         </div>
 
                         {/* Product Widget */}

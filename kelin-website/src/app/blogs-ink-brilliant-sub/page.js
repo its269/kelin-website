@@ -17,9 +17,34 @@ export const metadata = {
 };
 
 export default function BlogInkBrilliantSub() {
+    const jsonLd = {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "Article",
+                "headline": "Brilliant Sublimation 1L Ink Review: Bright, Color-Accurate Dye-Sub Ink for Polyester Printing",
+                "description": "Review of Brilliant Sublimation 1L — bright, color-accurate dye sublimation ink for polyester fabric, mugs, and hard substrate sublimation printing in the Philippines.",
+                "image": "https://kelinph.com/inks/BRILLIANT SUBLIMATION INK 1L/Brilliant Sublimation Ink Cyan 1L (Transparent).webp",
+                "author": { "@type": "Organization", "name": "Kelin Graphics System", "url": "https://kelinph.com/about" },
+                "publisher": { "@type": "Organization", "name": "Kelin Graphics System", "logo": { "@type": "ImageObject", "url": "https://kelinph.com/marquee-logo/inks/kelin-logo.png" } },
+                "datePublished": "2025-10-01T08:00:00.000Z",
+                "dateModified": "2026-05-06T08:00:00.000Z",
+                "mainEntityOfPage": "https://kelinph.com/blogs-ink-brilliant-sub"
+            },
+            {
+                "@type": "FAQPage",
+                "mainEntity": [
+                    { "@type": "Question", "name": "What sets Brilliant Sublimation apart from other sublimation inks?", "acceptedAnswer": { "@type": "Answer", "text": "Brilliant Sublimation is formulated for accurate color tone reproduction — maintaining color fidelity across CMYK rather than sacrificing accuracy for maximum saturation, making it ideal for photo products and personalized gifts." } },
+                    { "@type": "Question", "name": "What substrates is Brilliant Sublimation 1L compatible with?", "acceptedAnswer": { "@type": "Answer", "text": "It is compatible with polyester fabric, ceramic mugs, aluminum panels, and other polyester-coated hard substrates used in sublimation printing." } },
+                    { "@type": "Question", "name": "How durable are prints made with Brilliant Sublimation ink?", "acceptedAnswer": { "@type": "Answer", "text": "Sublimation dye is permanently embedded into the substrate during heat transfer, resulting in wash-permanent prints that resist fading even after many wash cycles." } }
+                ]
+            }
+        ]
+    };
     return (
         <div className="blog-page-layout ink-blog-page">
             <Header />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
             <div className="blog-breadcrumb-bar">
                 <div className="blog-breadcrumb-inner">
                     <Link href="/" className="breadcrumb-link">Home</Link>
@@ -41,6 +66,18 @@ export default function BlogInkBrilliantSub() {
                                 <time className="meta-item" dateTime="2025-10-01" itemProp="datePublished"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2" /><line x1="16" y1="2" x2="16" y2="6" /><line x1="8" y1="2" x2="8" y2="6" /><line x1="3" y1="10" x2="21" y2="10" /></svg>October 2025</time>
                                 <span className="meta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" /></svg>5 min read</span>
                             </div></div>
+                            <div className="callout-box callout-summary">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 11 12 14 22 4" /><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" /></svg>
+                                <div>
+                                    <strong>Quick Summary</strong>
+                                    <ul style={{ margin: '8px 0 0', paddingLeft: '18px', lineHeight: '1.8' }}>
+                                        <li>Color-accurate CMYK dye-sub ink — optimized for tone fidelity, not just saturation</li>
+                                        <li>Available in 1-liter bottles for small to mid-volume sublimation production</li>
+                                        <li>Compatible with polyester fabric, ceramic mugs, aluminum, and hard substrates</li>
+                                        <li>Wash-permanent results — ideal for photo products, gifts, and personalized apparel</li>
+                                    </ul>
+                                </div>
+                            </div>
                         </header>
 
                         <figure className="blog-featured-image" itemProp="image">
@@ -110,7 +147,7 @@ export default function BlogInkBrilliantSub() {
 
                 <aside className="blog-sidebar"><div className="sidebar-sticky">
                     <div className="sidebar-widget toc-widget">
-                        <h3 className="widget-title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="8" y1="6" x2="21" y2="6" /><line x1="8" y1="12" x2="21" y2="12" /><line x1="8" y1="18" x2="21" y2="18" /><line x1="3" y1="6" x2="3.01" y2="6" /><line x1="3" y1="12" x2="3.01" y2="12" /><line x1="3" y1="18" x2="3.01" y2="18" /></svg>In This Article</h3>
+                        <h3 className="widget-title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="8" y1="6" x2="21" y2="6" /><line x1="8" y1="12" x2="21" y2="12" /><line x1="8" y1="18" x2="21" y2="18" /><line x1="3" y1="6" x2="3.01" y2="6" /><line x1="3" y1="12" x2="3.01" y2="12" /><line x1="3" y1="18" x2="3.01" y2="18" /></svg>In This Guide</h3>
                         <ol className="toc-list"><li><a href="#overview">Color Accuracy & Brightness</a></li><li><a href="#specs">Specifications</a></li><li><a href="#features">Key Features</a></li><li><a href="#verdict">Verdict</a></li></ol>
                     </div>
                     <div className="sidebar-widget product-widget">

@@ -288,6 +288,7 @@ div {
 /* Featured Image */
 .blog-featured-image {
     margin: 2rem 0 0;
+    overflow: hidden;
 }
 
 .blog-featured-image img {
@@ -295,7 +296,9 @@ div {
     height: auto;
     display: block;
     max-height: 480px;
-    object-fit: cover;
+    object-fit: contain;
+    object-position: center;
+    margin: 0 auto;
 }
 
 .ink-blog-page .blog-featured-image {
@@ -321,8 +324,28 @@ div {
 .material-blog-page .blog-featured-image img {
     object-fit: contain;
     max-height: 520px;
-    padding: 1rem 0;
+    padding: 1.5rem;
     background: #f4f4f4;
+    margin: 0 auto;
+}
+
+/* Accessory blog pages */
+.acc-blog-page .blog-featured-image {
+    background: #f8fafc;
+}
+
+.acc-blog-page .blog-featured-image img {
+    object-fit: contain;
+    max-height: 420px;
+    padding: 1.5rem;
+    background: #f8fafc;
+    margin: 0 auto;
+}
+
+.acc-blog-page .product-widget-img {
+    object-fit: contain;
+    background: #f8fafc;
+    padding: 0.5rem;
 }
 
 .blog-featured-image figcaption {
@@ -1161,9 +1184,12 @@ div {
 .product-widget-img {
     width: 100%;
     height: 160px;
-    object-fit: cover;
+    object-fit: contain;
+    object-position: center;
     display: block;
     border-bottom: 1px solid var(--border);
+    background: #f8fafc;
+    padding: 0.5rem;
 }
 
 .product-widget h4 {
@@ -1231,10 +1257,13 @@ div {
 .related-article-img {
     width: 60px;
     height: 45px;
-    object-fit: cover;
+    object-fit: contain;
+    object-position: center;
     border-radius: 4px;
     flex-shrink: 0;
     border: 1px solid var(--border);
+    background: #f4f4f4;
+    padding: 2px;
 }
 
 .related-article-category {

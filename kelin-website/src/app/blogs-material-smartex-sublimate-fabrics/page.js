@@ -10,16 +10,41 @@ export const metadata = {
     openGraph: {
         title: 'Smartex & Subli-Mate Fabrics: Complete Guide to Sublimation-Ready Polyester Fabrics',
         description: 'Discover Smartex and Subli-Mate sublimation-ready polyester fabrics for soft signage, flags, trade show displays, and custom sportswear printing in the Philippines.',
-        images: [{ url: '/cat_materials.webp', width: 1200, height: 630, alt: 'Smartex and Subli-Mate sublimation polyester fabrics' }],
+        images: [{ url: '/assets/Materials/SOFIE/Pure Cotton Canvas.webp', width: 1200, height: 630, alt: 'Smartex and Subli-Mate sublimation polyester fabrics' }],
         type: 'article'
     },
     alternates: { canonical: 'https://kelinph.com/blogs-material-smartex-sublimate-fabrics' }
 };
 
 export default function BlogSmartexSublimateFabrics() {
+    const jsonLd = {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "Article",
+                "headline": "Smartex & Subli-Mate Fabrics: Complete Guide to Sublimation-Ready Polyester Fabrics | Kelin",
+                "description": "Discover Smartex and Subli-Mate sublimation-ready polyester fabrics for soft signage, flags, trade show displays, and custom sportswear printing in the Philippines.",
+                "image": "https://kelinph.com/assets/Materials/SOFIE/Pure Cotton Canvas.webp",
+                "author": { "@type": "Organization", "name": "Kelin Graphics System", "url": "https://kelinph.com/about" },
+                "publisher": { "@type": "Organization", "name": "Kelin Graphics System", "logo": { "@type": "ImageObject", "url": "https://kelinph.com/marquee-logo/inks/kelin-logo.png" } },
+                "datePublished": "2026-04-01T08:00:00.000Z",
+                "dateModified": "2026-05-06T08:00:00.000Z",
+                "mainEntityOfPage": "https://kelinph.com/blogs-material-smartex-sublimate-fabrics"
+            },
+            {
+                "@type": "FAQPage",
+                "mainEntity": [
+                    { "@type": "Question", "name": "What is the difference between Smartex and Subli-Mate polyester fabric?", "acceptedAnswer": { "@type": "Answer", "text": "Smartex is a knitted 100% polyester fabric with natural stretch and drape, suited for pull-up banner inserts, hanging flags, and backlit displays. Subli-Mate is a woven polyester with a flatter, more stable surface — ideal for apparel, promotional textiles, and sportswear where a smooth hand feel is required." } },
+                    { "@type": "Question", "name": "Can sublimation-printed polyester fabrics be washed?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — dye-sublimation inks bond permanently within the polyester fiber structure rather than sitting on the surface, making wash-fastness one of the key advantages of sublimation printing. Colors remain vibrant through repeated machine washing without cracking, fading, or peeling." } },
+                    { "@type": "Question", "name": "What percentage of polyester content is required for sublimation printing on fabrics?", "acceptedAnswer": { "@type": "Answer", "text": "A minimum of 65% polyester content is required for adequate sublimation ink bonding in textiles. For best results — maximum color saturation and wash-fastness — 100% polyester content is recommended. Natural fibers like cotton or linen do not bond with sublimation inks." } }
+                ]
+            }
+        ]
+    };
     return (
         <div className="blog-page-layout material-blog-page">
             <Header />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
             <div className="blog-breadcrumb-bar">
                 <div className="blog-breadcrumb-inner">
                     <Link href="/" className="breadcrumb-link">Home</Link>
@@ -51,9 +76,21 @@ export default function BlogSmartexSublimateFabrics() {
                                     </span>
                                 </div>
                             </div>
+                            <div className="callout-box callout-summary">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 11 12 14 22 4" /><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" /></svg>
+                                <div>
+                                    <strong>Quick Summary</strong>
+                                    <ul style={{ margin: '8px 0 0', paddingLeft: '18px', lineHeight: '1.8' }}>
+                                        <li>Two fabric grades: Smartex (knitted, lightweight, stretch) and Subli-Mate (woven, flat, apparel-grade)</li>
+                                        <li>Smartex suited for pull-up banners, hanging flags, and backlit fabric display systems</li>
+                                        <li>Subli-Mate ideal for custom sportswear, promotional apparel, and branded event textiles</li>
+                                        <li>Both require 100% polyester content for full-spectrum, wash-fast sublimation color results</li>
+                                    </ul>
+                                </div>
+                            </div>
                         </header>
                         <figure className="blog-featured-image" itemProp="image">
-                            <img src="/cat_materials.webp" alt="Smartex and Subli-Mate sublimation polyester fabrics for soft signage and flags" width="840" height="473" loading="eager" />
+                            <img src="/assets/Materials/SOFIE/Pure Cotton Canvas.webp" alt="Smartex and Subli-Mate sublimation polyester fabrics for soft signage and flags" width="840" height="473" loading="eager" />
                             <figcaption>
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2" /><circle cx="8.5" cy="8.5" r="1.5" /><polyline points="21 15 16 10 5 21" /></svg>
                                 Smartex knitted and Subli-Mate woven polyester fabrics — the preferred sublimation printing substrates for soft signage and event textiles
@@ -236,7 +273,7 @@ export default function BlogSmartexSublimateFabrics() {
                             </ol>
                         </div>
                         <div className="sidebar-widget product-widget">
-                            <img src="/cat_materials.webp" alt="Smartex Sublimation Fabric" className="product-widget-img" />
+                            <img src="/assets/Materials/SOFIE/Pure Cotton Canvas.webp" alt="Smartex Sublimation Fabric" className="product-widget-img" />
                             <h4>Smartex &amp; Subli-Mate Fabrics</h4>
                             <p>100% polyester sublimation-ready fabrics for soft signage, flags, and custom apparel. Available in knitted and woven grades.</p>
                             <Link href="/materials" className="product-widget-btn">See Full Details <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m9 18 6-6-6-6" /></svg></Link>
@@ -248,14 +285,14 @@ export default function BlogSmartexSublimateFabrics() {
                             </h3>
                             <div className="related-article-list">
                                 <Link href="/blogs-material-sublimation-paper" className="related-article-item">
-                                    <img src="/cat_materials.webp" alt="Sublimation paper guide" className="related-article-img" />
+                                    <img src="/assets/Materials/SOFIE/Pure Cotton Canvas.webp" alt="Sublimation paper guide" className="related-article-img" />
                                     <div>
                                         <span className="related-article-category">Sublimation Materials</span>
                                         <p className="related-article-title">Sublimation Paper: Complete Buyer&apos;s Guide for Philippine Print Shops</p>
                                     </div>
                                 </Link>
                                 <Link href="/blogs-material-textile-accessories" className="related-article-item">
-                                    <img src="/cat_materials.webp" alt="Textile accessories guide" className="related-article-img" />
+                                    <img src="/assets/Materials/SOFIE/Pure Cotton Canvas.webp" alt="Textile accessories guide" className="related-article-img" />
                                     <div>
                                         <span className="related-article-category">Textile Accessories</span>
                                         <p className="related-article-title">Textile Accessories Guide: HTV, Flock, Sublimation Blanks &amp; DTF Film</p>

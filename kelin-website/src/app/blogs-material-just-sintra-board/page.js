@@ -10,16 +10,41 @@ export const metadata = {
     openGraph: {
         title: 'Just Sintra Board: Expanded PVC Foam Board Grades, Thickness & Applications',
         description: 'Complete guide to Just Sintra Board — all grades, thickness options, sizes, and applications for indoor and outdoor signage fabrication.',
-        images: [{ url: '/cat_materials.webp', width: 1200, height: 630, alt: 'Just Sintra Board' }],
+        images: [{ url: '/assets/Materials/Black and White Sintra.webp', width: 1200, height: 630, alt: 'Just Sintra Board' }],
         type: 'article',
     },
     alternates: { canonical: 'https://kelinph.com/blogs-material-just-sintra-board' },
 };
 
 export default function BlogJustSintraBoard() {
+    const jsonLd = {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "Article",
+                "headline": "Just Sintra Board Guide: Expanded PVC Foam Board Grades, Thickness & Applications for Signage",
+                "description": "Complete guide to Just Sintra Board — Versatile White, Bluish, Black, Colors, Lite, and HD grades in 1.5mm to 20mm thickness, up to 4x10ft. Lightweight, easy to print and cut, ideal for indoor and outdoor signage.",
+                "image": "https://kelinph.com/assets/Materials/Black and White Sintra.webp",
+                "author": { "@type": "Organization", "name": "Kelin Graphics System", "url": "https://kelinph.com/about" },
+                "publisher": { "@type": "Organization", "name": "Kelin Graphics System", "logo": { "@type": "ImageObject", "url": "https://kelinph.com/marquee-logo/inks/kelin-logo.png" } },
+                "datePublished": "2026-11-01T08:00:00.000Z",
+                "dateModified": "2026-05-06T08:00:00.000Z",
+                "mainEntityOfPage": "https://kelinph.com/blogs-material-just-sintra-board"
+            },
+            {
+                "@type": "FAQPage",
+                "mainEntity": [
+                    { "@type": "Question", "name": "What are the different grades of Just Sintra Board and when should each be used?", "acceptedAnswer": { "@type": "Answer", "text": "Just Sintra Board comes in six grades: Versatile White (standard indoor/outdoor use), Bluish (slightly blue-white tint for print contrast), Black (opaque dark substrate for design applications), Colors (pre-colored boards), Lite (thinner and lighter for temporary displays), and HD (high-density for superior surface hardness and screw-holding strength in structural applications)." } },
+                    { "@type": "Question", "name": "Is Just Sintra Board waterproof and suitable for outdoor signage?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Sintra Board is a closed-cell expanded PVC foam, which means it does not absorb water and is resistant to moisture, humidity, and rain. It is suitable for outdoor signage applications, though extended UV exposure over several years may cause some surface yellowing on white grades without UV-protective laminate." } },
+                    { "@type": "Question", "name": "What is the maximum thickness and sheet size available for Just Sintra Board?", "acceptedAnswer": { "@type": "Answer", "text": "Just Sintra Board is available in thicknesses up to 20mm and in sheet sizes up to 4×10ft (1220×3050mm). Thicker boards (10mm–20mm) are used for structural signage frames, dimensional letter substrates, and applications requiring significant rigidity without using heavier materials like aluminum." } }
+                ]
+            }
+        ]
+    };
     return (
         <div className="blog-page-layout material-blog-page">
             <Header />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
             <div className="blog-breadcrumb-bar">
                 <div className="blog-breadcrumb-inner">
                     <Link href="/" className="breadcrumb-link">Home</Link>
@@ -56,10 +81,22 @@ export default function BlogJustSintraBoard() {
                                     </span>
                                 </div>
                             </div>
+                            <div className="callout-box callout-summary">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 11 12 14 22 4" /><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" /></svg>
+                                <div>
+                                    <strong>Quick Summary</strong>
+                                    <ul style={{ margin: '8px 0 0', paddingLeft: '18px', lineHeight: '1.8' }}>
+                                        <li>Six grades available: Versatile White, Bluish, Black, Colors, Lite, and HD — each suited for different signage requirements</li>
+                                        <li>Thickness range from 1.5mm to 20mm; sheet sizes up to 4×10ft for large-format applications</li>
+                                        <li>Closed-cell PVC foam is waterproof, lightweight, and easy to cut, route, and print on directly</li>
+                                        <li>HD grade offers superior surface hardness and screw-holding strength for structural and dimensional signage</li>
+                                    </ul>
+                                </div>
+                            </div>
                         </header>
 
                         <figure className="blog-featured-image" itemProp="image">
-                            <img src="/cat_materials.webp" alt="Just Sintra Board Expanded PVC" width="840" height="473" loading="eager" />
+                            <img src="/assets/Materials/Black and White Sintra.webp" alt="Just Sintra Board Expanded PVC" width="840" height="473" loading="eager" />
                             <figcaption>
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2" /><circle cx="8.5" cy="8.5" r="1.5" /><polyline points="21 15 16 10 5 21" /></svg>
                                 Just Sintra Board is available in six grades — Versatile White, Bluish, Black, Colors, Lite, and HD — from 1.5mm to 20mm thickness in sheet sizes up to 4&times;10ft.
@@ -170,7 +207,7 @@ export default function BlogJustSintraBoard() {
                             </ol>
                         </div>
                         <div className="sidebar-widget product-widget">
-                            <img src="/cat_materials.webp" alt="Just Sintra Board" className="product-widget-img" />
+                            <img src="/assets/Materials/Black and White Sintra.webp" alt="Just Sintra Board" className="product-widget-img" />
                             <h4>Just Sintra Board</h4>
                             <p>6 grades &middot; 1.5mm–20mm &middot; Up to 4&times;10ft sheets</p>
                             <Link href="/materials" className="product-widget-btn">See Full Details <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m9 18 6-6-6-6" /></svg></Link>

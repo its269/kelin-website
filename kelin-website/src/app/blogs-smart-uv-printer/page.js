@@ -34,9 +34,35 @@ export const metadata = {
 };
 
 export default function BlogSmartUVPrinter() {
+    const jsonLd = {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "Article",
+                "headline": "Smart UV Printer RJ24U-2002-I3200 6ft Review: Dual Epson 3200U1 \u2014 Speed, Precision & Unmatched Quality",
+                "description": "An in-depth review of the Smart UV Printer RJ24U-2002-I3200 6ft. We cover the dual Epson 3200U1 printheads, 12 m\u00b2/h industrial-grade speed, LED curing lamp, aluminium alloy carriage station, and wide-format UV eco-solvent printing capabilities for professional applications.",
+                "image": "https://kelinph.com/uv-machines/SMART UV Printer.webp",
+                "author": { "@type": "Organization", "name": "Kelin Graphics System", "url": "https://kelinph.com/about" },
+                "publisher": { "@type": "Organization", "name": "Kelin Graphics System", "logo": { "@type": "ImageObject", "url": "https://kelinph.com/marquee-logo/inks/kelin-logo.png" } },
+                "datePublished": "2026-04-16T08:00:00.000Z",
+                "dateModified": "2026-05-06T08:00:00.000Z",
+                "mainEntityOfPage": "https://kelinph.com/blogs-smart-uv-printer"
+            },
+            {
+                "@type": "FAQPage",
+                "mainEntity": [
+                    { "@type": "Question", "name": "What substrates can the Smart UV Printer RJ24U-2002-I3200 print on?", "acceptedAnswer": { "@type": "Answer", "text": "The Smart UV Printer uses UV eco-solvent inks that adhere to a wide range of substrates including vinyl, canvas, backlit film, glass, rigid PVC, and treated fabric. The LED curing system ensures instant ink adhesion on both flexible and semi-rigid materials." } },
+                    { "@type": "Question", "name": "What is the print speed of the Smart UV Printer RJ24U-2002-I3200?", "acceptedAnswer": { "@type": "Answer", "text": "The Smart UV Printer achieves up to 12 m\u00b2/h in 4-pass production mode using dual Epson 3200U1 printheads across a 1.95m media width. This output level is suited for display graphics, wall murals, backlit displays, and high-volume signage production." } },
+                    { "@type": "Question", "name": "What advantage does the aluminium alloy carriage station provide?", "acceptedAnswer": { "@type": "Answer", "text": "The aluminium alloy carriage station reduces the overall weight of the moving print carriage, which lowers vibration during high-speed passes and extends printhead life. The lighter, stiffer carriage also improves dot placement accuracy, directly contributing to sharper output and more consistent color density." } }
+                ]
+            }
+        ]
+    };
+
     return (
         <div className="blog-page-layout">
             <Header />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
             {/* Breadcrumb */}
             <div className="blog-breadcrumb-bar">
@@ -82,6 +108,18 @@ export default function BlogSmartUVPrinter() {
                                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" /><circle cx="12" cy="12" r="3" /></svg>
                                         4,200 views
                                     </span>
+                                </div>
+                            </div>
+                            <div className="callout-box callout-summary">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 11 12 14 22 4" /><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" /></svg>
+                                <div>
+                                    <strong>Quick Summary</strong>
+                                    <ul style={{ margin: '8px 0 0', paddingLeft: '18px', lineHeight: '1.8' }}>
+                                        <li>Dual Epson 3200U1 printheads deliver 12 m²/h at 1.95m media width</li>
+                                        <li>LED curing lamp ensures instant ink adhesion on flexible and rigid substrates</li>
+                                        <li>Aluminium alloy carriage station reduces vibration and extends printhead life</li>
+                                        <li>Suited for wall murals, backlit displays, vehicle wraps, and display graphics</li>
+                                    </ul>
                                 </div>
                             </div>
                         </header>
@@ -350,7 +388,7 @@ export default function BlogSmartUVPrinter() {
                         <div className="sidebar-widget toc-widget">
                             <h3 className="widget-title">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="8" y1="6" x2="21" y2="6" /><line x1="8" y1="12" x2="21" y2="12" /><line x1="8" y1="18" x2="21" y2="18" /><line x1="3" y1="6" x2="3.01" y2="6" /><line x1="3" y1="12" x2="3.01" y2="12" /><line x1="3" y1="18" x2="3.01" y2="18" /></svg>
-                                In This Review
+                                In This Guide
                             </h3>
                             <ol className="toc-list">
                                 <li><a href="#background">High-Speed Output Without Compromise</a></li>

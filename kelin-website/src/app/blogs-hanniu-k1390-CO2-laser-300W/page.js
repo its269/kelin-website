@@ -1,4 +1,4 @@
-ï»¿import React from 'react';
+import React from 'react';
 import "../styles/blog.css";
 import Header from '../components/Header';
 import Link from 'next/link';
@@ -10,7 +10,7 @@ import Link from 'next/link';
  * This file is a Next.js Server Component (no "use client").
  * "export const metadata" is picked up at BUILD TIME by Next.js
  * to pre-render the <head> with unique title, description,
- * Open Graph tags, and canonical URL â€” all without JavaScript
+ * Open Graph tags, and canonical URL — all without JavaScript
  * in the browser, giving search engines clean static HTML.
  * ============================================================
  */
@@ -34,9 +34,34 @@ export const metadata = {
 };
 
 export default function BlogHanniuK1390CO2Laser300W() {
+    const jsonLd = {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "Article",
+                "headline": "Hanniu K1390 CO2 Laser Cutting Machine 300W Review: Advanced Laser Technology for Demanding Creations at 64,000 mm/min",
+                "description": "An in-depth review of the Hanniu K1390 CO2 Laser Cutting Machine 300W. We cover the 64,000 mm/min industrial engraving speed, DSP intelligent control technology, consistent cutting effect with automatic power compensation, precise motion system with imported linear guide rails, 1300×900mm engraving area, and complete specifications for acrylic, wood, non-metallic material cutting and engraving applications.",
+                "image": "https://kelinph.com/laser-machines/Hanniu K1390 CO2 Laser Cutting Machine 300w.webp",
+                "author": { "@type": "Organization", "name": "Kelin Graphics System", "url": "https://kelinph.com/about" },
+                "publisher": { "@type": "Organization", "name": "Kelin Graphics System", "logo": { "@type": "ImageObject", "url": "https://kelinph.com/marquee-logo/inks/kelin-logo.png" } },
+                "datePublished": "2026-04-18T08:00:00.000Z",
+                "dateModified": "2026-05-06T08:00:00.000Z",
+                "mainEntityOfPage": "https://kelinph.com/blogs-hanniu-k1390-CO2-laser-300W"
+            },
+            {
+                "@type": "FAQPage",
+                "mainEntity": [
+                    { "@type": "Question", "name": "What does DSP intelligent control technology do on the Hanniu K1390 300W?", "acceptedAnswer": { "@type": "Answer", "text": "DSP intelligent control technology on the Hanniu K1390 300W manages the laser's motion system in real time, enabling consistent fast-curve cutting with automatic power compensation. This prevents burn marks and uneven cut depths at speed transitions, delivering reliable results from the first piece to the thousandth." } },
+                    { "@type": "Question", "name": "What is the engraving speed and work area of the Hanniu K1390 300W CO2 laser?", "acceptedAnswer": { "@type": "Answer", "text": "The Hanniu K1390 300W achieves an industrial engraving speed of up to 64,000 mm/min across a 1300×900mm engraving area with 0.025mm resolution, powered by imported high-precision linear guide rails and a professional stepping motor system." } },
+                    { "@type": "Question", "name": "What industries and applications is the Hanniu K1390 300W CO2 laser suited for?", "acceptedAnswer": { "@type": "Answer", "text": "The Hanniu K1390 300W is suited for acrylic signage manufacturing, personalized product creation, wood carving, and craft and hobby project fabrication. It is compatible with acrylic, wood, plastic, rubber, and most non-metallic materials, and is ideal for businesses that need both high cutting power and fine engraving detail from a single machine." } }
+                ]
+            }
+        ]
+    };
     return (
         <div className="blog-page-layout">
             <Header />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
             {/* Breadcrumb */}
             <div className="blog-breadcrumb-bar">
@@ -82,6 +107,18 @@ export default function BlogHanniuK1390CO2Laser300W() {
                                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" /><circle cx="12" cy="12" r="3" /></svg>
                                         4,800 views
                                     </span>
+                                </div>
+                            </div>
+                            <div className="callout-box callout-summary">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 11 12 14 22 4" /><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" /></svg>
+                                <div>
+                                    <strong>Quick Summary</strong>
+                                    <ul style={{ margin: '8px 0 0', paddingLeft: '18px', lineHeight: '1.8' }}>
+                                        <li>300W CO2 laser with DSP intelligent control and automatic power compensation eliminates burn marks and uneven cuts at speed transitions</li>
+                                        <li>64,000 mm/min engraving speed across a 1300×900mm work area with 0.025mm resolution for detailed acrylic and wood production</li>
+                                        <li>Imported high-precision linear guide rails and professional stepping motor deliver stable, accurate results across extended production runs</li>
+                                        <li>Ideal for acrylic signage, wood carving, personalized products, and craft fabrication — all from a single high-power CO2 laser platform</li>
+                                    </ul>
                                 </div>
                             </div>
                         </header>
@@ -344,7 +381,7 @@ export default function BlogHanniuK1390CO2Laser300W() {
                         <div className="sidebar-widget toc-widget">
                             <h3 className="widget-title">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="8" y1="6" x2="21" y2="6" /><line x1="8" y1="12" x2="21" y2="12" /><line x1="8" y1="18" x2="21" y2="18" /><line x1="3" y1="6" x2="3.01" y2="6" /><line x1="3" y1="12" x2="3.01" y2="12" /><line x1="3" y1="18" x2="3.01" y2="18" /></svg>
-                                In This Review
+                                In This Guide
                             </h3>
                             <ol className="toc-list">
                                 <li><a href="#background">Advanced Precision Advantage</a></li>

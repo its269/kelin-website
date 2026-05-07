@@ -34,9 +34,34 @@ export const metadata = {
 };
 
 export default function BlogR2000RollerSublimation() {
+    const jsonLd = {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "Article",
+                "headline": "R2000 Roller Sublimation Machine GS1200 / GS1900 Review: Multi-Functional Heat Transfer at 0\u2013399\u00b0C",
+                "description": "An in-depth review of the R2000 Roller Sublimation Machine GS1200/GS1900 (Model GS-R05). We cover the multi-functional print transfer and die-cutting design, 0\u2013399\u00b0C temperature range, Teflon-plated drum, automatic receiving system with anti-counterfeiting function, and full specifications for custom apparel, flags, banners, t-shirts, and event sashes.",
+                "image": "https://kelinph.com/sublimation_dtf/SUBL R2000 Roller Type Sublimation Machine GS 1200 (1).webp",
+                "author": { "@type": "Organization", "name": "Kelin Graphics System", "url": "https://kelinph.com/about" },
+                "publisher": { "@type": "Organization", "name": "Kelin Graphics System", "logo": { "@type": "ImageObject", "url": "https://kelinph.com/marquee-logo/inks/kelin-logo.png" } },
+                "datePublished": "2026-04-16T08:00:00.000Z",
+                "dateModified": "2026-05-06T08:00:00.000Z",
+                "mainEntityOfPage": "https://kelinph.com/blogs-r2000-roller-type-sublimation"
+            },
+            {
+                "@type": "FAQPage",
+                "mainEntity": [
+                    { "@type": "Question", "name": "What is the temperature range of the R2000 Roller Sublimation Machine?", "acceptedAnswer": { "@type": "Answer", "text": "The R2000 supports a 0\u2013399\u00b0C temperature range, providing versatility for sublimation and heat transfer across multiple substrate types including apparel, flags, banners, and event sashes." } },
+                    { "@type": "Question", "name": "Can the R2000 Roller Sublimation Machine perform both print transfer and die-cutting?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. The GS-R05 is a multi-functional unit capable of simultaneous print transfer and die-cutting in a single pass, improving production efficiency for high-volume custom textile jobs." } },
+                    { "@type": "Question", "name": "What anti-counterfeiting feature does the R2000 include?", "acceptedAnswer": { "@type": "Answer", "text": "The R2000 features an automatic anti-counterfeiting receiving system that protects output integrity, ensuring each transferred piece meets authentication and quality standards." } }
+                ]
+            }
+        ]
+    };
     return (
         <div className="blog-page-layout">
             <Header />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
             {/* Breadcrumb */}
             <div className="blog-breadcrumb-bar">
@@ -82,6 +107,18 @@ export default function BlogR2000RollerSublimation() {
                                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" /><circle cx="12" cy="12" r="3" /></svg>
                                         3,800 views
                                     </span>
+                                </div>
+                            </div>
+                            <div className="callout-box callout-summary">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 11 12 14 22 4" /><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" /></svg>
+                                <div>
+                                    <strong>Quick Summary</strong>
+                                    <ul style={{ margin: '8px 0 0', paddingLeft: '18px', lineHeight: '1.8' }}>
+                                        <li>Multi-functional: simultaneous print transfer and die-cutting in a single pass</li>
+                                        <li>Wide 0–399°C temperature range for versatile substrate compatibility</li>
+                                        <li>Teflon-plated drum for smooth, consistent heat transfer without sticking</li>
+                                        <li>Automatic anti-counterfeiting receiving system for output security</li>
+                                    </ul>
                                 </div>
                             </div>
                         </header>
@@ -356,7 +393,7 @@ export default function BlogR2000RollerSublimation() {
                         <div className="sidebar-widget toc-widget">
                             <h3 className="widget-title">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="8" y1="6" x2="21" y2="6" /><line x1="8" y1="12" x2="21" y2="12" /><line x1="8" y1="18" x2="21" y2="18" /><line x1="3" y1="6" x2="3.01" y2="6" /><line x1="3" y1="12" x2="3.01" y2="12" /><line x1="3" y1="18" x2="3.01" y2="18" /></svg>
-                                In This Review
+                                In This Guide
                             </h3>
                             <ol className="toc-list">
                                 <li><a href="#background">Multi-Functional Heat Transfer Quality</a></li>

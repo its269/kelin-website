@@ -10,16 +10,41 @@ export const metadata = {
     openGraph: {
         title: 'Sofie Clear Sticker Film: Transparent Vinyl for Glass, Packaging & Window Graphics',
         description: 'Guide to Sofie Clear Sticker Film — transparent printable vinyl for see-through window graphics, packaging labels, and glass decals.',
-        images: [{ url: '/cat_materials.webp', width: 1200, height: 630, alt: 'Sofie Clear Sticker Film' }],
+        images: [{ url: '/assets/Materials/Clear Sticker.webp', width: 1200, height: 630, alt: 'Sofie Clear Sticker Film' }],
         type: 'article',
     },
     alternates: { canonical: 'https://kelinph.com/blogs-material-sofie-clear-sticker' },
 };
 
 export default function BlogSofieClearSticker() {
+    const jsonLd = {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "Article",
+                "headline": "Sofie Clear Sticker Film Guide: Transparent Vinyl for Window, Glass & Packaging Applications",
+                "description": "Everything you need to know about Sofie Clear Sticker Film — transparent printable vinyl for glass graphics, packaging labels, window decals, and see-through applications. Sizes, adhesive types, and printer compatibility covered.",
+                "image": "https://kelinph.com/assets/Materials/Clear Sticker.webp",
+                "author": { "@type": "Organization", "name": "Kelin Graphics System", "url": "https://kelinph.com/about" },
+                "publisher": { "@type": "Organization", "name": "Kelin Graphics System", "logo": { "@type": "ImageObject", "url": "https://kelinph.com/marquee-logo/inks/kelin-logo.png" } },
+                "datePublished": "2026-04-01T08:00:00.000Z",
+                "dateModified": "2026-05-06T08:00:00.000Z",
+                "mainEntityOfPage": "https://kelinph.com/blogs-material-sofie-clear-sticker"
+            },
+            {
+                "@type": "FAQPage",
+                "mainEntity": [
+                    { "@type": "Question", "name": "Can Sofie Clear Sticker Film be used on glass windows?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, Sofie Clear Sticker Film adheres directly to clean glass surfaces and is commonly used for window decals, door graphics, and interior glass branding. The transparent face stock allows the glass surface to show through the printed graphic, maintaining visibility and creating a no-label-look effect." } },
+                    { "@type": "Question", "name": "Will colors look different when printed on clear sticker film compared to white vinyl?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — because the clear face stock has no white backing, colors will appear differently depending on the surface color behind the sticker. On transparent glass or clear substrates, lighter ink colors may appear faint. A white underprint layer can be added in the print workflow to improve opacity and color accuracy on clear film." } },
+                    { "@type": "Question", "name": "Is Sofie Clear Sticker Film compatible with eco-solvent printers?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, Sofie Clear Sticker Film is engineered for eco-solvent and UV-curable inkjet printing. The surface coating ensures adequate ink adhesion and prevents ink spreading. It is not recommended for aqueous or water-based inkjet systems without compatibility verification." } }
+                ]
+            }
+        ]
+    };
     return (
         <div className="blog-page-layout material-blog-page">
             <Header />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
             <div className="blog-breadcrumb-bar">
                 <div className="blog-breadcrumb-inner">
                     <Link href="/" className="breadcrumb-link">Home</Link>
@@ -56,10 +81,22 @@ export default function BlogSofieClearSticker() {
                                     </span>
                                 </div>
                             </div>
+                            <div className="callout-box callout-summary">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 11 12 14 22 4" /><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" /></svg>
+                                <div>
+                                    <strong>Quick Summary</strong>
+                                    <ul style={{ margin: '8px 0 0', paddingLeft: '18px', lineHeight: '1.8' }}>
+                                        <li>Transparent PVC face stock — lets the substrate surface show through the printed graphic</li>
+                                        <li>Ideal for glass window decals, clear packaging labels, and see-through branded graphics</li>
+                                        <li>Compatible with eco-solvent and UV inkjet wide-format printers</li>
+                                        <li>Add a white underprint layer to improve color opacity on transparent or dark-colored surfaces</li>
+                                    </ul>
+                                </div>
+                            </div>
                         </header>
 
                         <figure className="blog-featured-image" itemProp="image">
-                            <img src="/cat_materials.webp" alt="Sofie Clear Sticker Film" width="840" height="473" loading="eager" />
+                            <img src="/assets/Materials/Clear Sticker.webp" alt="Sofie Clear Sticker Film" width="840" height="473" loading="eager" />
                             <figcaption>
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2" /><circle cx="8.5" cy="8.5" r="1.5" /><polyline points="21 15 16 10 5 21" /></svg>
                                 Sofie Clear Sticker Film — transparent printable vinyl for see-through window graphics, packaging labels, and glass decals.
@@ -214,7 +251,7 @@ export default function BlogSofieClearSticker() {
                             </ol>
                         </div>
                         <div className="sidebar-widget product-widget">
-                            <img src="/cat_materials.webp" alt="Sofie Clear Sticker Film" className="product-widget-img" />
+                            <img src="/assets/Materials/Clear Sticker.webp" alt="Sofie Clear Sticker Film" className="product-widget-img" />
                             <h4>Sofie Clear Sticker Film</h4>
                             <p>Transparent vinyl &middot; Eco-solvent printable &middot; 3.0ft–5.0ft × 164ft</p>
                             <Link href="/materials" className="product-widget-btn">See Full Details <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m9 18 6-6-6-6" /></svg></Link>
