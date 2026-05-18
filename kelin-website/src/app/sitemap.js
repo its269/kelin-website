@@ -4,7 +4,7 @@ export const revalidate = false;
 
 export default function sitemap() {
     const baseUrl = 'https://www.kelinph.com'
-    const lastMod = new Date('2026-04-25')
+    const lastMod = new Date('2026-05-07')
 
     return [
 
@@ -821,6 +821,152 @@ export default function sitemap() {
         },
         {
             url: `${baseUrl}/blogs-acc-glass-wiper`,
+            lastModified: lastMod,
+            changeFrequency: 'monthly',
+            priority: 0.7,
+        },
+
+        // ─── Blog Pages — Promotional Display Articles ────────────
+        {
+            url: `${baseUrl}/blogs-pd-adjustable-banner-stand`,
+            lastModified: lastMod,
+            changeFrequency: 'monthly',
+            priority: 0.7,
+        },
+        {
+            url: `${baseUrl}/blogs-pd-aluminum-data-rack`,
+            lastModified: lastMod,
+            changeFrequency: 'monthly',
+            priority: 0.7,
+        },
+        {
+            url: `${baseUrl}/blogs-pd-aluminum-easel-stand`,
+            lastModified: lastMod,
+            changeFrequency: 'monthly',
+            priority: 0.7,
+        },
+        {
+            url: `${baseUrl}/blogs-pd-door-frame-banner-stand`,
+            lastModified: lastMod,
+            changeFrequency: 'monthly',
+            priority: 0.7,
+        },
+        {
+            url: `${baseUrl}/blogs-pd-double-sided-poster-stand`,
+            lastModified: lastMod,
+            changeFrequency: 'monthly',
+            priority: 0.7,
+        },
+        {
+            url: `${baseUrl}/blogs-pd-feather-wing-banner`,
+            lastModified: lastMod,
+            changeFrequency: 'monthly',
+            priority: 0.7,
+        },
+        {
+            url: `${baseUrl}/blogs-pd-human-standee`,
+            lastModified: lastMod,
+            changeFrequency: 'monthly',
+            priority: 0.7,
+        },
+        {
+            url: `${baseUrl}/blogs-pd-iron-data-rack`,
+            lastModified: lastMod,
+            changeFrequency: 'monthly',
+            priority: 0.7,
+        },
+        {
+            url: `${baseUrl}/blogs-pd-iron-poster-stand`,
+            lastModified: lastMod,
+            changeFrequency: 'monthly',
+            priority: 0.7,
+        },
+        {
+            url: `${baseUrl}/blogs-pd-led-menu-lightbox`,
+            lastModified: lastMod,
+            changeFrequency: 'monthly',
+            priority: 0.7,
+        },
+        {
+            url: `${baseUrl}/blogs-pd-mini-promotional-booth`,
+            lastModified: lastMod,
+            changeFrequency: 'monthly',
+            priority: 0.7,
+        },
+        {
+            url: `${baseUrl}/blogs-pd-pop-up-structure`,
+            lastModified: lastMod,
+            changeFrequency: 'monthly',
+            priority: 0.7,
+        },
+        {
+            url: `${baseUrl}/blogs-pd-portable-backdrop`,
+            lastModified: lastMod,
+            changeFrequency: 'monthly',
+            priority: 0.7,
+        },
+        {
+            url: `${baseUrl}/blogs-pd-regular-promotional-booth`,
+            lastModified: lastMod,
+            changeFrequency: 'monthly',
+            priority: 0.7,
+        },
+        {
+            url: `${baseUrl}/blogs-pd-roll-up-banner`,
+            lastModified: lastMod,
+            changeFrequency: 'monthly',
+            priority: 0.7,
+        },
+        {
+            url: `${baseUrl}/blogs-pd-rotating-lightbox`,
+            lastModified: lastMod,
+            changeFrequency: 'monthly',
+            priority: 0.7,
+        },
+        {
+            url: `${baseUrl}/blogs-pd-round-base-poster-banner`,
+            lastModified: lastMod,
+            changeFrequency: 'monthly',
+            priority: 0.7,
+        },
+        {
+            url: `${baseUrl}/blogs-pd-semi-circle-promotional-booth`,
+            lastModified: lastMod,
+            changeFrequency: 'monthly',
+            priority: 0.7,
+        },
+        {
+            url: `${baseUrl}/blogs-pd-single-sided-poster-stand`,
+            lastModified: lastMod,
+            changeFrequency: 'monthly',
+            priority: 0.7,
+        },
+        {
+            url: `${baseUrl}/blogs-pd-teardrop-banner`,
+            lastModified: lastMod,
+            changeFrequency: 'monthly',
+            priority: 0.7,
+        },
+        {
+            url: `${baseUrl}/blogs-pd-triangle-banner-easel-stand`,
+            lastModified: lastMod,
+            changeFrequency: 'monthly',
+            priority: 0.7,
+        },
+        {
+            url: `${baseUrl}/blogs-pd-windproof-display`,
+            lastModified: lastMod,
+            changeFrequency: 'monthly',
+            priority: 0.7,
+        },
+        {
+            url: `${baseUrl}/blogs-pd-wooden-easel-stand`,
+            lastModified: lastMod,
+            changeFrequency: 'monthly',
+            priority: 0.7,
+        },
+        {
+            url: `${baseUrl}/blogs-pd-x-banner-stand`,
             lastModified: lastMod,
             changeFrequency: 'monthly',
             priority: 0.7,

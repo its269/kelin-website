@@ -190,11 +190,11 @@ export default function BlogAccAcrylicBender() {
                             <h3 className="widget-title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" /><polyline points="14 2 14 8 20 8" /></svg>Related Articles</h3>
                             <div className="related-article-list">
                                 <Link href="/blogs-acc-cutting-mat" className="related-article-item">
-                                    <img src="/dummy-image-square.jpg" alt="Cutting Mat Guide" className="related-article-img" />
+                                    <img src="/assets/Accessories/Cutting Mat.webp" alt="Cutting Mat Guide" className="related-article-img" />
                                     <div><span className="related-article-category">Accessories</span><p className="related-article-title">Grid Lines Cutting Mat Guide</p></div>
                                 </Link>
                                 <Link href="/blogs-2-accessories" className="related-article-item">
-                                    <img src="/dummy-image-square.jpg" alt="Accessories Guide" className="related-article-img" />
+                                    <img src="/cat_accessories.webp" alt="Accessories Guide" className="related-article-img" />
                                     <div><span className="related-article-category">Accessories</span><p className="related-article-title">Browse All Accessories Guides</p></div>
                                 </Link>
                             </div>

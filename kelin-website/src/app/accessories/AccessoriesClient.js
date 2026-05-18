@@ -91,7 +91,13 @@ export default function AccessoriesDisplayPage() {
           desc: 'Banner finishing hardware and punching machines.',
           specs: 'Eyelet #2 pack (1880 pcs, 10mm x 19mm x 5.7mm). Machines: Press Puncher, Semi-automatic Puncher, Manual Puncher.',
           features: ['Rust resistant eyelets', 'Efficient banner finishing', 'Multiple machine options'],
-          images: [{ src: '/dummy-image-square.jpg', label: 'Eyelet #2 & Punchers' }]
+          images: [
+            { src: '/accessories/Eyelet%20%232.png', label: 'Eyelet #2' },
+            { src: '/accessories/1%20Press%20Manual%20Eyelet%20Puncher%20Black.png', label: 'Press Puncher (1)' },
+            { src: '/accessories/2%20Press%20Manual%20Eyelet%20Puncher%20Black.png', label: 'Press Puncher (2)' },
+            { src: '/accessories/1%20Semi-Automatic%20Puncher.png', label: 'Semi-Automatic Puncher (1)' },
+            { src: '/accessories/2%20Semi-Automatic%20Puncher.png', label: 'Semi-Automatic Puncher (2)' },
+          ]
         },
         {
           name: 'Application Squeegees',
@@ -110,21 +116,27 @@ export default function AccessoriesDisplayPage() {
           desc: 'Specialized cleaning swabs for delicate printer components.',
           specs: 'Lint-free, solvent-compatible swabs.',
           features: ['Safe for printheads', 'High absorbency', 'Leaves no residue'],
-          images: [{ src: '/dummy-image-square.jpg', label: 'Swab (Print Head Use)' }]
+          images: [{ src: '/accessories/Cotton%20swab.png', label: 'Swab (Print Head Use)' }]
         },
         {
           name: 'Wiper Polyester',
           desc: 'Cleanroom-grade polyester wipers for general maintenance.',
           specs: 'Quantity: 150 pcs per pack.',
           features: ['Lint-free material', 'Durable and tear-resistant', 'Chemical resistant'],
-          images: [{ src: '/dummy-image-square.jpg', label: 'Wiper Polyester' }]
+          images: [
+            { src: '/accessories/Polyester%20Wipers%20%281%29.png', label: 'Wiper Polyester (1)' },
+            { src: '/accessories/Polyester%20Wipers%20%282%29.png', label: 'Wiper Polyester (2)' },
+          ]
         },
         {
           name: 'Glass Wiper Rubber Strip',
           desc: 'Handheld wiper for cleaning large glass or flat surfaces.',
           specs: 'Yellow Handle, Size: 11.8cm x 14.5cm.',
           features: ['Streak-free cleaning', 'Comfortable grip handle', 'Durable rubber edge'],
-          images: [{ src: '/dummy-image-square.jpg', label: 'Glass Wiper Rubber Strip' }]
+          images: [
+            { src: '/accessories/Glass%20Wiper%20Rubber%20Strip%20%281%29.png', label: 'Glass Wiper Rubber Strip (1)' },
+            { src: '/accessories/Glass%20Wiper%20Rubber%20Strip%20%282%29.png', label: 'Glass Wiper Rubber Strip (2)' },
+          ]
         }
       ]
     }

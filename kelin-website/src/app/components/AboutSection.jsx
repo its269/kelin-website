@@ -6,7 +6,7 @@ import './about-section.css';
 const slideshowImages = [
     { src: '/laser-machines/Handheld Fiber Laser.webp', alt: 'Handheld Fiber Laser' },
     { src: '/uv-machines/Luxor RTR (1).webp', alt: 'Luxor RTR UV Printer' },
-    { src: '/cutting-machines/bk4 (1).webp', alt: 'iECHO BK4 Cutting Machine' },
+    // { src: '/cutting-machines/bk4 (1).webp', alt: 'iECHO BK4 Cutting Machine' },
     { src: '/sublimation_dtf/SUBL Smart Sublimation (1).webp', alt: 'Smart Sublimation Machine' },
     { src: '/eco-solvent-machines/Apollo.webp', alt: 'Apollo Eco Solvent Printer' },
     { src: '/embroidery_knitting/Promaker Embroidery 1201.webp', alt: 'Promaker Embroidery Machine' },

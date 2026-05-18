@@ -22,6 +22,21 @@ export default function Header() {
 
     // Search data - expanded with Materials products
     const searchData = [
+        // Solutions Pages
+        { title: "Solutions — Cutting Machines", path: "/solutions-cutting-machines", type: "page" },
+        { title: "Solutions — Digital Printing Equipment", path: "/solutions-digital-printing-equipment", type: "page" },
+        { title: "Solutions — DTF", path: "/solutions-dtf", type: "page" },
+        { title: "Solutions — Exhibition Display", path: "/solutions-exhibition-display", type: "page" },
+        { title: "Solutions — Industrial Cutter", path: "/solutions-industrial-cutter", type: "page" },
+        { title: "Solutions — Industrial Sublimation", path: "/solutions-industrial-sublimation", type: "page" },
+        { title: "Solutions — Laser Machines", path: "/solutions-laser-machines", type: "page" },
+        { title: "Solutions — Personalize Machines", path: "/solutions-personalize-machines", type: "page" },
+        { title: "Solutions — Signages", path: "/solutions-signages", type: "page" },
+        { title: "Solutions — Substrates & Materials", path: "/solutions-substrates-materials", type: "page" },
+        { title: "Solutions — Textile & Apparel", path: "/solutions-textile-apparel", type: "page" },
+        { title: "Solutions — Threadwork", path: "/solutions-threadwork", type: "page" },
+        { title: "Solutions — UV DTF", path: "/solutions-uv-dtf", type: "page" },
+
         // Main Pages
         { title: "Home", path: "/", type: "page" },
         { title: "Explore", path: "/explore", type: "page" },
@@ -166,8 +181,8 @@ export default function Header() {
         { title: "PROMAKER Embroidery Single Head 1201", path: "/promaker-embroidery-1201", type: "machine" },
         { title: "PROMAKER Embroidery 1202", path: "/promaker-embroidery-1202", type: "machine" },
         { title: "PROMAKER Embroidery Dual Head 1202", path: "/promaker-embroidery-1202", type: "machine" },
-        { title: "PROMAKER Embroidery 1804", path: "/promaker-embroidery-1804", type: "machine" },
-        { title: "PROMAKER Embroidery Quad Head 1804", path: "/promaker-embroidery-1804", type: "machine" },
+        { title: "PROMAKER Embroidery 1804", path: "/promaker-embroidery-1204", type: "machine" },
+        { title: "PROMAKER Embroidery Quad Head 1804", path: "/promaker-embroidery-1204", type: "machine" },
         { title: "Smartex Knitting GS-CE152", path: "/smartex-knitting-gsce-1-52", type: "machine" },
         { title: "Smartex Knitting Machine GS-CE152", path: "/smartex-knitting-gsce-1-52", type: "machine" },
 
@@ -339,6 +354,32 @@ export default function Header() {
         { title: "Vivid DTF Ink Guide", path: "/blogs-ink-vivid-dtf", type: "blog" },
         { title: "Vivid Sublimation 1L Ink Guide", path: "/blogs-ink-vivid-sub-1l", type: "blog" },
         { title: "Vivid Sublimation 5L Ink Guide", path: "/blogs-ink-vivid-sub-5l", type: "blog" },
+
+        // Blog — Promotional Display Articles
+        { title: "Roll Up Banner Guide", path: "/blogs-pd-roll-up-banner", type: "blog" },
+        { title: "X Banner Stand Guide", path: "/blogs-pd-x-banner-stand", type: "blog" },
+        { title: "Adjustable Banner Stand Guide", path: "/blogs-pd-adjustable-banner-stand", type: "blog" },
+        { title: "Feather Wing Banner Guide", path: "/blogs-pd-feather-wing-banner", type: "blog" },
+        { title: "Teardrop Banner Stand Guide", path: "/blogs-pd-teardrop-banner", type: "blog" },
+        { title: "Single Sided Poster Stand Guide", path: "/blogs-pd-single-sided-poster-stand", type: "blog" },
+        { title: "Double Sided Poster Stand Guide", path: "/blogs-pd-double-sided-poster-stand", type: "blog" },
+        { title: "Iron Poster Stand Guide", path: "/blogs-pd-iron-poster-stand", type: "blog" },
+        { title: "Round Base Poster Banner Guide", path: "/blogs-pd-round-base-poster-banner", type: "blog" },
+        { title: "Aluminum Easel Stand Guide", path: "/blogs-pd-aluminum-easel-stand", type: "blog" },
+        { title: "Wooden Easel Stand Guide", path: "/blogs-pd-wooden-easel-stand", type: "blog" },
+        { title: "Triangle Banner Easel Stand Guide", path: "/blogs-pd-triangle-banner-easel-stand", type: "blog" },
+        { title: "Human Standee Guide", path: "/blogs-pd-human-standee", type: "blog" },
+        { title: "Pop Up Structure Guide", path: "/blogs-pd-pop-up-structure", type: "blog" },
+        { title: "Portable Backdrop Guide", path: "/blogs-pd-portable-backdrop", type: "blog" },
+        { title: "Mini Promotional Booth Guide", path: "/blogs-pd-mini-promotional-booth", type: "blog" },
+        { title: "Regular Promotional Booth Guide", path: "/blogs-pd-regular-promotional-booth", type: "blog" },
+        { title: "Semi Circle Promotional Booth Guide", path: "/blogs-pd-semi-circle-promotional-booth", type: "blog" },
+        { title: "Door Frame Banner Stand Guide", path: "/blogs-pd-door-frame-banner-stand", type: "blog" },
+        { title: "Aluminum Data Rack Guide", path: "/blogs-pd-aluminum-data-rack", type: "blog" },
+        { title: "Iron Data Rack Guide", path: "/blogs-pd-iron-data-rack", type: "blog" },
+        { title: "Rotating Lightbox Guide", path: "/blogs-pd-rotating-lightbox", type: "blog" },
+        { title: "LED Menu Lightbox Guide", path: "/blogs-pd-led-menu-lightbox", type: "blog" },
+        { title: "Windproof Display Guide", path: "/blogs-pd-windproof-display", type: "blog" },
 
         // Blog — Accessories Articles
         { title: "Cordless Electric Scissors Guide", path: "/blogs-acc-electric-scissors", type: "blog" },
