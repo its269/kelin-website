@@ -13,6 +13,9 @@ export const metadata = {
   description: 'Kelin Graphics System is the Philippines\' leading supplier of eco-solvent printers, UV flatbed printers, DTF machines, digital cutting plotters, heat press, sublimation, laminating, and laser equipment. Expert support and after-sales service.',
   keywords: 'eco solvent printer Philippines, UV printer, DTF machine, digital cutter, iEcho, GCC, heat press, sublimation printer, laser cutting machine, Kelin Graphics',
   robots: { index: true, follow: true, googleBot: { index: true, follow: true } },
+  verification: {
+    google: 'rmeLX4WL4DoAzkB9sK3oDr2cYMXzfYut7mwnDVx9rMo',
+  },
   alternates: { canonical: '/' },
   openGraph: {
     title: 'Kelin Graphics System — Printing Machines & Equipment Philippines',
