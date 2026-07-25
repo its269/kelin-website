@@ -1,4 +1,6 @@
 "use client";
+import { buildInquiryPayload, submitInquiry } from '../../lib/submitInquiry';
+
 import Header from '../components/Header';
 import Link from 'next/link';
 import { useState, useRef, useEffect } from 'react';
@@ -235,12 +237,8 @@ export default function IEchoTK4S() {
         data['inquiryType'] = 'product-inquiry';
 
         try {
-            const response = await fetch('https://formspree.io/f/mvzwzkkd', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(data)
-            });
-            if (response.ok) {
+            await submitInquiry(buildInquiryPayload(data));
+            if (true) {
                 setInquiryStatus('success');
                 form.reset();
             } else {
@@ -516,9 +514,9 @@ export default function IEchoTK4S() {
                                     />
                                 </div>
                                 <div className="iecho-tk4s-form-group">
-                                    <label htmlFor="phone">Phone Number</label>
+                                    <label htmlFor="phone">Phone Number *</label>
                                     <div className="iecho-tk4s-phone-input">
-                                        <select name="countryCode" className="iecho-tk4s-country-select" defaultValue="+63">
+                                        <select name="countryCode" className="iecho-tk4s-country-select" defaultValue="+63" required>
                                             <option value="+63">🇵🇭 +63</option>
                                             <option value="+1">🇺🇸 +1</option>
                                             <option value="+1">🇨🇦 +1</option>
@@ -659,19 +657,19 @@ export default function IEchoTK4S() {
                                             placeholder="123 456 7890"
                                             pattern="[0-9\\s\\-\\(\\)]{7,15}"
                                             title="Please enter a valid phone number"
-                                        />
+                                        required />
                                     </div>
                                 </div>
                             </div>
 
                             <div className="iecho-tk4s-form-row">
                                 <div className="iecho-tk4s-form-group">
-                                    <label htmlFor="company">Company Name</label>
-                                    <input type="text" id="company" name="company" />
+                                    <label htmlFor="company">Company Name *</label>
+                                    <input type="text" id="company" name="company" required />
                                 </div>
                                 <div className="iecho-tk4s-form-group">
-                                    <label htmlFor="address">Complete Address</label>
-                                    <input type="text" id="address" name="address" placeholder="Street, City, State/Province, Country" />
+                                    <label htmlFor="address">Complete Address *</label>
+                                    <input type="text" id="address" name="address" placeholder="Street, City, State/Province, Country" required />
                                 </div>
                             </div>
 

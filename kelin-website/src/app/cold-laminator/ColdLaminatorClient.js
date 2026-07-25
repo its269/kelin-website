@@ -1,4 +1,6 @@
 "use client";
+import { buildInquiryPayload, submitInquiry } from '../../lib/submitInquiry';
+
 import Header from '../components/Header';
 import Link from 'next/link';
 import { useState, useRef, useEffect } from 'react';
@@ -211,7 +213,7 @@ export default function ColdLaminator() {
         formData.append('name', `${formData.get('firstName') || ''} ${formData.get('lastName') || ''}`.trim());
         formData.append('inquiryType', 'product-inquiry');
         try {
-            const res = await fetch('https://formspree.io/f/mvzwzkkd', {
+            const res = await fetch('/api/inquiries/', {
                 method: 'POST',
                 headers: { 'Accept': 'application/json' },
                 body: formData,
@@ -465,20 +467,20 @@ export default function ColdLaminator() {
                                     <input type="email" id="email" name="email" required />
                                 </div>
                                 <div className="cold-laminator-form-group">
-                                    <label htmlFor="company">Company Name</label>
-                                    <input type="text" id="company" name="company" />
+                                    <label htmlFor="company">Company Name *</label>
+                                    <input type="text" id="company" name="company" required />
                                 </div>
                             </div>
 
                             <div className="cold-laminator-form-row">
                                 <div className="cold-laminator-form-group">
-                                    <label htmlFor="address">Complete Address</label>
-                                    <input type="text" id="address" name="address" placeholder="Street, City, State/Province, Country" />
+                                    <label htmlFor="address">Complete Address *</label>
+                                    <input type="text" id="address" name="address" placeholder="Street, City, State/Province, Country" required />
                                 </div>
                                 <div className="cold-laminator-form-group">
                                     <label htmlFor="phone">Phone Number *</label>
                                     <div className="cold-laminator-phone-input">
-                                        <select className="cold-laminator-country-select" name="countryCode" defaultValue="+63">
+                                        <select className="cold-laminator-country-select" name="countryCode" defaultValue="+63" required>
                                             <option value="+63">🇵🇭 +63</option>
                                             <option value="+1">🇺🇸 +1</option>
                                             <option value="+1">🇨🇦 +1</option>

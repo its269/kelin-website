@@ -1,4 +1,6 @@
 ﻿"use client";
+import { buildInquiryPayload, submitInquiry } from '../../lib/submitInquiry';
+
 import Header from '../components/Header';
 import Link from 'next/link';
 import { useState, useRef, useEffect } from 'react';
@@ -212,7 +214,7 @@ export default function YuemingFiberLaser() {
         data.append('name', `${data.get('firstName') || ''} ${data.get('lastName') || ''}`.trim());
         data.append('inquiryType', 'product-inquiry');
         try {
-            const response = await fetch("https://formspree.io/f/mvzwzkkd", {
+            const response = await fetch("/api/inquiries/", {
                 method: "POST",
                 headers: { Accept: "application/json" },
                 body: data,
@@ -470,20 +472,20 @@ export default function YuemingFiberLaser() {
                                     <input type="email" id="email" name="email" required />
                                 </div>
                                 <div className="yueming-laser-form-group">
-                                    <label htmlFor="company">Company Name</label>
-                                    <input type="text" id="company" name="company" />
+                                    <label htmlFor="company">Company Name *</label>
+                                    <input type="text" id="company" name="company" required />
                                 </div>
                             </div>
 
                             <div className="yueming-laser-form-row">
                                 <div className="yueming-laser-form-group">
-                                    <label htmlFor="address">Complete Address</label>
-                                    <input type="text" id="address" name="address" placeholder="Street, City, State/Province, Country" />
+                                    <label htmlFor="address">Complete Address *</label>
+                                    <input type="text" id="address" name="address" placeholder="Street, City, State/Province, Country" required />
                                 </div>
                                 <div className="yueming-laser-form-group">
                                     <label htmlFor="phone">Phone Number *</label>
                                     <div className="yueming-laser-phone-input">
-                                        <select className="yueming-laser-country-select" name="countryCode" defaultValue="+63">
+                                        <select className="yueming-laser-country-select" name="countryCode" defaultValue="+63" required>
                                             <option value="+63">🇵🇭 +63</option>
                                             <option value="+1">🇺🇸 +1</option>
                                             <option value="+1">🇨🇦 +1</option>

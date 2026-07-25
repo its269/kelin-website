@@ -1,4 +1,6 @@
 "use client";
+import { buildInquiryPayload, submitInquiry } from '../../lib/submitInquiry';
+
 import Header from '../components/Header';
 import Link from 'next/link';
 import { useState, useRef } from 'react';
@@ -105,7 +107,7 @@ export default function HeatPress() {
         formData.append('name', `${formData.get('firstName') || ''} ${formData.get('lastName') || ''}`.trim());
         formData.append('inquiryType', 'product-inquiry');
         try {
-            const res = await fetch('https://formspree.io/f/mvzwzkkd', {
+            const res = await fetch('/api/inquiries/', {
                 method: 'POST',
                 body: formData,
                 headers: {
@@ -298,9 +300,9 @@ export default function HeatPress() {
                                     />
                                 </div>
                                 <div className="heatpress-form-group">
-                                    <label htmlFor="phone">Phone Number</label>
+                                    <label htmlFor="phone">Phone Number *</label>
                                     <div className="heatpress-phone-input">
-                                        <select name="countryCode" className="heatpress-country-select" defaultValue="+63" disabled={submitting}>
+                                        <select name="countryCode" className="heatpress-country-select" defaultValue="+63" disabled={submitting} required>
                                             {/* ...existing code for country options... */}
                                             <option value="+63">🇵🇭 +63</option>
                                             <option value="+1">🇺🇸 +1</option>
@@ -450,12 +452,12 @@ export default function HeatPress() {
 
                             <div className="heatpress-form-row">
                                 <div className="heatpress-form-group">
-                                    <label htmlFor="company">Company Name</label>
-                                    <input type="text" id="company" name="company" />
+                                    <label htmlFor="company">Company Name *</label>
+                                    <input type="text" id="company" name="company" required />
                                 </div>
                                 <div className="heatpress-form-group">
-                                    <label htmlFor="address">Complete Address</label>
-                                    <input type="text" id="address" name="address" placeholder="Street, City, State/Province, Country" />
+                                    <label htmlFor="address">Complete Address *</label>
+                                    <input type="text" id="address" name="address" placeholder="Street, City, State/Province, Country" required />
                                 </div>
                             </div>
 

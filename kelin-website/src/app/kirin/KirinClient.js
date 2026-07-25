@@ -1,4 +1,6 @@
 "use client";
+import { buildInquiryPayload, submitInquiry } from '../../lib/submitInquiry';
+
 import Header from '../components/Header';
 import Link from 'next/link';
 import { useState, useRef, useEffect } from 'react';
@@ -213,6 +215,7 @@ export default function KirinDA182TPlus() {
             countryCode: form.countryCode ? form.countryCode.value : '',
             phone: form.phone ? form.phone.value : '',
             company: form.company ? form.company.value : '',
+            address: form.address ? form.address.value : '',
             message: form.message.value,
             _subject: `Inquiry: ${machineDetails.name}`,
             'Page Source': machineDetails.name,
@@ -229,12 +232,8 @@ export default function KirinDA182TPlus() {
         data['inquiryType'] = 'product-inquiry';
 
         try {
-            const response = await fetch('https://formspree.io/f/mvzwzkkd', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(data)
-            });
-            if (response.ok) {
+            await submitInquiry(buildInquiryPayload(data));
+            if (true) {
                 setInquiryStatus('success');
                 form.reset();
             } else {
@@ -489,9 +488,9 @@ export default function KirinDA182TPlus() {
                                     />
                                 </div>
                                 <div className="kirin-da182t-form-group">
-                                    <label htmlFor="phone">Phone Number</label>
+                                    <label htmlFor="phone">Phone Number *</label>
                                     <div className="kirin-da182t-phone-input">
-                                        <select name="countryCode" className="kirin-da182t-country-select" defaultValue="+63">
+                                        <select name="countryCode" className="kirin-da182t-country-select" defaultValue="+63" required>
                                             <option value="+63">🇵🇭 +63</option>
                                             <option value="+1">🇺🇸 +1</option>
                                             <option value="+1">🇨🇦 +1</option>
@@ -632,19 +631,19 @@ export default function KirinDA182TPlus() {
                                             placeholder="123 456 7890"
                                             pattern="[0-9\\s\\-\\(\\)]{7,15}"
                                             title="Please enter a valid phone number"
-                                        />
+                                        required />
                                     </div>
                                 </div>
                             </div>
 
                             <div className="kirin-form-row">
                                 <div className="kirin-da182t-form-group">
-                                    <label htmlFor="company">Company Name</label>
-                                    <input type="text" id="company" name="company" />
+                                    <label htmlFor="company">Company Name *</label>
+                                    <input type="text" id="company" name="company" required />
                                 </div>
                                 <div className="kirin-da182t-form-group">
-                                    <label htmlFor="address">Complete Address</label>
-                                    <input type="text" id="address" name="address" placeholder="Street, City, State/Province, Country" />
+                                    <label htmlFor="address">Complete Address *</label>
+                                    <input type="text" id="address" name="address" placeholder="Street, City, State/Province, Country" required />
                                 </div>
                             </div>
 

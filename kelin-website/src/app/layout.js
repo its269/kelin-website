@@ -1,8 +1,6 @@
 import "./globals.css";
 import "./bison-global.css";
-import Footer from "./components/Footer";
-import CookieConsent from "./components/CookieConsent";
-import GlobalChatbot from "./components/GlobalChatbot";
+import SiteChrome from "./components/SiteChrome";
 
 export const metadata = {
   metadataBase: new URL('https://www.kelinph.com'),
@@ -46,12 +44,7 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body>
-        <div className="app-container">
-          {children}
-          <Footer />
-          <CookieConsent />
-          <GlobalChatbot />
-        </div>
+        <SiteChrome>{children}</SiteChrome>
       </body>
     </html>
   );

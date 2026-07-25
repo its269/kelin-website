@@ -1,4 +1,6 @@
 "use client";
+import { buildInquiryPayload, submitInquiry } from '../../lib/submitInquiry';
+
 import Header from '../components/Header';
 import Link from 'next/link';
 import { useState } from 'react';
@@ -82,12 +84,7 @@ export default function EcoSolventPrintersClient() {
         setSubmitStatus(null);
 
         try {
-            const response = await fetch('https://formspree.io/f/mvzwzkkd', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({
+            await submitInquiry(buildInquiryPayload({
                     ...formData,
                     name: `${formData.firstName || ''} ${formData.lastName || ''}`.trim(),
                     inquiryType: 'product-inquiry',
@@ -102,10 +99,8 @@ export default function EcoSolventPrintersClient() {
                         dateStyle: 'full',
                         timeStyle: 'long'
                     })
-                })
-            });
-
-            if (response.ok) {
+                }));
+            if (true) {
                 setSubmitStatus('success');
                 // Reset form
                 setFormData({
@@ -319,14 +314,14 @@ export default function EcoSolventPrintersClient() {
                                     />
                                 </div>
                                 <div className="eco-sol-form-group">
-                                    <label htmlFor="phone">Phone Number</label>
+                                    <label htmlFor="phone">Phone Number *</label>
                                     <div className="eco-sol-phone-input">
                                         <select
                                             name="countryCode"
                                             className="eco-sol-country-select"
                                             value={formData.countryCode}
                                             onChange={handleInputChange}
-                                        >
+                                         required>
                                             <option value="+63">🇵🇭 +63</option>
                                             <option value="+1">🇺🇸 +1</option>
                                             {/* Add other options as needed */}
@@ -347,7 +342,7 @@ export default function EcoSolventPrintersClient() {
 
                             <div className="eco-sol-form-row">
                                 <div className="eco-sol-form-group">
-                                    <label htmlFor="company">Company Name</label>
+                                    <label htmlFor="company">Company Name *</label>
                                     <input
                                         type="text"
                                         id="company"
@@ -358,7 +353,7 @@ export default function EcoSolventPrintersClient() {
                                 </div>
 
                                 <div className="eco-sol-form-group">
-                                    <label htmlFor="address">Complete Address</label>
+                                    <label htmlFor="address">Complete Address *</label>
                                     <input
                                         type="text"
                                         id="address"

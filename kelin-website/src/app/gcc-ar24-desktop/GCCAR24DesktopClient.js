@@ -1,4 +1,6 @@
 "use client";
+import { buildInquiryPayload, submitInquiry } from '../../lib/submitInquiry';
+
 import Header from '../components/Header';
 import Link from 'next/link';
 import { useState, useRef, useEffect } from 'react';
@@ -236,12 +238,8 @@ export default function GCCAR24Desktop() {
         data['inquiryType'] = 'product-inquiry';
 
         try {
-            const response = await fetch('https://formspree.io/f/mvzwzkkd', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(data)
-            });
-            if (response.ok) {
+            await submitInquiry(buildInquiryPayload(data));
+            if (true) {
                 setInquiryStatus('success');
                 form.reset();
             } else {
@@ -509,9 +507,9 @@ export default function GCCAR24Desktop() {
                                     />
                                 </div>
                                 <div className="gcc-ar24-form-group">
-                                    <label htmlFor="phone">Phone Number</label>
+                                    <label htmlFor="phone">Phone Number *</label>
                                     <div className="gcc-ar24-phone-input">
-                                        <select name="countryCode" className="gcc-ar24-country-select" defaultValue="+63">
+                                        <select name="countryCode" className="gcc-ar24-country-select" defaultValue="+63" required>
                                             <option value="+63">🇵🇭 +63</option>
                                             <option value="+1">🇺🇸 +1</option>
                                             <option value="+1">🇨🇦 +1</option>
@@ -652,19 +650,19 @@ export default function GCCAR24Desktop() {
                                             placeholder="123 456 7890"
                                             pattern="[0-9\\s\\-\\(\\)]{7,15}"
                                             title="Please enter a valid phone number"
-                                        />
+                                        required />
                                     </div>
                                 </div>
                             </div>
 
                             <div className="gcc-ar24-form-row">
                                 <div className="gcc-ar24-form-group">
-                                    <label htmlFor="company">Company Name</label>
-                                    <input type="text" id="company" name="company" />
+                                    <label htmlFor="company">Company Name *</label>
+                                    <input type="text" id="company" name="company" required />
                                 </div>
                                 <div className="gcc-ar24-form-group">
-                                    <label htmlFor="address">Complete Address</label>
-                                    <input type="text" id="address" name="address" placeholder="Street, City, State/Province, Country" />
+                                    <label htmlFor="address">Complete Address *</label>
+                                    <input type="text" id="address" name="address" placeholder="Street, City, State/Province, Country" required />
                                 </div>
                             </div>
 

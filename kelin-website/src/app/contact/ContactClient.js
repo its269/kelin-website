@@ -1,6 +1,7 @@
 "use client";
 import { useState } from 'react';
 import Header from '../components/Header';
+import { buildInquiryPayload, submitInquiry } from '../../lib/submitInquiry';
 import './contact.css';
 
 export default function Contact() {
@@ -33,42 +34,24 @@ export default function Contact() {
         setSubmitStatus(null);
 
         try {
-            const response = await fetch('https://formspree.io/f/mvzwzkkd', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({
-                    ...formData,
-                    _replyto: formData.email,
-                    _subject: `New Inquiry from Contact Page - ${formData.subject}`,
-                    _cc: 'info@kelinph.com',
-                    'Page Source': 'Contact Page',
-                    'Page URL': typeof window !== 'undefined' ? window.location.href : '',
-                    'Submitted At': new Date().toLocaleString('en-US', {
-                        timeZone: 'Asia/Manila',
-                        dateStyle: 'full',
-                        timeStyle: 'long'
-                    })
-                })
-            });
+            await submitInquiry(buildInquiryPayload({
+                ...formData,
+                subject: formData.subject || 'New Inquiry from Contact Page',
+                pageSource: 'Contact Page',
+            }));
 
-            if (response.ok) {
-                setSubmitStatus('success');
-                setFormData({
-                    name: '',
-                    email: '',
-                    company: '',
-                    address: '',
-                    countryCode: '+63',
-                    phone: '',
-                    subject: '',
-                    message: '',
-                    inquiryType: 'general'
-                });
-            } else {
-                setSubmitStatus('error');
-            }
+            setSubmitStatus('success');
+            setFormData({
+                name: '',
+                email: '',
+                company: '',
+                address: '',
+                countryCode: '+63',
+                phone: '',
+                subject: '',
+                message: '',
+                inquiryType: 'general'
+            });
         } catch (error) {
             setSubmitStatus('error');
         } finally {
@@ -217,24 +200,26 @@ export default function Contact() {
 
                                     <div className="form-row">
                                         <div className="form-group">
-                                            <label htmlFor="company">Company Name</label>
+                                            <label htmlFor="company">Company Name *</label>
                                             <input
                                                 type="text"
                                                 id="company"
                                                 name="company"
                                                 value={formData.company}
                                                 onChange={handleInputChange}
+                                                required
                                                 placeholder="Enter your company name"
                                             />
                                         </div>
                                         <div className="form-group">
-                                            <label htmlFor="phone">Phone Number</label>
+                                            <label htmlFor="phone">Phone Number *</label>
                                             <div className="contact-phone-input">
                                                 <select
                                                     name="countryCode"
                                                     value={formData.countryCode}
                                                     onChange={handleInputChange}
                                                     className="contact-country-select"
+                                                    required
                                                 >
                                                     <option value="+63">🇵🇭 +63</option>
                                                     <option value="+1">🇺🇸 +1</option>
@@ -383,6 +368,7 @@ export default function Contact() {
                                                     placeholder="123 456 7890"
                                                     pattern="[0-9\\s\\-\\(\\)]{7,15}"
                                                     title="Please enter a valid phone number"
+                                                    required
                                                 />
                                             </div>
                                         </div>
@@ -390,24 +376,26 @@ export default function Contact() {
 
                                     <div className="form-row">
                                         <div className="form-group">
-                                            <label htmlFor="address">Complete Address</label>
+                                            <label htmlFor="address">Complete Address *</label>
                                             <input
                                                 type="text"
                                                 id="address"
                                                 name="address"
                                                 value={formData.address}
                                                 onChange={handleInputChange}
+                                                required
                                                 placeholder="Street, City, State/Province, Country"
                                             />
                                         </div>
 
                                         <div className="form-group">
-                                            <label htmlFor="inquiryType">Inquiry Type</label>
+                                            <label htmlFor="inquiryType">Inquiry Type *</label>
                                             <select
                                                 id="inquiryType"
                                                 name="inquiryType"
                                                 value={formData.inquiryType}
                                                 onChange={handleInputChange}
+                                                required
                                             >
                                                 <option value="general">General Inquiry</option>
                                                 <option value="sales">Sales & Pricing</option>

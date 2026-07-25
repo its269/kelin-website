@@ -1,4 +1,6 @@
 "use client";
+import { buildInquiryPayload, submitInquiry } from '../../lib/submitInquiry';
+
 import React, { useState } from 'react';
 import Header from '../components/Header';
 import Image from 'next/image';
@@ -1049,7 +1051,7 @@ export default function Inks() {
     formData.append('Submitted At', new Date().toLocaleString('en-US', { timeZone: 'Asia/Manila' }));
     formData.append('inquiryType', 'product-inquiry');
     try {
-      const res = await fetch('https://formspree.io/f/mvzwzkkd', {
+      const res = await fetch('/api/inquiries/', {
         method: 'POST',
         body: formData,
         headers: {
@@ -1375,21 +1377,22 @@ export default function Inks() {
 
                 <div className="inks-form-row">
                   <div className="inks-form-group">
-                    <label htmlFor="company">Company</label>
+                    <label htmlFor="company">Company *</label>
                     <input
                       type="text"
                       id="company"
                       name="company"
                       value={inquiryFormData.company}
                       onChange={handleInquiryInputChange}
+                      required
                       disabled={submitting}
                     />
                   </div>
 
                   <div className="inks-form-group">
-                    <label htmlFor="phone">Phone Number</label>
+                    <label htmlFor="phone">Phone Number *</label>
                     <div className="inks-phone-input">
-                      <select name="countryCode" className="inks-country-select" value={inquiryFormData.countryCode} onChange={handleInquiryInputChange} disabled={submitting}>
+                      <select name="countryCode" className="inks-country-select" value={inquiryFormData.countryCode} onChange={handleInquiryInputChange} disabled={submitting} required>
                         {/* ...existing code for country options... */}
                         <option value="+63">🇵🇭 +63</option>
                         <option value="+1">🇺🇸 +1</option>
@@ -1533,6 +1536,7 @@ export default function Inks() {
                         placeholder="123 456 7890"
                         pattern="[0-9\s\-\(\)]{7,15}"
                         title="Please enter a valid phone number"
+                        required
                         disabled={submitting}
                       />
                     </div>
@@ -1541,7 +1545,7 @@ export default function Inks() {
 
                 <div className="inks-form-row">
                   <div className="inks-form-group">
-                    <label htmlFor="address">Complete Address</label>
+                    <label htmlFor="address">Complete Address *</label>
                     <input
                       type="text"
                       id="address"
@@ -1549,6 +1553,7 @@ export default function Inks() {
                       value={inquiryFormData.address}
                       onChange={handleInquiryInputChange}
                       placeholder="Street, City, State/Province, Country"
+                      required
                       disabled={submitting}
                     />
                   </div>
