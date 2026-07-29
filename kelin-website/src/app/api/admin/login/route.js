@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 import { createAdminSession, verifyAdminCredentials } from '../../../../lib/auth';
+import { isDbConnectionError } from '../../../../lib/db';
 
 export async function POST(request) {
   try {
@@ -20,6 +21,16 @@ export async function POST(request) {
     return NextResponse.json({ ok: true, user: { id: user.id, username: user.username, email: user.email } });
   } catch (error) {
     console.error('Admin login failed:', error);
+    if (isDbConnectionError(error)) {
+      return NextResponse.json(
+        {
+          ok: false,
+          error:
+            'Cannot reach the inquiry database from production. Check Vercel MYSQL_* environment variables and allow MySQL port 3306 from the internet (or Vercel).',
+        },
+        { status: 503 }
+      );
+    }
     return NextResponse.json({ ok: false, error: 'Login failed' }, { status: 500 });
   }
 }
