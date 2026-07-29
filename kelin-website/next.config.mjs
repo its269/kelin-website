@@ -14,6 +14,19 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
+
+  // Keep Node-native mail/DB packages out of Turbopack bundling (Vercel build)
+  serverExternalPackages: [
+    'imapflow',
+    'mailparser',
+    'pino',
+    'thread-stream',
+    'nodemailer',
+    'mysql2',
+    'encoding-japanese',
+    'libmime',
+    'mailsplit',
+  ],
 };
 
 export default nextConfig;

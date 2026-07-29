@@ -1,5 +1,3 @@
-import { ImapFlow } from 'imapflow';
-import { simpleParser } from 'mailparser';
 import { query } from './db';
 
 const KGS_TAG_RE = /\[KGS-(\d+)\]/i;
@@ -201,6 +199,11 @@ async function importParsedEmail(parsed) {
  * Pull recent inbox mail and import visitor Gmail replies into inquiry chat.
  */
 export async function syncInquiryRepliesFromImap({ lookbackDays = 14 } = {}) {
+  const [{ ImapFlow }, { simpleParser }] = await Promise.all([
+    import('imapflow'),
+    import('mailparser'),
+  ]);
+
   const authUser = process.env.IMAP_USER || process.env.SMTP_USER;
   const authPass = process.env.IMAP_PASS || process.env.SMTP_PASS;
   if (!authUser || !authPass) {
