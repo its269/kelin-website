@@ -1,0 +1,26 @@
+name: Supabase Keep Alive (Fallback)
+
+on:
+  schedule:
+    # Offset fallback: every 3 days at 11:43 UTC
+    - cron: "43 11 */3 * *"
+  workflow_dispatch:
+
+jobs:
+  ping-fallback:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Ping health endpoint (fallback)
+        env:
+          KEEPALIVE_URL: ${{ secrets.KEEPALIVE_URL }}
+          KEEPALIVE_TIMEOUT_MS: "15000"
+        run: node scripts/keepalive-ping.mjs

@@ -3,6 +3,8 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import "./admin.css";
 
+const AUTO_REFRESH_MS = 30000;
+
 function formatTime(value) {
   if (!value) return "";
   return new Date(value).toLocaleString("en-PH", {
@@ -53,7 +55,10 @@ export default function KgsAdminClient() {
   const [showStats, setShowStats] = useState(false);
   const [stats, setStats] = useState(null);
   const [statsLoading, setStatsLoading] = useState(false);
+  const [theme, setTheme] = useState("light");
+  const [showPassword, setShowPassword] = useState(false);
   const chatEndRef = useRef(null);
+  const autoRefreshRunningRef = useRef(false);
 
   const totalPages = useMemo(() => Math.max(1, Math.ceil(total / 20)), [total]);
   const maxType = useMemo(
@@ -171,13 +176,50 @@ export default function KgsAdminClient() {
     }
   }
 
+  async function autoRefreshInquiries() {
+    if (autoRefreshRunningRef.current) return;
+    autoRefreshRunningRef.current = true;
+    setRefreshing(true);
+    try {
+      await loadInquiries({ silent: true, skipRefreshFlag: true });
+      if (selected?.id) await openInquiry(selected.id, { keepCompose: true });
+      if (showStats) await loadStats();
+    } finally {
+      setRefreshing(false);
+      autoRefreshRunningRef.current = false;
+    }
+  }
+
   useEffect(() => {
     checkAuth();
+    try {
+      const saved = window.localStorage.getItem("kgs-admin-theme");
+      if (saved === "dark" || saved === "light") setTheme(saved);
+    } catch {
+      // ignore
+    }
   }, []);
+
+  useEffect(() => {
+    try {
+      window.localStorage.setItem("kgs-admin-theme", theme);
+    } catch {
+      // ignore
+    }
+  }, [theme]);
 
   useEffect(() => {
     if (user) loadInquiries();
   }, [user, status, page, unreadOnly]);
+
+  useEffect(() => {
+    if (!user) return undefined;
+    const interval = window.setInterval(() => {
+      if (document.hidden) return;
+      autoRefreshInquiries();
+    }, AUTO_REFRESH_MS);
+    return () => window.clearInterval(interval);
+  }, [user, selected?.id, showStats, status, page, unreadOnly]);
 
   useEffect(() => {
     chatEndRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -286,7 +328,7 @@ export default function KgsAdminClient() {
 
   if (checkingAuth) {
     return (
-      <div className="kgs-shell">
+      <div className={`kgs-shell kgs-login-shell theme-${theme}`}>
         <div className="kgs-login-card">Checking secure session…</div>
       </div>
     );
@@ -294,11 +336,31 @@ export default function KgsAdminClient() {
 
   if (!user) {
     return (
-      <div className="kgs-shell kgs-login-shell">
+      <div className={`kgs-shell kgs-login-shell theme-${theme}`}>
+        <div className="theme-segment theme-segment-floating" role="group" aria-label="Color theme">
+          <button
+            type="button"
+            className={theme === "light" ? "is-active" : ""}
+            onClick={() => setTheme("light")}
+            aria-pressed={theme === "light"}
+          >
+            <span className="theme-ico" aria-hidden="true">☀</span>
+            Light
+          </button>
+          <button
+            type="button"
+            className={theme === "dark" ? "is-active" : ""}
+            onClick={() => setTheme("dark")}
+            aria-pressed={theme === "dark"}
+          >
+            <span className="theme-ico" aria-hidden="true">☾</span>
+            Dark
+          </button>
+        </div>
         <form className="kgs-login-card" onSubmit={handleLogin}>
           <div className="kgs-brand-mark">KGS</div>
-          <h1>Kelin Admin Console</h1>
-          <p>Private inquiry workspace for authorized staff only.</p>
+          <h1>Kelin Admin</h1>
+          <p>Private inquiry workspace for authorized staff.</p>
           <label>
             Username
             <input
@@ -310,24 +372,47 @@ export default function KgsAdminClient() {
           </label>
           <label>
             Password
-            <input
-              type="password"
-              value={loginForm.password}
-              onChange={(e) => setLoginForm((prev) => ({ ...prev, password: e.target.value }))}
-              required
-              autoComplete="current-password"
-            />
+            <div className="password-field">
+              <input
+                type={showPassword ? "text" : "password"}
+                value={loginForm.password}
+                onChange={(e) => setLoginForm((prev) => ({ ...prev, password: e.target.value }))}
+                required
+                autoComplete="current-password"
+              />
+              <button
+                type="button"
+                className="password-eye"
+                onClick={() => setShowPassword((prev) => !prev)}
+                aria-label={showPassword ? "Hide password" : "Show password"}
+                title={showPassword ? "Hide password" : "Show password"}
+              >
+                {showPassword ? (
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="1.8">
+                    <path d="M3 3l18 18" />
+                    <path d="M10.6 10.6a2 2 0 0 0 2.8 2.8" />
+                    <path d="M9.9 5.1A9.8 9.8 0 0 1 12 5c5 0 9.3 3.1 11 7-0.5 1.2-1.2 2.3-2.1 3.2" />
+                    <path d="M6.1 6.1C4.2 7.4 2.7 9.1 2 12c1.7 3.9 6 7 10 7 1.4 0 2.7-.3 3.9-.8" />
+                  </svg>
+                ) : (
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="1.8">
+                    <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z" />
+                    <circle cx="12" cy="12" r="3" />
+                  </svg>
+                )}
+              </button>
+            </div>
           </label>
           {loginError && <div className="kgs-error">{loginError}</div>}
-          <button type="submit">Sign in</button>
-          <small>Session stays active until you intentionally sign out.</small>
+          <button type="submit" className="btn">Sign in</button>
+          <small>Session stays active until you sign out.</small>
         </form>
       </div>
     );
   }
 
   return (
-    <div className="kgs-shell">
+    <div className={`kgs-shell theme-${theme}`}>
       <header className="kgs-topbar">
         <div className="kgs-topbar-left">
           <div className="kgs-brand-mark compact">KGS</div>
@@ -337,17 +422,38 @@ export default function KgsAdminClient() {
           </div>
         </div>
         <div className="kgs-top-actions">
+          <span className="muted">Auto refresh every 30s</span>
+          <div className="theme-segment" role="group" aria-label="Color theme">
+            <button
+              type="button"
+              className={theme === "light" ? "is-active" : ""}
+              onClick={() => setTheme("light")}
+              aria-pressed={theme === "light"}
+            >
+              <span className="theme-ico" aria-hidden="true">☀</span>
+              Light
+            </button>
+            <button
+              type="button"
+              className={theme === "dark" ? "is-active" : ""}
+              onClick={() => setTheme("dark")}
+              aria-pressed={theme === "dark"}
+            >
+              <span className="theme-ico" aria-hidden="true">☾</span>
+              Dark
+            </button>
+          </div>
           <button type="button" className="icon-btn" onClick={refreshAll} title="Refresh inquiries & chats" aria-label="Refresh">
             <svg className={refreshing ? "spin" : ""} viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2">
               <path d="M21 12a9 9 0 1 1-2.6-6.3" />
               <polyline points="21 3 21 9 15 9" />
             </svg>
           </button>
-          <button type="button" className={showStats ? "active" : ""} onClick={toggleStats}>
+          <button type="button" className={`btn-ghost${showStats ? " active" : ""}`} onClick={toggleStats}>
             {showStats ? "Hide Analytics" : "Show Analytics"}
           </button>
-          <button type="button" onClick={exportInquiries}>Export CSV</button>
-          <button type="button" className="ghost" onClick={handleLogout}>Sign out</button>
+          <button type="button" className="btn-ghost" onClick={exportInquiries}>Export CSV</button>
+          <button type="button" className="btn-ghost" onClick={handleLogout}>Sign out</button>
         </div>
       </header>
 
@@ -430,15 +536,18 @@ export default function KgsAdminClient() {
           <option value="replied">Replied</option>
           <option value="archived">Archived</option>
         </select>
-        <label className="unread-toggle">
+        <label className={`apple-switch ${unreadOnly ? "is-on" : ""}`}>
           <input
             type="checkbox"
             checked={unreadOnly}
             onChange={(e) => { setPage(1); setUnreadOnly(e.target.checked); }}
           />
-          Unread only
+          <span className="apple-switch-track" aria-hidden="true">
+            <span className="apple-switch-thumb" />
+          </span>
+          <span className="apple-switch-text">Unread only</span>
         </label>
-        <button type="button" onClick={() => { setPage(1); loadInquiries(); }}>Search</button>
+        <button type="button" className="btn" onClick={() => { setPage(1); loadInquiries(); }}>Search</button>
       </section>
 
       <div className="kgs-layout">
@@ -487,10 +596,10 @@ export default function KgsAdminClient() {
           {!selected ? (
             <div className="chat-empty">
               <h2>Select an inquiry</h2>
-              <p>Open a conversation to view the messenger thread and reply.</p>
+              <p>Open a conversation to view the thread and reply.</p>
             </div>
           ) : (
-            <>
+            <div key={selected.id} className="chat-panel-enter chat-panel-body">
               <div className="chat-header">
                 <div>
                   <h2>#{selected.id} — {selected.subject}</h2>
@@ -501,7 +610,7 @@ export default function KgsAdminClient() {
                     {Number(selected.unread_for_admin) === 1 ? "Unread" : "Read"}
                   </span>
                   <button type="button" className="icon-btn" onClick={refreshAll} title="Refresh chat & sync Gmail" disabled={refreshing}>
-                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2">
+                    <svg className={refreshing ? "spin" : ""} viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="2">
                       <path d="M21 12a9 9 0 1 1-2.6-6.3" />
                       <polyline points="21 3 21 9 15 9" />
                     </svg>
@@ -523,12 +632,10 @@ export default function KgsAdminClient() {
                     <strong>How this conversation syncs</strong>
                     <p>
                       Replies you send here are emailed to the inquirer and shown in this chat.
-                      When the inquirer replies in Gmail (Reply / Reply All), use <em>Refresh</em> to import
-                      those messages into this conversation.
+                      When the inquirer replies in Gmail, use <em>Refresh</em> to import those messages.
                     </p>
                     <p>
-                      The <em>Continue conversation</em> link in your email still works too — messages from that
-                      page appear here automatically.
+                      The <em>Continue conversation</em> link in your email also works — messages appear here automatically.
                     </p>
                     {syncNote ? <p className="sync-note">{syncNote}</p> : null}
                   </div>
@@ -537,10 +644,14 @@ export default function KgsAdminClient() {
                 {messages.length === 0 && (
                   <p className="muted empty-state">No messages in this conversation yet.</p>
                 )}
-                {messages.map((msg) => {
+                {messages.map((msg, index) => {
                   const isAdmin = String(msg.sender_type || "").toLowerCase() === "admin";
                   return (
-                    <div key={msg.id} className={`chat-bubble ${isAdmin ? "from-admin" : "from-visitor"}`}>
+                    <div
+                      key={msg.id}
+                      className={`chat-bubble ${isAdmin ? "from-admin" : "from-visitor"}`}
+                      style={{ animationDelay: `${Math.min(index, 8) * 40}ms` }}
+                    >
                       <div className="bubble-meta">
                         <strong>{isAdmin ? (msg.sender_name || "Kelin Support") : (msg.sender_name || selected.name)}</strong>
                         <span>{formatTime(msg.created_at)}</span>
@@ -558,7 +669,7 @@ export default function KgsAdminClient() {
                   value={reply}
                   onChange={(e) => setReply(e.target.value)}
                   required
-                  placeholder="Type your reply… The inquirer can continue this chat from their email link."
+                  placeholder="Write a reply…"
                 />
                 <div className="compose-actions">
                   {replyStatus === "success" && <span className="kgs-success">Reply sent</span>}
@@ -568,12 +679,12 @@ export default function KgsAdminClient() {
                   {replyStatus && !["sending", "success", "saved-no-email"].includes(replyStatus) && (
                     <span className="kgs-error">{replyStatus}</span>
                   )}
-                  <button type="submit" disabled={replyStatus === "sending"}>
+                  <button type="submit" className="btn" disabled={replyStatus === "sending"}>
                     {replyStatus === "sending" ? "Sending…" : "Send Reply"}
                   </button>
                 </div>
               </form>
-            </>
+            </div>
           )}
         </section>
       </div>
@@ -586,8 +697,8 @@ export default function KgsAdminClient() {
               You have <strong>{pendingCount}</strong> inquiries waiting for export.
             </p>
             <div className="export-actions">
-              <button type="button" onClick={exportInquiries}>Export to CSV</button>
-              <button type="button" className="ghost" onClick={() => setShowExportModal(false)}>Later</button>
+              <button type="button" className="btn" onClick={exportInquiries}>Export to CSV</button>
+              <button type="button" className="btn-ghost" onClick={() => setShowExportModal(false)}>Later</button>
             </div>
           </div>
         </div>

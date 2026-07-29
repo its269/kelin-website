@@ -57,6 +57,8 @@ export async function sendInquiryNotification(inquiry) {
 export async function sendInquiryReply({ inquiry, replyBody, adminEmail, replyToken }) {
   const transporter = getTransporter();
   const from = process.env.EMAIL_FROM || process.env.SMTP_USER;
+  // Prefer the real SMTP mailbox so customer "Reply" lands in Gmail, not a fake admin@ address.
+  const replyTo = process.env.SMTP_USER || adminEmail || from;
   const replyUrl = `${siteBaseUrl()}/inquiry-reply/${replyToken || inquiry.reply_token}/`;
   const tag = `[KGS-${inquiry.id}]`;
   const messageId = `<kgs-inquiry-${inquiry.id}-${Date.now()}@kelinph.com>`;
@@ -64,7 +66,7 @@ export async function sendInquiryReply({ inquiry, replyBody, adminEmail, replyTo
   const info = await transporter.sendMail({
     from: `"Kelin Graphics System" <${from}>`,
     to: inquiry.email,
-    replyTo: adminEmail || from,
+    replyTo,
     messageId,
     subject: `Re: ${inquiry.subject} ${tag}`,
     headers: {
