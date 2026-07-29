@@ -1,14 +1,82 @@
 import { NextResponse } from 'next/server';
 import crypto from 'crypto';
 import { requireAdmin } from '../../../lib/auth';
-import { query } from '../../../lib/db';
+import { isDbConnectionError, query } from '../../../lib/db';
 import { sendInquiryNotification } from '../../../lib/mail';
+import { getSupabaseAdmin } from '../../../lib/supabaseAdmin';
 
 function required(value, label) {
   if (value === undefined || value === null || String(value).trim() === '') {
     return `${label} is required`;
   }
   return null;
+}
+
+async function insertInquiryWithSupabase({
+  name,
+  firstName,
+  lastName,
+  email,
+  company,
+  address,
+  countryCode,
+  phone,
+  subject,
+  message,
+  inquiryType,
+  productName,
+  pageSource,
+  pageUrl,
+  replyToken,
+}) {
+  const supabase = getSupabaseAdmin();
+
+  const { data: created, error: insertError } = await supabase
+    .from('inquiries')
+    .insert({
+      name,
+      first_name: firstName || null,
+      last_name: lastName || null,
+      email,
+      company,
+      address,
+      country_code: countryCode,
+      phone,
+      subject,
+      message,
+      inquiry_type: inquiryType,
+      product_name: productName,
+      page_source: pageSource,
+      page_url: pageUrl,
+      reply_token: replyToken,
+      unread_for_admin: 1,
+      status: 'new',
+    })
+    .select('id')
+    .single();
+
+  if (insertError) throw insertError;
+  const inquiryId = created?.id;
+  if (!inquiryId) throw new Error('Fallback insert failed: missing inquiry id');
+
+  const { error: msgError } = await supabase.from('inquiry_messages').insert({
+    inquiry_id: inquiryId,
+    sender_type: 'visitor',
+    sender_name: name,
+    body: message,
+  });
+  if (msgError) throw msgError;
+
+  const { count, error: countError } = await supabase
+    .from('inquiries')
+    .select('id', { count: 'exact', head: true })
+    .is('export_batch', null);
+  if (countError) throw countError;
+
+  return {
+    insertId: inquiryId,
+    pendingCount: Number(count || 0),
+  };
 }
 
 export async function POST(request) {
@@ -59,14 +127,49 @@ export async function POST(request) {
       return NextResponse.json({ ok: false, error: 'Invalid email address' }, { status: 400 });
     }
 
-    const result = await query(
-      `INSERT INTO inquiries
-        (name, first_name, last_name, email, company, address, country_code, phone, subject, message, inquiry_type, product_name, page_source, page_url, reply_token, unread_for_admin, last_message_at, status)
-       VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 1, NOW(), 'new')`,
-      [
+    let result;
+    let pendingCount;
+    try {
+      result = await query(
+        `INSERT INTO inquiries
+          (name, first_name, last_name, email, company, address, country_code, phone, subject, message, inquiry_type, product_name, page_source, page_url, reply_token, unread_for_admin, last_message_at, status)
+         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 1, NOW(), 'new')`,
+        [
+          name,
+          firstName || null,
+          lastName || null,
+          email,
+          company,
+          address,
+          countryCode,
+          phone,
+          subject,
+          message,
+          inquiryType,
+          productName,
+          pageSource,
+          pageUrl,
+          replyToken,
+        ]
+      );
+
+      await query(
+        `INSERT INTO inquiry_messages (inquiry_id, sender_type, sender_name, body)
+         VALUES (?, 'visitor', ?, ?)`,
+        [result.insertId, name, message]
+      );
+
+      const countRows = await query(
+        'SELECT COUNT(*) AS total FROM inquiries WHERE export_batch IS NULL'
+      );
+      pendingCount = Number(countRows[0]?.total || 0);
+    } catch (dbError) {
+      if (!isDbConnectionError(dbError)) throw dbError;
+      console.warn('Primary DB path failed; using Supabase REST fallback:', dbError.code || dbError.message);
+      const fallback = await insertInquiryWithSupabase({
         name,
-        firstName || null,
-        lastName || null,
+        firstName,
+        lastName,
         email,
         company,
         address,
@@ -79,14 +182,10 @@ export async function POST(request) {
         pageSource,
         pageUrl,
         replyToken,
-      ]
-    );
-
-    await query(
-      `INSERT INTO inquiry_messages (inquiry_id, sender_type, sender_name, body)
-       VALUES (?, 'visitor', ?, ?)`,
-      [result.insertId, name, message]
-    );
+      });
+      result = { insertId: fallback.insertId };
+      pendingCount = fallback.pendingCount;
+    }
 
     const inquiry = {
       id: result.insertId,
@@ -110,11 +209,6 @@ export async function POST(request) {
     } catch (mailError) {
       console.error('Inquiry email failed:', mailError.message);
     }
-
-    const countRows = await query(
-      'SELECT COUNT(*) AS total FROM inquiries WHERE export_batch IS NULL'
-    );
-    const pendingCount = Number(countRows[0]?.total || 0);
 
     return NextResponse.json({
       ok: true,
