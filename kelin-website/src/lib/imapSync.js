@@ -187,7 +187,7 @@ async function importParsedEmail(parsed) {
   await query(
     `UPDATE inquiries
      SET unread_for_admin = 1,
-         last_message_at = GREATEST(COALESCE(last_message_at, '1970-01-01'), ?)
+         last_message_at = GREATEST(COALESCE(last_message_at, TIMESTAMPTZ '1970-01-01'), ?::timestamptz)
      WHERE id = ?`,
     [createdAt, inquiry.id]
   );
@@ -222,7 +222,7 @@ export async function syncInquiryRepliesFromImap({ lookbackDays = 14 } = {}) {
         `SELECT DISTINCT LOWER(email) AS email
          FROM inquiries
          WHERE email IS NOT NULL AND email <> ''
-           AND COALESCE(last_message_at, created_at) >= DATE_SUB(NOW(), INTERVAL ? DAY)`,
+           AND COALESCE(last_message_at, created_at) >= NOW() - (? * INTERVAL '1 day')`,
         [Math.max(lookbackDays, 30)]
       )
     ).map((row) => String(row.email || '').toLowerCase()).filter(Boolean)

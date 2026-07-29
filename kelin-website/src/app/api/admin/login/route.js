@@ -26,7 +26,7 @@ export async function POST(request) {
         {
           ok: false,
           error:
-            'Cannot reach the inquiry database from production. Check Vercel MYSQL_* environment variables and allow MySQL port 3306 from the internet (or Vercel).',
+            'Cannot reach the inquiry database from production. Check Vercel Supabase DB env vars (SUPABASE_DB_* / DATABASE_URL).',
         },
         { status: 503 }
       );

@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 import crypto from 'crypto';
 import { requireAdmin } from '../../../../../lib/auth';
-import { getPool, query } from '../../../../../lib/db';
+import { query } from '../../../../../lib/db';
 import { sendInquiryReply } from '../../../../../lib/mail';
 
 async function loadMessages(inquiryId) {
@@ -38,13 +38,12 @@ export async function POST(request, { params }) {
       inquiry.reply_token = replyToken;
     }
 
-    // Always persist the CMS conversation first
-    const [insertHeader] = await getPool().execute(
+    const inserted = await query(
       `INSERT INTO inquiry_messages (inquiry_id, sender_type, sender_name, body, source)
        VALUES (?, 'admin', ?, ?, 'cms')`,
       [id, admin.username || 'Kelin Support', reply]
     );
-    const adminMessageId = insertHeader.insertId;
+    const adminMessageId = inserted.insertId;
 
     await query(
       `UPDATE inquiries

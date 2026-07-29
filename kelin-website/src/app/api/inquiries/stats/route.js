@@ -8,18 +8,18 @@ export async function GET() {
 
     const [totals] = await query(`
       SELECT
-        COUNT(*) AS total,
-        SUM(CASE WHEN unread_for_admin = 1 THEN 1 ELSE 0 END) AS unread,
-        SUM(CASE WHEN status = 'new' THEN 1 ELSE 0 END) AS status_new,
-        SUM(CASE WHEN status = 'read' THEN 1 ELSE 0 END) AS status_read,
-        SUM(CASE WHEN status = 'replied' THEN 1 ELSE 0 END) AS status_replied,
-        SUM(CASE WHEN created_at >= DATE_SUB(NOW(), INTERVAL 7 DAY) THEN 1 ELSE 0 END) AS last_7_days,
-        SUM(CASE WHEN created_at >= DATE_SUB(NOW(), INTERVAL 30 DAY) THEN 1 ELSE 0 END) AS last_30_days
+        COUNT(*)::int AS total,
+        COALESCE(SUM(CASE WHEN unread_for_admin = 1 THEN 1 ELSE 0 END), 0)::int AS unread,
+        COALESCE(SUM(CASE WHEN status = 'new' THEN 1 ELSE 0 END), 0)::int AS status_new,
+        COALESCE(SUM(CASE WHEN status = 'read' THEN 1 ELSE 0 END), 0)::int AS status_read,
+        COALESCE(SUM(CASE WHEN status = 'replied' THEN 1 ELSE 0 END), 0)::int AS status_replied,
+        COALESCE(SUM(CASE WHEN created_at >= NOW() - INTERVAL '7 days' THEN 1 ELSE 0 END), 0)::int AS last_7_days,
+        COALESCE(SUM(CASE WHEN created_at >= NOW() - INTERVAL '30 days' THEN 1 ELSE 0 END), 0)::int AS last_30_days
       FROM inquiries
     `);
 
     const byType = await query(`
-      SELECT inquiry_type AS label, COUNT(*) AS count
+      SELECT inquiry_type AS label, COUNT(*)::int AS count
       FROM inquiries
       GROUP BY inquiry_type
       ORDER BY count DESC
@@ -27,7 +27,7 @@ export async function GET() {
     `);
 
     const bySource = await query(`
-      SELECT COALESCE(NULLIF(page_source, ''), 'Unknown') AS label, COUNT(*) AS count
+      SELECT COALESCE(NULLIF(page_source, ''), 'Unknown') AS label, COUNT(*)::int AS count
       FROM inquiries
       GROUP BY COALESCE(NULLIF(page_source, ''), 'Unknown')
       ORDER BY count DESC
@@ -35,17 +35,17 @@ export async function GET() {
     `);
 
     const daily = await query(`
-      SELECT DATE(created_at) AS day, COUNT(*) AS count
+      SELECT DATE(created_at) AS day, COUNT(*)::int AS count
       FROM inquiries
-      WHERE created_at >= DATE_SUB(CURDATE(), INTERVAL 13 DAY)
+      WHERE created_at >= CURRENT_DATE - INTERVAL '13 days'
       GROUP BY DATE(created_at)
       ORDER BY day ASC
     `);
 
     const responseTimes = await query(`
       SELECT
-        AVG(TIMESTAMPDIFF(HOUR, created_at, replied_at)) AS avg_hours_to_reply,
-        COUNT(*) AS replied_count
+        AVG(EXTRACT(EPOCH FROM (replied_at - created_at)) / 3600.0) AS avg_hours_to_reply,
+        COUNT(*)::int AS replied_count
       FROM inquiries
       WHERE replied_at IS NOT NULL
     `);

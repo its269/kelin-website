@@ -63,7 +63,7 @@ CREATE TABLE IF NOT EXISTS inquiry_export_log (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 `);
 
-  const hash = await bcrypt.hash('KelinAdmin2026!', 10);
+  const hash = await bcrypt.hash('#Kelin2026', 10);
   await conn.query(
     `INSERT INTO admin_users (username, password_hash, email)
      VALUES (?, ?, ?)

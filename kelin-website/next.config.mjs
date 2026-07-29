@@ -22,7 +22,7 @@ const nextConfig = {
     'pino',
     'thread-stream',
     'nodemailer',
-    'mysql2',
+    'pg',
     'encoding-japanese',
     'libmime',
     'mailsplit',

@@ -1,4 +1,9 @@
-import mysql from 'mysql2/promise';
+/**
+ * Postgres (Supabase) access with MySQL-style `?` placeholders for existing routes.
+ */
+import pg from 'pg';
+
+const { Pool } = pg;
 
 let pool;
 
@@ -14,23 +19,33 @@ function cleanEnv(value) {
   return v;
 }
 
-export function getDbConfig() {
-  const host = cleanEnv(process.env.MYSQL_HOST);
-  const user = cleanEnv(process.env.MYSQL_USER);
-  const password = cleanEnv(process.env.MYSQL_PASSWORD);
-  const database = cleanEnv(process.env.MYSQL_WEBSITE_DATABASE) || 'db_kelin_website';
-  const port = Number(cleanEnv(process.env.MYSQL_PORT) || 3306);
+export function toPgParams(sql, params = []) {
+  let index = 0;
+  const text = String(sql).replace(/\?/g, () => {
+    index += 1;
+    return `$${index}`;
+  });
+  return { text, values: params };
+}
 
-  return { host, user, password, database, port };
+export function getDbConfig() {
+  const connectionString = cleanEnv(process.env.DATABASE_URL || process.env.SUPABASE_DB_URL);
+  return {
+    connectionString,
+    host: cleanEnv(process.env.SUPABASE_DB_HOST),
+    port: Number(cleanEnv(process.env.SUPABASE_DB_PORT) || 6543),
+    user: cleanEnv(process.env.SUPABASE_DB_USER) || 'postgres',
+    password: cleanEnv(process.env.SUPABASE_DB_PASSWORD),
+    database: cleanEnv(process.env.SUPABASE_DB_NAME) || 'postgres',
+  };
 }
 
 export function assertDbConfig() {
   const config = getDbConfig();
+  if (config.connectionString) return config;
   const missing = [];
-  if (!config.host) missing.push('MYSQL_HOST');
-  if (!config.user) missing.push('MYSQL_USER');
-  if (!config.password && config.password !== '') missing.push('MYSQL_PASSWORD');
-  if (!config.database) missing.push('MYSQL_WEBSITE_DATABASE');
+  if (!config.host) missing.push('SUPABASE_DB_HOST');
+  if (!config.password) missing.push('SUPABASE_DB_PASSWORD');
   if (missing.length) {
     const error = new Error(`Missing database env: ${missing.join(', ')}`);
     error.code = 'DB_ENV_MISSING';
@@ -43,26 +58,47 @@ export function assertDbConfig() {
 export function getPool() {
   if (!pool) {
     const config = assertDbConfig();
-    pool = mysql.createPool({
-      host: config.host,
-      port: config.port,
-      user: config.user,
-      password: config.password,
-      database: config.database,
-      waitForConnections: true,
-      connectionLimit: 5,
-      connectTimeout: 15000,
-      enableKeepAlive: true,
-      namedPlaceholders: true,
-      timezone: '+08:00',
-    });
+    pool = config.connectionString
+      ? new Pool({
+          connectionString: config.connectionString,
+          ssl: { rejectUnauthorized: false },
+          max: 3,
+          connectionTimeoutMillis: 15000,
+          idleTimeoutMillis: 10000,
+        })
+      : new Pool({
+          host: config.host,
+          port: config.port,
+          user: config.user,
+          password: config.password,
+          database: config.database,
+          ssl: { rejectUnauthorized: false },
+          max: 3,
+          connectionTimeoutMillis: 15000,
+          idleTimeoutMillis: 10000,
+        });
   }
   return pool;
 }
 
-export async function query(sql, params) {
-  const [rows] = await getPool().execute(sql, params);
-  return rows;
+export async function query(sql, params = []) {
+  let finalSql = String(sql).trim().replace(/;+\s*$/, '');
+  const isInsert = /^\s*INSERT\s+/i.test(finalSql);
+  if (isInsert && !/\bRETURNING\b/i.test(finalSql)) {
+    finalSql = `${finalSql} RETURNING id`;
+  }
+
+  const { text, values } = toPgParams(finalSql, params);
+  const result = await getPool().query(text, values);
+
+  if (isInsert) {
+    const rows = result.rows || [];
+    rows.insertId = rows[0]?.id ?? null;
+    rows.rowCount = result.rowCount;
+    return rows;
+  }
+
+  return result.rows;
 }
 
 export function isDbConnectionError(error) {
@@ -73,9 +109,11 @@ export function isDbConnectionError(error) {
     code === 'ECONNREFUSED' ||
     code === 'ENOTFOUND' ||
     code === 'EHOSTUNREACH' ||
-    code === 'PROTOCOL_CONNECTION_LOST' ||
+    code === 'ECONNRESET' ||
+    code === '28P01' ||
     code === 'DB_ENV_MISSING' ||
     /connect etimedout/i.test(message) ||
-    /missing database env/i.test(message)
+    /missing database env/i.test(message) ||
+    /timeout expired/i.test(message)
   );
 }

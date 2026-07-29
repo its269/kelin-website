@@ -150,7 +150,7 @@ export async function GET(request) {
       where.push('unread_for_admin = 1');
     }
     if (q) {
-      where.push('(name LIKE ? OR email LIKE ? OR company LIKE ? OR subject LIKE ? OR message LIKE ?)');
+      where.push('(name ILIKE ? OR email ILIKE ? OR company ILIKE ? OR subject ILIKE ? OR message ILIKE ?)');
       const like = `%${q}%`;
       params.push(like, like, like, like, like);
     }
