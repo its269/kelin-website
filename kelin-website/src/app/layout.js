@@ -12,10 +12,7 @@ export const metadata = {
   keywords: 'eco solvent printer Philippines, UV printer, DTF machine, digital cutter, iEcho, GCC, heat press, sublimation printer, laser cutting machine, Kelin Graphics',
   robots: { index: true, follow: true, googleBot: { index: true, follow: true } },
   verification: {
-    google: [
-      'rmeLX4WL4DoAzkB9sK3oDr2cYMXzfYut7mwnDVx9rMo',
-      '0QmmdET_Z3Zq6IN526Xunlp4HhzWI3eULjvKZ8t5NkM',
-    ],
+    google: '0QmmdET_Z3Zq6IN526Xunlp4HhzWI3eULjvKZ8t5NkM',
   },
   alternates: { canonical: '/' },
   openGraph: {
