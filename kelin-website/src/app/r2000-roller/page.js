@@ -28,7 +28,7 @@ export const metadata = {
         type: "website",
     },
     alternates: {
-        canonical: "https://kelinph.com/r2000-roller",
+        canonical: "https://www.kelingraphics.com/r2000-roller",
     },
 };
 

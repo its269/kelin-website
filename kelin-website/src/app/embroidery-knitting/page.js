@@ -28,7 +28,7 @@ export const metadata = {
         type: "website",
     },
     alternates: {
-        canonical: "https://kelinph.com/embroidery-knitting",
+        canonical: "https://www.kelingraphics.com/embroidery-knitting",
     },
 };
 

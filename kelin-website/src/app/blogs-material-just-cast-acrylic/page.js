@@ -13,7 +13,7 @@ export const metadata = {
         images: [{ url: '/assets/Materials/Colored Acrylic.webp', width: 1200, height: 630, alt: 'Just Cast Acrylic Sheets' }],
         type: 'article',
     },
-    alternates: { canonical: 'https://kelinph.com/blogs-material-just-cast-acrylic' },
+    alternates: { canonical: 'https://www.kelingraphics.com/blogs-material-just-cast-acrylic' },
 };
 
 export default function BlogJustCastAcrylic() {
@@ -24,12 +24,12 @@ export default function BlogJustCastAcrylic() {
                 "@type": "Article",
                 "headline": "Just Cast Acrylic Guide: Clear, Diffuser White, Colors & Mirror Sheets for Signage & Fabrication",
                 "description": "Complete guide to Just Cast Acrylic sheets — Clear, Diffuser White, Colors, and Mirror finishes in 1.5mm–12.0mm thickness, 4x6ft and 4x8ft sizes. UV stable, thermoformable, and ideal for channel letters, lightboxes, and display fabrication.",
-                "image": "https://kelinph.com/assets/Materials/Colored Acrylic.webp",
-                "author": { "@type": "Organization", "name": "Kelin Graphics System", "url": "https://kelinph.com/about" },
-                "publisher": { "@type": "Organization", "name": "Kelin Graphics System", "logo": { "@type": "ImageObject", "url": "https://kelinph.com/marquee-logo/inks/kelin-logo.png" } },
+                "image": "https://www.kelingraphics.com/assets/Materials/Colored Acrylic.webp",
+                "author": { "@type": "Organization", "name": "Kelin Graphics System", "url": "https://www.kelingraphics.com/about" },
+                "publisher": { "@type": "Organization", "name": "Kelin Graphics System", "logo": { "@type": "ImageObject", "url": "https://www.kelingraphics.com/marquee-logo/inks/kelin-logo.png" } },
                 "datePublished": "2026-11-01T08:00:00.000Z",
                 "dateModified": "2026-05-06T08:00:00.000Z",
-                "mainEntityOfPage": "https://kelinph.com/blogs-material-just-cast-acrylic"
+                "mainEntityOfPage": "https://www.kelingraphics.com/blogs-material-just-cast-acrylic"
             },
             {
                 "@type": "FAQPage",

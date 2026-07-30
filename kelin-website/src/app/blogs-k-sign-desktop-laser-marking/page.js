@@ -19,7 +19,7 @@ export const metadata = {
     title: 'K-Sign Laser Marking Machine ML20/ML30 Review: Instantly Increase Production 5–10x with Offline Fiber Laser Marking',
     description: 'An in-depth review of the K-Sign Laser Marking Machine (ML20 | ML30) with optional Rotary. We cover the 0–5000 mm/s laser speed, offline engraving function, high-definition field mirror, high-speed galvanometer, extended optical path, beam height adjuster, 110\u00d7110mm marking area, 20W/30W fiber laser power, and wide material compatibility for gold, silver, copper, iron, stainless steel, aluminum alloy, hard alloy, nylon, ABS, PVC, PES, and engineering plastics.',
     keywords: 'K-Sign ML20 ML30 laser marking machine review, fiber laser marking machine Philippines, offline laser marking machine Philippines, 5000mm/s fiber laser marker, rotary laser marking machine Philippines, metal laser marking machine Philippines, stainless steel laser marker Philippines, Kelin laser marking machine Philippines',
-    authors: [{ name: 'Kelin Graphics System', url: 'https://kelinph.com/about' }],
+    authors: [{ name: 'Kelin Graphics System', url: 'https://www.kelingraphics.com/about' }],
     openGraph: {
         title: 'K-Sign Laser Marking Machine ML20/ML30 Review: Instantly Increase Production 5–10x with Offline Fiber Laser Marking',
         description: 'Real-world analysis of the K-Sign Laser Marking Machine ML20 and ML30 \u2014 0\u20135000 mm/s laser speed, reliable offline engraving function requiring no professional marking technician, learnable within 10 minutes, high-definition field mirror, high-speed galvanometer, extended optical path with stable output, beam height adjuster with adjustable height control, 110\u00d7110mm marking area, 20W/30W fiber laser, AC220V, N.W. 28kg, compatible with gold, silver, copper, iron, stainless steel, aluminum alloy, hard alloy, nylon, ABS, PVC, PES, and engineering plastics.',
@@ -29,7 +29,7 @@ export const metadata = {
         authors: ['Kelin Graphics System'],
     },
     alternates: {
-        canonical: 'https://kelinph.com/blogs-k-sign-desktop-laser-marking',
+        canonical: 'https://www.kelingraphics.com/blogs-k-sign-desktop-laser-marking',
     },
 };
 
@@ -41,12 +41,12 @@ export default function BlogKSignDesktopLaserMarking() {
                 "@type": "Article",
                 "headline": "K-Sign Laser Marking Machine ML20/ML30 Review: Instantly Increase Production 5\u201310x with Offline Fiber Laser Marking",
                 "description": "An in-depth review of the K-Sign Laser Marking Machine (ML20 | ML30) with optional Rotary. We cover the 0\u20135000 mm/s laser speed, offline engraving function, high-definition field mirror, high-speed galvanometer, extended optical path, beam height adjuster, 110\u00d7110mm marking area, 20W/30W fiber laser power, and wide material compatibility.",
-                "image": "https://kelinph.com/laser-machines/K-sign_Desktop Laser Marking.webp",
-                "author": { "@type": "Organization", "name": "Kelin Graphics System", "url": "https://kelinph.com/about" },
-                "publisher": { "@type": "Organization", "name": "Kelin Graphics System", "logo": { "@type": "ImageObject", "url": "https://kelinph.com/marquee-logo/inks/kelin-logo.png" } },
+                "image": "https://www.kelingraphics.com/laser-machines/K-sign_Desktop Laser Marking.webp",
+                "author": { "@type": "Organization", "name": "Kelin Graphics System", "url": "https://www.kelingraphics.com/about" },
+                "publisher": { "@type": "Organization", "name": "Kelin Graphics System", "logo": { "@type": "ImageObject", "url": "https://www.kelingraphics.com/marquee-logo/inks/kelin-logo.png" } },
                 "datePublished": "2026-04-18T08:00:00.000Z",
                 "dateModified": "2026-05-06T08:00:00.000Z",
-                "mainEntityOfPage": "https://kelinph.com/blogs-k-sign-desktop-laser-marking"
+                "mainEntityOfPage": "https://www.kelingraphics.com/blogs-k-sign-desktop-laser-marking"
             },
             {
                 "@type": "FAQPage",
@@ -352,15 +352,15 @@ export default function BlogKSignDesktopLaserMarking() {
                         <div className="article-share-bar">
                             <span className="share-label">Share this article</span>
                             <div className="share-buttons">
-                                <a href="https://www.facebook.com/sharer/sharer.php?u=https://kelinph.com/blogs-k-sign-desktop-laser-marking" target="_blank" rel="noopener noreferrer" className="share-btn share-facebook" aria-label="Share on Facebook">
+                                <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.kelingraphics.com/blogs-k-sign-desktop-laser-marking" target="_blank" rel="noopener noreferrer" className="share-btn share-facebook" aria-label="Share on Facebook">
                                     <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" /></svg>
                                     Facebook
                                 </a>
-                                <a href="https://twitter.com/intent/tweet?url=https://kelinph.com/blogs-k-sign-desktop-laser-marking&text=K-Sign+ML20+ML30+Laser+Marking+Machine+Review+5000mm+s+Offline+Fiber+Laser" target="_blank" rel="noopener noreferrer" className="share-btn share-twitter" aria-label="Share on Twitter/X">
+                                <a href="https://twitter.com/intent/tweet?url=https://www.kelingraphics.com/blogs-k-sign-desktop-laser-marking&text=K-Sign+ML20+ML30+Laser+Marking+Machine+Review+5000mm+s+Offline+Fiber+Laser" target="_blank" rel="noopener noreferrer" className="share-btn share-twitter" aria-label="Share on Twitter/X">
                                     <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4 4l16 16M4 20L20 4" stroke="currentColor" strokeWidth="2" /></svg>
                                     Twitter / X
                                 </a>
-                                <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://kelinph.com/blogs-k-sign-desktop-laser-marking" target="_blank" rel="noopener noreferrer" className="share-btn share-linkedin" aria-label="Share on LinkedIn">
+                                <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://www.kelingraphics.com/blogs-k-sign-desktop-laser-marking" target="_blank" rel="noopener noreferrer" className="share-btn share-linkedin" aria-label="Share on LinkedIn">
                                     <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" /><rect x="2" y="9" width="4" height="12" /><circle cx="4" cy="4" r="2" /></svg>
                                     LinkedIn
                                 </a>

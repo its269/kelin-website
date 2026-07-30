@@ -28,7 +28,7 @@ export const metadata = {
         type: "website",
     },
     alternates: {
-        canonical: "https://kelinph.com/luxor-rtr-uv",
+        canonical: "https://www.kelingraphics.com/luxor-rtr-uv",
     },
 };
 

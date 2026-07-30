@@ -28,7 +28,7 @@ export const metadata = {
         type: "website",
     },
     alternates: {
-        canonical: "https://kelinph.com/yueming-fiber-laser-hl1530c-g-e",
+        canonical: "https://www.kelingraphics.com/yueming-fiber-laser-hl1530c-g-e",
     },
 };
 

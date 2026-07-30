@@ -28,7 +28,7 @@ export const metadata = {
         type: "website",
     },
     alternates: {
-        canonical: "https://kelinph.com/gcc-puma-iv",
+        canonical: "https://www.kelingraphics.com/gcc-puma-iv",
     },
 };
 

@@ -28,7 +28,7 @@ export const metadata = {
         type: "website",
     },
     alternates: {
-        canonical: "https://kelinph.com/cutting-machine",
+        canonical: "https://www.kelingraphics.com/cutting-machine",
     },
 };
 

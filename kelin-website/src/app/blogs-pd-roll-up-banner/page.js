@@ -7,7 +7,7 @@ export const metadata = {
     title: 'Roll Up Banner Guide: Best Portable Display for Trade Shows, Events & Retail | Kelin Philippines',
     description: 'A complete guide to Roll Up Banners — how they work, sizes, materials, setup tips, and where to use them for maximum brand impact at trade shows, events, and retail.',
     keywords: 'roll up banner Philippines, retractable banner stand, trade show banner, event display Philippines, portable banner display, roll up banner guide',
-    authors: [{ name: 'Kelin Graphics System', url: 'https://kelinph.com/about' }],
+    authors: [{ name: 'Kelin Graphics System', url: 'https://www.kelingraphics.com/about' }],
     openGraph: {
         title: 'Roll Up Banner Guide: Best Portable Display for Trade Shows, Events & Retail',
         description: 'Everything you need to know about roll up banners — materials, sizes, setup, and best use cases for your next event or retail campaign.',
@@ -16,7 +16,7 @@ export const metadata = {
         publishedTime: '2026-03-01T08:00:00.000Z',
         authors: ['Kelin Graphics System'],
     },
-    alternates: { canonical: 'https://kelinph.com/blogs-pd-roll-up-banner' },
+    alternates: { canonical: 'https://www.kelingraphics.com/blogs-pd-roll-up-banner' },
 };
 
 export default function BlogRollUpBanner() {
@@ -27,12 +27,12 @@ export default function BlogRollUpBanner() {
                 "@type": "Article",
                 "headline": "Roll Up Banner Guide: Best Portable Display for Trade Shows, Events & Retail | Kelin Philippines",
                 "description": "A complete guide to Roll Up Banners — how they work, sizes, materials, setup tips, and where to use them for maximum brand impact at trade shows, events, and retail.",
-                "image": "https://kelinph.com/promotional-display/roll-up-banner.webp",
-                "author": { "@type": "Organization", "name": "Kelin Graphics System", "url": "https://kelinph.com/about" },
-                "publisher": { "@type": "Organization", "name": "Kelin Graphics System", "logo": { "@type": "ImageObject", "url": "https://kelinph.com/marquee-logo/inks/kelin-logo.png" } },
+                "image": "https://www.kelingraphics.com/promotional-display/roll-up-banner.webp",
+                "author": { "@type": "Organization", "name": "Kelin Graphics System", "url": "https://www.kelingraphics.com/about" },
+                "publisher": { "@type": "Organization", "name": "Kelin Graphics System", "logo": { "@type": "ImageObject", "url": "https://www.kelingraphics.com/marquee-logo/inks/kelin-logo.png" } },
                 "datePublished": "2026-03-01T08:00:00.000Z",
                 "dateModified": "2026-05-06T08:00:00.000Z",
-                "mainEntityOfPage": "https://kelinph.com/blogs-pd-roll-up-banner"
+                "mainEntityOfPage": "https://www.kelingraphics.com/blogs-pd-roll-up-banner"
             },
             {
                 "@type": "FAQPage",
@@ -215,10 +215,10 @@ export default function BlogRollUpBanner() {
                         <div className="article-share-bar">
                             <span className="share-label">Share this article</span>
                             <div className="share-buttons">
-                                <a href="https://www.facebook.com/sharer/sharer.php?u=https://kelinph.com/blogs-pd-roll-up-banner" target="_blank" rel="noopener noreferrer" className="share-btn share-facebook" aria-label="Share on Facebook">
+                                <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.kelingraphics.com/blogs-pd-roll-up-banner" target="_blank" rel="noopener noreferrer" className="share-btn share-facebook" aria-label="Share on Facebook">
                                     <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" /></svg>Facebook
                                 </a>
-                                <a href="https://twitter.com/intent/tweet?url=https://kelinph.com/blogs-pd-roll-up-banner" target="_blank" rel="noopener noreferrer" className="share-btn share-twitter" aria-label="Share on Twitter">
+                                <a href="https://twitter.com/intent/tweet?url=https://www.kelingraphics.com/blogs-pd-roll-up-banner" target="_blank" rel="noopener noreferrer" className="share-btn share-twitter" aria-label="Share on Twitter">
                                     <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4 4l16 16M4 20L20 4" stroke="currentColor" strokeWidth="2" /></svg>Twitter / X
                                 </a>
                             </div>

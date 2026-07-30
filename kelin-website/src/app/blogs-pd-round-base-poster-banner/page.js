@@ -7,13 +7,13 @@ export const metadata = {
     title: 'Round Base Poster Banner Guide: Slim Display with Circular Weighted Base | Kelin Philippines',
     description: 'Guide to round base poster banners — how the circular weighted base system works, format options, graphic printing, and best use cases for retail and event environments.',
     keywords: 'round base poster banner Philippines, circular base banner stand, floor standing poster banner Philippines',
-    authors: [{ name: 'Kelin Graphics System', url: 'https://kelinph.com/about' }],
+    authors: [{ name: 'Kelin Graphics System', url: 'https://www.kelingraphics.com/about' }],
     openGraph: {
         title: 'Round Base Poster Banner: Slim Display with Circular Weighted Base',
         images: [{ url: '/promotional-display/round-base-poster-banner.webp', width: 1200, height: 630, alt: 'Round Base Poster Banner' }],
         type: 'article', publishedTime: '2026-02-11T08:00:00.000Z', authors: ['Kelin Graphics System'],
     },
-    alternates: { canonical: 'https://kelinph.com/blogs-pd-round-base-poster-banner' },
+    alternates: { canonical: 'https://www.kelingraphics.com/blogs-pd-round-base-poster-banner' },
 };
 
 export default function BlogRoundBasePosterBanner() {
@@ -24,12 +24,12 @@ export default function BlogRoundBasePosterBanner() {
                 "@type": "Article",
                 "headline": "Round Base Poster Banner Guide: Slim Display with Circular Weighted Base | Kelin Philippines",
                 "description": "Guide to round base poster banners — how the circular weighted base system works, format options, graphic printing, and best use cases for retail and event environments.",
-                "image": "https://kelinph.com/promotional-display/round-base-poster-banner.webp",
-                "author": { "@type": "Organization", "name": "Kelin Graphics System", "url": "https://kelinph.com/about" },
-                "publisher": { "@type": "Organization", "name": "Kelin Graphics System", "logo": { "@type": "ImageObject", "url": "https://kelinph.com/marquee-logo/inks/kelin-logo.png" } },
+                "image": "https://www.kelingraphics.com/promotional-display/round-base-poster-banner.webp",
+                "author": { "@type": "Organization", "name": "Kelin Graphics System", "url": "https://www.kelingraphics.com/about" },
+                "publisher": { "@type": "Organization", "name": "Kelin Graphics System", "logo": { "@type": "ImageObject", "url": "https://www.kelingraphics.com/marquee-logo/inks/kelin-logo.png" } },
                 "datePublished": "2026-02-11T08:00:00.000Z",
                 "dateModified": "2026-05-06T08:00:00.000Z",
-                "mainEntityOfPage": "https://kelinph.com/blogs-pd-round-base-poster-banner"
+                "mainEntityOfPage": "https://www.kelingraphics.com/blogs-pd-round-base-poster-banner"
             },
             {
                 "@type": "FAQPage",
@@ -167,8 +167,8 @@ export default function BlogRoundBasePosterBanner() {
                         <div className="article-share-bar">
                             <span className="share-label">Share this article</span>
                             <div className="share-buttons">
-                                <a href="https://www.facebook.com/sharer/sharer.php?u=https://kelinph.com/blogs-pd-round-base-poster-banner" target="_blank" rel="noopener noreferrer" className="share-btn share-facebook" aria-label="Share on Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" /></svg>Facebook</a>
-                                <a href="https://twitter.com/intent/tweet?url=https://kelinph.com/blogs-pd-round-base-poster-banner" target="_blank" rel="noopener noreferrer" className="share-btn share-twitter" aria-label="Share on Twitter"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4 4l16 16M4 20L20 4" stroke="currentColor" strokeWidth="2" /></svg>Twitter / X</a>
+                                <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.kelingraphics.com/blogs-pd-round-base-poster-banner" target="_blank" rel="noopener noreferrer" className="share-btn share-facebook" aria-label="Share on Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" /></svg>Facebook</a>
+                                <a href="https://twitter.com/intent/tweet?url=https://www.kelingraphics.com/blogs-pd-round-base-poster-banner" target="_blank" rel="noopener noreferrer" className="share-btn share-twitter" aria-label="Share on Twitter"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4 4l16 16M4 20L20 4" stroke="currentColor" strokeWidth="2" /></svg>Twitter / X</a>
                             </div>
                         </div>
                         <div className="article-cta-block">

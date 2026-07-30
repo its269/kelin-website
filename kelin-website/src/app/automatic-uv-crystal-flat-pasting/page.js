@@ -28,7 +28,7 @@ export const metadata = {
         type: "website",
     },
     alternates: {
-        canonical: "https://kelinph.com/automatic-uv-crystal-flat-pasting",
+        canonical: "https://www.kelingraphics.com/automatic-uv-crystal-flat-pasting",
     },
 };
 

@@ -19,7 +19,7 @@ export const metadata = {
     title: 'GCC Puma IV Cutting Plotter Review: 1020 mm/s DC Servo Contour Cutter for Sign Makers',
     description: 'An in-depth review of the GCC Puma IV high-performance cutting plotter. We cover the 1020 mm/s DC servo cutting speed, Enhanced AAS II contour cutting system, Segmental Positioning, Auto Rotation, Section Cutting, Ethernet connectivity, full specifications, and real-world applications for car decals, vinyl signs, food labels, and custom stickers.',
     keywords: 'GCC Puma IV review, Puma IV cutter plotter, GCC Puma IV Philippines, AAS II contour cutting, 1020mm/s cutting plotter, DC servo vinyl cutter, sign maker cutter plotter, GCC P4-60LX P4-132LX, car decal cutter, vinyl sign cutter Philippines, Kelin cutting machine',
-    authors: [{ name: 'Kelin Graphics System', url: 'https://kelinph.com/about' }],
+    authors: [{ name: 'Kelin Graphics System', url: 'https://www.kelingraphics.com/about' }],
     openGraph: {
         title: 'GCC Puma IV Cutting Plotter Review: 1020 mm/s DC Servo Contour Cutter for Sign Makers',
         description: 'Real-world analysis of the GCC Puma IV cutting plotter — 1020 mm/s DC servo motor, Enhanced AAS II contour cutting, Segmental Positioning, Auto Rotation, Section Cutting, Ethernet connection, 500g cutting force, and full specifications for sign makers.',
@@ -29,7 +29,7 @@ export const metadata = {
         authors: ['Kelin Graphics System'],
     },
     alternates: {
-        canonical: 'https://kelinph.com/blogs-gcc-puma-IV',
+        canonical: 'https://www.kelingraphics.com/blogs-gcc-puma-IV',
     },
 };
 
@@ -41,12 +41,12 @@ export default function BlogGCCPumaIV() {
                 "@type": "Article",
                 "headline": "GCC Puma IV Cutting Plotter Review: 1020 mm/s DC Servo Contour Cutter for Sign Makers",
                 "description": "An in-depth review of the GCC Puma IV high-performance cutting plotter. We cover the 1020 mm/s DC servo cutting speed, Enhanced AAS II contour cutting system, Segmental Positioning, Auto Rotation, Section Cutting, Ethernet connectivity, full specifications, and real-world applications for car decals, vinyl signs, food labels, and custom stickers.",
-                "image": "https://kelinph.com/cutting-machines/GCC PUMA IV.webp",
-                "author": { "@type": "Organization", "name": "Kelin Graphics System", "url": "https://kelinph.com/about" },
-                "publisher": { "@type": "Organization", "name": "Kelin Graphics System", "logo": { "@type": "ImageObject", "url": "https://kelinph.com/marquee-logo/inks/kelin-logo.png" } },
+                "image": "https://www.kelingraphics.com/cutting-machines/GCC PUMA IV.webp",
+                "author": { "@type": "Organization", "name": "Kelin Graphics System", "url": "https://www.kelingraphics.com/about" },
+                "publisher": { "@type": "Organization", "name": "Kelin Graphics System", "logo": { "@type": "ImageObject", "url": "https://www.kelingraphics.com/marquee-logo/inks/kelin-logo.png" } },
                 "datePublished": "2026-04-13T08:00:00.000Z",
                 "dateModified": "2026-05-06T08:00:00.000Z",
-                "mainEntityOfPage": "https://kelinph.com/blogs-gcc-puma-IV"
+                "mainEntityOfPage": "https://www.kelingraphics.com/blogs-gcc-puma-IV"
             },
             {
                 "@type": "FAQPage",
@@ -373,15 +373,15 @@ export default function BlogGCCPumaIV() {
                         <div className="article-share-bar">
                             <span className="share-label">Share this article</span>
                             <div className="share-buttons">
-                                <a href="https://www.facebook.com/sharer/sharer.php?u=https://kelinph.com/blogs-gcc-puma-IV" target="_blank" rel="noopener noreferrer" className="share-btn share-facebook" aria-label="Share on Facebook">
+                                <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.kelingraphics.com/blogs-gcc-puma-IV" target="_blank" rel="noopener noreferrer" className="share-btn share-facebook" aria-label="Share on Facebook">
                                     <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" /></svg>
                                     Facebook
                                 </a>
-                                <a href="https://twitter.com/intent/tweet?url=https://kelinph.com/blogs-gcc-puma-IV&text=GCC+Puma+IV+Cutting+Plotter+Review" target="_blank" rel="noopener noreferrer" className="share-btn share-twitter" aria-label="Share on Twitter/X">
+                                <a href="https://twitter.com/intent/tweet?url=https://www.kelingraphics.com/blogs-gcc-puma-IV&text=GCC+Puma+IV+Cutting+Plotter+Review" target="_blank" rel="noopener noreferrer" className="share-btn share-twitter" aria-label="Share on Twitter/X">
                                     <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4 4l16 16M4 20L20 4" /><path d="M4 4l16 16M4 20L20 4" stroke="currentColor" strokeWidth="2" /></svg>
                                     Twitter / X
                                 </a>
-                                <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://kelinph.com/blogs-gcc-puma-IV" target="_blank" rel="noopener noreferrer" className="share-btn share-linkedin" aria-label="Share on LinkedIn">
+                                <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://www.kelingraphics.com/blogs-gcc-puma-IV" target="_blank" rel="noopener noreferrer" className="share-btn share-linkedin" aria-label="Share on LinkedIn">
                                     <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" /><rect x="2" y="9" width="4" height="12" /><circle cx="4" cy="4" r="2" /></svg>
                                     LinkedIn
                                 </a>

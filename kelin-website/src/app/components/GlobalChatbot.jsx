@@ -65,7 +65,7 @@ export default function GlobalChatbot() {
             "Our support team is ready to help with installation, training, maintenance, and technical issues. What can we assist you with?"
         ],
         contact: [
-            "You can reach us through:\n• Website: www.kelinph.com\n• Facebook: https://www.facebook.com/KelinGraphicsPH\n• Instagram: https://www.instagram.com/kelingraphicsph/\n• Email: info@kelinph.com\n• Phone: 0917 678 0608 | 0908 196 0836\n\nWould you like me to connect you directly with our sales team?",
+            "You can reach us through:\n• Website: www.kelingraphics.com\n• Facebook: https://www.facebook.com/KelinGraphicsPH\n• Instagram: https://www.instagram.com/kelingraphicsph/\n• Email: info@kelinph.com\n• Phone: 0917 678 0608 | 0908 196 0836\n\nWould you like me to connect you directly with our sales team?",
             "I can help you get in touch with the right department. Here are our contact options:\n• Facebook Messenger: https://www.facebook.com/KelinGraphicsPH\n• Instagram DM: https://www.instagram.com/kelingraphicsph/\n• Email: info@kelinph.com\n• Phone: (02) 8711-1888\n\nAre you looking for sales information, technical support, or general inquiries?"
         ]
     };

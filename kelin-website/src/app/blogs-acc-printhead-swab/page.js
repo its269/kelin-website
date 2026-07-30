@@ -7,7 +7,7 @@ export const metadata = {
     title: 'Printhead Cleaning Swabs Guide: Lint-Free Maintenance Swabs for Inkjet & Wide-Format Printers',
     description: 'Discover how lint-free printhead cleaning swabs help maintain inkjet and wide-format printer performance by safely cleaning printheads, encoder strips, and capping stations without residue.',
     keywords: 'printhead cleaning swabs, lint-free swabs, printer maintenance swabs, inkjet printer cleaning, wide format printer maintenance, printhead swabs Philippines',
-    authors: [{ name: 'Kelin Graphics System', url: 'https://kelinph.com/about' }],
+    authors: [{ name: 'Kelin Graphics System', url: 'https://www.kelingraphics.com/about' }],
     openGraph: {
         title: 'Printhead Cleaning Swabs Guide: Lint-Free Maintenance Swabs for Inkjet & Wide-Format Printers',
         description: 'Discover how lint-free printhead cleaning swabs help maintain inkjet and wide-format printer performance by safely cleaning printheads and capping stations.',
@@ -16,7 +16,7 @@ export const metadata = {
         publishedTime: '2026-04-25T08:00:00.000Z',
         authors: ['Kelin Graphics System'],
     },
-    alternates: { canonical: 'https://kelinph.com/blogs-acc-printhead-swab' },
+    alternates: { canonical: 'https://www.kelingraphics.com/blogs-acc-printhead-swab' },
 };
 
 export default function BlogAccPrintheadSwab() {
@@ -27,12 +27,12 @@ export default function BlogAccPrintheadSwab() {
                 "@type": "Article",
                 "headline": "Printhead Cleaning Swabs Guide: Lint-Free Maintenance Swabs for Inkjet & Wide-Format Printers",
                 "description": "Discover how lint-free printhead cleaning swabs help maintain inkjet and wide-format printer performance by safely cleaning printheads, encoder strips, and capping stations without residue.",
-                "image": "https://kelinph.com/cat_accessories.webp",
-                "author": { "@type": "Organization", "name": "Kelin Graphics System", "url": "https://kelinph.com/about" },
-                "publisher": { "@type": "Organization", "name": "Kelin Graphics System", "logo": { "@type": "ImageObject", "url": "https://kelinph.com/marquee-logo/inks/kelin-logo.png" } },
+                "image": "https://www.kelingraphics.com/cat_accessories.webp",
+                "author": { "@type": "Organization", "name": "Kelin Graphics System", "url": "https://www.kelingraphics.com/about" },
+                "publisher": { "@type": "Organization", "name": "Kelin Graphics System", "logo": { "@type": "ImageObject", "url": "https://www.kelingraphics.com/marquee-logo/inks/kelin-logo.png" } },
                 "datePublished": "2026-04-25T08:00:00.000Z",
                 "dateModified": "2026-05-06T08:00:00.000Z",
-                "mainEntityOfPage": "https://kelinph.com/blogs-acc-printhead-swab"
+                "mainEntityOfPage": "https://www.kelingraphics.com/blogs-acc-printhead-swab"
             },
             {
                 "@type": "FAQPage",
@@ -161,7 +161,7 @@ export default function BlogAccPrintheadSwab() {
                         <div className="article-share-bar">
                             <span className="share-label">Share this article</span>
                             <div className="share-buttons">
-                                <a href={"https://www.facebook.com/sharer/sharer.php?u=https://kelinph.com/blogs-acc-printhead-swab"} target="_blank" rel="noopener noreferrer" className="share-btn share-facebook" aria-label="Share on Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" /></svg>Facebook</a>
+                                <a href={"https://www.facebook.com/sharer/sharer.php?u=https://www.kelingraphics.com/blogs-acc-printhead-swab"} target="_blank" rel="noopener noreferrer" className="share-btn share-facebook" aria-label="Share on Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" /></svg>Facebook</a>
                             </div>
                         </div>
                         <div className="article-cta-block">

@@ -13,7 +13,7 @@ export const metadata = {
         images: [{ url: '/assets/Materials/Foam Board.webp', width: 1200, height: 630, alt: 'Foam Board and High Impact Sheets' }],
         type: 'article',
     },
-    alternates: { canonical: 'https://kelinph.com/blogs-material-foam-board-high-impact' },
+    alternates: { canonical: 'https://www.kelingraphics.com/blogs-material-foam-board-high-impact' },
 };
 
 export default function BlogFoamBoardHighImpact() {
@@ -24,12 +24,12 @@ export default function BlogFoamBoardHighImpact() {
                 "@type": "Article",
                 "headline": "Foam Board & High Impact Sheets Guide: Just Foam Board, High Impact Bluish White & Rigid PVC Clear",
                 "description": "Complete guide to Just Foam Board (5mm 4x8ft), High Impact Sheet Bluish White, and Rigid PVC Clear (0.5mm–1.0mm). Lightweight display boards, durable impact-resistant panels, and flexible rigid PVC for signage and print applications.",
-                "image": "https://kelinph.com/assets/Materials/Foam Board.webp",
-                "author": { "@type": "Organization", "name": "Kelin Graphics System", "url": "https://kelinph.com/about" },
-                "publisher": { "@type": "Organization", "name": "Kelin Graphics System", "logo": { "@type": "ImageObject", "url": "https://kelinph.com/marquee-logo/inks/kelin-logo.png" } },
+                "image": "https://www.kelingraphics.com/assets/Materials/Foam Board.webp",
+                "author": { "@type": "Organization", "name": "Kelin Graphics System", "url": "https://www.kelingraphics.com/about" },
+                "publisher": { "@type": "Organization", "name": "Kelin Graphics System", "logo": { "@type": "ImageObject", "url": "https://www.kelingraphics.com/marquee-logo/inks/kelin-logo.png" } },
                 "datePublished": "2026-11-01T08:00:00.000Z",
                 "dateModified": "2026-05-06T08:00:00.000Z",
-                "mainEntityOfPage": "https://kelinph.com/blogs-material-foam-board-high-impact"
+                "mainEntityOfPage": "https://www.kelingraphics.com/blogs-material-foam-board-high-impact"
             },
             {
                 "@type": "FAQPage",

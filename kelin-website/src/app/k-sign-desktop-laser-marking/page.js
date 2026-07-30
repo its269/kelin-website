@@ -28,7 +28,7 @@ export const metadata = {
         type: "website",
     },
     alternates: {
-        canonical: "https://kelinph.com/k-sign-desktop-laser-marking",
+        canonical: "https://www.kelingraphics.com/k-sign-desktop-laser-marking",
     },
 };
 

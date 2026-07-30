@@ -28,7 +28,7 @@ export const metadata = {
         type: "website",
     },
     alternates: {
-        canonical: "https://kelinph.com/subli-mate-manual-heat-press",
+        canonical: "https://www.kelingraphics.com/subli-mate-manual-heat-press",
     },
 };
 

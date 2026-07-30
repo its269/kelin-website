@@ -28,7 +28,7 @@ export const metadata = {
         type: "website",
     },
     alternates: {
-        canonical: "https://kelinph.com/dtf-uv-printer-sf604-i3200",
+        canonical: "https://www.kelingraphics.com/dtf-uv-printer-sf604-i3200",
     },
 };
 

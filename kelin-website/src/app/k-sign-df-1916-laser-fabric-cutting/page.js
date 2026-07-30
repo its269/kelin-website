@@ -28,7 +28,7 @@ export const metadata = {
         type: "website",
     },
     alternates: {
-        canonical: "https://kelinph.com/k-sign-df-1916-laser-fabric-cutting",
+        canonical: "https://www.kelingraphics.com/k-sign-df-1916-laser-fabric-cutting",
     },
 };
 

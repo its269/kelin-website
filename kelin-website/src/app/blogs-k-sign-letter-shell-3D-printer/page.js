@@ -24,7 +24,7 @@ export const metadata = {
     title: 'K-Sign Letter Shell 3D Printer Review: 700 mm/s Smart Auto-Leveling for Channel Letter Production',
     description: 'An in-depth review of the K-Sign Letter Shell 3D Printer. We cover real-world print speed, smart auto-leveling with database, integrated Z-axis, filament sensor, auto color change, and who should invest in this industrial 3D printer for signage fabrication.',
     keywords: 'K-Sign Letter Shell 3D Printer Philippines, channel letter 3D printer, signage 3D printer, PLMA 3D printer, smart auto-leveling 3D printer, letter shell fabrication machine, Kelin Philippines 3D printer, 700mm/s 3D printer',
-    authors: [{ name: 'Kelin Philippines', url: 'https://kelinph.com/about' }],
+    authors: [{ name: 'Kelin Philippines', url: 'https://www.kelingraphics.com/about' }],
     openGraph: {
         title: 'K-Sign Letter Shell 3D Printer Review: 700 mm/s Smart Auto-Leveling for Channel Letter Production',
         description: 'Real-world performance, print quality, and engineering analysis of the K-Sign Letter Shell 3D Printer � built specifically for channel letter shells, backlit signage, and 3D dimensional lettering production.',
@@ -34,7 +34,7 @@ export const metadata = {
         authors: ['Kelin Philippines'],
     },
     alternates: {
-        canonical: 'https://kelinph.com/blogs-k-sign-letter-shell-3D-printer',
+        canonical: 'https://www.kelingraphics.com/blogs-k-sign-letter-shell-3D-printer',
     },
 };
 
@@ -46,12 +46,12 @@ export default function BlogKSignLetterShell3DPrinter() {
                 "@type": "Article",
                 "headline": "K-Sign Letter Shell 3D Printer Review: 700 mm/s Smart Auto-Leveling for Channel Letter Production",
                 "description": "An in-depth review of the K-Sign Letter Shell 3D Printer. We cover real-world print speed, smart auto-leveling with database, integrated Z-axis, filament sensor, auto color change, and who should invest in this industrial 3D printer for signage fabrication.",
-                "image": "https://kelinph.com/K-Sign Letter Shell 3D Printer.png",
-                "author": { "@type": "Organization", "name": "Kelin Graphics System", "url": "https://kelinph.com/about" },
-                "publisher": { "@type": "Organization", "name": "Kelin Graphics System", "logo": { "@type": "ImageObject", "url": "https://kelinph.com/marquee-logo/inks/kelin-logo.png" } },
+                "image": "https://www.kelingraphics.com/K-Sign Letter Shell 3D Printer.png",
+                "author": { "@type": "Organization", "name": "Kelin Graphics System", "url": "https://www.kelingraphics.com/about" },
+                "publisher": { "@type": "Organization", "name": "Kelin Graphics System", "logo": { "@type": "ImageObject", "url": "https://www.kelingraphics.com/marquee-logo/inks/kelin-logo.png" } },
                 "datePublished": "2026-04-20T08:00:00.000Z",
                 "dateModified": "2026-05-06T08:00:00.000Z",
-                "mainEntityOfPage": "https://kelinph.com/blogs-k-sign-letter-shell-3D-printer"
+                "mainEntityOfPage": "https://www.kelingraphics.com/blogs-k-sign-letter-shell-3D-printer"
             },
             {
                 "@type": "FAQPage",
@@ -363,15 +363,15 @@ export default function BlogKSignLetterShell3DPrinter() {
                         <div className="article-share-bar">
                             <span className="share-label">Share this article</span>
                             <div className="share-buttons">
-                                <a href="https://www.facebook.com/sharer/sharer.php?u=https://kelinph.com/blogs-k-sign-letter-shell-3D-printer" target="_blank" rel="noopener noreferrer" className="share-btn share-facebook" aria-label="Share on Facebook">
+                                <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.kelingraphics.com/blogs-k-sign-letter-shell-3D-printer" target="_blank" rel="noopener noreferrer" className="share-btn share-facebook" aria-label="Share on Facebook">
                                     <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" /></svg>
                                     Facebook
                                 </a>
-                                <a href="https://twitter.com/intent/tweet?url=https://kelinph.com/blogs-k-sign-letter-shell-3D-printer&text=K-Sign+Letter+Shell+3D+Printer+Review" target="_blank" rel="noopener noreferrer" className="share-btn share-twitter" aria-label="Share on Twitter/X">
+                                <a href="https://twitter.com/intent/tweet?url=https://www.kelingraphics.com/blogs-k-sign-letter-shell-3D-printer&text=K-Sign+Letter+Shell+3D+Printer+Review" target="_blank" rel="noopener noreferrer" className="share-btn share-twitter" aria-label="Share on Twitter/X">
                                     <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4 4l16 16M4 20L20 4" /><path d="M4 4l16 16M4 20L20 4" stroke="currentColor" strokeWidth="2" /></svg>
                                     Twitter / X
                                 </a>
-                                <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://kelinph.com/blogs-k-sign-letter-shell-3D-printer" target="_blank" rel="noopener noreferrer" className="share-btn share-linkedin" aria-label="Share on LinkedIn">
+                                <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://www.kelingraphics.com/blogs-k-sign-letter-shell-3D-printer" target="_blank" rel="noopener noreferrer" className="share-btn share-linkedin" aria-label="Share on LinkedIn">
                                     <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" /><rect x="2" y="9" width="4" height="12" /><circle cx="4" cy="4" r="2" /></svg>
                                     LinkedIn
                                 </a>

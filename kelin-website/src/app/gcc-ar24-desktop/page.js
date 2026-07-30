@@ -28,7 +28,7 @@ export const metadata = {
         type: "website",
     },
     alternates: {
-        canonical: "https://kelinph.com/gcc-ar24-desktop",
+        canonical: "https://www.kelingraphics.com/gcc-ar24-desktop",
     },
 };
 

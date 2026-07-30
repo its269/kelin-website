@@ -23,7 +23,7 @@ This project includes a safe keep-alive flow for Supabase Free:
 ## Setup (GitHub Actions - free and simple)
 
 1. Deploy your app so the health endpoint is reachable, e.g.:
-   - `https://your-domain.com/api/admin/health/`
+   - `https://www.kelingraphics.com/api/admin/health/`
 2. In GitHub repo settings, add secret:
    - **Name:** `KEEPALIVE_URL`
    - **Value:** full health URL above

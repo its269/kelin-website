@@ -28,7 +28,7 @@ export const metadata = {
         type: "website",
     },
     alternates: {
-        canonical: "https://kelinph.com/solutions-personalize-machines",
+        canonical: "https://www.kelingraphics.com/solutions-personalize-machines",
     },
 };
 

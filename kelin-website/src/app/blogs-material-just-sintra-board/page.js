@@ -13,7 +13,7 @@ export const metadata = {
         images: [{ url: '/assets/Materials/Black and White Sintra.webp', width: 1200, height: 630, alt: 'Just Sintra Board' }],
         type: 'article',
     },
-    alternates: { canonical: 'https://kelinph.com/blogs-material-just-sintra-board' },
+    alternates: { canonical: 'https://www.kelingraphics.com/blogs-material-just-sintra-board' },
 };
 
 export default function BlogJustSintraBoard() {
@@ -24,12 +24,12 @@ export default function BlogJustSintraBoard() {
                 "@type": "Article",
                 "headline": "Just Sintra Board Guide: Expanded PVC Foam Board Grades, Thickness & Applications for Signage",
                 "description": "Complete guide to Just Sintra Board — Versatile White, Bluish, Black, Colors, Lite, and HD grades in 1.5mm to 20mm thickness, up to 4x10ft. Lightweight, easy to print and cut, ideal for indoor and outdoor signage.",
-                "image": "https://kelinph.com/assets/Materials/Black and White Sintra.webp",
-                "author": { "@type": "Organization", "name": "Kelin Graphics System", "url": "https://kelinph.com/about" },
-                "publisher": { "@type": "Organization", "name": "Kelin Graphics System", "logo": { "@type": "ImageObject", "url": "https://kelinph.com/marquee-logo/inks/kelin-logo.png" } },
+                "image": "https://www.kelingraphics.com/assets/Materials/Black and White Sintra.webp",
+                "author": { "@type": "Organization", "name": "Kelin Graphics System", "url": "https://www.kelingraphics.com/about" },
+                "publisher": { "@type": "Organization", "name": "Kelin Graphics System", "logo": { "@type": "ImageObject", "url": "https://www.kelingraphics.com/marquee-logo/inks/kelin-logo.png" } },
                 "datePublished": "2026-11-01T08:00:00.000Z",
                 "dateModified": "2026-05-06T08:00:00.000Z",
-                "mainEntityOfPage": "https://kelinph.com/blogs-material-just-sintra-board"
+                "mainEntityOfPage": "https://www.kelingraphics.com/blogs-material-just-sintra-board"
             },
             {
                 "@type": "FAQPage",

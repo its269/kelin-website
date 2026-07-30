@@ -19,7 +19,7 @@ export const metadata = {
     title: 'IECHO PK4 Automatic Intelligent Cutting System Review: Advanced Voice Coil DK Tool & 16mm Cut Capacity',
     description: 'An in-depth review of the IECHO PK4 Automatic Intelligent Cutting System. We cover the upgraded voice coil motor DK tool, 16mm oscillating knife capacity, CCD vision registration, QR code scanning, auto sheet feeding, and roll material support — and who should invest in this smart digital cutter.',
     keywords: 'IECHO PK4 review, PK4 automatic cutting system, IECHO smart cutter Philippines, voice coil DK tool cutter, oscillating knife 16mm cutting, CCD vision registration cutter, QR code cutting system, digital cutting machine Philippines, Kelin cutting machine',
-    authors: [{ name: 'Kelin Graphics System', url: 'https://kelinph.com/about' }],
+    authors: [{ name: 'Kelin Graphics System', url: 'https://www.kelingraphics.com/about' }],
     openGraph: {
         title: 'IECHO PK4 Automatic Intelligent Cutting System Review: Advanced Voice Coil DK Tool & 16mm Cut Capacity',
         description: 'Real-world analysis of the IECHO PK4 smart cutting system — upgraded voice coil DK tool, 16mm oscillating knife, CCD auto-registration, QR code scanning, and auto sheet & roll feeding.',
@@ -29,7 +29,7 @@ export const metadata = {
         authors: ['Kelin Graphics System'],
     },
     alternates: {
-        canonical: 'https://kelinph.com/blogs-iecho-pk4',
+        canonical: 'https://www.kelingraphics.com/blogs-iecho-pk4',
     },
 };
 
@@ -41,12 +41,12 @@ export default function BlogIECHOPK4() {
                 "@type": "Article",
                 "headline": "IECHO PK4 Automatic Intelligent Cutting System Review: Advanced Voice Coil DK Tool & 16mm Cut Capacity",
                 "description": "An in-depth review of the IECHO PK4 Automatic Intelligent Cutting System. We cover the upgraded voice coil motor DK tool, 16mm oscillating knife capacity, CCD vision registration, QR code scanning, auto sheet feeding, and roll material support — and who should invest in this smart digital cutter.",
-                "image": "https://kelinph.com/cutting-machines/PK4 (2).webp",
-                "author": { "@type": "Organization", "name": "Kelin Graphics System", "url": "https://kelinph.com/about" },
-                "publisher": { "@type": "Organization", "name": "Kelin Graphics System", "logo": { "@type": "ImageObject", "url": "https://kelinph.com/marquee-logo/inks/kelin-logo.png" } },
+                "image": "https://www.kelingraphics.com/cutting-machines/PK4 (2).webp",
+                "author": { "@type": "Organization", "name": "Kelin Graphics System", "url": "https://www.kelingraphics.com/about" },
+                "publisher": { "@type": "Organization", "name": "Kelin Graphics System", "logo": { "@type": "ImageObject", "url": "https://www.kelingraphics.com/marquee-logo/inks/kelin-logo.png" } },
                 "datePublished": "2026-04-13T08:00:00.000Z",
                 "dateModified": "2026-05-06T08:00:00.000Z",
-                "mainEntityOfPage": "https://kelinph.com/blogs-iecho-pk4"
+                "mainEntityOfPage": "https://www.kelingraphics.com/blogs-iecho-pk4"
             },
             {
                 "@type": "FAQPage",
@@ -361,15 +361,15 @@ export default function BlogIECHOPK4() {
                         <div className="article-share-bar">
                             <span className="share-label">Share this article</span>
                             <div className="share-buttons">
-                                <a href="https://www.facebook.com/sharer/sharer.php?u=https://kelinph.com/blogs-iecho-pk4" target="_blank" rel="noopener noreferrer" className="share-btn share-facebook" aria-label="Share on Facebook">
+                                <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.kelingraphics.com/blogs-iecho-pk4" target="_blank" rel="noopener noreferrer" className="share-btn share-facebook" aria-label="Share on Facebook">
                                     <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" /></svg>
                                     Facebook
                                 </a>
-                                <a href="https://twitter.com/intent/tweet?url=https://kelinph.com/blogs-iecho-pk4&text=IECHO+PK4+Automatic+Intelligent+Cutting+System+Review" target="_blank" rel="noopener noreferrer" className="share-btn share-twitter" aria-label="Share on Twitter/X">
+                                <a href="https://twitter.com/intent/tweet?url=https://www.kelingraphics.com/blogs-iecho-pk4&text=IECHO+PK4+Automatic+Intelligent+Cutting+System+Review" target="_blank" rel="noopener noreferrer" className="share-btn share-twitter" aria-label="Share on Twitter/X">
                                     <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4 4l16 16M4 20L20 4" /><path d="M4 4l16 16M4 20L20 4" stroke="currentColor" strokeWidth="2" /></svg>
                                     Twitter / X
                                 </a>
-                                <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://kelinph.com/blogs-iecho-pk4" target="_blank" rel="noopener noreferrer" className="share-btn share-linkedin" aria-label="Share on LinkedIn">
+                                <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://www.kelingraphics.com/blogs-iecho-pk4" target="_blank" rel="noopener noreferrer" className="share-btn share-linkedin" aria-label="Share on LinkedIn">
                                     <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" /><rect x="2" y="9" width="4" height="12" /><circle cx="4" cy="4" r="2" /></svg>
                                     LinkedIn
                                 </a>

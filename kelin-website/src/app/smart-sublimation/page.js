@@ -28,7 +28,7 @@ export const metadata = {
         type: "website",
     },
     alternates: {
-        canonical: "https://kelinph.com/smart-sublimation",
+        canonical: "https://www.kelingraphics.com/smart-sublimation",
     },
 };
 

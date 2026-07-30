@@ -28,7 +28,7 @@ export const metadata = {
         type: "website",
     },
     alternates: {
-        canonical: "https://kelinph.com/blogs",
+        canonical: "https://www.kelingraphics.com/blogs",
     },
 };
 
@@ -40,8 +40,8 @@ export default function Page() {
                 "@type": "CollectionPage",
                 "headline": "Blog | Printer & Cutter Reviews, Buying Guides | Kelin Graphics System",
                 "description": "Read in-depth reviews, buying guides, and product comparisons for wide-format printers, cutters, and finishing equipment from Kelin Philippines.",
-                "url": "https://kelinph.com/blogs-3-inks",
-                "publisher": { "@type": "Organization", "name": "Kelin Graphics System", "logo": { "@type": "ImageObject", "url": "https://kelinph.com/marquee-logo/inks/kelin-logo.png" } }
+                "url": "https://www.kelingraphics.com/blogs-3-inks",
+                "publisher": { "@type": "Organization", "name": "Kelin Graphics System", "logo": { "@type": "ImageObject", "url": "https://www.kelingraphics.com/marquee-logo/inks/kelin-logo.png" } }
             },
             {
                 "@type": "FAQPage",

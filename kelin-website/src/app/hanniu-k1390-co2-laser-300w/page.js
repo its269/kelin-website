@@ -28,7 +28,7 @@ export const metadata = {
         type: "website",
     },
     alternates: {
-        canonical: "https://kelinph.com/hanniu-k1390-co2-laser-300w",
+        canonical: "https://www.kelingraphics.com/hanniu-k1390-co2-laser-300w",
     },
 };
 

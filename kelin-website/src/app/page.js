@@ -30,19 +30,19 @@ export const metadata = {
         siteName: "Kelin Graphics System",
     },
     alternates: {
-        canonical: "https://www.kelinph.com",
+        canonical: "https://www.kelingraphics.com",
     },
 };
 
 const jsonLd = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "@id": "https://www.kelinph.com",
+    "@id": "https://www.kelingraphics.com",
     name: "Kelin Graphics System",
     description: "Leading distributor of wide-format printers, cutting machines, UV printers, DTF systems, sublimation machines, and laser machines in the Philippines.",
-    url: "https://www.kelinph.com",
-    logo: "https://www.kelinph.com/KELIN-LOGO-01.png",
-    image: "https://www.kelinph.com/machines.png",
+    url: "https://www.kelingraphics.com",
+    logo: "https://www.kelingraphics.com/KELIN-LOGO-01.png",
+    image: "https://www.kelingraphics.com/machines.png",
     telephone: "+63-2-KELIN",
     address: {
         "@type": "PostalAddress",

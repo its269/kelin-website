@@ -28,7 +28,7 @@ export const metadata = {
         type: "website",
     },
     alternates: {
-        canonical: "https://kelinph.com/promaker-embroidery-1201",
+        canonical: "https://www.kelingraphics.com/promaker-embroidery-1201",
     },
 };
 

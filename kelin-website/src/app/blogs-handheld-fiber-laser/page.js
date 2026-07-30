@@ -19,7 +19,7 @@ export const metadata = {
     title: 'TFZ-S Mini Handheld Laser Welding Machine Review: 5\u201310\u00d7 Faster Than Traditional Welding at 120 mm/s',
     description: 'An in-depth review of the TFZ-S Mini Handheld Laser Welding Machine by Hanniu Laser. We cover the 120 mm/s welding speed, 1000W/1500W/2000W laser power options, fiber laser system, continuous/modulated pulse working modes, beginner-friendly operation, and full specifications for elevator manufacturing, metal processing, machinery manufacturing, household appliances, and aerospace industry.',
     keywords: 'TFZ-S handheld laser welding machine review, Hanniu Laser TFZ-S Philippines, mini handheld laser welder, fiber laser welding machine Philippines, 1500W laser welder Philippines, 120mm/s laser welding speed, Kelin laser welding machine, handheld laser welder Philippines',
-    authors: [{ name: 'Kelin Graphics System', url: 'https://kelinph.com/about' }],
+    authors: [{ name: 'Kelin Graphics System', url: 'https://www.kelingraphics.com/about' }],
     openGraph: {
         title: 'TFZ-S Mini Handheld Laser Welding Machine Review: 5\u201310\u00d7 Faster Than Traditional Welding at 120 mm/s',
         description: 'Real-world analysis of the TFZ-S Mini Handheld Laser Welding Machine \u2014 120 mm/s industrial-grade welding speed, 1000W/1500W/2000W fiber laser power, continuous/modulated pulse modes, beginner-friendly 10-minute setup, multi-application welding (butt, fillet, lap, stitch), and 98% power stability for elevator manufacturing, metal processing, and aerospace industry applications.',
@@ -29,7 +29,7 @@ export const metadata = {
         authors: ['Kelin Graphics System'],
     },
     alternates: {
-        canonical: 'https://kelinph.com/blogs-handheld-fiber-laser',
+        canonical: 'https://www.kelingraphics.com/blogs-handheld-fiber-laser',
     },
 };
 
@@ -41,12 +41,12 @@ export default function BlogTFZSHandheldLaserWelder() {
                 "@type": "Article",
                 "headline": "TFZ-S Mini Handheld Laser Welding Machine Review: 5–10× Faster Than Traditional Welding at 120 mm/s",
                 "description": "An in-depth review of the TFZ-S Mini Handheld Laser Welding Machine by Hanniu Laser. We cover the 120 mm/s welding speed, 1000W/1500W/2000W laser power options, fiber laser system, continuous/modulated pulse working modes, beginner-friendly operation, and full specifications for elevator manufacturing, metal processing, machinery manufacturing, household appliances, and aerospace industry.",
-                "image": "https://kelinph.com/laser-machines/Handheld Fiber Laser.webp",
-                "author": { "@type": "Organization", "name": "Kelin Graphics System", "url": "https://kelinph.com/about" },
-                "publisher": { "@type": "Organization", "name": "Kelin Graphics System", "logo": { "@type": "ImageObject", "url": "https://kelinph.com/marquee-logo/inks/kelin-logo.png" } },
+                "image": "https://www.kelingraphics.com/laser-machines/Handheld Fiber Laser.webp",
+                "author": { "@type": "Organization", "name": "Kelin Graphics System", "url": "https://www.kelingraphics.com/about" },
+                "publisher": { "@type": "Organization", "name": "Kelin Graphics System", "logo": { "@type": "ImageObject", "url": "https://www.kelingraphics.com/marquee-logo/inks/kelin-logo.png" } },
                 "datePublished": "2026-04-18T08:00:00.000Z",
                 "dateModified": "2026-05-06T08:00:00.000Z",
-                "mainEntityOfPage": "https://kelinph.com/blogs-handheld-fiber-laser"
+                "mainEntityOfPage": "https://www.kelingraphics.com/blogs-handheld-fiber-laser"
             },
             {
                 "@type": "FAQPage",
@@ -354,15 +354,15 @@ export default function BlogTFZSHandheldLaserWelder() {
                         <div className="article-share-bar">
                             <span className="share-label">Share this article</span>
                             <div className="share-buttons">
-                                <a href="https://www.facebook.com/sharer/sharer.php?u=https://kelinph.com/blogs-handheld-fiber-laser" target="_blank" rel="noopener noreferrer" className="share-btn share-facebook" aria-label="Share on Facebook">
+                                <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.kelingraphics.com/blogs-handheld-fiber-laser" target="_blank" rel="noopener noreferrer" className="share-btn share-facebook" aria-label="Share on Facebook">
                                     <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" /></svg>
                                     Facebook
                                 </a>
-                                <a href="https://twitter.com/intent/tweet?url=https://kelinph.com/blogs-handheld-fiber-laser&text=TFZ-S+Mini+Handheld+Laser+Welding+Machine+Review+120mms+Fiber+Laser" target="_blank" rel="noopener noreferrer" className="share-btn share-twitter" aria-label="Share on Twitter/X">
+                                <a href="https://twitter.com/intent/tweet?url=https://www.kelingraphics.com/blogs-handheld-fiber-laser&text=TFZ-S+Mini+Handheld+Laser+Welding+Machine+Review+120mms+Fiber+Laser" target="_blank" rel="noopener noreferrer" className="share-btn share-twitter" aria-label="Share on Twitter/X">
                                     <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4 4l16 16M4 20L20 4" /><path d="M4 4l16 16M4 20L20 4" stroke="currentColor" strokeWidth="2" /></svg>
                                     Twitter / X
                                 </a>
-                                <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://kelinph.com/blogs-handheld-fiber-laser" target="_blank" rel="noopener noreferrer" className="share-btn share-linkedin" aria-label="Share on LinkedIn">
+                                <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://www.kelingraphics.com/blogs-handheld-fiber-laser" target="_blank" rel="noopener noreferrer" className="share-btn share-linkedin" aria-label="Share on LinkedIn">
                                     <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" /><rect x="2" y="9" width="4" height="12" /><circle cx="4" cy="4" r="2" /></svg>
                                     LinkedIn
                                 </a>

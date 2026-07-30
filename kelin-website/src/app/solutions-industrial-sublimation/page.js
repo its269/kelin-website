@@ -28,7 +28,7 @@ export const metadata = {
         type: "website",
     },
     alternates: {
-        canonical: "https://kelinph.com/solutions-industrial-sublimation",
+        canonical: "https://www.kelingraphics.com/solutions-industrial-sublimation",
     },
 };
 

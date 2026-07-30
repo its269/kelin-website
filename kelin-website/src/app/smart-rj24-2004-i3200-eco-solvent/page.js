@@ -28,7 +28,7 @@ export const metadata = {
         type: "website",
     },
     alternates: {
-        canonical: "https://kelinph.com/smart-rj24-2004-i3200-eco-solvent",
+        canonical: "https://www.kelingraphics.com/smart-rj24-2004-i3200-eco-solvent",
     },
 };
 

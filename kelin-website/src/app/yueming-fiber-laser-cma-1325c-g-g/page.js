@@ -28,7 +28,7 @@ export const metadata = {
         type: "website",
     },
     alternates: {
-        canonical: "https://kelinph.com/yueming-fiber-laser-cma-1325c-g-g",
+        canonical: "https://www.kelingraphics.com/yueming-fiber-laser-cma-1325c-g-g",
     },
 };
 

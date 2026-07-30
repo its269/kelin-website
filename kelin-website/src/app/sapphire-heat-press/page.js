@@ -28,7 +28,7 @@ export const metadata = {
         type: "website",
     },
     alternates: {
-        canonical: "https://kelinph.com/sapphire-heat-press",
+        canonical: "https://www.kelingraphics.com/sapphire-heat-press",
     },
 };
 

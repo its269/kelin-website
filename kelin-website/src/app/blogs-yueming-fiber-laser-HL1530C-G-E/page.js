@@ -24,7 +24,7 @@ export const metadata = {
     title: 'YueMing HL1530C-G-E Fiber Laser Review: Smart Leapfrog Motion for Faster & Smoother Cuts',
     description: 'An in-depth review of the YueMing HL1530C-G-E Fiber Laser Cutting Machine. We cover its smart leapfrog motion system, 1000W–3000W IPG laser power, double rack and pinion servo drive, intelligent analysis dashboard, and who should invest in this large-format industrial fiber laser.',
     keywords: 'YueMing fiber laser, HL1530C-G-E, fiber laser cutting machine Philippines, leapfrog motion laser, 3000W fiber laser, IPG fiber laser, large format fiber laser, double rack pinion servo, Kelin Philippines laser, metal cutting machine',
-    authors: [{ name: 'Kelin Philippines', url: 'https://kelinph.com/about' }],
+    authors: [{ name: 'Kelin Philippines', url: 'https://www.kelingraphics.com/about' }],
     openGraph: {
         title: 'YueMing HL1530C-G-E Fiber Laser Review: Smart Leapfrog Motion for Faster & Smoother Cuts',
         description: 'Real-world performance, cutting quality, and engineering analysis of the YueMing HL1530C-G-E Fiber Laser with smart leapfrog motion, 1000W–3000W IPG laser, and double rack and pinion servo drive.',
@@ -34,7 +34,7 @@ export const metadata = {
         authors: ['Kelin Philippines'],
     },
     alternates: {
-        canonical: 'https://kelinph.com/blogs-yueming-fiber-laser-HL1530C-G-E',
+        canonical: 'https://www.kelingraphics.com/blogs-yueming-fiber-laser-HL1530C-G-E',
     },
 };
 
@@ -46,12 +46,12 @@ export default function BlogYuemingHL1530CGE() {
                 "@type": "Article",
                 "headline": "YueMing HL1530C-G-E Fiber Laser Review: Smart Leapfrog Motion for Faster & Smoother Cuts",
                 "description": "An in-depth review of the YueMing HL1530C-G-E Fiber Laser Cutting Machine. We cover its smart leapfrog motion system, 1000W\u20133000W IPG laser power, double rack and pinion servo drive, intelligent analysis dashboard, and who should invest in this large-format industrial fiber laser.",
-                "image": "https://kelinph.com/laser-machines/Yueming Fiber Laser HL1530C-G-E 1500w IPG.webp",
-                "author": { "@type": "Organization", "name": "Kelin Graphics System", "url": "https://kelinph.com/about" },
-                "publisher": { "@type": "Organization", "name": "Kelin Graphics System", "logo": { "@type": "ImageObject", "url": "https://kelinph.com/marquee-logo/inks/kelin-logo.png" } },
+                "image": "https://www.kelingraphics.com/laser-machines/Yueming Fiber Laser HL1530C-G-E 1500w IPG.webp",
+                "author": { "@type": "Organization", "name": "Kelin Graphics System", "url": "https://www.kelingraphics.com/about" },
+                "publisher": { "@type": "Organization", "name": "Kelin Graphics System", "logo": { "@type": "ImageObject", "url": "https://www.kelingraphics.com/marquee-logo/inks/kelin-logo.png" } },
                 "datePublished": "2026-04-18T08:00:00.000Z",
                 "dateModified": "2026-05-06T08:00:00.000Z",
-                "mainEntityOfPage": "https://kelinph.com/blogs-yueming-fiber-laser-HL1530C-G-E"
+                "mainEntityOfPage": "https://www.kelingraphics.com/blogs-yueming-fiber-laser-HL1530C-G-E"
             },
             {
                 "@type": "FAQPage",
@@ -303,9 +303,9 @@ export default function BlogYuemingHL1530CGE() {
                         <div className="article-share-bar">
                             <span className="share-label">Share this article:</span>
                             <div className="share-buttons">
-                                <a href="https://www.facebook.com/sharer/sharer.php?u=https://kelinph.com/blogs-yueming-fiber-laser-HL1530C-G-E" target="_blank" rel="noopener noreferrer" className="share-btn share-facebook">Facebook</a>
-                                <a href="https://twitter.com/intent/tweet?url=https://kelinph.com/blogs-yueming-fiber-laser-HL1530C-G-E&text=YueMing+HL1530C-G-E+Fiber+Laser+Review" target="_blank" rel="noopener noreferrer" className="share-btn share-twitter">Twitter</a>
-                                <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://kelinph.com/blogs-yueming-fiber-laser-HL1530C-G-E" target="_blank" rel="noopener noreferrer" className="share-btn share-linkedin">LinkedIn</a>
+                                <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.kelingraphics.com/blogs-yueming-fiber-laser-HL1530C-G-E" target="_blank" rel="noopener noreferrer" className="share-btn share-facebook">Facebook</a>
+                                <a href="https://twitter.com/intent/tweet?url=https://www.kelingraphics.com/blogs-yueming-fiber-laser-HL1530C-G-E&text=YueMing+HL1530C-G-E+Fiber+Laser+Review" target="_blank" rel="noopener noreferrer" className="share-btn share-twitter">Twitter</a>
+                                <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://www.kelingraphics.com/blogs-yueming-fiber-laser-HL1530C-G-E" target="_blank" rel="noopener noreferrer" className="share-btn share-linkedin">LinkedIn</a>
                             </div>
                         </div>
 

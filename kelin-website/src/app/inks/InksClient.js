@@ -916,7 +916,7 @@ const generateStructuredData = (inkData) => {
     "@type": "WebPage",
     "name": "Professional Printing Inks",
     "description": "Comprehensive range of high-quality printing inks for various applications",
-    "url": "https://www.kelinph.com/inks",
+    "url": "https://www.kelingraphics.com/inks",
     "mainEntity": {
       "@type": "ItemList",
       "itemListElement": categories.map((category, index) => ({
@@ -924,7 +924,7 @@ const generateStructuredData = (inkData) => {
         "position": index + 1,
         "item": {
           ...category,
-          "@id": `https://www.kelinph.com/inks#${category.name.toLowerCase().replace(/[^a-z0-9]/g, '-')}`
+          "@id": `https://www.kelingraphics.com/inks#${category.name.toLowerCase().replace(/[^a-z0-9]/g, '-')}`
         }
       }))
     },
@@ -935,19 +935,19 @@ const generateStructuredData = (inkData) => {
           "@type": "ListItem",
           "position": 1,
           "name": "Home",
-          "item": "https://www.kelinph.com"
+          "item": "https://www.kelingraphics.com"
         },
         {
           "@type": "ListItem",
           "position": 2,
           "name": "Products",
-          "item": "https://www.kelinph.com/products"
+          "item": "https://www.kelingraphics.com/products"
         },
         {
           "@type": "ListItem",
           "position": 3,
           "name": "Inks",
-          "item": "https://www.kelinph.com/inks"
+          "item": "https://www.kelingraphics.com/inks"
         }
       ]
     }

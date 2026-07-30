@@ -28,7 +28,7 @@ export const metadata = {
         type: "website",
     },
     alternates: {
-        canonical: "https://kelinph.com/events",
+        canonical: "https://www.kelingraphics.com/events",
     },
 };
 

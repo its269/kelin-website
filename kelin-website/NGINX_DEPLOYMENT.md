@@ -5,7 +5,7 @@
 1. **Ubuntu/Debian Server**
 2. **Nginx installed**
 3. **Node.js and npm installed**
-4. **Domain name configured** (kelinph.com)
+4. **Domain name configured** (www.kelingraphics.com)
 
 ## Installation Steps
 
@@ -76,7 +76,7 @@ sudo apt install certbot python3-certbot-nginx -y
 ### 2. Obtain SSL Certificate
 
 ```bash
-sudo certbot --nginx -d kelinph.com -d www.kelinph.com
+sudo certbot --nginx -d kelingraphics.com -d www.kelingraphics.com
 ```
 
 ### 3. Auto-renewal Setup
@@ -220,7 +220,7 @@ htop -p $(pgrep nginx | tr '\n' ',')
 ### Check Website Status
 
 ```bash
-curl -I https://kelinph.com
+curl -I https://www.kelingraphics.com
 ```
 
 ## Maintenance

@@ -28,7 +28,7 @@ export const metadata = {
         type: "website",
     },
     alternates: {
-        canonical: "https://kelinph.com/apollomax-plus-II",
+        canonical: "https://www.kelingraphics.com/apollomax-plus-II",
     },
 };
 

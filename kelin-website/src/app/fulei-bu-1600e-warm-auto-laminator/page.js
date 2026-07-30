@@ -28,7 +28,7 @@ export const metadata = {
         type: "website",
     },
     alternates: {
-        canonical: "https://kelinph.com/fulei-bu-1600e-warm-auto-laminator",
+        canonical: "https://www.kelingraphics.com/fulei-bu-1600e-warm-auto-laminator",
     },
 };
 

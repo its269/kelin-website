@@ -28,7 +28,7 @@ export const metadata = {
         type: "website",
     },
     alternates: {
-        canonical: "https://kelinph.com/smart-uv-printer",
+        canonical: "https://www.kelingraphics.com/smart-uv-printer",
     },
 };
 

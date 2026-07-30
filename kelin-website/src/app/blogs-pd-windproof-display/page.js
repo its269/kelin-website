@@ -7,13 +7,13 @@ export const metadata = {
     title: 'Windproof Display Guide: Outdoor-Rated Wind-Resistant Banner Stand | Kelin Philippines',
     description: 'Complete guide to windproof displays — engineered outdoor banner stands with wind-venting design, reinforced frames, and ground anchor systems for reliable outdoor advertising in Philippine weather.',
     keywords: 'windproof display Philippines, outdoor banner stand Philippines, wind resistant banner Philippines',
-    authors: [{ name: 'Kelin Graphics System', url: 'https://kelinph.com/about' }],
+    authors: [{ name: 'Kelin Graphics System', url: 'https://www.kelingraphics.com/about' }],
     openGraph: {
         title: 'Windproof Display: Outdoor-Rated Wind-Resistant Banner Stand',
         images: [{ url: '/promotional-display/Windproof Display  (2).webp', width: 1200, height: 630, alt: 'Windproof Display' }],
         type: 'article', publishedTime: '2026-02-25T08:00:00.000Z', authors: ['Kelin Graphics System'],
     },
-    alternates: { canonical: 'https://kelinph.com/blogs-pd-windproof-display' },
+    alternates: { canonical: 'https://www.kelingraphics.com/blogs-pd-windproof-display' },
 };
 
 export default function BlogWindproofDisplay() {
@@ -24,12 +24,12 @@ export default function BlogWindproofDisplay() {
                 "@type": "Article",
                 "headline": "Windproof Display Guide: Outdoor-Rated Wind-Resistant Banner Stand | Kelin Philippines",
                 "description": "Complete guide to windproof displays — engineered outdoor banner stands with wind-venting design, reinforced frames, and ground anchor systems for reliable outdoor advertising in Philippine weather.",
-                "image": "https://kelinph.com/promotional-display/Windproof Display  (2).webp",
-                "author": { "@type": "Organization", "name": "Kelin Graphics System", "url": "https://kelinph.com/about" },
-                "publisher": { "@type": "Organization", "name": "Kelin Graphics System", "logo": { "@type": "ImageObject", "url": "https://kelinph.com/marquee-logo/inks/kelin-logo.png" } },
+                "image": "https://www.kelingraphics.com/promotional-display/Windproof Display  (2).webp",
+                "author": { "@type": "Organization", "name": "Kelin Graphics System", "url": "https://www.kelingraphics.com/about" },
+                "publisher": { "@type": "Organization", "name": "Kelin Graphics System", "logo": { "@type": "ImageObject", "url": "https://www.kelingraphics.com/marquee-logo/inks/kelin-logo.png" } },
                 "datePublished": "2026-02-25T08:00:00.000Z",
                 "dateModified": "2026-05-06T08:00:00.000Z",
-                "mainEntityOfPage": "https://kelinph.com/blogs-pd-windproof-display"
+                "mainEntityOfPage": "https://www.kelingraphics.com/blogs-pd-windproof-display"
             },
             {
                 "@type": "FAQPage",
@@ -168,8 +168,8 @@ export default function BlogWindproofDisplay() {
                         <div className="article-share-bar">
                             <span className="share-label">Share this article</span>
                             <div className="share-buttons">
-                                <a href="https://www.facebook.com/sharer/sharer.php?u=https://kelinph.com/blogs-pd-windproof-display" target="_blank" rel="noopener noreferrer" className="share-btn share-facebook" aria-label="Share on Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" /></svg>Facebook</a>
-                                <a href="https://twitter.com/intent/tweet?url=https://kelinph.com/blogs-pd-windproof-display" target="_blank" rel="noopener noreferrer" className="share-btn share-twitter" aria-label="Share on Twitter"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4 4l16 16M4 20L20 4" stroke="currentColor" strokeWidth="2" /></svg>Twitter / X</a>
+                                <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.kelingraphics.com/blogs-pd-windproof-display" target="_blank" rel="noopener noreferrer" className="share-btn share-facebook" aria-label="Share on Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" /></svg>Facebook</a>
+                                <a href="https://twitter.com/intent/tweet?url=https://www.kelingraphics.com/blogs-pd-windproof-display" target="_blank" rel="noopener noreferrer" className="share-btn share-twitter" aria-label="Share on Twitter"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4 4l16 16M4 20L20 4" stroke="currentColor" strokeWidth="2" /></svg>Twitter / X</a>
                             </div>
                         </div>
                         <div className="article-cta-block">

@@ -28,7 +28,7 @@ export const metadata = {
         type: "website",
     },
     alternates: {
-        canonical: "https://kelinph.com/solvent-printers",
+        canonical: "https://www.kelingraphics.com/solvent-printers",
     },
 };
 

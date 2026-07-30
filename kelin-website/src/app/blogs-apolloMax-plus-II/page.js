@@ -7,7 +7,7 @@ export const metadata = {
     title: 'PZG High-Speed Inkjet Series Review: Grand Format Printing at 230 m\u00b2/h',
     description: 'An in-depth review of the PZG High-Speed Printing Inkjet Series (PZG3204-KV / PZG3208-KV). We cover real-world print speeds, Konica Minolta KM512iLNB printhead performance, advanced features, and who should invest in this grand format inkjet machine.',
     keywords: 'PZG high-speed inkjet printer, PZG3204-KV, PZG3208-KV, Konica Minolta KM512 grand format printer Philippines, wide format high-speed printer review, 230 m2/h grand format, Kelin Philippines printer, grand format inkjet printer',
-    authors: [{ name: 'Marco Dela Cruz', url: 'https://kelinph.com/about' }],
+    authors: [{ name: 'Marco Dela Cruz', url: 'https://www.kelingraphics.com/about' }],
     openGraph: {
         title: 'PZG High-Speed Inkjet Series Review: Grand Format Printing at 230 m\u00b2/h',
         description: 'Real-world performance, print quality, and engineering analysis of the PZG3204-KV & PZG3208-KV grand format high-speed inkjet printers powered by Konica Minolta KM512iLNB.',
@@ -17,7 +17,7 @@ export const metadata = {
         authors: ['Marco Dela Cruz'],
     },
     alternates: {
-        canonical: 'https://kelinph.com/blogs-apolloMax-plus-II',
+        canonical: 'https://www.kelingraphics.com/blogs-apolloMax-plus-II',
     },
 };
 
@@ -29,12 +29,12 @@ export default function BlogPZGHighSpeedPrinter() {
                 "@type": "Article",
                 "headline": "PZG High-Speed Inkjet Series Review: Grand Format Printing at 230 m²/h",
                 "description": "An in-depth review of the PZG High-Speed Printing Inkjet Series (PZG3204-KV / PZG3208-KV). Real-world print speeds, Konica Minolta KM512iLNB printhead performance, advanced features, and who should invest in this grand format inkjet machine.",
-                "image": "https://kelinph.com/ApolloMax Plus II PZG3208-KV.webp",
-                "author": { "@type": "Organization", "name": "Kelin Graphics System", "url": "https://kelinph.com/about" },
-                "publisher": { "@type": "Organization", "name": "Kelin Graphics System", "logo": { "@type": "ImageObject", "url": "https://kelinph.com/marquee-logo/inks/kelin-logo.png" } },
+                "image": "https://www.kelingraphics.com/ApolloMax Plus II PZG3208-KV.webp",
+                "author": { "@type": "Organization", "name": "Kelin Graphics System", "url": "https://www.kelingraphics.com/about" },
+                "publisher": { "@type": "Organization", "name": "Kelin Graphics System", "logo": { "@type": "ImageObject", "url": "https://www.kelingraphics.com/marquee-logo/inks/kelin-logo.png" } },
                 "datePublished": "2026-05-05T08:00:00.000Z",
                 "dateModified": "2026-05-06T08:00:00.000Z",
-                "mainEntityOfPage": "https://kelinph.com/blogs-apolloMax-plus-II"
+                "mainEntityOfPage": "https://www.kelingraphics.com/blogs-apolloMax-plus-II"
             },
             {
                 "@type": "FAQPage",
@@ -375,15 +375,15 @@ export default function BlogPZGHighSpeedPrinter() {
                         <div className="article-share-bar">
                             <span className="share-label">Share this article</span>
                             <div className="share-buttons">
-                                <a href="https://www.facebook.com/sharer/sharer.php?u=https://kelinph.com/blogs-apolloMax-plus-II" target="_blank" rel="noopener noreferrer" className="share-btn share-facebook" aria-label="Share on Facebook">
+                                <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.kelingraphics.com/blogs-apolloMax-plus-II" target="_blank" rel="noopener noreferrer" className="share-btn share-facebook" aria-label="Share on Facebook">
                                     <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" /></svg>
                                     Facebook
                                 </a>
-                                <a href="https://twitter.com/intent/tweet?url=https://kelinph.com/blogs-apolloMax-plus-II&text=PZG+High-Speed+Inkjet+Series+Review" target="_blank" rel="noopener noreferrer" className="share-btn share-twitter" aria-label="Share on Twitter/X">
+                                <a href="https://twitter.com/intent/tweet?url=https://www.kelingraphics.com/blogs-apolloMax-plus-II&text=PZG+High-Speed+Inkjet+Series+Review" target="_blank" rel="noopener noreferrer" className="share-btn share-twitter" aria-label="Share on Twitter/X">
                                     <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4 4l16 16M4 20L20 4" /><path d="M4 4l16 16M4 20L20 4" stroke="currentColor" strokeWidth="2" /></svg>
                                     Twitter / X
                                 </a>
-                                <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://kelinph.com/blogs-apolloMax-plus-II" target="_blank" rel="noopener noreferrer" className="share-btn share-linkedin" aria-label="Share on LinkedIn">
+                                <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://www.kelingraphics.com/blogs-apolloMax-plus-II" target="_blank" rel="noopener noreferrer" className="share-btn share-linkedin" aria-label="Share on LinkedIn">
                                     <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" /><rect x="2" y="9" width="4" height="12" /><circle cx="4" cy="4" r="2" /></svg>
                                     LinkedIn
                                 </a>

@@ -11,7 +11,7 @@ export const metadata = {
         type: "website",
     },
     alternates: {
-        canonical: "https://kelinph.com/blogs-4-promotional-display",
+        canonical: "https://www.kelingraphics.com/blogs-4-promotional-display",
     },
 };
 
@@ -23,8 +23,8 @@ export default function Page() {
                 "@type": "CollectionPage",
                 "headline": "Promotional Display Blog | Banners, Booths & Trade Show Displays | Kelin Graphics System",
                 "description": "Explore guides on roll-up banners, pop-up booths, feather banners, easel stands, and more promotional display solutions from Kelin Philippines.",
-                "url": "https://kelinph.com/blogs-4-promotional-display",
-                "publisher": { "@type": "Organization", "name": "Kelin Graphics System", "logo": { "@type": "ImageObject", "url": "https://kelinph.com/marquee-logo/inks/kelin-logo.png" } }
+                "url": "https://www.kelingraphics.com/blogs-4-promotional-display",
+                "publisher": { "@type": "Organization", "name": "Kelin Graphics System", "logo": { "@type": "ImageObject", "url": "https://www.kelingraphics.com/marquee-logo/inks/kelin-logo.png" } }
             },
             {
                 "@type": "FAQPage",

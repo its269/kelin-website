@@ -13,7 +13,7 @@ export const metadata = {
         images: [{ url: '/assets/Materials/Rigid PVC Clear.webp', width: 1200, height: 630, alt: 'Luminao Extruded Acrylic Sheets' }],
         type: 'article',
     },
-    alternates: { canonical: 'https://kelinph.com/blogs-material-luminao-extruded-acrylic' },
+    alternates: { canonical: 'https://www.kelingraphics.com/blogs-material-luminao-extruded-acrylic' },
 };
 
 export default function BlogLuminaoExtrudedAcrylic() {
@@ -24,12 +24,12 @@ export default function BlogLuminaoExtrudedAcrylic() {
                 "@type": "Article",
                 "headline": "Luminao & Extruded Acrylic Guide: Clear & Diffuser White Sheets for Budget-Friendly Signage Fabrication",
                 "description": "Complete guide to Luminao and Just Extruded Acrylic sheets — Clear and Diffuser White in 1.5mm–6.0mm thickness, 4x8ft sheets. Consistent thickness, easy machining, and cost-effective for high-volume signage projects.",
-                "image": "https://kelinph.com/assets/Materials/Rigid PVC Clear.webp",
-                "author": { "@type": "Organization", "name": "Kelin Graphics System", "url": "https://kelinph.com/about" },
-                "publisher": { "@type": "Organization", "name": "Kelin Graphics System", "logo": { "@type": "ImageObject", "url": "https://kelinph.com/marquee-logo/inks/kelin-logo.png" } },
+                "image": "https://www.kelingraphics.com/assets/Materials/Rigid PVC Clear.webp",
+                "author": { "@type": "Organization", "name": "Kelin Graphics System", "url": "https://www.kelingraphics.com/about" },
+                "publisher": { "@type": "Organization", "name": "Kelin Graphics System", "logo": { "@type": "ImageObject", "url": "https://www.kelingraphics.com/marquee-logo/inks/kelin-logo.png" } },
                 "datePublished": "2026-11-01T08:00:00.000Z",
                 "dateModified": "2026-05-06T08:00:00.000Z",
-                "mainEntityOfPage": "https://kelinph.com/blogs-material-luminao-extruded-acrylic"
+                "mainEntityOfPage": "https://www.kelingraphics.com/blogs-material-luminao-extruded-acrylic"
             },
             {
                 "@type": "FAQPage",

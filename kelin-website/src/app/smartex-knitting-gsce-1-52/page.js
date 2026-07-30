@@ -28,7 +28,7 @@ export const metadata = {
         type: "website",
     },
     alternates: {
-        canonical: "https://kelinph.com/smartex-knitting-gsce-1-52",
+        canonical: "https://www.kelingraphics.com/smartex-knitting-gsce-1-52",
     },
 };
 

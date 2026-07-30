@@ -13,7 +13,7 @@ export const metadata = {
         images: [{ url: '/assets/Materials/TK50.webp', width: 1200, height: 630, alt: 'Tickee Vinyl Sticker TK Series' }],
         type: 'article',
     },
-    alternates: { canonical: 'https://kelinph.com/blogs-material-tickee-vinyl-sticker' },
+    alternates: { canonical: 'https://www.kelingraphics.com/blogs-material-tickee-vinyl-sticker' },
 };
 
 export default function BlogTickeeVinylSticker() {
@@ -24,12 +24,12 @@ export default function BlogTickeeVinylSticker() {
                 "@type": "Article",
                 "headline": "Tickee Vinyl Sticker (TK Series) Guide: TK50, TK80, TK85, TK100 & TK105 for Wide-Format Printing",
                 "description": "Complete guide to the Tickee Vinyl Sticker TK Series — TK50, TK80, TK85 Gray Back, TK100, and TK105 Gray Permanent. Matte and Glossy finishes, widths from 3.0ft to 5.0ft x 164ft, for indoor and outdoor applications.",
-                "image": "https://kelinph.com/assets/Materials/TK50.webp",
-                "author": { "@type": "Organization", "name": "Kelin Graphics System", "url": "https://kelinph.com/about" },
-                "publisher": { "@type": "Organization", "name": "Kelin Graphics System", "logo": { "@type": "ImageObject", "url": "https://kelinph.com/marquee-logo/inks/kelin-logo.png" } },
+                "image": "https://www.kelingraphics.com/assets/Materials/TK50.webp",
+                "author": { "@type": "Organization", "name": "Kelin Graphics System", "url": "https://www.kelingraphics.com/about" },
+                "publisher": { "@type": "Organization", "name": "Kelin Graphics System", "logo": { "@type": "ImageObject", "url": "https://www.kelingraphics.com/marquee-logo/inks/kelin-logo.png" } },
                 "datePublished": "2026-04-01T08:00:00.000Z",
                 "dateModified": "2026-05-06T08:00:00.000Z",
-                "mainEntityOfPage": "https://kelinph.com/blogs-material-tickee-vinyl-sticker"
+                "mainEntityOfPage": "https://www.kelingraphics.com/blogs-material-tickee-vinyl-sticker"
             },
             {
                 "@type": "FAQPage",
@@ -229,7 +229,7 @@ export default function BlogTickeeVinylSticker() {
                         <div className="article-share-bar">
                             <span className="share-label">Share this article</span>
                             <div className="share-buttons">
-                                <a href="https://www.facebook.com/sharer/sharer.php?u=https://kelinph.com/blogs-material-tickee-vinyl-sticker" target="_blank" rel="noopener noreferrer" className="share-btn share-facebook" aria-label="Share on Facebook">
+                                <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.kelingraphics.com/blogs-material-tickee-vinyl-sticker" target="_blank" rel="noopener noreferrer" className="share-btn share-facebook" aria-label="Share on Facebook">
                                     <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" /></svg> Facebook
                                 </a>
                             </div>

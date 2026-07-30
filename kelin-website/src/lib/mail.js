@@ -11,7 +11,7 @@ function getTransporter() {
 }
 
 function siteBaseUrl() {
-  return (process.env.NEXT_PUBLIC_SITE_URL || 'https://www.kelinph.com').replace(/\/$/, '');
+  return (process.env.NEXT_PUBLIC_SITE_URL || 'https://www.kelingraphics.com').replace(/\/$/, '');
 }
 
 export async function sendInquiryNotification(inquiry) {
@@ -61,7 +61,7 @@ export async function sendInquiryReply({ inquiry, replyBody, adminEmail, replyTo
   const replyTo = process.env.SMTP_USER || adminEmail || from;
   const replyUrl = `${siteBaseUrl()}/inquiry-reply/${replyToken || inquiry.reply_token}/`;
   const tag = `[KGS-${inquiry.id}]`;
-  const messageId = `<kgs-inquiry-${inquiry.id}-${Date.now()}@kelinph.com>`;
+  const messageId = `<kgs-inquiry-${inquiry.id}-${Date.now()}@kelingraphics.com>`;
 
   const info = await transporter.sendMail({
     from: `"Kelin Graphics System" <${from}>`,

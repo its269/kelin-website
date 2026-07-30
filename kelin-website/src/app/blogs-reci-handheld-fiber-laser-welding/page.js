@@ -19,7 +19,7 @@ export const metadata = {
     title: 'RECI Air-Cooled Handheld Fiber Laser Welding Machine Review: 10x Faster Than TIG — R-A80 800W | R-A150 1500W | R-A200 2000W',
     description: 'An in-depth review of the RECI Handheld Fiber Laser Welding Machine (R-A80 800W | R-A150 1500W | R-A200 2000W). We cover the 10x faster than TIG welding claim, air-cooled system with no external chiller required, optimized airflow with high-efficiency turbofan, ultimate efficiency and precision with integrated wire feeding, silent precision welding with embedded turbofan, compact 37–45kg integrated design, and applications in hardware door/window welding, transportation, advertisement, mechanical, and aluminum alloy industries.',
     keywords: 'RECI handheld fiber laser welding machine review, R-A80 R-A150 R-A200 laser welder Philippines, air-cooled laser welder Philippines, no chiller laser welder Philippines, 10x faster TIG welder Philippines, handheld fiber laser welder 2000W Philippines, Kelin laser welding machine Philippines, rent to own laser welder Philippines',
-    authors: [{ name: 'Kelin Graphics System', url: 'https://kelinph.com/about' }],
+    authors: [{ name: 'Kelin Graphics System', url: 'https://www.kelingraphics.com/about' }],
     openGraph: {
         title: 'RECI Air-Cooled Handheld Fiber Laser Welding Machine Review: 10x Faster Than TIG — R-A80 800W | R-A150 1500W | R-A200 2000W',
         description: 'Real-world analysis of the RECI Handheld Fiber Laser Welding Machine \u2014 10x faster than TIG type, air-cooled with no external chiller required, optimized airflow with high-efficiency turbofan, integrated welding and wire feeding system, silent multi-level speed turbofan, compact 37\u201345kg integrated air-cooled design, 2mm/3mm/4mm max welding thickness, AC220V, and broad application compatibility for hardware, transportation, advertisement, mechanical, and aluminum alloy welding.',
@@ -29,7 +29,7 @@ export const metadata = {
         authors: ['Kelin Graphics System'],
     },
     alternates: {
-        canonical: 'https://kelinph.com/blogs-reci-handheld-fiber-laser-welding',
+        canonical: 'https://www.kelingraphics.com/blogs-reci-handheld-fiber-laser-welding',
     },
 };
 
@@ -41,12 +41,12 @@ export default function BlogRECIHandheldFiberLaserWelding() {
                 "@type": "Article",
                 "headline": "RECI Air-Cooled Handheld Fiber Laser Welding Machine Review: 10x Faster Than TIG \u2014 R-A80 800W | R-A150 1500W | R-A200 2000W",
                 "description": "An in-depth review of the RECI Handheld Fiber Laser Welding Machine (R-A80 800W | R-A150 1500W | R-A200 2000W). We cover the 10x faster than TIG welding claim, air-cooled system with no external chiller required, optimized airflow with high-efficiency turbofan, ultimate efficiency and precision with integrated wire feeding, silent precision welding with embedded turbofan, compact 37\u201345kg integrated design, and applications in hardware, transportation, advertisement, mechanical, and aluminum alloy industries.",
-                "image": "https://kelinph.com/laser-machines/Reci Handheld Fiber Laser Welding Machine R-A80 800W 1.webp",
-                "author": { "@type": "Organization", "name": "Kelin Graphics System", "url": "https://kelinph.com/about" },
-                "publisher": { "@type": "Organization", "name": "Kelin Graphics System", "logo": { "@type": "ImageObject", "url": "https://kelinph.com/marquee-logo/inks/kelin-logo.png" } },
+                "image": "https://www.kelingraphics.com/laser-machines/Reci Handheld Fiber Laser Welding Machine R-A80 800W 1.webp",
+                "author": { "@type": "Organization", "name": "Kelin Graphics System", "url": "https://www.kelingraphics.com/about" },
+                "publisher": { "@type": "Organization", "name": "Kelin Graphics System", "logo": { "@type": "ImageObject", "url": "https://www.kelingraphics.com/marquee-logo/inks/kelin-logo.png" } },
                 "datePublished": "2026-04-18T08:00:00.000Z",
                 "dateModified": "2026-05-06T08:00:00.000Z",
-                "mainEntityOfPage": "https://kelinph.com/blogs-reci-handheld-fiber-laser-welding"
+                "mainEntityOfPage": "https://www.kelingraphics.com/blogs-reci-handheld-fiber-laser-welding"
             },
             {
                 "@type": "FAQPage",
@@ -351,15 +351,15 @@ export default function BlogRECIHandheldFiberLaserWelding() {
                         <div className="article-share-bar">
                             <span className="share-label">Share this article</span>
                             <div className="share-buttons">
-                                <a href="https://www.facebook.com/sharer/sharer.php?u=https://kelinph.com/blogs-reci-handheld-fiber-laser-welding" target="_blank" rel="noopener noreferrer" className="share-btn share-facebook" aria-label="Share on Facebook">
+                                <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.kelingraphics.com/blogs-reci-handheld-fiber-laser-welding" target="_blank" rel="noopener noreferrer" className="share-btn share-facebook" aria-label="Share on Facebook">
                                     <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" /></svg>
                                     Facebook
                                 </a>
-                                <a href="https://twitter.com/intent/tweet?url=https://kelinph.com/blogs-reci-handheld-fiber-laser-welding&text=RECI+Air-Cooled+Handheld+Fiber+Laser+Welder+Review+10x+Faster+TIG+No+Chiller" target="_blank" rel="noopener noreferrer" className="share-btn share-twitter" aria-label="Share on Twitter/X">
+                                <a href="https://twitter.com/intent/tweet?url=https://www.kelingraphics.com/blogs-reci-handheld-fiber-laser-welding&text=RECI+Air-Cooled+Handheld+Fiber+Laser+Welder+Review+10x+Faster+TIG+No+Chiller" target="_blank" rel="noopener noreferrer" className="share-btn share-twitter" aria-label="Share on Twitter/X">
                                     <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4 4l16 16M4 20L20 4" stroke="currentColor" strokeWidth="2" /></svg>
                                     Twitter / X
                                 </a>
-                                <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://kelinph.com/blogs-reci-handheld-fiber-laser-welding" target="_blank" rel="noopener noreferrer" className="share-btn share-linkedin" aria-label="Share on LinkedIn">
+                                <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://www.kelingraphics.com/blogs-reci-handheld-fiber-laser-welding" target="_blank" rel="noopener noreferrer" className="share-btn share-linkedin" aria-label="Share on LinkedIn">
                                     <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" /><rect x="2" y="9" width="4" height="12" /><circle cx="4" cy="4" r="2" /></svg>
                                     LinkedIn
                                 </a>

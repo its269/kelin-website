@@ -32,7 +32,7 @@ export default function NewsEventsSection() {
                 email: "info@kelinph.com",
                 telephone: "(02) 8711-1888",
                 mobile: "0917 678 0608 | 0908 196 0836",
-                website: "www.kelinph.com/events/"
+                website: "www.kelingraphics.com/events/"
             }
         },
         {
@@ -58,7 +58,7 @@ export default function NewsEventsSection() {
                 email: "info@kelinph.com",
                 telephone: "(02) 8711-1888",
                 mobile: "0917 678 0608 | 0908 196 0836",
-                website: "www.kelinph.com/events/"
+                website: "www.kelingraphics.com/events/"
             }
         },
         {
@@ -84,7 +84,7 @@ export default function NewsEventsSection() {
                 email: "info@kelinph.com",
                 telephone: "(02) 8711-1888",
                 mobile: "0917 678 0608 | 0908 196 0836",
-                website: "www.kelinph.com/events/"
+                website: "www.kelingraphics.com/events/"
             }
         }
     ];

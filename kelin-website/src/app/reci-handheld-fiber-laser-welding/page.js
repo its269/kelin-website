@@ -28,7 +28,7 @@ export const metadata = {
         type: "website",
     },
     alternates: {
-        canonical: "https://kelinph.com/reci-handheld-fiber-laser-welding",
+        canonical: "https://www.kelingraphics.com/reci-handheld-fiber-laser-welding",
     },
 };
 

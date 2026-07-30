@@ -28,7 +28,7 @@ export const metadata = {
         type: "website",
     },
     alternates: {
-        canonical: "https://kelinph.com/solutions-exhibition-display",
+        canonical: "https://www.kelingraphics.com/solutions-exhibition-display",
     },
 };
 

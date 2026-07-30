@@ -28,7 +28,7 @@ export const metadata = {
         type: "website",
     },
     alternates: {
-        canonical: "https://kelinph.com/liyu-x-line-dqs-uv-hybrid-printer",
+        canonical: "https://www.kelingraphics.com/liyu-x-line-dqs-uv-hybrid-printer",
     },
 };
 

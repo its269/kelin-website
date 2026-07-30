@@ -7,7 +7,7 @@ export const metadata = {
     title: 'Promaker Embroidery Series Review: 1201 / 1202 / 1804 � Precision Stitched, Possibilities Unlimited',
     description: 'An in-depth review of the Promaker Embroidery Machine Series � 1-head 1201, 2-head 1202, and 4-head 1804. We cover industrial max speed up to 1200 RPM, Japanese hook technology, advanced CNC control, thread management, and who should invest in each model.',
     keywords: 'Promaker embroidery machine Philippines, Promaker 1201, Promaker 1202, Promaker 1804, single head embroidery machine, dual head embroidery, 4 head embroidery machine, Japanese hook embroidery, Kelin Philippines embroidery, industrial embroidery machine',
-    authors: [{ name: 'Kelin Philippines', url: 'https://kelinph.com/about' }],
+    authors: [{ name: 'Kelin Philippines', url: 'https://www.kelingraphics.com/about' }],
     openGraph: {
         title: 'Promaker Embroidery Series Review: 1201 / 1202 / 1804 � Precision Stitched, Possibilities Unlimited',
         description: 'Real-world performance and engineering analysis of the Promaker Embroidery Machine Series � 1-head, 2-head, and 4-head configurations at up to 1200 RPM with Japanese hook technology.',
@@ -17,7 +17,7 @@ export const metadata = {
         authors: ['Kelin Philippines'],
     },
     alternates: {
-        canonical: 'https://kelinph.com/blogs-promaker-embroidery-series',
+        canonical: 'https://www.kelingraphics.com/blogs-promaker-embroidery-series',
     },
 };
 
@@ -29,12 +29,12 @@ export default function BlogPromakerEmbroiderySeries() {
                 "@type": "Article",
                 "headline": "Promaker Embroidery Series Review: 1201 / 1202 / 1804 \u2014 Precision Stitched, Possibilities Unlimited",
                 "description": "An in-depth review of the Promaker Embroidery Machine Series \u2014 1-head 1201, 2-head 1202, and 4-head 1804. We cover industrial max speed up to 1200 RPM, Japanese hook technology, advanced CNC control, thread management, and who should invest in each model.",
-                "image": "https://kelinph.com/sublimation_dtf/Promaker Embroidery 1201.webp",
-                "author": { "@type": "Organization", "name": "Kelin Graphics System", "url": "https://kelinph.com/about" },
-                "publisher": { "@type": "Organization", "name": "Kelin Graphics System", "logo": { "@type": "ImageObject", "url": "https://kelinph.com/marquee-logo/inks/kelin-logo.png" } },
+                "image": "https://www.kelingraphics.com/sublimation_dtf/Promaker Embroidery 1201.webp",
+                "author": { "@type": "Organization", "name": "Kelin Graphics System", "url": "https://www.kelingraphics.com/about" },
+                "publisher": { "@type": "Organization", "name": "Kelin Graphics System", "logo": { "@type": "ImageObject", "url": "https://www.kelingraphics.com/marquee-logo/inks/kelin-logo.png" } },
                 "datePublished": "2026-04-18T08:00:00.000Z",
                 "dateModified": "2026-05-06T08:00:00.000Z",
-                "mainEntityOfPage": "https://kelinph.com/blogs-promaker-embroidery-series"
+                "mainEntityOfPage": "https://www.kelingraphics.com/blogs-promaker-embroidery-series"
             },
             {
                 "@type": "FAQPage",
@@ -336,9 +336,9 @@ export default function BlogPromakerEmbroiderySeries() {
                         <div className="article-share-bar">
                             <span className="share-label">Share this article:</span>
                             <div className="share-buttons">
-                                <a href="https://www.facebook.com/sharer/sharer.php?u=https://kelinph.com/blogs-promaker-embroidery-series" target="_blank" rel="noopener noreferrer" className="share-btn share-facebook">Facebook</a>
-                                <a href="https://twitter.com/intent/tweet?url=https://kelinph.com/blogs-promaker-embroidery-series&text=Promaker+Embroidery+Series+Review" target="_blank" rel="noopener noreferrer" className="share-btn share-twitter">Twitter</a>
-                                <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://kelinph.com/blogs-promaker-embroidery-series" target="_blank" rel="noopener noreferrer" className="share-btn share-linkedin">LinkedIn</a>
+                                <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.kelingraphics.com/blogs-promaker-embroidery-series" target="_blank" rel="noopener noreferrer" className="share-btn share-facebook">Facebook</a>
+                                <a href="https://twitter.com/intent/tweet?url=https://www.kelingraphics.com/blogs-promaker-embroidery-series&text=Promaker+Embroidery+Series+Review" target="_blank" rel="noopener noreferrer" className="share-btn share-twitter">Twitter</a>
+                                <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://www.kelingraphics.com/blogs-promaker-embroidery-series" target="_blank" rel="noopener noreferrer" className="share-btn share-linkedin">LinkedIn</a>
                             </div>
                         </div>
 

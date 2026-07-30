@@ -3,7 +3,7 @@ export const dynamic = 'force-static';
 export const revalidate = false;
 
 export default function sitemap() {
-    const baseUrl = 'https://www.kelinph.com'
+    const baseUrl = 'https://www.kelingraphics.com'
     const lastMod = new Date('2026-05-07')
 
     return [

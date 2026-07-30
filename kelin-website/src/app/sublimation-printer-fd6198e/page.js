@@ -28,7 +28,7 @@ export const metadata = {
         type: "website",
     },
     alternates: {
-        canonical: "https://kelinph.com/sublimation-printer-fd6198e",
+        canonical: "https://www.kelingraphics.com/sublimation-printer-fd6198e",
     },
 };
 

@@ -13,7 +13,7 @@ export const metadata = {
         images: [{ url: '/assets/Materials/PP Film (Transparent).webp', width: 1200, height: 630, alt: 'Sofie PP Film rolls for indoor label and display printing' }],
         type: 'article'
     },
-    alternates: { canonical: 'https://kelinph.com/blogs-material-sofie-pp-film' }
+    alternates: { canonical: 'https://www.kelingraphics.com/blogs-material-sofie-pp-film' }
 };
 
 export default function BlogSofiePPFilm() {
@@ -24,12 +24,12 @@ export default function BlogSofiePPFilm() {
                 "@type": "Article",
                 "headline": "Sofie PP Film & Sticker Guide: Polypropylene Film for Indoor Signage, Labels & Display",
                 "description": "Complete guide to Sofie PP Film — lightweight polypropylene sticker film for indoor retail labels, POP displays, and promotional graphics. Available in matte and gloss finish.",
-                "image": "https://kelinph.com/assets/Materials/PP Film (Transparent).webp",
-                "author": { "@type": "Organization", "name": "Kelin Graphics System", "url": "https://kelinph.com/about" },
-                "publisher": { "@type": "Organization", "name": "Kelin Graphics System", "logo": { "@type": "ImageObject", "url": "https://kelinph.com/marquee-logo/inks/kelin-logo.png" } },
+                "image": "https://www.kelingraphics.com/assets/Materials/PP Film (Transparent).webp",
+                "author": { "@type": "Organization", "name": "Kelin Graphics System", "url": "https://www.kelingraphics.com/about" },
+                "publisher": { "@type": "Organization", "name": "Kelin Graphics System", "logo": { "@type": "ImageObject", "url": "https://www.kelingraphics.com/marquee-logo/inks/kelin-logo.png" } },
                 "datePublished": "2026-04-01T08:00:00.000Z",
                 "dateModified": "2026-05-06T08:00:00.000Z",
-                "mainEntityOfPage": "https://kelinph.com/blogs-material-sofie-pp-film"
+                "mainEntityOfPage": "https://www.kelingraphics.com/blogs-material-sofie-pp-film"
             },
             {
                 "@type": "FAQPage",
@@ -239,7 +239,7 @@ export default function BlogSofiePPFilm() {
                         <div className="article-share-bar">
                             <span className="share-label">Share this article</span>
                             <div className="share-buttons">
-                                <a href="https://www.facebook.com/sharer/sharer.php?u=https://kelinph.com/blogs-material-sofie-pp-film" target="_blank" rel="noopener noreferrer" className="share-btn share-facebook" aria-label="Share on Facebook">
+                                <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.kelingraphics.com/blogs-material-sofie-pp-film" target="_blank" rel="noopener noreferrer" className="share-btn share-facebook" aria-label="Share on Facebook">
                                     <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" /></svg> Facebook
                                 </a>
                             </div>

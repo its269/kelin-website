@@ -28,7 +28,7 @@ export const metadata = {
         type: "website",
     },
     alternates: {
-        canonical: "https://kelinph.com/solutions-digital-printing-equipment",
+        canonical: "https://www.kelingraphics.com/solutions-digital-printing-equipment",
     },
 };
 

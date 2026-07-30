@@ -28,7 +28,7 @@ export const metadata = {
         type: "website",
     },
     alternates: {
-        canonical: "https://kelinph.com/sublimation-dtf",
+        canonical: "https://www.kelingraphics.com/sublimation-dtf",
     },
 };
 

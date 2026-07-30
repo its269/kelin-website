@@ -13,7 +13,7 @@ export const metadata = {
         images: [{ url: '/assets/Materials/ALPHA.webp', width: 1200, height: 630, alt: 'Alpha Tarpaulin and Flex Banner rolls for professional signage and exhibitions' }],
         type: 'article'
     },
-    alternates: { canonical: 'https://kelinph.com/blogs-material-alpha-tarpaulin-flex' }
+    alternates: { canonical: 'https://www.kelingraphics.com/blogs-material-alpha-tarpaulin-flex' }
 };
 
 export default function BlogAlphaTarpaulinFlex() {
@@ -24,12 +24,12 @@ export default function BlogAlphaTarpaulinFlex() {
                 "@type": "Article",
                 "headline": "Alpha Tarpaulin & Flex Guide: Premium Flex Banner & Backlit Frontlit Tarpaulin for Professional Signage",
                 "description": "Complete guide to Alpha Tarpaulin & Flex Banner — premium PVC coated woven scrim material for trade shows, outdoor billboards, backlit displays, and stadium advertising in the Philippines.",
-                "image": "https://kelinph.com/assets/Materials/ALPHA.webp",
-                "author": { "@type": "Organization", "name": "Kelin Graphics System", "url": "https://kelinph.com/about" },
-                "publisher": { "@type": "Organization", "name": "Kelin Graphics System", "logo": { "@type": "ImageObject", "url": "https://kelinph.com/marquee-logo/inks/kelin-logo.png" } },
+                "image": "https://www.kelingraphics.com/assets/Materials/ALPHA.webp",
+                "author": { "@type": "Organization", "name": "Kelin Graphics System", "url": "https://www.kelingraphics.com/about" },
+                "publisher": { "@type": "Organization", "name": "Kelin Graphics System", "logo": { "@type": "ImageObject", "url": "https://www.kelingraphics.com/marquee-logo/inks/kelin-logo.png" } },
                 "datePublished": "2026-04-01T08:00:00.000Z",
                 "dateModified": "2026-05-06T08:00:00.000Z",
-                "mainEntityOfPage": "https://kelinph.com/blogs-material-alpha-tarpaulin-flex"
+                "mainEntityOfPage": "https://www.kelingraphics.com/blogs-material-alpha-tarpaulin-flex"
             },
             {
                 "@type": "FAQPage",
@@ -237,7 +237,7 @@ export default function BlogAlphaTarpaulinFlex() {
                         <div className="article-share-bar">
                             <span className="share-label">Share this article</span>
                             <div className="share-buttons">
-                                <a href="https://www.facebook.com/sharer/sharer.php?u=https://kelinph.com/blogs-material-alpha-tarpaulin-flex" target="_blank" rel="noopener noreferrer" className="share-btn share-facebook" aria-label="Share on Facebook">
+                                <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.kelingraphics.com/blogs-material-alpha-tarpaulin-flex" target="_blank" rel="noopener noreferrer" className="share-btn share-facebook" aria-label="Share on Facebook">
                                     <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" /></svg> Facebook
                                 </a>
                             </div>

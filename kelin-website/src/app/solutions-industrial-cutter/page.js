@@ -28,7 +28,7 @@ export const metadata = {
         type: "website",
     },
     alternates: {
-        canonical: "https://kelinph.com/solutions-industrial-cutter",
+        canonical: "https://www.kelingraphics.com/solutions-industrial-cutter",
     },
 };
 

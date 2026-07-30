@@ -13,7 +13,7 @@ export const metadata = {
         images: [{ url: '/assets/Materials/ACP.webp', width: 1200, height: 630, alt: 'Just Aluminum Composite Panel' }],
         type: 'article',
     },
-    alternates: { canonical: 'https://kelinph.com/blogs-material-just-aluminum-composite' },
+    alternates: { canonical: 'https://www.kelingraphics.com/blogs-material-just-aluminum-composite' },
 };
 
 export default function BlogJustAluminumComposite() {
@@ -24,12 +24,12 @@ export default function BlogJustAluminumComposite() {
                 "@type": "Article",
                 "headline": "Just Aluminum Composite Panel (ACP) Guide: Weatherproof Panels for Outdoor Signage & Cladding",
                 "description": "Complete guide to Just Aluminum Composite Panel — 3mm thickness, 4x8ft sheets, in Glossy White, Champagne, Navy Blue, Mouse Gray, Coffee, and Brush Silver. Weatherproof, UV stable, and ideal for outdoor fascia signs, building cladding, and directional signage.",
-                "image": "https://kelinph.com/assets/Materials/ACP.webp",
-                "author": { "@type": "Organization", "name": "Kelin Graphics System", "url": "https://kelinph.com/about" },
-                "publisher": { "@type": "Organization", "name": "Kelin Graphics System", "logo": { "@type": "ImageObject", "url": "https://kelinph.com/marquee-logo/inks/kelin-logo.png" } },
+                "image": "https://www.kelingraphics.com/assets/Materials/ACP.webp",
+                "author": { "@type": "Organization", "name": "Kelin Graphics System", "url": "https://www.kelingraphics.com/about" },
+                "publisher": { "@type": "Organization", "name": "Kelin Graphics System", "logo": { "@type": "ImageObject", "url": "https://www.kelingraphics.com/marquee-logo/inks/kelin-logo.png" } },
                 "datePublished": "2026-11-01T08:00:00.000Z",
                 "dateModified": "2026-05-06T08:00:00.000Z",
-                "mainEntityOfPage": "https://kelinph.com/blogs-material-just-aluminum-composite"
+                "mainEntityOfPage": "https://www.kelingraphics.com/blogs-material-just-aluminum-composite"
             },
             {
                 "@type": "FAQPage",

@@ -28,7 +28,7 @@ export const metadata = {
         type: "website",
     },
     alternates: {
-        canonical: "https://kelinph.com/blogs",
+        canonical: "https://www.kelingraphics.com/blogs",
     },
 };
 
@@ -40,8 +40,8 @@ export default function Page() {
                 "@type": "CollectionPage",
                 "headline": "Printing Accessories Blog | Cutting Mats, Blades, Tapes & Tools | Kelin Graphics System",
                 "description": "Browse guides and reviews on wide format printing accessories including cutting mats, blades, banner tapes, acrylic benders, and finishing tools from Kelin Philippines.",
-                "url": "https://kelinph.com/blogs-2-accessories",
-                "publisher": { "@type": "Organization", "name": "Kelin Graphics System", "logo": { "@type": "ImageObject", "url": "https://kelinph.com/marquee-logo/inks/kelin-logo.png" } }
+                "url": "https://www.kelingraphics.com/blogs-2-accessories",
+                "publisher": { "@type": "Organization", "name": "Kelin Graphics System", "logo": { "@type": "ImageObject", "url": "https://www.kelingraphics.com/marquee-logo/inks/kelin-logo.png" } }
             },
             {
                 "@type": "FAQPage",

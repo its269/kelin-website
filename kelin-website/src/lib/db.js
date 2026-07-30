@@ -30,14 +30,49 @@ export function toPgParams(sql, params = []) {
 
 export function getDbConfig() {
   const connectionString = cleanEnv(process.env.DATABASE_URL || process.env.SUPABASE_DB_URL);
+  const projectUrl = cleanEnv(process.env.NEXT_PUBLIC_SUPABASE_URL || process.env.SUPABASE_URL);
+  let projectRef = null;
+  try {
+    if (projectUrl) projectRef = new URL(projectUrl).hostname.split('.')[0];
+  } catch {
+    projectRef = null;
+  }
+
+  const host = cleanEnv(process.env.SUPABASE_DB_HOST);
+  let user = cleanEnv(process.env.SUPABASE_DB_USER);
+  // Pooler requires postgres.<project-ref>, not bare "postgres"
+  if ((!user || user === 'postgres') && projectRef && host?.includes('pooler.supabase.com')) {
+    user = `postgres.${projectRef}`;
+  }
+  if (!user) user = 'postgres';
+
+  // Next.js env expansion mangles `$`; allow URL-encoded passwords (%24 = $)
+  let password = cleanEnv(process.env.SUPABASE_DB_PASSWORD);
+  if (password && /%[0-9A-Fa-f]{2}/.test(password)) {
+    try {
+      password = decodeURIComponent(password);
+    } catch {
+      // keep raw value
+    }
+  }
+
   return {
     connectionString,
-    host: cleanEnv(process.env.SUPABASE_DB_HOST),
+    host,
     port: Number(cleanEnv(process.env.SUPABASE_DB_PORT) || 6543),
-    user: cleanEnv(process.env.SUPABASE_DB_USER) || 'postgres',
-    password: cleanEnv(process.env.SUPABASE_DB_PASSWORD),
+    user,
+    password,
     database: cleanEnv(process.env.SUPABASE_DB_NAME) || 'postgres',
   };
+}
+
+/** Reset cached pool (e.g. after env fix / hot reload). */
+export function resetPool() {
+  if (pool) {
+    const closing = pool;
+    pool = null;
+    closing.end().catch(() => {});
+  }
 }
 
 export function assertDbConfig() {

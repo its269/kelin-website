@@ -13,7 +13,7 @@ export const metadata = {
         images: [{ url: '/assets/Materials/SK4100 Vinyl Sticker _Glossy (Transparent).webp', width: 1200, height: 630, alt: 'Sofie Vinyl and Specialty Stickers' }],
         type: 'article',
     },
-    alternates: { canonical: 'https://kelinph.com/blogs-material-sofie-vinyl-stickers' },
+    alternates: { canonical: 'https://www.kelingraphics.com/blogs-material-sofie-vinyl-stickers' },
 };
 
 export default function BlogSofieVinylStickers() {
@@ -24,12 +24,12 @@ export default function BlogSofieVinylStickers() {
                 "@type": "Article",
                 "headline": "Sofie Vinyl & Specialty Stickers Guide: SK4100, Bubble Free, Blockout & Car Wrap Vinyl",
                 "description": "Complete guide to Sofie Vinyl and Specialty Sticker series — SK4100 Gloss, Bubble Free Window Film, Blockout Vinyl, and Car Wrap Cast Film. Learn finishes, sizes, adhesive types, and best applications for Philippine print shops.",
-                "image": "https://kelinph.com/assets/Materials/SK4100 Vinyl Sticker _Glossy (Transparent).webp",
-                "author": { "@type": "Organization", "name": "Kelin Graphics System", "url": "https://kelinph.com/about" },
-                "publisher": { "@type": "Organization", "name": "Kelin Graphics System", "logo": { "@type": "ImageObject", "url": "https://kelinph.com/marquee-logo/inks/kelin-logo.png" } },
+                "image": "https://www.kelingraphics.com/assets/Materials/SK4100 Vinyl Sticker _Glossy (Transparent).webp",
+                "author": { "@type": "Organization", "name": "Kelin Graphics System", "url": "https://www.kelingraphics.com/about" },
+                "publisher": { "@type": "Organization", "name": "Kelin Graphics System", "logo": { "@type": "ImageObject", "url": "https://www.kelingraphics.com/marquee-logo/inks/kelin-logo.png" } },
                 "datePublished": "2026-04-01T08:00:00.000Z",
                 "dateModified": "2026-05-06T08:00:00.000Z",
-                "mainEntityOfPage": "https://kelinph.com/blogs-material-sofie-vinyl-stickers"
+                "mainEntityOfPage": "https://www.kelingraphics.com/blogs-material-sofie-vinyl-stickers"
             },
             {
                 "@type": "FAQPage",
@@ -212,7 +212,7 @@ export default function BlogSofieVinylStickers() {
                         <div className="article-share-bar">
                             <span className="share-label">Share this article</span>
                             <div className="share-buttons">
-                                <a href="https://www.facebook.com/sharer/sharer.php?u=https://kelinph.com/blogs-material-sofie-vinyl-stickers" target="_blank" rel="noopener noreferrer" className="share-btn share-facebook" aria-label="Share on Facebook">
+                                <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.kelingraphics.com/blogs-material-sofie-vinyl-stickers" target="_blank" rel="noopener noreferrer" className="share-btn share-facebook" aria-label="Share on Facebook">
                                     <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" /></svg> Facebook
                                 </a>
                             </div>

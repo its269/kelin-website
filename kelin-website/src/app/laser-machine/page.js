@@ -28,7 +28,7 @@ export const metadata = {
         type: "website",
     },
     alternates: {
-        canonical: "https://kelinph.com/laser-machine",
+        canonical: "https://www.kelingraphics.com/laser-machine",
     },
 };
 

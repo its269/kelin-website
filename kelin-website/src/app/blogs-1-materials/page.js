@@ -28,7 +28,7 @@ export const metadata = {
         type: "website",
     },
     alternates: {
-        canonical: "https://kelinph.com/blogs",
+        canonical: "https://www.kelingraphics.com/blogs",
     },
 };
 
@@ -40,8 +40,8 @@ export default function Page() {
                 "@type": "CollectionPage",
                 "headline": "Printing Materials Blog | Vinyl, Tarpaulin, Canvas & Substrates | Kelin Graphics System",
                 "description": "Explore guides and reviews on wide format printing materials including vinyl, tarpaulin, canvas, backlit film, one-way vision, and specialty substrates from Kelin Philippines.",
-                "url": "https://kelinph.com/blogs-1-materials",
-                "publisher": { "@type": "Organization", "name": "Kelin Graphics System", "logo": { "@type": "ImageObject", "url": "https://kelinph.com/marquee-logo/inks/kelin-logo.png" } }
+                "url": "https://www.kelingraphics.com/blogs-1-materials",
+                "publisher": { "@type": "Organization", "name": "Kelin Graphics System", "logo": { "@type": "ImageObject", "url": "https://www.kelingraphics.com/marquee-logo/inks/kelin-logo.png" } }
             },
             {
                 "@type": "FAQPage",

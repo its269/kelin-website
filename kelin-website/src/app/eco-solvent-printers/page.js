@@ -1,4 +1,4 @@
-﻿import EcoSolventPrintersClient from './EcoSolventPrintersClient';
+import EcoSolventPrintersClient from './EcoSolventPrintersClient';
 
 export const metadata = {
     title: 'Eco-Solvent Printers Philippines | SMART RJ24 & XLINE | Kelin Graphics',
@@ -11,7 +11,7 @@ export const metadata = {
         type: 'website',
     },
     alternates: {
-        canonical: 'https://kelinph.com/eco-solvent-printers',
+        canonical: 'https://www.kelingraphics.com/eco-solvent-printers',
     },
 };
 

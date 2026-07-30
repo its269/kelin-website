@@ -28,7 +28,7 @@ export const metadata = {
         type: "website",
     },
     alternates: {
-        canonical: "https://kelinph.com/k-sign-letter-shell-3d-printer",
+        canonical: "https://www.kelingraphics.com/k-sign-letter-shell-3d-printer",
     },
 };
 

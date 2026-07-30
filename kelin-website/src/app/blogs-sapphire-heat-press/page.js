@@ -16,17 +16,17 @@ export const metadata = {
         "Kelin heatpress",
     ],
     alternates: {
-        canonical: "https://kelinph.com/blogs-sapphire-heat-press",
+        canonical: "https://www.kelingraphics.com/blogs-sapphire-heat-press",
     },
     openGraph: {
         title: "Subli-Mate Manual Heatpress 80cm�100cm � Drawer-Type, Effortless Loading & Safer Operation",
         description:
             "The Subli-Mate Manual Heatpress features a unique drawer-like design, integrated roller for angled movement, and burn-prevention loading � ideal for jerseys, tote bags, T-shirts, and face masks.",
-        url: "https://kelinph.com/blogs-sapphire-heat-press",
+        url: "https://www.kelingraphics.com/blogs-sapphire-heat-press",
         siteName: "Kelin",
         images: [
             {
-                url: "https://kelinph.com/heatpress/Subli-Mate%20Manual%20Heat%20Press%2080cm%20x%20100cm%20(1).webp",
+                url: "https://www.kelingraphics.com/heatpress/Subli-Mate%20Manual%20Heat%20Press%2080cm%20x%20100cm%20(1).webp",
                 width: 1200,
                 height: 630,
                 alt: "Subli-Mate Manual Heatpress 80cm�100cm",
@@ -44,12 +44,12 @@ export default function BlogSapphireHeatpress() {
                 "@type": "Article",
                 "headline": "Subli-Mate Manual Heatpress 80cm\u00d7100cm \u2013 Drawer-Type, Effortless Loading & Safer Operation | Kelin",
                 "description": "Discover the Subli-Mate Manual Heatpress 80cm\u00d7100cm \u2014 a drawer-type heat press with integrated roller, burn prevention design, and angled movement for Full Jersey Sublimation, DTF, and more.",
-                "image": "https://kelinph.com/heatpress/Subli-Mate%20Manual%20Heat%20Press%2080cm%20x%20100cm%20(1).webp",
-                "author": { "@type": "Organization", "name": "Kelin Graphics System", "url": "https://kelinph.com/about" },
-                "publisher": { "@type": "Organization", "name": "Kelin Graphics System", "logo": { "@type": "ImageObject", "url": "https://kelinph.com/marquee-logo/inks/kelin-logo.png" } },
+                "image": "https://www.kelingraphics.com/heatpress/Subli-Mate%20Manual%20Heat%20Press%2080cm%20x%20100cm%20(1).webp",
+                "author": { "@type": "Organization", "name": "Kelin Graphics System", "url": "https://www.kelingraphics.com/about" },
+                "publisher": { "@type": "Organization", "name": "Kelin Graphics System", "logo": { "@type": "ImageObject", "url": "https://www.kelingraphics.com/marquee-logo/inks/kelin-logo.png" } },
                 "datePublished": "2026-04-01T08:00:00.000Z",
                 "dateModified": "2026-05-06T08:00:00.000Z",
-                "mainEntityOfPage": "https://kelinph.com/blogs-sapphire-heat-press"
+                "mainEntityOfPage": "https://www.kelingraphics.com/blogs-sapphire-heat-press"
             },
             {
                 "@type": "FAQPage",
@@ -301,7 +301,7 @@ export default function BlogSapphireHeatpress() {
                                 <span className="share-label">Share this article:</span>
                                 <div className="share-buttons">
                                     <a
-                                        href="https://www.facebook.com/sharer/sharer.php?u=https://kelinph.com/blogs-sapphire-heat-press"
+                                        href="https://www.facebook.com/sharer/sharer.php?u=https://www.kelingraphics.com/blogs-sapphire-heat-press"
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         className="share-btn share-facebook"
@@ -309,7 +309,7 @@ export default function BlogSapphireHeatpress() {
                                         Facebook
                                     </a>
                                     <a
-                                        href="https://twitter.com/intent/tweet?url=https://kelinph.com/blogs-sapphire-heat-press&text=Subli-Mate Manual Heatpress 80x100cm � Drawer-Type Effortless Loading"
+                                        href="https://twitter.com/intent/tweet?url=https://www.kelingraphics.com/blogs-sapphire-heat-press&text=Subli-Mate Manual Heatpress 80x100cm � Drawer-Type Effortless Loading"
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         className="share-btn share-twitter"
@@ -317,7 +317,7 @@ export default function BlogSapphireHeatpress() {
                                         Twitter
                                     </a>
                                     <a
-                                        href="https://www.linkedin.com/sharing/share-offsite/?url=https://kelinph.com/blogs-sapphire-heat-press"
+                                        href="https://www.linkedin.com/sharing/share-offsite/?url=https://www.kelingraphics.com/blogs-sapphire-heat-press"
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         className="share-btn share-linkedin"

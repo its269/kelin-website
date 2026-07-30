@@ -7,13 +7,13 @@ export const metadata = {
     title: 'Wooden Easel Stand Guide: Classic Warm Display for Premium Interiors | Kelin Philippines',
     description: 'Complete guide to wooden easel stands — natural wood aesthetics, display applications for upscale events and galleries, sizing, and how wood easels create warmer, more organic display environments than metal alternatives.',
     keywords: 'wooden easel stand Philippines, wood easel display Philippines, natural wood sign holder easel',
-    authors: [{ name: 'Kelin Graphics System', url: 'https://kelinph.com/about' }],
+    authors: [{ name: 'Kelin Graphics System', url: 'https://www.kelingraphics.com/about' }],
     openGraph: {
         title: 'Wooden Easel Stand: Classic Warm Display for Premium Interiors',
         images: [{ url: '/promotional-display/wooden-easel-stand.webp', width: 1200, height: 630, alt: 'Wooden Easel Stand' }],
         type: 'article', publishedTime: '2026-02-15T08:00:00.000Z', authors: ['Kelin Graphics System'],
     },
-    alternates: { canonical: 'https://kelinph.com/blogs-pd-wooden-easel-stand' },
+    alternates: { canonical: 'https://www.kelingraphics.com/blogs-pd-wooden-easel-stand' },
 };
 
 export default function BlogWoodenEaselStand() {
@@ -24,12 +24,12 @@ export default function BlogWoodenEaselStand() {
                 "@type": "Article",
                 "headline": "Wooden Easel Stand Guide: Classic Warm Display for Premium Interiors | Kelin Philippines",
                 "description": "Complete guide to wooden easel stands — natural wood aesthetics, display applications for upscale events and galleries, sizing, and how wood easels create warmer, more organic display environments than metal alternatives.",
-                "image": "https://kelinph.com/promotional-display/wooden-easel-stand.webp",
-                "author": { "@type": "Organization", "name": "Kelin Graphics System", "url": "https://kelinph.com/about" },
-                "publisher": { "@type": "Organization", "name": "Kelin Graphics System", "logo": { "@type": "ImageObject", "url": "https://kelinph.com/marquee-logo/inks/kelin-logo.png" } },
+                "image": "https://www.kelingraphics.com/promotional-display/wooden-easel-stand.webp",
+                "author": { "@type": "Organization", "name": "Kelin Graphics System", "url": "https://www.kelingraphics.com/about" },
+                "publisher": { "@type": "Organization", "name": "Kelin Graphics System", "logo": { "@type": "ImageObject", "url": "https://www.kelingraphics.com/marquee-logo/inks/kelin-logo.png" } },
                 "datePublished": "2026-02-15T08:00:00.000Z",
                 "dateModified": "2026-05-06T08:00:00.000Z",
-                "mainEntityOfPage": "https://kelinph.com/blogs-pd-wooden-easel-stand"
+                "mainEntityOfPage": "https://www.kelingraphics.com/blogs-pd-wooden-easel-stand"
             },
             {
                 "@type": "FAQPage",
@@ -172,8 +172,8 @@ export default function BlogWoodenEaselStand() {
                         <div className="article-share-bar">
                             <span className="share-label">Share this article</span>
                             <div className="share-buttons">
-                                <a href="https://www.facebook.com/sharer/sharer.php?u=https://kelinph.com/blogs-pd-wooden-easel-stand" target="_blank" rel="noopener noreferrer" className="share-btn share-facebook" aria-label="Share on Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" /></svg>Facebook</a>
-                                <a href="https://twitter.com/intent/tweet?url=https://kelinph.com/blogs-pd-wooden-easel-stand" target="_blank" rel="noopener noreferrer" className="share-btn share-twitter" aria-label="Share on Twitter"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4 4l16 16M4 20L20 4" stroke="currentColor" strokeWidth="2" /></svg>Twitter / X</a>
+                                <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.kelingraphics.com/blogs-pd-wooden-easel-stand" target="_blank" rel="noopener noreferrer" className="share-btn share-facebook" aria-label="Share on Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" /></svg>Facebook</a>
+                                <a href="https://twitter.com/intent/tweet?url=https://www.kelingraphics.com/blogs-pd-wooden-easel-stand" target="_blank" rel="noopener noreferrer" className="share-btn share-twitter" aria-label="Share on Twitter"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4 4l16 16M4 20L20 4" stroke="currentColor" strokeWidth="2" /></svg>Twitter / X</a>
                             </div>
                         </div>
                         <div className="article-cta-block">

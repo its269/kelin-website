@@ -28,7 +28,7 @@ export const metadata = {
         type: "website",
     },
     alternates: {
-        canonical: "https://kelinph.com/xline-eco-solvent",
+        canonical: "https://www.kelingraphics.com/xline-eco-solvent",
     },
 };
 

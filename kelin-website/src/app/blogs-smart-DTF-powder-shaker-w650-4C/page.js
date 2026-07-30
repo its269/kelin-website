@@ -19,7 +19,7 @@ export const metadata = {
     title: 'Smart DTF Powder J650-2 Shaker Review: 4KW Compact DTF Powder Shaker & Dryer for Print-on-Demand Garment Production',
     description: 'An in-depth review of the Smart DTF Powder J650-2 Shaker. We cover the 4KW power, 1700×830×1100mm compact footprint, space-saving design, integration with the Smart DTF RJ-0602/RJ-0604 printer system, 28 m²/h DTF output, up to 8-color CMYK+W support, wider platform, adjustable pinch roller, improved capping station, and newly improved dumper — and who this DTF system is built for.',
     keywords: 'Smart DTF Powder J650-2 Shaker review, DTF powder shaker Philippines, Smart DTF powder shaker, DTF shaker dryer Philippines, print on demand DTF Philippines, CMYK+W DTF printer Philippines, DTF garment printing Philippines, Kelin DTF machine Philippines, Smart DTF machine review',
-    authors: [{ name: 'Kelin Graphics System', url: 'https://kelinph.com/about' }],
+    authors: [{ name: 'Kelin Graphics System', url: 'https://www.kelingraphics.com/about' }],
     openGraph: {
         title: 'Smart DTF Powder J650-2 Shaker Review: 4KW Compact DTF Powder Shaker & Dryer for Print-on-Demand Garment Production',
         description: 'Real-world analysis of the Smart DTF system — Powder J650-2 Shaker (4KW, 1700×830×1100mm compact), RJ-0602/RJ-0604 DTF printer (I3200×2/×4, CMYK+W, up to 8 colors, 28 m²/h, 60cm width), wider platform, adjustable pinch roller, improved capping, and improved dumper for T-shirts, hoodies, jerseys, bags, caps, and custom garment print-on-demand.',
@@ -29,7 +29,7 @@ export const metadata = {
         authors: ['Kelin Graphics System'],
     },
     alternates: {
-        canonical: 'https://kelinph.com/blogs-smart-DTF-powder-shaker-w650-4C',
+        canonical: 'https://www.kelingraphics.com/blogs-smart-DTF-powder-shaker-w650-4C',
     },
 };
 
@@ -41,12 +41,12 @@ export default function BlogSmartDTFPowderShaker() {
                 "@type": "Article",
                 "headline": "Smart DTF Powder J650-2 Shaker Review: 4KW Compact DTF Powder Shaker & Dryer for Print-on-Demand Garment Production",
                 "description": "An in-depth review of the Smart DTF Powder J650-2 Shaker. We cover the 4KW power, 1700\u00d7830\u00d71100mm compact footprint, space-saving design, integration with the Smart DTF RJ-0602/RJ-0604 printer system, 28 m\u00b2/h DTF output, up to 8-color CMYK+W support, wider platform, adjustable pinch roller, improved capping station, and newly improved dumper.",
-                "image": "https://kelinph.com/sublimation_dtf/DTF Smart DTF Powder Shaker W650-4C (1).webp",
-                "author": { "@type": "Organization", "name": "Kelin Graphics System", "url": "https://kelinph.com/about" },
-                "publisher": { "@type": "Organization", "name": "Kelin Graphics System", "logo": { "@type": "ImageObject", "url": "https://kelinph.com/marquee-logo/inks/kelin-logo.png" } },
+                "image": "https://www.kelingraphics.com/sublimation_dtf/DTF Smart DTF Powder Shaker W650-4C (1).webp",
+                "author": { "@type": "Organization", "name": "Kelin Graphics System", "url": "https://www.kelingraphics.com/about" },
+                "publisher": { "@type": "Organization", "name": "Kelin Graphics System", "logo": { "@type": "ImageObject", "url": "https://www.kelingraphics.com/marquee-logo/inks/kelin-logo.png" } },
                 "datePublished": "2026-04-14T08:00:00.000Z",
                 "dateModified": "2026-05-06T08:00:00.000Z",
-                "mainEntityOfPage": "https://kelinph.com/blogs-smart-DTF-powder-shaker-w650-4C"
+                "mainEntityOfPage": "https://www.kelingraphics.com/blogs-smart-DTF-powder-shaker-w650-4C"
             },
             {
                 "@type": "FAQPage",
@@ -378,15 +378,15 @@ export default function BlogSmartDTFPowderShaker() {
                         <div className="article-share-bar">
                             <span className="share-label">Share this article</span>
                             <div className="share-buttons">
-                                <a href="https://www.facebook.com/sharer/sharer.php?u=https://kelinph.com/blogs-smart-DTF-powder-shaker-w650-4C" target="_blank" rel="noopener noreferrer" className="share-btn share-facebook" aria-label="Share on Facebook">
+                                <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.kelingraphics.com/blogs-smart-DTF-powder-shaker-w650-4C" target="_blank" rel="noopener noreferrer" className="share-btn share-facebook" aria-label="Share on Facebook">
                                     <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" /></svg>
                                     Facebook
                                 </a>
-                                <a href="https://twitter.com/intent/tweet?url=https://kelinph.com/blogs-smart-DTF-powder-shaker-w650-4C&text=Smart+DTF+Powder+J650-2+Shaker+Review" target="_blank" rel="noopener noreferrer" className="share-btn share-twitter" aria-label="Share on Twitter/X">
+                                <a href="https://twitter.com/intent/tweet?url=https://www.kelingraphics.com/blogs-smart-DTF-powder-shaker-w650-4C&text=Smart+DTF+Powder+J650-2+Shaker+Review" target="_blank" rel="noopener noreferrer" className="share-btn share-twitter" aria-label="Share on Twitter/X">
                                     <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4 4l16 16M4 20L20 4" /><path d="M4 4l16 16M4 20L20 4" stroke="currentColor" strokeWidth="2" /></svg>
                                     Twitter / X
                                 </a>
-                                <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://kelinph.com/blogs-smart-DTF-powder-shaker-w650-4C" target="_blank" rel="noopener noreferrer" className="share-btn share-linkedin" aria-label="Share on LinkedIn">
+                                <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://www.kelingraphics.com/blogs-smart-DTF-powder-shaker-w650-4C" target="_blank" rel="noopener noreferrer" className="share-btn share-linkedin" aria-label="Share on LinkedIn">
                                     <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" /><rect x="2" y="9" width="4" height="12" /><circle cx="4" cy="4" r="2" /></svg>
                                     LinkedIn
                                 </a>

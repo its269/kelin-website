@@ -28,7 +28,7 @@ export const metadata = {
         type: "website",
     },
     alternates: {
-        canonical: "https://kelinph.com/solutions-uv-dtf",
+        canonical: "https://www.kelingraphics.com/solutions-uv-dtf",
     },
 };
 

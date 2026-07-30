@@ -28,7 +28,7 @@ export const metadata = {
         type: "website",
     },
     alternates: {
-        canonical: "https://kelinph.com/smart-dtf-powder-shaker",
+        canonical: "https://www.kelingraphics.com/smart-dtf-powder-shaker",
     },
 };
 

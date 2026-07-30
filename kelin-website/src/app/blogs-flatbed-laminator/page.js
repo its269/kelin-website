@@ -15,19 +15,19 @@ export const metadata = {
         "aluminium composite panel laminator",
         "Kelin laminator",
     ],
-    authors: [{ name: 'Kelin Graphics System', url: 'https://kelinph.com/about' }],
+    authors: [{ name: 'Kelin Graphics System', url: 'https://www.kelingraphics.com/about' }],
     alternates: {
-        canonical: "https://kelinph.com/blogs-flatbed-laminator",
+        canonical: "https://www.kelingraphics.com/blogs-flatbed-laminator",
     },
     openGraph: {
         title: "Fulei BU-1425FA Flatbed Laminator – Versatile Flatbed Mounting for Rigid & Soft Substrates",
         description:
             "The Fulei BU-1425FA Flatbed Laminator is ideal for one person to laminate on paper sheets or mount on rigid substrates like KT board, acrylic, aluminium composite panel, and wooden board.",
-        url: "https://kelinph.com/blogs-flatbed-laminator",
+        url: "https://www.kelingraphics.com/blogs-flatbed-laminator",
         siteName: "Kelin",
         images: [
             {
-                url: "https://kelinph.com/laminator/Fulei%20BU-1425FA%20Flatbed%20Laminator%20(1).webp",
+                url: "https://www.kelingraphics.com/laminator/Fulei%20BU-1425FA%20Flatbed%20Laminator%20(1).webp",
                 width: 1200,
                 height: 630,
                 alt: "Fulei BU-1425FA Flatbed Laminator",
@@ -47,12 +47,12 @@ export default function BlogFlatbedLaminator() {
                 "@type": "Article",
                 "headline": "Fulei BU-1425FA Flatbed Laminator – Versatile Flatbed Mounting for Rigid & Soft Substrates",
                 "description": "Discover the Fulei BU-1425FA Flatbed Laminator — a versatile wide format flatbed laminator ideal for laminating on paper, rigid boards, acrylic, aluminium composite panels, and wooden boards with cold-only precision.",
-                "image": "https://kelinph.com/laminator/Fulei%20BU-1425FA%20Flatbed%20Laminator%20(1).webp",
-                "author": { "@type": "Organization", "name": "Kelin Graphics System", "url": "https://kelinph.com/about" },
-                "publisher": { "@type": "Organization", "name": "Kelin Graphics System", "logo": { "@type": "ImageObject", "url": "https://kelinph.com/marquee-logo/inks/kelin-logo.png" } },
+                "image": "https://www.kelingraphics.com/laminator/Fulei%20BU-1425FA%20Flatbed%20Laminator%20(1).webp",
+                "author": { "@type": "Organization", "name": "Kelin Graphics System", "url": "https://www.kelingraphics.com/about" },
+                "publisher": { "@type": "Organization", "name": "Kelin Graphics System", "logo": { "@type": "ImageObject", "url": "https://www.kelingraphics.com/marquee-logo/inks/kelin-logo.png" } },
                 "datePublished": "2026-04-17T08:00:00.000Z",
                 "dateModified": "2026-05-06T08:00:00.000Z",
-                "mainEntityOfPage": "https://kelinph.com/blogs-flatbed-laminator"
+                "mainEntityOfPage": "https://www.kelingraphics.com/blogs-flatbed-laminator"
             },
             {
                 "@type": "FAQPage",
@@ -307,7 +307,7 @@ export default function BlogFlatbedLaminator() {
                                 <span className="share-label">Share this article:</span>
                                 <div className="share-buttons">
                                     <a
-                                        href="https://www.facebook.com/sharer/sharer.php?u=https://kelinph.com/blogs-flatbed-laminator"
+                                        href="https://www.facebook.com/sharer/sharer.php?u=https://www.kelingraphics.com/blogs-flatbed-laminator"
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         className="share-btn share-facebook"
@@ -315,7 +315,7 @@ export default function BlogFlatbedLaminator() {
                                         Facebook
                                     </a>
                                     <a
-                                        href="https://twitter.com/intent/tweet?url=https://kelinph.com/blogs-flatbed-laminator&text=Fulei BU-1425FA Flatbed Laminator – Versatile Flatbed Mounting"
+                                        href="https://twitter.com/intent/tweet?url=https://www.kelingraphics.com/blogs-flatbed-laminator&text=Fulei BU-1425FA Flatbed Laminator – Versatile Flatbed Mounting"
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         className="share-btn share-twitter"
@@ -323,7 +323,7 @@ export default function BlogFlatbedLaminator() {
                                         Twitter
                                     </a>
                                     <a
-                                        href="https://www.linkedin.com/sharing/share-offsite/?url=https://kelinph.com/blogs-flatbed-laminator"
+                                        href="https://www.linkedin.com/sharing/share-offsite/?url=https://www.kelingraphics.com/blogs-flatbed-laminator"
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         className="share-btn share-linkedin"

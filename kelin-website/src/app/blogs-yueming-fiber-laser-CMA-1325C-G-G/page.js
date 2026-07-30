@@ -7,7 +7,7 @@ export const metadata = {
     title: 'YueMing CMA1325C-G-G Fiber Laser Review: Auto-Focus Cutting Head with Sprint Piercing',
     description: 'An in-depth review of the YueMing CMA1325C-G-G Fiber Laser Cutting Machine. We cover its auto-focus sprint piercing head, IPG laser source, dual-servo motor gantry, reinforced welding bed, and who should invest in this industrial-grade fiber laser.',
     keywords: 'YueMing fiber laser, CMA1325C-G-G, fiber laser cutting machine Philippines, sprint piercing laser, auto-focus cutting head, IPG fiber laser, 1000W fiber laser, dual-servo gantry, Kelin Philippines laser, metal cutting machine',
-    authors: [{ name: 'Kelin Philippines', url: 'https://kelinph.com/about' }],
+    authors: [{ name: 'Kelin Philippines', url: 'https://www.kelingraphics.com/about' }],
     openGraph: {
         title: 'YueMing CMA1325C-G-G Fiber Laser Review: Auto-Focus Cutting Head with Sprint Piercing',
         description: 'Real-world performance, cutting quality, and engineering analysis of the YueMing CMA1325C-G-G Fiber Laser with auto-focus sprint piercing, dual-servo motor gantry, and IPG laser source.',
@@ -17,7 +17,7 @@ export const metadata = {
         authors: ['Kelin Philippines'],
     },
     alternates: {
-        canonical: 'https://kelinph.com/blogs-yueming-fiber-laser-CMA-1325C-G-G',
+        canonical: 'https://www.kelingraphics.com/blogs-yueming-fiber-laser-CMA-1325C-G-G',
     },
 };
 
@@ -29,12 +29,12 @@ export default function BlogYuemingCMA1325CGG() {
                 "@type": "Article",
                 "headline": "YueMing CMA1325C-G-G Fiber Laser Review: Auto-Focus Cutting Head with Sprint Piercing",
                 "description": "An in-depth review of the YueMing CMA1325C-G-G Fiber Laser Cutting Machine. We cover its auto-focus sprint piercing head, IPG laser source, dual-servo motor gantry, reinforced welding bed, and who should invest in this industrial-grade fiber laser.",
-                "image": "https://kelinph.com/laser-machines/Yueming Fiber Laser  CMA-1325C-G-G 1000w.webp",
-                "author": { "@type": "Organization", "name": "Kelin Graphics System", "url": "https://kelinph.com/about" },
-                "publisher": { "@type": "Organization", "name": "Kelin Graphics System", "logo": { "@type": "ImageObject", "url": "https://kelinph.com/marquee-logo/inks/kelin-logo.png" } },
+                "image": "https://www.kelingraphics.com/laser-machines/Yueming Fiber Laser  CMA-1325C-G-G 1000w.webp",
+                "author": { "@type": "Organization", "name": "Kelin Graphics System", "url": "https://www.kelingraphics.com/about" },
+                "publisher": { "@type": "Organization", "name": "Kelin Graphics System", "logo": { "@type": "ImageObject", "url": "https://www.kelingraphics.com/marquee-logo/inks/kelin-logo.png" } },
                 "datePublished": "2026-04-18T08:00:00.000Z",
                 "dateModified": "2026-05-06T08:00:00.000Z",
-                "mainEntityOfPage": "https://kelinph.com/blogs-yueming-fiber-laser-CMA-1325C-G-G"
+                "mainEntityOfPage": "https://www.kelingraphics.com/blogs-yueming-fiber-laser-CMA-1325C-G-G"
             },
             {
                 "@type": "FAQPage",
@@ -276,9 +276,9 @@ export default function BlogYuemingCMA1325CGG() {
                         <div className="article-share-bar">
                             <span className="share-label">Share this article:</span>
                             <div className="share-buttons">
-                                <a href="https://www.facebook.com/sharer/sharer.php?u=https://kelinph.com/blogs-yueming-fiber-laser-CMA-1325C-G-G" target="_blank" rel="noopener noreferrer" className="share-btn share-facebook">Facebook</a>
-                                <a href="https://twitter.com/intent/tweet?url=https://kelinph.com/blogs-yueming-fiber-laser-CMA-1325C-G-G&text=YueMing+CMA1325C-G-G+Fiber+Laser+Review" target="_blank" rel="noopener noreferrer" className="share-btn share-twitter">Twitter</a>
-                                <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://kelinph.com/blogs-yueming-fiber-laser-CMA-1325C-G-G" target="_blank" rel="noopener noreferrer" className="share-btn share-linkedin">LinkedIn</a>
+                                <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.kelingraphics.com/blogs-yueming-fiber-laser-CMA-1325C-G-G" target="_blank" rel="noopener noreferrer" className="share-btn share-facebook">Facebook</a>
+                                <a href="https://twitter.com/intent/tweet?url=https://www.kelingraphics.com/blogs-yueming-fiber-laser-CMA-1325C-G-G&text=YueMing+CMA1325C-G-G+Fiber+Laser+Review" target="_blank" rel="noopener noreferrer" className="share-btn share-twitter">Twitter</a>
+                                <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://www.kelingraphics.com/blogs-yueming-fiber-laser-CMA-1325C-G-G" target="_blank" rel="noopener noreferrer" className="share-btn share-linkedin">LinkedIn</a>
                             </div>
                         </div>
 

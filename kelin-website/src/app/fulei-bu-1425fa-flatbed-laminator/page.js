@@ -28,7 +28,7 @@ export const metadata = {
         type: "website",
     },
     alternates: {
-        canonical: "https://kelinph.com/fulei-bu-1425fa-flatbed-laminator",
+        canonical: "https://www.kelingraphics.com/fulei-bu-1425fa-flatbed-laminator",
     },
 };
 

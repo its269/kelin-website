@@ -44,7 +44,7 @@ Set these in Vercel → Project → Settings → Environment Variables (do **not
 - `SUPABASE_DB_HOST` = `aws-0-ap-southeast-2.pooler.supabase.com`
 - `SUPABASE_DB_PORT` = `6543`
 - `SUPABASE_DB_USER` = `postgres.igbbkjabhbfedaypvpjh`
-- `SUPABASE_DB_PASSWORD`
+- `SUPABASE_DB_PASSWORD` (if it contains `$`, escape for Next.js: write `$$$$` to get `$$`)
 - `SUPABASE_DB_NAME` = `postgres`
 - `ADMIN_JWT_SECRET`
 - SMTP / IMAP vars
@@ -59,3 +59,4 @@ After deploy, check `/api/admin/health/`.
 - Legacy MySQL (`190.92.233.232`) is no longer used by the app runtime.
 - `.env` is gitignored — never commit database passwords or API keys.
 - Formspree has been removed; inquiries save to Supabase and email via Gmail SMTP.
+- **RLS is enabled** on all inquiry tables with no public policies (anon Data API blocked; server CMS still works).

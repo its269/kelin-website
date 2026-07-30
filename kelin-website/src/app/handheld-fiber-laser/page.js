@@ -28,7 +28,7 @@ export const metadata = {
         type: "website",
     },
     alternates: {
-        canonical: "https://kelinph.com/handheld-fiber-laser",
+        canonical: "https://www.kelingraphics.com/handheld-fiber-laser",
     },
 };
 

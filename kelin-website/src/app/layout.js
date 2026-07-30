@@ -3,7 +3,7 @@ import "./bison-global.css";
 import SiteChrome from "./components/SiteChrome";
 
 export const metadata = {
-  metadataBase: new URL('https://www.kelinph.com'),
+  metadataBase: new URL('https://www.kelingraphics.com'),
   title: {
     default: 'Kelin Graphics System — Printing Machines, Cutters & Laser Equipment Philippines',
     template: '%s | Kelin Graphics System',
@@ -12,13 +12,16 @@ export const metadata = {
   keywords: 'eco solvent printer Philippines, UV printer, DTF machine, digital cutter, iEcho, GCC, heat press, sublimation printer, laser cutting machine, Kelin Graphics',
   robots: { index: true, follow: true, googleBot: { index: true, follow: true } },
   verification: {
-    google: 'rmeLX4WL4DoAzkB9sK3oDr2cYMXzfYut7mwnDVx9rMo',
+    google: [
+      'rmeLX4WL4DoAzkB9sK3oDr2cYMXzfYut7mwnDVx9rMo',
+      '0QmmdET_Z3Zq6IN526Xunlp4HhzWI3eULjvKZ8t5NkM',
+    ],
   },
   alternates: { canonical: '/' },
   openGraph: {
     title: 'Kelin Graphics System — Printing Machines & Equipment Philippines',
     description: 'Philippines\' trusted supplier of professional printing machines, digital cutters, UV printers, DTF, sublimation, heat press, and laser equipment.',
-    url: 'https://www.kelinph.com',
+    url: 'https://www.kelingraphics.com',
     siteName: 'Kelin Graphics System',
     type: 'website',
     locale: 'en_PH',

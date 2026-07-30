@@ -150,7 +150,7 @@ export default function LuxorRTRUV() {
                 icon: 'media'
             },
             {
-                title: '4-in-1 Multi-Function Design',
+                title: '3-in-1 Multi-Function Design',
                 description: 'Versatile machine supporting flatbed, cylinder, roll-to-roll, and UV DTF printing in one compact unit.',
                 icon: 'durability'
             },
@@ -193,7 +193,7 @@ export default function LuxorRTRUV() {
         ],
         advantages: [
             'EPSON I3200 UV HD printhead for exceptional print quality',
-            'Multi-function 4-in-1 design: Flatbed, Cylinder, Roll-to-roll, UV DTF',
+            'Multi-function 3-in-1 design: Flatbed, Cylinder, Roll-to-roll, UV DTF',
             'Variable speed production from 0.28-3 m²/h for different needs',
             'LED UV curing ink system for instant drying and durability',
             'Automatic printhead cleaning and moisturizing function',
@@ -296,7 +296,7 @@ export default function LuxorRTRUV() {
                                     <span className="lxr-uv-a3-stat-label">Print Speed</span>
                                 </div>
                                 <div className="lxr-uv-a3-stat">
-                                    <span className="lxr-uv-a3-stat-number">4-in-1</span>
+                                    <span className="lxr-uv-a3-stat-number">3-in-1</span>
                                     <span className="lxr-uv-a3-stat-label">Multi-function</span>
                                 </div>
                             </div>
@@ -370,7 +370,7 @@ export default function LuxorRTRUV() {
                                         )}
                                         {index === 4 && (
                                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                                {/* 4-in-1 multi-function: grid of 4 */}
+                                                {/* 3-in-1 multi-function: grid of 4 */}
                                                 <rect x="3" y="3" width="8" height="8" rx="1" />
                                                 <rect x="13" y="3" width="8" height="8" rx="1" />
                                                 <rect x="3" y="13" width="8" height="8" rx="1" />

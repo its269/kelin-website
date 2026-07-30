@@ -28,7 +28,7 @@ export const metadata = {
         type: "website",
     },
     alternates: {
-        canonical: "https://kelinph.com/gcc-expert-24lx",
+        canonical: "https://www.kelingraphics.com/gcc-expert-24lx",
     },
 };
 

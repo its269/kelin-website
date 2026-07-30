@@ -98,8 +98,8 @@ Object.entries(imageMap).forEach(function ([slug, newImg]) {
         "images: [{ url: '" + newImg + "'"
     );
     // Replace jsonLd image (full URL)
-    const oldFull = 'https://kelinph.com' + oldImg;
-    const newFull = 'https://kelinph.com' + newImg;
+    const oldFull = 'https://www.kelingraphics.com' + oldImg;
+    const newFull = 'https://www.kelingraphics.com' + newImg;
     content = content.split('"image": "' + oldFull + '"').join('"image": "' + newFull + '"');
 
     // Replace first <img src="..." in blog-featured-image context

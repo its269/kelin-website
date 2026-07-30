@@ -28,7 +28,7 @@ export const metadata = {
         type: "website",
     },
     alternates: {
-        canonical: "https://kelinph.com/iecho-pk4",
+        canonical: "https://www.kelingraphics.com/iecho-pk4",
     },
 };
 

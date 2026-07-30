@@ -19,7 +19,7 @@ export const metadata = {
     title: 'K-Sign Desktop Laser Engraving Machine B330 Review: Ultra-Fast 44-Second Engraving at 600 mm/s with 0.01mm Precision',
     description: 'An in-depth review of the K-Sign Desktop Laser Engraving Machine B330. We cover the 600 mm/s maximum engraving speed, ultra-fast 44-second engraving of an 80\u00d790mm design, 0.01mm precision, tilt protection safety system, adjustable air assist, honeycomb table, desktop protection tray, 300\u00d7300mm work area, 120W machine power, and full specifications for wood, leather, acrylic, and non-metallic material engraving applications.',
     keywords: 'K-Sign B330 desktop laser engraving machine review, K-Sign laser engraver Philippines, desktop laser engraver 600mm/s, 44-second laser engraving, 0.01mm precision laser engraver, tilt protection laser engraver, honeycomb table laser engraver, USB WiFi laser engraver, LaserGRBL Lightburn Craft Express, Kelin laser engraving machine Philippines',
-    authors: [{ name: 'Kelin Graphics System', url: 'https://kelinph.com/about' }],
+    authors: [{ name: 'Kelin Graphics System', url: 'https://www.kelingraphics.com/about' }],
     openGraph: {
         title: 'K-Sign Desktop Laser Engraving Machine B330 Review: Ultra-Fast 44-Second Engraving at 600 mm/s with 0.01mm Precision',
         description: 'Real-world analysis of the K-Sign B330 Desktop Laser Engraving Machine \u2014 600 mm/s maximum engraving speed, ultra-fast 44-second engraving of an 80\u00d790mm design with 0.01mm precision, tilt protection safety system, adjustable air assist, honeycomb table with 40mm lift height, desktop protection tray, aluminum alloy frame, USB/WiFi connectivity, and compatibility with LaserGRBL, Lightburn, and Craft Express software.',
@@ -29,7 +29,7 @@ export const metadata = {
         authors: ['Kelin Graphics System'],
     },
     alternates: {
-        canonical: 'https://kelinph.com/blogs-k-sign-desktop-laser-b330',
+        canonical: 'https://www.kelingraphics.com/blogs-k-sign-desktop-laser-b330',
     },
 };
 
@@ -41,12 +41,12 @@ export default function BlogKSignDesktopLaserB330() {
                 "@type": "Article",
                 "headline": "K-Sign Desktop Laser Engraving Machine B330 Review: Ultra-Fast 44-Second Engraving at 600 mm/s with 0.01mm Precision",
                 "description": "An in-depth review of the K-Sign Desktop Laser Engraving Machine B330. We cover the 600 mm/s maximum engraving speed, ultra-fast 44-second engraving of an 80×90mm design, 0.01mm precision, tilt protection safety system, adjustable air assist, honeycomb table, desktop protection tray, 300×300mm work area, 120W machine power, and full specifications for wood, leather, acrylic, and non-metallic material engraving applications.",
-                "image": "https://kelinph.com/laser-machines/K-Sign Desktop Laser B330.webp",
-                "author": { "@type": "Organization", "name": "Kelin Graphics System", "url": "https://kelinph.com/about" },
-                "publisher": { "@type": "Organization", "name": "Kelin Graphics System", "logo": { "@type": "ImageObject", "url": "https://kelinph.com/marquee-logo/inks/kelin-logo.png" } },
+                "image": "https://www.kelingraphics.com/laser-machines/K-Sign Desktop Laser B330.webp",
+                "author": { "@type": "Organization", "name": "Kelin Graphics System", "url": "https://www.kelingraphics.com/about" },
+                "publisher": { "@type": "Organization", "name": "Kelin Graphics System", "logo": { "@type": "ImageObject", "url": "https://www.kelingraphics.com/marquee-logo/inks/kelin-logo.png" } },
                 "datePublished": "2026-04-18T08:00:00.000Z",
                 "dateModified": "2026-05-06T08:00:00.000Z",
-                "mainEntityOfPage": "https://kelinph.com/blogs-k-sign-desktop-laser-b330"
+                "mainEntityOfPage": "https://www.kelingraphics.com/blogs-k-sign-desktop-laser-b330"
             },
             {
                 "@type": "FAQPage",
@@ -353,15 +353,15 @@ export default function BlogKSignDesktopLaserB330() {
                         <div className="article-share-bar">
                             <span className="share-label">Share this article</span>
                             <div className="share-buttons">
-                                <a href="https://www.facebook.com/sharer/sharer.php?u=https://kelinph.com/blogs-k-sign-desktop-laser-b330" target="_blank" rel="noopener noreferrer" className="share-btn share-facebook" aria-label="Share on Facebook">
+                                <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.kelingraphics.com/blogs-k-sign-desktop-laser-b330" target="_blank" rel="noopener noreferrer" className="share-btn share-facebook" aria-label="Share on Facebook">
                                     <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" /></svg>
                                     Facebook
                                 </a>
-                                <a href="https://twitter.com/intent/tweet?url=https://kelinph.com/blogs-k-sign-desktop-laser-b330&text=K-Sign+B330+Desktop+Laser+Engraver+Review+600mm+s+44-Second+Engraving" target="_blank" rel="noopener noreferrer" className="share-btn share-twitter" aria-label="Share on Twitter/X">
+                                <a href="https://twitter.com/intent/tweet?url=https://www.kelingraphics.com/blogs-k-sign-desktop-laser-b330&text=K-Sign+B330+Desktop+Laser+Engraver+Review+600mm+s+44-Second+Engraving" target="_blank" rel="noopener noreferrer" className="share-btn share-twitter" aria-label="Share on Twitter/X">
                                     <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4 4l16 16M4 20L20 4" stroke="currentColor" strokeWidth="2" /></svg>
                                     Twitter / X
                                 </a>
-                                <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://kelinph.com/blogs-k-sign-desktop-laser-b330" target="_blank" rel="noopener noreferrer" className="share-btn share-linkedin" aria-label="Share on LinkedIn">
+                                <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://www.kelingraphics.com/blogs-k-sign-desktop-laser-b330" target="_blank" rel="noopener noreferrer" className="share-btn share-linkedin" aria-label="Share on LinkedIn">
                                     <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" /><rect x="2" y="9" width="4" height="12" /><circle cx="4" cy="4" r="2" /></svg>
                                     LinkedIn
                                 </a>

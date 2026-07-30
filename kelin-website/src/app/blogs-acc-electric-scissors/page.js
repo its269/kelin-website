@@ -7,7 +7,7 @@ export const metadata = {
     title: 'Cordless Electric Scissors & Blades Guide: Fast, Effortless Cutting for Vinyl, Fabric & Print Media',
     description: 'Discover how cordless electric scissors with replacement cutter blades can speed up your cutting workflow for vinyl, fabric, and print media in sign shops and print businesses.',
     keywords: 'cordless electric scissors, replacement cutter blades, vinyl cutting tool, fabric scissors, print media cutting, sign shop tools, Kelin accessories Philippines',
-    authors: [{ name: 'Kelin Graphics System', url: 'https://kelinph.com/about' }],
+    authors: [{ name: 'Kelin Graphics System', url: 'https://www.kelingraphics.com/about' }],
     openGraph: {
         title: 'Cordless Electric Scissors & Blades Guide: Fast, Effortless Cutting for Vinyl, Fabric & Print Media',
         description: 'Discover how cordless electric scissors with replacement cutter blades can speed up your cutting workflow for vinyl, fabric, and print media.',
@@ -16,7 +16,7 @@ export const metadata = {
         publishedTime: '2026-04-25T08:00:00.000Z',
         authors: ['Kelin Graphics System'],
     },
-    alternates: { canonical: 'https://kelinph.com/blogs-acc-electric-scissors' },
+    alternates: { canonical: 'https://www.kelingraphics.com/blogs-acc-electric-scissors' },
 };
 
 export default function BlogAccElectricScissors() {
@@ -27,12 +27,12 @@ export default function BlogAccElectricScissors() {
                 "@type": "Article",
                 "headline": "Cordless Electric Scissors & Blades Guide: Fast, Effortless Cutting for Vinyl, Fabric & Print Media",
                 "description": "Discover how cordless electric scissors with replacement cutter blades can speed up your cutting workflow for vinyl, fabric, and print media in sign shops and print businesses.",
-                "image": "https://kelinph.com/assets/Accessories/Electric Scissor.webp",
-                "author": { "@type": "Organization", "name": "Kelin Graphics System", "url": "https://kelinph.com/about" },
-                "publisher": { "@type": "Organization", "name": "Kelin Graphics System", "logo": { "@type": "ImageObject", "url": "https://kelinph.com/marquee-logo/inks/kelin-logo.png" } },
+                "image": "https://www.kelingraphics.com/assets/Accessories/Electric Scissor.webp",
+                "author": { "@type": "Organization", "name": "Kelin Graphics System", "url": "https://www.kelingraphics.com/about" },
+                "publisher": { "@type": "Organization", "name": "Kelin Graphics System", "logo": { "@type": "ImageObject", "url": "https://www.kelingraphics.com/marquee-logo/inks/kelin-logo.png" } },
                 "datePublished": "2026-04-25T08:00:00.000Z",
                 "dateModified": "2026-05-06T08:00:00.000Z",
-                "mainEntityOfPage": "https://kelinph.com/blogs-acc-electric-scissors"
+                "mainEntityOfPage": "https://www.kelingraphics.com/blogs-acc-electric-scissors"
             },
             {
                 "@type": "FAQPage",
@@ -161,7 +161,7 @@ export default function BlogAccElectricScissors() {
                         <div className="article-share-bar">
                             <span className="share-label">Share this article</span>
                             <div className="share-buttons">
-                                <a href={"https://www.facebook.com/sharer/sharer.php?u=https://kelinph.com/blogs-acc-electric-scissors"} target="_blank" rel="noopener noreferrer" className="share-btn share-facebook" aria-label="Share on Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" /></svg>Facebook</a>
+                                <a href={"https://www.facebook.com/sharer/sharer.php?u=https://www.kelingraphics.com/blogs-acc-electric-scissors"} target="_blank" rel="noopener noreferrer" className="share-btn share-facebook" aria-label="Share on Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" /></svg>Facebook</a>
                             </div>
                         </div>
                         <div className="article-cta-block">

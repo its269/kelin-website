@@ -28,7 +28,7 @@ export const metadata = {
         type: "website",
     },
     alternates: {
-        canonical: "https://kelinph.com/3d-printer",
+        canonical: "https://www.kelingraphics.com/3d-printer",
     },
 };
 
